@@ -1,0 +1,22 @@
+name: "RTXI"
+taglind: "The Real-time eXperiment Interface"
+description: ""
+
+url: "/"
+author :
+   name : Ansel George
+   email : info@rtxi.org
+   github : anselg
+
+markdown: kramdown #rdiscount
+highlighter: pygments
+permalink: pretty
+
+defaults:
+   values:
+      layout: "default"
+
+exclude: [ "README.md", "Rakefile", "Gemfile", "Gemfile.lock", "LICENSE" ]
+
+sharing:
+   provider: false
