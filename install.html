@@ -11,35 +11,41 @@ permalink: /install.html
 </div>
 
 <div class="container">
-   <div class="col-md-12">
-      <p class="lead">Installing RTXI can be done in two ways:</p>
+   <div class="col-xs-12">
+      <p class="lead">There are two ways to install RTXI:</p>
       <dl class="dl-horizontal lead-small">
-         <dt>Automatic</dt>
+         <dt>Easy</dt>
             <dd>Use our Debian-based live CDs. It's easier than manually installing RTXI, but differences between your system and the one used to make the live CD could affect real-time performance.</dd>
          <br>
-         <dt class="">Manual</dt>
+         <dt class="">Hard</dt>
             <dd>Install a generic Linux image, compile a Xenomai-patched kernel, and then install RTXI from source. It's more difficult, but the end result is better optimized. We recomment you try this out.</dd>
       </dl>
    </div>
 </div>
 
+<br>
+
 <div class="container">
-      <hr class="featurette-divider">
-      <ul class="nav nav-pills nav-justified" role="tablist">
-         <li role="presentation" class="active"><a data-toggle="pill" href="#auto" role="tab">Automatic</a></li>
-         <li role="presentation"><a data-toggle="pill" href="#manual" role="tab">Manual</a></li>
+   <div class="col-xs-12">
+      <ul class="nav nav-pills nav-justified lead-normal" role="tablist">
+         <li role="presentation" class="active"><a data-toggle="tab" href="#easy" role="tab">Easy</a></li>
+         <li role="presentation"><a data-toggle="tab" href="#hard" role="tab">Hard</a></li>
       </ul>
-   <br>
 
       <div class="tab-content">
-         <div id="auto" role="tabpanel" class="tab-pane fade in active">
-            <div class="row">
+         <div id="easy" role="tabpanel" class="tab-pane fade in active">
+            <button type="button" class="btn btn-primary btn-lg">
+               <span class="glyphicon glyphicon-cloud-download"> RTXI 2.0 Live CD
+            </button>
+<!--            <div class="row">
                <div class="col-xs-8">Download the RTXI 2.0 live CD</div>
                <button type="button" class="btn btn-primary btn-lgi col-xs-4">RTXI 2.0</button>
             </div>
+-->
          </div>
-         <div id="manual" role="tabpanel" class="tab-pane fade">
+         <div id="hard" role="tabpanel" class="tab-pane fade">
             <p class="lead-small">Placeholder</p>
          </div>
       </div>
+   </div>
 </div>
