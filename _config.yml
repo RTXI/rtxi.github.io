@@ -12,9 +12,8 @@ markdown: kramdown #rdiscount
 highlighter: pygments
 permalink: pretty
 
-defaults:
-   values:
-      layout: "default"
+gems:
+   - jekyll-sitemap
 
 exclude: [ "README.md", "Rakefile", "Gemfile", "Gemfile.lock", "LICENSE" ]
 
