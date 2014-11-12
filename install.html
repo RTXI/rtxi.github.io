@@ -18,7 +18,7 @@ permalink: /install.html
             <dd>Use our Debian-based live CDs. It's easier than manually installing RTXI, but differences between your system and the one used to make the live CD could affect real-time performance.</dd>
          <br>
          <dt class="">Hard</dt>
-            <dd>Install a generic Linux image, compile a Xenomai-patched kernel, and then install RTXI from source. It's more difficult, but the end result is better optimized. We recomment you try this out.</dd>
+            <dd>Install a generic Linux image, compile a Xenomai-patched kernel, and then install RTXI from source. It's more difficult, but the end result is better optimized. We recommend this option.</dd>
       </dl>
    </div>
 </div>
@@ -33,30 +33,58 @@ permalink: /install.html
       </ul>
 
       <div class="tab-content">
+
          <div id="easy" role="tabpanel" class="tab-pane fade in active">
-				<a href="https://docs.google.com/uc?confirm=no_antivirus&id=0B4CBLJQ5pYNmTWN0b3F6MlpjaXM&export=download" download>
-            	<button type="button" class="btn btn-danger btn-lg">
-	               <span class="glyphicon glyphicon-cloud-download"></span> RTXI 2.0 (x86_64)
-   	         </button>
-				</a>
-<!--            <div class="row">
-               <div class="col-xs-8">Download the RTXI 2.0 live CD</div>
-               <button type="button" class="btn btn-primary btn-lgi col-xs-4">RTXI 2.0</button>
-            </div>
--->
-         </div>
+            <div class="panel panel-primary"><div class="panel-body">
+               <!-- 1. Download the live image -->
+               <p class="lead col-xs-12 col-md-6">1. Download the live image.</p>
+               <div class="col-xs-12 col-sm-offset-2 col-sm-4 col-md-offset-0 col-md-3">
+                  <a href="https://dl.dropboxusercontent.com/u/49869589/rtxi-2.0-debian-7.6-v9-x86_64.iso" download><button type="button" class="btn btn-danger btn-lg btn-block">
+                     <span class="glyphicon glyphicon-cloud-download"></span> RTXI 2.0 64-bit</button>
+                  </a>
+               </div>
+               <div class="col-xs-12 col-sm-4 col-md-3 col-sm-offset-2 col-md-offset-0 col-sm-pull-2 col-md-pull-0">
+                  <a><button type="button" class="btn btn-danger btn-lg btn-block" disabled="disabled">
+                     <span class="glyphicon glyphicon-cloud-download"></span> RTXI 2.0 32-bit</button>
+                  </a>
+               </div>
+               
+               <!-- Burn the image to DVD or USB -->
+               <p>&nbsp;</p><p class="lead col-xs-12">2. Burn the image to a DVD or a USB drive.</p>
+               
+               <!-- Install and boot into RTXI system -->
+               <p class="lead col-xs-12">3. Follow the built-in installer and install the operating system.</p>
+            </div></div>
+         </div> <!-- end easy information -->
+
          <div id="hard" role="tabpanel" class="tab-pane fade">
-				<a href="http://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-7.6.0-amd64-gnome-desktop.iso" download>
-            	<button type="button" class="btn btn-danger btn-lg">
-	               <span class="glyphicon glyphicon-cloud-download"></span> Debian 7.6 (x86_64)
-   	         </button>
-				</a>
-				<a href="http://cdimage.debian.org/debian-cd/current-live/i386/iso-hybrid/debian-live-7.6.0-i386-gnome-desktop.iso" download>
-            	<button type="button" class="btn btn-danger btn-lg">
-	               <span class="glyphicon glyphicon-cloud-download"></span> Debian 7.6 (x86)
-   	         </button>
-				</a>
-         </div>
-      </div>
+            <div class="panel panel-primary"><div class="panel-body">
+               <!-- 1. Download generic Debian image -->
+               <p class="lead col-xs-12 col-md-6">1. Download a generic Debian installation image.</p>
+               <div class="col-xs-12 col-sm-offset-2 col-sm-4 col-md-offset-0 col-md-3">
+                  <a href="http://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-7.6.0-amd64-gnome-desktop.iso" download><button type="button" class="btn btn-danger btn-lg btn-block">
+                     <span class="glyphicon glyphicon-cloud-download"></span> Debian 7.6 64-bit</button>
+                  </a>
+               </div>
+               <div class="col-xs-12 col-sm-4 col-md-3 col-sm-offset-2 col-md-offset-0 col-sm-pull-2 col-md-pull-0">
+                  <a href="http://cdimage.debian.org/debian-cd/current-live/i386/iso-hybrid/debian-live-7.6.0-i386-gnome-desktop.iso" download><button type="button" class="btn btn-danger btn-lg btn-block">
+                     <span class="glyphicon glyphicon-cloud-download"></span> Debian 7.6 32-bit</button>
+                  </a>
+               </div>
+               
+               <!-- Burn the image to DVD or USB -->
+               <p>&nbsp;</p><p class="lead col-xs-12">2. Burn the image to a DVD or a USB drive.</p>
+               
+               <!-- Install and boot into RTXI system -->
+               <p class="lead col-xs-12">3. Follow the built-in installer and install the operating system.</p>
+
+               <!-- Look at our github documentaiton for now... -->
+               <p class="lead col-xs-12">4. Patch and install a real-time kernel. Go to our <a href="https://github.com/RTXI/tutorials/wiki/How-to-Patch-the-Realtime-Kernel">GitHub wiki</a> for detailed instructions.</p>
+               <p class="lead col-xs-12">5. Clone our GitHub repository and install RTXI. Check out our <a href="https://github.com/RTXI/tutorials/wiki/Installing-RTXI-v2.0">Github wiki</a> for instructions.</p>
+            </div></div>
+         </div> <!-- end hard information -->
+
+      </div> <!-- end tal-content -->
+
    </div>
 </div>
