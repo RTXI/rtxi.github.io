@@ -1,0 +1,33 @@
+---
+title: spike-statistics
+layout: module
+categories: module
+---
+
+<a href="https://github.com/rtxi/spike-statistics"><img style="position: absolute; top: 50px; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a><h3>Spike Statistics</h3>
+
+<p><strong>Requirements:</strong> none<br>
+<strong>Limitations:</strong> none  </p>
+
+<p><img src="spike-statistics.png" alt="Spike Statistics GUI"></p>
+
+<p>This module contains a spike detector based on a positive threshold crossing (see SpikeDetect module). It computes the average ISI and the current coefficient of variation. These values are continuously updated with each spike until the statistics are reset with the button.</p>
+
+<h4>Input Channels</h4>
+
+<ol>
+<li>input(0) - &quot;Vm&quot; : i.e. Membrane potential (V)</li>
+</ol>
+
+<h4>Output Channels</h4>
+
+<ol>
+<li>output(0) - &quot;ISI&quot; : i.e. Output current (A)</li>
+</ol>
+
+<h4>Parameters</h4>
+
+<ol>
+<li>threshold (mV) : Voltage threshold at which to &#39;detect&#39; a spike</li>
+<li>min interval (ms) : Minimum interval that must pass before another spike can be detected (i.e. refractory period)</li>
+</ol>

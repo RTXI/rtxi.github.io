@@ -1,0 +1,54 @@
+---
+title: connor-stevens
+layout: module
+categories: module
+---
+
+<a href="https://github.com/rtxi/connor-stevens"><img style="position: absolute; top: 50px; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a><h3>Connor-Stevens Neuron</h3>
+
+<p><strong>Requirements:</strong> None<br>
+<strong>Limitations:</strong> None  </p>
+
+<p><img src="connor-stevens.png" alt="CS Model Neuron GUI"></p>
+
+<p>The Connor Stevens model neuron is like the Hodgkin-Huxley neuron, but with slightly different kinetics for the fast sodium and potassium delayed-rectifier channels and an additional A-type potassium channel (Dayan and Abbott, Theoretical Neuroscience, Ch. 6). These changes give the Connor Stevens neuron Type I excitability such that it can achieve arbitrarily low spike rates. This feature may make this model more useful for testing custom modules than the Hodgkin-Huxley model neuron.</p>
+
+<h4>Input Channels</h4>
+
+<ol>
+<li>input(0) - Iapp : applied current  (A)</li>
+</ol>
+
+<h4>Output Channels</h4>
+
+<ol>
+<li>output(0) - Vm : membrane voltage (V)</li>
+</ol>
+
+<h4>Parameters</h4>
+
+<ol>
+<li>V0 - initial membrane voltage (mV)</li>
+<li>Cm - membrane capacitance (uF/cm^2)</li>
+<li>G_Na_max - max. Na+ conductance density (mS/cm^2)</li>
+<li>E_Na - Na+ reversal potential (mV)</li>
+<li>G_K_max - max. delayed rectifier conductance density (mS/cm^2)</li>
+<li>E_K - K+ reversal potential (mV)</li>
+<li>G_A_max - max. transient A-type K+ conductance density (mS/cm^2)</li>
+<li>E_A - A-type K+ reversal potential (mV) </li>
+<li>G_L - leak channel conductance (mS/cm^2)</li>
+<li>E_L - potential across leak channel (mV)</li>
+<li>rate - rate of integration (Hz)</li>
+</ol>
+
+<h4>States</h4>
+
+<ol>
+<li>m - sodium activation</li>
+<li>h - sodium inactivation</li>
+<li>n - potassium inactivation</li>
+<li>a - A-type potassium activation</li>
+<li>b - A-type potassium inactivation</li>
+<li>IKA - A-type potassium current</li>
+<li>Time - time (s)</li>
+</ol>

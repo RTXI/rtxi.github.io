@@ -50,8 +50,8 @@ module Jekyll
          repoprefix = "https://github.com/rtxi/"
          build_dir = "_modules"
 
-         #repos = getRepoList(apiurl)
-         repos = ["neuron", "membrane-test"]
+         repos = getRepoList(apiurl)
+         #repos = ["neuron", "membrane-test"]
          excludelist = getExcludeList
          repo_urls = makeURLs(repos, rawprefix, repoprefix, excludelist)
 
@@ -77,7 +77,7 @@ module Jekyll
                yamlheader = "---\n" +
                            "title: #{repo}\n" +
                            "layout: module\n" +
-                           "category: module\n" +
+                           "categories: module\n" +
                            "---\n\n"
 
                divstart = "<div class=\"container\">\n<p class=\"lead col-md-8\">\n"
@@ -115,31 +115,36 @@ module Jekyll
 
          self.process(@name)
          begin
-#            self.read_yaml(File.join(base, '_layouts'), "default.html")
-            yaml = File.read(File.join(base,"_config.yml"))
-            self.data = YAML.load(yaml)
+            self.read_yaml("_"+dir, name)
          rescue StandardError=>e
             puts "#{e}"
-            puts "error from read_yaml"
          end
-         self.content = File.read(File.join("_"+dir, name))
+#         begin
+#            self.read_yaml(File.join(base, '_layouts'), "default.html")
+#            yaml = File.read(File.join(base,"_config.yml"))
+#            self.data = YAML.load(yaml)
+#         rescue StandardError=>e
+#            puts "#{e}"
+#            puts "error from read_yaml"
+#         end
+#         self.content = File.read(File.join("_"+dir, name))
    
-         if self.data.key? "module"
-            self.data["module"] << repo
-            puts "self.data already has \"moodule\""
-         else
-            self.data["module"] = repo
-         end
+#         if self.data.key? "module"
+#            self.data["module"] << repo
+#            puts "self.data already has \"moodule\""
+#         else
+#            self.data["module"] = repo
+#         end
 
-         begin
+#         begin
 #            self.layouts["default"] = Layout.new(self, File.join(base, "_layouts"), "default.html")
 #            layout = Layout.new(self, File.join(base, "_layouts"), "default.html")
 #            self.render( Layout.new(File.join(base, "_layouts"), "default.html"), "fucky" )
 #            self.render(self.layouts, site_payload)
-         rescue StandardError=>e
-            puts "#{e}"
-            puts "Error rendering"
-         end
+#         rescue StandardError=>e
+#            puts "#{e}"
+#            puts "Error rendering"
+#         end
         
 #         puts self.data
       end

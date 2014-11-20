@@ -8,7 +8,7 @@ author :
    email : info@rtxi.org
    github : anselg
 
-markdown: rdiscount
+markdown: kramdown #rdiscount
 highlighter: pygments
 permalink: pretty
 

@@ -1,0 +1,39 @@
+---
+title: alpha-synapse
+layout: module
+categories: module
+---
+
+<a href="https://github.com/rtxi/alpha-synapse"><img style="position: absolute; top: 50px; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a><h3>Alpha Synapse</h3>
+
+<p><strong>Requirements:</strong> None<br>
+<strong>Limitations:</strong> None  </p>
+
+<p><img src="alpha-synapse.png" alt="Alpha Synapse GUI"></p>
+
+<p>This module creates an artificial synapse where the fixed conductance change is described by an alpha function. The fixed conductance waveform is pre-computed according to: </p>
+
+<p>The current is computed according to Ohm&#39;s Law:</p>
+
+<p>This conductance is triggered by an event indicated by a value of “1″ on input(1). This can be used to generate a spike-triggered synaptic connection using the <a href="https://github.com/RTXI/spike-detector">Spike Detector module</a>.</p>
+
+<h4>Input Channels</h4>
+
+<ol>
+<li>input(0) – “Vm” : Membrane potential</li>
+<li>input(1) – “Spike State” : Spike State (=1 to trigger synapse)</li>
+</ol>
+
+<h4>Output Channels</h4>
+
+<ol>
+<li>output(0) – “Isyn” : Output current (A)</li>
+</ol>
+
+<h4>Parameters</h4>
+
+<ol>
+<li>Gmax (nS) : Maximum synaptic conductance for stimulus</li>
+<li>Time Constant tau (ms) : Time constant for alpha-shaped conductance</li>
+<li>Esyn (mV) : Reversal potential for conductance</li>
+</ol>
