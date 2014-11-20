@@ -77,7 +77,6 @@ module Jekyll
                yamlheader = "---\n" +
                            "title: #{repo}\n" +
                            "layout: module\n" +
-                           "categories: module\n" +
                            "---\n\n"
 
                divstart = "<div class=\"container\">\n<p class=\"lead col-md-8\">\n"
