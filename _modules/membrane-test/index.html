@@ -1,0 +1,49 @@
+---
+title: membrane-test
+layout: module
+---
+
+<h3>Membrane Test</h3>
+
+<p><strong>Requirements:</strong> None<br>
+<strong>Limitations:</strong> None  </p>
+
+<p><img src="membrane-test.png" alt="Membrane Test GUI"></p>
+
+<p>Generates a square wave pulse with amplitude equal to one of the user-set hold potentials. The first half is the resting potential plus the amplitude of the wave, and the second half is just the resting potential.</p>
+
+<p>Using current input gained while the pulse is running, the module can calculate the membrane resistance (Simple option) or multiple resistance and capacitance (Detailed option)</p>
+
+<h4>Input Channels</h4>
+
+<ol>
+<li>input(0) : current input (A)</li>
+</ol>
+
+<h4>Output Channels</h4>
+
+<ol>
+<li>output(0) : voltage output (V)</li>
+</ol>
+
+<h4>Parameters</h4>
+
+<ol>
+<li>Hold (V1) - holding potential option 1 (mV)</li>
+<li>Hold (V2) - option 2</li>
+<li>Hold (V3) - option 3</li>
+<li>Hold Amplitude - amplitude of the square wave pulse</li>
+<li>Hold Period - period of the square wave (ms)</li>
+<li>Zap Amplitude - amplitude of a zap (mV)</li>
+<li>Zap Duration - duration (ms)</li>
+<li>Num. Steps - number of steps to average for the detailed calculations</li>
+</ol>
+
+<h4>States</h4>
+
+<ol>
+<li>Rt - total resistance (Ohms)</li>
+<li>Cm - capacitance</li>
+<li>Ra - access resistance</li>
+<li>Rm - membrane resistance</li>
+</ol>

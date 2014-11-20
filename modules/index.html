@@ -1,17 +1,18 @@
 ---
 title: Modules
 layout: default
-permalink: /modules.html
 ---
 
 <div class="container">
    <h2 class="page-header">Modules</h2>
-   <p class="lead">To install modules, enter these commands:</p>
+   <p class="lead">To install modules, enter these commands in the terminal:</p>
    {% highlight bash %}
 $ git clone https://github.com/rtxi/MODULE_NAME.git
 $ cd MODULE_NAME
 $ make
 $ sudo make install
-if [ -d $dir ]; then
    {% endhighlight %}
+   <p class="lead">
 </div>
+
+{% include moduletable.html %}

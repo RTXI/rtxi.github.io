@@ -13,6 +13,7 @@
     <link href="/css/lead-extra.css" rel="stylesheet">
     <link href="/css/nav-justified.css" rel="stylesheet">
     <link href="/css/pygments.css" rel="stylesheet">
+    <link href="/css/module.css" rel="stylesheet">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -27,9 +28,11 @@
 
   {% include navbar.html %}
 
-  <body style=padding-top:30px>
-    {{ content }}
-  </body>
+    <body style="padding-top:30px">
+  <div class="container lead-small">
+      {{ content }}
+  </div>
+    </body>
 
   {% include footer.html %}
 
