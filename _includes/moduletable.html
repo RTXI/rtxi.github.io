@@ -1,41 +1,64 @@
+<!--
+
+Below is evidence that I am a terrible front-end ui designer. The module table uses the DataTable jQuery plugin. To make it look good on mobile devices with small screens, I basically created two tables. One is shown if the viewport is very small and the other when it's bigger. What can I say? It works.
+
+-Ansel
+
+-->
+
+
 <div class="container">
-<ul>
-{% for module in site.pages %}
-   <li><a href="{{ module.url }}">{{ module.title }}</a></li>
-{% endfor %}
-</ul>
+   <div class="visible-xs">
+   <table class="table table-hover dt-responsive" id="modules_small">
+      <thead><tr>
+         <th class="col-xs-2" style="text-align: center">Name</th>
+         <th class="col-xs-10" style="text-align: center; white-space: normal;">Description</th>
+      </tr></thead>
+      <tbody>
+         {% for module in site.pages %}
+            {% if module.url contains "modules" and module.url != "/modules/" %}
+               <tr>
+                  <td><a href="{{ module.url }}">{{ module.title }}</a></td>
+                  <td style="white-space: nowrap;"> {{ module.content | split:"<!--start-->" | last | split:"<!--end-->" | first | truncate:400 }} 
+                  </td>
+               </tr>
+            {% endif %}
+         {% endfor %}
+      </tbody>
+   </table>
+   </div>
 </div>
 
-<!--
-{% for category in site.categories %}
-   <ul>
-      {% for module in category %}
-         <li><a href="{{ module.url }}">{{ module.title }}</a></li>
-      {% endfor %}
-   </ul>
-{% endfor %}
+<div class="container">
+   <div class="hidden-xs">
+   <table class="table table-hover" id="modules_large">
+      <thead><tr>
+         <th class="col-sm-2" style="text-align: center">Name</th>
+         <th class="col-sm-10" style="text-align: center; white-space: normal;">Description</th>
+<!--         
+         <th class="col-sm-2" style="text-align: center">Download</th>    
 -->
-
+      </tr></thead>
+      <tbody>
+         {% for module in site.pages %}
+            {% if module.url contains "modules" and module.url != "/modules/" %}
+               <tr>
+                  <td><a href="{{ module.url }}">{{ module.title }}</a></td>
+                  <td> {{ module.content | split:"<!--start-->" | last | split:"<!--end-->" | first | truncate:500 }} 
+                  </td>
 <!--
-<h2>Categories:</h2>
-<ul>
-{% for category in site.categories %}
-  <li><a href="#{{ category | first }}">{{ category | first }}</a></li>
-{% endfor %}
-</ul>
-
-<h2>Articles by Category:</h2>
-<ul>
-{% for category in site.categories %}
-  <li><a name="{{ category | first }}">{{ category | first }}</a>
-    <ul>
-    {% for posts in category %}
-      {% for post in posts %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-      {% endfor %}
-    {% endfor %}
-    </ul>
-  </li>
-{% endfor %}
-</ul>
+                  <td style="text-align: center">
+                     <a href="https://github.com/RTXI/{{module.title}}/archive/master.zip" download style="text-decoration: none">
+                        <button type="button" class="btn btn-primary">
+                           <span class="glyphicon glyphicon-cloud-download"></span>
+                        </button>
+                     </a>
+                  </td>
 -->
+               </tr>
+            {% endif %}
+         {% endfor %}
+      </tbody>
+   </table>
+   </div>
+</div>

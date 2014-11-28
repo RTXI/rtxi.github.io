@@ -9,11 +9,12 @@
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-<!--    <link href="/css/bootstrap-theme.min.css" rel="stylesheet"> -->
     <link href="/css/lead-extra.css" rel="stylesheet">
     <link href="/css/nav-justified.css" rel="stylesheet">
     <link href="/css/pygments.css" rel="stylesheet">
-    <link href="/css/module.css" rel="stylesheet">
+  
+    <link href="/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="/css/dataTables.responsive.css" rel="stylesheet">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -28,11 +29,11 @@
 
   {% include navbar.html %}
 
-  <body style="padding-top:30px">
-    <div class="container lead-small">
-      {{ content }}
-    </div>
+  <body style=padding-top:30px>
+    {{ content }}
   </body>
+
+  {% include moduletable.html %}
 
   {% include footer.html %}
 
@@ -40,4 +41,27 @@
   <script src="/js/bootstrap.min.js"></script>
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+  <!--datatables-->
+  <script type="text/javascript" charset="utf8" src="/js/jquery.dataTables.min.js"></script>
+  <script src="/js/dataTables.responsive.min.js" type="text/javascript"></script>
+  <script src="/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+
+  <script>
+    $(document).ready( function () {
+      $('#modules_small').dataTable( {
+         "paging": false,
+         "info": false,
+         "order": [ 0, "asc" ],
+         "ordering": true
+      } );
+    } );
+    $(document).ready( function () {
+      $('#modules_large').dataTable( {
+         "info": false,
+         "order": [ 0, "asc" ],
+         "ordering": true
+      } );
+    } );
+  </script>
 </html>

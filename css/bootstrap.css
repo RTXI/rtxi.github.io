@@ -2266,7 +2266,9 @@ table th[class*="col-"] {
   .table-responsive > .table > thead > tr > td,
   .table-responsive > .table > tbody > tr > td,
   .table-responsive > .table > tfoot > tr > td {
-    white-space: nowrap;
+/*    white-space: nowrap*/;
+    word-wrap: break-word;
+    table-layout: fixed;
   }
   .table-responsive > .table-bordered {
     border: 0;

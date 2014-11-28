@@ -1,8 +1,18 @@
+/*
+
+These are options for formatting the lead font to 
+1. lead-small: Provide a small version of the font 
+2. lead-mormal: Provide a thicker version of the default-size font
+
+-Ansel
+
+*/
+
 .lead-small {
    margin-bottom: 20px;
    font-size: 14px;
    font-weight: 300;
-   line-height:1.4;
+   line-height: 1.4;
 }
 @media (min-width: 768px) {
    .lead-small {
