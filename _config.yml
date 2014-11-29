@@ -19,7 +19,7 @@ defaults:
    values:
       layout: "default"
 
-exclude: [ "README.md", "Rakefile", "Gemfile", "Gemfile.lock", "LICENSE" ]
+exclude: [ "README.md", "Rakefile", "Gemfile", "Gemfile.lock", "LICENSE", "relic" ]
 
 sharing:
    provider: false
