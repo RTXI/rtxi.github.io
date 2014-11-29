@@ -41,7 +41,6 @@ module Jekyll
          rawprefix = ["https://raw.githubusercontent.com/RTXI/", "/master/"]
          repoprefix = "https://github.com/rtxi/"
          build_dir = "modules"
-#         build_dir = "_modules"
 
          repos = getRepoList(apiurl)
 #         repos = ["neuron", "membrane-test", "signal-generator", "alpha-synapse", "axon-axopatch1D", "g-waveform"]
@@ -68,7 +67,50 @@ module Jekyll
             end
 
             filename = build_dir+"/"+repo+"/index.html"
-            forkmebanner = "<a href=\"https://github.com/rtxi/#{repo}\"><img style=\"position: absolute; top: 50px; right: 0; border: 0;\" src=\"https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67\" alt=\"Fork me on GitHub\" data-canonical-src=\"https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png\"></a>"
+            forkmebanner = "<style>
+               #forkongithub a{
+                  background:#000;
+                  color:#fff;
+                  text-decoration:none;
+                  font-family:arial,sans-serif;
+                  text-align:center;
+                  font-weight:bold;
+                  padding:5px 10px;
+                  font-size:1rem;
+                  line-height:2rem;
+                  position:fixed;
+                  top:0;
+                  right:0;
+                  top:70px;
+                  right:20px;
+                  transition:0.25s;
+               } #forkongithub a:hover{
+                  background:#c01;
+                  color:#fff;
+               } @media screen and (min-width:768px) {
+                  #forkongithub{
+                     position:fixed;
+                     display:block;
+                     top:0;
+                     right:0;
+                     width:250px;
+                     overflow:hidden;
+                     height:200px;
+                  } #forkongithub a{
+                     width:200px;
+                     position:absolute;
+                     top:70px;
+                     right:20px;
+                  }
+               }</style>
+               <span id=\"forkongithub\">
+                  <div class=\"hidden-xs\">
+                     <a href=\"https://github.com/rtxi/#{repo}\">Fork #{repo.gsub(/-/,' ').split.map(&:capitalize).join(' ')} <span style=\"padding-left:5px\" class=\"octicon octicon-mark-github\"></span></a>
+                  </div>
+                  <div class=\"visible-xs\">
+                     <a href=\"https://github.com/rtxi/#{repo}\"><span class=\"octicon octicon-mark-github\"></span></a>
+                  </div>
+               </span>"
             yamlheader = "---\n" +
                         "title: #{repo}\n" +
                         "layout: module\n" +
