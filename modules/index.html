@@ -1,15 +1,402 @@
----
-title: Modules
-layout: module_index
----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="container">
+    <title>RTXI: The Real-time eXperiment Interface</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/lead-extra.css" rel="stylesheet">
+    <link href="/css/nav-justified.css" rel="stylesheet">
+    <link href="/css/pygments.css" rel="stylesheet">
+  
+    <link href="/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="/css/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.ico">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <!-- Fixed navbar -->
+<link href="css/navbar-fixed-top.css" rel="stylesheet">
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <div class="container">
+      <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" rel="home" href="/"><b>RTXI</b></a>
+      </div>
+      <div class="row">
+         <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+               <li><a href="/install/">Install</a></li>
+               <li><a href="/modules/">Modules</a></li>
+               <li><a href="/papers/">Papers</a></li>
+               <li><a href="/docs/">Docs</a></li>
+               <li><a href="/contact/">Contact</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+               <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                  <span class="input-group-btn">
+                     <button type="submit" class="btn btn-default">
+                        <span class="glyphicon glyphicon-search"></span>
+                     </button>
+                  </span>
+              </div>
+            </form>
+         </div>
+      </div><!--/.nav-collapse -->
+   </div>
+</nav>
+
+
+  <body style=padding-top:30px>
+    <div class="container">
    <h2 class="page-header">Modules</h2>
    <p class="lead">To install modules, enter these commands in the terminal:</p>
-   {% highlight bash %}
-$ git clone https://github.com/rtxi/MODULE_NAME.git
-$ cd MODULE_NAME
-$ make
-$ sudo make install
-   {% endhighlight %}
+   <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git clone https://github.com/rtxi/MODULE_NAME.git
+<span class="nv">$ </span><span class="nb">cd </span>MODULE_NAME
+<span class="nv">$ </span>make
+<span class="nv">$ </span>sudo make install</code></pre></div>
 </div>
+
+  </body>
+
+  <!--
+
+Below is evidence that I am a terrible front-end ui designer. The module table uses the DataTable jQuery plugin. To make it look good on mobile devices with small screens, I basically created two tables. One is shown if the viewport is very small and the other when it's bigger. What can I say? It works.
+
+-Ansel
+
+-->
+
+
+<div class="container">
+   <div class="visible-xs">
+   <table class="table table-hover dt-responsive" id="modules_small">
+      <thead><tr>
+         <th class="col-xs-2" style="text-align: center">Name</th>
+         <th class="col-xs-10" style="text-align: center; white-space: normal;">Description</th>
+      </tr></thead>
+      <tbody>
+         
+            
+         
+            
+         
+            
+         
+            
+         
+            
+         
+            
+         
+            
+               <tr>
+                  <td><a style="z-index:10;" href="/modules/neuron/">neuron</a></td>
+                  <td style="white-space: nowrap;"> 
+
+<p>This is the classic Hodgkin-Huxley model neuron. To find information on the model, find some neuroscience book and open it or just use the internet. Here&#39;s the <a href="https://en.wikipedia.org/wiki/Hodgkin%E2%80%93Huxley_model">wikipedia entry</a>. </p>
+
+ 
+                  </td>
+               </tr>
+            
+         
+            
+               <tr>
+                  <td><a style="z-index:10;" href="/modules/membrane-test/">membrane-test</a></td>
+                  <td style="white-space: nowrap;"> 
+
+<p>Generates a square wave pulse with amplitude equal to one of the user-set hold potentials. The first half is the resting potential plus the amplitude of the wave, and the second half is just the resting potential.</p>
+
+<p>Using current input gained while the pulse is running, the module can calculate the membrane resistance (Simple option) or multiple resistance and capacitance (Detailed o... 
+                  </td>
+               </tr>
+            
+         
+            
+               <tr>
+                  <td><a style="z-index:10;" href="/modules/signal-generator/">signal-generator</a></td>
+                  <td style="white-space: nowrap;"> 
+
+<p>This module generates the following signals:<br>
+1. Sine Wave: needs frequency and amplitude<br>
+2. Monophasic Square Wave: needs delay, pulse width, and pulse amplitude<br>
+3. Biphasic Square Wave: needs delay, pulse width, and pulse amplitude<br>
+4. Sawtooth Wave: needs delay, pulse width, and maximum amplitude<br>
+5. ZAP Stimulus: needs starting and ending frequencies, amplitude, and du... 
+                  </td>
+               </tr>
+            
+         
+            
+               <tr>
+                  <td><a style="z-index:10;" href="/modules/alpha-synapse/">alpha-synapse</a></td>
+                  <td style="white-space: nowrap;"> 
+
+<p>This module creates an artificial synapse where the fixed conductance change is described by an alpha function. The fixed conductance waveform is pre-computed according to:  </p>
+
+<p><a href="http://bit.ly/1zWdbmk">G=G_{max}*\frac{t}{\tau}*exp(-\frac{t-\tau}{\tau})</a></p>
+
+<p>The current is computed according to Ohm&#39;s Law:</p>
+
+<p><img src="http://bit.ly/1zWcnOg" align="center" border... 
+                  </td>
+               </tr>
+            
+         
+            
+               <tr>
+                  <td><a style="z-index:10;" href="/modules/axon-axopatch1D/">axon-axopatch1D</a></td>
+                  <td style="white-space: nowrap;"> 
+
+<p>Amplifier control module to compensate for scaling properties of the Axon AxoPatch 1D controller. This module essentially acts as an interface that replicated functionality of the control panel, but in a manner specific to the controller&#39;s own functionality. </p>
+
+ 
+                  </td>
+               </tr>
+            
+         
+            
+               <tr>
+                  <td><a style="z-index:10;" href="/modules/g-waveform/">g-waveform</a></td>
+                  <td style="white-space: nowrap;"> 
+
+<p>This module takes an external ASCII formatted file as input. The file should have four columns with units in Amps and Siemens: absolute_current AMPA GABA (NMDA)</p>
+
+<p>There should be one value for each time step and the total length of the stimulus is determined by using the real-time period specified in the System-&gt;Control Panel. If you change the real-time period, the length of the ... 
+                  </td>
+               </tr>
+            
+         
+      </tbody>
+   </table>
+   </div>
+</div>
+
+<div class="container">
+   <div class="hidden-xs">
+   <table class="table table-hover" id="modules_large">
+      <thead><tr>
+         <th class="col-sm-2" style="text-align: center">Name</th>
+         <th class="col-sm-10" style="text-align: center; white-space: normal;">Description</th>
+<!--         
+         <th class="col-sm-2" style="text-align: center">Download</th>    
+-->
+      </tr></thead>
+      <tbody>
+         
+            
+         
+            
+         
+            
+         
+            
+         
+            
+         
+            
+         
+            
+               <tr>
+                  <td><a href="/modules/neuron/">neuron</a></td>
+                  <td> 
+
+<p>This is the classic Hodgkin-Huxley model neuron. To find information on the model, find some neuroscience book and open it or just use the internet. Here&#39;s the <a href="https://en.wikipedia.org/wiki/Hodgkin%E2%80%93Huxley_model">wikipedia entry</a>. </p>
+
+ 
+                  </td>
+<!--
+                  <td style="text-align: center">
+                     <a href="https://github.com/RTXI/neuron/archive/master.zip" download style="text-decoration: none">
+                        <button type="button" class="btn btn-primary">
+                           <span class="glyphicon glyphicon-cloud-download"></span>
+                        </button>
+                     </a>
+                  </td>
+-->
+               </tr>
+            
+         
+            
+               <tr>
+                  <td><a href="/modules/membrane-test/">membrane-test</a></td>
+                  <td> 
+
+<p>Generates a square wave pulse with amplitude equal to one of the user-set hold potentials. The first half is the resting potential plus the amplitude of the wave, and the second half is just the resting potential.</p>
+
+<p>Using current input gained while the pulse is running, the module can calculate the membrane resistance (Simple option) or multiple resistance and capacitance (Detailed option)</p>
+
+ 
+                  </td>
+<!--
+                  <td style="text-align: center">
+                     <a href="https://github.com/RTXI/membrane-test/archive/master.zip" download style="text-decoration: none">
+                        <button type="button" class="btn btn-primary">
+                           <span class="glyphicon glyphicon-cloud-download"></span>
+                        </button>
+                     </a>
+                  </td>
+-->
+               </tr>
+            
+         
+            
+               <tr>
+                  <td><a href="/modules/signal-generator/">signal-generator</a></td>
+                  <td> 
+
+<p>This module generates the following signals:<br>
+1. Sine Wave: needs frequency and amplitude<br>
+2. Monophasic Square Wave: needs delay, pulse width, and pulse amplitude<br>
+3. Biphasic Square Wave: needs delay, pulse width, and pulse amplitude<br>
+4. Sawtooth Wave: needs delay, pulse width, and maximum amplitude<br>
+5. ZAP Stimulus: needs starting and ending frequencies, amplitude, and duration of ZAP  </p>
+
+<p>All the signals are continuous except for the ZAP stimulus, which has a spec... 
+                  </td>
+<!--
+                  <td style="text-align: center">
+                     <a href="https://github.com/RTXI/signal-generator/archive/master.zip" download style="text-decoration: none">
+                        <button type="button" class="btn btn-primary">
+                           <span class="glyphicon glyphicon-cloud-download"></span>
+                        </button>
+                     </a>
+                  </td>
+-->
+               </tr>
+            
+         
+            
+               <tr>
+                  <td><a href="/modules/alpha-synapse/">alpha-synapse</a></td>
+                  <td> 
+
+<p>This module creates an artificial synapse where the fixed conductance change is described by an alpha function. The fixed conductance waveform is pre-computed according to:  </p>
+
+<p><a href="http://bit.ly/1zWdbmk">G=G_{max}*\frac{t}{\tau}*exp(-\frac{t-\tau}{\tau})</a></p>
+
+<p>The current is computed according to Ohm&#39;s Law:</p>
+
+<p><img src="http://bit.ly/1zWcnOg" align="center" border="0" alt="I_{syn}=G*(V_{m}-E_{syn})"></img></p>
+
+<p>This conductance is triggered by an event indica... 
+                  </td>
+<!--
+                  <td style="text-align: center">
+                     <a href="https://github.com/RTXI/alpha-synapse/archive/master.zip" download style="text-decoration: none">
+                        <button type="button" class="btn btn-primary">
+                           <span class="glyphicon glyphicon-cloud-download"></span>
+                        </button>
+                     </a>
+                  </td>
+-->
+               </tr>
+            
+         
+            
+               <tr>
+                  <td><a href="/modules/axon-axopatch1D/">axon-axopatch1D</a></td>
+                  <td> 
+
+<p>Amplifier control module to compensate for scaling properties of the Axon AxoPatch 1D controller. This module essentially acts as an interface that replicated functionality of the control panel, but in a manner specific to the controller&#39;s own functionality. </p>
+
+ 
+                  </td>
+<!--
+                  <td style="text-align: center">
+                     <a href="https://github.com/RTXI/axon-axopatch1D/archive/master.zip" download style="text-decoration: none">
+                        <button type="button" class="btn btn-primary">
+                           <span class="glyphicon glyphicon-cloud-download"></span>
+                        </button>
+                     </a>
+                  </td>
+-->
+               </tr>
+            
+         
+            
+               <tr>
+                  <td><a href="/modules/g-waveform/">g-waveform</a></td>
+                  <td> 
+
+<p>This module takes an external ASCII formatted file as input. The file should have four columns with units in Amps and Siemens: absolute_current AMPA GABA (NMDA)</p>
+
+<p>There should be one value for each time step and the total length of the stimulus is determined by using the real-time period specified in the System-&gt;Control Panel. If you change the real-time period, the length of the trial is recomputed. This module automatically pauses itself when the protocol is complete.</p>
+
+<p>... 
+                  </td>
+<!--
+                  <td style="text-align: center">
+                     <a href="https://github.com/RTXI/g-waveform/archive/master.zip" download style="text-decoration: none">
+                        <button type="button" class="btn btn-primary">
+                           <span class="glyphicon glyphicon-cloud-download"></span>
+                        </button>
+                     </a>
+                  </td>
+-->
+               </tr>
+            
+         
+      </tbody>
+   </table>
+   </div>
+</div>
+
+
+  <link href="/css/footer.css" rel="stylesheet">
+
+<div class="footer">
+   <div class="container text-center">
+      <p class="text-muted lead-small">RTXI is funded by NIH grant R01-RR020115.</p>
+   </div>
+</div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+  <!--datatables-->
+  <script type="text/javascript" charset="utf8" src="/js/jquery.dataTables.min.js"></script>
+  <script src="/js/dataTables.responsive.min.js" type="text/javascript"></script>
+  <script src="/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+
+  <script>
+    $(document).ready( function () {
+      $('#modules_small').dataTable( {
+         "paging": false,
+         "info": false,
+         "order": [ 0, "asc" ],
+         "ordering": true
+      } );
+    } );
+    $(document).ready( function () {
+      $('#modules_large').dataTable( {
+         "info": false,
+         "order": [ 0, "asc" ],
+         "ordering": true
+      } );
+    } );
+  </script>
+</html>

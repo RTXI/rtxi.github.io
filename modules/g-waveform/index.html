@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>RTXI: The Real-time eXperiment Interface</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+<!--    <link href="/css/bootstrap-theme.min.css" rel="stylesheet"> -->
+    <link href="/css/lead-extra.css" rel="stylesheet">
+    <link href="/css/nav-justified.css" rel="stylesheet">
+    <link href="/css/pygments.css" rel="stylesheet">
+    <link href="/css/module.css" rel="stylesheet">
+    <link href="/fonts/octicons.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.ico">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <!-- Fixed navbar -->
+<link href="css/navbar-fixed-top.css" rel="stylesheet">
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <div class="container">
+      <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" rel="home" href="/"><b>RTXI</b></a>
+      </div>
+      <div class="row">
+         <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+               <li><a href="/install/">Install</a></li>
+               <li><a href="/modules/">Modules</a></li>
+               <li><a href="/papers/">Papers</a></li>
+               <li><a href="/docs/">Docs</a></li>
+               <li><a href="/contact/">Contact</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+               <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                  <span class="input-group-btn">
+                     <button type="submit" class="btn btn-default">
+                        <span class="glyphicon glyphicon-search"></span>
+                     </button>
+                  </span>
+              </div>
+            </form>
+         </div>
+      </div><!--/.nav-collapse -->
+   </div>
+</nav>
+
+
+  <body style="padding-top:30px">
+    <div class="container lead-small">
+      <style>
+               #forkongithub a{
+                  background:#000;
+                  color:#fff;
+                  text-decoration:none;
+                  font-family:arial,sans-serif;
+                  text-align:center;
+                  font-weight:bold;
+                  padding:5px 10px;
+                  font-size:1rem;
+                  line-height:2rem;
+                  position:fixed;
+                  top:0;
+                  right:0;
+                  top:70px;
+                  right:20px;
+                  transition:0.25s;
+               } #forkongithub a:hover{
+                  background:#c01;
+                  color:#fff;
+               } @media screen and (min-width:768px) {
+                  #forkongithub{
+                     position:fixed;
+                     display:block;
+                     top:0;
+                     right:0;
+                     width:250px;
+                     overflow:hidden;
+                     height:200px;
+                  } #forkongithub a{
+                     width:200px;
+                     position:absolute;
+                     top:70px;
+                     right:20px;
+                  }
+               }</style>
+               <span id="forkongithub">
+                  <div class="hidden-xs">
+                     <a href="https://github.com/rtxi/g-waveform">Fork G Waveform <span style="padding-left:5px" class="octicon octicon-mark-github"></span></a>
+                  </div>
+                  <div class="visible-xs">
+                     <a href="https://github.com/rtxi/g-waveform"><span class="octicon octicon-mark-github"></span></a>
+                  </div>
+               </span><h3>G-Waveform</h3>
+
+<p><strong>Requirements:</strong> Qwt libraries<br>
+<strong>Limitations:</strong> None  </p>
+
+<p><img src="g-waveform.png" alt="G-Waveform GUI"> </p>
+
+<!--start-->
+
+<p>This module takes an external ASCII formatted file as input. The file should have four columns with units in Amps and Siemens: absolute_current AMPA GABA (NMDA)</p>
+
+<p>There should be one value for each time step and the total length of the stimulus is determined by using the real-time period specified in the System-&gt;Control Panel. If you change the real-time period, the length of the trial is recomputed. This module automatically pauses itself when the protocol is complete.</p>
+
+<p>If you are using the Data Recorder, be sure to open the Data Recorder AFTER you open this module or RTXI will crash. This module increments the trial number in the Data Recorder so that each trial will be a separate structure in the HDF5 file. If you do not open the Data Recorder, the module will still run as designed. This module will automatically start and stop the Data Recorder. You must make sure to specify a data filename and select the data you want to save.</p>
+
+<p>Use the checkboxes to select a combination of dynamic clamp stimuli and/or TTL pulses. The dynamic clamp stimuli can be further filtered by using the checkboxes to make only certain conductances (or current) active. The dynamic clamp output and the TTL pulses are on two separate channels and must be assigned to the correct DAQ channels using the System-&gt;Connector.</p>
+
+<p>There are both internal and external holding current parameters. The internal one is specified using the &#39;Holding Current (pA)&#39; field in this module&#39;s GUI and is active between repeated trials. When the external holding current is activated using the checkbox, you must provide the instance ID of the correct holding current module in the &#39;Ihold ID&#39; field. You will probably want to manually start the external Ihold module first. When this dynamic clamp module unpauses, it will pause the Ihold module, and vice versa.</p>
+
+<!--end-->
+
+<h4>Input Channels</h4>
+
+<ol>
+<li>input(0) - Vm (mV) : Membrane potential</li>
+</ol>
+
+<h3>Output Channels</h3>
+
+<ol>
+<li>output(0) - Command : Total current</li>
+<li>output(1) : AMPA Current</li>
+<li>output(2) : GABA Current</li>
+<li>output(3) : NMDA Current</li>
+<li>output(4) : Laser TTL</li>
+</ol>
+
+<h4>Parameters</h4>
+
+<ol>
+<li>IHold ID - Instance ID of holding current module</li>
+<li>AMPA Rev (mV) - Reversal potential for AMPA</li>
+<li>AMPA Gain - Gain by which to multiply AMPA conductance values</li>
+<li>GABA Rev (mV) - Reversal potential for GABA</li>
+<li>GABA Gain - Gain by which to multiply GABA conductance values</li>
+<li>NMDA Rev (mV) - Reversal potential for NMDA</li>
+<li>NMDA P1</li>
+<li>NMDA P2</li>
+<li>NMDA Gain - Gain by which to multiply NMDA conductance values</li>
+<li>Wait time (s) - Time to wait between trials</li>
+<li>Holding Current (pA) - Current injected while waiting between trials</li>
+<li>Laser TTL Duration (s) - Duration of pulse</li>
+<li>Laser TTL Pulses (#) - Number of pulses</li>
+<li>Laser TTL Freq (Hz) - Freq. measured between pulse onsets</li>
+<li>Laser TTL Delay (s) - Time within trial to start pulse train</li>
+<li>Repeat (#) - Number of trials</li>
+</ol>
+
+<h4>States</h4>
+
+<ol>
+<li>Length (s) - Length of trial computed from real-time period and file size</li>
+<li>Time (s)</li>
+</ol>
+
+    </div>
+  </body>
+
+  <link href="/css/footer.css" rel="stylesheet">
+
+<div class="footer">
+   <div class="container text-center">
+      <p class="text-muted lead-small">RTXI is funded by NIH grant R01-RR020115.</p>
+   </div>
+</div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+</html>
