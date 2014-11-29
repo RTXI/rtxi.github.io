@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>RTXI: The Real-time eXperiment Interface</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+<!--    <link href="/css/bootstrap-theme.min.css" rel="stylesheet"> -->
+    <link href="/css/lead-extra.css" rel="stylesheet">
+    <link href="/css/nav-justified.css" rel="stylesheet">
+    <link href="/css/pygments.css" rel="stylesheet">
+    <link href="/css/module.css" rel="stylesheet">
+    <link href="/fonts/octicons.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.ico">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <!-- Fixed navbar -->
+<link href="css/navbar-fixed-top.css" rel="stylesheet">
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <div class="container">
+      <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" rel="home" href="/"><b>RTXI</b></a>
+      </div>
+      <div class="row">
+         <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+               <li><a href="/install/">Install</a></li>
+               <li><a href="/modules/">Modules</a></li>
+               <li><a href="/papers/">Papers</a></li>
+               <li><a href="/docs/">Docs</a></li>
+               <li><a href="/contact/">Contact</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+               <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                  <span class="input-group-btn">
+                     <button type="submit" class="btn btn-default">
+                        <span class="glyphicon glyphicon-search"></span>
+                     </button>
+                  </span>
+              </div>
+            </form>
+         </div>
+      </div><!--/.nav-collapse -->
+   </div>
+</nav>
+
+
+  <body style="padding-top:30px">
+    <div class="container lead-small">
+      <style>
+               #forkongithub a{
+                  background:#000;
+                  color:#fff;
+                  text-decoration:none;
+                  font-family:arial,sans-serif;
+                  text-align:center;
+                  font-weight:bold;
+                  padding:5px 10px;
+                  font-size:1rem;
+                  line-height:2rem;
+                  position:fixed;
+                  top:0;
+                  right:0;
+                  top:70px;
+                  right:20px;
+                  transition:0.25s;
+               } #forkongithub a:hover{
+                  background:#c01;
+                  color:#fff;
+               } @media screen and (min-width:768px) {
+                  #forkongithub{
+                     position:fixed;
+                     display:block;
+                     top:0;
+                     right:0;
+                     width:250px;
+                     overflow:hidden;
+                     height:200px;
+                  } #forkongithub a{
+                     width:200px;
+                     position:absolute;
+                     top:70px;
+                     right:20px;
+                  }
+               }</style>
+               <span id="forkongithub">
+                  <div class="hidden-xs">
+                     <a href="https://github.com/rtxi/hfac">Fork Hfac <span style="padding-left:5px" class="octicon octicon-mark-github"></span></a>
+                  </div>
+                  <div class="visible-xs">
+                     <a href="https://github.com/rtxi/hfac"><span class="octicon octicon-mark-github"></span></a>
+                  </div>
+               </span><h3>High Frequency Conduction Block</h3>
+
+<p><strong>Requirements:</strong> None<br>
+<strong>Limitations:</strong> Generator class (included)  </p>
+
+<p><img src="hfac.png" alt="HFAC GUI"></p>
+
+<!--start-->
+
+<p>This module implements a protocol for performing conduction block experiments on nerve fibers using high frequency AC current (HFAC) stimuli. Action potentials in the nerve are evoked with a single biphase square pulse and the HFAC signal is a sinusoidal waveform. You have an option to select which component of the biphase pulse occurs first. The “Single AP Stim” button is used to send a single pulse that can be used to elicit individual responses. The “Enable HFAC” toggle button can be used at any time to turn the HFAC signal on or off. The “Run” button starts a protocol in which the HFAC signal is enabled and the action potential stimulus is automatically triggered after a certain delay. Synchronizing this module with the Data Recorder will create separate trials in the HDF5 file corresponding to the protocols initiated with the “Run” button.</p>
+
+<!--end-->
+
+<h4>Input Channels</h4>
+
+<p>None</p>
+
+<h4>Output Channels</h4>
+
+<ol>
+<li>output(0) – “AP Stim” : action potential stimulus signal (biphasic square wave)</li>
+<li>output(1) – “HFAC Signal” : sinusoidal high frequency AC signal </li>
+</ol>
+
+<h4>Parameters</h4>
+
+<ol>
+<li>AP Stim Amplitude : Amplitude of the action potential stimulus</li>
+<li>AP Stim Delay (ms) : Delay after which to trigger the AP stimulus during a timed protocol</li>
+<li>AP Stim Width (ms) : The width of each component of the biphasic AP stimulus</li>
+<li>HFAC Freq (kHz) : Frequency of the HFAC signal</li>
+<li>HFAC Amplitude : Amplitude of the HFAC signal</li>
+<li>Trial Duration : the total duration of a single trial, the Data Recorder will keep recording for this duration when running a timed protocol</li>
+<li>Data File Name : file name to use for the Data Recorder </li>
+</ol>
+
+    </div>
+  </body>
+
+  <link href="/css/footer.css" rel="stylesheet">
+
+<div class="footer">
+   <div class="container text-center">
+      <p class="text-muted lead-small">RTXI is funded by NIH grant R01-RR020115.</p>
+   </div>
+</div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+</html>

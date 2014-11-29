@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>RTXI: The Real-time eXperiment Interface</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+<!--    <link href="/css/bootstrap-theme.min.css" rel="stylesheet"> -->
+    <link href="/css/lead-extra.css" rel="stylesheet">
+    <link href="/css/nav-justified.css" rel="stylesheet">
+    <link href="/css/pygments.css" rel="stylesheet">
+    <link href="/css/module.css" rel="stylesheet">
+    <link href="/fonts/octicons.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.ico">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <!-- Fixed navbar -->
+<link href="css/navbar-fixed-top.css" rel="stylesheet">
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <div class="container">
+      <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" rel="home" href="/"><b>RTXI</b></a>
+      </div>
+      <div class="row">
+         <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+               <li><a href="/install/">Install</a></li>
+               <li><a href="/modules/">Modules</a></li>
+               <li><a href="/papers/">Papers</a></li>
+               <li><a href="/docs/">Docs</a></li>
+               <li><a href="/contact/">Contact</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+               <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                  <span class="input-group-btn">
+                     <button type="submit" class="btn btn-default">
+                        <span class="glyphicon glyphicon-search"></span>
+                     </button>
+                  </span>
+              </div>
+            </form>
+         </div>
+      </div><!--/.nav-collapse -->
+   </div>
+</nav>
+
+
+  <body style="padding-top:30px">
+    <div class="container lead-small">
+      <style>
+               #forkongithub a{
+                  background:#000;
+                  color:#fff;
+                  text-decoration:none;
+                  font-family:arial,sans-serif;
+                  text-align:center;
+                  font-weight:bold;
+                  padding:5px 10px;
+                  font-size:1rem;
+                  line-height:2rem;
+                  position:fixed;
+                  top:0;
+                  right:0;
+                  top:70px;
+                  right:20px;
+                  transition:0.25s;
+               } #forkongithub a:hover{
+                  background:#c01;
+                  color:#fff;
+               } @media screen and (min-width:768px) {
+                  #forkongithub{
+                     position:fixed;
+                     display:block;
+                     top:0;
+                     right:0;
+                     width:250px;
+                     overflow:hidden;
+                     height:200px;
+                  } #forkongithub a{
+                     width:200px;
+                     position:absolute;
+                     top:70px;
+                     right:20px;
+                  }
+               }</style>
+               <span id="forkongithub">
+                  <div class="hidden-xs">
+                     <a href="https://github.com/rtxi/auto-pi">Fork Auto Pi <span style="padding-left:5px" class="octicon octicon-mark-github"></span></a>
+                  </div>
+                  <div class="visible-xs">
+                     <a href="https://github.com/rtxi/auto-pi"><span class="octicon octicon-mark-github"></span></a>
+                  </div>
+               </span><h3>Auto PI</h3>
+
+<p><strong>Requirements:</strong> Spike Detector<br>
+<strong>Limitations:</strong> None  </p>
+
+<p><img src="auto-pi.png" alt="Auto PI GUI"></p>
+
+<!--start-->
+
+<p>This module controls the Intespike interval (ISI) of a neuron using a Proportional Integral controller. The model automatically tunes the PI controller parameters to the neuron. The goal of the PI controller is to make small changes in current at each action potential onset to maintain the neuron at a target firing rate. This spike rate controller is designed to offset drift in the firing rate on the order of 10s of seconds to minutes. This module requires input from the “Spike Detector” module.</p>
+
+<!--end-->
+
+<h4>Input Channels</h4>
+
+<ol>
+<li>input(0) – State : Spike Detector output</li>
+</ol>
+
+<h4>Output Channels</h4>
+
+<ol>
+<li>output(0) – Iout : Current to be applied to the neuron. Connect this output to the neuron. (pA)</li>
+<li>output(1) – Target ISI : desired ISI (s)</li>
+<li>output(2) – ISI : actual ISI (s)</li>
+</ol>
+
+<h4>Parameters</h4>
+
+<ol>
+<li>Threshold (mV) : threshold crossing at which to detect a spike</li>
+<li>Min Interval (ms) : minimum interval (refractory period) that must pass before another spike is detected</li>
+<li>Kp : Proportional Gain</li>
+<li>Ti : Integral Time</li>
+<li>Td : Derivative Time</li>
+<li>Target Ts (s): Target Inter Spike Interval</li>
+<li>Constant (pA): Current, Constant Current</li>
+<li>Increase : % of current increase per step</li>
+<li>Autotune</li>
+</ol>
+
+<p>The module automatically calculates a first order model for the ISI as a function of the applied current. Given the first order model, it solves the coefficients for the critically damped solution of the proportional-integral controller with the constraint that the proportional coefficient is 1/100 of the Integral coefficient, to assure small changes with each spike.  </p>
+
+<p>Once a cell is patched, the spikes are detected with the spike detector module. The spike detector is connected to the input of the Auto-PI module and the Auto-PI’s output is sent back to the neuron. Set the desired ISI, set AUTOTUNE = 1 and unpause the module. The module will automatically apply a set of current steps to find an applied current to make neuron fire near the target firing rate, then it perturbs the current measuring the neuron’s response in time with each change. Once a first order model is fit to the neuron’s response, the AUTOTUNE turns off, setting the coefficients and switches automatically to closed loop control. Within about 10 spikes, the neuron should be close to the target firing rate.  </p>
+
+<p><strong>Reference:</strong> Miranda-Domínguez O, Gonia J, Netoff TI. Firing rate control of a neuron using a linear proportional-integral controller. J Neural Eng. 2010 Dec;7(6):066004.</p>
+
+    </div>
+  </body>
+
+  <link href="/css/footer.css" rel="stylesheet">
+
+<div class="footer">
+   <div class="container text-center">
+      <p class="text-muted lead-small">RTXI is funded by NIH grant R01-RR020115.</p>
+   </div>
+</div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+</html>
