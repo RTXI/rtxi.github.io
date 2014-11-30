@@ -1,3 +1,6 @@
 source 'https://rubygems.org'
 gem 'github-pages'
 gem 'github-markdown'
+gem 'open-uri'
+gem 'json'
+gem 'fileutils'
