@@ -1,0 +1,10 @@
+---
+title: Optical Mapping System with Real-time Control Capability
+layout: paper
+categories: papers
+
+reference: "Shahriar Iravanian and David J. Christini. Optical mapping system with real-time control capability (2007) Am J Physiol Heart Circ Physiol, 293 (4): H2605-H2611."
+link: http://dx.doi.org/10.1152/ajpheart.00588.2007
+---
+
+Real-time, closed-loop intervention is an emerging experiment-control method that promises to provide invaluable new insight into cardiac electrophysiology. One example is the investigation of closed-loop feedback control of cardiac activity (e.g., alternans) as a possible method of preventing arrhythmia onset. To date, such methods have been investigated only in vitro using microelectrode systems, which are hindered by poor spatial resolution and are not well suited for atrial or ventricular tissue preparations. We have developed a system that uses optical mapping techniques and an electrical stimulator as the sensory and effector arms, respectively, of a closed-loop, real-time control system. The system consists of a 2,048 x 1 pixel line-scan charge-coupled device camera that records optical signals from the tissue. Custom-image processing and control software, which is implemented on top of a hard real-time operation system (RTAI Linux), process the data and make control decisions with a deterministic delay of <1 ms. The system is tested in two ways: 1) it is used to control, in real time, simulated optical signals of electrical alternans; and 2) it uses precisely timed, feedback-controlled initiation of antitachycardia pacing to terminate reentrant arrhythmias in an arterially perfused swine right ventricle stained with voltage-sensitive fluorescent dye 4{beta-[2-(di-n-butylamino)-6-napathy]vinyl}pyridinium (di-4-ANEPPS). Thus real-time control of cardiac activity using optical mapping techniques is feasible. Such a system is attractive because it offers greater measurement resolution than the electrode-based systems with which real-time control has been used previously.

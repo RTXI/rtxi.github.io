@@ -5,4 +5,27 @@ layout: default
 
 <div class="container">
    <h2 class="page-header">Papers</h2>
+
+   {% for post in site.categories.papers %}
+   
+   {% unless  post.next %}
+      <h3 class="page-header">{{ post.date | date: '%Y' }}</h3><div class="row">
+   {% else %}
+      {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+      {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+      {% if year != nyear %}
+         </div><h3 class="page-header">{{ post.date | date: '%Y' }}</h3><div class="row">
+      {% endif %}
+   {% endunless %}
+   
+      <div class="col-sm-6 col-md-4">
+         <a href="{{ post.url }}" style="text-decoration:none">
+            <div class="panel panel-primary">
+               <div class="panel-heading"><h4 class="panel-title">{{ post.title }}</h4></div>
+               <div class="panel-body">{{ post.excerpt | truncate:400 }}</div>
+            </div>
+         </a>
+      </div>
+   {% endfor %}
+   </div>
 </div>

@@ -1,0 +1,10 @@
+---
+title: Compensation for Variable Intrinsic Neuronal Excitability by Circuit-synaptic Interactions
+layout: paper
+categories: papers
+
+reference: R. Grashow and T. Brookings, “Compensation for variable intrinsic neuronal excitability by circuit-synaptic interactions,” J Neurosci, vol. 30, no. 27, pp. 9145–9156, Jul. 2010.
+link: http://www.jneurosci.org/content/30/27/9145.full
+---
+
+Recent theoretical and experimental work indicates that neurons tune themselves to maintain target levels of excitation by modulating ion channel expression and synaptic strengths. As a result, functionally equivalent circuits can produce similar activity despite disparate underlying network and cellular properties. To experimentally test the extent to which synaptic and intrinsic conductances can produce target activity in the presence of variability in neuronal intrinsic properties, we used the dynamic clamp to create hybrid two-cell circuits built from four types of stomatogastric neurons coupled to the same model Morris–Lecar neuron by reciprocal inhibition. We measured six intrinsic properties (input resistance, minimum membrane potential, firing rate in response to +1 nA of injected current, slope of the frequency–current curve, spike height, and spike voltage threshold) of dorsal gastric, gastric mill, lateral pyloric, and pyloric dilator neurons from male crabs of the species Cancer borealis. The intrinsic properties varied twofold to sevenfold in each cell type. We coupled each biological neuron to the Morris–Lecar model with seven different values of inhibitory synaptic conductance and also used the dynamic clamp to add seven different values of an artificial h-conductance, thus creating 49 different circuits for each biological neuron. Despite the variability in intrinsic excitability, networks formed from each neuron produced similar circuit performance at some values of synaptic and h-conductances. This work experimentally confirms results from previous modeling studies; tuning synaptic and intrinsic conductances can yield similar circuit outputs from neurons with variable intrinsic excitability.

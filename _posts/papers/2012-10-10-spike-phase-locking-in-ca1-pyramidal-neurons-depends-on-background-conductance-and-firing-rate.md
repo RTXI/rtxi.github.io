@@ -1,0 +1,10 @@
+---
+title: Spike Phase Locking in CA1 Pyramidal Neurons Depends on Background Conductance and Firing Rate
+layout: paper
+categories: papers
+
+reference: Broicher T, Malerba P, Dorval AD, Borisyuk A, Fernandez FR, White JA., “Spike Phase Locking in CA1 Pyramidal Neurons Depends on Background Conductance and Firing Rate.,” J Neurosci. 2012 Oct 10;32(41):14374-88.
+link: http://dx.doi.org/10.1523/JNEUROSCI.0842-12.2012
+---
+
+Oscillatory activity in neuronal networks correlates with different behavioral states throughout the nervous system, and the frequency-response characteristics of individual neurons are believed to be critical for network oscillations. Recent in vivo studies suggest that neurons experience periods of high membrane conductance, and that action potentials are often driven by membrane potential fluctuations in the living animal. To investigate the frequency-response characteristics of CA1 pyramidal neurons in the presence of high conductance and voltage fluctuations, we performed dynamic-clamp experiments in rat hippocampal brain slices. We drove neurons with noisy stimuli that included a sinusoidal component ranging, in different trials, from 0.1 to 500 Hz. In subsequent data analysis, we determined action potential phase-locking profiles with respect to background conductance, average firing rate, and frequency of the sinusoidal component. We found that background conductance and firing rate qualitatively change the phase-locking profiles of CA1 pyramidal neurons versus frequency. In particular, higher average spiking rates promoted bandpass profiles, and the high-conductance state promoted phase-locking at frequencies well above what would be predicted from changes in the membrane time constant. Mechanistically, spike rate adaptation and frequency resonance in the spike-generating mechanism are implicated in shaping the different phase-locking profiles. Our results demonstrate that CA1 pyramidal cells can actively change their synchronization properties in response to global changes in activity associated with different behavioral states.
