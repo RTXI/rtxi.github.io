@@ -2,262 +2,558 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   
+  <url>
+    <loc>//papers/2014/05/01/the-past-present-and-future-of-real-time-control-in-cellular-electrophysiology/</loc>
+    
+    <lastmod>2014-05-01T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2013/11/06/eeg-feedback-controlled-transcranial-alternating-current-stimulation/</loc>
+    
+    <lastmod>2013-11-06T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2013/10/01/single-neuron-dynamics-during-experimentally-induced-anoxic-depolarization/</loc>
+    
+    <lastmod>2013-10-01T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2013/06/01/minimum-energy-control-for-in-vitro-neurons/</loc>
+    
+    <lastmod>2013-06-01T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2013/05/01/parameterized-phase-response-curves-for-characterizing-neuronal-behaviors-under-transient-conditions/</loc>
+    
+    <lastmod>2013-05-01T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2013/03/20/optical-dissection-of-odor-information-processing-in-vivo-using-gcamps-expressed-in-specified-cell-types-of-the-olfactory-bulb/</loc>
+    
+    <lastmod>2013-03-20T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2013/01/06/real-time-system-for-studies-of-the-effects-of-acoustic-feedback-on-animal-vocalizations/</loc>
+    
+    <lastmod>2013-01-06T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2012/11/04/the-mechanism-of-abrupt-transition-between-theta-and-hyper-excitable-spiking-activity-in-medial-entorhinal-cortex-layer-ii-stellate-cells/</loc>
+    
+    <lastmod>2012-11-04T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2012/10/10/spike-phase-locking-in-ca1-pyramidal-neurons-depends-on-background-conductance-and-firing-rate/</loc>
+    
+    <lastmod>2012-10-10T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2012/06/01/detecting-effective-connectivity-in-networks-of-coupled-neuronal-oscillators/</loc>
+    
+    <lastmod>2012-06-01T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2012/04/27/statistics-of-neuronal-identification-with-open--and-closed-loop-measures-of-intrinsic-excitability/</loc>
+    
+    <lastmod>2012-04-27T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2012/01/19/membrane-properties-and-the-balance-between-excitation-and-inhibition-control-gamma-frequency-oscillations-arising-from-feedback-inhibition/</loc>
+    
+    <lastmod>2012-01-19T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2012/01/05/short-conduction-delays-cause-inhibition-rather-than-excitation-to-favor-synchrony-in-hybrid-neuronal-networks-of-the-entorhinal-cortex/</loc>
+    
+    <lastmod>2012-01-05T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2011/12/28/control-of-local-intracellular-calcium-concentration-with-dynamic-clamp-controlled-2-photon-uncaging/</loc>
+    
+    <lastmod>2011-12-28T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2011/10/24/shaping-a-new-ca2-conductance-to-suppress-early-afterdepolarizations-in-cardiac-myocytes/</loc>
+    
+    <lastmod>2011-10-24T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2011/10/10/responses-of-a-bursting-pacemaker-to-excitation-reveal-spatial-segregation-between-bursting-and-spiking-mechanisms/</loc>
+    
+    <lastmod>2011-10-10T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2011/07/26/gennet-a-platform-for-hybrid-network-experiments/</loc>
+    
+    <lastmod>2011-07-26T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2011/05/01/high-frequency-short-latency-disinhibition-bursting-of-midbrain-dopaminergic-neurons/</loc>
+    
+    <lastmod>2011-05-01T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2011/02/21/mixed-mode-oscillations-in-mouse-spinal-motoneurons-arise-from-a-low-excitability-state/</loc>
+    
+    <lastmod>2011-02-21T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2011/01/27/controlling-spike-timing-and-synchrony-in-oscillatory-neurons/</loc>
+    
+    <lastmod>2011-01-27T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2010/12/21/application-of-a-nmda-receptor-conductance-in-rat-midbrain-dopaminergic-neurons-using-the-dynamic-clamp-technique/</loc>
+    
+    <lastmod>2010-12-21T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2010/11/01/modulation-of-firing-rate-by-background-synaptic-noise-statistics-in-rat-visual-cortical-neurons/</loc>
+    
+    <lastmod>2010-11-01T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2010/10/29/rate-maintenance-and-resonance-in-the-entorhinal-cortex/</loc>
+    
+    <lastmod>2010-10-29T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2010/09/04/control-of-action-potential-duration-alternans-in-canine-ventricular-tissue/</loc>
+    
+    <lastmod>2010-09-04T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2010/08/31/real-time-experiment-interface-for-biological-control-applications/</loc>
+    
+    <lastmod>2010-08-31T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2010/07/07/compensation-for-variable-intrinsic-neuronal-excitability-by-circuit-synaptic-interactions/</loc>
+    
+    <lastmod>2010-07-07T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2010/07/01/a-dynamic-role-for-gaba-receptors-on-the-firing-pattern-of-midbrain-dopaminergic-neurons/</loc>
+    
+    <lastmod>2010-07-01T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2010/05/17/metabolic-cost-as-a-unifying-principle-governing-neuronal-biophysics/</loc>
+    
+    <lastmod>2010-05-17T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2010/03/31/slow-and-persistent-postinhibitory-rebound-acts-as-an-intrinsic-short-term-memory-mechanism/</loc>
+    
+    <lastmod>2010-03-31T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2010/02/10/cell-type-specific-control-of-neuronal-responsiveness-by-gamma-band-oscillatory-inhibition/</loc>
+    
+    <lastmod>2010-02-10T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2010/01/06/gain-control-in-ca1-pyramidal-cells-using-changes-in-somatic-conductance/</loc>
+    
+    <lastmod>2010-01-06T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2009/12/16/an-intrinsic-neuronal-oscillator-underlies-dopaminergic-neuron-bursting/</loc>
+    
+    <lastmod>2009-12-16T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2009/09/01/anthropomorphizing-the-mouse-cardiac-action-potential-via-a-novel-dynamic-clamp-method/</loc>
+    
+    <lastmod>2009-09-01T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2009/07/23/dynamical-mechanism-for-subcellular-alternans-in-cardiac-myocytes/</loc>
+    
+    <lastmod>2009-07-23T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2009/07/13/inclusion-of-noise-in-iterated-firing-time-maps-based-on-the-phase-response-curve/</loc>
+    
+    <lastmod>2009-07-13T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2009/07/01/functional-phase-response-curves-a-method-for-understanding-synchronization-of-adapting-neurons/</loc>
+    
+    <lastmod>2009-07-01T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2009/05/21/reliable-neuromodulation-from-circuits-with-variable-underlying-structure/</loc>
+    
+    <lastmod>2009-05-21T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2009/04/08/predictions-of-phase-locking-in-excitatory-hybrid-networks-excitation-does-not-promote-phase-locking-in-pattern-generating-networks-as-reliably-as-inhibition/</loc>
+    
+    <lastmod>2009-04-08T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2009/03/18/measuring-multiple-spike-train-synchrony/</loc>
+    
+    <lastmod>2009-03-18T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2009/02/18/causes-of-transient-instabilities-in-the-dynamic-clamp/</loc>
+    
+    <lastmod>2009-02-18T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2009/01/28/reduction-of-spike-afterdepolarization-by-increased-leak-conductance-alters-interspike-interval-variability/</loc>
+    
+    <lastmod>2009-01-28T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2008/07/16/control-of-neuronal-persistent-activity-by-voltage-dependent-dendritic-properties/</loc>
+    
+    <lastmod>2008-07-16T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2008/04/30/effects-of-imperfect-dynamic-clamp-computational-and-experimental-results/</loc>
+    
+    <lastmod>2008-04-30T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2008/04/02/artificial-synaptic-conductances-reduce-subthreshold-oscillations-and-periodic-firing-in-stellate-cells-of-the-entorhinal-cortex/</loc>
+    
+    <lastmod>2008-04-02T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2007/11/21/resonant-or-not-two-amplification-modes-of-proprioceptive-inputs-by-persistent-inward-currents-in-spinal-motoneurons/</loc>
+    
+    <lastmod>2007-11-21T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2007/10/01/optical-mapping-system-with-real-time-control-capability/</loc>
+    
+    <lastmod>2007-10-01T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2007/09/05/state-changes-rapidly-modulate-cortical-neuronal-responsiveness/</loc>
+    
+    <lastmod>2007-09-05T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2006/10/26/temporal-coding-by-cochlear-nucleus-bushy-cells-in-dba2j-mice-with-early-onset-hearing-loss/</loc>
+    
+    <lastmod>2006-10-26T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2006/09/25/low-dimensional-maps-encoding-dynamics-in-entorhinal-cortex-and-hippocampus/</loc>
+    
+    <lastmod>2006-09-25T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2006/06/30/synaptic-input-statistics-tune-the-variability-and-reproducibility-of-neuronal-responses/</loc>
+    
+    <lastmod>2006-06-30T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2006/01/06/serotonergic-enhancement-of-a-4-ap-sensitive-current-mediates-the-synaptic-depression-phase-of-spike-timing-dependent-neuromodulation/</loc>
+    
+    <lastmod>2006-01-06T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2005/09/23/neuronal-oscillators-in-aplysia-californica-that-demonstrate-weak-coupling-in-vitro/</loc>
+    
+    <lastmod>2005-09-23T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2005/09/20/channel-noise-is-essential-for-perithreshold-oscillations-in-entorhinal-stellate-neurons/</loc>
+    
+    <lastmod>2005-09-20T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2005/05/13/bistable-network-behavior-of-layer-i-interneurons-in-auditory-cortex/</loc>
+    
+    <lastmod>2005-05-13T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2005/03/01/synchronization-in-hybrid-neuronal-networks-of-the-hippocampal-formation/</loc>
+    
+    <lastmod>2005-03-01T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2004/01/30/mrci-a-flexible-real-time-dynamic-clamp-system-for-electrophysiology-experiments/</loc>
+    
+    <lastmod>2004-01-30T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2001/12/01/a-methodology-for-achieving-high-speed-rates-for-artificial-conductance-injection-in-electrically-excitable-biological-cells/</loc>
+    
+    <lastmod>2001-12-01T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//papers/2001/10/01/real-time-linux-dynamic-clamp-a-fast-and-flexible-way-to-construct-virtual-ion-channels-in-living-cells/</loc>
+    
+    <lastmod>2001-10-01T00:00:00-04:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
   
   <url>
     <loc>//papers/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
+    <lastmod>2014-11-30T22:11:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
+    <lastmod>2014-11-30T22:11:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//conference/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
+    <lastmod>2014-11-30T22:11:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//install/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
+    <lastmod>2014-11-30T22:11:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//docs/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
+    <lastmod>2014-11-30T22:11:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//contact/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
+    <lastmod>2014-11-30T22:11:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
+    <lastmod>2014-11-30T22:11:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>//modules/neuron/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/connor-stevens/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/plugin-template/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/auto-pi/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/current-clamp/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/electric-synapse/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/fir-window/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/g-waveform/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/hfac/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/i-cell/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/iir-filter/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/current-hold/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/current-step/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/spike-triggered-average/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/spike-detector/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/spike-rate-control/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/spike-statistics/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/alpha-synapse/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/coupling/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/h-current/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/signal-generator/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/kick/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/mimic-signal/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/noise-generator/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/sync/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/virtual-dendrite/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/wang-buzsaki/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>//modules/wave-maker/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
+    <lastmod>2014-11-30T22:11:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/membrane-test/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
+    <lastmod>2014-11-30T22:11:57-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>//modules/signal-generator/</loc>
+    <lastmod>2014-11-30T22:11:57-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>//modules/alpha-synapse/</loc>
+    <lastmod>2014-11-30T22:11:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/axon-axopatch1D/</loc>
-    <lastmod>2014-11-29T17:39:50-05:00</lastmod>
+    <lastmod>2014-11-30T22:11:57-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>//modules/g-waveform/</loc>
+    <lastmod>2014-11-30T22:11:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
