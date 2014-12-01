@@ -1,6 +1,27 @@
 ---
 title: RTXI 2015
 layout: default
+permalink: /conference/
 ---
 
-The webpage for the RTXI 2015 conference! It'll be great.
+<div class="container">
+   <h2 class="page-header">RTXI 2015</h2>
+   <p class="lead">The webpage for the RTXI 2015 conference! It'll be great.</p>
+</div>
+
+<div class="container">
+   <iframe src="http://petitinstitute.gatech.edu/rtxi-2015-workshop" height="500" width="100%"></iframe>
+<!--<iframe src="http://petitinstitute.gatech.edu/rtxi-2015-workshop" onload="iframeLoaded()" id="hahaha"></iframe>-->
+</div>
+
+<script type="text/javascript">
+   function iframeLoaded() {
+      var iFrameID = document.getElementById('hahaha');
+      if(iFrameID) {
+         // here you can make the height, I delete it first, then I make it again
+         iFrameID.height = "";
+         iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight + "px";
+         parent.iframeLoaded();
+      }
+   }
+</script>   
