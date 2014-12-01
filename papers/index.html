@@ -1,20 +1,23 @@
 ---
 title: Papers
-layout: default
+layout: paper_index
 ---
 
 <div class="container">
    <h2 class="page-header">Papers</h2>
+   <p class="lead">If your use of RTXI leads to publication, please cite RTXI in your paper. We get our funding from the NIH, and citations will help when our grant renewal comes around. Cite: </p>
+   <div class="well">Lin et al. Real-time Experiment Interface for biological control applications. Conf Proc IEEE Eng Med Biol Soc (2010) vol. 1 pp. 4160-3</div>
+   
+   <p class="lead">Below is our list of papers that cite RTXI. We're always on the lookout for new research, but we'd love to hear from you if you've got something in the works.</p>
 
    {% for post in site.categories.papers %}
-   
    {% unless  post.next %}
-      <h3 class="page-header">{{ post.date | date: '%Y' }}</h3><div class="row">
+      <h3 class="page-header">{{ post.date | date: '%Y' }}</h3><div class="js-masonry">
    {% else %}
       {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
       {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
       {% if year != nyear %}
-         </div><h3 class="page-header">{{ post.date | date: '%Y' }}</h3><div class="row">
+         </div><h3 class="page-header">{{ post.date | date: '%Y' }}</h3><div class="js-masonry">
       {% endif %}
    {% endunless %}
    

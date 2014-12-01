@@ -1,5 +1,5 @@
 ---
-title: Real-Time Linux Dynamic Clamp: a Fast and Flexible Way to Construct Virtual Ion Channels in Living Cells
+title: "Real-Time Linux Dynamic Clamp: a Fast and Flexible Way to Construct Virtual Ion Channels in Living Cells"
 layout: paper
 categories: papers
 
