@@ -26,7 +26,7 @@ layout: paper_index
    {% endunless %}
    
       <div class="col-sm-6 col-md-4">
-         <a href="{{ post.url }}" style="text-decoration:none">
+         <a href="{{ post.url }}" style="text-decoration:none; color:inherit">
             <div class="panel panel-primary">
                <div class="panel-heading"><h4 class="panel-title">{{ post.title }}</h4></div>
                <div class="panel-body">{{ post.excerpt | truncate:400 }}</div>

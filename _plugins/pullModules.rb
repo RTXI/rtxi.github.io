@@ -69,7 +69,7 @@ module Jekyll
             filename = build_dir+"/"+repo+"/index.html"
             forkmebanner = "<style>
                #forkongithub a{
-                  background:#000;
+                  background:#222;
                   color:#fff;
                   text-decoration:none;
                   font-family:arial,sans-serif;
