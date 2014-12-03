@@ -111,6 +111,18 @@
 </div> <!-- /.carousel -->
 
 
+<!--
+<div data-spy="affix" data-offset-top="60" data-target="#mynav">
+<div class="container"><div class="row"><nav id="mynav" class="sidebar col-md-3">
+   <ul class="nav nav-tabs nav-stacked affix" data-spy="affix" data-offset-top="150">
+      <li><a href="#intro">A</a></li>
+      <li><a href="#architecture">B</a></li>
+      <li><a href="#real-time">C</a></li>
+   </ul>
+</nav></div></div>
+</div>
+-->
+
 <div class="container" id="intro">
 
    <h3 class="page-header">Introducing RTXI</h3>
@@ -121,13 +133,15 @@
 
    <p class="lead-small">Unfortunately, for a number of technical reasons, real-time control is not possible with standard computer operating systems and software. Furthermore, commercial real-time systems are costly and often tailored for industrial applications. To circumvent these limitations, we have developed RTXI, a fast and highly versatile real-time biological experimentation system. It's based on Real-Time Linux, free and open source, and compatible with an extensive range of experimentation hardware.</p>
 
+   <a href="/images/rtxi-gui.png"><img src="/images/rtxi-gui.png" class="img-responsive"></img></a>
+
 </div>
 
 <div class="container" id="architecture">
 
    <h3 class="page-header">Architecture</h3>
 
-   <p class="lead-small col-md-12">RTXI runs with two threads: one real-time (RT) thread and a non-real-time user interface (UI) thread. Both core and custom components of RTXI can span both threads, communicating between RT and UI threads through a system of signals and slots that supports synchronous scheduling and asynchronous event handling. On every clock cycle, the RT thread wakes and signals each active DAQ driver to acquire all active inputs from external experiment hardware. These data are made available to other components while the RT thread executes any real-time instructions contained in loaded modules. When each module has finished executing, the RT thread signals each DAQ driver to write any output signals to the experiment hardware. The UI thread manages the graphical components of the system as well as user events triggered through the interface. Each module features its own encapsulated interface through which users can control module execution and modify its various parameters.</p>
+   <p class="lead-small">RTXI runs with two threads: one real-time (RT) thread and a non-real-time user interface (UI) thread. Both core and custom components of RTXI can span both threads, communicating between RT and UI threads through a system of signals and slots that supports synchronous scheduling and asynchronous event handling. On every clock cycle, the RT thread wakes and signals each active DAQ driver to acquire all active inputs from external experiment hardware. These data are made available to other components while the RT thread executes any real-time instructions contained in loaded modules. When each module has finished executing, the RT thread signals each DAQ driver to write any output signals to the experiment hardware. The UI thread manages the graphical components of the system as well as user events triggered through the interface. Each module features its own encapsulated interface through which users can control module execution and modify its various parameters.</p>
 
    <a href="/images/rtxi-diagram.png" class="thumbnail col-md-6">
       <img src="/images/rtxi-diagram.png" class="img-responsive"></img>
