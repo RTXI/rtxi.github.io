@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Kick</title>
+    <title>32 or 64 Bit? Your Processor Explained</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -88,78 +88,44 @@
 
   <body style="padding-top:30px">
     <div class="container lead-small">
-      <style>
-               #forkongithub a{
-                  background:#222;
-                  color:#fff;
-                  text-decoration:none;
-                  font-family:arial,sans-serif;
-                  text-align:center;
-                  font-weight:bold;
-                  padding:5px 10px;
-                  font-size:1rem;
-                  line-height:2rem;
-                  position:fixed;
-                  top:0;
-                  right:0;
-                  top:70px;
-                  right:20px;
-                  transition:0.25s;
-               } #forkongithub a:hover{
-                  background:#c01;
-                  color:#fff;
-               } @media screen and (min-width:768px) {
-                  #forkongithub{
-                     position:fixed;
-                     display:block;
-                     top:0;
-                     right:0;
-                     width:250px;
-                     overflow:hidden;
-                     height:200px;
-                  } #forkongithub a{
-                     width:200px;
-                     position:absolute;
-                     top:70px;
-                     right:20px;
-                  }
-               }</style>
-               <span id="forkongithub">
-                  <div class="hidden-xs">
-                     <a href="https://github.com/rtxi/kick">Fork Kick <span style="padding-left:5px" class="octicon octicon-mark-github"></span></a>
-                  </div>
-                  <div class="visible-xs">
-                     <a href="https://github.com/rtxi/kick"><span class="octicon octicon-mark-github"></span></a>
-                  </div>
-               </span><h3>Kick - the Manual Event Trigger</h3>
+    <h3 class="page-header">32 or 64 Bit? Your Processor Explained</h3>
+      <p>64-bit and 32-bit refer to how addresses and memory are handled in different instruction set architectures. For clarity, the terms ‘32-bit’ and ‘64-bit’ have dual meanings. The first refers to the size of addressable chunks of memory. Memory is organized in chunks, called words, that a processor can handle at once. 32 and 64-bit systems respectively handle chunks of memory that are 32 and 64 bits in size. The second meaning refers to the size of the addresses used to catalog all of the addressable points in memory. In other words, each word in memory has an address that the processor uses to find it. 32-bit systems use 32-bit-long addresses, and the same follows for 64-bit ones. Note that it just so happens that these systems have the same address size and word size. It’s not necessarily the case. For instance, early PCs often had 8-bit words and 16-bit addresses.  </p>
 
-<p><strong>Requirements:</strong> None<br>
-<strong>Limitations:</strong> None  </p>
+<p>Most commercially available systems today come with 64-bit capable processors and pre-installed 64-bit operating systems. 32-bit applications are compatible with them because the 64-bit format is backwards-compatible. The space addressable by 32 bits is a subset of what is addressed with 64, and the processors are built to handle 32-bit chunks of memory. Simply put, if you have a 64-bit compatible processor, run 64-bit software.  </p>
 
-<p><img src="kick.png" alt="Kick GUI"></p>
+<p>One extra consideration is the operating system. Applications other than drivers and similar software interface with the hardware through the operating system. Therefore, it is important to consider the type of operating system installed. 32-bit OSes can only handle 32-bit operations, but 64-bit ones can properly use both.  </p>
 
-<!--start-->
+<p>Altogether, none of this is likely to be an issue with machines from the past few years. Lately, AMD and Intel have introduced different brand names and code names for their processors, which can get confusing quite easily. In case you’re running older hardware, here’s a list of a few 64-bit capable processors.</p>
 
-<p>This module sends a single value as a trigger or “kick” to another module. It outputs a user-specified value when triggered and a value of 0 otherwise. It can be used to manually mark events that a user sees in the data. It’s value in the HDF5 file will then serve as an event flag. This module can also be used to manually test other modules that require a trigger (such as those accepting input from the Spike Detector module). This module only sends a single “kick” at the specified delay after it is unpaused.</p>
-
-<!--end-->
-
-<h4>Input Channels</h4>
-
-<p>None</p>
-
-<h4>Output Channels</h4>
-
+<div class="col-md-6">  
+<strong>AMD</strong> (aka "x86-64", "AMD64", or "x64"):  
 <ol>
-<li>output(0) – “Kick” : the kick amplitude of a value of ’0′ otherwise</li>
+   <li> Athlon 64  </li>
+   <li> AMD Athlon 64 X2 </li>
+   <li> AMD Athlon 64 FX </li>
+   <li> AMD Athlon II (X2/X3/X4) </li>
+   <li> AMD Opteron </li>
+   <li> AMD Turion 64 </li>
+   <li> AMD Turion 64 X2 </li>
+   <li> AMD Sempron ("Palermo" E6 stepping and all "Manila" models) </li>
+   <li> AMD Phenom (X2/X3/X4) </li>
+   <li> AMD Phenom II (X2/X3/X4) </li>
 </ol>
+</div>
 
-<h4>Parameters</h4>
-
+<div class="col-md-6">  
+<strong>Intel</strong> (aka "IA-32e", "EM64T", or "Intel 64"):   
 <ol>
-<li>Amplitude : the amplitude of the kick</li>
-<li>Delay (ms) : the delay after the module is unpaused when the kick is given</li>
+   <li> Netburst family </li>
+   <li> some Celeron D's: LGA 775 "Prescott" models </li>
+   <li> some Pentium 4's: "Prescott 2M," "Irwindale" "Cedar Mill" </li>
+   <li> Pentium D </li>
+   <li> Pentium Extreme Edition </li>
+   <li> Intel Core </li>
+   <li> Xeon: Core 2, Dual Core, Celeron </li>
+   <li> Nehalem: Core i3, i5, i7, Intel Atom </li>
 </ol>
+</div>
 
     </div>
   </body>

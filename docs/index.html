@@ -77,15 +77,51 @@
 
 <div class="container">
    <ul class="nav nav-tabs nav-justified lead-normal" role="tablist">
-      <li role="presentation" class="active"><a data-toggle="tab" href="#info" role="tab">General Info</a></li>
+      <li role="presentation" class="active"><a data-toggle="tab" href="#tutor" role="tab">Tutorials</a></li>
       <li role="presentation"><a data-toggle="tab" href="#trouble" role="tab">Troubleshooting</a></li>
       <li role="presentation"><a data-toggle="tab" href="#faq" role="tab">FAQs</a></li>
    </ul>
 
    <div class="tab-content">
 
-      <div id="info" role="tabpanel" class="tab-pane fade in active">
-         <p class="lead-small">Information</p>
+      <div id="tutor" role="tabpanel" class="tab-pane fade in active">
+         
+         <div class="container tab-content">
+            
+               
+               
+               
+                  
+                  <div class="tab-pane fade in active" role="tabpanel" id="tutor1">
+                  
+               
+                  <a href="/docs/tutorials/2014/12/04/rtxi-hdf5-data-files/"><div class="lead">RTXI HDF5 Data Files</div></a>
+                  <div class="lead-small"><p>The HDF5 file format is a portable and extensible binary data format designed for complex data. It features support for an unlimited variety of datatypes, and has flexible and efficient I/O. HDF5 features a hierarchical structure that allows you to access chunks of data without loading the ent...</div>
+            
+               
+               
+                  <a href="/docs/tutorials/2014/12/04/32-or-64-bit-processors/"><div class="lead">32 or 64 Bit? Your Processor Explained</div></a>
+                  <div class="lead-small"><p>64-bit and 32-bit refer to how addresses and memory are handled in different instruction set architectures. For clarity, the terms ‘32-bit’ and ‘64-bit’ have dual meanings. The first refers to the size of addressable chunks of memory. Memory is organized in chunks, called words, that a process...</div>
+            
+            </div>
+         </div>
+        
+         <!-- Paginator --> 
+         <div class="text-center"><ul class="pagination">
+            
+            
+               
+               
+                  
+                  
+                     <li class="active" role="presentation"><a data-toggle="tab" href="#tutor1">1</a></li>
+                  
+               
+            
+               
+               
+            
+         </ul></div>
       </div>
 
       <div id="trouble" role="tabpanel" class="tab-pane fade">
@@ -93,7 +129,6 @@
       </div>
 
       <div id="faq" role="tabpanel" class="tab-pane fade">
-
          
          <div class="container tab-content">
             
@@ -105,9 +140,23 @@
                   
                
                      <a data-toggle="collapse" data-target="#faqp1" style="text-decoration:none">
-                        <div class="lead">1. How do I use more than one DAQ?</div>
+                        <div class="lead">1. Can I run RTXI in non-real-time?</div>
                      </a>
-                     <div class="collapse lead-small" id="faqp1"><p>RTXI has no built-in software limitations on the number of DAQ cards. You will need to edit the configuration file, however. Here is the relevant excerpt of /etc/rtxi.conf:</p>
+                     <div class="collapse lead-small" id="faqp1"><p>RTXI can be run in non-real-time to debug your code. This will require that you manually configure and recompile RTXI. In the RTXI directory, go to the scripts directory and run:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo ./install-rtxi.sh</code></pre></div>
+
+<p>You will be prompted to enter your system configuration. Select “2” to run in non-real-time (POSIX). </p>
+
+<p>Running RTXI in non-real-time is useful for debugging purposes mainly, and it also allows the application to be installed without having to install a real-time kernel beforehand.</p>
+</div>
+            
+               
+               
+                     <a data-toggle="collapse" data-target="#faqp2" style="text-decoration:none">
+                        <div class="lead">2. How do I use more than one DAQ?</div>
+                     </a>
+                     <div class="collapse lead-small" id="faqp2"><p>RTXI has no built-in software limitations on the number of DAQ cards. You will need to edit the configuration file, however. Here is the relevant excerpt of /etc/rtxi.conf:</p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;OBJECT</span> <span class="na">component=</span><span class="s">&quot;plugin&quot;</span> <span class="na">library=</span><span class="s">&quot;comedi_driver.so&quot;</span> <span class="na">id=</span><span class="s">&quot;2&quot;</span> <span class="nt">&gt;</span>
 <span class="nt">&lt;PARAM</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="nt">&gt;</span>/dev/comedi0<span class="nt">&lt;/PARAM&gt;</span>
@@ -121,14 +170,16 @@
 <span class="nt">&lt;PARAM</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="nt">&gt;</span>/dev/comedi1<span class="nt">&lt;/PARAM&gt;</span>
 <span class="nt">&lt;PARAM</span> <span class="na">name=</span><span class="s">&quot;Num Devices&quot;</span> <span class="nt">&gt;</span>2<span class="nt">&lt;/PARAM&gt;</span></code></pre></div>
 
+<p><strong>Note:</strong> This applies to the COMEDI drivers that come with RTAI and haven’t been tested with ANALOGY. In theory, it’ll work. Just replace “comedi” with “analogy” in the names. </p>
+
 </div>
             
                
                
-                     <a data-toggle="collapse" data-target="#faqp2" style="text-decoration:none">
-                        <div class="lead">2. Can I use RTAI instead of Xenomai?</div>
+                     <a data-toggle="collapse" data-target="#faqp3" style="text-decoration:none">
+                        <div class="lead">3. Can I use RTAI instead of Xenomai?</div>
                      </a>
-                     <div class="collapse lead-small" id="faqp2"><p>Yes, you can use RTAI. Before v2.0, RTXI ran on an RTAI-patched kernel. Xenomai is actually a fork of RTAI and is designed to be much easier to customize and patch. To use RTXI, you will not be able to run our install_rtxi.sh script. Instead, you will need to download RTAI and patch then install a kernel manually.  </p>
+                     <div class="collapse lead-small" id="faqp3"><p>Yes, you can use RTAI. Before v2.0, RTXI ran on an RTAI-patched kernel. Xenomai is actually a fork of RTAI and is designed to be much easier to customize and patch. To use RTXI, you will not be able to run our install_rtxi.sh script. Instead, you will need to download RTAI and patch then install a kernel manually.  </p>
 
 <p>Once you have the kernel running, go to your RTXI git directory and run:</p>
 
@@ -141,10 +192,10 @@
             
                
                
-                     <a data-toggle="collapse" data-target="#faqp3" style="text-decoration:none">
-                        <div class="lead">3. Can I use a different Linux distribution?</div>
+                     <a data-toggle="collapse" data-target="#faqp4" style="text-decoration:none">
+                        <div class="lead">4. Can I use a different Linux distribution?</div>
                      </a>
-                     <div class="collapse lead-small" id="faqp3"><p>Yes. RTXI has been successfully installed on Ubuntu, openSUSE, Debian, and Fedora. Keep in mind that we use Debian for bugtesting, benchmarking, etc. and that different distributions have different ways of automating scripts, inserting kernel modules, and escalating priveleges. </p>
+                     <div class="collapse lead-small" id="faqp4"><p>Yes. RTXI has been successfully installed on Ubuntu, openSUSE, Debian, and Fedora. Keep in mind that we use Debian for bugtesting, benchmarking, etc. and that different distributions have different ways of automating scripts, inserting kernel modules, and escalating priveleges. </p>
 </div>
             
             </div>
@@ -168,8 +219,10 @@
                
                
             
+               
+               
+            
          </ul></div>
-
       </div>
 
    </div>

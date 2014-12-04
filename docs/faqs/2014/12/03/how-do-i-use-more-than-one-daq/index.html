@@ -5,37 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Current Hold</title>
+    <title>How do I use more than one DAQ?</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/lead-extra.css" rel="stylesheet">
     <link href="/css/pygments.css" rel="stylesheet">
-<!--    <link href="/css/module.css" rel="stylesheet">-->
-    <link href="/fonts/octicons.css" rel="stylesheet">
 
-    <style>
-    h1, h2, h3, h4, h5, h6 {
-      padding-bottom: 9px;
-      margin: 40px 0 20px;
-      border-bottom: 1px solid #eee;
-      font-weight: normal;
-    }
-    strong {
-      font-weight: normal;
-    }
-    /*p, div {
-      .lead;
-    }*/
-    img {
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-    </style>
-   
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.ico">
@@ -86,77 +62,24 @@
 </nav>
 
 
-  <body style="padding-top:30px">
-    <div class="container lead-small">
-      <style>
-               #forkongithub a{
-                  background:#222;
-                  color:#fff;
-                  text-decoration:none;
-                  font-family:arial,sans-serif;
-                  text-align:center;
-                  font-weight:bold;
-                  padding:5px 10px;
-                  font-size:1rem;
-                  line-height:2rem;
-                  position:fixed;
-                  top:0;
-                  right:0;
-                  top:70px;
-                  right:20px;
-                  transition:0.25s;
-               } #forkongithub a:hover{
-                  background:#c01;
-                  color:#fff;
-               } @media screen and (min-width:768px) {
-                  #forkongithub{
-                     position:fixed;
-                     display:block;
-                     top:0;
-                     right:0;
-                     width:250px;
-                     overflow:hidden;
-                     height:200px;
-                  } #forkongithub a{
-                     width:200px;
-                     position:absolute;
-                     top:70px;
-                     right:20px;
-                  }
-               }</style>
-               <span id="forkongithub">
-                  <div class="hidden-xs">
-                     <a href="https://github.com/rtxi/current-hold">Fork Current Hold <span style="padding-left:5px" class="octicon octicon-mark-github"></span></a>
-                  </div>
-                  <div class="visible-xs">
-                     <a href="https://github.com/rtxi/current-hold"><span class="octicon octicon-mark-github"></span></a>
-                  </div>
-               </span><h3>Current Hold</h3>
+  <body style=padding-top:30px>
+    <p>RTXI has no built-in software limitations on the number of DAQ cards. You will need to edit the configuration file, however. Here is the relevant excerpt of /etc/rtxi.conf:</p>
 
-<p><strong>Requirements:</strong> None<br>
-<strong>Limitations:</strong> None  </p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;OBJECT</span> <span class="na">component=</span><span class="s">&quot;plugin&quot;</span> <span class="na">library=</span><span class="s">&quot;comedi_driver.so&quot;</span> <span class="na">id=</span><span class="s">&quot;2&quot;</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;PARAM</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="nt">&gt;</span>/dev/comedi0<span class="nt">&lt;/PARAM&gt;</span>
+<span class="nt">&lt;PARAM</span> <span class="na">name=</span><span class="s">&quot;Num Devices&quot;</span> <span class="nt">&gt;</span>1<span class="nt">&lt;/PARAM&gt;</span>
+<span class="nt">&lt;OBJECT</span> <span class="na">id=</span><span class="s">&quot;13&quot;</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/OBJECT&gt;</span></code></pre></div>
 
-<p><img src="current-hold.png" alt="Current Hold GUI"></p>
+<p>Edit the lines to add another COMEDI device and change the number of devices:</p>
 
-<!--start-->
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;PARAM</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="nt">&gt;</span>/dev/comedi0<span class="nt">&lt;/PARAM&gt;</span>
+<span class="nt">&lt;PARAM</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="nt">&gt;</span>/dev/comedi1<span class="nt">&lt;/PARAM&gt;</span>
+<span class="nt">&lt;PARAM</span> <span class="na">name=</span><span class="s">&quot;Num Devices&quot;</span> <span class="nt">&gt;</span>2<span class="nt">&lt;/PARAM&gt;</span></code></pre></div>
 
-<p>Description pending</p>
+<p><strong>Note:</strong> This applies to the COMEDI drivers that come with RTAI and haven’t been tested with ANALOGY. In theory, it’ll work. Just replace “comedi” with “analogy” in the names. </p>
 
-<!--end-->
 
-<h4>Output Channels</h4>
-
-<ol>
-<li>Command</li>
-</ol>
-
-<h4>Parameters</h4>
-
-<ol>
-<li>Holding Current (pA)</li>
-</ol>
-
-    </div>
   </body>
 
   <link href="/css/footer.css" rel="stylesheet">
@@ -170,4 +93,5 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+
 </html>

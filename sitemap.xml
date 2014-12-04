@@ -3,7 +3,31 @@
   
   
   <url>
-    <loc>//faq/2014/12/03/how-do-i-use-more-than-one-daq/</loc>
+    <loc>//docs/tutorials/2014/12/04/rtxi-hdf5-data-files/</loc>
+    
+    <lastmod>2014-12-04T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//docs/faqs/2014/12/04/can-i-run-rtxi-in-non-real-time/</loc>
+    
+    <lastmod>2014-12-04T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//docs/tutorials/2014/12/04/32-or-64-bit-processors/</loc>
+    
+    <lastmod>2014-12-04T00:00:00-05:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>//docs/faqs/2014/12/03/how-do-i-use-more-than-one-daq/</loc>
     
     <lastmod>2014-12-03T00:00:00-05:00</lastmod>
     
@@ -11,7 +35,7 @@
   </url>
   
   <url>
-    <loc>//faq/2014/12/03/can-i-use-rtai-instead-of-xenomai/</loc>
+    <loc>//docs/faqs/2014/12/03/can-i-use-rtai-instead-of-xenomai/</loc>
     
     <lastmod>2014-12-03T00:00:00-05:00</lastmod>
     
@@ -19,7 +43,7 @@
   </url>
   
   <url>
-    <loc>//faq/2014/12/03/can-i-use-a-different-linux-distro/</loc>
+    <loc>//docs/faqs/2014/12/03/can-i-use-a-different-linux-distro/</loc>
     
     <lastmod>2014-12-03T00:00:00-05:00</lastmod>
     
@@ -573,266 +597,266 @@
   
   <url>
     <loc>//papers/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//conference/register/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//conference/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//install/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//docs/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//contact/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>//modules/neuron/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/connor-stevens/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/plugin-template/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/auto-pi/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/current-clamp/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/electric-synapse/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/fir-window/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/g-waveform/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/hfac/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/i-cell/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/iir-filter/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/current-hold/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/current-step/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/spike-triggered-average/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/spike-detector/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/spike-rate-control/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/spike-statistics/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/alpha-synapse/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/coupling/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/h-current/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/signal-generator/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/kick/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/mimic-signal/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/noise-generator/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/sync/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/virtual-dendrite/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/wang-buzsaki/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/wave-maker/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/membrane-test/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>//modules/axon-axopatch1D/</loc>
-    <lastmod>2014-12-04T03:42:07-05:00</lastmod>
+    <lastmod>2014-12-04T14:11:17-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

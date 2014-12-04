@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>How do I use more than one DAQ?</title>
+    <title>Can I run RTXI in non-real-time?</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -63,20 +63,13 @@
 
 
   <body style=padding-top:30px>
-    <p>RTXI has no built-in software limitations on the number of DAQ cards. You will need to edit the configuration file, however. Here is the relevant excerpt of /etc/rtxi.conf:</p>
+    <p>RTXI can be run in non-real-time to debug your code. This will require that you manually configure and recompile RTXI. In the RTXI directory, go to the scripts directory and run:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;OBJECT</span> <span class="na">component=</span><span class="s">&quot;plugin&quot;</span> <span class="na">library=</span><span class="s">&quot;comedi_driver.so&quot;</span> <span class="na">id=</span><span class="s">&quot;2&quot;</span> <span class="nt">&gt;</span>
-<span class="nt">&lt;PARAM</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="nt">&gt;</span>/dev/comedi0<span class="nt">&lt;/PARAM&gt;</span>
-<span class="nt">&lt;PARAM</span> <span class="na">name=</span><span class="s">&quot;Num Devices&quot;</span> <span class="nt">&gt;</span>1<span class="nt">&lt;/PARAM&gt;</span>
-<span class="nt">&lt;OBJECT</span> <span class="na">id=</span><span class="s">&quot;13&quot;</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/OBJECT&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo ./install-rtxi.sh</code></pre></div>
 
-<p>Edit the lines to add another COMEDI device and change the number of devices:</p>
+<p>You will be prompted to enter your system configuration. Select “2” to run in non-real-time (POSIX). </p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;PARAM</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="nt">&gt;</span>/dev/comedi0<span class="nt">&lt;/PARAM&gt;</span>
-<span class="nt">&lt;PARAM</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="nt">&gt;</span>/dev/comedi1<span class="nt">&lt;/PARAM&gt;</span>
-<span class="nt">&lt;PARAM</span> <span class="na">name=</span><span class="s">&quot;Num Devices&quot;</span> <span class="nt">&gt;</span>2<span class="nt">&lt;/PARAM&gt;</span></code></pre></div>
-
+<p>Running RTXI in non-real-time is useful for debugging purposes mainly, and it also allows the application to be installed without having to install a real-time kernel beforehand.</p>
 
   </body>
 

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Kick</title>
+    <title>RTXI HDF5 Data Files</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -88,78 +88,27 @@
 
   <body style="padding-top:30px">
     <div class="container lead-small">
-      <style>
-               #forkongithub a{
-                  background:#222;
-                  color:#fff;
-                  text-decoration:none;
-                  font-family:arial,sans-serif;
-                  text-align:center;
-                  font-weight:bold;
-                  padding:5px 10px;
-                  font-size:1rem;
-                  line-height:2rem;
-                  position:fixed;
-                  top:0;
-                  right:0;
-                  top:70px;
-                  right:20px;
-                  transition:0.25s;
-               } #forkongithub a:hover{
-                  background:#c01;
-                  color:#fff;
-               } @media screen and (min-width:768px) {
-                  #forkongithub{
-                     position:fixed;
-                     display:block;
-                     top:0;
-                     right:0;
-                     width:250px;
-                     overflow:hidden;
-                     height:200px;
-                  } #forkongithub a{
-                     width:200px;
-                     position:absolute;
-                     top:70px;
-                     right:20px;
-                  }
-               }</style>
-               <span id="forkongithub">
-                  <div class="hidden-xs">
-                     <a href="https://github.com/rtxi/kick">Fork Kick <span style="padding-left:5px" class="octicon octicon-mark-github"></span></a>
-                  </div>
-                  <div class="visible-xs">
-                     <a href="https://github.com/rtxi/kick"><span class="octicon octicon-mark-github"></span></a>
-                  </div>
-               </span><h3>Kick - the Manual Event Trigger</h3>
+    <h3 class="page-header">RTXI HDF5 Data Files</h3>
+      <p>The HDF5 file format is a portable and extensible binary data format designed for complex data. It features support for an unlimited variety of datatypes, and has flexible and efficient I/O. HDF5 features a hierarchical structure that allows you to access chunks of data without loading the entire file into memory. An HDF5 file produced by RTXI’s Data Recorder is organized as shown on the right:  </p>
 
-<p><strong>Requirements:</strong> None<br>
-<strong>Limitations:</strong> None  </p>
+<div class="container">
+   <div class="col-sm-4">
+      <a href="/images/hdf5-rtxi.png"><img src="/images/hdf5-rtxi.png" class="img-responsive" /></a>
+   </div>
+   <div class="col-sm-8">
+      <a href="/images/hdf5-rtxi-2.png"><img src="/images/hdf5-rtxi-2.png" class="img-responsive" /></a>
+   </div>
+</div>
 
-<p><img src="kick.png" alt="Kick GUI"></p>
+<p>At the topmost level, an RTXI HDF5 file is divided into separate <strong>Trial</strong> groups, each of which contains the complete set of system options, module settings, and model parameter values that existed at the time that data was recorded. Every time you stop and restart a module from which data is sent to the Data Recorder, a new Trial is created. Each Trial is timestamped with a start and end time. The Data Recorder also has the option to append trials to an existing HDF5 file. For this reason, each Trial has its own data and system attributes.  </p>
 
-<!--start-->
+<p>The parameters for modules and all system settings are saved in the <strong>Parameters</strong> group within each Trial group. The name of each parameter includes the module ID number within RTXI, the name of the module, and the name of the parameter itself. If the value of the parameter changes during recording, all the values are saved with a corresponding index value that is the timestamp in nanoseconds from the start of the recording.  </p>
 
-<p>This module sends a single value as a trigger or “kick” to another module. It outputs a user-specified value when triggered and a value of 0 otherwise. It can be used to manually mark events that a user sees in the data. It’s value in the HDF5 file will then serve as an event flag. This module can also be used to manually test other modules that require a trigger (such as those accepting input from the Spike Detector module). This module only sends a single “kick” at the specified delay after it is unpaused.</p>
+<p>The real-time data is saved in the <strong>Synchronous</strong> group within each Trial group. This group contains separate datasets with the name of each channel and a single dataset that contains all the synchronous data.</p>
 
-<!--end-->
+<p>There are various software available for working with HDF5 files. To simply browse the file structure, you can use the free HDFView application. HDFView provides some limited editing capabilities. For trials where only a single channel is saved, you can also preview a plot of the data. To extract the data for analysis and for complete editing capabilities, APIs are available for MATLAB, GNU Octave, Igor Pro, Mathematica, Python, Scilab, and other software. See this list maintained by the HDF Group.</p>
 
-<h4>Input Channels</h4>
-
-<p>None</p>
-
-<h4>Output Channels</h4>
-
-<ol>
-<li>output(0) – “Kick” : the kick amplitude of a value of ’0′ otherwise</li>
-</ol>
-
-<h4>Parameters</h4>
-
-<ol>
-<li>Amplitude : the amplitude of the kick</li>
-<li>Delay (ms) : the delay after the module is unpaused when the kick is given</li>
-</ol>
+<p>We provide here a collection of MATLAB functions and a simple GUI for browsing through the trials of an RTXI v1.3 HDF5 file with addtional examples of how to extract data and add new datasets to your file. <strong>To load RTXI HDF5 files into MATLAB, you no longer need to “matlabize” your HDF5 files, provided you use the MATLAB functions in RTXIh5.zip.</strong></p>
 
     </div>
   </body>
