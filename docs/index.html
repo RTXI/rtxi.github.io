@@ -18,15 +18,47 @@ permalink: /docs/
 
 <div class="container">
    <ul class="nav nav-tabs nav-justified lead-normal" role="tablist">
-      <li role="presentation" class="active"><a data-toggle="tab" href="#info" role="tab">General Info</a></li>
+      <li role="presentation" class="active"><a data-toggle="tab" href="#tutor" role="tab">Tutorials</a></li>
       <li role="presentation"><a data-toggle="tab" href="#trouble" role="tab">Troubleshooting</a></li>
       <li role="presentation"><a data-toggle="tab" href="#faq" role="tab">FAQs</a></li>
    </ul>
 
    <div class="tab-content">
 
-      <div id="info" role="tabpanel" class="tab-pane fade in active">
-         <p class="lead-small">Information</p>
+      <div id="tutor" role="tabpanel" class="tab-pane fade in active">
+         {% capture tutorvar %}{% increment tutorbodycount %}{% endcapture %}
+         <div class="container tab-content">
+            {% for post in site.categories.tutorials %}
+               {% capture tutorflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
+               {% if tutorflag == "1" %}
+               {% capture tutorvar %}{% increment tutorbodycount %}{% endcapture %}
+                  {% if forloop.index == 1 %}
+                  <div class="tab-pane fade in active" role="tabpanel" id="tutor{{ tutorvar }}">
+                  {% else %}
+                  </div><div class="tab-pane fade" role="tabpanel" id="tutor{{ tutorvar }}">
+                  {% endif %}
+               {% endif %}
+                  <a href="{{ post.url }}"><div class="lead">{{ post.title }}</div></a>
+                  <div class="lead-small">{{ post.excerpt | truncate:300 }}</div>
+            {% endfor %}
+            </div>
+         </div>
+        
+         <!-- Paginator --> 
+         <div class="text-center"><ul class="pagination">
+            {% capture tutorvar %}{% increment tutorpagecount %}{% endcapture %}
+            {% for post in site.categories.tutorials %}
+               {% capture tutorflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
+               {% if tutorflag == "1" %}
+                  {% capture tutorvar %}{% increment tutorpagecount %}{% endcapture %}
+                  {% if forloop.index == 1 %}
+                     <li class="active" role="presentation"><a data-toggle="tab" href="#tutor{{tutorvar}}">{{tutorvar}}</a></li>
+                  {% else %}
+                     <li><a data-toggle="tab" href="#tutor{{ tutorvar }}">{{ tutorvar }}</a></li>
+                  {% endif %}
+               {% endif %}
+            {% endfor %}
+         </ul></div>
       </div>
 
       <div id="trouble" role="tabpanel" class="tab-pane fade">
@@ -34,11 +66,10 @@ permalink: /docs/
       </div>
 
       <div id="faq" role="tabpanel" class="tab-pane fade">
-
          {% capture faqvar %}{% increment faqbodycount %}{% endcapture %}
          <div class="container tab-content">
-            {% for post in site.categories.faq %}
-               {% capture faqflag %}{{ forloop.index | modulo:10 }}{% endcapture %}
+            {% for post in site.categories.faqs %}
+               {% capture faqflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
                {% if faqflag == "1" %}
                {% capture faqvar %}{% increment faqbodycount %}{% endcapture %}
                   {% if forloop.index == 1 %}
@@ -58,8 +89,8 @@ permalink: /docs/
          <!-- Paginator --> 
          <div class="text-center"><ul class="pagination">
             {% capture faqvar %}{% increment faqpagecount %}{% endcapture %}
-            {% for post in site.categories.faq %}
-               {% capture faqflag %}{{ forloop.index | modulo:10 }}{% endcapture %}
+            {% for post in site.categories.faqs %}
+               {% capture faqflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
                {% if faqflag == "1" %}
                   {% capture faqvar %}{% increment faqpagecount %}{% endcapture %}
                   {% if forloop.index == 1 %}
@@ -70,7 +101,6 @@ permalink: /docs/
                {% endif %}
             {% endfor %}
          </ul></div>
-
       </div>
 
    </div>

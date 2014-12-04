@@ -112,7 +112,7 @@ module Jekyll
                   </div>
                </span>"
             yamlheader = "---\n" +
-                        "title: #{repo}\n" +
+                        "title: #{repo.gsub(/-/,' ').split.map(&:capitalize).join(' ')}\n" +
                         "layout: module\n" +
                         "categories:\n" +
                         "- modules\n" +
