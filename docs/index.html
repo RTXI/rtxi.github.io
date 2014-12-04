@@ -62,7 +62,46 @@ permalink: /docs/
       </div>
 
       <div id="trouble" role="tabpanel" class="tab-pane fade">
-         <p class="lead-small">Troubleshooting</p>
+         
+         <div class="container"> 
+            <h4 class="lead" style="text-align:center; margin-bottom:20px;">
+               Please <a href="https://github.com/rtxi/rtxi/issues" style="text-decoration:none">submit any issues</a> you have on our GitHub repo.
+            </h4>
+         </div>
+
+         {% capture troublevar %}{% increment troublebodycount %}{% endcapture %}
+         <div class="container tab-content">
+            {% for post in site.categories.troubleshoot %}
+               {% capture troubleflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
+               {% if troubleflag == "1" %}
+               {% capture troublevar %}{% increment troublebodycount %}{% endcapture %}
+                  {% if forloop.index == 1 %}
+                  <div class="tab-pane fade in active" role="tabpanel" id="trouble{{ troublevar }}">
+                  {% else %}
+                  </div><div class="tab-pane fade" role="tabpanel" id="trouble{{ troublevar }}">
+                  {% endif %}
+               {% endif %}
+                  <a href="{{ post.url }}"><div class="lead">{{ post.title }}</div></a>
+                  <div class="lead-small">{{ post.excerpt | truncate:300 }}</div>
+            {% endfor %}
+            </div>
+         </div>
+        
+         <!-- Paginator --> 
+         <div class="text-center"><ul class="pagination">
+            {% capture troublevar %}{% increment troublepagecount %}{% endcapture %}
+            {% for post in site.categories.troubleials %}
+               {% capture troubleflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
+               {% if troubleflag == "1" %}
+                  {% capture troublevar %}{% increment troublepagecount %}{% endcapture %}
+                  {% if forloop.index == 1 %}
+                     <li class="active" role="presentation"><a data-toggle="tab" href="#trouble{{troublevar}}">{{troublevar}}</a></li>
+                  {% else %}
+                     <li><a data-toggle="tab" href="#trouble{{ troublevar }}">{{ troublevar }}</a></li>
+                  {% endif %}
+               {% endif %}
+            {% endfor %}
+         </ul></div>
       </div>
 
       <div id="faq" role="tabpanel" class="tab-pane fade">

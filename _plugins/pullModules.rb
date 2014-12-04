@@ -112,10 +112,9 @@ module Jekyll
                   </div>
                </span>"
             yamlheader = "---\n" +
-                        "title: #{repo.gsub(/-/,' ').split.map(&:capitalize).join(' ')}\n" +
+                        "title: #{repo}\n" +
                         "layout: module\n" +
-                        "categories:\n" +
-                        "- modules\n" +
+                        "cap-title: #{repo.gsub(/-/,' ').split.map(&:capitalize).join(' ')}\n" +
                         "---\n\n"
 
             htmltext = yamlheader + forkmebanner + GitHub::Markdown.render(text)
