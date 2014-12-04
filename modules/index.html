@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>RTXI: The Real-time eXperiment Interface</title>
+    <title>Modules</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -51,7 +51,7 @@
             </ul>
             <form class="navbar-form navbar-right" role="search">
                <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search">
+                  <input type="text" class="form-control" placeholder="Search (non-functional)">
                   <span class="input-group-btn">
                      <button type="submit" class="btn btn-default">
                         <span class="glyphicon glyphicon-search"></span>
@@ -68,7 +68,7 @@
   <body style=padding-top:30px>
     <div class="container">
    <h2 class="page-header">Modules</h2>
-   <p class="lead">To install modules, enter these commands in the terminal:</p>
+   <p class="lead">To install modules, enter these commands in the terminal.</p>
    <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git clone https://github.com/rtxi/MODULE_NAME.git
 <span class="nv">$ </span><span class="nb">cd </span>MODULE_NAME
 <span class="nv">$ </span>make
@@ -113,7 +113,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/neuron/">Neuron</a></td>
+                  <td><a href="/modules/neuron/">neuron</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>This is the classic Hodgkin-Huxley model neuron. To find information on the model, find some neuroscience book and open it or just use the internet. Here&#39;s the <a href="https://en.wikipedia.org/wiki/Hodgkin%E2%80%93Huxley_model">wikipedia entry</a>. </p>
@@ -125,7 +125,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/connor-stevens/">Connor Stevens</a></td>
+                  <td><a href="/modules/connor-stevens/">connor-stevens</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>The Connor Stevens model neuron is like the Hodgkin-Huxley neuron, but with slightly different kinetics for the fast sodium and potassium delayed-rectifier channels and an additional A-type potassium channel (Dayan and Abbott, Theoretical Neuroscience, Ch. 6). These changes give the Connor Stevens neuron Type I excitability such that it can achieve arbitrarily low spike rates. This feature... 
@@ -135,7 +135,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/plugin-template/">Plugin Template</a></td>
+                  <td><a href="/modules/plugin-template/">plugin-template</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>This is the plugin template, also known in previous versions as MyPluginGUI. It is designed to provide a simplified interface with which anyone can develop simple RTXI modules. For instructions and tutorials regarding its use, head to our <a href="https://github.com/rtxi/tutorials/wiki">tutorials wiki</a>. </p>
@@ -147,7 +147,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/auto-pi/">Auto Pi</a></td>
+                  <td><a href="/modules/auto-pi/">auto-pi</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>This module controls the Intespike interval (ISI) of a neuron using a Proportional Integral controller. The model automatically tunes the PI controller parameters to the neuron. The goal of the PI controller is to make small changes in current at each action potential onset to maintain the neuron at a target firing rate. This spike rate controller is designed to offset drift in the firing ... 
@@ -157,7 +157,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/current-clamp/">Current Clamp</a></td>
+                  <td><a href="/modules/current-clamp/">current-clamp</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>This plugin allows you to deliver a protocol for current step or current ramp inputs. You can randomize the order of amplitudes used and repeat the entire protocol a certain number of times. For current step inputs, you can also choose to plot the f-I curve as it is generated. For each complete cycle through all the command currents, the plot symbol will change. The firing rate is computed... 
@@ -167,7 +167,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/electric-synapse/">Electric Synapse</a></td>
+                  <td><a href="/modules/electric-synapse/">electric-synapse</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>Creates a simulated connection, or &#39;synapse,&#39; between two cells. The module takes in voltage signals from two cells and outputs currents based on the voltage difference and user-specified conductance. </p>
@@ -179,7 +179,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/fir-window/">Fir Window</a></td>
+                  <td><a href="/modules/fir-window/">fir-window</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>This module creates an in-line FIR filter that can be applied to any signal in RTXI. Given the desired number of filter taps (filter order + 1), it computes the impulse response for a lowpass, highpass, bandpass, or bandstop filter using the window method. For a lowpass or highpass filter, the module uses the first frequency as the cut-off frequency. For a bandpass or bandstop filter, both... 
@@ -189,7 +189,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/g-waveform/">G Waveform</a></td>
+                  <td><a href="/modules/g-waveform/">g-waveform</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>This module takes an external ASCII formatted file as input. The file should have four columns with units in Amps and Siemens: absolute_current AMPA GABA (NMDA)</p>
@@ -201,7 +201,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/hfac/">Hfac</a></td>
+                  <td><a href="/modules/hfac/">hfac</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>This module implements a protocol for performing conduction block experiments on nerve fibers using high frequency AC current (HFAC) stimuli. Action potentials in the nerve are evoked with a single biphase square pulse and the HFAC signal is a sinusoidal waveform. You have an option to select which component of the biphase pulse occurs first. The “Single AP Stim” button is used to send a s... 
@@ -211,7 +211,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/i-cell/">I Cell</a></td>
+                  <td><a href="/modules/i-cell/">i-cell</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>Module for a current-clamped cell. </p>
@@ -223,7 +223,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/iir-filter/">Iir Filter</a></td>
+                  <td><a href="/modules/iir-filter/">iir-filter</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>This module computes coefficients for three types of filters. They require the following parameters:</p>
@@ -243,7 +243,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/current-hold/">Current Hold</a></td>
+                  <td><a href="/modules/current-hold/">current-hold</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>Description pending</p>
@@ -255,7 +255,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/current-step/">Current Step</a></td>
+                  <td><a href="/modules/current-step/">current-step</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>This plugin allows you to deliver a series of current step commands.</p>
@@ -267,7 +267,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/spike-triggered-average/">Spike Triggered Average</a></td>
+                  <td><a href="/modules/spike-triggered-average/">spike-triggered-average</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>This module computes an event or spike-triggered average of any input signal. You specify a time window of interest around the spike. This screenshot was made using a neuron model to generate spikes and the SpikeDetect module to detect spikes. The STA module then plots the average spike shape waveform is plotted.</p>
@@ -279,7 +279,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/spike-detector/">Spike Detector</a></td>
+                  <td><a href="/modules/spike-detector/">spike-detector</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>This module uses a simple threshold to detect spikes. The cell can be in one of 5 states:</p>
@@ -296,7 +296,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/spike-rate-control/">Spike Rate Control</a></td>
+                  <td><a href="/modules/spike-rate-control/">spike-rate-control</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>This module is designed to stabilize spike rates around a user-specified ISI. It reads in the spike state of a connected spike detector module and, depending on the state of the detector and the specified ISI, outputs a current. The amplitude is determined by comparing the error between real ISI and the target. When error oscillates around the target, output is small, but when error increa... 
@@ -306,7 +306,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/spike-statistics/">Spike Statistics</a></td>
+                  <td><a href="/modules/spike-statistics/">spike-statistics</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>This module contains a spike detector based on a positive threshold crossing (see SpikeDetect module). It computes the average ISI and the current coefficient of variation. These values are continuously updated with each spike until the statistics are reset with the button.</p>
@@ -318,7 +318,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/alpha-synapse/">Alpha Synapse</a></td>
+                  <td><a href="/modules/alpha-synapse/">alpha-synapse</a></td>
                   <td style="white-space: nowrap;">   
 
 <p>This module creates an artificial synapse where the fixed conductance change is described by an alpha function. The fixed conductance waveform is pre-computed according to:  </p>
@@ -336,7 +336,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/coupling/">Coupling</a></td>
+                  <td><a href="/modules/coupling/">coupling</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>This module reciprocally couples two neurons with alpha synapses. It requires the membrane potential of both cells and the inputs from two spike detector modules (eg. Spike Detect). It outputs the two synaptic currents which must then be appropriately connected. This module can be used to couple two biological neurons or one biological neuron with a model neuron. To couple the neurons, the... 
@@ -346,7 +346,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/h-current/">H Current</a></td>
+                  <td><a href="/modules/h-current/">h-current</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>Description pending</p>
@@ -358,7 +358,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/signal-generator/">Signal Generator</a></td>
+                  <td><a href="/modules/signal-generator/">signal-generator</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>This module generates the following signals:<br>
@@ -373,7 +373,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/kick/">Kick</a></td>
+                  <td><a href="/modules/kick/">kick</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>This module sends a single value as a trigger or “kick” to another module. It outputs a user-specified value when triggered and a value of 0 otherwise. It can be used to manually mark events that a user sees in the data. It’s value in the HDF5 file will then serve as an event flag. This module can also be used to manually test other modules that require a trigger (such as those accepting i... 
@@ -383,7 +383,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/mimic-signal/">Mimic Signal</a></td>
+                  <td><a href="/modules/mimic-signal/">mimic-signal</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>Copies an input signal and outputs another with optional user-specified scaled gain or offset. </p>
@@ -395,7 +395,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/noise-generator/">Noise Generator</a></td>
+                  <td><a href="/modules/noise-generator/">noise-generator</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>This module continuously generates Gaussian white noise computed using the Box-Muller method. This module is already included in RTXI v1.3+. You may edit this source code (eg. adding additional noise types). Compiling and installing this module will then overwrite the bundled version of the noise generator.</p>
@@ -407,7 +407,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/sync/">Sync</a></td>
+                  <td><a href="/modules/sync/">sync</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>The Sync module is included in RTXI v1.3 by default. This module synchronizes the starting and stopping of a set of loaded modules. These modules must be derived from DefaultGUIModel. Enter the instance ID number of each module you want to synchronize in a comma-delimited list. This version of Synch has been updated to take a comma with or without an additional space. The instance ID numbe... 
@@ -417,7 +417,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/virtual-dendrite/">Virtual Dendrite</a></td>
+                  <td><a href="/modules/virtual-dendrite/">virtual-dendrite</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>A virtual dendrite to silence all those pesky reviewers! “Attaches” a cable to your cell through which synaptic inputs are “passed” before RTXI injects the resultant current into the recording site. </p>
@@ -429,7 +429,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/wang-buzsaki/">Wang Buzsaki</a></td>
+                  <td><a href="/modules/wang-buzsaki/">wang-buzsaki</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>The Wang-Buzsaki model uses the Hodgkin-Huxley formalism to describe a single-compartment neuron with sodium and potassium conductances. For the transient sodium current, the activation variable m is assumed fast and substituted by its steady-state function.</p>
@@ -441,7 +441,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/wave-maker/">Wave Maker</a></td>
+                  <td><a href="/modules/wave-maker/">wave-maker</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>This module loads data from an ASCII formatted file. It samples one value from the the file on every time step and creates and generates an output signal. The module computes the time length of the waveform based on the current real-time period. This is an easy way to test your algorithms on pre-recorded data as if it were being acquired in real-time. This module is already included in RTX... 
@@ -451,7 +451,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/membrane-test/">Membrane Test</a></td>
+                  <td><a href="/modules/membrane-test/">membrane-test</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>Generates a square wave pulse with amplitude equal to one of the user-set hold potentials. The first half is the resting potential plus the amplitude of the wave, and the second half is just the resting potential.</p>
@@ -463,7 +463,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/axon-axopatch1D/">Axon Axopatch1d</a></td>
+                  <td><a href="/modules/axon-axopatch1D/">axon-axopatch1D</a></td>
                   <td style="white-space: nowrap;"> 
 
 <p>Amplifier control module to compensate for scaling properties of the Axon AxoPatch 1D controller. This module essentially acts as an interface that replicated functionality of the control panel, but in a manner specific to the controller&#39;s own functionality. </p>
@@ -508,7 +508,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/neuron/">Neuron</a></td>
+                  <td><a href="/modules/neuron/">neuron</a></td>
                   <td> 
 
 <p>This is the classic Hodgkin-Huxley model neuron. To find information on the model, find some neuroscience book and open it or just use the internet. Here&#39;s the <a href="https://en.wikipedia.org/wiki/Hodgkin%E2%80%93Huxley_model">wikipedia entry</a>. </p>
@@ -517,7 +517,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Neuron/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/neuron/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -529,7 +529,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/connor-stevens/">Connor Stevens</a></td>
+                  <td><a href="/modules/connor-stevens/">connor-stevens</a></td>
                   <td> 
 
 <p>The Connor Stevens model neuron is like the Hodgkin-Huxley neuron, but with slightly different kinetics for the fast sodium and potassium delayed-rectifier channels and an additional A-type potassium channel (Dayan and Abbott, Theoretical Neuroscience, Ch. 6). These changes give the Connor Stevens neuron Type I excitability such that it can achieve arbitrarily low spike rates. This feature may make this model more useful for testing custom modules than the Hodgkin-Huxley model neuron.</p>
@@ -538,7 +538,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Connor Stevens/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/connor-stevens/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -550,7 +550,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/plugin-template/">Plugin Template</a></td>
+                  <td><a href="/modules/plugin-template/">plugin-template</a></td>
                   <td> 
 
 <p>This is the plugin template, also known in previous versions as MyPluginGUI. It is designed to provide a simplified interface with which anyone can develop simple RTXI modules. For instructions and tutorials regarding its use, head to our <a href="https://github.com/rtxi/tutorials/wiki">tutorials wiki</a>. </p>
@@ -559,7 +559,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Plugin Template/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/plugin-template/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -571,14 +571,14 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/auto-pi/">Auto Pi</a></td>
+                  <td><a href="/modules/auto-pi/">auto-pi</a></td>
                   <td> 
 
 <p>This module controls the Intespike interval (ISI) of a neuron using a Proportional Integral controller. The model automatically tunes the PI controller parameters to the neuron. The goal of the PI controller is to make small changes in current at each action potential onset to maintain the neuron at a target firing rate. This spike rate controller is designed to offset drift in the firing rate on the order of 10s of seconds to minutes. This module requires input from the “Spike Detector”... 
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Auto Pi/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/auto-pi/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -590,14 +590,14 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/current-clamp/">Current Clamp</a></td>
+                  <td><a href="/modules/current-clamp/">current-clamp</a></td>
                   <td> 
 
 <p>This plugin allows you to deliver a protocol for current step or current ramp inputs. You can randomize the order of amplitudes used and repeat the entire protocol a certain number of times. For current step inputs, you can also choose to plot the f-I curve as it is generated. For each complete cycle through all the command currents, the plot symbol will change. The firing rate is computed by taking the reciprocal of the average ISI detected during a command input. Plotting the f-I curve... 
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Current Clamp/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/current-clamp/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -609,7 +609,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/electric-synapse/">Electric Synapse</a></td>
+                  <td><a href="/modules/electric-synapse/">electric-synapse</a></td>
                   <td> 
 
 <p>Creates a simulated connection, or &#39;synapse,&#39; between two cells. The module takes in voltage signals from two cells and outputs currents based on the voltage difference and user-specified conductance. </p>
@@ -618,7 +618,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Electric Synapse/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/electric-synapse/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -630,14 +630,14 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/fir-window/">Fir Window</a></td>
+                  <td><a href="/modules/fir-window/">fir-window</a></td>
                   <td> 
 
 <p>This module creates an in-line FIR filter that can be applied to any signal in RTXI. Given the desired number of filter taps (filter order + 1), it computes the impulse response for a lowpass, highpass, bandpass, or bandstop filter using the window method. For a lowpass or highpass filter, the module uses the first frequency as the cut-off frequency. For a bandpass or bandstop filter, both input frequencies are used to define the frequency band. The module initially computes an ideal FIR... 
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Fir Window/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/fir-window/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -649,7 +649,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/g-waveform/">G Waveform</a></td>
+                  <td><a href="/modules/g-waveform/">g-waveform</a></td>
                   <td> 
 
 <p>This module takes an external ASCII formatted file as input. The file should have four columns with units in Amps and Siemens: absolute_current AMPA GABA (NMDA)</p>
@@ -660,7 +660,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/G Waveform/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/g-waveform/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -672,14 +672,14 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/hfac/">Hfac</a></td>
+                  <td><a href="/modules/hfac/">hfac</a></td>
                   <td> 
 
 <p>This module implements a protocol for performing conduction block experiments on nerve fibers using high frequency AC current (HFAC) stimuli. Action potentials in the nerve are evoked with a single biphase square pulse and the HFAC signal is a sinusoidal waveform. You have an option to select which component of the biphase pulse occurs first. The “Single AP Stim” button is used to send a single pulse that can be used to elicit individual responses. The “Enable HFAC” toggle button can be ... 
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Hfac/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/hfac/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -691,7 +691,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/i-cell/">I Cell</a></td>
+                  <td><a href="/modules/i-cell/">i-cell</a></td>
                   <td> 
 
 <p>Module for a current-clamped cell. </p>
@@ -700,7 +700,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/I Cell/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/i-cell/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -712,7 +712,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/iir-filter/">Iir Filter</a></td>
+                  <td><a href="/modules/iir-filter/">iir-filter</a></td>
                   <td> 
 
 <p>This module computes coefficients for three types of filters. They require the following parameters:</p>
@@ -729,7 +729,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Iir Filter/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/iir-filter/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -741,7 +741,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/current-hold/">Current Hold</a></td>
+                  <td><a href="/modules/current-hold/">current-hold</a></td>
                   <td> 
 
 <p>Description pending</p>
@@ -750,7 +750,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Current Hold/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/current-hold/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -762,7 +762,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/current-step/">Current Step</a></td>
+                  <td><a href="/modules/current-step/">current-step</a></td>
                   <td> 
 
 <p>This plugin allows you to deliver a series of current step commands.</p>
@@ -771,7 +771,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Current Step/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/current-step/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -783,7 +783,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/spike-triggered-average/">Spike Triggered Average</a></td>
+                  <td><a href="/modules/spike-triggered-average/">spike-triggered-average</a></td>
                   <td> 
 
 <p>This module computes an event or spike-triggered average of any input signal. You specify a time window of interest around the spike. This screenshot was made using a neuron model to generate spikes and the SpikeDetect module to detect spikes. The STA module then plots the average spike shape waveform is plotted.</p>
@@ -792,7 +792,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Spike Triggered Average/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/spike-triggered-average/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -804,7 +804,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/spike-detector/">Spike Detector</a></td>
+                  <td><a href="/modules/spike-detector/">spike-detector</a></td>
                   <td> 
 
 <p>This module uses a simple threshold to detect spikes. The cell can be in one of 5 states:</p>
@@ -821,7 +821,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Spike Detector/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/spike-detector/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -833,7 +833,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/spike-rate-control/">Spike Rate Control</a></td>
+                  <td><a href="/modules/spike-rate-control/">spike-rate-control</a></td>
                   <td> 
 
 <p>This module is designed to stabilize spike rates around a user-specified ISI. It reads in the spike state of a connected spike detector module and, depending on the state of the detector and the specified ISI, outputs a current. The amplitude is determined by comparing the error between real ISI and the target. When error oscillates around the target, output is small, but when error increases, the output increases in amplitude. </p>
@@ -842,7 +842,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Spike Rate Control/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/spike-rate-control/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -854,7 +854,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/spike-statistics/">Spike Statistics</a></td>
+                  <td><a href="/modules/spike-statistics/">spike-statistics</a></td>
                   <td> 
 
 <p>This module contains a spike detector based on a positive threshold crossing (see SpikeDetect module). It computes the average ISI and the current coefficient of variation. These values are continuously updated with each spike until the statistics are reset with the button.</p>
@@ -863,7 +863,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Spike Statistics/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/spike-statistics/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -875,7 +875,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/alpha-synapse/">Alpha Synapse</a></td>
+                  <td><a href="/modules/alpha-synapse/">alpha-synapse</a></td>
                   <td>   
 
 <p>This module creates an artificial synapse where the fixed conductance change is described by an alpha function. The fixed conductance waveform is pre-computed according to:  </p>
@@ -890,7 +890,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Alpha Synapse/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/alpha-synapse/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -902,14 +902,14 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/coupling/">Coupling</a></td>
+                  <td><a href="/modules/coupling/">coupling</a></td>
                   <td> 
 
 <p>This module reciprocally couples two neurons with alpha synapses. It requires the membrane potential of both cells and the inputs from two spike detector modules (eg. Spike Detect). It outputs the two synaptic currents which must then be appropriately connected. This module can be used to couple two biological neurons or one biological neuron with a model neuron. To couple the neurons, the module should be unpaused, then the “Couple Neurons” toggle button can be activated/deactivated. Th... 
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Coupling/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/coupling/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -921,7 +921,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/h-current/">H Current</a></td>
+                  <td><a href="/modules/h-current/">h-current</a></td>
                   <td> 
 
 <p>Description pending</p>
@@ -930,7 +930,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/H Current/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/h-current/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -942,7 +942,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/signal-generator/">Signal Generator</a></td>
+                  <td><a href="/modules/signal-generator/">signal-generator</a></td>
                   <td> 
 
 <p>This module generates the following signals:<br>
@@ -956,7 +956,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Signal Generator/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/signal-generator/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -968,14 +968,14 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/kick/">Kick</a></td>
+                  <td><a href="/modules/kick/">kick</a></td>
                   <td> 
 
 <p>This module sends a single value as a trigger or “kick” to another module. It outputs a user-specified value when triggered and a value of 0 otherwise. It can be used to manually mark events that a user sees in the data. It’s value in the HDF5 file will then serve as an event flag. This module can also be used to manually test other modules that require a trigger (such as those accepting input from the Spike Detector module). This module only sends a single “kick” at the specified delay ... 
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Kick/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/kick/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -987,7 +987,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/mimic-signal/">Mimic Signal</a></td>
+                  <td><a href="/modules/mimic-signal/">mimic-signal</a></td>
                   <td> 
 
 <p>Copies an input signal and outputs another with optional user-specified scaled gain or offset. </p>
@@ -996,7 +996,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Mimic Signal/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/mimic-signal/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -1008,7 +1008,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/noise-generator/">Noise Generator</a></td>
+                  <td><a href="/modules/noise-generator/">noise-generator</a></td>
                   <td> 
 
 <p>This module continuously generates Gaussian white noise computed using the Box-Muller method. This module is already included in RTXI v1.3+. You may edit this source code (eg. adding additional noise types). Compiling and installing this module will then overwrite the bundled version of the noise generator.</p>
@@ -1017,7 +1017,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Noise Generator/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/noise-generator/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -1029,7 +1029,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/sync/">Sync</a></td>
+                  <td><a href="/modules/sync/">sync</a></td>
                   <td> 
 
 <p>The Sync module is included in RTXI v1.3 by default. This module synchronizes the starting and stopping of a set of loaded modules. These modules must be derived from DefaultGUIModel. Enter the instance ID number of each module you want to synchronize in a comma-delimited list. This version of Synch has been updated to take a comma with or without an additional space. The instance ID number of a module is located in the left-hand corner of the title bar.</p>
@@ -1038,7 +1038,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Sync/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/sync/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -1050,7 +1050,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/virtual-dendrite/">Virtual Dendrite</a></td>
+                  <td><a href="/modules/virtual-dendrite/">virtual-dendrite</a></td>
                   <td> 
 
 <p>A virtual dendrite to silence all those pesky reviewers! “Attaches” a cable to your cell through which synaptic inputs are “passed” before RTXI injects the resultant current into the recording site. </p>
@@ -1059,7 +1059,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Virtual Dendrite/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/virtual-dendrite/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -1071,7 +1071,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/wang-buzsaki/">Wang Buzsaki</a></td>
+                  <td><a href="/modules/wang-buzsaki/">wang-buzsaki</a></td>
                   <td> 
 
 <p>The Wang-Buzsaki model uses the Hodgkin-Huxley formalism to describe a single-compartment neuron with sodium and potassium conductances. For the transient sodium current, the activation variable m is assumed fast and substituted by its steady-state function.</p>
@@ -1082,7 +1082,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Wang Buzsaki/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/wang-buzsaki/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -1094,14 +1094,14 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/wave-maker/">Wave Maker</a></td>
+                  <td><a href="/modules/wave-maker/">wave-maker</a></td>
                   <td> 
 
 <p>This module loads data from an ASCII formatted file. It samples one value from the the file on every time step and creates and generates an output signal. The module computes the time length of the waveform based on the current real-time period. This is an easy way to test your algorithms on pre-recorded data as if it were being acquired in real-time. This module is already included in RTXI v1.3+ by default. You may download this source code and edit it. Compiling and installing this mod... 
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Wave Maker/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/wave-maker/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -1113,7 +1113,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/membrane-test/">Membrane Test</a></td>
+                  <td><a href="/modules/membrane-test/">membrane-test</a></td>
                   <td> 
 
 <p>Generates a square wave pulse with amplitude equal to one of the user-set hold potentials. The first half is the resting potential plus the amplitude of the wave, and the second half is just the resting potential.</p>
@@ -1124,7 +1124,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Membrane Test/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/membrane-test/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>
@@ -1136,7 +1136,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
          
             
                <tr>
-                  <td><a href="/modules/axon-axopatch1D/">Axon Axopatch1d</a></td>
+                  <td><a href="/modules/axon-axopatch1D/">axon-axopatch1D</a></td>
                   <td> 
 
 <p>Amplifier control module to compensate for scaling properties of the Axon AxoPatch 1D controller. This module essentially acts as an interface that replicated functionality of the control panel, but in a manner specific to the controller&#39;s own functionality. </p>
@@ -1145,7 +1145,7 @@ Below is evidence that I am a terrible front-end ui designer. The module table u
                   </td>
 <!--
                   <td style="text-align: center">
-                     <a href="https://github.com/RTXI/Axon Axopatch1d/archive/master.zip" download style="text-decoration: none">
+                     <a href="https://github.com/RTXI/axon-axopatch1D/archive/master.zip" download style="text-decoration: none">
                         <button type="button" class="btn btn-primary">
                            <span class="glyphicon glyphicon-cloud-download"></span>
                         </button>

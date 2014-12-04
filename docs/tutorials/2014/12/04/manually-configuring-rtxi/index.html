@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Manually Configuring RTXI</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/lead-extra.css" rel="stylesheet">
+    <link href="/css/pygments.css" rel="stylesheet">
+<!--    <link href="/css/module.css" rel="stylesheet">-->
+    <link href="/fonts/octicons.css" rel="stylesheet">
+
+    <style>
+    h1, h2, h3, h4, h5, h6 {
+      padding-bottom: 9px;
+      margin: 40px 0 20px;
+      border-bottom: 1px solid #eee;
+      font-weight: normal;
+    }
+    strong {
+      font-weight: normal;
+    }
+    /*p, div {
+      .lead;
+    }*/
+    img {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    </style>
+   
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.ico">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <!-- Fixed navbar -->
+<link href="/css/navbar-fixed-top.css" rel="stylesheet">
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <div class="container">
+      <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" rel="home" href="/"><b>RTXI</b></a>
+      </div>
+      <div class="row">
+         <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+               <li><a href="/install/">Install</a></li>
+               <li><a href="/modules/">Modules</a></li>
+               <li><a href="/papers/">Papers</a></li>
+               <li><a href="/docs/">Docs</a></li>
+               <li><a href="/contact/">Contact</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+               <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search (non-functional)">
+                  <span class="input-group-btn">
+                     <button type="submit" class="btn btn-default">
+                        <span class="glyphicon glyphicon-search"></span>
+                     </button>
+                  </span>
+              </div>
+            </form>
+         </div>
+      </div><!--/.nav-collapse -->
+   </div>
+</nav>
+
+
+  <body style="padding-top:30px">
+    <div class="container lead-small">
+    <h3 class="page-header">Manually Configuring RTXI</h3>
+      <p>You can manually configure RTXI with many options. For example, you can run RTXI 2.0 using the RTAI rather than the default Xenomai, and you can set up RTXI in non-real-time mode using the POSIX interface. You may also direct RTXI to libraries/packages in non-standard locations. The full configure options for are below:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">configure<span class="s1">&#39; configures RTXI trunk to adapt to many kinds of systems.</span>
+
+<span class="s1">Usage: ./configure [OPTION]... [VAR=VALUE]...</span>
+
+<span class="s1">To assign environment variables (e.g., CC, CFLAGS...), specify them as</span>
+<span class="s1">VAR=VALUE.  See below for descriptions of some of the useful variables.</span>
+
+<span class="s1">Defaults for the options are specified in brackets.</span>
+
+<span class="s1">Configuration:</span>
+<span class="s1">  -h, --help              display this help and exit</span>
+<span class="s1">      --help=short        display options specific to this package</span>
+<span class="s1">      --help=recursive    display the short help of all the included packages</span>
+<span class="s1">  -V, --version           display version information and exit</span>
+<span class="s1">  -q, --quiet, --silent   do not print `checking...&#39;</span> messages
+      --cache-file<span class="o">=</span>FILE   cache <span class="nb">test </span>results in FILE <span class="o">[</span>disabled<span class="o">]</span>
+  -C, --config-cache      <span class="nb">alias </span><span class="k">for</span> <span class="sb">`</span>--cache-file<span class="o">=</span>config.cache<span class="s1">&#39;</span>
+<span class="s1">  -n, --no-create         do not create output files</span>
+<span class="s1">      --srcdir=DIR        find the sources in DIR [configure dir or `..&#39;</span><span class="o">]</span>
+
+Installation directories:
+  --prefix<span class="o">=</span>PREFIX         install architecture-independent files in PREFIX
+                          <span class="o">[</span>/usr/local<span class="o">]</span>
+  --exec-prefix<span class="o">=</span>EPREFIX   install architecture-dependent files in EPREFIX
+                          <span class="o">[</span>PREFIX<span class="o">]</span>
+
+By default, <span class="sb">`</span>make install<span class="s1">&#39; will install all the files in</span>
+<span class="s1">`/usr/local/bin&#39;</span>, <span class="sb">`</span>/usr/local/lib<span class="s1">&#39; etc.  You can specify</span>
+<span class="s1">an installation prefix other than `/usr/local&#39;</span> using <span class="sb">`</span>--prefix<span class="s1">&#39;,</span>
+<span class="s1">for instance `--prefix=$HOME&#39;</span>.
+
+For better control, use the options below.
+
+Fine tuning of the installation directories:
+  --bindir<span class="o">=</span>DIR            user executables <span class="o">[</span>EPREFIX/bin<span class="o">]</span>
+  --sbindir<span class="o">=</span>DIR           system admin executables <span class="o">[</span>EPREFIX/sbin<span class="o">]</span>
+  --libexecdir<span class="o">=</span>DIR        program executables <span class="o">[</span>EPREFIX/libexec<span class="o">]</span>
+  --sysconfdir<span class="o">=</span>DIR        <span class="nb">read</span>-only single-machine data <span class="o">[</span>PREFIX/etc<span class="o">]</span>
+  --sharedstatedir<span class="o">=</span>DIR    modifiable architecture-independent data <span class="o">[</span>PREFIX/com<span class="o">]</span>
+  --localstatedir<span class="o">=</span>DIR     modifiable single-machine data <span class="o">[</span>PREFIX/var<span class="o">]</span>
+  --libdir<span class="o">=</span>DIR            object code libraries <span class="o">[</span>EPREFIX/lib<span class="o">]</span>
+  --includedir<span class="o">=</span>DIR        C header files <span class="o">[</span>PREFIX/include<span class="o">]</span>
+  --oldincludedir<span class="o">=</span>DIR     C header files <span class="k">for</span> non-gcc <span class="o">[</span>/usr/include<span class="o">]</span>
+  --datarootdir<span class="o">=</span>DIR       <span class="nb">read</span>-only arch.-independent data root <span class="o">[</span>PREFIX/share<span class="o">]</span>
+  --datadir<span class="o">=</span>DIR           <span class="nb">read</span>-only architecture-independent data <span class="o">[</span>DATAROOTDIR<span class="o">]</span>
+  --infodir<span class="o">=</span>DIR           info documentation <span class="o">[</span>DATAROOTDIR/info<span class="o">]</span>
+  --localedir<span class="o">=</span>DIR         locale-dependent data <span class="o">[</span>DATAROOTDIR/locale<span class="o">]</span>
+  --mandir<span class="o">=</span>DIR            man documentation <span class="o">[</span>DATAROOTDIR/man<span class="o">]</span>
+  --docdir<span class="o">=</span>DIR            documentation root <span class="o">[</span>DATAROOTDIR/doc/rtxi<span class="o">]</span>
+  --htmldir<span class="o">=</span>DIR           html documentation <span class="o">[</span>DOCDIR<span class="o">]</span>
+  --dvidir<span class="o">=</span>DIR            dvi documentation <span class="o">[</span>DOCDIR<span class="o">]</span>
+  --pdfdir<span class="o">=</span>DIR            pdf documentation <span class="o">[</span>DOCDIR<span class="o">]</span>
+  --psdir<span class="o">=</span>DIR             ps documentation <span class="o">[</span>DOCDIR<span class="o">]</span>
+
+Program names:
+  --program-prefix<span class="o">=</span>PREFIX            prepend PREFIX to installed program names
+  --program-suffix<span class="o">=</span>SUFFIX            append SUFFIX to installed program names
+  --program-transform-name<span class="o">=</span>PROGRAM   run sed PROGRAM on installed program names
+
+X features:
+  --x-includes<span class="o">=</span>DIR    X include files are in DIR
+  --x-libraries<span class="o">=</span>DIR   X library files are in DIR
+
+System types:
+  --build<span class="o">=</span>BUILD     configure <span class="k">for</span> building on BUILD <span class="o">[</span>guessed<span class="o">]</span>
+  --host<span class="o">=</span>HOST       cross-compile to build programs to run on HOST <span class="o">[</span>BUILD<span class="o">]</span>
+
+Optional Features:
+  --disable-option-checking  ignore unrecognized --enable/--with options
+  --disable-FEATURE       <span class="k">do</span> not include FEATURE <span class="o">(</span>same as --enable-FEATURE<span class="o">=</span>no<span class="o">)</span>
+  --enable-FEATURE<span class="o">[=</span>ARG<span class="o">]</span>  include FEATURE <span class="o">[</span><span class="nv">ARG</span><span class="o">=</span>yes<span class="o">]</span>
+  --enable-shared<span class="o">[=</span>PKGS<span class="o">]</span>  build shared libraries <span class="o">[</span><span class="nv">default</span><span class="o">=</span>yes<span class="o">]</span>
+  --enable-static<span class="o">[=</span>PKGS<span class="o">]</span>  build static libraries <span class="o">[</span><span class="nv">default</span><span class="o">=</span>yes<span class="o">]</span>
+  --enable-fast-install<span class="o">[=</span>PKGS<span class="o">]</span>
+                          optimize <span class="k">for</span> fast installation <span class="o">[</span><span class="nv">default</span><span class="o">=</span>yes<span class="o">]</span>
+  --disable-dependency-tracking  speeds up one-time build
+  --enable-dependency-tracking   <span class="k">do</span> not reject slow dependency extractors
+  --disable-libtool-lock  avoid locking <span class="o">(</span>might <span class="nb">break </span>parallel builds<span class="o">)</span>
+  --enable-xenomai        build the Xenomai interface
+  --enable-posix          build the POSIX non-RT interface
+  --enable-debug          turn on debugging
+  --enable-comedi         build the comedi driver
+  --enable-analogy        build the analogy driver
+  --enable-ni             build the ni driver
+  --enable-clampprotocol     build the clamp protocol module <span class="o">(</span><span class="nv">default</span><span class="o">=</span>enabled<span class="o">)</span>
+
+Optional Packages:
+  --with-PACKAGE<span class="o">[=</span>ARG<span class="o">]</span>    use PACKAGE <span class="o">[</span><span class="nv">ARG</span><span class="o">=</span>yes<span class="o">]</span>
+  --without-PACKAGE       <span class="k">do</span> not use PACKAGE <span class="o">(</span>same as --with-PACKAGE<span class="o">=</span>no<span class="o">)</span>
+  --with-cppunit-prefix<span class="o">=</span>PFX   Prefix where CppUnit is installed <span class="o">(</span>optional<span class="o">)</span>
+  --with-cppunit-exec-prefix<span class="o">=</span>PFX  Exec prefix where CppUnit is installed <span class="o">(</span>optional<span class="o">)</span>
+  --with-pic              try to use only PIC/non-PIC objects <span class="o">[</span><span class="nv">default</span><span class="o">=</span>use
+                          both<span class="o">]</span>
+  --with-gnu-ld           assume the C compiler uses GNU ld <span class="o">[</span><span class="nv">default</span><span class="o">=</span>no<span class="o">]</span>
+  --with-x                use the X Window System
+  --with-Qt-dir<span class="o">=</span>DIR       DIR is equal to <span class="nv">$QTDIR</span> <span class="k">if</span> you have followed the
+                          installation instructions of Trolltech. Header files
+                          are in DIR/include, binary utilities are in DIR/bin.
+                          The library is in DIR/lib, unless --with-Qt-lib-dir
+                          is also set.
+  --with-Qt-include-dir<span class="o">=</span>DIR
+                          Qt header files are in DIR
+  --with-Qt-bin-dir<span class="o">=</span>DIR   Qt utilities such as moc and uic are in DIR
+  --with-Qt-lib-dir<span class="o">=</span>DIR   The Qt library is in DIR
+  --with-Qt-lib<span class="o">=</span>LIB       Use -lLIB to link with the Qt library
+  --with-rtai-config<span class="o">=</span>FILE location of the rtai-config program
+
+Some influential environment variables:
+  CC          C compiler <span class="nb">command</span>
+<span class="nb">  </span>CFLAGS      C compiler flags
+  LDFLAGS     linker flags, e.g. -L <span class="k">if</span> you have libraries in a
+              nonstandard directory 
+  LIBS        libraries to pass to the linker, e.g. -l
+  CPPFLAGS    C/C++/Objective C preprocessor flags, e.g. -I <span class="k">if</span>
+              you have headers in a nonstandard directory 
+  CPP         C preprocessor
+  CXX         C++ compiler <span class="nb">command</span>
+<span class="nb">  </span>CXXFLAGS    C++ compiler flags
+  CXXCPP      C++ preprocessor
+  XMKMF       Path to xmkmf, Makefile generator <span class="k">for</span> X Window System</code></pre></div>
+
+<p>If there is a flag you want to set, say, <code>--enable-ni</code>, go to the base of the RTXI git directory and run:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./configure --enable-ni
+<span class="nv">$ </span>make -j<span class="sb">`</span>nproc<span class="sb">`</span>
+<span class="nv">$ </span>sudo make install -j<span class="sb">`</span>nproc<span class="sb">`</span></code></pre></div>
+
+<p>These three lines will apply your desired confguration to the build options and then compile and install RTXI.</p>
+
+    </div>
+  </body>
+
+  <link href="/css/footer.css" rel="stylesheet">
+
+<div class="footer">
+   <div class="container text-center">
+      <p class="text-muted lead-small">RTXI is funded by NIH grant R01-RR020115.</p>
+   </div>
+</div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</html>

@@ -48,7 +48,7 @@
             </ul>
             <form class="navbar-form navbar-right" role="search">
                <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search">
+                  <input type="text" class="form-control" placeholder="Search (non-functional)">
                   <span class="input-group-btn">
                      <button type="submit" class="btn btn-default">
                         <span class="glyphicon glyphicon-search"></span>
@@ -100,6 +100,11 @@
             
                
                
+                  <a href="/docs/tutorials/2014/12/04/manually-configuring-rtxi/"><div class="lead">Manually Configuring RTXI</div></a>
+                  <div class="lead-small"><p>You can manually configure RTXI with many options. For example, you can run RTXI 2.0 using the RTAI rather than the default Xenomai, and you can set up RTXI in non-real-time mode using the POSIX interface. You may also direct RTXI to libraries/packages in non-standard locations. The full confi...</div>
+            
+               
+               
                   <a href="/docs/tutorials/2014/12/04/32-or-64-bit-processors/"><div class="lead">32 or 64 Bit? Your Processor Explained</div></a>
                   <div class="lead-small"><p>64-bit and 32-bit refer to how addresses and memory are handled in different instruction set architectures. For clarity, the terms ‘32-bit’ and ‘64-bit’ have dual meanings. The first refers to the size of addressable chunks of memory. Memory is organized in chunks, called words, that a process...</div>
             
@@ -121,11 +126,50 @@
                
                
             
+               
+               
+            
          </ul></div>
       </div>
 
       <div id="trouble" role="tabpanel" class="tab-pane fade">
-         <p class="lead-small">Troubleshooting</p>
+         
+         <div class="container"> 
+            <h4 class="lead-normal" style="text-align:center; margin-bottom:20px;">
+               Please <a href="https://github.com/rtxi/rtxi/issues" style="text-decoration:none">submit any issues</a> you have on our GitHub repo.
+            </h4>
+         </div>
+
+         
+         <div class="container tab-content">
+            
+               
+               
+               
+                  
+                  <div class="tab-pane fade in active" role="tabpanel" id="trouble1">
+                  
+               
+                  <a href="/docs/troubleshoot/2014/12/04/live-cd-frozen/"><div class="lead">Desktop Freezes when Booting into the Live CD</div></a>
+                  <div class="lead-small"><p>On some machines, the desktop will start out frozen when booted into the Live CD. A workaround is to reboot the system. From the frozen screen, type in <code>Ctrl+Alt+F2</code>. This will open tty2, which will not be frozen.  </p>
+
+</div>
+            
+               
+               
+                  <a href="/docs/troubleshoot/2014/12/04/benchmarking-real-time-performance/"><div class="lead">Benchmarking Real-time Performance</div></a>
+                  <div class="lead-small"><p>Here is a list of tools for benchmarking real-time performance, both for the operating system and for the RTXI application itself. In general, you should use these to test newly installed kernels, but you can also use them to help diagnose performance issues experienced when running RTXI.  </p>
+
+</div>
+            
+            </div>
+         </div>
+        
+         <!-- Paginator --> 
+         <div class="text-center"><ul class="pagination">
+            
+            
+         </ul></div>
       </div>
 
       <div id="faq" role="tabpanel" class="tab-pane fade">
