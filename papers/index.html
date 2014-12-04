@@ -11,19 +11,20 @@ layout: paper_index
    <p class="lead">Below is our list of papers that cite RTXI. We're always on the lookout for new research, but we'd love to hear from you if you've got something in the works.</p>
 
    {% for post in site.categories.papers %}
-   {% unless  post.next %}
-      <a data-toggle="collapse" data-target="#{{ post.date | date: '%Y' }}" style="text-decoration:none">
-         <h3 class="page-header">{{ post.date | date: '%Y' }}</h3>
-      </a><div class="collapse in" id="{{ post.date | date: '%Y' }}"><div class="js-masonry">
-   {% else %}
       {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-      {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-      {% if year != nyear %}
-      </div></div><a data-toggle="collapse" data-target="#{{ post.date | date: '%Y' }}" style="text-decoration:none">
-         <h3 class="page-header">{{ post.date | date: '%Y' }}</h3>
-      </a><div class="collapse in" id="{{ post.date | date: '%Y' }}"><div class="js-masonry">
-      {% endif %}
-   {% endunless %}
+      {% unless lastyear %}
+         <a data-toggle="collapse" data-target="#{{ year }}" style="text-decoration:none">
+            <h3 class="page-header">{{ year }}</h3>
+         </a><div class="collapse in" id="{{ year }}"><div class="js-masonry">
+         {% capture lastyear %}{{ year }}{% endcapture %}
+      {% else %}
+         {% if year != lastyear %}
+            </div></div><a data-toggle="collapse" data-target="#{{ year }}" style="text-decoration:none">
+               <h3 class="page-header">{{ year }}</h3>
+            </a><div class="collapse in" id="{{ year }}"><div class="js-masonry">
+         {% endif %}
+         {% capture lastyear %}{{ year }}{% endcapture %}
+      {% endunless %}
    
       <div class="col-sm-6 col-md-4">
          <a href="{{ post.url }}" style="text-decoration:none; color:inherit">
