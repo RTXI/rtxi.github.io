@@ -90,7 +90,7 @@ permalink: /docs/
          <!-- Paginator --> 
          <div class="text-center"><ul class="pagination">
             {% capture troublevar %}{% increment troublepagecount %}{% endcapture %}
-            {% for post in site.categories.troubleials %}
+            {% for post in site.categories.troubleshoot %}
                {% capture troubleflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
                {% if troubleflag == "1" %}
                   {% capture troublevar %}{% increment troublepagecount %}{% endcapture %}
