@@ -134,3 +134,7 @@ body {
     margin-top: 120px;
   }
 }
+
+.carousel-control.left, .carousel-control.right {
+   background-image: none;
+}
