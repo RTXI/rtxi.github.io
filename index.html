@@ -24,7 +24,7 @@ layout: default
    <p class="lead-small">RTXI, the Real-Time eXperiment Interface, is a collaborative open-source software development project aimed at producing a real-time Linux-based software system for hard real-time data acquisition and control applications in biological research.</p>
    <p class="lead-small">The ability of experimentalists to perturb biological systems has traditionally been limited to rigid pre-programmed protocols or more flexible, but reflex constrained, operator-controlled protocols. In contrast, real-time control allows the researcher to dynamically probe a biological system with parameter perturbations that are calculated functions of instantaneous system measurements, thereby providing the ability to address diverse unanswered questions that are not amenable to traditional approaches. Real-time control applications are abundant throughout biological research, including, for example, dynamic probing of ion-channel function, control of cardiac arrhythmia dynamics, and control of deep-brain stimulation patterns.</p>
    <p class="lead-small">Unfortunately, for a number of technical reasons, real-time control is not possible with standard computer operating systems and software. Furthermore, commercial real-time systems are costly and often tailored for industrial applications. To circumvent these limitations, we have developed RTXI, a fast and highly versatile real-time biological experimentation system. It's based on Real-Time Linux, free and open source, and compatible with an extensive range of experimentation hardware.</p>
-   <a href="/images/rtxi-gui.png"><img src="/images/rtxi-gui.png" class="img-responsive"></img></a>
+   <a href="/images/rtxi-gui-scaled.png"><img src="/images/rtxi-gui-scaled.png" class="center-block img-responsive"></img></a>
 
 </div>
 
@@ -33,8 +33,8 @@ layout: default
    <h3 class="page-header">Architecture</h3>
 
    <p class="lead-small">RTXI runs with two threads: one real-time (RT) thread and a non-real-time user interface (UI) thread. Both core and custom components of RTXI can span both threads, communicating between RT and UI threads through a system of signals and slots that supports synchronous scheduling and asynchronous event handling. On every clock cycle, the RT thread wakes and signals each active DAQ driver to acquire all active inputs from external experiment hardware. These data are made available to other components while the RT thread executes any real-time instructions contained in loaded modules. When each module has finished executing, the RT thread signals each DAQ driver to write any output signals to the experiment hardware. The UI thread manages the graphical components of the system as well as user events triggered through the interface. Each module features its own encapsulated interface through which users can control module execution and modify its various parameters.</p>
-   <a href="/images/rtxi-diagram.png" class="thumbnail col-md-6">
-      <img src="/images/rtxi-diagram.png" class="img-responsive"></img>
+   <a href="/images/rtxi-diagram-scaled.png" class="col-md-6">
+      <img src="/images/rtxi-diagram-scaled.png" class="img-responsive center-block"></img>
    </a>
    <p class="lead-small col-md-6">RTXI uses the open source <a href="https://www.xenomai.org">Xenomai framework</a> to implement communication with a variety of commercially available multifunction DAQ cards with both analog and digital input and output channels. This makes RTXI essentially hardware-agnostic and able to communicate with multiple actuators and sensors that may span different modalities. Modules contain function-specific code that can be used in combinations to build custom workflows and experiment protocols. They are compiled outside the core RTXI source tree as shared object libraries that are linked at runtime. This architecture gives RTXI several important features: </p>
    <ol class="lead-small col-md-12">

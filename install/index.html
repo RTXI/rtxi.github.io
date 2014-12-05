@@ -32,6 +32,8 @@ layout: default
 
    <!-- Counters created by increment start at 0. Initialize them here and catch the output -->
    {% capture dummyvar %}{% increment easycount %}{% endcapture %}
+   {% capture dummyvar %}{% increment hardcount %}{% endcapture %}
+   {% capture dummyvar %}{% increment upgradecount %}{% endcapture %}
 
    <div class="tab-content">
       <div id="easy" role="tabpanel" class="tab-pane fade in active">
@@ -147,7 +149,11 @@ layout: default
 
       <div id="upgrade" role="tabpanel" class="tab-pane fade">
          <div class="panel panel-primary"><div class="panel-body">
-            <p class="lead">Upgrade information</p>
+            <p class="lead-normal col-xs-12">
+               {% increment upgradecount %}. Clone the RTXI GitHub repository.
+            </p>
+            <p class="lead-small col-xs-12">
+            </p>
          </div></div>
       </div>
 
