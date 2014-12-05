@@ -149,14 +149,79 @@ layout: default
 
       <div id="upgrade" role="tabpanel" class="tab-pane fade">
          <div class="panel panel-primary"><div class="panel-body">
+
+            <!-- 1. Clone the repo -->
             <p class="lead-normal col-xs-12">
                {% increment upgradecount %}. Clone the RTXI GitHub repository.
             </p>
             <p class="lead-small col-xs-12">
+               If you haven't already a clone of our GitHub repo, run the following in the terminal. RTXI 2.0 is currently on the qt4 branch.
+            </p>
+            <div class="col-xs-12">
+               {% highlight bash %}
+$ git clone https://github.com/rtxi/rtxi.git
+$ cd rtxi
+$ git checkout qt4
+               {% endhighlight %}
+            </div>
+            <p class="lead-small col-xs-12">
+               If you already have a clone of the repository, just make sure you switch to the qt4 branch and pull any updates that may have taken place.
+            </p>
+            <div class="col-xs-12">
+               {% highlight bash %}
+$ git checkout qt4
+$ git pull origin master
+               {% endhighlight %}
+            </div>
+
+            <!-- 2. Install dependencies -->
+            <p class="lead-normal col-xs-12">
+               {% increment upgradecount %}. Install and/or update dependencies.
+            </p>
+            <p class="lead-small col-xs-12">
+               Run the <code>install_dependencies.sh</code> script to download dependencies. The script is maintained for Ubuntu 12.04, 14.04, and Debian 7. If you are using a different or outdated distribution, like Ubuntu 10.04, you will have to look for differently-named packages. For old operating systems, some of these packages may no longer exist, and if that's the case, we strongly encourage you to upgrade to Debian.
+            </p>
+            <div class="col-xs-12">
+               {% highlight bash %}
+$ cd scripts/
+$ sudo ./install_dependencies.sh
+               {% endhighlight %}
+            </div>
+
+            <!-- 3. Install RTXI 2.0 -->
+            <p class="lead-normal col-xs-12">
+               {% increment upgradecount %}. Install and/or update dependencies.
+            </p>
+            <p class="lead-small col-xs-12">
+               Run the installation script, also in the <code>scripts/</code> directory.
+            </p>
+            <div class="col-xs-12">
+               {% highlight bash %}
+$ sudo ./install_rtxi.sh
+               {% endhighlight %}
+            </div>
+            <p class="lead-small col-xs-12">
+               You will be prompted to select a configuration: 1 for Xenomai (real-time) or 2 for POSIX (non-real-time). Soon, RTXI will be compiled and installed. When finished, you can run v2.0 with:
+            </p>
+            <div class="col-xs-12">
+               {% highlight bash %}
+$ sudo rtxi
+               {% endhighlight %}
+            </div>
+
+            <!-- 4. (Re)install modules -->
+            <p class="lead-normal col-xs-12">
+               {% increment upgradecount %}. Install modules.
+            </p>
+            <p class="col-xs-12 lead-small">
+               All available modules in 1.4 came packaged with RTXI. For 2.0, we have split modules into separate GitHub repositories so that users can install only what they need and also so that they can fork individual modules for customization, rather than having to fork all of RTXI. 
+            </p>
+            <p class="col-xs-12 lead-small">
+               What this means for you is that modules installed for 1.4 have not been updated for 2.0. You will have to update them manually. Go to our modules page to find and install the modules you need. If you're using your own custom modules, then they will need to be updated to use Qt4 instead of Qt3. Check out the <a href="http://qt-project.org/doc/qt-4.8/porting4.html" style="text-decoration:none">Qt documentation for porting to Qt4</a> for help.
             </p>
          </div></div>
       </div>
 
-   </div> <!-- end tal-content -->
+   </div> <!-- end tab-content -->
 
 </div>
