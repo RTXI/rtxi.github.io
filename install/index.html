@@ -68,13 +68,16 @@
 </div>
 
 <div class="container">
-   <p class="lead">There are two ways to install RTXI:</p>
+   <p class="lead">There are three ways to install RTXI 2.0:</p>
    <dl class="dl-horizontal lead-small">
       <dt>Easy</dt>
          <dd>Use our Debian-based live CDs. It's easier than manually installing RTXI, but differences between your system and the one used to make the live CD could affect real-time performance.</dd>
       <br>
-      <dt class="">Hard</dt>
+      <dt>Hard</dt>
          <dd>Install a generic Linux image, compile a Xenomai-patched kernel, and then install RTXI from source. It's more difficult, but the end result is better optimized. We recommend this option.</dd>
+      <br>
+      <dt>Upgrade</dt>
+         <dd>If you already use a previous version of RTXI, you can install the RTXI GUI without recompiling a kernel. You'll lose out on the improvements in the current kernel, though.</dd>
    </dl>
 </div>
 
@@ -84,14 +87,20 @@
    <ul class="nav nav-pills nav-justified lead-normal" role="tablist">
       <li role="presentation" class="active"><a data-toggle="tab" href="#easy" role="tab">Easy</a></li>
       <li role="presentation"><a data-toggle="tab" href="#hard" role="tab">Hard</a></li>
+      <li role="presentation"><a data-toggle="tab" href="#upgrade" role="tab">Upgrade</a></li>
    </ul>
 
-   <div class="tab-content">
+   <!-- Counters created by increment start at 0. Initialize them here and catch the output -->
+   
 
+   <div class="tab-content">
       <div id="easy" role="tabpanel" class="tab-pane fade in active">
          <div class="panel panel-primary"><div class="panel-body">
+            
             <!-- 1. Download the live image -->
-            <p class="lead col-xs-12">1. Download the live RTXI 2.0 image.</p>
+            <p class="lead-normal col-xs-12">
+               1. Download the live RTXI 2.0 image.
+            </p>
             <div class="col-xs-12 col-sm-6" style="text-align: center">
                <a href="https://dl.dropboxusercontent.com/u/49869589/rtxi-2.0-debian-7.6-v9-x86_64.iso" download style="text-decoration:none">
                   <button type="button" class="btn btn-danger btn-lg" style="margin-bottom: 5px">
@@ -106,12 +115,62 @@
                   </button>
                </a>
             </div>
+            <p>&nbsp</p>
             
-            <!-- Burn the image to DVD or USB -->
-            <p>&nbsp;</p><p class="lead col-xs-12">2. Burn the image to a DVD or a USB drive.</p>
+            <!-- 2. Burn the image to DVD or USB -->
+            <p class="lead-normal col-xs-12">
+               2. Burn the image to a DVD or a USB drive.
+            </p>
+            <p class="lead-small col-xs-12">
+               You can use whatever DVD burner is available on your operating system. If you want a live USB, you may need additional software. For different operating systems, check out:
+            </p>
+            <dl class="dl-horizontal lead-small col-xs-12">
+               <dt>Linux</dt>
+                  <dd>Clone from the command line with <code>dd</code> or use applications like <a href="http://unetbootin.sourceforge.net/" style="text-decoration:none">UNetbootin</a> or <a href="https://apps.ubuntu.com/cat/applications/usb-creator-gtk/" style="text-decoration:none">USB Creator</a>. Check your distro's package repository.</dd>
+               <dt>Windows</dt>
+                  <dd>Try <a href="http://www.linuxliveusb.com/" style="text-decoration:none">LinuxLive USB Creator</a> or <a href="http://unetbootin.sourceforge.net/" style="text-decoration:none">UNetbootin</a></dd>
+               <dt>MacOS</dt>
+                  <dd>Same programs. Try <a href="http://www.linuxliveusb.com/" style="text-decoration:none">LinuxLive USB Creator</a> or <a href="http://unetbootin.sourceforge.net/" style="text-decoration:none">UNetbootin</a></dd>
+            </dl>
+            <p class="lead-small col-xs-12">
+               We cannot not guarantee these installation programs will produce bootable live USBs for your system. This area tends to be a bit finnicky. Thus far, we've had greater success with burning DVDs than making USBs. Should you have any diffulties, let us know. 
+            </p>
             
-            <!-- Install and boot into RTXI system -->
-            <p class="lead col-xs-12">3. Follow the built-in installer and install the operating system.</p>
+            <!-- 3. Boot into RTXI system -->
+            <p class="lead-normal col-xs-12">
+               3. Boot from the live image.
+            </p>
+            <p class="lead-small col-xs-12">
+               If your computer isn't already set to boot from USB or DVD, you'll need to enter your BIOS settings. When cold-booting your computer, hit the necessary keys, usually <code>F2</code> or <code>F4</code>, and open the menu. (If you miss, restart your computer and try again.)
+            </p>
+            <p class="lead-small col-xs-12">
+               From the menu, look for your boot options. There you can manually override the boot order of devices on your system. If you're booting from a DVD or USB, look for your DVD drive or USBlabel, respectively. 
+            </p>
+            <p class="lead-small col-xs-12">
+               <strong>Reminder:</strong> In the next step, you will be installing an operating system on a hard drive. Make sure there isn't anything on it you need, like data or another operating system. If there is, back it up somewhere or get an empty one.
+            </p>
+            
+            <!-- 4. Install RTXI -->
+            <p class="lead-normal col-xs-12">
+               4. Install RTXI via the installer. 
+            </p>
+            <p class="lead-small col-xs-12">
+               When booting, you can choose to go directy to the install or boot into a live desktop. If you choose the latter option, you can open the installer from the Applications menu. (If you want to try a non-real-time version of RTXI, open a terminal and run <code>n-rtxi</code>.)
+            </p>
+            <p class="lead-small col-xs-12">
+               Start the installer. You will be guided through setting up the system name, passwords, networks, and partitioning. If unsure, use defaults when available.
+            </p>
+
+            <!-- 5. Boot into RTXI -->
+            <p class="lead-normal col-xs-12">
+               5. Reboot into RTXI. 
+            </p>
+            <p class="lead-small col-xs-12">
+               When the installer is done, you will be prompted to reboot your system. Reboot (and be careful to not re-enter the live image). RTXI is now installed!
+            </p>
+            <p class="lead-small col-xs-12">
+               You can now start RTXI from the command line. Open a terminal and run <code>sudo rtxi</code>. You may need to install video drivers, but at this point, the next steps are specific to your system. 
+            </p>
          </div></div>
       </div> <!-- end easy information -->
 
@@ -145,6 +204,12 @@
             <p class="lead col-xs-12">5. Clone our GitHub repository and install RTXI. Check out our <a href="https://github.com/RTXI/tutorials/wiki/Installing-RTXI-v2.0">Github wiki</a> for instructions.</p>
          </div></div>
       </div> <!-- end hard information -->
+
+      <div id="upgrade" role="tabpanel" class="tab-pane fade">
+         <div class="panel panel-primary"><div class="panel-body">
+            <p class="lead">Upgrade information</p>
+         </div></div>
+      </div>
 
    </div> <!-- end tal-content -->
 
