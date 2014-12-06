@@ -67,50 +67,50 @@ module Jekyll
             end
 
             filename = build_dir+"/"+repo+"/index.html"
-            forkmebanner = "<style>
-               #forkongithub a{
-                  background:#222;
-                  color:#fff;
-                  text-decoration:none;
-                  font-family:arial,sans-serif;
-                  text-align:center;
-                  font-weight:bold;
-                  padding:5px 10px;
-                  font-size:1rem;
-                  line-height:2rem;
-                  position:fixed;
-                  top:0;
-                  right:0;
-                  top:70px;
-                  right:20px;
-                  transition:0.25s;
-               } #forkongithub a:hover{
-                  background:#c01;
-                  color:#fff;
-               } @media screen and (min-width:768px) {
-                  #forkongithub{
-                     position:fixed;
-                     display:block;
-                     top:0;
-                     right:0;
-                     width:250px;
-                     overflow:hidden;
-                     height:200px;
-                  } #forkongithub a{
-                     width:200px;
-                     position:absolute;
-                     top:70px;
-                     right:20px;
-                  }
-               }</style>
-               <span id=\"forkongithub\">
-                  <div class=\"hidden-xs\">
-                     <a href=\"https://github.com/rtxi/#{repo}\">Fork #{repo.gsub(/-/,' ').split.map(&:capitalize).join(' ')} <span style=\"padding-left:5px\" class=\"octicon octicon-mark-github\"></span></a>
-                  </div>
-                  <div class=\"visible-xs\">
-                     <a href=\"https://github.com/rtxi/#{repo}\"><span class=\"octicon octicon-mark-github\"></span></a>
-                  </div>
-               </span>"
+            forkmebanner = "<style>" +
+               "#forkongithub a{" +
+                  "background:#222;" +
+                  "color:#fff;" +
+                  "text-decoration:none;" +
+                  "font-family:arial,sans-serif;"+
+                  "text-align:center;"+
+                  "font-weight:bold;"+
+                  "padding:5px 10px;"+
+                  "font-size:1rem;"+
+                  "line-height:2rem;"+
+                  "position:fixed;"+
+                  "top:0;"+
+                  "right:0;"+
+                  "top:70px;"+
+                  "right:20px;"+
+                  "transition:0.25s;"+
+               "} #forkongithub a:hover{"+
+                  "background:#c01;"+
+                  "color:#fff;"+
+               "} @media screen and (min-width:768px) {"+
+                  "#forkongithub{"+
+                     "position:fixed;"+
+                     "display:block;"+
+                     "top:0;"+
+                     "right:0;"+
+                     "width:250px;"+
+                     "overflow:hidden;"+
+                     "height:200px;"+
+                  "} #forkongithub a{"+
+                     "width:200px;"+
+                     "position:absolute;"+
+                     "top:70px;"+
+                     "right:20px;"+
+                  "}"+
+               "}</style>"+
+               "<span id=\"forkongithub\">"+
+                  "<div class=\"hidden-xs\">"+
+                     "<a href=\"https://github.com/rtxi/#{repo}\">Fork #{repo.gsub(/-/,' ').split.map(&:capitalize).join(' ')} <span style=\"padding-left:5px\" class=\"octicon octicon-mark-github\"></span></a>"+
+                  "</div>"+
+                  "<div class=\"visible-xs\">"+
+                     "<a href=\"https://github.com/rtxi/#{repo}\"><span class=\"octicon octicon-mark-github\"></span></a>"+
+                  "</div>"+
+               "</span>"
             yamlheader = "---\n" +
                         "title: #{repo}\n" +
                         "layout: module\n" +

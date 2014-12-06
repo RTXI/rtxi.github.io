@@ -1,0 +1,124 @@
+<!-- Isotope with each year as a data field
+<div class="container"><div id="filters" class="btn-group btn-group-justified" role="group">
+   {% assign flag = "false" %}
+   {% for post in site.categories.papers %}
+      {% capture pageflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
+      {% if pageflag == "0"%}
+         {% assign flag = "true" %}
+         {% capture stupidflag %}{{ forloop.index }}{% endcapture %}
+      {% endif %}
+      {% capture thisyear %}{{ post.date | date: '%y' }}{% endcapture %}
+      {% if forloop.index == 1 %}
+         {% capture startyear %}{{ thisyear }}{% endcapture %}
+         {% capture attr %}.{{ thisyear }} {{ attr }}{% endcapture %}
+      {% else %}
+         {% if thisyear != lastyear  and  flag == "true" %}
+            <div class="btn-group" role="group">
+            {% if stupidflag == "20" %}
+               <button type="button" class="btn btn-danger btn-lg active" data-filter="{{ attr | strip | split:" " | join:" ," }}" aria-pressed="true" data-toggle="button">'{{ lastyear }}-{{startyear}}</button>
+               {% assign attr = "" %}
+            {% else %}
+               <button type="button" class="btn btn-danger btn-lg" data-filter="{{ attr | strip | split:" " | join:" ," }}" data-toggle="button">'{{ lastyear }}-{{startyear}}</button>
+               {% assign attr = "" %}
+            {% endif %}
+            </div>
+            {% capture startyear %}{{ thisyear }}{% endcapture %}
+            {% capture attr %}.{{ thisyear }} {{ attr }}{% endcapture %}
+            {% assign flag = "false" %}
+         {% elsif thisyear != lastyear %}
+            {% capture attr %}.{{ thisyear }} {{ attr }}{% endcapture %}
+         {% endif %}
+      {% endif %}
+      {% capture lastyear %}{{ thisyear }}{% endcapture %}
+   {% endfor %}
+   <div class="btn-group" role="group">
+      <button type="button" class="btn btn-danger btn-lg" data-filter="{{ attr | strip | split:" " | join:" ," }}">'{{ lastyear }}-{{startyear}}</button>
+   </div>
+</div></div>
+<div style="border-bottom: 1px solid #eee; margin-bottom: 10px;" class="container">&nbsp;</div>
+
+<div class="container"><div class="row" id="grid"> 
+   {% for post in site.categories.papers %}
+      <div class="item col-sm-6 col-md-4" data-category="{{ post.date | date: '%y' }}">
+         <a href="{{ post.url }}" style="text-decoration:none; color:inherit">
+            <div class="panel panel-primary">
+               <div class="panel-heading"><h4 class="panel-title">{{ post.title }}</h4></div>
+               <div class="panel-body hidden-xs">{{ post.excerpt | truncate:400 }}</div>
+            </div>
+         </a>
+      </div>
+   {% endfor %}
+</div></div>
+-->
+
+<!-- Masonry
+{% capture pagevar %}{% increment pagebodycount %}{% endcapture %}
+{% assign flag = "false" %}
+<div class="container tab-content"> 
+   {% for post in site.categories.papers %}
+      {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+      {% capture pageflag %}{{ forloop.index | modulo:15 }}{% endcapture %}
+      {% if pageflag == "0" %}
+         {% assign flag = "true" %}
+      {% endif %}
+
+      {% if forloop.index == 1 %}
+         {% capture pagevar %}{% increment pagebodycount %}{% endcapture %}
+         <div class="tab-pane fade in active" role="tabpanel" id="page{{pagevar}}"> 
+            <h3 class="page-header">{{ year }}</h3> 
+            <div class="row js-masonry">
+         {% capture lastyear %}{{ year }}{% endcapture %}
+      {% else %}
+         {% if year != lastyear  and  flag == "true" %}
+            {% capture pagevar %}{% increment pagebodycount %}{% endcapture %}
+            </div></div>
+            <div class="tab-pane fade" role="tabpanel" id="page{{pagevar}}">
+               <h3 class="page-header">{{ year }}</h3>
+               <div class="row js-masonry">
+            {% assign flag = "false" %}
+         {% elsif year != lastyear %}
+            </div>
+            <h3 class="page-header">{{ year }}</h3>
+               <div class="row js-masonry">
+         {% endif %}
+         {% capture lastyear %}{{ year }}{% endcapture %}
+      {% endif %}
+   
+      <div class="col-sm-6 col-md-4">
+         <a href="{{ post.url }}" style="text-decoration:none; color:inherit">
+            <div class="panel panel-primary">
+               <div class="panel-heading"><h4 class="panel-title">{{ post.title }}</h4></div>
+               <div class="panel-body hidden-xs">{{ post.excerpt | truncate:400 }}</div>
+            </div>
+         </a>
+      </div>
+   {% endfor %}
+   </div></div>
+</div>
+   
+<div class="text-center"><ul class="pagination">
+   {% capture pagevar %}{% increment pagecount %}{% endcapture %}
+   {% assign flag = "false" %}
+   {% for post in site.categories.papers %}
+      {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+      {% capture thissucks %}{{ forloop.index | modulo:15 }}{% endcapture %}
+      {% if thissucks == "0" %}
+         {% assign flag = "true" %}
+      {% endif %}
+
+      {% if forloop.index == 1 %}
+         {% capture lastyear %}{{ year }}{% endcapture %}
+         {% capture pagevar %}{% increment pagecount %}{% endcapture %}
+         <li class="active" role="presentation"><a data-toggle="tab" href="#page{{pagevar}}">{{pagevar}}</a></li>
+      {% else %}
+         {% if year != lastyear  and  flag == "true" %}
+            {% capture pagevar %}{% increment pagecount %}{% endcapture %}
+            <li><a data-toggle="tab" href="#page{{pagevar}}">{{pagevar}}</a></li>
+            {% assign flag = "false" %}
+         {% endif %}
+         {% capture lastyear %}{{ year }}{% endcapture %}
+      {% endif %}
+
+   {% endfor %}
+</ul></div>
+-->

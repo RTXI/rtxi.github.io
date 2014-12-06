@@ -9,24 +9,59 @@ layout: paper_index
    <div class="well">Lin et al. Real-time Experiment Interface for biological control applications. Conf Proc IEEE Eng Med Biol Soc (2010) vol. 1 pp. 4160-3</div>
    
    <p class="lead">Below is our list of papers that cite RTXI. We're always on the lookout for new research, but we'd love to hear from you if you've got something in the works.</p>
+</div>
 
+{% capture chunkvar %}{% increment chunkcount %}{% endcapture %}
+{% assign flag="false" %}
+<div class="container"><div id="oopsfilters" class="btn-group btn-group-justified" role="group" data-toggle="buttons">
+   <div class="btn-group" role="group">
+      <button type="button" class="btn btn-danger btn active" data-filter="*" role="button" data-toggle="button" aria-pressed="true">All</button>
+   </div>
+   {% for post in site.categories.papers %} 
+      {% capture chunkflag %}{{ forloop.index | modulo:15 }}{% endcapture %}
+      {% if chunkflag == "0"%}
+         {% assign flag = "true" %}
+      {% endif %}
+
+      {% capture thisyear %}{{ post.date | date: '%y' }}{% endcapture %}
+      {% if forloop.index == 1 %}
+         {% capture chunkvar %}{% increment chunkcount %}{% endcapture %}
+         {% capture startyear %}{{ thisyear }}{% endcapture %}
+      {% elsif thisyear != lastyear  and  flag == "true" %}
+      <div class="btn-group" role="group">
+         <button type="button" class="btn btn-danger btn" data-filter=".chunk{{ chunkvar}}" role="button" data-toggle="button">'{{ lastyear }}-{{startyear}}</button>
+      </div>
+         {% assign flag == "false" %}
+         {% capture startyear %}{{ thisyear }}{% endcapture %}
+         {% capture chunkvar %}{% increment chunkcount %}{% endcapture %}
+      {% endif %}
+      {% capture lastyear %}{{ thisyear }}{% endcapture %}
+   {% endfor %}
+   <div class="btn-group" role="group">
+      <button type="button" class="btn btn-danger btn" data-filter=".chunk{{ chunkvar}}" role="button" data-toggle="button">'{{ lastyear }}-{{startyear}}</button>
+   </div>
+</div></div>
+<div style="border-bottom: 1px solid #eee; margin-bottom: 10px;" class="container">&nbsp;</div>
+
+{% capture chunkvar %}{% increment chunkbodycount %}{% endcapture %}
+{% assign flag = "false" %}
+<div class="container"><div class="row" id="oopsgrid">
    {% for post in site.categories.papers %}
-      {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-      {% unless lastyear %}
-         <a data-toggle="collapse" data-target="#{{ year }}" style="text-decoration:none">
-            <h3 class="page-header">{{ year }}</h3>
-         </a><div class="collapse in" id="{{ year }}"><div class="js-masonry">
-         {% capture lastyear %}{{ year }}{% endcapture %}
-      {% else %}
-         {% if year != lastyear %}
-            </div></div><a data-toggle="collapse" data-target="#{{ year }}" style="text-decoration:none">
-               <h3 class="page-header">{{ year }}</h3>
-            </a><div class="collapse in" id="{{ year }}"><div class="js-masonry">
-         {% endif %}
-         {% capture lastyear %}{{ year }}{% endcapture %}
-      {% endunless %}
+      {% capture chunkflag %}{{ forloop.index | modulo:15 }}{% endcapture %}
+      {% capture thisyear %}{{ post.date | date: '%y' }}{% endcapture %}
+      {% if chunkflag == "0" %}
+         {% assign flag = "true" %}
+      {% endif %}
+
+      {% if forloop.index == 1 %}
+         {% capture chunkvar %}{% increment chunkbodycount %}{% endcapture %}
+      {% elsif thisyear != lastyear  and  flag == "true" %}
+         {% capture chunkvar %}{% increment chunkbodycount %}{% endcapture %}
+         {% assign flag = "false" %}
+      {% endif %}
+      {% capture lastyear %}{{ thisyear }}{% endcapture %}
    
-      <div class="col-sm-6 col-md-4">
+      <div class="item col-sm-6 col-md-4 chunk{{chunkvar}}" data-category="chunk{{chunkvar}}">
          <a href="{{ post.url }}" style="text-decoration:none; color:inherit">
             <div class="panel panel-primary">
                <div class="panel-heading"><h4 class="panel-title">{{ post.title }}</h4></div>
@@ -35,5 +70,4 @@ layout: paper_index
          </a>
       </div>
    {% endfor %}
-   </div></div>
-</div>
+</div></div>
