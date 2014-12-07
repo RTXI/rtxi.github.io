@@ -68,7 +68,7 @@ body {
 
 
   <body style=padding-top:30px>
-    <link href="css/carousel.css" rel="stylesheet">
+    <link href="/css/carousel.css" rel="stylesheet">
 
 <!-- Carousel -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-pause="hover">
@@ -116,6 +116,12 @@ body {
 </div> <!-- /.carousel -->
 
 
+<style>
+strong {
+   font-weight:400;
+}
+</style>
+
 <!-- Trying unsuccessfully to get a hovering table of contents for the sections on the home page
 <div data-spy="affix" data-offset-top="60" data-target="#mynav">
 <div class="container"><div class="row"><nav id="mynav" class="sidebar col-md-3">
@@ -130,52 +136,66 @@ body {
 
 <div class="container" id="intro">
 
-   <h3 class="page-header">Introducing RTXI</h3>
+   <h2 class="page-header" style="text-align:center">Introducing RTXI</h2>
 
-   <p class="lead-small">RTXI, the Real-Time eXperiment Interface, is a collaborative open-source software development project aimed at producing a real-time Linux-based software system for hard real-time data acquisition and control applications in biological research.</p>
-   <p class="lead-small">The ability of experimentalists to perturb biological systems has traditionally been limited to rigid pre-programmed protocols or more flexible, but reflex constrained, operator-controlled protocols. In contrast, real-time control allows the researcher to dynamically probe a biological system with parameter perturbations that are calculated functions of instantaneous system measurements, thereby providing the ability to address diverse unanswered questions that are not amenable to traditional approaches. Real-time control applications are abundant throughout biological research, including, for example, dynamic probing of ion-channel function, control of cardiac arrhythmia dynamics, and control of deep-brain stimulation patterns.</p>
-   <p class="lead-small">Unfortunately, for a number of technical reasons, real-time control is not possible with standard computer operating systems and software. Furthermore, commercial real-time systems are costly and often tailored for industrial applications. To circumvent these limitations, we have developed RTXI, a fast and highly versatile real-time biological experimentation system. It's based on Real-Time Linux, free and open source, and compatible with an extensive range of experimentation hardware.</p>
-   <a href="/images/rtxi-gui-scaled.png"><img src="/images/rtxi-gui-scaled.png" class="center-block img-responsive"></img></a>
-
-</div>
-
-<div class="container" id="architecture">
-
-   <h3 class="page-header">Architecture</h3>
-
-   <p class="lead-small">RTXI runs with two threads: one real-time (RT) thread and a non-real-time user interface (UI) thread. Both core and custom components of RTXI can span both threads, communicating between RT and UI threads through a system of signals and slots that supports synchronous scheduling and asynchronous event handling. On every clock cycle, the RT thread wakes and signals each active DAQ driver to acquire all active inputs from external experiment hardware. These data are made available to other components while the RT thread executes any real-time instructions contained in loaded modules. When each module has finished executing, the RT thread signals each DAQ driver to write any output signals to the experiment hardware. The UI thread manages the graphical components of the system as well as user events triggered through the interface. Each module features its own encapsulated interface through which users can control module execution and modify its various parameters.</p>
-   <a href="/images/rtxi-diagram-scaled.png" class="col-md-6">
-      <img src="/images/rtxi-diagram-scaled.png" class="img-responsive center-block"></img>
-   </a>
-   <p class="lead-small col-md-6">RTXI uses the open source <a href="https://www.xenomai.org">Xenomai framework</a> to implement communication with a variety of commercially available multifunction DAQ cards with both analog and digital input and output channels. This makes RTXI essentially hardware-agnostic and able to communicate with multiple actuators and sensors that may span different modalities. Modules contain function-specific code that can be used in combinations to build custom workflows and experiment protocols. They are compiled outside the core RTXI source tree as shared object libraries that are linked at runtime. This architecture gives RTXI several important features: </p>
-   <ol class="lead-small col-md-12">
-      <li>Reduced overhead that maximizes real-time performance by loading a minimal set of modules at startup.</li>
-      <li>Code reusability which eliminates the need to program new experiments entirely from scratch</li>
-      <li>Ease by which users can share modules by distributing source code or compiled versions of their modules</li>
-      <li>The ability to create and save the entire RTXI workspace and experimental setup for use at a later date</li>
-      <li>A simple process by which multiple developers can contribute new features with minimal changes to core RTXI source code.</li>
-   <ol>
+   <div class="row">
+   <div class="col-xs-12"><p class="lead-small">
+      <strong>RTXI</strong>, the <strong>Real-Time eXperiment Interface</strong>, is a <strong>fast</strong>, <strong>free</strong>, and <strong>open-source</strong> operating system capable of <strong>hard real-time</strong> data acquisition and control applications for use in biological research. Our system is currently used in labs all over to world to probe diverse, technologically challenging problems, such as dynamic probing of ion-channel function, control of cardiac arrhythmia dynamics, and control of deep-brain stimulation patterns.
+   </p></div>
+   </div>
+  
+   <div class="row">
+      <div class="col-sm-6">
+         <h3 class="page-header" style="text-align:center">Why real-time?</h3>
+         <p class="lead-small">
+            Experimentalists' ability to perturb biological systems has traditionally been limited to rigid pre-programmed protocols or more flexible, albeit reflex constrained, operator-controlled protocols. In contrast, real-time control allows dynamic probing of biological systems by parameter perturbations calculated from instantaneous system measurements. With it, researchers can address diverse unanswered questions that are not amenable to traditional approaches.
+         </p>
+      </div>
+      <div class="col-sm-6">
+         <h3 class="page-header" style="text-align:center">Why RTXI?</h3>
+         <p class="lead-small">
+            Unfortunately, real-time control is not possible with standard operating systems and software. Furthermore, commercial real-time systems are costly and often designed for industrial applications, and the proprietary software licenses and drivers that come with them only exacerbate the issue. To get away from that, we developed RTXI. It's fast, free, and flexible, and it's compatible with a wide range of experimentation hardware.
+         </p>
+      </div>
+   </div>
 
 </div>
 
-<div class="container" id="real-time">
+<!--
+<div class="container" id="features">
    
-   <h3 class="page-header">Real-time Computing</h3>
+   <h2 class="page-header" style="text-align:center">Features</h2>
 
-   <h4 class="page-header">Hard vs. Soft Real-time</h4>
-   <p class="lead-small"> In general, an operating system is responsible for managing the hardware resources of a computer. A real-time operating system is a refinement in that it perfoms tasks with extreme precision and reliability. This is important in automated process control systems where a delay can cause a critical failure of the overall system.</p>
-   <p class="lead-small"> To be considered real-time, an operating system must have a known maximum time for each of the operations that it performs. Operating systems that can absolutely guarantee a maximum time for these operations are called hard real-time, while operating systems that can only guarantee a maximum most of the time are considered soft real-time. The idea is that in a hard real-time system, the completion of an operation after its deadline is considered useless, and in the most non-permissive of systems, for instance car brakes, missed deadlines constitute system failure. In contrast, a soft real-time system can handle lateness, usually by pausing processes based on some execution priority scheme. </p>
-   <p class="lead-small"> Most operating systems allow programmers to specify a priority for the overall application and even for different tasks within the application, called threads. These priorities are handled by the operating system's scheduler, which decides how to allocate system resources when many tasks need to be executed more or less simultaneously and whether or not to interrupt a task when those with higher priority are waiting. </p>
-   <p class="lead-small"> In practice, general-purpose operating systems, such as Microsoft Windows, are optimized to run a variety of applications and processes simultaneously. Windows uses system interrupts to distribute processor time between different tasks that must access the same shared resources. Standard Linux does the same. It can be made to run in real-time, though, by inserting a small high-priority, real-time microkernel between the hardware and standard Linux kernel. The microkernel's scheduler traps any software-related system interrupts that would otherwise preempt system resources from any real-time tasks it executes, thereby guaranteeing that real-time tasks are not interrupted and execute with higher priority than normal Linux processes. RTXI uses a real-time thread for actual process control and a non-realtime thread handled by standard Linux for the graphical user interface. </p>
+   <div class="row">
+      <div class="col-sm-6">
+         <h3 class="page-header" style="text-align:center">It's fast.</h3>
+         <p class="lead-small">
+            RTXI runs at sub-millisecond latencies with jitter on the order of nanoseconds. (Insert table here.) Mention Xenomai. 
+         </p>
 
-   <h4 class="page-header" style="text-align:right">What Real-time Can Do</h4>
-   <p class="lead-small">A real-time process control system must constantly process a set of inputs and produce a set of outputs. Real-time applications must be carefully programmed to ensure that the total amount of time spent accessing the hardware, sampling the inputs, computing the outputs, and interacting with any user interface is no longer than the specified cycle time. </p>
-   <p class="lead-small">Xenomai provides several benchmark tests for system latencies. RTXI also has a Performance Measurement module that determines average and worst case real-time performance within RTXI. Maximal performance depends mostly on the motherboard and supporting chipset, not as much on processor speed. Instead, the processor determines the complexity of the models the system can solve within the constraints of some underlying real-time computation rate. Faster processors allow more instructions to be executed per computational cycle. For example, a complex model may require too much computation to work on a 200MHz machine, but will run at 20kHz on a 2GHz machine, even though a much simpler model runs at 50kHz on both. A slower processor simply cannot execute instructions in complex models quickly enough.<?p>
+         <h3 class="page-header" style="text-align:center">It's flexible.</h3>
+         <p class="lead-small">
+            Modularity lends itself to user-configurability. All components are written in C++ using RTXI's API and can execute programs of arbitrary complexity, contingent on system resources.
+         </p>
+      </div>
 
-   <h4 class="page-header">Measuring Performance</h4>
-   <p class="lead-small">The 'speed' of a platform usually refers to three attributes: time step, jitter, and latency. The time step is the target period of the system. Ideally, this value would be infinitesimal so that we would be able to acquire and output all possible frequencies; however, that cannot be realized in practice because a set amount of processing time is needed for input-output calculations. This set time provides a lower bound for overall computation time, but systems get pulled away from it due to the costs mentioned earlier. Essentially, the actual observable time step is a random variable centered about a mean target time step. The second term, jitter, describes the variation around the mean, and is a direct result of the non-deterministic nature of modern computer architectures (e.g. cache misses, bus contention, and super-scalar execution). Typically, solutions based on general purpose operating systems will always suffer from high levels of jitter because the underlying system is designed to distribute clock cycles fairly among many competing processes. Latency, the time between receiving an input and updating the corresponding physical output channel roughly determines the lower bound on time step. Latency exists because it takes a finite amount of time to perform analog to digital conversion, do some computation, and convert back from digital to analog.</p>
+      <div class="col-sm-6">
+         <h3 class="page-header" style="text-align:center">It's free.</h3>
+         <p class="lead-small">
+            The RTXI software is free for anyone to use.
+         </p>
+         
+         <h3 class="page-header" style="text-align:center">It's open-source.</h3>
+         <p class="lead-small">
+            The RTXI is built on a Debian base, and all our source code is available on GitHub. (link and icon to GitHub here)
+         </p>
+      </div>
+   <div>
 
 </div>
+
+   <a href="/images/rtxi-gui-scaled.png"><img src="/images/rtxi-gui-scaled.png" class="center-block img-responsive"></img></a>
+-->
 
   </body>
 
