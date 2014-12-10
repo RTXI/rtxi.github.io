@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['name',['name',['../struct_i_o_1_1channel__t.html#a442ec6e7c58cfcb1069fa98e840da932',1,'IO::channel_t::name()'],['../structai__gain__t.html#a8c8d48dbc76ec0524679fd4c38bf5d66',1,'ai_gain_t::name()'],['../structni__device__t.html#a3dd56f5c8a5471772eac4953c3f667ad',1,'ni_device_t::name()']]],
+  ['next_5ft',['next_t',['../structposix__task__t.html#aa45139c7297728c2a04049f9ea52a8fc',1,'posix_task_t::next_t()'],['../structrtai3__task__t.html#a46fb3019eb32902cbc64aa4f554d5608',1,'rtai3_task_t::next_t()']]],
+  ['noise_5fseed',['Noise_Seed',['../class_ar_process.html#a156d0feb81b067823c4d94d5229850de',1,'ArProcess::Noise_Seed()'],['../class_arma_process.html#a18b0fafde0e82c831effb2eb72c59c45',1,'ArmaProcess::Noise_Seed()'],['../class_burg_method.html#ac14c15de71a0630426adf3cdc4adf25f',1,'BurgMethod::Noise_Seed()'],['../class_ma_process.html#a7210375e2ef8068e57957c76333569a7',1,'MaProcess::Noise_Seed()']]],
+  ['normalize_5fenabled',['Normalize_Enabled',['../class_fir_filter_response.html#adffb30453fe60a43c95ccc68a0719338',1,'FirFilterResponse::Normalize_Enabled()'],['../class_iir_filter_response.html#ab31c678a7ecf4a57ab6e796ccd775b2e',1,'IirFilterResponse::Normalize_Enabled()']]],
+  ['num_5fbiquad_5fsects',['Num_Biquad_Sects',['../class_filter_trans_func.html#ade459e44da0ec12146d7841a57a8f60d',1,'FilterTransFunc']]],
+  ['num_5fcols',['Num_Cols',['../class_matrix.html#a0499fc4dc93f7f7f26764ee4d73d61bd',1,'Matrix']]],
+  ['num_5fdenom_5fcoeffs',['Num_Denom_Coeffs',['../class_iir_filter_design.html#a1ccf995340854779ac9d707fdc8ffc53',1,'IirFilterDesign::Num_Denom_Coeffs()'],['../class_iir_filter_response.html#a544395f091fadd5083b84a69149ff7c5',1,'IirFilterResponse::Num_Denom_Coeffs()']]],
+  ['num_5fdenorm_5fpoles',['Num_Denorm_Poles',['../class_filter_trans_func.html#aaa84c8bdaa7fea577eb5027987d1dab8',1,'FilterTransFunc']]],
+  ['num_5fdenorm_5fzeros',['Num_Denorm_Zeros',['../class_filter_trans_func.html#a5d723cb35ed9dccc86b59368073594a8',1,'FilterTransFunc']]],
+  ['num_5fnumer_5fcoeffs',['Num_Numer_Coeffs',['../class_iir_filter_design.html#a244cf74b10cfbb0a9dda3eaa9a99a74c',1,'IirFilterDesign::Num_Numer_Coeffs()'],['../class_iir_filter_response.html#a14213cf3478bf580999952707623d978',1,'IirFilterResponse::Num_Numer_Coeffs()']]],
+  ['num_5fprototype_5fpoles',['Num_Prototype_Poles',['../class_filter_trans_func.html#ac82915c3ae4cf6860794a5ea986e0aba',1,'FilterTransFunc']]],
+  ['num_5fprototype_5fzeros',['Num_Prototype_Zeros',['../class_filter_trans_func.html#a4927f1f22f825cefa0bd284746dee573',1,'FilterTransFunc']]],
+  ['num_5fresp_5fpts',['Num_Resp_Pts',['../class_contin_window_response.html#a0c4f56d0cbe2b3b435d109e1fdb87eaa',1,'ContinWindowResponse::Num_Resp_Pts()'],['../class_fir_filter_response.html#acc7e80f980f1cafa98e7f6576890db2b',1,'FirFilterResponse::Num_Resp_Pts()'],['../class_iir_filter_response.html#a52bb429ef7d86d89b711f3a9487657e1',1,'IirFilterResponse::Num_Resp_Pts()'],['../class_step_response.html#a4b88b6a07caa6abaa6f8138e667abac2',1,'StepResponse::Num_Resp_Pts()']]],
+  ['num_5frows',['Num_Rows',['../class_matrix.html#a88ec662fd01c5fce66abb9aa744b728c',1,'Matrix']]],
+  ['num_5fsamps',['Num_Samps',['../class_ar_process.html#aa1736f3970efb09f75eb78968f22dd71',1,'ArProcess::Num_Samps()'],['../class_burg_method.html#a53038039bf6aeabb815f830d6fc328c5',1,'BurgMethod::Num_Samps()'],['../class_psd_estimate.html#a10f692a8789d48b60ad70a8118ce21e3',1,'PsdEstimate::Num_Samps()']]],
+  ['num_5ftaps',['Num_Taps',['../class_direct_form_fir.html#a5f6a79a99b4625d8c351b00444926ef4',1,'DirectFormFir::Num_Taps()'],['../class_fir_filter_design.html#aea20c23065fce8d65a7e1ec7cb3f975d',1,'FirFilterDesign::Num_Taps()'],['../class_fir_filter_response.html#aad692403ea8330e22e425104c01f9294',1,'FirFilterResponse::Num_Taps()']]],
+  ['numer_5fcoeffs',['Numer_Coeffs',['../class_iir_filter_design.html#a0e598a07b720f9c42faa4164c41330cd',1,'IirFilterDesign']]],
+  ['numer_5fpoly',['Numer_Poly',['../class_filter_trans_func.html#a805a5e4b73facc37af0b5aeb1afb06e7',1,'FilterTransFunc']]],
+  ['numsamples',['numsamples',['../class_generator.html#a3ab01800c1afedecdbb87e6c4b37db61',1,'Generator']]]
+];
