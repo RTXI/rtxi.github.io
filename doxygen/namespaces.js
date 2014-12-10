@@ -1,0 +1,16 @@
+var namespaces =
+[
+    [ "ComediLib", "namespace_comedi_lib.html", null ],
+    [ "Connector", "namespace_connector.html", null ],
+    [ "DAQ", "namespace_d_a_q.html", null ],
+    [ "DataRecorder", "namespace_data_recorder.html", null ],
+    [ "Event", "namespace_event.html", null ],
+    [ "IO", "namespace_i_o.html", null ],
+    [ "Oscilloscope", "namespace_oscilloscope.html", null ],
+    [ "PerformanceMeasurement", "namespace_performance_measurement.html", null ],
+    [ "Plugin", "namespace_plugin.html", null ],
+    [ "RT", "namespace_r_t.html", "namespace_r_t" ],
+    [ "Settings", "namespace_settings.html", null ],
+    [ "UserPrefs", "namespace_user_prefs.html", null ],
+    [ "Workspace", "namespace_workspace.html", null ]
+];
