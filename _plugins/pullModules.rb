@@ -85,7 +85,7 @@ module Jekyll
                   "right:20px;"+
                   "transition:0.25s;"+
                "} #forkongithub a:hover{"+
-                  "background:#c01;"+
+                  "background:#b64138;"+
                   "color:#fff;"+
                "} @media screen and (min-width:768px) {"+
                   "#forkongithub{"+
