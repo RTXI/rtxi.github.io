@@ -9,6 +9,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/lead-extra.css" rel="stylesheet">
     <link href="/css/pygments.css" rel="stylesheet">
 
@@ -59,6 +60,9 @@ body {
                </li>
                <li >
                   <a href="/contact/">Contact</a>
+               </li>
+               <li class="hidden-xs">
+                  <a href="/feed.xml"><i class="fa fa-rss fa-inverse"></i></a>
                </li>
             </ul>
             <form class="navbar-form navbar-right" role="search">
@@ -125,71 +129,71 @@ div.background {
       <li role="presentation"><a data-toggle="tab" href="#session" role="tab">Talks/Poster Session</a></li>
       <li role="presentation"><a data-toggle="tab" href="#workshop" role="tab">RTXI Workshop</a></li>
    </ul>
+</div>
 
-   <div class="tab-content">
-      
-      <div id="speaker" role="tabpanel" class="tab-pane fade in active"><div class="container tab-content">
-         <p class="lead-small">We're excited to have the following people come to talk with us about their research and/or real-time applications.</p>
-         <!--Chuck-->
-         <div class="col-xs-12 col-sm-6 col-md-4" style="text-align:center;">
-            <div class="thumbnail"><a href="http://brain.utah.edu/research/dorval/index.php" style="text-decoration:none;">
-               <img class="img-responsive" src="/images/speakers/chuck_dorval-compress.jpg" style="max-width:200px;height:auto;margin-left:auto;margin-right:auto;"></img>
-               <div class="caption lead-small" style="margin-bottom:0;">
-                  <p>Chuck Dorval, University of Utah</p>
-               </div>
-            </a></div>
-         </div>
-
-         <!--Flavio-->
-         <div class="col-xs-12 col-sm-6 col-md-4" style="text-align:center;">
-            <div class="thumbnail"><a href="http://frohlichlab.org/" style="text-decoration:none;">
-               <img class="img-responsive" src="/images/speakers/flavio_frohlich-compress.jpg" style="max-width:200px;height:auto;margin-left:auto;margin-right:auto;"></img>
-               <div class="caption lead-small" style="margin-bottom:0;">
-                  <p>Flavio Frohlich, UNC</p>
-               </div>
-            </a></div>
-         </div>
-
-         <!--Astrid-->
-         <div class="col-xs-12 col-sm-6 col-md-4" style="text-align:center;">
-            <div class="thumbnail"><a href="http://www.biology.emory.edu/research/Prinz/" style="text-decoration:none;">
-               <img class="img-responsive" src="/images/speakers/astrid_prinz.jpg" style="max-width:200px;height:auto;margin-left:auto;margin-right:auto;"></img>
-               <div class="caption lead-small" style="margin-bottom:0;">
-                  <p>Astrid Prinz, Emory University</p>
-               </div>
-            </a></div>
-         </div>
-
-         <!--Dieter-->
-         <div class="col-xs-12 col-sm-6 col-md-offset-2 col-md-4" style="text-align:center;">
-            <div class="thumbnail"><a href="http://www.biology.emory.edu/research/Jaeger/" style="text-decoration:none;">
-               <img class="img-responsive" src="/images/speakers/dieter_jaeger-compress.jpg" style="max-width:200px;height:auto;margin-left:auto;margin-right:auto;"></img>
-               <div class="caption lead-small" style="margin-bottom:0;">
-                  <p>Dieter Jaeger, Emory University</p>
-               </div>
-            </a></div>
-         </div>
-
-         <!--Scott-->
-         <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-0 col-md-4" style="text-align:center;">
-            <div class="thumbnail">
-               <img class="img-responsive" src="/images/speakers/scott_stanslanski-compress.jpg" style="max-width:200px;height:auto;margin-left:auto;margin-right:auto;"></img>
-               <div class="caption lead-small" style="margin-bottom:0;">
-                  <p>Scott Stanslanski, Medtronic</p>
-               </div>
+<div class="container tab-content">
+   
+   <div id="speaker" role="tabpanel" class="tab-pane fade in active"><div class="tab-content">
+      <p class="lead-small">We're excited to have the following people come to talk with us about their research and/or real-time applications.</p>
+      <!--Chuck-->
+      <div class="col-xs-12 col-sm-6 col-md-4" style="text-align:center;">
+         <div class="thumbnail"><a href="http://brain.utah.edu/research/dorval/index.php" style="text-decoration:none;">
+            <img class="img-responsive" src="/images/speakers/chuck_dorval-compress.jpg" style="max-width:200px;height:auto;margin-left:auto;margin-right:auto;"></img>
+            <div class="caption lead-small" style="margin-bottom:0;">
+               <p>Chuck Dorval, University of Utah</p>
             </div>
          </a></div>
-      </div></div>
-      
-      <div id="session" tole="tabpanel" class="tab-pane fade"><div class="container tab-content">
-         <p class="lead-small">We will host talks and poster presentation from attendees wanting to give them. If you'd like to present anything, let us know in the conference registration form. Once the details of this event are finalized, look here for session details.</p>
-      </div></div>
-      
-      <div id="workshop" tole="tabpanel" class="tab-pane fade"><div class="container tab-content">
-         <p class="lead-small">Our current RTXI developers will hold a workshop to help new users get started with RTXI and demonstrate v2.0 to current ones. Emphasis will be given to module development. </p>
-      </div></div>
+      </div>
 
-   </div>
+      <!--Flavio-->
+      <div class="col-xs-12 col-sm-6 col-md-4" style="text-align:center;">
+         <div class="thumbnail"><a href="http://frohlichlab.org/" style="text-decoration:none;">
+            <img class="img-responsive" src="/images/speakers/flavio_frohlich-compress.jpg" style="max-width:200px;height:auto;margin-left:auto;margin-right:auto;"></img>
+            <div class="caption lead-small" style="margin-bottom:0;">
+               <p>Flavio Frohlich, UNC</p>
+            </div>
+         </a></div>
+      </div>
+
+      <!--Astrid-->
+      <div class="col-xs-12 col-sm-6 col-md-4" style="text-align:center;">
+         <div class="thumbnail"><a href="http://www.biology.emory.edu/research/Prinz/" style="text-decoration:none;">
+            <img class="img-responsive" src="/images/speakers/astrid_prinz.jpg" style="max-width:200px;height:auto;margin-left:auto;margin-right:auto;"></img>
+            <div class="caption lead-small" style="margin-bottom:0;">
+               <p>Astrid Prinz, Emory University</p>
+            </div>
+         </a></div>
+      </div>
+
+      <!--Dieter-->
+      <div class="col-xs-12 col-sm-6 col-md-offset-2 col-md-4" style="text-align:center;">
+         <div class="thumbnail"><a href="http://www.biology.emory.edu/research/Jaeger/" style="text-decoration:none;">
+            <img class="img-responsive" src="/images/speakers/dieter_jaeger-compress.jpg" style="max-width:200px;height:auto;margin-left:auto;margin-right:auto;"></img>
+            <div class="caption lead-small" style="margin-bottom:0;">
+               <p>Dieter Jaeger, Emory University</p>
+            </div>
+         </a></div>
+      </div>
+
+      <!--Scott-->
+      <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-0 col-md-4" style="text-align:center;">
+         <div class="thumbnail">
+            <img class="img-responsive" src="/images/speakers/scott_stanslanski-compress.jpg" style="max-width:200px;height:auto;margin-left:auto;margin-right:auto;"></img>
+            <div class="caption lead-small" style="margin-bottom:0;">
+               <p>Scott Stanslanski, Medtronic</p>
+            </div>
+         </div>
+      </a></div>
+   </div></div>
+   
+   <div id="session" tole="tabpanel" class="tab-pane fade"><div class="tab-content">
+      <p class="lead-small">We will host talks and poster presentation from attendees wanting to give them. If you'd like to present anything, let us know in the conference registration form. Once the details of this event are finalized, look here for session details.</p>
+   </div></div>
+   
+   <div id="workshop" tole="tabpanel" class="tab-pane fade"><div class="tab-content">
+      <p class="lead-small">Our current RTXI developers will hold a workshop to help new users get started with RTXI and demonstrate v2.0 to current ones. Emphasis will be given to module development. </p>
+   </div></div>
+
 </div>
 
   </body>

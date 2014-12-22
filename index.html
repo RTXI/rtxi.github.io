@@ -9,6 +9,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/lead-extra.css" rel="stylesheet">
     <link href="/css/pygments.css" rel="stylesheet">
 
@@ -59,6 +60,9 @@ body {
                </li>
                <li >
                   <a href="/contact/">Contact</a>
+               </li>
+               <li class="hidden-xs">
+                  <a href="/feed.xml"><i class="fa fa-rss fa-inverse"></i></a>
                </li>
             </ul>
             <form class="navbar-form navbar-right" role="search">
@@ -144,30 +148,73 @@ strong {
 </div>
 -->
 
-<div class="container" id="intro">
+<div class="container">
+   <ul class="nav nav-tabs nav-justified lead-normal" role="tablist">
+      <li role="presentation" class="active"><a data-toggle="tab" href="#intro" role="tab">RTXI</a></li>
+      <li role="presentation"><a data-toggle="tab" href="#us" role="tab">About Us</a></li>
+      <li role="presentation"><a data-toggle="tab" href="#news" role="tab">News</a></li>
+   <ul>
+</div>
+ 
+<div class="container tab-content">
+   <div id="intro" role="tabpanel" class="tab-pane fade in active"><div class="tab-content">
+   
+      <h2 class="page-header" style="text-align:center">Introducing RTXI</h2>
 
-   <h2 class="page-header" style="text-align:center">Introducing RTXI</h2>
+      <div class="row">
+         <div class="col-xs-12"><p class="lead-small">
+            <strong>RTXI</strong>, the <strong>Real-Time eXperiment Interface</strong>, is a <strong>fast</strong>, <strong>free</strong>, and <strong>open-source</strong> operating system capable of <strong>hard real-time</strong> data acquisition and control applications for use in biological research. Our system is currently used in labs all over to world to probe diverse, technologically challenging problems, such as dynamic probing of ion-channel function, control of cardiac arrhythmia dynamics, and control of deep-brain stimulation patterns.
+         </p></div>
+      </div>
+     
+      <div class="row">
+         <div class="col-sm-6">
+            <h3 class="page-header" style="text-align:center">Why real-time?</h3>
+            <p class="lead-small">
+               Experimentalists' ability to perturb biological systems has traditionally been limited to rigid pre-programmed protocols or more flexible, albeit reflex constrained, operator-controlled protocols. In contrast, real-time control allows dynamic probing of biological systems by parameter perturbations calculated from instantaneous system measurements. With it, researchers can address diverse unanswered questions that are not amenable to traditional approaches.
+            </p>
+         </div>
+         <div class="col-sm-6">
+            <h3 class="page-header" style="text-align:center">Why RTXI?</h3>
+            <p class="lead-small">
+               Unfortunately, real-time control is not possible with standard operating systems and software. Furthermore, commercial real-time systems are costly and often designed for industrial applications, and the proprietary software licenses and drivers that come with them only exacerbate the issue. To get away from that, we developed RTXI. It's fast, free, and flexible, and it's compatible with a wide range of experimentation hardware.
+            </p>
+         </div>
+      </div>
+   </div></div>
 
-   <div class="row">
-   <div class="col-xs-12"><p class="lead-small">
-      <strong>RTXI</strong>, the <strong>Real-Time eXperiment Interface</strong>, is a <strong>fast</strong>, <strong>free</strong>, and <strong>open-source</strong> operating system capable of <strong>hard real-time</strong> data acquisition and control applications for use in biological research. Our system is currently used in labs all over to world to probe diverse, technologically challenging problems, such as dynamic probing of ion-channel function, control of cardiac arrhythmia dynamics, and control of deep-brain stimulation patterns.
-   </p></div>
-   </div>
-  
-   <div class="row">
-      <div class="col-sm-6">
-         <h3 class="page-header" style="text-align:center">Why real-time?</h3>
-         <p class="lead-small">
-            Experimentalists' ability to perturb biological systems has traditionally been limited to rigid pre-programmed protocols or more flexible, albeit reflex constrained, operator-controlled protocols. In contrast, real-time control allows dynamic probing of biological systems by parameter perturbations calculated from instantaneous system measurements. With it, researchers can address diverse unanswered questions that are not amenable to traditional approaches.
-         </p>
+   <div id="us" role="tabpanel" class="tab-pane fade"><div class="tab-content">
+      <p class="lead">We'll get this bit filled out soon. But don't worry, we're cool people.</p>
+   </div></div>
+   
+   <div id="news" role="tabpanel" class="tab-pane fade"><div class="tab-content">
+      <div class="container">
+      
+         <div class="media row"><div class="media-body">
+            <a href="/news/2014/12/22/register-for-RTXI-2015/" style="text-decoration:none;"><h4 class="media-heading lead">Register for RTXI 2015</h4></a>
+            <div>22 Dec 2014</div>
+            <div class="lead-small"><p>If you haven’t done so already, check out our <a href="/conference/">conference page</a> to learn about our upcoming conference. Registration is almost open. We just need to get the payment page running.  </p>
+
+</div>
+         </div></div>
+      
+         <div class="media row"><div class="media-body">
+            <a href="/news/2014/12/22/let-there-be-news/" style="text-decoration:none;"><h4 class="media-heading lead">Let There Be News!</h4></a>
+            <div>22 Dec 2014</div>
+            <div class="lead-small"><p>There is now a news section on the home page! Look in future for an RSS feed.   </p>
+
+</div>
+         </div></div>
+      
+         <div class="media row"><div class="media-body">
+            <a href="/news/2014/12/10/new-website/" style="text-decoration:none;"><h4 class="media-heading lead">New Website</h4></a>
+            <div>10 Dec 2014</div>
+            <div class="lead-small"><p>We now have a new website. It’s not quite feature-rich yet, but it’s a nice, fresh site to coincide with the long-planned release of RTXI 2.0. Look here in the future for all documentation, tutorials, videos, etc. related to using RTXI and closed-loop, real-time electrophysiology in general. 
+...</div>
+         </div></div>
+      
       </div>
-      <div class="col-sm-6">
-         <h3 class="page-header" style="text-align:center">Why RTXI?</h3>
-         <p class="lead-small">
-            Unfortunately, real-time control is not possible with standard operating systems and software. Furthermore, commercial real-time systems are costly and often designed for industrial applications, and the proprietary software licenses and drivers that come with them only exacerbate the issue. To get away from that, we developed RTXI. It's fast, free, and flexible, and it's compatible with a wide range of experimentation hardware.
-         </p>
-      </div>
-   </div>
+   </div></div>
 
 </div>
 
