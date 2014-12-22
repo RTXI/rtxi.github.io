@@ -81,7 +81,7 @@ body {
     <div class="container">
    <h2 class="page-header">Documentation</h2>
 </div>
-<div class="container">
+<div class="container"><div class="row">
    <p class="lead col-sm-10">For complete documentation, take a look at our User Manual. It's for RTXI 1.3, but it's mostly up-to-date for 2.0. We'll have an updated manual available soon.</p>
    <div class="col-xs-12 col-sm-2">
       <div class="row">
@@ -98,7 +98,10 @@ body {
          </a>
       </div>
    </div>
-</div>
+</div></div>
+
+<div class="hidden-sm">&nbsp;</div>
+<div class="hidden-sm">&nbsp;</div>
 
 <div class="container">
    <ul class="nav nav-tabs nav-justified lead-normal" role="tablist">
@@ -334,11 +337,26 @@ body {
 
   </body>
 
-  <link href="/css/footer.css" rel="stylesheet">
-
-<div>&nbsp;</div>
-<div>&nbsp;</div>
-<div>&nbsp;</div>
+  <style>
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  margin-top: 10px;
+}
+.footer {
+  position: absolute;
+  top: 100%;
+  bottom: auto;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: -60px;
+  background-color: #c1c1c1;
+}
+</style>
 
 <div class="footer">
    <div class="container text-center" style="margin-top:20px;">

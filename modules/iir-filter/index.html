@@ -157,11 +157,26 @@ body {
     </div>
   </body>
 
-  <link href="/css/footer.css" rel="stylesheet">
-
-<div>&nbsp;</div>
-<div>&nbsp;</div>
-<div>&nbsp;</div>
+  <style>
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  margin-top: 10px;
+}
+.footer {
+  position: absolute;
+  top: 100%;
+  bottom: auto;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: -60px;
+  background-color: #c1c1c1;
+}
+</style>
 
 <div class="footer">
    <div class="container text-center" style="margin-top:20px;">
