@@ -35,125 +35,125 @@ permalink: /docs/
       <li role="presentation"><a data-toggle="tab" href="#trouble" role="tab">Troubleshooting</a></li>
       <li role="presentation"><a data-toggle="tab" href="#faq" role="tab">FAQs</a></li>
    </ul>
+</div>
 
-   <div class="tab-content">
+<div class="container tab-content">
 
-      <div id="tutor" role="tabpanel" class="tab-pane fade in active">
-         {% capture tutorvar %}{% increment tutorbodycount %}{% endcapture %}
-         <div class="container tab-content">
-            {% for post in site.categories.tutorials %}
-               {% capture tutorflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
-               {% if tutorflag == "1" %}
-               {% capture tutorvar %}{% increment tutorbodycount %}{% endcapture %}
-                  {% if forloop.index == 1 %}
-                  <div class="tab-pane fade in active" role="tabpanel" id="tutor{{ tutorvar }}">
-                  {% else %}
-                  </div><div class="tab-pane fade" role="tabpanel" id="tutor{{ tutorvar }}">
-                  {% endif %}
+   <div id="tutor" role="tabpanel" class="tab-pane fade in active">
+      {% capture tutorvar %}{% increment tutorbodycount %}{% endcapture %}
+      <div class="tab-content">
+         {% for post in site.categories.tutorials %}
+            {% capture tutorflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
+            {% if tutorflag == "1" %}
+            {% capture tutorvar %}{% increment tutorbodycount %}{% endcapture %}
+               {% if forloop.index == 1 %}
+               <div class="tab-pane fade in active" role="tabpanel" id="tutor{{ tutorvar }}">
+               {% else %}
+               </div><div class="tab-pane fade" role="tabpanel" id="tutor{{ tutorvar }}">
                {% endif %}
-                  <a href="{{ post.url }}"><div class="lead">{{ post.title }}</div></a>
-                  <div class="lead-small">{{ post.excerpt | truncate:300 }}</div>
-            {% endfor %}
-            </div>
+            {% endif %}
+               <a href="{{ post.url }}"><div class="lead">{{ post.title }}</div></a>
+               <div class="lead-small">{{ post.excerpt | truncate:300 }}</div>
+         {% endfor %}
          </div>
-        
-         <!-- Paginator --> 
-         <div class="text-center"><ul class="pagination">
-            {% capture tutorvar %}{% increment tutorpagecount %}{% endcapture %}
-            {% for post in site.categories.tutorials %}
-               {% capture tutorflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
-               {% if tutorflag == "1" %}
-                  {% capture tutorvar %}{% increment tutorpagecount %}{% endcapture %}
-                  {% if forloop.index == 1 %}
-                     <li class="active" role="presentation"><a data-toggle="tab" href="#tutor{{tutorvar}}">{{tutorvar}}</a></li>
-                  {% else %}
-                     <li><a data-toggle="tab" href="#tutor{{ tutorvar }}">{{ tutorvar }}</a></li>
-                  {% endif %}
-               {% endif %}
-            {% endfor %}
-         </ul></div>
       </div>
-
-      <div id="trouble" role="tabpanel" class="tab-pane fade">
-         
-         <div class="container"> 
-            <h4 class="lead-normal" style="text-align:center; margin-bottom:20px;">
-               Please <a href="https://github.com/rtxi/rtxi/issues" style="text-decoration:none">submit any issues</a> you have on our GitHub repo.
-            </h4>
-         </div>
-
-         {% capture troublevar %}{% increment troublebodycount %}{% endcapture %}
-         <div class="container tab-content">
-            {% for post in site.categories.troubleshoot %}
-               {% capture troubleflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
-               {% if troubleflag == "1" %}
-               {% capture troublevar %}{% increment troublebodycount %}{% endcapture %}
-                  {% if forloop.index == 1 %}
-                  <div class="tab-pane fade in active" role="tabpanel" id="trouble{{ troublevar }}">
-                  {% else %}
-                  </div><div class="tab-pane fade" role="tabpanel" id="trouble{{ troublevar }}">
-                  {% endif %}
+     
+      <!-- Paginator --> 
+      <div class="text-center"><ul class="pagination">
+         {% capture tutorvar %}{% increment tutorpagecount %}{% endcapture %}
+         {% for post in site.categories.tutorials %}
+            {% capture tutorflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
+            {% if tutorflag == "1" %}
+               {% capture tutorvar %}{% increment tutorpagecount %}{% endcapture %}
+               {% if forloop.index == 1 %}
+                  <li class="active" role="presentation"><a data-toggle="tab" href="#tutor{{tutorvar}}">{{tutorvar}}</a></li>
+               {% else %}
+                  <li><a data-toggle="tab" href="#tutor{{ tutorvar }}">{{ tutorvar }}</a></li>
                {% endif %}
-                  <a href="{{ post.url }}"><div class="lead">{{ post.title }}</div></a>
-                  <div class="lead-small">{{ post.excerpt | truncate:300 }}</div>
-            {% endfor %}
-            </div>
-         </div>
-        
-         <!-- Paginator --> 
-         <div class="text-center"><ul class="pagination">
-            {% capture troublevar %}{% increment troublepagecount %}{% endcapture %}
-            {% for post in site.categories.troubleshoot %}
-               {% capture troubleflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
-               {% if troubleflag == "1" %}
-                  {% capture troublevar %}{% increment troublepagecount %}{% endcapture %}
-                  {% if forloop.index == 1 %}
-                     <li class="active" role="presentation"><a data-toggle="tab" href="#trouble{{troublevar}}">{{troublevar}}</a></li>
-                  {% else %}
-                     <li><a data-toggle="tab" href="#trouble{{ troublevar }}">{{ troublevar }}</a></li>
-                  {% endif %}
-               {% endif %}
-            {% endfor %}
-         </ul></div>
-      </div>
-
-      <div id="faq" role="tabpanel" class="tab-pane fade">
-         {% capture faqvar %}{% increment faqbodycount %}{% endcapture %}
-         <div class="container tab-content">
-            {% for post in site.categories.faqs %}
-               {% capture faqflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
-               {% if faqflag == "1" %}
-               {% capture faqvar %}{% increment faqbodycount %}{% endcapture %}
-                  {% if forloop.index == 1 %}
-                  <div class="tab-pane fade in active" role="tabpanel" id="faq{{ faqvar }}">
-                  {% else %}
-                  </div><div class="tab-pane fade" role="tabpanel" id="faq{{ faqvar }}">
-                  {% endif %}
-               {% endif %}
-                     <a data-toggle="collapse" data-target="#faqp{{ forloop.index }}" style="text-decoration:none">
-                        <div class="lead">{{ forloop.index }}. {{ post.title }}</div>
-                     </a>
-                     <div class="collapse lead-small" id="faqp{{ forloop.index }}">{{ post.content }}</div>
-            {% endfor %}
-            </div>
-         </div>
-        
-         <!-- Paginator --> 
-         <div class="text-center"><ul class="pagination">
-            {% capture faqvar %}{% increment faqpagecount %}{% endcapture %}
-            {% for post in site.categories.faqs %}
-               {% capture faqflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
-               {% if faqflag == "1" %}
-                  {% capture faqvar %}{% increment faqpagecount %}{% endcapture %}
-                  {% if forloop.index == 1 %}
-                     <li class="active" role="presentation"><a data-toggle="tab" href="#faq{{faqvar}}">{{faqvar}}</a></li>
-                  {% else %}
-                     <li><a data-toggle="tab" href="#faq{{ faqvar }}">{{ faqvar }}</a></li>
-                  {% endif %}
-               {% endif %}
-            {% endfor %}
-         </ul></div>
-      </div>
-
+            {% endif %}
+         {% endfor %}
+      </ul></div>
    </div>
+
+   <div id="trouble" role="tabpanel" class="tab-pane fade">
+      
+      <div class="container"> 
+         <h4 class="lead-normal" style="text-align:center; margin-bottom:20px;">
+            Please <a href="https://github.com/rtxi/rtxi/issues" style="text-decoration:none">submit any issues</a> you have on our GitHub repo.
+         </h4>
+      </div>
+
+      {% capture troublevar %}{% increment troublebodycount %}{% endcapture %}
+      <div class="tab-content">
+         {% for post in site.categories.troubleshoot %}
+            {% capture troubleflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
+            {% if troubleflag == "1" %}
+            {% capture troublevar %}{% increment troublebodycount %}{% endcapture %}
+               {% if forloop.index == 1 %}
+               <div class="tab-pane fade in active" role="tabpanel" id="trouble{{ troublevar }}">
+               {% else %}
+               </div><div class="tab-pane fade" role="tabpanel" id="trouble{{ troublevar }}">
+               {% endif %}
+            {% endif %}
+               <a href="{{ post.url }}"><div class="lead">{{ post.title }}</div></a>
+               <div class="lead-small">{{ post.excerpt | truncate:300 }}</div>
+         {% endfor %}
+         </div>
+      </div>
+     
+      <!-- Paginator --> 
+      <div class="text-center"><ul class="pagination">
+         {% capture troublevar %}{% increment troublepagecount %}{% endcapture %}
+         {% for post in site.categories.troubleshoot %}
+            {% capture troubleflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
+            {% if troubleflag == "1" %}
+               {% capture troublevar %}{% increment troublepagecount %}{% endcapture %}
+               {% if forloop.index == 1 %}
+                  <li class="active" role="presentation"><a data-toggle="tab" href="#trouble{{troublevar}}">{{troublevar}}</a></li>
+               {% else %}
+                  <li><a data-toggle="tab" href="#trouble{{ troublevar }}">{{ troublevar }}</a></li>
+               {% endif %}
+            {% endif %}
+         {% endfor %}
+      </ul></div>
+   </div>
+
+   <div id="faq" role="tabpanel" class="tab-pane fade">
+      {% capture faqvar %}{% increment faqbodycount %}{% endcapture %}
+      <div class="tab-content">
+         {% for post in site.categories.faqs %}
+            {% capture faqflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
+            {% if faqflag == "1" %}
+            {% capture faqvar %}{% increment faqbodycount %}{% endcapture %}
+               {% if forloop.index == 1 %}
+               <div class="tab-pane fade in active" role="tabpanel" id="faq{{ faqvar }}">
+               {% else %}
+               </div><div class="tab-pane fade" role="tabpanel" id="faq{{ faqvar }}">
+               {% endif %}
+            {% endif %}
+                  <a data-toggle="collapse" data-target="#faqp{{ forloop.index }}" style="text-decoration:none">
+                     <div class="lead">{{ forloop.index }}. {{ post.title }}</div>
+                  </a>
+                  <div class="collapse lead-small" id="faqp{{ forloop.index }}">{{ post.content }}</div>
+         {% endfor %}
+         </div>
+      </div>
+     
+      <!-- Paginator --> 
+      <div class="text-center"><ul class="pagination">
+         {% capture faqvar %}{% increment faqpagecount %}{% endcapture %}
+         {% for post in site.categories.faqs %}
+            {% capture faqflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
+            {% if faqflag == "1" %}
+               {% capture faqvar %}{% increment faqpagecount %}{% endcapture %}
+               {% if forloop.index == 1 %}
+                  <li class="active" role="presentation"><a data-toggle="tab" href="#faq{{faqvar}}">{{faqvar}}</a></li>
+               {% else %}
+                  <li><a data-toggle="tab" href="#faq{{ faqvar }}">{{ faqvar }}</a></li>
+               {% endif %}
+            {% endif %}
+         {% endfor %}
+      </ul></div>
+   </div>
+
 </div>
