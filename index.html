@@ -23,30 +23,56 @@ strong {
 </div>
 -->
 
-<div class="container" id="intro">
+<div class="container">
+   <ul class="nav nav-tabs nav-justified lead-normal" role="tablist">
+      <li role="presentation" class="active"><a data-toggle="tab" href="#intro" role="tab">RTXI</a></li>
+      <li role="presentation"><a data-toggle="tab" href="#us" role="tab">About Us</a></li>
+      <li role="presentation"><a data-toggle="tab" href="#news" role="tab">News</a></li>
+   <ul>
+</div>
+ 
+<div class="container tab-content">
+   <div id="intro" role="tabpanel" class="tab-pane fade in active"><div class="tab-content">
+   
+      <h2 class="page-header" style="text-align:center">Introducing RTXI</h2>
 
-   <h2 class="page-header" style="text-align:center">Introducing RTXI</h2>
+      <div class="row">
+         <div class="col-xs-12"><p class="lead-small">
+            <strong>RTXI</strong>, the <strong>Real-Time eXperiment Interface</strong>, is a <strong>fast</strong>, <strong>free</strong>, and <strong>open-source</strong> operating system capable of <strong>hard real-time</strong> data acquisition and control applications for use in biological research. Our system is currently used in labs all over to world to probe diverse, technologically challenging problems, such as dynamic probing of ion-channel function, control of cardiac arrhythmia dynamics, and control of deep-brain stimulation patterns.
+         </p></div>
+      </div>
+     
+      <div class="row">
+         <div class="col-sm-6">
+            <h3 class="page-header" style="text-align:center">Why real-time?</h3>
+            <p class="lead-small">
+               Experimentalists' ability to perturb biological systems has traditionally been limited to rigid pre-programmed protocols or more flexible, albeit reflex constrained, operator-controlled protocols. In contrast, real-time control allows dynamic probing of biological systems by parameter perturbations calculated from instantaneous system measurements. With it, researchers can address diverse unanswered questions that are not amenable to traditional approaches.
+            </p>
+         </div>
+         <div class="col-sm-6">
+            <h3 class="page-header" style="text-align:center">Why RTXI?</h3>
+            <p class="lead-small">
+               Unfortunately, real-time control is not possible with standard operating systems and software. Furthermore, commercial real-time systems are costly and often designed for industrial applications, and the proprietary software licenses and drivers that come with them only exacerbate the issue. To get away from that, we developed RTXI. It's fast, free, and flexible, and it's compatible with a wide range of experimentation hardware.
+            </p>
+         </div>
+      </div>
+   </div></div>
 
-   <div class="row">
-   <div class="col-xs-12"><p class="lead-small">
-      <strong>RTXI</strong>, the <strong>Real-Time eXperiment Interface</strong>, is a <strong>fast</strong>, <strong>free</strong>, and <strong>open-source</strong> operating system capable of <strong>hard real-time</strong> data acquisition and control applications for use in biological research. Our system is currently used in labs all over to world to probe diverse, technologically challenging problems, such as dynamic probing of ion-channel function, control of cardiac arrhythmia dynamics, and control of deep-brain stimulation patterns.
-   </p></div>
-   </div>
-  
-   <div class="row">
-      <div class="col-sm-6">
-         <h3 class="page-header" style="text-align:center">Why real-time?</h3>
-         <p class="lead-small">
-            Experimentalists' ability to perturb biological systems has traditionally been limited to rigid pre-programmed protocols or more flexible, albeit reflex constrained, operator-controlled protocols. In contrast, real-time control allows dynamic probing of biological systems by parameter perturbations calculated from instantaneous system measurements. With it, researchers can address diverse unanswered questions that are not amenable to traditional approaches.
-         </p>
+   <div id="us" role="tabpanel" class="tab-pane fade"><div class="tab-content">
+      <p class="lead">We'll get this bit filled out soon. But don't worry, we're cool people.</p>
+   </div></div>
+   
+   <div id="news" role="tabpanel" class="tab-pane fade"><div class="tab-content">
+      <div class="container">
+      {% for post in site.categories.news %}
+         <div class="media row"><div class="media-body">
+            <a href="{{ post.url }}" style="text-decoration:none;"><h4 class="media-heading lead">{{ post.title }}</h4></a>
+            <div>{{ post.date | date_to_string }}</div>
+            <div class="lead-small">{{ post.excerpt | truncate: 300 }}</div>
+         </div></div>
+      {% endfor %}
       </div>
-      <div class="col-sm-6">
-         <h3 class="page-header" style="text-align:center">Why RTXI?</h3>
-         <p class="lead-small">
-            Unfortunately, real-time control is not possible with standard operating systems and software. Furthermore, commercial real-time systems are costly and often designed for industrial applications, and the proprietary software licenses and drivers that come with them only exacerbate the issue. To get away from that, we developed RTXI. It's fast, free, and flexible, and it's compatible with a wide range of experimentation hardware.
-         </p>
-      </div>
-   </div>
+   </div></div>
 
 </div>
 
