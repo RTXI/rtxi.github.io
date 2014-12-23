@@ -64,6 +64,9 @@ strong {
    
    <div id="news" role="tabpanel" class="tab-pane fade"><div class="tab-content">
       <div class="container">
+      <div class="text-center">
+         Subscribe to our<a href="/feed.xml"> RSS feed <i class="fa fa-rss"></i></a>
+      </div>
       {% for post in site.categories.news %}
          <div class="media row"><div class="media-body">
             <a href="{{ post.url }}" style="text-decoration:none;"><h4 class="media-heading lead">{{ post.title }}</h4></a>
