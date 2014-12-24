@@ -21,5 +21,8 @@ defaults:
 
 exclude: [ "README.md", "Rakefile", "Gemfile", "Gemfile.lock", "LICENSE", "relic" ]
 
+include: 
+ - '.nojekyll'
+
 sharing:
    provider: false
