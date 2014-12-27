@@ -1,131 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>RTXI Architecture</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/lead-extra.css" rel="stylesheet">
-    <link href="/css/pygments.css" rel="stylesheet">
-<!--    <link href="/css/module.css" rel="stylesheet">-->
-    <link href="/fonts/octicons.css" rel="stylesheet">
-
-    <style>
-    h1, h2, h3, h4, h5, h6 {
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RTXI Architecture</title><link href="/assets/css/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/pygments.css" rel="stylesheet"><link href="/assets/fonts/octicons.css" rel="stylesheet"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.ico"></head><style>h1, h2, h3, h4, h5, h6 {
       padding-bottom: 9px;
       margin: 40px 0 20px;
       border-bottom: 1px solid #eee;
       font-weight: normal;
-    }
-    strong {
+   }
+   strong {
       font-weight: normal;
-    }
-    /*p, div {
-      .lead;
-    }*/
-    img {
+   }
+   img {
       margin-left: auto;
       margin-right: auto;
       display: block;
       max-width: 100%;
       height: auto;
-    }
-    </style>
-   
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="icon" href="/favicon.ico">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <!-- Fixed navbar -->
-<style>
-body {
+   }
+   .lead-small {
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.4;
+   }
+   @media (min-width: 768px) {
+      .lead-small {
+         font-size: 18px;
+      }
+   }
+   .lead-normal {
+     margin-bottom: 20px;
+     font-size: 16px;
+     font-weight: 400;
+     line-height: 1.4;
+   }
+   @media (min-width: 768px) {
+     .lead-normal {
+       font-size: 21px;
+     }
+   }</style><style>body {
    padding-top:50px;
    padding-bottom:30px;
-}
-</style>
-
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-   <div class="container">
-      <div class="navbar-header">
-         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-         </button>
-         <a class="navbar-brand" rel="home" href="/"><b>RTXI</b></a>
-      </div>
-      <div class="row">
-         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-               <li >
-                  <a href="/install/">Install</a>
-               </li>
-               <li >
-                  <a href="/modules/">Modules</a>
-               </li>
-               <li >
-                  <a href="/papers/">Papers</a>
-               </li>
-               <li class="active">
-                  <a href="/docs/">Docs</a>
-               </li>
-               <li >
-                  <a href="/contact/">Contact</a>
-               </li>
-            </ul>
-            <form class="navbar-form navbar-right" role="search">
-               <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search (non-functional)">
-                  <span class="input-group-btn">
-                     <button type="submit" class="btn btn-default">
-                        <span class="glyphicon glyphicon-search"></span>
-                     </button>
-                  </span>
-              </div>
-            </form>
-         </div>
-      </div><!--/.nav-collapse -->
-   </div>
-</nav>
-
-
-  <body style="padding-top:30px">
-    <div class="container lead-small">
-    <h3 class="page-header">RTXI Architecture</h3>
-      <p>RTXI uses a two-thread architecture consisting of a real-time (RT) thread and a non-real-time user interface (UI) thread. RTXI can run on single or multiprocessor computers. RTXI consists of both system and custom user modules, each of which spans both threads. RTXI modules communicate and share data in real-time using a system of signals and slots that supports synchronous scheduling, as well as asynchronous event handling. On every clock cycle, the RT thread wakes and signals each active DAQ driver to acquire all active inputs from external experiment hardware. These data are made available to other components while the RT thread executes any real-time instructions contained in loaded modules. When each module has finished executing, the RT thread signals each DAQ driver to write any output signals to the experiment hardware. The UI thread manages the graphical components of the system as well as user events triggered through the interface. Each module features its own encapsulated interface through which users can control module execution and modify its various parameters.  </p>
-
-<p><a href="/images/rtxi-diagram-scaled.png">
-   <img src="/images/rtxi-diagram-scaled.png" class="img-responsive center-block" />
-</a></p>
-
-<p>RTXI uses the open source <a href="https://xenomai.org">Xenomai</a> framework to implement communication with a variety of commercially available multifunction DAQ cards with both analog and digital input and output channels. This makes RTXI essentially hardware-agnostic and able to communicate with multiple actuators and sensors that may span different modalities. Modules contain function-specific code that can be used in combinations to build custom workflows and experiment protocols. They are compiled outside the core RTXI source tree as shared object libraries that are linked at runtime. This architecture gives RTXI several important features:  </p>
-
-<ol>
-  <li>Reduced overhead that maximizes real-time performance by loading a minimal set of modules at startup</li>
-  <li>Code reusability which eliminates the need to program new experiments entirely from scratch</li>
-  <li>Ease by which users can share modules by distributing source code or compiled versions of their modules</li>
-  <li>The ability to create and save the entire RTXI workspace and experimental setup for use at a later date</li>
-  <li>A simple process by which multiple developers can contribute new features with minimal changes to core RTXI source code.</li>
-</ol>
-
-
-    </div>
-  </body>
-
-  <style>
-html {
+}</style><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" rel="home" href="/"><b>RTXI</b></a></div><div class="row"><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="/install/">Install</a></li><li><a href="/modules/">Modules</a></li><li><a href="/papers/">Papers</a></li><li class="active"><a href="/docs/">Docs</a></li><li><a href="/contact/">Contact</a></li></ul><form class="navbar-form navbar-right" role="search"><div class="input-group"><input type="text" class="form-control" placeholder="Search (non-functional)"> <span class="input-group-btn"><button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></span></div></form></div></div></div></nav><body style="padding-top:30px"><div class="container lead-small"><h3 class="page-header">RTXI Architecture</h3><p>RTXI uses a two-thread architecture consisting of a real-time (RT) thread and a non-real-time user interface (UI) thread. RTXI can run on single or multiprocessor computers. RTXI consists of both system and custom user modules, each of which spans both threads. RTXI modules communicate and share data in real-time using a system of signals and slots that supports synchronous scheduling, as well as asynchronous event handling. On every clock cycle, the RT thread wakes and signals each active DAQ driver to acquire all active inputs from external experiment hardware. These data are made available to other components while the RT thread executes any real-time instructions contained in loaded modules. When each module has finished executing, the RT thread signals each DAQ driver to write any output signals to the experiment hardware. The UI thread manages the graphical components of the system as well as user events triggered through the interface. Each module features its own encapsulated interface through which users can control module execution and modify its various parameters.</p><p><a href="/assets/img/rtxi-diagram-scaled.png"><img src="/assets/img/rtxi-diagram-scaled.png" class="img-responsive center-block"></a></p><p>RTXI uses the open source <a href="https://xenomai.org">Xenomai</a> framework to implement communication with a variety of commercially available multifunction DAQ cards with both analog and digital input and output channels. This makes RTXI essentially hardware-agnostic and able to communicate with multiple actuators and sensors that may span different modalities. Modules contain function-specific code that can be used in combinations to build custom workflows and experiment protocols. They are compiled outside the core RTXI source tree as shared object libraries that are linked at runtime. This architecture gives RTXI several important features:</p><ol><li>Reduced overhead that maximizes real-time performance by loading a minimal set of modules at startup</li><li>Code reusability which eliminates the need to program new experiments entirely from scratch</li><li>Ease by which users can share modules by distributing source code or compiled versions of their modules</li><li>The ability to create and save the entire RTXI workspace and experimental setup for use at a later date</li><li>A simple process by which multiple developers can contribute new features with minimal changes to core RTXI source code.</li></ol></div></body><style>html {
   position: relative;
   min-height: 100%;
 }
@@ -142,17 +55,4 @@ body {
   /* Set the fixed height of the footer here */
   height: -60px;
   background-color: #c1c1c1;
-}
-</style>
-
-<div class="footer">
-   <div class="container text-center" style="margin-top:20px;">
-      <p class="lead-small">RTXI is funded by NIH grant R01-RR020115.</p>
-   </div>
-</div>
-
-
-  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-</html>
+}</style><div class="footer"><div class="container text-center" style="margin-top:20px"><p class="lead-small">RTXI is funded by NIH grant R01-RR020115.</p></div></div><script src="/assets/js/jquery.min.js"></script><script src="/assets/js/bootstrap.min.js"></script></html>

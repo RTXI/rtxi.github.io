@@ -1,135 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>RTXI HDF5 Data Files</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/lead-extra.css" rel="stylesheet">
-    <link href="/css/pygments.css" rel="stylesheet">
-<!--    <link href="/css/module.css" rel="stylesheet">-->
-    <link href="/fonts/octicons.css" rel="stylesheet">
-
-    <style>
-    h1, h2, h3, h4, h5, h6 {
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RTXI HDF5 Data Files</title><link href="/assets/css/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/pygments.css" rel="stylesheet"><link href="/assets/fonts/octicons.css" rel="stylesheet"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.ico"></head><style>h1, h2, h3, h4, h5, h6 {
       padding-bottom: 9px;
       margin: 40px 0 20px;
       border-bottom: 1px solid #eee;
       font-weight: normal;
-    }
-    strong {
+   }
+   strong {
       font-weight: normal;
-    }
-    /*p, div {
-      .lead;
-    }*/
-    img {
+   }
+   img {
       margin-left: auto;
       margin-right: auto;
       display: block;
       max-width: 100%;
       height: auto;
-    }
-    </style>
-   
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="icon" href="/favicon.ico">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <!-- Fixed navbar -->
-<style>
-body {
+   }
+   .lead-small {
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.4;
+   }
+   @media (min-width: 768px) {
+      .lead-small {
+         font-size: 18px;
+      }
+   }
+   .lead-normal {
+     margin-bottom: 20px;
+     font-size: 16px;
+     font-weight: 400;
+     line-height: 1.4;
+   }
+   @media (min-width: 768px) {
+     .lead-normal {
+       font-size: 21px;
+     }
+   }</style><style>body {
    padding-top:50px;
    padding-bottom:30px;
-}
-</style>
-
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-   <div class="container">
-      <div class="navbar-header">
-         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-         </button>
-         <a class="navbar-brand" rel="home" href="/"><b>RTXI</b></a>
-      </div>
-      <div class="row">
-         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-               <li >
-                  <a href="/install/">Install</a>
-               </li>
-               <li >
-                  <a href="/modules/">Modules</a>
-               </li>
-               <li >
-                  <a href="/papers/">Papers</a>
-               </li>
-               <li class="active">
-                  <a href="/docs/">Docs</a>
-               </li>
-               <li >
-                  <a href="/contact/">Contact</a>
-               </li>
-            </ul>
-            <form class="navbar-form navbar-right" role="search">
-               <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search (non-functional)">
-                  <span class="input-group-btn">
-                     <button type="submit" class="btn btn-default">
-                        <span class="glyphicon glyphicon-search"></span>
-                     </button>
-                  </span>
-              </div>
-            </form>
-         </div>
-      </div><!--/.nav-collapse -->
-   </div>
-</nav>
-
-
-  <body style="padding-top:30px">
-    <div class="container lead-small">
-    <h3 class="page-header">RTXI HDF5 Data Files</h3>
-      <p>The HDF5 file format is a portable and extensible binary data format designed for complex data. It features support for an unlimited variety of datatypes, and has flexible and efficient I/O. HDF5 features a hierarchical structure that allows you to access chunks of data without loading the entire file into memory. An HDF5 file produced by RTXI’s Data Recorder is organized as shown on the right:  </p>
-
-<div class="container">
-   <div class="col-sm-4">
-      <a href="/images/hdf5-rtxi.png"><img src="/images/hdf5-rtxi.png" class="img-responsive" /></a>
-   </div>
-   <div class="col-sm-8">
-      <a href="/images/hdf5-rtxi-2.png"><img src="/images/hdf5-rtxi-2.png" class="img-responsive" /></a>
-   </div>
-</div>
-
-<p>At the topmost level, an RTXI HDF5 file is divided into separate <strong>Trial</strong> groups, each of which contains the complete set of system options, module settings, and model parameter values that existed at the time that data was recorded. Every time you stop and restart a module from which data is sent to the Data Recorder, a new Trial is created. Each Trial is timestamped with a start and end time. The Data Recorder also has the option to append trials to an existing HDF5 file. For this reason, each Trial has its own data and system attributes.  </p>
-
-<p>The parameters for modules and all system settings are saved in the <strong>Parameters</strong> group within each Trial group. The name of each parameter includes the module ID number within RTXI, the name of the module, and the name of the parameter itself. If the value of the parameter changes during recording, all the values are saved with a corresponding index value that is the timestamp in nanoseconds from the start of the recording.  </p>
-
-<p>The real-time data is saved in the <strong>Synchronous</strong> group within each Trial group. This group contains separate datasets with the name of each channel and a single dataset that contains all the synchronous data.</p>
-
-<p>There are various software available for working with HDF5 files. To simply browse the file structure, you can use the free HDFView application. HDFView provides some limited editing capabilities. For trials where only a single channel is saved, you can also preview a plot of the data. To extract the data for analysis and for complete editing capabilities, APIs are available for MATLAB, GNU Octave, Igor Pro, Mathematica, Python, Scilab, and other software. See this list maintained by the HDF Group.</p>
-
-<p>We provide here a collection of MATLAB functions and a simple GUI for browsing through the trials of an RTXI v1.3 HDF5 file with addtional examples of how to extract data and add new datasets to your file. <strong>To load RTXI HDF5 files into MATLAB, you no longer need to “matlabize” your HDF5 files, provided you use the MATLAB functions in RTXIh5.zip.</strong></p>
-
-    </div>
-  </body>
-
-  <style>
-html {
+}</style><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" rel="home" href="/"><b>RTXI</b></a></div><div class="row"><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="/install/">Install</a></li><li><a href="/modules/">Modules</a></li><li><a href="/papers/">Papers</a></li><li class="active"><a href="/docs/">Docs</a></li><li><a href="/contact/">Contact</a></li></ul><form class="navbar-form navbar-right" role="search"><div class="input-group"><input type="text" class="form-control" placeholder="Search (non-functional)"> <span class="input-group-btn"><button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></span></div></form></div></div></div></nav><body style="padding-top:30px"><div class="container lead-small"><h3 class="page-header">RTXI HDF5 Data Files</h3><p>The HDF5 file format is a portable and extensible binary data format designed for complex data. It features support for an unlimited variety of datatypes, and has flexible and efficient I/O. HDF5 features a hierarchical structure that allows you to access chunks of data without loading the entire file into memory. An HDF5 file produced by RTXI’s Data Recorder is organized as shown on the right:</p><div class="container"><div class="col-sm-4"><a href="/assets/img/hdf5-rtxi.png"><img src="/assets/img/hdf5-rtxi.png" class="img-responsive"></a></div><div class="col-sm-8"><a href="/assets/img/hdf5-rtxi-2.png"><img src="/assets/img/hdf5-rtxi-2.png" class="img-responsive"></a></div></div><p>At the topmost level, an RTXI HDF5 file is divided into separate <strong>Trial</strong> groups, each of which contains the complete set of system options, module settings, and model parameter values that existed at the time that data was recorded. Every time you stop and restart a module from which data is sent to the Data Recorder, a new Trial is created. Each Trial is timestamped with a start and end time. The Data Recorder also has the option to append trials to an existing HDF5 file. For this reason, each Trial has its own data and system attributes.</p><p>The parameters for modules and all system settings are saved in the <strong>Parameters</strong> group within each Trial group. The name of each parameter includes the module ID number within RTXI, the name of the module, and the name of the parameter itself. If the value of the parameter changes during recording, all the values are saved with a corresponding index value that is the timestamp in nanoseconds from the start of the recording.</p><p>The real-time data is saved in the <strong>Synchronous</strong> group within each Trial group. This group contains separate datasets with the name of each channel and a single dataset that contains all the synchronous data.</p><p>There are various software available for working with HDF5 files. To simply browse the file structure, you can use the free HDFView application. HDFView provides some limited editing capabilities. For trials where only a single channel is saved, you can also preview a plot of the data. To extract the data for analysis and for complete editing capabilities, APIs are available for MATLAB, GNU Octave, Igor Pro, Mathematica, Python, Scilab, and other software. See this list maintained by the HDF Group.</p><p>We provide here a collection of MATLAB functions and a simple GUI for browsing through the trials of an RTXI v1.3 HDF5 file with addtional examples of how to extract data and add new datasets to your file. <strong>To load RTXI HDF5 files into MATLAB, you no longer need to “matlabize” your HDF5 files, provided you use the MATLAB functions in RTXIh5.zip.</strong></p></div></body><style>html {
   position: relative;
   min-height: 100%;
 }
@@ -146,17 +55,4 @@ body {
   /* Set the fixed height of the footer here */
   height: -60px;
   background-color: #c1c1c1;
-}
-</style>
-
-<div class="footer">
-   <div class="container text-center" style="margin-top:20px;">
-      <p class="lead-small">RTXI is funded by NIH grant R01-RR020115.</p>
-   </div>
-</div>
-
-
-  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-</html>
+}</style><div class="footer"><div class="container text-center" style="margin-top:20px"><p class="lead-small">RTXI is funded by NIH grant R01-RR020115.</p></div></div><script src="/assets/js/jquery.min.js"></script><script src="/assets/js/bootstrap.min.js"></script></html>

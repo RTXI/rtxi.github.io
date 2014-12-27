@@ -1,143 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Kick</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/lead-extra.css" rel="stylesheet">
-    <link href="/css/pygments.css" rel="stylesheet">
-<!--    <link href="/css/module.css" rel="stylesheet">-->
-    <link href="/fonts/octicons.css" rel="stylesheet">
-
-    <style>
-    h1, h2, h3, h4, h5, h6 {
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kick</title><link href="/assets/css/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/pygments.css" rel="stylesheet"><link href="/assets/css/octicons.min.css" rel="stylesheet"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.ico"></head><style>h1, h2, h3, h4, h5, h6 {
       padding-bottom: 9px;
       margin: 40px 0 20px;
       border-bottom: 1px solid #eee;
       font-weight: normal;
-    }
-    strong {
+   }
+   strong {
       font-weight: normal;
-    }
-    /*p, div {
-      .lead;
-    }*/
-    img {
+   }
+   img {
       margin-left: auto;
       margin-right: auto;
       display: block;
       max-width: 100%;
       height: auto;
-    }
-    </style>
-   
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="icon" href="/favicon.ico">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <!-- Fixed navbar -->
-<style>
-body {
+   }
+   .lead-small {
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.4;
+   }
+   @media (min-width: 768px) {
+      .lead-small {
+         font-size: 18px;
+      }
+   }
+   .lead-normal {
+     margin-bottom: 20px;
+     font-size: 16px;
+     font-weight: 400;
+     line-height: 1.4;
+   }
+   @media (min-width: 768px) {
+     .lead-normal {
+       font-size: 21px;
+     }
+   }</style><style>body {
    padding-top:50px;
    padding-bottom:30px;
-}
-</style>
-
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-   <div class="container">
-      <div class="navbar-header">
-         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-         </button>
-         <a class="navbar-brand" rel="home" href="/"><b>RTXI</b></a>
-      </div>
-      <div class="row">
-         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-               <li >
-                  <a href="/install/">Install</a>
-               </li>
-               <li class="active">
-                  <a href="/modules/">Modules</a>
-               </li>
-               <li >
-                  <a href="/papers/">Papers</a>
-               </li>
-               <li >
-                  <a href="/docs/">Docs</a>
-               </li>
-               <li >
-                  <a href="/contact/">Contact</a>
-               </li>
-            </ul>
-            <form class="navbar-form navbar-right" role="search">
-               <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search (non-functional)">
-                  <span class="input-group-btn">
-                     <button type="submit" class="btn btn-default">
-                        <span class="glyphicon glyphicon-search"></span>
-                     </button>
-                  </span>
-              </div>
-            </form>
-         </div>
-      </div><!--/.nav-collapse -->
-   </div>
-</nav>
-
-
-  <body style="padding-top:30px">
-    <div class="container lead-small">
-      <style>#forkongithub a{background:#222;color:#fff;text-decoration:none;font-family:arial,sans-serif;text-align:center;font-weight:bold;padding:5px 10px;font-size:1rem;line-height:2rem;position:fixed;top:0;right:0;top:70px;right:20px;transition:0.25s;} #forkongithub a:hover{background:#b64138;color:#fff;} @media screen and (min-width:768px) {#forkongithub{position:fixed;display:block;top:0;right:0;width:250px;overflow:hidden;height:200px;} #forkongithub a{width:200px;position:absolute;top:70px;right:20px;}}</style><span id="forkongithub"><div class="hidden-xs"><a href="https://github.com/rtxi/kick">Fork Kick <span style="padding-left:5px" class="octicon octicon-mark-github"></span></a></div><div class="visible-xs"><a href="https://github.com/rtxi/kick"><span class="octicon octicon-mark-github"></span></a></div></span><h3>Kick - the Manual Event Trigger</h3>
-
-<p><strong>Requirements:</strong> None<br>
-<strong>Limitations:</strong> None  </p>
-
-<p><img src="kick.png" alt="Kick GUI"></p>
-
-<!--start-->
-
-<p>This module sends a single value as a trigger or “kick” to another module. It outputs a user-specified value when triggered and a value of 0 otherwise. It can be used to manually mark events that a user sees in the data. It’s value in the HDF5 file will then serve as an event flag. This module can also be used to manually test other modules that require a trigger (such as those accepting input from the Spike Detector module). This module only sends a single “kick” at the specified delay after it is unpaused.</p>
-
-<!--end-->
-
-<h4>Input Channels</h4>
-
-<p>None</p>
-
-<h4>Output Channels</h4>
-
-<ol>
-<li>output(0) – “Kick” : the kick amplitude of a value of ’0′ otherwise</li>
-</ol>
-
-<h4>Parameters</h4>
-
-<ol>
-<li>Amplitude : the amplitude of the kick</li>
-<li>Delay (ms) : the delay after the module is unpaused when the kick is given</li>
-</ol>
-
-    </div>
-  </body>
-
-  <style>
-html {
+}</style><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" rel="home" href="/"><b>RTXI</b></a></div><div class="row"><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="/install/">Install</a></li><li class="active"><a href="/modules/">Modules</a></li><li><a href="/papers/">Papers</a></li><li><a href="/docs/">Docs</a></li><li><a href="/contact/">Contact</a></li></ul><form class="navbar-form navbar-right" role="search"><div class="input-group"><input type="text" class="form-control" placeholder="Search (non-functional)"> <span class="input-group-btn"><button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></span></div></form></div></div></div></nav><body style="padding-top:30px"><div class="container lead-small"><style>#forkongithub a{background:#222;color:#fff;text-decoration:none;font-family:arial,sans-serif;text-align:center;font-weight:bold;padding:5px 10px;font-size:1rem;line-height:2rem;position:fixed;top:0;right:0;top:70px;right:20px;transition:0.25s;} #forkongithub a:hover{background:#b64138;color:#fff;} @media screen and (min-width:768px) {#forkongithub{position:fixed;display:block;top:0;right:0;width:250px;overflow:hidden;height:200px;} #forkongithub a{width:200px;position:absolute;top:70px;right:20px;}}</style><span id="forkongithub"><div class="hidden-xs"><a href="https://github.com/rtxi/kick">Fork Kick <span style="padding-left:5px" class="octicon octicon-mark-github"></span></a></div><div class="visible-xs"><a href="https://github.com/rtxi/kick"><span class="octicon octicon-mark-github"></span></a></div></span><h3>Kick - the Manual Event Trigger</h3><p><strong>Requirements:</strong> None<br><strong>Limitations:</strong> None</p><p><img src="kick.png" alt="Kick GUI"></p><p>This module sends a single value as a trigger or “kick” to another module. It outputs a user-specified value when triggered and a value of 0 otherwise. It can be used to manually mark events that a user sees in the data. It’s value in the HDF5 file will then serve as an event flag. This module can also be used to manually test other modules that require a trigger (such as those accepting input from the Spike Detector module). This module only sends a single “kick” at the specified delay after it is unpaused.</p><h4>Input Channels</h4><p>None</p><h4>Output Channels</h4><ol><li>output(0) – “Kick” : the kick amplitude of a value of ’0′ otherwise</li></ol><h4>Parameters</h4><ol><li>Amplitude : the amplitude of the kick</li><li>Delay (ms) : the delay after the module is unpaused when the kick is given</li></ol></div></body><style>html {
   position: relative;
   min-height: 100%;
 }
@@ -154,17 +55,4 @@ body {
   /* Set the fixed height of the footer here */
   height: -60px;
   background-color: #c1c1c1;
-}
-</style>
-
-<div class="footer">
-   <div class="container text-center" style="margin-top:20px;">
-      <p class="lead-small">RTXI is funded by NIH grant R01-RR020115.</p>
-   </div>
-</div>
-
-
-  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-</html>
+}</style><div class="footer"><div class="container text-center" style="margin-top:20px"><p class="lead-small">RTXI is funded by NIH grant R01-RR020115.</p></div></div><script src="/assets/js/jquery.min.js"></script><script src="/assets/js/bootstrap.min.js"></script></html>
