@@ -77,7 +77,7 @@ module.exports = function(grunt) {
             dir: '_site',
             commit: true,
             push: true,
-            message: 'Built %sourceName% from branch %sourceBranch%',
+            message: 'Rebuild %sourceName%',
          },
          master: {
             options: {
