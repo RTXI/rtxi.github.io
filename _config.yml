@@ -19,7 +19,19 @@ defaults:
    values:
       layout: "default"
 
-exclude: [ "README.md", "Rakefile", "Gemfile", "Gemfile.lock", "LICENSE", "relic" ]
+exclude: 
+ - "README.md"
+ - "Gemfile"
+ - "Gemfile.lock"
+ - "LICENSE"
+ - "relic" 
+ - "assets/less/"
+ - "Gruntfile.js"
+ - "package.json"
+ - "node_modules"
+ - "bower.json"
+ - "bower_components"
+ - ".gitignore"
 
 include: 
  - '.nojekyll'

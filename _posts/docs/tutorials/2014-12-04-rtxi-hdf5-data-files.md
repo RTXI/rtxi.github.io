@@ -8,10 +8,10 @@ The HDF5 file format is a portable and extensible binary data format designed fo
 
 <div class="container">
    <div class="col-sm-4">
-      <a href="/images/hdf5-rtxi.png"><img src="/images/hdf5-rtxi.png" class="img-responsive"></a>
+      <a href="/assets/img/hdf5-rtxi.png"><img src="/assets/img/hdf5-rtxi.png" class="img-responsive"></a>
    </div>
    <div class="col-sm-8">
-      <a href="/images/hdf5-rtxi-2.png"><img src="/images/hdf5-rtxi-2.png" class="img-responsive"></a>
+      <a href="/assets/img/hdf5-rtxi-2.png"><img src="/assets/img/hdf5-rtxi-2.png" class="img-responsive"></a>
    </div>
 </div>
 

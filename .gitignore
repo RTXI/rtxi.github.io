@@ -1,2 +1,8 @@
 *.swp
+*~
 _site
+
+bower_components/
+node_modules/
+Gemfile.lock
+assets/less/.*

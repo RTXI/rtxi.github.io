@@ -1,6 +1,35 @@
 ---
 title: Modules
-layout: module_index
+layout: default
+extra_css: "
+   <link href=\"/assets/css/dataTables.bootstrap.css\" rel=\"stylesheet\"> 
+    
+   <link href=\"/assets/css/dataTables.responsive.css\" rel=\"stylesheet\">
+"
+extra_js: "
+  <script type=\"text/javascript\" charset=\"utf8\" src=\"/assets/js/jquery.dataTables.min.js\"></script>
+  <script src=\"/assets/js/dataTables.responsive.min.js\" type=\"text/javascript\"></script>
+  <script src=\"/assets/js/dataTables.bootstrap.min.js\" type=\"text/javascript\"></script>
+
+  <script>
+    $(document).ready( function () {
+      $('#modules_small').dataTable( {
+         \"paging\": false,
+         \"info\": false,
+         \"order\": [ 0, \"asc\" ],
+         \"ordering\": true,
+         \"searching\": false
+      } );
+    } );
+    $(document).ready( function () {
+      $('#modules_large').dataTable( {
+         \"info\": false,
+         \"order\": [ 0, \"asc\" ],
+         \"ordering\": true
+      } );
+    } );
+  </script>
+"
 ---
 
 <div class="container">
@@ -12,4 +41,65 @@ $ cd MODULE_NAME
 $ make
 $ sudo make install
    {% endhighlight %}
+</div>
+
+<!--
+Below is evidence that I am a terrible front-end ui designer. The module table uses the DataTable jQuery plugin. To make it look good on mobile devices with small screens, I basically created two tables. One is shown if the viewport is very small and the other when it's bigger. What can I say? It works.
+
+-Ansel
+-->
+<div class="container">
+   <div class="visible-xs">
+   <table class="table table-hover dt-responsive" id="modules_small">
+      <thead><tr>
+         <th class="col-xs-2" style="text-align: center">Name</th>
+         <th class="col-xs-10" style="text-align: center; white-space: normal;">Description</th>
+      </tr></thead>
+      <tbody>
+         {% for module in site.pages %}
+            {% if module.url contains "modules" and module.url != "/modules/" %}
+               <tr>
+                  <td><a href="{{ module.url }}">{{ module.title }}</a></td>
+                  <td style="white-space: nowrap;"> {{ module.content | split:"<!--start-->" | last | split:"<!--end-->" | first | truncate:400 }} 
+                  </td>
+               </tr>
+            {% endif %}
+         {% endfor %}
+      </tbody>
+   </table>
+   </div>
+</div>
+
+<div class="container">
+   <div class="hidden-xs">
+   <table class="table table-hover" id="modules_large">
+      <thead><tr>
+         <th class="col-sm-2" style="text-align: center">Name</th>
+         <th class="col-sm-10" style="text-align: center; white-space: normal;">Description</th>
+<!--         
+         <th class="col-sm-2" style="text-align: center">Download</th>    
+-->
+      </tr></thead>
+      <tbody>
+         {% for module in site.pages %}
+            {% if module.url contains "modules" and module.url != "/modules/" %}
+               <tr>
+                  <td><a href="{{ module.url }}">{{ module.title }}</a></td>
+                  <td> {{ module.content | split:"<!--start-->" | last | split:"<!--end-->" | first | truncate:500 }} 
+                  </td>
+<!--
+                  <td style="text-align: center">
+                     <a href="https://github.com/RTXI/{{module.title}}/archive/master.zip" download style="text-decoration: none">
+                        <button type="button" class="btn btn-primary">
+                           <span class="glyphicon glyphicon-cloud-download"></span>
+                        </button>
+                     </a>
+                  </td>
+-->
+               </tr>
+            {% endif %}
+         {% endfor %}
+      </tbody>
+   </table>
+   </div>
 </div>

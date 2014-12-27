@@ -1,0 +1,29 @@
+{
+  "name": "RTXI",
+  "version": "2.0.0",
+  "homepage": "rtxi.org",
+  "description": "RTXI - the Real Time eXperiment Interface",
+  "main": "index.html",
+  "keywords": [
+    "real-time",
+    "electrophysiology"
+  ],
+  "authors": [
+    "Ansel George"
+  ],
+  "license": "GPLv3",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.1",
+    "isotope": "~2.1.0",
+    "font-awesome": "~4.2.0",
+    "octicons": "~2.1.2"
+  }
+}
