@@ -48,48 +48,85 @@ strong {
 
    <div id="us" role="tabpanel" class="tab-pane fade"><div class="tab-content">
       <p class="lead">RTXI is a collaborative effort among four labs in three institutions. The primary investigators are:</p>
-      <div class="lead-small">
-         <div class="col-sm-6 col-md-5 col-md-offset-1">
-            <p>
-               Robert Butera<br>
-               Georgia Institute of Technology<br>
-               <a href="https://neurolab.gatech.edu/labs/butera">Lab Website</a>
-            </p>
-         </div>
-         <div class="col-sm-6 col-md-5 col-md-offset-1">
-            <p>
-               David Christini<br>
-               Weill Cornell Medical College<br>
-               <a href="http://www.christinilab.org">Lab Website</a>
-            </p>
-         </div>
-         <div class="col-sm-6 col-md-5 col-md-offset-1">
-            <p>
-               Chuck Dorval<br>
-               The University of Utah<br>
-               <a href="http://brain.utah.edu/research/dorval/index.php">Lab Website</a>
-            </p>
-         </div>
-         <div class="col-sm-6 col-md-5 col-md-offset-1">
-            <p>
-               John White<br>
-               The University of Utah<br>
-               <a href="http://brain.utah.edu/research/white/">Lab Website</a>
-            </p>
-         </div>
+
+      <div class="col-sm-6 col-md-5 col-md-offset-1">
+         <a href="https://neurolab.gatech.edu/labs/butera" class="thumbnail"><div class="row">
+            <div class="col-xs-4">
+               <img class="img-responsive" src="/assets/img/robert_butera.jpg"></img>
+            </div>
+            <div class="col-xs-8">
+               <p><b>Robert Butera</b><br>Georgia Institute of Technology</p>
+            </div>
+         </div></a>
       </div>
 
+      <div class="col-sm-6 col-md-5 col-md-offset-1">
+         <a href="http://www.christinilab.org" class="thumbnail"><div class="row">
+            <div class="col-xs-4">
+               <img class="img-responsive" src="/assets/img/david_christini.jpg"></img>
+            </div>
+            <div class="col-xs-8"><p class="center-block">
+               <b>David Christini</b><br>Weill Cornell Medical College
+            </p></div>
+         </div></a>
+      </div>
+
+      <div class="col-sm-6 col-md-5 col-md-offset-1">
+         <a href="http://brain.utah.edu/research/dorval/index.php" class="thumbnail"><div class="row">
+            <div class="col-xs-4">
+               <img class="img-responsive" src="/assets/img/chuck_dorval.jpg"></img>
+            </div>
+            <div class="col-xs-8"><p class="center-block">
+               <b>Chuck Dorval</b><br>The University of Utah
+            </p></div>
+         </div></a>
+      </div>
+
+      <div class="col-sm-6 col-md-5 col-md-offset-1">
+         <a href="http://brain.utah.edu/research/white/" class="thumbnail"><div class="row">
+            <div class="col-xs-4">
+               <img class="img-responsive" src="/assets/img/john_white.jpg"></img>
+            </div>
+            <div class="col-xs-8"><p class="center-block">
+               <b>John White</b><br>The University of Utah
+            </p></div>
+         </div></a>
+      </div>
+
+
       <p class="lead">Current developers:</p>
-      <div class="lead-small">
-         <div class="col-sm-6 col-md-5 col-md-offset-1">
-            <p>Ansel George<br>Weill Cornell Medical College</p>
-         </div>
-         <div class="col-sm-6 col-md-5 col-md-offset-1">
-            <p>Francis Ortega<br>Weill Cornell Medical College</p>
-         </div>
-         <div class="col-sm-6 col-md-5 col-md-offset-1">
-            <p>Yogi Patel<br>Georgia Institute of Technology</p>
-         </div>
+
+      <div class="col-sm-6 col-md-5 col-md-offset-1">
+         <a class="thumbnail"><div class="row">
+            <div class="col-xs-4">
+               <img class="img-responsive"></img>
+            </div>
+            <div class="col-xs-8"><p class="center-block">
+               <b>Ansel George</b><br>Weill Cornell Medical College</p>
+            </p></div>
+         </div></a>
+      </div>
+      
+      <div class="col-sm-6 col-md-5 col-md-offset-1">
+         <a class="thumbnail"><div class="row">
+            <div class="col-xs-4">
+               <img class="img-responsive"></img>
+            </div>
+            <div class="col-xs-8"><p class="center-block">
+               <b>Francis Ortega</b><br>Weill Cornell Medical College</p>
+            </p></div>
+         </div></a>
+      </div>
+
+      <div class="col-sm-6 col-md-5 col-md-offset-1">
+         <a class="thumbnail"><div class="row">
+            <div class="col-xs-4">
+               <img class="img-responsive" src="/assets/img/yogi_patel.jpg"></img>
+            </div>
+            <div class="col-xs-8"><p class="center-block">
+               <b>Yogi Patel</b><br>Georgia Institute of Technology
+            </p></div>
+         </div></a>
       </div>
 
    </div></div>
@@ -101,11 +138,11 @@ strong {
    <div id="news" role="tabpanel" class="tab-pane fade"><div class="tab-content">
       <div class="container">
       <div class="text-center">
-         Subscribe to our <a href="/feed.xml"> RSS feed</a>.
+         Subscribe to our <a href="/feed.xml">RSS feed</a>.
       </div>
       {% for post in site.categories.news %}
          <div class="media row"><div class="media-body">
-            <a href="{{ post.url }}" style="text-decoration:none;"><h4 class="media-heading lead">{{ post.title }}</h4></a>
+            <a href="{{ post.url }}"><h4 class="media-heading lead">{{ post.title }}</h4></a>
             <div>{{ post.date | date_to_string }}</div>
             <div class="lead-small">{{ post.excerpt | truncate: 300 }}</div>
          </div></div>
