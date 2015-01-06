@@ -104,22 +104,17 @@ layout: default
                   We cannot not guarantee these installation programs will produce bootable live USBs for your system. This area tends to be a bit finnicky. Thus far, we've had greater success with burning DVDs than making USBs. Should you have any difficulties, let us know. 
                </p>
             </div>
-            
+
             <!-- 3. Boot into RTXI system -->
             <div class="col-xs-12">
                <p class="lead-normal">
                   {% increment standardcount %}. Boot from the live image.
                </p>
-               <div class="row"><div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-                  <div class="embed-responsive embed-responsive-16by9">
-                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/6F_JJV9C0X8"></iframe>
-                  </div>
-               </div></div>
                <p class="lead-small">
                   If your computer isn't already set to boot from USB or DVD, you'll need to enter your BIOS settings. When cold-booting your computer, hit the necessary keys, usually <code>F2</code> or <code>F4</code>, and open the menu. (If you miss the timing, restart your computer and try again.)
                </p>
                <p class="lead-small">
-                  From the menu, look for your boot options. There you can manually override the boot order of devices on your system. If you're booting from a DVD or USB, look for your DVD drive or USBlabel, respectively, and set them to be first in your boot order. Save you changes and exit your BIOS menu. 
+                  From the menu, look for your boot options. There you can manually override the boot order of devices on your system. If you're booting from a DVD or USB, look for your DVD drive or USB label, respectively, and set them to be first in your boot order. Save you changes and exit your BIOS menu. 
                </p>
                <p class="lead-small">
                   <strong>Reminder:</strong> In the next step, you will be installing an operating system on your hard drive. Back it up if you haven't already.
@@ -132,7 +127,7 @@ layout: default
                   {% increment standardcount %}. Install RTXI via the installer. 
                </p>
                <p class="lead-small">
-                  When booting, you can choose to go directy to the installer or boot into the live desktop. Currently, the installer does not work from within the desktop, so to install RTXI, go to either install option in the boot menu.
+                  When booting, you can choose to go directly to the installer or boot into the live desktop. Currently, the installer does not work from within the desktop, so to install RTXI, go to either install option in the boot menu.
                </p>
                <p class="lead-small"><b>Note:</b> If you do go into the live desktop, you can try RTXI by selecting it from the applications menu or by opening a terminal and running <code>sudo rtxi</code>. If you want to install RTXI afterwards, simply restart the machine and select either installer from the boot menu. 
                </p>
@@ -149,10 +144,43 @@ layout: default
                <p class="lead-small">
                   When the installer is done, you will be prompted to reboot your system. Reboot (and be careful to not re-enter the live image). RTXI is now installed!
                </p>
-               <p class="lead-small">
-                  You can now start RTXI from the command line. Open a terminal and run <code>sudo rtxi</code>. You may need to install video drivers, but at this point, what do you is for your specific purposes. The available modules are listed on our <a href="/modules/">Modules page</a>. 
-               </p>
             </div>
+
+            <!-- 6. Run things as root and run RTXI -->
+            <div class="col-xs-12">
+               <p class="lead-normal">
+                  {% increment standardcount %}. Give yourself sudoer privileges. 
+               </p>
+               <p class="lead-small">
+                  RTXI requires root privileges. To do this, you can either use <code>su</code> to become the root user, or you can use <code>sudo</code> to run RTXI. For the latter option, you'll need to add yourself to the sudoers group. In the command line, run:
+               </p>
+               {% highlight bash %}
+$ su
+# usermod -aG sudo USERNAME
+# exit
+               {% endhighlight %}
+               <p class="lead-small">
+                  The <code>su</code> command will prompt you for the root password for your system. Enter it, and you will drop into a root shell. From there, execute the <code>usermod</code> command given above, where USERNAME is substituted with your username. Once done, log out of the system and then log back in. You now have sudo privileges, and you can run RTXI by clicking the icon in the applications menu or by entering <code>sudo rtxi</code> in the terminal. 
+               </p>
+               <p class="lead-small">
+                  <b>Note:</b> You may need to install video drivers, but at this point, what do you is for your specific purposes. Our modules are listed on our <a href="/modules/">Modules page</a>. 
+               </p>
+
+               <br><br>
+
+               <p class="lead-small">
+                  Below is an installation demo. Note that when you install RTXI on your own machine, you may get prompted to configure your network settings.
+               </p>
+
+            </div>
+           
+           <!-- screencast of next steps --> 
+            <div class="row"><div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+               <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/6F_JJV9C0X8"></iframe>
+               </div>
+            </div></div>
+
          </div></div>
       </div> <!-- end standard information -->
 
