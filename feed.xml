@@ -7,6 +7,20 @@
     <atom:link href="http://rtxi.org/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Why are there negative latencies?</title>
+        <description>&lt;p&gt;Negative latencies mean that the latency test has not been properly calibrated. The test calculates latencies based on when tasks are expected to be completed, and in doing so, it attempts to account for jitter in the system. Latencies become negative when the real-time thread wakes &lt;em&gt;before&lt;/em&gt; it is expected to.  &lt;/p&gt;
+
+&lt;p&gt;You can correct this behavior by running (as root):  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# echo 0 &amp;gt; /proc/xenomai/latency&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 20 Jan 2015 00:00:00 -0500</pubDate>
+        <link>http://rtxi.org//docs/faqs/2015/01/20/why-are-there-negative-latencies/</link>
+        <guid isPermaLink="true">http://rtxi.org//docs/faqs/2015/01/20/why-are-there-negative-latencies/</guid>
+      </item>
+    
+      <item>
         <title>Register for RTXI 2015</title>
         <description>&lt;p&gt;If you haven’t done so already, check out our &lt;a href=&quot;/conference/&quot;&gt;conference page&lt;/a&gt; to learn about our upcoming conference. Registration is almost open. We just need to get the payment page running.  &lt;/p&gt;
 </description>
@@ -343,16 +357,20 @@ $ sudo reboot
 &lt;h3 id=&quot;xenomai-based-tests&quot;&gt;Xenomai-based Tests&lt;/h3&gt;
 &lt;p&gt;Xenomai comes with benchmarking tools for both real-time and user-space kernels. They are accessible from &lt;code&gt;/usr/xenomai/bin&lt;/code&gt;   &lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Latency Test&lt;/strong&gt;&lt;br /&gt;
-This test will verify the overall performance of your system and is the best indicator of your real-time performance. It will immediately let you know if you have successfully installed a correctly functioning real-time kernel. In oneshot mode, it measures the difference in time between the expected switch time and the time when a task is actually called by the scheduler. This test prints one line every second and gives you the minimum, average, and maximum latencies for that period as well the minimum and maximum overall latencies that occurred over the entire test. Open up some other programs, copy some files from one location to another, and load the network connection to see how it affects the latency. You should find slightly higher latencies with the user space test than the kernel space test. Your real-time performance is limited by the maximum latency (lat max) you can achieve and you generally don’t want to be doing other tasks. You also should not see any overruns, which occurs when the latency completely exceeds your nominal period. Negative time in the latency test is due to the fact that RTAI performs a calibration at startup that tries to minimize the jitter in the real-time task and anticipates the call.  &lt;/p&gt;
+&lt;h4 id=&quot;latency-test&quot;&gt;Latency Test&lt;/h4&gt;
+&lt;p&gt;This test will verify the overall performance of your system and is the best indicator of your real-time performance. It will immediately let you know if you have successfully installed a correctly functioning real-time kernel. In oneshot mode, it measures the difference in time between the expected switch time and the time when a task is actually called by the scheduler. This test prints one line every second and gives you the minimum, average, and maximum latencies for that period as well the minimum and maximum overall latencies that occurred over the entire test. Open up some other programs, copy some files from one location to another, and load the network connection to see how it affects the latency. You should find slightly higher latencies with the user space test than the kernel space test.  &lt;/p&gt;
+
+&lt;p&gt;Your real-time performance is limited by the maximum latency (lat max) you can achieve and you generally don’t want to be doing other tasks. You also should not see any overruns, which occurs when the latency completely exceeds your nominal period. Negative time in the latency test is due to the fact that RTAI performs a calibration at startup that tries to minimize the jitter in the real-time task and anticipates the call. To calibrate for negative latencies, run: &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# echo 0 &amp;gt; /proc/xenomai/latency&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;If you periodically see an overrun (perhaps every 64 seconds) that results in a maximum latency of several hundred microseconds, you may have an SMI (System Maintenance Interrupt) issue. This feature can be found on certain chipsets e.g. Intel 82845 845. Disabling SMI can cause some computers to overheat and may damage those computers. Other “latency killers” are: heavy DMA activities (using the hard disk), using an accelerated X-server, USB legacy support, power management (APM and ACPI), and CPU frequency scaling. If you have disabled all of these in the kernel already, check your BIOS and see if you can disable them there.  &lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Preempt Test&lt;/strong&gt;&lt;br /&gt;
-This test is a stress utility that verifies the real-time schedulers under heavy processing load. This software combines the latency calibration task with a fast and slow task to have two levels of preemption.  &lt;/p&gt;
+&lt;h4 id=&quot;preempt-test&quot;&gt;Preempt Test&lt;/h4&gt;
+&lt;p&gt;This test is a stress utility that verifies the real-time schedulers under heavy processing load. This software combines the latency calibration task with a fast and slow task to have two levels of preemption.  &lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Switch Test&lt;/strong&gt;&lt;br /&gt;
-This test provides information about the maximum amount of time RTAI needs to disable interrupts. The test uses a repeated sequence of suspend/resume and semaphore signal/wait calls under a heavy processing load. The switching time should be less than the maximum latency time. The real latency limitation is seldom due to RTAI but an intrinsic drawback of using a general purpose CPU for real-time applications.  &lt;/p&gt;
+&lt;h4 id=&quot;switch-test&quot;&gt;Switch Test&lt;/h4&gt;
+&lt;p&gt;This test provides information about the maximum amount of time RTAI needs to disable interrupts. The test uses a repeated sequence of suspend/resume and semaphore signal/wait calls under a heavy processing load. The switching time should be less than the maximum latency time. The real latency limitation is seldom due to RTAI but an intrinsic drawback of using a general purpose CPU for real-time applications.  &lt;/p&gt;
 
 &lt;h3 id=&quot;rtxi-based-tests&quot;&gt;RTXI-based Tests&lt;/h3&gt;
 &lt;p&gt;Internal RTXI performance benchmarks are still in development. Currently, the performance_measurement module can be used to track the accumulated average cycle time and the accumulated average computation time and compare them to the nominal real-time period.  &lt;/p&gt;
@@ -551,15 +569,6 @@ This test provides information about the maximum amount of time RTAI needs to di
         <pubDate>Thu, 03 Apr 2014 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//papers/2014/04/03/differential-roles-of-nonsynaptic-and-synaptic-plasticity-in-operant-reward-learning-induced-compulsive-behavior/</link>
         <guid isPermaLink="true">http://rtxi.org//papers/2014/04/03/differential-roles-of-nonsynaptic-and-synaptic-plasticity-in-operant-reward-learning-induced-compulsive-behavior/</guid>
-      </item>
-    
-      <item>
-        <title>Dynamic Clamp Technique</title>
-        <description>&lt;p&gt;Dynamic clamp is an electrophysiological technique for introducing simulated electrical components into biological cells using a real-time closed loop between the cell and a computer or another electronic device. Classic dynamic clamp protocols build a voltage-dependent current injection cycle to implement artificial membrane or synaptic conductances in the cell membrane of biological neurons. These protocols are employed to assess a large variety of neuronal computational properties and are widely applied for studying the physiology of neural systems at the cellular and circuit levels.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 24 Feb 2014 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//papers/2014/02/24/dynamic-clamp-technique/</link>
-        <guid isPermaLink="true">http://rtxi.org//papers/2014/02/24/dynamic-clamp-technique/</guid>
       </item>
     
   </channel>
