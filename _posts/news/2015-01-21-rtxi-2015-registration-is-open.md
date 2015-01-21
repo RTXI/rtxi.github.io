@@ -1,5 +1,5 @@
 ---
-title: RTXI 2015 Registration Is Open!
+title: RTXI 2015 Registration Open!
 layout: docpost
 category: news
 ---
