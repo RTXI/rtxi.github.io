@@ -7,6 +7,15 @@
     <atom:link href="http://rtxi.org/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>RTXI 2015 Registration Is Open!</title>
+        <description>&lt;p&gt;Just reminding everyone that registration for RTXI 2015 is now open! Check out our &lt;a href=&quot;/conference/&quot;&gt;conference page&lt;/a&gt; to learn about our upcoming conference. &lt;a href=&quot;http://petitinstitute.gatech.edu/rtxi-2015-workshop&quot;&gt;Registration is open&lt;/a&gt; until April 1st at 5:00 PM Eastern Time.  &lt;/p&gt;
+</description>
+        <pubDate>Wed, 21 Jan 2015 00:00:00 -0500</pubDate>
+        <link>http://rtxi.org//news/2015/01/21/rtxi-2015-registration-is-open/</link>
+        <guid isPermaLink="true">http://rtxi.org//news/2015/01/21/rtxi-2015-registration-is-open/</guid>
+      </item>
+    
+      <item>
         <title>Why are there negative latencies?</title>
         <description>&lt;p&gt;Negative latencies mean that the latency test has not been properly calibrated. The test calculates latencies based on when tasks are expected to be completed, and in doing so, it attempts to account for jitter in the system. Latencies become negative when the real-time thread wakes &lt;em&gt;before&lt;/em&gt; it is expected to.  &lt;/p&gt;
 
@@ -556,19 +565,6 @@ $ sudo reboot
         <pubDate>Thu, 10 Apr 2014 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//papers/2014/04/10/tonic-current-through-gabaa-receptors-and-hyperpolarization-activated-cyclic-nucleotide-gated-channels-modulate-resonance-properties-of-rat-subicular-pyramidal-neurons/</link>
         <guid isPermaLink="true">http://rtxi.org//papers/2014/04/10/tonic-current-through-gabaa-receptors-and-hyperpolarization-activated-cyclic-nucleotide-gated-channels-modulate-resonance-properties-of-rat-subicular-pyramidal-neurons/</guid>
-      </item>
-    
-      <item>
-        <title>Differential Roles of Nonsynaptic and Synaptic Plasticity in Operant Reward Learning-Induced Compulsive Behavior</title>
-        <description>&lt;p&gt;Rewarding stimuli in associative learning can transform the irregularly and infrequently generated motor patterns underlying motivated behaviors into output for accelerated and stereotyped repetitive action. This transition to compulsive behavioral expression is associated with modified synaptic and membrane properties of central neurons, but establishing the causal relationships between cellular plasticity and motor adaptation has remained a challenge.  &lt;/p&gt;
-
-&lt;p&gt;We found previously that changes in the intrinsic excitability and electrical synapses of identified neurons in Aplysia’s central pattern-generating network for feeding are correlated with a switch to compulsive-like motor output expression induced by in vivo operant conditioning. Here, we used specific computer-simulated ionic currents in vitro to selectively replicate or suppress the membrane and synaptic plasticity resulting from this learning. In naive in vitro preparations, such experimental manipulation of neuronal membrane properties alone increased the frequency but not the regularity of feeding motor output found in preparations from operantly trained animals. On the other hand, changes in synaptic strength alone switched the regularity but not the frequency of feeding output from naive to trained states. However, simultaneously imposed changes in both membrane and synaptic properties reproduced both major aspects of the motor plasticity. Conversely, in preparations from trained animals, experimental suppression of the membrane and synaptic plasticity abolished the increase in frequency and regularity of the learned motor output expression.  &lt;/p&gt;
-
-&lt;p&gt;These data establish direct causality for the contributions of distinct synaptic and nonsynaptic adaptive processes to complementary facets of a compulsive behavior resulting from operant reward learning.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 03 Apr 2014 00:00:00 -0400</pubDate>
-        <link>http://rtxi.org//papers/2014/04/03/differential-roles-of-nonsynaptic-and-synaptic-plasticity-in-operant-reward-learning-induced-compulsive-behavior/</link>
-        <guid isPermaLink="true">http://rtxi.org//papers/2014/04/03/differential-roles-of-nonsynaptic-and-synaptic-plasticity-in-operant-reward-learning-induced-compulsive-behavior/</guid>
       </item>
     
   </channel>
