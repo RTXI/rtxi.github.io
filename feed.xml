@@ -17,12 +17,13 @@
     
       <item>
         <title>Why are there negative latencies?</title>
-        <description>&lt;p&gt;Negative latencies mean that the latency test has not been properly calibrated. The test calculates latencies based on when tasks are expected to be completed, and in doing so, it attempts to account for jitter in the system. Latencies become negative when the real-time thread wakes &lt;em&gt;before&lt;/em&gt; it is expected to.  &lt;/p&gt;
+        <description>&lt;p&gt;Negative latencies mean that the latency test has not been properly calibrated. The test calculates latencies based on when tasks are expected to be completed, with some overhead going toward computing the timer. To avoid including the time it takes to compute the timer, xenomai offsets the measured latency with a static value, written in nanoseconds and stored in &lt;code&gt;/proc/xenomai/latency&lt;/code&gt;. If the value is negative, then xenomai is overcompensating.  &lt;/p&gt;
 
 &lt;p&gt;You can correct this behavior by running (as root):  &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# echo 0 &amp;gt; /proc/xenomai/latency&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
+&lt;p&gt;What this means is that the latency test will not try to factor out the time to compute the timer. &lt;/p&gt;
 </description>
         <pubDate>Tue, 20 Jan 2015 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/faqs/2015/01/20/why-are-there-negative-latencies/</link>
