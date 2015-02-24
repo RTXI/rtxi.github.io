@@ -8,7 +8,7 @@ The sources of the new RTXI 2.0 website. [Check it out](https://rtxi.github.io)
 ####Downloading and Building the Site
 If you want to build and edit the site on your own, you'll need to install ruby and nodejs:  
 ````
-$ sudo apt-get install nodejs ruby
+$ sudo apt-get install nodejs ruby imagemagick libmagickwand-dev
 ````
 
 You'll need to install the bundler gem (you may need to be root):  
