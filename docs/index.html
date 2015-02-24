@@ -52,7 +52,7 @@ permalink: /docs/
                </div><div class="tab-pane fade" role="tabpanel" id="tutor{{ tutorvar }}">
                {% endif %}
             {% endif %}
-               <a href="{{ post.url }}"><div class="lead">{{ post.title }}</div></a>
+               <div class="lead"><a href="{{ post.url }}">{{ post.title }}</a></div>
                <div class="lead-small">{{ post.excerpt | truncate:300 }}</div>
          {% endfor %}
          </div>
@@ -95,7 +95,7 @@ permalink: /docs/
                </div><div class="tab-pane fade" role="tabpanel" id="trouble{{ troublevar }}">
                {% endif %}
             {% endif %}
-               <a href="{{ post.url }}"><div class="lead">{{ post.title }}</div></a>
+               <div class="lead"><a href="{{ post.url }}">{{ post.title }}</a></div>
                <div class="lead-small">{{ post.excerpt | truncate:300 }}</div>
          {% endfor %}
          </div>
@@ -131,9 +131,9 @@ permalink: /docs/
                </div><div class="tab-pane fade" role="tabpanel" id="faq{{ faqvar }}">
                {% endif %}
             {% endif %}
-                  <a data-toggle="collapse" data-target="#faqp{{ forloop.index }}">
-                     <div class="lead">{{ forloop.index }}. {{ post.title }}</div>
-                  </a>
+               	<div class="lead"><a data-toggle="collapse" data-target="#faqp{{ forloop.index }}">
+                     {{ forloop.index }}. {{ post.title }}
+                  </a></div>
                   <div class="collapse lead-small" id="faqp{{ forloop.index }}">{{ post.content }}</div>
          {% endfor %}
          </div>
