@@ -7,6 +7,76 @@
     <atom:link href="http://rtxi.org/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Using Graphics Cards</title>
+        <description>&lt;p&gt;Choosing graphics cards can be a thorny issue in standard Linux alone, let alone real-time Linux. Often, open-source drivers lag behind proprietary ones in terms of compatibility with newer hardware and displays. The two main types, AMD and Nvidia, are supported for the most part within Linux.  &lt;/p&gt;
+
+&lt;p&gt;For RTXI, we strongly encourage you to use the open-source drivers. Nouveau is the open-source one for Nvidia cards, and radeon is for AMD ones. No configuration or input on your part is needed to use them. When you install Linux and boot, your kernel will detect the graphics hardware and load the corresponding driver. You can check to see if your driver is loaded by running:  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;lsmod &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; grep &lt;span class=&quot;s2&quot;&gt;&amp;quot;radeon\|nvidia&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The reason we use open-source drivers is that they use the kernel to directly leverage the graphics card to compute things like the UI and desktop. Proprietary drivers, while technically doing the same thing, function differently and can degrade real-time performance by causing latencies to spike to as high as 100us on some machines. Skipping the drivers altogether forces the CPU to compute the UI, which when coupled with the RT kernel, will make the UI slow and laggy and the real-time performance poorer.  &lt;/p&gt;
+
+&lt;p&gt;Here are some guidelines for using graphics cards: &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Newer cards are less likely to be supported by open-source drivers.  &lt;/li&gt;
+  &lt;li&gt;AMD provides better support for its &lt;strong&gt;open-source&lt;/strong&gt; radeon driver than Nvidia does for nouveau.  &lt;/li&gt;
+  &lt;li&gt;Nvidia’s &lt;strong&gt;proprietary driver&lt;/strong&gt; performs better than AMD’s proprietary driver (fglrx) and generally provides better support for newer hardware.  &lt;/li&gt;
+  &lt;li&gt;If you have an AMD card, use it. If you have an Nvidia one, try it. Tell us if you have issues. We want to keep track of what works and what doesn’t.  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Lastly, if you have issues with your display looking weird or distorted, it’s probably your graphics card. Check our graphics troubleshooting page for suggestions on what to do or browse though forums online. Someone’s probably had the same issue as you at some point.  &lt;/p&gt;
+</description>
+        <pubDate>Mon, 23 Feb 2015 00:00:00 -0500</pubDate>
+        <link>http://rtxi.org//docs/tutorials/2015/02/23/using-graphics-cards/</link>
+        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2015/02/23/using-graphics-cards/</guid>
+      </item>
+    
+      <item>
+        <title>My System Is Frozen or Slow!</title>
+        <description>&lt;p&gt;This issue can be caused by many tings, and getting to its specific cause will require patience. Here are some things to look for: &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;When does the system freeze or slow down?&lt;br /&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Does it freeze after you pick a kernel in the GRUB menu?  &lt;/li&gt;
+      &lt;li&gt;Does the freeze affect all kernels? Or is it just the real-time one(s)?  &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;What graphics card are you using?&lt;br /&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Is it Nvidia or AMD?  &lt;/li&gt;
+      &lt;li&gt;Are you using open-source or proprietary drivers?  &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Are the DAQ drivers loaded? Open the Control Panel module in RTXI and see if the “analogy0” channel is open. If not, the drivers aren’t detecting your DAQ. (Applies to RT kernels. Non-RT kernels can’t touch the DAQ.)  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;The issues could be caused by several issues, like your graphics card not being fully supported, the DAQ driver interfering with framebuffers, etc. One thing that we’ve noticed while debugging our own systems is that on some Nvidia cards, the nouveau driver is incompatible with analogy, causing the GUI to freeze. One almost fix to this is to disable kernel mode setting. Here’s now to do it:  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt; Open the /etc/default/grub file as root.&lt;/li&gt;
+&lt;li&gt; Edit the GRUB_CMDLINE_LINUX_DEFAULT line to read:  
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;GRUB_CMDLINE_LINUX_DEFAULT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;quiet splash nomodeset i915.modeset=0 nouveau.modeset=0&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/li&gt;
+&lt;li&gt; Update GRUB.  
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo update-grub&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This prevents the kernel from using the nvidia card to compute the UI. Unfortunately, one side-effect is to offload the UI to the CPU, making it run slower and degrading real-time performance.  &lt;/p&gt;
+
+&lt;p&gt;To undo this change, just remove the edits made the the /etc/default/grub file and run &lt;code&gt;update-grub&lt;/code&gt; again.  &lt;/p&gt;
+</description>
+        <pubDate>Mon, 23 Feb 2015 00:00:00 -0500</pubDate>
+        <link>http://rtxi.org//docs/troubleshoot/2015/02/23/system-frozen-or-slow/</link>
+        <guid isPermaLink="true">http://rtxi.org//docs/troubleshoot/2015/02/23/system-frozen-or-slow/</guid>
+      </item>
+    
+      <item>
         <title>RTXI 2015 Registration Open!</title>
         <description>&lt;p&gt;Just reminding everyone that registration for RTXI 2015 is now open! Check out our &lt;a href=&quot;/conference/&quot;&gt;conference page&lt;/a&gt; to learn about our upcoming conference. &lt;a href=&quot;http://petitinstitute.gatech.edu/rtxi-2015-workshop&quot;&gt;Registration is open&lt;/a&gt; until April 1st at 5:00 PM Eastern Time.  &lt;/p&gt;
 </description>
@@ -548,24 +618,6 @@ $ sudo reboot
         <pubDate>Thu, 08 May 2014 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//papers/2014/05/08/predicting-the-responses-of-repetitively-firing-neurons-to-current-noise/</link>
         <guid isPermaLink="true">http://rtxi.org//papers/2014/05/08/predicting-the-responses-of-repetitively-firing-neurons-to-current-noise/</guid>
-      </item>
-    
-      <item>
-        <title>The Past, Present, and Future of Real-Time Control in Cellular Electrophysiology</title>
-        <description>&lt;p&gt;For over 60 years, real-time control has been an important technique in the study of excitable cells. Two such control-based technologies are reviewed here. First, voltage-clamp methods revolutionized the study of excitable cells. In this family of techniques, membrane potential is controlled, allowing one to parameterize a powerful class of models that describe the voltage-current relationship of cell membranes simply, flexibly, and accurately. Second, dynamic-clamp methods allow the addition of new, “virtual” membrane mechanisms to living cells. Dynamic clamp allows researchers unprecedented ways of testing computationally based hypotheses in biological preparations. The review ends with predictions of how control-based technologies will be improved and adapted for new uses in the near future.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 01 May 2014 00:00:00 -0400</pubDate>
-        <link>http://rtxi.org//papers/2014/05/01/the-past-present-and-future-of-real-time-control-in-cellular-electrophysiology/</link>
-        <guid isPermaLink="true">http://rtxi.org//papers/2014/05/01/the-past-present-and-future-of-real-time-control-in-cellular-electrophysiology/</guid>
-      </item>
-    
-      <item>
-        <title>Tonic current through GABAA receptors and hyperpolarization-activated cyclic nucleotide-gated channels modulate resonance properties of rat subicular pyramidal neurons</title>
-        <description>&lt;p&gt;The subiculum, considered to be the output structure of the hippocampus, modulates information flow from the hippocampus to various cortical and sub-cortical areas such as the nucleus accumbens, lateral septal region, thalamus, nucleus gelatinosus, medial nucleus and mammillary nuclei. Tonic inhibitory current plays an important role in neuronal physiology and pathophysiology by modulating the electrophysiological properties of neurons. While the alterations of various electrical properties due to tonic inhibition have been studied in neurons from different regions, its influence on intrinsic subthreshold resonance in pyramidal excitatory neurons expressing hyperpolarization-activated cyclic nucleotide-gated (HCN) channels is not known. Using pharmacological agents, we show the involvement of α5βγ GABAA receptors in the picrotoxin-sensitive tonic current in subicular pyramidal neurons. We further investigated the contribution of tonic conductance in regulating subthreshold electrophysiological properties using current clamp and dynamic clamp experiments. We demonstrate that tonic GABAergic inhibition can actively modulate subthreshold properties, including resonance due to HCN channels, which can potentially alter the response dynamics of subicular pyramidal neurons in an oscillating neuronal network.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 10 Apr 2014 00:00:00 -0400</pubDate>
-        <link>http://rtxi.org//papers/2014/04/10/tonic-current-through-gabaa-receptors-and-hyperpolarization-activated-cyclic-nucleotide-gated-channels-modulate-resonance-properties-of-rat-subicular-pyramidal-neurons/</link>
-        <guid isPermaLink="true">http://rtxi.org//papers/2014/04/10/tonic-current-through-gabaa-receptors-and-hyperpolarization-activated-cyclic-nucleotide-gated-channels-modulate-resonance-properties-of-rat-subicular-pyramidal-neurons/</guid>
       </item>
     
   </channel>
