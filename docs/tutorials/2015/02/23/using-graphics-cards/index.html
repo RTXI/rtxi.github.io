@@ -1,10 +1,7 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Using Graphics Cards</title><link href="/assets/css/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/pygments.css" rel="stylesheet"><link href="/assets/fonts/octicons.css" rel="stylesheet"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.ico"></head><style>h1, h2, h3, h4, h5, h6 {
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Using Graphics Cards</title><link href="/assets/css/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/pygments.css" rel="stylesheet"><link href="/assets/css/octicons.min.css" rel="stylesheet"><link href="/assets/css/font-awesome.min.css" rel="stylesheet"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.ico"></head><style>h1, h2, h3, h4, h5, h6 {
       padding-bottom: 9px;
       margin: 40px 0 20px;
       border-bottom: 1px solid #eee;
-      font-weight: normal;
-   }
-   strong {
       font-weight: normal;
    }
    img {
@@ -13,32 +10,10 @@
       display: block;
       max-width: 100%;
       height: auto;
-   }
-   .lead-small {
-      margin-bottom: 20px;
-      font-size: 14px;
-      font-weight: 300;
-      line-height: 1.4;
-   }
-   @media (min-width: 768px) {
-      .lead-small {
-         font-size: 18px;
-      }
-   }
-   .lead-normal {
-     margin-bottom: 20px;
-     font-size: 16px;
-     font-weight: 400;
-     line-height: 1.4;
-   }
-   @media (min-width: 768px) {
-     .lead-normal {
-       font-size: 21px;
-     }
    }</style><style>body {
    padding-top:50px;
    padding-bottom:30px;
-}</style><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" rel="home" href="/"><b>RTXI</b></a></div><div class="row"><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="/install/">Install</a></li><li><a href="/modules/">Modules</a></li><li><a href="/papers/">Papers</a></li><li class="active"><a href="/docs/">Docs</a></li><li><a href="/contact/">Contact</a></li></ul><form class="navbar-form navbar-right" role="search"><div class="input-group"><input type="text" class="form-control" placeholder="Search (non-functional)"> <span class="input-group-btn"><button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></span></div></form></div></div></div></nav><body style="padding-top:30px"><div class="container lead-small"><h3 class="page-header">Using Graphics Cards</h3><p>Choosing graphics cards can be a thorny issue in standard Linux alone, let alone real-time Linux. Often, open-source drivers lag behind proprietary ones in terms of compatibility with newer hardware and displays. The two main types, AMD and Nvidia, are supported for the most part within Linux.</p><p>For RTXI, we strongly encourage you to use the open-source drivers. Nouveau is the open-source one for Nvidia cards, and radeon is for AMD ones. No configuration or input on your part is needed to use them. When you install Linux and boot, your kernel will detect the graphics hardware and load the corresponding driver. You can check to see if your driver is loaded by running:</p><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>lsmod <span class="p">|</span> grep <span class="s2">&quot;radeon\|nvidia&quot;</span></code></pre></div><p>The reason we use open-source drivers is that they use the kernel to directly leverage the graphics card to compute things like the UI and desktop. Proprietary drivers, while technically doing the same thing, function differently and can degrade real-time performance by causing latencies to spike to as high as 100us on some machines. Skipping the drivers altogether forces the CPU to compute the UI, which when coupled with the RT kernel, will make the UI slow and laggy and the real-time performance poorer.</p><p>Here are some guidelines for using graphics cards:</p><ol><li>Newer cards are less likely to be supported by open-source drivers.</li><li>AMD provides better support for its <strong>open-source</strong> radeon driver than Nvidia does for nouveau.</li><li>Nvidia’s <strong>proprietary driver</strong> performs better than AMD’s proprietary driver (fglrx) and generally provides better support for newer hardware.</li><li>If you have an AMD card, use it. If you have an Nvidia one, try it. Tell us if you have issues. We want to keep track of what works and what doesn’t.</li></ol><p>Lastly, if you have issues with your display looking weird or distorted, it’s probably your graphics card. Check our graphics troubleshooting page for suggestions on what to do or browse though forums online. Someone’s probably had the same issue as you at some point.</p></div></body><style>html {
+}</style><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" rel="home" href="/"><b>RTXI</b></a></div><div class="row"><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="/install/">Install</a></li><li><a href="/modules/">Modules</a></li><li><a href="/papers/">Papers</a></li><li class="active"><a href="/docs/">Docs</a></li><li><a href="/stats/">Stats</a></li><li><a href="/contact/">Contact</a></li><li><a href="/feed.xml">RSS<i class="fa fa-rss fa-inverse"></i></a></li></ul></div></div></div></nav><body style="padding-top:30px"><div class="container"><h3 class="page-header">Using Graphics Cards</h3><p>Choosing graphics cards can be a thorny issue in standard Linux alone, let alone real-time Linux. Often, open-source drivers lag behind proprietary ones in terms of compatibility with newer hardware and displays. The two main types, AMD and Nvidia, are supported for the most part within Linux.</p><p>For RTXI, we strongly encourage you to use the open-source drivers. Nouveau is the open-source one for Nvidia cards, and radeon is for AMD ones. No configuration or input on your part is needed to use them. When you install Linux and boot, your kernel will detect the graphics hardware and load the corresponding driver. You can check to see if your driver is loaded by running:</p><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>lsmod <span class="p">|</span> grep <span class="s2">&quot;radeon\|nvidia&quot;</span></code></pre></div><p>The reason we use open-source drivers is that they use the kernel to directly leverage the graphics card to compute things like the UI and desktop. Proprietary drivers, while technically doing the same thing, function differently and can degrade real-time performance by causing latencies to spike to as high as 100us on some machines. Skipping the drivers altogether forces the CPU to compute the UI, which when coupled with the RT kernel, will make the UI slow and laggy and the real-time performance poorer.</p><p>Here are some guidelines for using graphics cards:</p><ol><li>Newer cards are less likely to be supported by open-source drivers.</li><li>AMD provides better support for its <strong>open-source</strong> radeon driver than Nvidia does for nouveau.</li><li>Nvidia’s <strong>proprietary driver</strong> performs better than AMD’s proprietary driver (fglrx) and generally provides better support for newer hardware.</li><li>If you have an AMD card, use it. If you have an Nvidia one, try it. Tell us if you have issues. We want to keep track of what works and what doesn’t.</li></ol><p>Lastly, if you have issues with your display looking weird or distorted, it’s probably your graphics card. Check our graphics troubleshooting page for suggestions on what to do or browse though forums online. Someone’s probably had the same issue as you at some point.</p></div></body><style>html {
   position: relative;
   min-height: 100%;
 }
