@@ -214,6 +214,7 @@ module.exports = function(grunt) {
                'install/*',
                'contact/*',
                'docs/*',
+					'stats/*',
                'modules/index.html',
                'assets/img/**',
                '_config.yml',
