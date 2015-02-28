@@ -26,6 +26,7 @@ module Jekyll
 #                                    "screenshot"=>rawprefix.join(repo)+"images/"+repo+".png" })
                                     "screenshot"=>rawprefix.join(repo)+repo+".png" })
          end
+#			puts repo_urls
          return repo_urls
       end
 
@@ -120,7 +121,7 @@ module Jekyll
             htmltext = yamlheader + forkmebanner + GitHub::Markdown.render(text)
 
 #            File.open(filename, "w") { |file| file.write(htmltext) }
-#            File.open(build_dir+"/"+repo+"/"+repo+".png", "w") { |file| file.write(image) }
+            File.open(build_dir+"/"+repo+"/"+repo+".png", "w") { |file| file.write(image) }
 #            File.open("images/"+repo+".png", "w") { |file| file.write(image) }
 
             begin
