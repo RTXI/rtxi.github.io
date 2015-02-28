@@ -9,7 +9,7 @@ layout: default
 
 <div class="container">
    <p class="lead">There are three ways to install RTXI 2.0:</p>
-   <dl class="dl-horizontal lead-small">
+   <dl class="dl-horizontal">
       <dt>Standard</dt>
          <dd>Use our Debian-based live CDs. It's easier than manually installing RTXI, but differences between your system and the one used to make the live CD could affect real-time performance.</dd>
       <br>
@@ -24,7 +24,7 @@ layout: default
 <br>
 
 <div class="container">
-   <ul class="nav nav-pills nav-justified lead-normal" role="tablist">
+   <ul class="nav nav-pills nav-justified lead" role="tablist">
       <li role="presentation" class="active"><a data-toggle="tab" href="#standard" role="tab">Standard</a></li>
       <li role="presentation"><a data-toggle="tab" href="#custom" role="tab">Custom</a></li>
       <li role="presentation"><a data-toggle="tab" href="#upgrade" role="tab">Upgrade</a></li>
@@ -40,15 +40,16 @@ layout: default
          <div class="panel panel-primary"><div class="panel-body row">
             
             <!-- 1. Download the live image -->
-            <p class="lead-normal col-xs-12">
+            <h4 class="lead media-heading col-xs-12">
                {% increment standardcount %}. Download the live RTXI 2.0 image.
-            </p>
+            </h4>
 
             <div class="col-xs-12 col-sm-12 col-lg-12">
-               <p class="lead-small">
+               <p>
                   We currently have Ubuntu and Debian live CDs. You can use them to test RTXI without touching your hard drive, format your hard drive, and install RTXI alongside existing operating systems.  
                </p>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-lg-12"><div class="row">
                <div class="col-xs-12 col-sm-3 col-lg-2 col-lg-offset-2" style="text-align: center">
                   <a href="https://dl.dropboxusercontent.com/u/49869589/rtxi-2.0-debian-v6-amd64.iso" download>
@@ -88,7 +89,7 @@ layout: default
 
             <!-- legacy bit for RTXI 1.4 -->
             <div class="col-xs-12 col-sm-12 col-lg-12">
-               <p class="lead-small">
+               <p>
                   Our legacy version, RTXI 1.4, is available for now. Keep in mind that v1.4 runs on the no-longer-maintained Ubuntu 10.04, and it requires now-deprecated libraries.
                </p>
             </div>
@@ -112,14 +113,17 @@ layout: default
             </div></div>
             
             <!-- 2. Burn the image to DVD or USB -->
+				<div>&nbsp;</div>
             <div class="col-xs-12">
-               <p class="lead-normal">
+               <h4 class="lead media-heading">
                   {% increment standardcount %}. Burn the image to a DVD or a USB drive.
-               </p>
-               <p class="lead-small">
+               </h4>
+               
+					<p>
                   You can use whatever DVD burner is available on your operating system. If you want a live USB, you may need additional software. For different operating systems, check out:
                </p>
-               <dl class="dl-horizontal lead-small">
+               
+					<dl class="dl-horizontal">
                   <dt>Linux</dt>
                      <dd>Clone the ISO image from the command line with <code>dd</code> or use applications like <a href="http://unetbootin.sourceforge.net/">UNetbootin</a> or <a href="https://apps.ubuntu.com/cat/applications/usb-creator-gtk/">USB Creator</a>. Check your distro's package repository to see if they're available.</dd>
                      <br>
@@ -129,58 +133,63 @@ layout: default
                   <dt>MacOS</dt>
                      <dd>Same programs. Try <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a> or <a href="http://unetbootin.sourceforge.net/">UNetbootin</a>.</dd>
                </dl>
-               <p class="lead-small">
+               
+					<p>
                   We cannot not guarantee these installation programs will produce bootable live USBs for your system. This area tends to be a bit finnicky. Thus far, we've had greater success with burning DVDs than making USBs. Should you have any difficulties, let us know. 
                </p>
             </div>
 
             <!-- 3. Boot into RTXI system -->
+				<div>&nbsp;</div>
             <div class="col-xs-12">
-               <p class="lead-normal">
+               <h4 class="lead media-heading">
                   {% increment standardcount %}. Boot from the live image.
-               </p>
-               <p class="lead-small">
+               </h4>
+               <p>
                   If your computer isn't already set to boot from USB or DVD, you'll need to enter your BIOS settings. When cold-booting your computer, hit the necessary keys, usually <code>F2</code> or <code>F4</code>, and open the menu. (If you miss the timing, restart your computer and try again.)
                </p>
-               <p class="lead-small">
+               <p>
                   From the menu, look for your boot options. There you can manually override the boot order of devices on your system. If you're booting from a DVD or USB, look for your DVD drive or USB label, respectively, and set them to be first in your boot order. Save you changes and exit your BIOS menu. 
                </p>
-               <p class="lead-small">
+               <p>
                   <strong>Reminder:</strong> In the next step, you will be installing an operating system on your hard drive. Back it up if you haven't already.
                </p>
             </div>
             
             <!-- 4. Install RTXI -->
+				<div>&nbsp;</div>
             <div class="col-xs-12">
-               <p class="lead-normal">
+               <h4 class="lead media-heading">
                   {% increment standardcount %}. Install RTXI via the installer. 
-               </p>
-               <p class="lead-small">
+               </h4>
+               <p>
                   When booting, you can choose to go directly to the installer or boot into the live desktop. Currently, the installer does not work from within the desktop, so to install RTXI, go to either install option in the boot menu.
                </p>
-               <p class="lead-small"><b>Note:</b> If you do go into the live desktop, you can try RTXI by selecting it from the applications menu or by opening a terminal and running <code>sudo rtxi</code>. If you want to install RTXI afterwards, simply restart the machine and select either installer from the boot menu. 
+               <p><b>Note:</b> If you do go into the live desktop, you can try RTXI by selecting it from the applications menu or by opening a terminal and running <code>sudo rtxi</code>. If you want to install RTXI afterwards, simply restart the machine and select either installer from the boot menu. 
                </p>
-               <p class="lead-small">
+               <p>
                   The installer will guide you through setting up the system name, passwords, networks, and partitioning. If unsure of what to do, use defaults when available.
                </p>
             </div>
 
             <!-- 5. Boot into RTXI -->
+				<div>&nbsp;</div>
             <div class="col-xs-12">
-               <p class="lead-normal">
+               <h4 class="lead media-heading">
                   {% increment standardcount %}. Reboot into RTXI. 
-               </p>
-               <p class="lead-small">
+               </h4>
+               <p>
                   When the installer is done, you will be prompted to reboot your system. Reboot (and be careful to not re-enter the live image). RTXI is now installed!
                </p>
             </div>
 
             <!-- 6. Run things as root and run RTXI -->
+				<div>&nbsp;</div>
             <div class="col-xs-12">
-               <p class="lead-normal">
+               <h4 class="lead media-heading">
                   {% increment standardcount %}. Give yourself sudoer privileges. 
-               </p>
-               <p class="lead-small">
+               </h4>
+               <p>
                   RTXI requires root privileges. To do this, you can either use <code>su</code> to become the root user, or you can use <code>sudo</code> to run RTXI. For the latter option, you'll need to add yourself to the sudoers group. In the command line, run:
                </p>
                {% highlight bash %}
@@ -188,16 +197,16 @@ $ su
 # usermod -aG sudo USERNAME
 # exit
                {% endhighlight %}
-               <p class="lead-small">
+               <p>
                   The <code>su</code> command will prompt you for the root password for your system. Enter it, and you will drop into a root shell. From there, execute the <code>usermod</code> command given above, where USERNAME is substituted with your username. Once done, log out of the system and then log back in. You now have sudo privileges, and you can run RTXI by clicking the icon in the applications menu or by entering <code>sudo rtxi</code> in the terminal. 
                </p>
-               <p class="lead-small">
+               <p>
                   <b>Note:</b> You may need to install video drivers, but at this point, what do you is for your specific purposes. Our modules are listed on our <a href="/modules/">Modules page</a>. 
                </p>
 
                <br><br>
 
-               <p class="lead-small">
+               <p>
                   Below is an installation demo. Note that when you install RTXI on your own machine, you may get prompted to configure your network settings.
                </p>
 
@@ -218,9 +227,9 @@ $ su
 
             <!-- 1. Download generic Debian image -->
             <div class="col-xs-12">
-               <p class="lead-normal">
+               <h4 class="lead media-heading">
                   {% increment customcount %}. Download a generic Debian installation image.
-               </p>
+               </h4>
                <div class="col-xs-12 col-sm-6" style="text-align: center">
                   <a href="http://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-7.8.0-amd64-gnome-desktop.iso" download>
                      <button type="button" class="btn btn-danger" style="margin-bottom: 5px">
@@ -239,24 +248,28 @@ $ su
             <p>&nbsp;</p>
             
             <!-- 2. Burn the image to DVD or USB -->
-            <p class="lead-normal col-xs-12">
+				<div>&nbsp;</div>
+            <h4 class="lead col-xs-12 media-heading">
                {% increment customcount %}. Burn the image to a DVD or a USB drive.
-            </p>
+            </h4>
             
             <!-- 3. Install and boot into RTXI system -->
-            <p class="lead-normal col-xs-12">
+				<div>&nbsp;</div>
+            <h4 class="lead col-xs-12 media-heading">
                {% increment customcount %}. Follow the built-in installer and install the operating system.
-            </p>
+            </h4>
 
             <!-- 4. Look at our github documentaiton for now... -->
-            <p class="lead-normal col-xs-12">
+				<div>&nbsp;</div>
+            <h4 class="lead col-xs-12 media-heading">
                {% increment customcount %}. Patch and install a real-time kernel. Go to our <a href="https://github.com/RTXI/tutorials/wiki/How-to-Patch-the-Realtime-Kernel">GitHub wiki</a> for detailed instructions.
-            </p>
+            </h4>
             
             <!-- 5. Install stuff -->
-            <p class="lead-normal col-xs-12">
+				<div>&nbsp;</div>
+            <h4 class="lead col-xs-12 media-heading">
                {% increment customcount %}. Clone our GitHub repository and install RTXI. Check out our <a href="https://github.com/RTXI/tutorials/wiki/Installing-RTXI-v2.0">Github wiki</a> for instructions.
-            </p>
+            </h4>
          </div></div>
       </div> <!-- end custom information -->
 
@@ -264,10 +277,10 @@ $ su
          <div class="panel panel-primary"><div class="panel-body row">
 
             <!-- 1. Clone the repo -->
-            <p class="lead-normal col-xs-12">
+            <h4 class="lead col-xs-12 media-heading">
                {% increment upgradecount %}. Clone the RTXI GitHub repository.
-            </p>
-            <p class="lead-small col-xs-12">
+            </h4>
+            <p class="col-xs-12">
                If you haven't already a clone of our GitHub repo, run the following in the terminal. RTXI 2.0 is currently on the qt4 branch.
             </p>
             <div class="col-xs-12">
@@ -277,7 +290,7 @@ $ cd rtxi
 $ git checkout qt4
                {% endhighlight %}
             </div>
-            <p class="lead-small col-xs-12">
+            <p class="col-xs-12">
                If you already have a clone of the repository, just make sure you switch to the qt4 branch and pull any updates that may have taken place.
             </p>
             <div class="col-xs-12">
@@ -288,10 +301,11 @@ $ git pull origin master
             </div>
 
             <!-- 2. Install dependencies -->
-            <p class="lead-normal col-xs-12">
+				<div>&nbsp;</div>
+            <h4 class="lead col-xs-12 media-heading">
                {% increment upgradecount %}. Install and/or update dependencies.
-            </p>
-            <p class="lead-small col-xs-12">
+            </h4>
+            <p class="col-xs-12">
                Run the <code>install_dependencies.sh</code> script to download dependencies. The script is maintained for Ubuntu 12.04, 14.04, and Debian 7. If you are using a different or outdated distribution, like Ubuntu 10.04, you will have to look for differently-named packages. For old operating systems, some of these packages may no longer exist, and if that's the case, we strongly encourage you to upgrade to Debian.
             </p>
             <div class="col-xs-12">
@@ -302,10 +316,11 @@ $ sudo ./install_dependencies.sh
             </div>
 
             <!-- 3. Install RTXI 2.0 -->
-            <p class="lead-normal col-xs-12">
+				<div>&nbsp;</div>
+            <h4 class="lead col-xs-12 media-heading">
                {% increment upgradecount %}. Install and/or update dependencies.
-            </p>
-            <p class="lead-small col-xs-12">
+            </h4>
+            <p class="col-xs-12">
                Run the installation script, also in the <code>scripts/</code> directory.
             </p>
             <div class="col-xs-12">
@@ -313,7 +328,7 @@ $ sudo ./install_dependencies.sh
 $ sudo ./install_rtxi.sh
                {% endhighlight %}
             </div>
-            <p class="lead-small col-xs-12">
+            <p class="col-xs-12">
                You will be prompted to select a configuration: 1 for Xenomai (real-time) or 2 for POSIX (non-real-time). Soon, RTXI will be compiled and installed. When finished, you can run v2.0 with:
             </p>
             <div class="col-xs-12">
@@ -323,13 +338,14 @@ $ sudo rtxi
             </div>
 
             <!-- 4. (Re)install modules -->
-            <p class="lead-normal col-xs-12">
+				<div>&nbsp;</div>
+            <h4 class="lead col-xs-12 media-heading">
                {% increment upgradecount %}. Install modules.
-            </p>
-            <p class="col-xs-12 lead-small">
+            </h4>
+            <p class="col-xs-12">
                All available modules in 1.4 came packaged with RTXI. For 2.0, we have split modules into separate GitHub repositories so that users can install only what they need and also so that they can fork individual modules for customization, rather than having to fork all of RTXI. 
             </p>
-            <p class="col-xs-12 lead-small">
+            <p class="col-xs-12">
                What this means for you is that at this point, you've updated RTXI to v2.0, but your modules are still configured for v1.4. You will have to update them manually. Go to our modules page to find all the modules upgraded for 2.0 you need. If you're using your own custom modules, then they will need to be updated to use Qt4 instead of Qt3. Check out the <a href="http://qt-project.org/doc/qt-4.8/porting4.html">Qt documentation for porting to Qt4</a> for help.
             </p>
          </div></div>

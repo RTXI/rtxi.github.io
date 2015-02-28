@@ -5,14 +5,8 @@ layout: default
 
 {% include carousel.html %}
 
-<style>
-strong {
-   font-weight:400;
-}
-</style>
-
 <div class="container">
-   <ul class="nav nav-tabs nav-justified lead-normal" role="tablist">
+   <ul class="nav nav-tabs nav-justified lead" role="tablist">
       <li role="presentation" class="active"><a data-toggle="tab" href="#intro" role="tab">RTXI</a></li>
       <li role="presentation"><a data-toggle="tab" href="#us" role="tab">About Us</a></li>
       <li role="presentation"><a data-toggle="tab" href="#news" role="tab">News</a></li>
@@ -25,7 +19,7 @@ strong {
       <h2 class="page-header" style="text-align:center">Introducing RTXI</h2>
 
       <div class="row">
-         <div class="col-xs-12"><p class="lead-small">
+         <div class="col-xs-12"><p>
             <strong>RTXI</strong>, the <strong>Real-Time eXperiment Interface</strong>, is a <strong>fast</strong>, <strong>free</strong>, and <strong>open-source</strong> operating system capable of <strong>hard real-time</strong> data acquisition and control applications for use in biological research. Our system is currently used in labs all over to world to probe diverse, technologically challenging problems, such as dynamic probing of ion-channel function, control of cardiac arrhythmia dynamics, and control of deep-brain stimulation patterns.
          </p></div>
       </div>
@@ -33,13 +27,13 @@ strong {
       <div class="row">
          <div class="col-sm-6">
             <h3 class="page-header" style="text-align:center">Why real-time?</h3>
-            <p class="lead-small">
+            <p>
                Experimentalists' ability to perturb biological systems has traditionally been limited to rigid pre-programmed protocols or more flexible, albeit reflex constrained, operator-controlled protocols. In contrast, real-time control allows dynamic probing of biological systems by parameter perturbations calculated from instantaneous system measurements. With it, researchers can address diverse unanswered questions that are not amenable to traditional approaches.
             </p>
          </div>
          <div class="col-sm-6">
             <h3 class="page-header" style="text-align:center">Why RTXI?</h3>
-            <p class="lead-small">
+            <p class="">
                Unfortunately, real-time control is not possible with standard operating systems and software. Furthermore, commercial real-time systems are costly and often designed for industrial applications, and the proprietary software licenses and drivers that come with them only exacerbate the issue. To get away from that, we developed RTXI. It's fast, free, and flexible, and it's compatible with a wide range of experimentation hardware.
             </p>
          </div>
@@ -47,7 +41,8 @@ strong {
    </div></div>
 
    <div id="us" role="tabpanel" class="tab-pane fade"><div class="tab-content">
-      <p class="lead">RTXI is a collaborative effort among four labs in three institutions. The primary investigators are:</p>
+		<br></br>
+      <div class="lead">RTXI is a collaborative effort among four labs in three institutions. The primary investigators are:</div>
 
       <div class="col-sm-6 col-md-5 col-md-offset-1">
          <a href="https://neurolab.gatech.edu/labs/butera" class="thumbnail"><div class="row">
@@ -92,6 +87,7 @@ strong {
             </p></div>
          </div></a>
       </div>
+		<br></br>
 
 
       <p class="lead">Current developers:</p>
@@ -137,14 +133,15 @@ strong {
   --> 
    <div id="news" role="tabpanel" class="tab-pane fade"><div class="tab-content">
       <div class="container">
+		<br></br>
       <div class="text-center">
          Subscribe to our <a href="/feed.xml">RSS feed</a>.
       </div>
       {% for post in site.categories.news %}
          <div class="media row"><div class="media-body">
-            <a href="{{ post.url }}"><h4 class="media-heading lead">{{ post.title }}</h4></a>
-            <div>{{ post.date | date_to_string }}</div>
-            <div class="lead-small">{{ post.excerpt | truncate: 300 }}</div>
+            <h4 class="media-heading lead"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+            <div>  {{ post.date | date_to_string }}</div>
+            <div>{{ post.excerpt | truncate: 300 }}</div>
          </div></div>
       {% endfor %}
       </div>

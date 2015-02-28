@@ -30,7 +30,7 @@ permalink: /docs/
 <div class="hidden-sm">&nbsp;</div>
 
 <div class="container">
-   <ul class="nav nav-tabs nav-justified lead-normal" role="tablist">
+   <ul class="nav nav-tabs nav-justified lead" role="tablist">
       <li role="presentation" class="active"><a data-toggle="tab" href="#tutor" role="tab">Tutorials</a></li>
       <li role="presentation"><a data-toggle="tab" href="#trouble" role="tab">Troubleshooting</a></li>
       <li role="presentation"><a data-toggle="tab" href="#faq" role="tab">FAQs</a></li>
@@ -52,8 +52,9 @@ permalink: /docs/
                </div><div class="tab-pane fade" role="tabpanel" id="tutor{{ tutorvar }}">
                {% endif %}
             {% endif %}
-               <div class="lead"><a href="{{ post.url }}">{{ post.title }}</a></div>
-               <div class="lead-small">{{ post.excerpt | truncate:300 }}</div>
+					<div>&nbsp;</div>
+               <h4 class="media-heading lead"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+               <div>{{ post.excerpt | truncate:300 }}</div>
          {% endfor %}
          </div>
       </div>
@@ -78,7 +79,7 @@ permalink: /docs/
    <div id="trouble" role="tabpanel" class="tab-pane fade">
       
       <div class="container"> 
-         <h4 class="lead-normal" style="text-align:center; margin-bottom:20px;">
+         <h4 class="lead" style="text-align:center;">
             Please <a href="https://github.com/rtxi/rtxi/issues">submit any issues</a> you have on our GitHub repo.
          </h4>
       </div>
@@ -95,8 +96,9 @@ permalink: /docs/
                </div><div class="tab-pane fade" role="tabpanel" id="trouble{{ troublevar }}">
                {% endif %}
             {% endif %}
-               <div class="lead"><a href="{{ post.url }}">{{ post.title }}</a></div>
-               <div class="lead-small">{{ post.excerpt | truncate:300 }}</div>
+               <h4 class="lead media-heading"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+               <div>{{ post.excerpt | truncate:300 }}</div>
+					<div>&nbsp;</div>
          {% endfor %}
          </div>
       </div>
@@ -127,14 +129,17 @@ permalink: /docs/
             {% capture faqvar %}{% increment faqbodycount %}{% endcapture %}
                {% if forloop.index == 1 %}
                <div class="tab-pane fade in active" role="tabpanel" id="faq{{ faqvar }}">
+					<div>&nbsp;</div>
                {% else %}
                </div><div class="tab-pane fade" role="tabpanel" id="faq{{ faqvar }}">
+					<div>&nbsp;</div>
                {% endif %}
             {% endif %}
-               	<div class="lead"><a data-toggle="collapse" data-target="#faqp{{ forloop.index }}">
-                     {{ forloop.index }}. {{ post.title }}
-                  </a></div>
-                  <div class="collapse lead-small" id="faqp{{ forloop.index }}">{{ post.content }}</div>
+					<h4 class="lead media-heading"><a data-toggle="collapse" data-target="#faqp{{ forloop.index }}">
+						{{ forloop.index }}. {{ post.title }}
+					</a></h4>
+					<div class="collapse" id="faqp{{ forloop.index }}">{{ post.content }}</div>
+					<div>&nbsp;</div>
          {% endfor %}
          </div>
       </div>
