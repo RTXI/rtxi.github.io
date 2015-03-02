@@ -7,6 +7,23 @@
     <atom:link href="http://rtxi.org/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Linux Freezes after Reboot</title>
+        <description>&lt;p&gt;If you reboot the computer and the computer displays a laggy log-in screen, it’s probably because kexec-tools are handling reboots. The utility normally is used to perform ‘warm reboots,’ which is when the computer reloads a kernel without fully shutting the system down. The lag is probably because kexec-tools is rebooting to a non-RT kernel. The easiest thing to do here is to disable kexec-tools from handling reboots. To do so:  &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open /etc/default/kexec (as root).&lt;/li&gt;
+  &lt;li&gt;Change &lt;code&gt;LOAD_KEXEC&lt;/code&gt; from &lt;code&gt;true&lt;/code&gt; to &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Save and exit. &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Now, kexec-tools will no longer handle reboots, and your system reboot as one would expect. &lt;/p&gt;
+</description>
+        <pubDate>Mon, 02 Mar 2015 00:00:00 -0500</pubDate>
+        <link>http://rtxi.org//docs/troubleshoot/2015/03/02/linux-frozen-after-reboot/</link>
+        <guid isPermaLink="true">http://rtxi.org//docs/troubleshoot/2015/03/02/linux-frozen-after-reboot/</guid>
+      </item>
+    
+      <item>
         <title>Using Graphics Cards</title>
         <description>&lt;p&gt;Choosing graphics cards can be a thorny issue in standard Linux alone, let alone real-time Linux. Often, open-source drivers lag behind proprietary ones in terms of compatibility with newer hardware and displays. The two main types, AMD and Nvidia, are supported for the most part within Linux.  &lt;/p&gt;
 
@@ -397,22 +414,6 @@ Some influential environment variables:
         <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/tutorials/2014/12/04/manually-configuring-rtxi/</link>
         <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2014/12/04/manually-configuring-rtxi/</guid>
-      </item>
-    
-      <item>
-        <title>Desktop Freezes when Booting into the Live CD</title>
-        <description>&lt;p&gt;On some machines, the desktop will start out frozen when booted into the Live CD. A workaround is to reboot the system. From the frozen screen, type in &lt;code&gt;Ctrl+Alt+F2&lt;/code&gt;. This will open tty2, which will not be frozen.  &lt;/p&gt;
-
-&lt;p&gt;Login to the new tty. The username is “user” and the password is “live.” Run:&lt;br /&gt;
-&lt;code&gt;
-$ sudo reboot
-&lt;/code&gt;  &lt;/p&gt;
-
-&lt;p&gt;Your system will reboot and magically will no longer be frozen. We’ll work on a fix to make this workaround unecessary after we figure out why this even happens.  &lt;/p&gt;
-</description>
-        <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//docs/troubleshoot/2014/12/04/live-cd-frozen/</link>
-        <guid isPermaLink="true">http://rtxi.org//docs/troubleshoot/2014/12/04/live-cd-frozen/</guid>
       </item>
     
       <item>
