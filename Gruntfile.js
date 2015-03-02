@@ -219,6 +219,7 @@ module.exports = function(grunt) {
                'assets/img/**',
                '_config.yml',
                'index.html',
+					'404.html',
                'favicon.ico'
             ],
             tasks: ['shell:build'],
