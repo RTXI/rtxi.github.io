@@ -32,7 +32,7 @@ module Jekyll
 
       def getExcludeList
          # Not done yet, hard-coded for now.
-         excludelist = ["rtxi", "tutorials", "rtxi.github.io", "user-manual", "logos"]
+         excludelist = ["rtxi", "tutorials", "rtxi.github.io", "user-manual", "logos", "live-image", "analysis-tools", "poster", "dsp-lib", "plot-lib", "python-plugin", "dynamo-examples"]
          return excludelist
       end
 
