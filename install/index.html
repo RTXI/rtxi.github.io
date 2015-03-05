@@ -127,10 +127,8 @@ layout: default
 					<dl class="dl-horizontal">
                   <dt>Linux</dt>
                      <dd>Clone the ISO image from the command line with <code>dd</code> or use applications like <a href="http://unetbootin.sourceforge.net/">UNetbootin</a> or <a href="https://apps.ubuntu.com/cat/applications/usb-creator-gtk/">USB Creator</a>. Check your distro's package repository to see if they're available.</dd>
-                     <br>
                   <dt>Windows</dt>
                      <dd>Try <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a> or <a href="http://unetbootin.sourceforge.net/">UNetbootin</a>.</dd>
-                     <br>
                   <dt>MacOS</dt>
                      <dd>Same programs. Try <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a> or <a href="http://unetbootin.sourceforge.net/">UNetbootin</a>.</dd>
                </dl>
@@ -229,48 +227,124 @@ $ su
             <!-- 1. Download generic Debian image -->
             <div class="col-xs-12">
                <h4 class="lead media-heading">
-                  {% increment customcount %}. Download a generic Debian installation image.
+                  {% increment customcount %}. Download a generic Linux installation image.
                </h4>
+					<p>You can install RTXI on any Linux distribution you like. Keep in mind that the installation scripts we use work for Ubuntu and Debian. Your distribution may name or organize packages differently, so you'll have to account for that on your own. Below are download links for generic Ubuntu GNOME live CDs.  
+					</p>
                <div class="col-xs-12 col-sm-6" style="text-align: center">
-                  <a href="http://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-7.8.0-amd64-gnome-desktop.iso" download>
+                  <a href="http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04.2/release/ubuntu-gnome-14.04.2-desktop-amd64.iso" download>
                      <button type="button" class="btn btn-danger" style="margin-bottom: 5px">
-                        <span class="glyphicon glyphicon-cloud-download"></span> Debian 7.8 64-bit
+                        <span class="glyphicon glyphicon-cloud-download"></span> Ubuntu 14.04 64-bit
                      </button>
                   </a>
                </div>
                <div class="col-xs-12 col-sm-6" style="text-align: center">
-                  <a href="http://cdimage.debian.org/debian-cd/current-live/i386/iso-hybrid/debian-live-7.8.0-i386-gnome-desktop.iso" download>
+                  <a href="http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04.2/release/ubuntu-gnome-14.04.2-desktop-i386.iso" download>
                      <button type="button" class="btn btn-danger" style="margin-bottom: 5px">
-                        <span class="glyphicon glyphicon-cloud-download"></span> Debian 7.8 32-bit
+                        <span class="glyphicon glyphicon-cloud-download"></span> Ubuntu 14.04 32-bit
                      </button>
                   </a>
                </div>
             </div>
-            <p>&nbsp;</p>
             
             <!-- 2. Burn the image to DVD or USB -->
 				<div>&nbsp;</div>
-            <h4 class="lead col-xs-12 media-heading">
-               {% increment customcount %}. Burn the image to a DVD or a USB drive.
-            </h4>
+            <div class="col-xs-12">
+					<h4 class="lead media-heading">
+						{% increment customcount %}. Burn the image to a DVD or a USB drive.
+					</h4>
+               
+					<p>
+                  You can use whatever DVD burner is available on your operating system. If you want a live USB, you may need additional software. For different operating systems, check out:
+               </p>
+               
+					<dl class="dl-horizontal">
+                  <dt>Linux</dt>
+                     <dd>Clone the ISO image from the command line with <code>dd</code> or use applications like <a href="http://unetbootin.sourceforge.net/">UNetbootin</a> or <a href="https://apps.ubuntu.com/cat/applications/usb-creator-gtk/">USB Creator</a>. Check your distro's package repository to see if they're available.</dd>
+                  <dt>Windows</dt>
+                     <dd>Try <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a> or <a href="http://unetbootin.sourceforge.net/">UNetbootin</a>.</dd>
+                  <dt>MacOS</dt>
+                     <dd>Same programs. Try <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a> or <a href="http://unetbootin.sourceforge.net/">UNetbootin</a>.</dd>
+               </dl>
+            </div>
             
             <!-- 3. Install and boot into RTXI system -->
 				<div>&nbsp;</div>
-            <h4 class="lead col-xs-12 media-heading">
-               {% increment customcount %}. Follow the built-in installer and install the operating system.
-            </h4>
+				<div class="col-xs-12">
+					<h4 class="lead media-heading">
+						{% increment customcount %}. Follow the built-in installer and install the operating system.
+					</h4>
+					<p>
+					Boot into the live CD. When prompted, start the installation process. There are no special considerations to be made at this step. Installers are generally intuitive, but if you have issues, there is a plethora of information online for how to install various Linux distributions. You can find help for installing Ubuntu GNOME <a href="https://wiki.ubuntu.com/UbuntuGNOME/Installation/AutoInstallation">here</a>.
+					</p>
+					<p>When the installation is finished, reboot and log into your system. Be sure to remove the live media, or you might boot back into the live CD.
+					</p>
+					<p><b>Note:</b> You may have to edit your BIOS settings to let you boot from media other than your hard drive. When cold-booting your computer, hit the necessary keys, usually <code>F2</code> or <code>F4</code>, and open the menu. From the menu, look for your boot options. There you can manually override the boot order of devices on your system. If you're booting from a DVD or USB, look for your DVD drive or USB label, respectively, and set them to be first in your boot order. Save you changes and exit your BIOS menu. 
+               </p>
+				</div>
 
             <!-- 4. Look at our github documentaiton for now... -->
 				<div>&nbsp;</div>
-            <h4 class="lead col-xs-12 media-heading">
-               {% increment customcount %}. Patch and install a real-time kernel. Go to our <a href="https://github.com/RTXI/tutorials/wiki/How-to-Patch-the-Realtime-Kernel">GitHub wiki</a> for detailed instructions.
-            </h4>
+				<div class="col-xs-12">
+					<h4 class="lead media-heading">
+						{% increment customcount %}. Clone the RTXI repository using git. 
+					</h4>
+					<p>Open a terminal. You can use the applications menu or enter the <code>CTRL+ALT+t</code> shortcut. From the terminal, install the git package. Git is a version control system that can synchronize files over many machines. We use it for developing RTXI source code, which is hosted on <a href="https://github.com/rtxi">GitHub</a>. 
+					</p>
+					{% highlight bash %}
+$ sudo apt-get install git
+					{% endhighlight %}
+					<p>Once git is installed, use it to download the RTXI source code and access the source code for v2.0. 
+					</p>
+					{% highlight bash %}
+$ git clone https://github.com/rtxi/rtxi
+$ cd rtxi
+$ git checkout qt4
+					{% endhighlight %}
+					<p><b>Tip:</b> The above code will download the source files to wherever you are in your filesystem. If you are within your own user directory, then the source files will only be accessible to your account, not anyone else's. To download the source code in a central location that all users can access, consider: </p>
+					{% highlight bash %}
+$ git clone https://github.com/rtxi/rtxi
+$ sudo mv rtxi /home/
+$ cd /home
+$ sudo find rtxi \( -type d -exec chmod u+rwx,g+rwx,o+rx {} \; -o -type f -exec chmod u+rw,g+rw,o+r {} \; \)
+$ cd /home/rtxi/
+$ git checkout qt4
+					{% endhighlight %}
+					<p><b>Note:</b> Don't do this if you have a user named "rtxi". Rename the RTXI folder you cloned to something else.
+					</p>
+				</div>
             
-            <!-- 5. Install stuff -->
+            <!-- 5. Install dependencies -->
 				<div>&nbsp;</div>
-            <h4 class="lead col-xs-12 media-heading">
-               {% increment customcount %}. Clone our GitHub repository and install RTXI. Check out our <a href="https://github.com/RTXI/tutorials/wiki/Installing-RTXI-v2.0">Github wiki</a> for instructions.
-            </h4>
+				<div class="col-xs-12">
+					<h4 class="lead media-heading">
+						{% increment customcount %}. Install RTXI and real-time kernel dependencies. 
+					</h4>
+					<p>Install the dependencies for RTXI and for installing the real-time (RT) kernel. Assuming you are in the cloned RTXI directory and on the qt4 branch, run:
+					</p>
+					{% highlight bash %}
+$ cd scripts
+$ ./install_dependencies.sh
+					{% endhighlight %}
+					<p>The script will run for a while, updating your current packages and installing ones needed later.
+					</p>
+				</div>
+            
+				<!-- 6. Install RT kernel -->
+				<div>&nbsp;</div>
+				<div class="col-xs-12">
+					<h4 class="lead media-heading">
+						{% increment customcount %}. Compile and install the real-time kernel. 
+					</h4>
+					<p>From the same directory, run:
+					</p>
+					{% highlight bash %}
+$ sudo ./install_rt_kernel.sh
+					{% endhighlight %}
+					<p>The script will download the sources for the Linux kernel and the Xenomai patch. Before the kernel starts compiling, you will be prompted to edit the kernel config flags. 
+					</p>
+				</div>
+
          </div></div>
       </div> <!-- end custom information -->
 
