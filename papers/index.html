@@ -6,15 +6,39 @@ extra_js: "
 
    <script>
    $( function () {
+		var qsRegex;
+  
       var $container = $('#oopsgrid').isotope({
          itemSelector: '.item',
          layoutMode: 'fitRows',
-         filter: '*'
+/*
+         filter: 'rate'
+*/
+			filter: function() {
+				return qsRegex ? $(this).text().match( qsRegex ) : true;
+			}
       });
+
+		var $quicksearch = $('#quicksearch').keyup( debounce( function() {
+			qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+			$container.isotope({
+				filter: function() {
+					return qsRegex ? $(this).text().match( qsRegex ) : true;
+				}
+			});
+			$('.btn-group').each( function( i, buttonGroup ) {
+				var $buttonGroup = $( buttonGroup );
+				$buttonGroup.find('.active').removeClass('active');
+				$buttonGroup.find('.all-papers').addClass('active');
+			});
+		}, 300 ) );
+
       $('#oopsfilters').on( 'click', 'button', function() {
          var filterValue = $(this).attr('data-filter');
+			$('#quicksearch').val('');
          $container.isotope({ filter: filterValue });
       });
+
       $('.btn-group').each( function( i, buttonGroup ) {
          var $buttonGroup = $( buttonGroup );
          $buttonGroup.on( 'click', 'button', function() {
@@ -23,6 +47,20 @@ extra_js: "
          });
       });
    });
+
+	function debounce( fn, threshold ) {
+		var timeout;
+		return function debounced() {
+			if ( timeout ) {
+				clearTimeout( timeout );
+			}
+			function delayed() {
+				fn();
+				timeout = null;
+			}
+			timeout = setTimeout( delayed, threshold || 100 );
+		}
+	}
    </script>
 "
 ---
@@ -35,11 +73,16 @@ extra_js: "
    <p>Below is our list of papers that cite RTXI. We're always on the lookout for new research, but we'd love to hear from you if you've got something in the works.</p>
 </div>
 
+<div>&nbsp;</div>
+<div class="container">
+	<p><input type="text" id="quicksearch" placeholder="Search all papers" style="width:100%" /></p>
+</div>
+
 {% capture chunkvar %}{% increment chunkcount %}{% endcapture %}
 {% assign flag="false" %}
 <div class="container"><div id="oopsfilters" class="btn-group btn-group-justified" role="group" data-toggle="buttons">
    <div class="btn-group" role="group">
-      <button type="button" class="btn btn-danger btn active" data-filter="*" role="button" data-toggle="button" aria-pressed="true">All</button>
+      <button type="button" class="btn btn-danger btn active all-papers" data-filter="*" role="button" data-toggle="button" aria-pressed="true">All</button>
    </div>
    {% for post in site.categories.papers %} 
       {% capture chunkflag %}{{ forloop.index | modulo:15 }}{% endcapture %}
@@ -69,7 +112,7 @@ extra_js: "
 
 {% capture chunkvar %}{% increment chunkbodycount %}{% endcapture %}
 {% assign flag = "false" %}
-<div class="container"><div class="row" id="oopsgrid">
+<div class="container"><div class="row isotope" id="oopsgrid">
    {% for post in site.categories.papers %}
       {% capture chunkflag %}{{ forloop.index | modulo:15 }}{% endcapture %}
       {% capture thisyear %}{{ post.date | date: '%y' }}{% endcapture %}
