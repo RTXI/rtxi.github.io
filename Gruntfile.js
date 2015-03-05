@@ -1,5 +1,8 @@
 module.exports = function(grunt) {
 
+	/*
+	 *  All the grunt plugins used for building the site. (They are all node modules.)
+	 */ 
    grunt.loadNpmTasks('grunt-shell');
    grunt.loadNpmTasks('grunt-contrib-watch');
    grunt.loadNpmTasks('grunt-contrib-copy');
@@ -39,6 +42,10 @@ module.exports = function(grunt) {
          octicons: 'bower_components/octicons/octicons'
       },
 
+		/*
+		 *  Compiles CSS using less. Uses the customized less files in assets folder and 
+		 *  searches the bower_components folder for @imports. 
+		 */
       less: {
          bootstrap: {
             options: {
@@ -112,6 +119,7 @@ module.exports = function(grunt) {
             command: [ 
                'bower update', 
                'bundle update',
+					'npm update',
                'echo "check if npm update is still broken"'
             ].join(' && ')
          }
@@ -182,7 +190,7 @@ module.exports = function(grunt) {
       },
 
       /*
-       *  
+       *  Minify HTML in the _site folder. Don't do this in the build directory, or I will hurt you. 
        */
       htmlmin: {
          dist: {
@@ -200,7 +208,7 @@ module.exports = function(grunt) {
       },
 
       /*
-       *  
+       *  Directories to watch. Wildcards probably would have sufficed.
        */
       watch: {
          content: {
@@ -235,7 +243,10 @@ module.exports = function(grunt) {
             }
          }
       },
-
+      
+		/*
+       *  Builds the server on your localhost domain and refreshes the site when the build changes. 
+       */
       connect: {
          server: {
             options: {
@@ -247,6 +258,9 @@ module.exports = function(grunt) {
       }
    });
 
+	/*
+	 *  Set of available grunt tasks: 'grunt', 'grunt init', 'grunt update', and 'grunt deploy'. 
+	 */
    grunt.registerTask('default', ['shell:build', 'connect', 'watch']);
    grunt.registerTask('init', ['shell:init','copy','less']);
    grunt.registerTask('update', ['shell:update','copy','less']);
