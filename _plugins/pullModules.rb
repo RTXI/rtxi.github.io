@@ -43,8 +43,8 @@ module Jekyll
          repoprefix = "https://github.com/rtxi/"
          build_dir = "modules"
 
-#         repos = getRepoList(apiurl)
-         repos = ["neuron", "membrane-test", "signal-generator"]
+         repos = getRepoList(apiurl)
+#         repos = ["neuron", "membrane-test", "signal-generator"]
          excludelist = getExcludeList
          repo_urls = makeURLs(repos, rawprefix, repoprefix, excludelist)
 
