@@ -7,6 +7,20 @@
     <atom:link href="http://rtxi.org/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>RTXI 2015 Deadline Approaching</title>
+        <description>&lt;p&gt;The deadline for registering for the RTXI 2015 conference is fast approacing. Register now to book your position here. Noteworthy dates:  &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Registration:&lt;/strong&gt; April 3&lt;br /&gt;
+&lt;strong&gt;Hotel:&lt;/strong&gt; April 15  &lt;/p&gt;
+
+&lt;p&gt;The conference is May 7-8 at the Georgia Academy of Medicine. Registration is $75 for students and $125 for everyone else. Fee waivers are liberally available upon request.  &lt;/p&gt;
+</description>
+        <pubDate>Fri, 27 Mar 2015 00:00:00 -0400</pubDate>
+        <link>http://rtxi.org//news/2015/03/27/rtxi-2015-registration-deadline-approaching/</link>
+        <guid isPermaLink="true">http://rtxi.org//news/2015/03/27/rtxi-2015-registration-deadline-approaching/</guid>
+      </item>
+    
+      <item>
         <title>Linux Freezes after Reboot</title>
         <description>&lt;p&gt;If you reboot the computer and the computer displays a laggy log-in screen, it’s probably because kexec-tools are handling reboots. The utility normally is used to perform ‘warm reboots,’ which is when the computer reloads a kernel without fully shutting the system down. The lag is probably because kexec-tools is rebooting to a non-RT kernel. The easiest thing to do here is to disable kexec-tools from handling reboots. To do so:  &lt;/p&gt;
 
@@ -610,15 +624,6 @@ Some influential environment variables:
         <pubDate>Wed, 21 May 2014 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//papers/2014/05/21/voltage-and-calcium-dynamics-both-underlie-cellular-alternans-in-cardiac-myocytes/</link>
         <guid isPermaLink="true">http://rtxi.org//papers/2014/05/21/voltage-and-calcium-dynamics-both-underlie-cellular-alternans-in-cardiac-myocytes/</guid>
-      </item>
-    
-      <item>
-        <title>Predicting the Responses of Repetitively Firing Neurons to Current Noise</title>
-        <description>&lt;p&gt;We used phase resetting methods to predict firing patterns of rat subthalamic nucleus (STN) neurons when their rhythmic firing was densely perturbed by noise. We applied sequences of contiguous brief (0.5–2 ms) current pulses with amplitudes drawn from a Gaussian distribution (10–100 pA standard deviation) to autonomously firing STN neurons in slices. Current noise sequences increased the variability of spike times with little or no effect on the average firing rate. We measured the infinitesimal phase resetting curve (PRC) for each neuron using a noise-based method. A phase model consisting of only a firing rate and PRC was very accurate at predicting spike timing, accounting for more than 80% of spike time variance and reliably reproducing the spike-to-spike pattern of irregular firing. An approximation for the evolution of phase was used to predict the effect of firing rate and noise parameters on spike timing variability. It quantitatively predicted changes in variability of interspike intervals with variation in noise amplitude, pulse duration and firing rate over the normal range of STN spontaneous rates. When constant current was used to drive the cells to higher rates, the PRC was altered in size and shape and accurate predictions of the effects of noise relied on incorporating these changes into the prediction. Application of rate-neutral changes in conductance showed that changes in PRC shape arise from conductance changes known to accompany rate increases in STN neurons, rather than the rate increases themselves. Our results show that firing patterns of densely perturbed oscillators cannot readily be distinguished from those of neurons randomly excited to fire from the rest state. The spike timing of repetitively firing neurons may be quantitatively predicted from the input and their PRCs, even when they are so densely perturbed that they no longer fire rhythmically.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 08 May 2014 00:00:00 -0400</pubDate>
-        <link>http://rtxi.org//papers/2014/05/08/predicting-the-responses-of-repetitively-firing-neurons-to-current-noise/</link>
-        <guid isPermaLink="true">http://rtxi.org//papers/2014/05/08/predicting-the-responses-of-repetitively-firing-neurons-to-current-noise/</guid>
       </item>
     
   </channel>
