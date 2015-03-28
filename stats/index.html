@@ -1,9 +1,46 @@
 ---
 title: Stats
 layout: default
+extra_css: "
+<style>
+.modal .modal-dialog { width: 90%; }
+</style>
+"
 ---
 
 <div class="container">
 	<h2 class="page-header">Stats and Benchmarks</h2>
-	<p>Coming soon...</p>
+	<div class="row">
+		<div class="col-sm-8">
+			<p class="lead">Below are real-time benchmarks from our own machines. You can view the instructions for making here or on the <a href="/install">Install</a> page.</p>
+		</div>
+
+		<div class="col-sm-4">
+			<button type="button" data-toggle="modal" data-target="#benchmarking" class="btn btn-lg btn-danger center-block">
+				View Benchmarking<br> Instructions
+			</button>
+		</div>
+	</div>
+
+	<div>&nbsp;</div>
+
+	<div class="modal fade" id="benchmarking" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="modaltitle">
+		<div class="modal-dialog"><div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h2 class="modal-title">Benchmarking Instructions</h2>
+			</div>
+			<div class="modal-body">
+				{% include benchmarking.html %}
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+			</div>
+		</div></div>
+	</div>
+
+	<p class="lead">Compare your performance with ours. We also encourage you to send us your benchmarks. That way, we can build a comprehensive list of what performance can be expected from what hardware.</p>
+
 </div>
