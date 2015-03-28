@@ -4,8 +4,8 @@
 	<h3 class="lead media-heading">Xenomai latency test</h3>
 	<p>Go to the base of the RTXI directory you cloned from GitHub and run:</p>
 	{% highlight bash %}
-d scripts/dev/
-/test_rt_kernel.sh
+$ cd scripts/dev/
+$ /test_rt_kernel.sh
 	{% endhighlight %}
 	<p>This script will test kernel latencies at rate of 10 kHz while under stress. The test lasts 30 minutes. If at any point you need to stop the test, you can kill the process by entering <code>CTRL+c</code> in the terminal running the stress test. Then, run <code>pkill stress</code>. If you forget to use <code>pkill</code>, the system will stop measuring latencies, but it will still be under stress. Depending on your system, you may experience lag in your desktop during the test. keep in mind that the stress test is designed to assess real-time performance under worst-case conditions. If your system performs well under heavy load, you can be reassured that it will perform well during your experiments.
 	</p>
