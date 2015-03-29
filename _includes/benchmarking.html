@@ -7,8 +7,14 @@
 $ cd scripts/dev/
 $ ./test_rt_kernel.sh
 	{% endhighlight %}
-	<p>This script will test kernel latencies at rate of 10 kHz while under stress. The test lasts 30 minutes. If at any point you need to stop the test, you can kill the process by entering <code>CTRL+c</code> in the terminal running the stress test. Then, run <code>pkill stress</code>. If you forget to use <code>pkill</code>, the system will stop measuring latencies, but it will still be under stress. Depending on your system, you may experience lag in your desktop during the test. keep in mind that the stress test is designed to assess real-time performance under worst-case conditions. If your system performs well under heavy load, you can be reassured that it will perform well during your experiments.
+	<p>This script will test kernel latencies at rate of 10 kHz while under stress. The test lasts 30 minutes. If at any point you need to stop the test, you can kill the process by entering <code>CTRL+c</code> in the terminal running the stress test. Then, run <code>pkill stress</code>. If you forget to use <code>pkill</code>, the system will stop measuring latencies, but it will still be under stress. Depending on your system, you may experience lag in your desktop during the test. Keep in mind that the stress test is designed to assess real-time performance under worst-case conditions. If your system performs well under heavy load, you can be reassured that it will perform well during your experiments.
 	</p>
+	<p>Once completed, the script will generate a histogram of latencies. You can view it from the command line with the image viewer, eog (<u>E</u>ye <u>o</u>f <u>G</u>NOME). Run:
+	</p>
+	{% highlight bash %}
+$ eog test_rt_plot.svg
+	{% endhighlight %}
+
 	<p>For systems with discrete graphics cards and somewhat recent processors, latencies should consistently remain on average below 2-3 μs. Worst case latencies may get as high as 20-30 μs, but keep in mind that these spikes occur often once or twice over the 30 minute duration of the stress test, which at 10 kHz constitutes 18 million cycles. A histogram of latencies will be generated at the end of the test, so you see can how often high latencies occur. Compare your performance to what is available on our <a href="/stats">stats and benchmarks</a> page and let us know if your performance is problematic. 
 	</p>
 
