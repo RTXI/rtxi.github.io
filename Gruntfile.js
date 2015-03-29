@@ -27,10 +27,10 @@ module.exports = function(grunt) {
             less: 'assets/less'
          },
          bootstrap: {
-            css: 'bower_components/bootstrap/dist/css',
-            fonts: 'bower_components/bootstrap/dist/fonts',
-            js: 'bower_components/bootstrap/dist/js',
-            less: 'bower_components/bootstrap/less'
+            css: 'bower_components/bootstra.386/v3.3.2/dist/css',
+            fonts: 'bower_components/bootstra.386/v3.3.2/dist/fonts',
+            js: 'bower_components/bootstra.386/v3.3.2/dist/js'//,
+            //less: 'bower_components/bootstra.386i/less'
          },
          jquery: 'bower_components/jquery/dist',
          isotope: 'bower_components/isotope/dist',
@@ -47,6 +47,7 @@ module.exports = function(grunt) {
 		 *  searches the bower_components folder for @imports. 
 		 */
       less: {
+/*
          bootstrap: {
             options: {
                compress: true,
@@ -56,6 +57,7 @@ module.exports = function(grunt) {
                '<%= paths.assets.css %>/bootstrap.min.css' : '<%= paths.assets.less %>/bootstrap-base.less'
             }
          },
+*/
          font_awesome: {
             options: {
                compress: true,
@@ -132,9 +134,15 @@ module.exports = function(grunt) {
          main: {
             files: [
                {
-                  cwd: '<%= paths.bootstrap.less %>/',
-                  src: ['bootstrap.less', 'variables.less'], 
-                  dest: '<%= paths.assets.less %>/.bootstrap/',
+                  cwd: '<%= paths.bootstrap.css %>/',
+                  src: ['bootstrap-theme.css', 'bootstrap.css'], 
+                  dest: '<%= paths.assets.css %>/',
+                  expand: true
+               },
+               {
+                  cwd: '<%= paths.bootstrap.css %>/fonts/',
+                  src: '*', 
+                  dest: '<%= paths.assets.css %>/fonts/',
                   expand: true
                },
                {
