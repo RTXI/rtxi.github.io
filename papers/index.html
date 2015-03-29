@@ -10,7 +10,8 @@ extra_js: "
   
       var $container = $('#oopsgrid').isotope({
          itemSelector: '.item',
-         layoutMode: 'fitRows',
+         layoutMode: 'masonry',
+			transitionDuration: '0',
 /*
          filter: 'rate'
 */
@@ -31,7 +32,7 @@ extra_js: "
 				$buttonGroup.find('.active').removeClass('active');
 				$buttonGroup.find('.all-papers').addClass('active');
 			});
-		}, 300 ) );
+		}, 50 ) );
 
       $('#oopsfilters').on( 'click', 'button', function() {
          var filterValue = $(this).attr('data-filter');
@@ -128,7 +129,7 @@ extra_js: "
       {% endif %}
       {% capture lastyear %}{{ thisyear }}{% endcapture %}
    
-      <div class="item col-sm-6 col-md-4 chunk{{chunkvar}}" data-category="chunk{{chunkvar}}">
+      <div class="item col-sm-6 col-md-3 chunk{{chunkvar}}" data-category="chunk{{chunkvar}}">
          <a href="{{ post.url }}">
             <div class="panel panel-primary">
                <div class="panel-heading"><h4 class="panel-title">{{ post.title }}</h4></div>
