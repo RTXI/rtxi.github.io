@@ -24,6 +24,7 @@
     "bootstrap": "~3.3.1",
     "isotope": "~2.1.0",
     "font-awesome": "~4.2.0",
-    "octicons": "~2.1.2"
+    "octicons": "~2.1.2",
+    "bootstra.386": "*"
   }
 }
