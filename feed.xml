@@ -7,6 +7,72 @@
     <atom:link href="http://rtxi.org/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Setting a Default Boot Kernel</title>
+        <description>&lt;p&gt;It can get annoying choosing the real-time kernel from the submenu every time you boot your computer, especially if you miss the timing and it boots generic Linux.  &lt;/p&gt;
+
+&lt;p&gt;By default, the GRUB bootloader sorts your installed kernels in descending version based on the kernel version number, and boots from the first one. You can save yourself some frustration by changing GRUB to boot from the real-time kernel by default.  &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This is only for convenience. It has no effect on real-time performance or the functioning of RTXI.  &lt;/p&gt;
+
+&lt;p&gt;While it is possible to specify a &lt;em&gt;specific&lt;/em&gt; kernel, it is much easier to tell GRUB to use the kernel used last time. To make GRUB do this, open &lt;code&gt;/etc/default/grub&lt;/code&gt; as root and make the following edits:  &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Change &lt;code&gt;GRUB_DEFAULT=0&lt;/code&gt; to &lt;code&gt;GRUB_DEFAULT=saved&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Add a new line that says &lt;code&gt;GRUB_SAVEDEFAULT=true&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Save your edits (again, you need to be root), and update GRUB by running: &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo update-grub&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;From now on, GRUB will boot the last-used kernel by default. If you want to choose a different one, select it manually.  &lt;/p&gt;
+</description>
+        <pubDate>Wed, 01 Apr 2015 00:00:00 -0400</pubDate>
+        <link>http://rtxi.org//docs/tutorials/2015/04/01/setting-a-default-boot-kernel/</link>
+        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2015/04/01/setting-a-default-boot-kernel/</guid>
+      </item>
+    
+      <item>
+        <title>Why won&#39;t RTXI open?</title>
+        <description>&lt;p&gt;There are several reasons for RTXI to not open.&lt;/p&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;&lt;strong&gt;RTXI is already running.&lt;/strong&gt;
+		&lt;p&gt;If you run &lt;code&gt;rtxi&lt;/code&gt; in the terminal and get this output, RTXI is already running:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo rtxi
+../src/rt_os-xenomai.cpp:123:RT::OS::createTask : failed to create task
+../src/rt.cpp:157:RT::System::System : failed to create realtime thread&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+		&lt;p&gt;The error happens because only one instance of RTXI can be running on the system. Check who is running it by entering:&lt;/p&gt; 
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps ax -o euser,comm &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; grep rtxi&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+		&lt;p&gt;If the command shows someone else&#39;s username, that means they have RTXI open. Bug them about closing it or close it yourself by running &lt;code&gt;$ sudo pkill rtxi&lt;/code&gt;. Note that workspaces, open files, etc. will &lt;strong&gt;not&lt;/strong&gt; be saved when force-closing RTXI. 
+		&lt;/p&gt;
+		&lt;p&gt;If it&#39;s your username, RTXI may not have exited cleanly from sometime earlier. You can run &lt;code&gt;$ sudo pkill rtxi&lt;/code&gt; for this case, too.
+		&lt;/p&gt;
+		&lt;p&gt;Now, you should be able to run RTXI.&lt;/p&gt;
+	&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;You aren&#39;t using a real-time kernel.&lt;/strong&gt;&lt;/li&gt;
+		&lt;p&gt;Check the kernel you are using. Run this in the terminal:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;uname -r&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+		&lt;p&gt;You will get one line of output that tells you what kernel you are using. If it has the word &quot;xenomai&quot; in it, then it&#39;s a real-time kernel. If not, then it isn&#39;t.
+		&lt;/p&gt; 
+		&lt;p&gt;If it&#39;s not a real-time kernel, you&#39;ll have to reboot your computer and pick a real-time kernel in the GRUB boot menu that pops up. If you don&#39;t see it, enter the &quot;Advanced options...&quot; submenu and look there.
+		&lt;/p&gt;
+		&lt;p&gt;Also, see &lt;a href=&quot;/docs/tutorials/2015/04/01/setting-a-default-boot-kernel/&quot;&gt;this page about setting a default kernel.
+
+&lt;/a&gt;&lt;/p&gt;&lt;/ol&gt;
+</description>
+        <pubDate>Wed, 01 Apr 2015 00:00:00 -0400</pubDate>
+        <link>http://rtxi.org//docs/faqs/2015/04/01/rtxi-doesn't-open/</link>
+        <guid isPermaLink="true">http://rtxi.org//docs/faqs/2015/04/01/rtxi-doesn't-open/</guid>
+      </item>
+    
+      <item>
         <title>RTXI 2015 Deadline Approaching</title>
         <description>&lt;p&gt;The deadline for registering for the RTXI 2015 conference is fast approacing. Register now to book your position here. Noteworthy dates:  &lt;/p&gt;
 
@@ -605,25 +671,6 @@ Some influential environment variables:
         <pubDate>Tue, 01 Jul 2014 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//papers/2014/07/01/functional-identification-of-an-antennal-lobe-dm4-projection-neuron-of-the-fruit-fly/</link>
         <guid isPermaLink="true">http://rtxi.org//papers/2014/07/01/functional-identification-of-an-antennal-lobe-dm4-projection-neuron-of-the-fruit-fly/</guid>
-      </item>
-    
-      <item>
-        <title>Dynamic Clamp in Cardiac and Neuronal Systems Using RTXI</title>
-        <description>&lt;p&gt;The injection of computer-simulated conductances through the dynamic clamp technique has allowed researchers to probe the intercellular and intracellular dynamics of cardiac and neuronal systems with great precision. By coupling computational models to biological systems, dynamic clamp has become a proven tool in electrophysiology with many applications, such as generating hybrid networks in neurons or simulating channelopathies in cardiomyocytes. While its applications are broad, the approach is straightforward: synthesizing traditional patch clamp, computational modeling, and closed-loop feedback control to simulate a cellular conductance. Here, we present two example applications: artificial blocking of the inward rectifier potassium current in a cardiomyocyte and coupling of a biological neuron to a virtual neuron through a virtual synapse. The design and implementation of the necessary software to administer these dynamic clamp experiments can be difficult. In this chapter, we provide an overview of designing and implementing a dynamic clamp experiment using the Real-Time eXperiment Interface (RTXI), an open-source software system tailored for real-time biological experiments. We present two ways to achieve this using RTXI’s modular format, through the creation of a custom user-made module and through existing modules found in RTXI’s online library.&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 20 Jun 2014 00:00:00 -0400</pubDate>
-        <link>http://rtxi.org//papers/2014/06/20/dynamic-clamp-in-cardiac-and-neuronal-systems-using-rtxi/</link>
-        <guid isPermaLink="true">http://rtxi.org//papers/2014/06/20/dynamic-clamp-in-cardiac-and-neuronal-systems-using-rtxi/</guid>
-      </item>
-    
-      <item>
-        <title>Voltage and Calcium Dynamics Both Underlie Cellular Alternans in Cardiac Myocytes</title>
-        <description>&lt;p&gt;Cardiac alternans, a putative trigger event for cardiac reentry, is a beat-to-beat alternation in membrane potential and calcium transient. Alternans was originally attributed to instabilities in transmembrane ion channel dynamics (i.e., the voltage mechanism). As of this writing, the predominant view is that instabilities in subcellular calcium handling are the main underlying mechanism. That being said, because the voltage and calcium systems are bidirectionally coupled, theoretical studies have suggested that both mechanisms can contribute. To date, to our knowledge, no experimental evidence of such a dual role within the same cell has been reported. Here, a combined electrophysiological and calcium imaging approach was developed and used to illuminate the contributions of voltage and calcium dynamics to alternans. An experimentally feasible protocol, quantification of subcellular calcium alternans and restitution slope during cycle-length ramping alternans control, was designed and validated. This approach allows simultaneous illumination of the contributions of voltage and calcium-driven instability to total cellular instability as a function of cycle-length. Application of this protocol in in vitro guinea-pig left-ventricular myocytes demonstrated that both voltage- and calcium-driven instabilities underlie alternans, and that the relative contributions of the two systems change as a function of pacing rate.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 21 May 2014 00:00:00 -0400</pubDate>
-        <link>http://rtxi.org//papers/2014/05/21/voltage-and-calcium-dynamics-both-underlie-cellular-alternans-in-cardiac-myocytes/</link>
-        <guid isPermaLink="true">http://rtxi.org//papers/2014/05/21/voltage-and-calcium-dynamics-both-underlie-cellular-alternans-in-cardiac-myocytes/</guid>
       </item>
     
   </channel>
