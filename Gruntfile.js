@@ -228,6 +228,7 @@ module.exports = function(grunt) {
                '_config.yml',
                'index.html',
 					'404.html',
+					'README.md',
                'favicon.ico'
             ],
             tasks: ['shell:build'],
