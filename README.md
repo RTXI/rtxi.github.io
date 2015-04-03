@@ -8,21 +8,38 @@ The sources of the RTXI website.
 ####Downloading and Building the Site
 If you want to build and edit the site on your own, you'll need to install some dependencies:  
 ````
-$ sudo apt-get install nodejs ruby imagemagick libmagickwand-dev
+$ sudo apt-get install nodejs ruby imagemagick libmagickwand-dev npm curl
 ````
 
-You'll need to install the bundler gem (you may need to be root):  
+Ruby is used for all the gems you need to use Jekyll to build the site. You can use the default gem, but I'd prefer you use RVM so that we an keep the ruby version consistent. It'll also save you a lot of pain when if have problems with gem compatibility.  
+
+I'm currently using v2.2.0. To install RVM (from their website): 
+````
+$ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+$ \curl -sSL https://get.rvm.io | bash -s stable --ruby
+$ rvm install 2.2.0
+$ rvm use 2.2.0
+````
+
+If you haven't already, set preferences for your terminal emulator so that it is a login shell. Otherwise, the RVM commands above won't work properly.  
+
+Now, you'll need to install the bundler gem:  
 ````
 $ gem install bundler
 ````
 
-And also bower and grunt-cli (again, may need to do as root):  
+Now, the node packages. On Ubuntu, for some reason, the default binary has an unrecognized name. npm looks for a binary called `node`, but the installed binary is called `nodejs`. Fix this by running:  
 ````
-$ npm -g install bower grunt-cli
+$ sudo ln -s /usr/bin/nodejs /usr/bin/node
 ````
 
+Now, install the node packages (bower and grunt-cli):  
+````
+$ sudo npm -g install bower grunt-cli
+````
+  
 
-With dependencies installed, clone the website and switch to the 'build' branch:  
+Now, you need to install the website's dependencies. This is done in the website directory. Clone the website and switch to the 'build' branch:  
 ````
 $ git clone https://github.com/rtxi/rtxi.github.io website
 $ cd website
@@ -33,7 +50,6 @@ Initialize the site with the files you'll need, update them, and then build the 
 ````
 $ npm install
 $ grunt init
-$ grunt update
 $ grunt
 ````
 
@@ -119,7 +135,7 @@ The third: FAQs
 Same as the first two. Only, DO NOT use the title in the markdown file. Just leave the title in the YAML front matter, and keep it in the form of a question. The FAQ posts aren't supposed to be accessible. Their content is all put on the docs page so that people click on a question and see the answer. The numbering is based on the date the faq post was made. You don't need to touch the numbering. It's done automatically.  
 
 
-
+  
 
 #####Tips: 
 When editing, disable `pullModules.rb`. (Again, I really am not good at ruby. It's so weird.)  You can do things like rename the file, move it, or something. What I do is edit the file and comment out the line:
