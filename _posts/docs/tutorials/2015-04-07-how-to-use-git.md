@@ -4,15 +4,16 @@ layout: docpost
 categories: docs tutorials
 ---
 
-<a href="http://www.phdcomics.com/comics/archive/phd101212s.gif">
-	<img src="http://www.phdcomics.com/comics/archive/phd101212s.gif" class="img-responsive" style="max-height:300px; float:right; margin:10px;">
-</a>
-
 Below are instructions for installing and using Git. Git is a version control tool that enables users to track revisions and changes in files and coordinate with collaborators. It is often used for software development. 
 
 Unlike many applications, such as Microsoft Word, editing and saving files overwrites data. This makes it difficult to track changes without creating different file names, a process that can get messy very quickly. 
 
 Git takes snapshots of files a user wants to track and maintains a history of changes that have occurred. This makes backtracking and checking revisions a simple process, which is especially helpful for large projects with many developers. It also functions as a collaborative tool by enabling users to make local copies of a common project and modify them as needed. Users track their own changes and those of others, and Git incorporates tools that enable branching and merging of whatever changes people make.  
+
+<a href="http://www.phdcomics.com/comics/archive/phd101212s.gif" class="thumbnail">
+	<img src="http://www.phdcomics.com/comics/archive/phd101212s.gif" class="img-responsive" style="max-height:400px; float:right; margin:10px;">
+</a>
+
 
 **Note:** Installing git is not the same as using GitHub. GitHub uses git, but it is a remote server that users can use as a central location for storing data. See the instructions for [opening a GitHub account](https://github.com/join).  
 
