@@ -219,7 +219,7 @@ module.exports = function(grunt) {
                '_plugins/*',
                'conference/**',
                'papers/**',
-               'install/*',
+               'install/**',
                'contact/*',
                'docs/*',
 					'stats/*',
