@@ -24,7 +24,7 @@ Open the terminal. You can do this from within the Applications menu in GNOME or
 $ sudo apt-get install git
 {% endhighlight %}
 
-**Note:** When telling people to enter icommands, it is common practice to use `$` at the start of each line to signify that it is to be entered in the terminal. Also, `#` is used to signify root permissions rather than having people enter `sudo`. In either case, you DO NOT have to enter `$` or `#` in the terminal. For example, in the above command. just enter the text "sudo apt-get install git" and hit `ENTER`.  
+**Note:** When telling people to enter commands, it is common practice to use `$` at the start of each line to signify that it is to be entered in the terminal. Also, `#` is used to signify root permissions rather than having people enter `sudo`. In either case, you DO NOT have to enter `$` or `#` in the terminal. For example, in the above command. just enter the text `sudo apt-get install git` and hit `ENTER`.  
 
 Once Git is installed, configure it with your username and/or email address. This is preferred in development scenarios so that everyone can identify what modifications were made by which user. GitHub also maps Git user email addresses to GitHub accounts. Note that you do not have to give your real name. Any name will do, as all that is needed is a way to identify who has done what. Technically, Git does not check email address validity, either, but for collaborate work, it is best to provide some address so that people can ask each other questions about changes. 
 {% highlight bash %}
@@ -49,6 +49,7 @@ $ mkdir plugins
 $ cd plugins
 $ mkdir practice
 $ cd practice
+$ cd ..
 {% endhighlight %}
 
 Now, from within the plugins directory, run:
@@ -56,12 +57,23 @@ Now, from within the plugins directory, run:
 $ git init
 {% endhighlight %}
 
-This command specifies that the directory is to be treated as a Git repository. By default, Git does not track *any* files. User must enable it in a directory of their choosing. Once executed, this function creates a hidden directory called ".git/" that stores information regarding the repository contained in the directory. 
+<!--
+<a href="/assets/img/tutorials/git-tutorial-1.png">
+	<img src="/assets/img/tutorials/git-tutorial-1.png" class="img-responsive">
+</a>
+-->
 
-**Note:** Git exists as a version control system. It is not advisable to use it for backing up general-use files, such as videos and object files. The entire process gets encumbered quickly. 
+This command specifies that the directory is to be treated as a Git repository. By default, Git does not track *any* files. User must enable it in a directory of their choosing. Once executed, this function creates a hidden directory called `.git/` that stores information regarding the repository contained in the directory. 
+
+<!--
+<a href="/assets/img/tutorials/git-tutorial-2.png">
+	<img src="/assets/img/tutorials/git-tutorial-2.png" class="img-responsive">
+</a>
+-->
+
+**Note:** Git exists as a version control system. It is not advisable to use it for backing up big files, such as videos, binaries, etc. The entire process gets encumbered quickly. 
 
 ####<a name="add"></a>Adding Files to the Staging Area 
-Back to [top](#top)  
 
 The directory is currently empty, so create some files:
 {% highlight bash %}
@@ -75,7 +87,7 @@ These files have been added to the repository, or in Git terminology, the **work
 By default, Git does not track files that are added to the directory. Users have to specify that they be tracked. This is done by the `add` command. Git does, though tell what files are and are not being tracked. Simply use `git status`
 
 {% highlight bash %}
-$ git add file1.txt file2.txt file2.txt
+$ git add file1.txt file2.txt file3.txt
 {% endhighlight %}
 
 `git add` adds the files to what is called the **staging area**. Basically, this command generates a snapshot of the files and stores them without adding them to the permanent version history. In other words, Git is aware of the files, but it has not added them to the permanent version history. Basically, git has a 2-stage revision process. The first is to send modified or new files to the staging area, and the second is to commit them to the permanent version history. This has its advantages in that it enables users to add files to a repository as a group that together functions properly. Reverting from one set of changes to another is simply a process of switching to another snapshot in the permanent history. This process is explained later. 
@@ -85,6 +97,12 @@ To show what files are in the stating area, use:
 $ git status
 {% endhighlight %}
 
+<!--
+<a href="/assets/img/tutorials/git-tutorial-3.png">
+	<img src="/assets/img/tutorials/git-tutorial-3.png" class="img-responsive">
+</a>
+-->
+
 If needed, it is possible to unstage files that were added with `git add`. Git gives the user the command 
 `git rm --cached <filename>`. Try it on one of the files and see the changes made to the staging area. 
 {% highlight bash %}
@@ -92,30 +110,41 @@ $ git rm --cached file1.txt
 $ git status
 {% endhighlight %}
 
-The following assumes that all three files are added to the staging area. 
+<!--
+<a href="/assets/img/tutorials/git-tutorial-4.png">
+	<img src="/assets/img/tutorials/git-tutorial-4.png" class="img-responsive">
+</a>
+-->
 
-####<a name="commit"></a>Commit Files 
-Back to [top](#top)  
+The following assumes that all three files are added to the staging area. You can add all files to the staging area by running `git add -A`. 
+
+####<a name="commit"></a>Commiting Files 
 
 With the files added to the staging area, the next step is to add them to the permanent version history. In Git, this process is called a **commit**. Use the `commit` command. 
 {% highlight bash %}
 $ git commit file1.txt file2.txt file3.txt -m "First commit"
 {% endhighlight %}
 
-The `commit` command adds files in the staging area to the repository. Each commit requires a message that is intended to describe the changes that took place. This can be done in the command line by using `-m` followed by the message in quotation marks. If this is omitted, Git defaults to a text editor where users can type the message. The `commit` command is completed when the user saves the message and exits the editor. 
+The `commit` command adds files in the staging area to the repository. Each commit requires a message that is intended to describe the changes that took place. This can be done in the command line by using `-m` followed by the message in quotation marks. If this is omitted, Git defaults to a text editor where users can type the message. The `commit` command is completed when the user saves the message and exits the editor.  
 
-Because all the files in the staging area were committed in the last command, there are all removed from the staging area. You can check with `git status`.
+If you opt to not specify the filenames for the commit, git will commit all the files in the staging area.  
+
+Because all the files in the staging area were committed in the last command, there are all removed from the staging area. You can check with `git status`.  
 
 The version history is in essence a list of commits. To view the complete history of the project, use:
 {% highlight bash %}
 $ git log
 {% endhighlight %}
 
-This outputs a list of all the commits, when they were made, the author, the commit messages, and other information. The string at the top of seemingly random letters is an encrypted hash of the changes that were made. A hash is a string that encodes data and is produced by a hash function. Ideally, a hash function is implemented such that a small change in the data it encodes results in a large, unpredictable change in the hash. This enables users to check the file's integrity and makes it exceedingly difficult to alter the commit history. The latter is especially important. 
+This outputs a list of all the commits, when they were made, the author, the commit messages, and other information. The string at the top of seemingly random letters is an encrypted hash of the changes that were made. A hash is a string that encodes data and is produced by a hash function. Ideally, a hash function is implemented such that a small change in the data it encodes results in a large, unpredictable change in the hash. This enables users to check the file's integrity and makes it exceedingly difficult to alter the commit history.  
 
+<!--
+<a href="/assets/img/tutorials/git-tutorial-5.png">
+	<img src="/assets/img/tutorials/git-tutorial-5.png" class="img-responsive">
+</a>
+-->
 
 ####<a name="undo"></a>(Optional) Undo a Commit 
-Back to [top](#top)  
 
 If you ever commit something and wish to revert your changes, use the `reset` command. There are several options. The first is:
 {% highlight bash %}
@@ -146,30 +175,34 @@ The only change is that the most recent commit is reversed. The staging area is 
 
 The following assumes that the commit has not been reversed. All three files are committed in the repository. 
 
-####<a name="branch"></a>Branch Repositories 
-Back to [top](#top)  
+####<a name="branch"></a>Branching Repositories 
 
-Now that a commit has been made, branch off and create a new working tree. Currently, HEAD points to the last commit of the original branch, called "master". This is the default name. It is generally best practice to branch off of master to make changes and then merge changes back to master once they have been thoroughly audited. 
+Now that a commit has been made, branch off and create a new working tree. Currently, HEAD points to the last commit of the original branch, called `master`. This is the default name for a new git repository. It is generally best practice to branch off of master to make changes and then merge changes back to master once they have been thoroughly audited. That way, whatever code is in the master branch is guaranteed to work.  
 
-Create a branch called "testing":
+Create a branch called `testing`:
 {% highlight bash %}
 $ git branch testing
 {% endhighlight %}
 
-This creates a new branch called "testing". By default, it copies the state pointed to by HEAD, but it is possible to branch off of previous commits. To list the available branches, use `git branch`. To switch to the newly created branch, use:  
+This creates a new branch called `testing`. By default, it copies the state pointed to by HEAD, but it is possible to branch off of previous commits. To list the available branches, use `git branch`. To switch to the newly created branch, use:  
 
 {% highlight bash %}
 $ git checkout testing
 {% endhighlight %}
 
-Now, HEAD is pointing to "testing" instead of "master". Any commits made will be applied to "testing" and not "master" as long as "testing" is checked out. The converse is true should "master" be checked out instead. 
+Now, HEAD is pointing to `testing` instead of `master`. Any commits made will be applied to `testing` as long as it is checked out. 
 
-####<a name="commitbranch"></a>Commit Branches 
-Back to [top](#top)  
+<!--
+<a href="/assets/img/tutorials/git-tutorial-6.png">
+	<img src="/assets/img/tutorials/git-tutorial-6.png" class="img-responsive">
+</a>
+-->
+
+####<a name="commitbranch"></a>Commiting Branches 
 
 Change the current files. This command will add text to the files saying, "This is <filename>". You can use `more <filename>` or `cat <filename>` to output the contents of a file into the terminal. 
 {% highlight bash %}
-$ ls -1 | xargs -I {} bash -c "echo 'This is '{} > {}"
+$ find . -maxdepth 1 -type f | xargs -I {} bash -c "echo 'This is '{} > {}"
 {% endhighlight %}
 
 Now that the files have been altered, run `git status` to see what Git has noticed. Stage the changes and commit them:
@@ -180,15 +213,19 @@ $ git commit . -m "First Branch Commit"
 
 The `.` operator causes commands to affect all files in a directory. Using it is easier than typing individual file names. 
 
-####<a name="compare"></a>Compare Branches 
-Back to [top](#top)  
+<!--
+<a href="/assets/img/tutorials/git-tutorial-7.png">
+	<img src="/assets/img/tutorials/git-tutorial-7.png" class="img-responsive">
+</a>
+-->
 
-Now that "master" and "testing" differ with one another, switch between them to see the differences.
+####<a name="compare"></a>Comparing Branches 
+
+Now that `master` and `testing` differ with one another, switch between them to see the differences.
 {% highlight bash %}
+$ ls | xargs cat
 $ git checkout master
-$ ls | xargs more
-$ git checkout testing
-$ ls | xargs more
+$ ls | xargs cat
 {% endhighlight %}
 
 Individually looking through files in different branches can be cumbersome. To output the differences directly, use the `diff` command. 
@@ -199,48 +236,53 @@ $ git diff master testing
 
 The output should look like:
 
-####<a name="merge"></a>Merge Branches 
-Back to [top](#top)  
+<!--
+<a href="/assets/img/tutorials/git-tutorial-8.png">
+	<img src="/assets/img/tutorials/git-tutorial-8.png" class="img-responsive">
+</a>
+-->
 
-As the changes in "testing" are fully functional, merge them back to "master". Check out the "master" branch and use the `merge` command.
+####<a name="merge"></a>Merging Branches 
+
+Now, merge the changes in `testing` to `master`. Check out the `master` branch and use the `merge` command.
 {% highlight bash %}
 $ git checkout master
 $ git merge testing
 {% endhighlight %}
 
-You will see an output that summarizes the changes. The `merge` command creates a new commit that follows the previous version of "master". 
+You will see an output that summarizes the changes. The `merge` command creates a new commit that follows the previous version of `master`. 
 
-If the merge is successful, there is no need for the "testing" branch. Delete it.
+<!--
+<a href="/assets/img/tutorials/git-tutorial-9.png">
+	<img src="/assets/img/tutorials/git-tutorial-9.png" class="img-responsive">
+</a>
+-->
+
+If the merge is successful, there is no need for the `testing` branch. Delete it. Make sure that the `testing` branch isn't currently checked out.  
 {% highlight bash %}
 $ git branch -d testing
 {% endhighlight %}
 
 ###<a name="rrepos"></a>Using Remote Repositories 
-Back to [top](#top)  
 
-Remote repositories refer to storage locations outside a user's local repository. The remote in this example is GitHub, so it is necessary to have a GitHub account. Also, GitHub has no command line interface, so it is not possible to create repositories on a local machine and then sync them to GitHub. The process must be done in reverse. 
+Remote repositories refer to storage locations outside a user's local repository. The remote in this example is GitHub, and the repository we'll be using is for the <a href="https://github.com/rtxi/plugin-template">plugin template</a>. If you want to have your own remote repository on GitHub, you will need to create an account with them and using their website to initialize the repository. 
 
-####<a name="create"></a>Create a Repository on GitHub  
-Back to [top](#top)  
+####<a name="clone"></a>Cloning a GitHub Repository  
 
-To begin, log into GitHub and create a new repository. Call it remote-test. 
-
-A new remote repository can be created from the home page of your account. 
-
-####<a name="clone"></a>Clone a GitHub Repository  
-Back to [top](#top)  
-
-Now that the repository is available online, create a copy in your local directory. Go to `~/plugins`, and enter:
+The format for cloning repositories from GitHub is: 
 {% highlight bash %}
-$ git clone https://github.com/<username>/remote-test.git
+$ git clone https://github.com/<username>/<repository-name>.git
 {% endhighlight %}
 
-Be sure to enter your username in place of <username> in the URL. You will be prompted to provide your GitHub username and password, and once that is done, the repository will be created on your local machine. 
+To clone from our repositories, the username is `rtxi` and the repositories are all listed on https://github.com/rtxi. To install the plugin template:  
+{% highlight bash %}
+$ cd ~/ # this line isn't really needed
+$ git clone https://github.com/rtxi/plugin-templage.git
+{% endhighlight %}
 
 In addition to the files copied from GitHub, Git stores the address of the remote repository. By default, the name is "origin". See details on remote repositories with `git remote -v`. 
 
-#####<a name="push"></a>Push to a Remote 
-Back to [top](#top)  
+####<a name="push"></a>Pushing to a Remote 
 
 Make some changes to the directory. Add some files, edit them, etc. Then, stage and commit them. 
 {% highlight bash %}
@@ -262,8 +304,7 @@ $ git push -u origin newbranch
 {% endhighlight %}
 Notice the `-u` option. It sets up tracking for the branch so that it can be pulled and pushed from remote repositories. 
 
-####<a name="pull"></a>Pull from a Remote 
-Back to [top](#top)  
+####<a name="pull"></a>Pulling Changes from a Remote 
 
 Just as one can push changes from a local machine to a remote, it is possible to 'pull' changes back from the remote to the local machine. This comes into play when modifying the same project on several machines or by several people. To pull the code and automatically merge the differences, use:
 {% highlight bash %}
@@ -280,7 +321,6 @@ $ git merge <fetchedremote>
 {% endhighlight %}
 
 ###<a name="summary"></a>Summary 
-Back to [top](#top)  
 
 The above tutorial is a very basic introduction to Git. Git has many functions, and many of them overlap in their functionality. As such, there are often many ways to implement what was described above. 
 
