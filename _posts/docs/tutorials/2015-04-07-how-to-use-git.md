@@ -277,10 +277,11 @@ $ git clone https://github.com/<username>/<repository-name>.git
 To clone from our repositories, the username is `rtxi` and the repositories are all listed on https://github.com/rtxi. To install the plugin template:  
 {% highlight bash %}
 $ cd ~/ # this line isn't really needed
-$ git clone https://github.com/rtxi/plugin-templage.git
+$ git clone https://github.com/rtxi/plugin-template.git
+$ cd plugin-template
 {% endhighlight %}
 
-In addition to the files copied from GitHub, Git stores the address of the remote repository. By default, the name is "origin". See details on remote repositories with `git remote -v`. 
+In addition to the files copied from GitHub, Git stores the address of the remote repository. By default, the name is `origin`. See details on remote repositories with `git remote -v`. 
 
 ####<a name="push"></a>Pushing to a Remote 
 
@@ -291,18 +292,14 @@ $ git add .
 $ git commit . "Local commit to push to remote repository"
 {% endhighlight %}
 
+**Note:** You will not actually be able to execute the command below successfully. We don't allow everyone to push to our repositories. This is what you'd do, though, if you could. 
+
 Now, send these changes to the remote. The command Git uses for this is `push`. 
 {% highlight bash %}
-$ git push https://<username>@github.com/<username>/remote-test.git master
+$ git push https://github.com/<username>/plugin-template.git master # will fail
 {% endhighlight %}
 
-Git pushes the changes to the master branch of the remote repository referenced by the URL.
-
-One can similarly clone branches of a repository from GitHub and push back to them. It is possible to create branches inside GitHub. Alternately, one can create them on a local machine and push them back to GitHub. To create a new branch locally and store it in a new branch on GitHub, use:
-{% highlight bash %}
-$ git push -u origin newbranch
-{% endhighlight %}
-Notice the `-u` option. It sets up tracking for the branch so that it can be pulled and pushed from remote repositories. 
+Git pushes the changes to the master branch of the remote repository referenced by the URL. Git also supports aliases for remote URLs. By default, the URL from which you clone a repository is saved as `origin`. You can view the remotes tracked by a repository by running `git remote -v`.  
 
 ####<a name="pull"></a>Pulling Changes from a Remote 
 
@@ -320,11 +317,13 @@ This command fetches the changes from the remote repository for the user to comp
 $ git merge <fetchedremote>
 {% endhighlight %}
 
+You can use this method to keep your modules and RTXI up to date.  
+
 ###<a name="summary"></a>Summary 
 
-The above tutorial is a very basic introduction to Git. Git has many functions, and many of them overlap in their functionality. As such, there are often many ways to implement what was described above. 
+The above tutorial is a very basic introduction to Git. Git has many functions, and many of them overlap in their functionality. As such, there are often many ways to implement what was described above.  
 
-Should you need more detail, the [Git documentation](http://git-scm.com/documentation) is an excellent place to start. Additional help can be found throughout the web:
-* An [interactive tutorial](http://try.github.io/levels/1/challenges/1) for Git syntax. 
-* A [user-made tutorial](http://www.vogella.com/tutorials/Git/article.html)
-* A detailed site by Atlassian with [tutorials on Git and workflow](https://www.atlassian.com/git/)
+Should you need more detail, the [Git documentation](http://git-scm.com/documentation) is an excellent place to start. Additional help can be found throughout the web:  
+ - An [interactive tutorial](http://try.github.io/levels/1/challenges/1) for Git syntax.  
+ - A [user-made tutorial](http://www.vogella.com/tutorials/Git/article.html)  
+ - A detailed site by Atlassian with [tutorials on Git and workflow](https://www.atlassian.com/git/)  
