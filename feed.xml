@@ -7,6 +7,363 @@
     <atom:link href="http://rtxi.org/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Posting Bugs and Issues on GitHub</title>
+        <description>&lt;p&gt;RTXI is in active development, and our work depends heavily on user feedback. This tutorial provides instructions for creating bug reports, posting questions about issues, making feature requests, etc. through GitHub. Though email will also work, we strongly encourage using GitHub so that users can see existing issues and contribute to overall discussion. To use GitHub, you will need to create a &lt;a href=&quot;https://github.com/join&quot;&gt;GitHub account&lt;/a&gt;.  &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; For the sake of absolute clarity, please do not actually create an issue in the process of going though this tutorial.  &lt;/p&gt;
+
+&lt;h4 id=&quot;navigate-to-the-repository&quot;&gt;1. Navigate to the repository.&lt;/h4&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;col-md-8 col-xs-12&quot;&gt; 
+Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https://github.com/rtxi&lt;/a&gt;). On the page, use the search bar or scroll down until you find the software you want to report. If you experience a bug within RTXI and its built-in modules, look for the `rtxi` repository. If it&#39;s a module you have problems with, find the repository that correponds to the module name. Also, if you have questions about anything on this website, go to the `rtxi.github.io` repository.  
+		&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;col-md-4 col-xs-12&quot;&gt;
+		&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-xs-10 col-xs-offset-1 col-md-12 col-md-offset-0&quot;&gt;
+			&lt;a href=&quot;/assets/img/tutorials/rtxi-github-main-page.png&quot;&gt;
+				&lt;img src=&quot;/assets/img/tutorials/rtxi-github-main-page.png&quot; class=&quot;img-responsive&quot; /&gt;
+			&lt;/a&gt;
+		&lt;/div&gt;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;open-an-issue-on-the-repository-page&quot;&gt;2. Open an issue on the repository page.&lt;/h4&gt;
+&lt;p&gt;Each module has an issue page where you can view, submit, and comment on current development issues. Pictured is the repository page for &lt;code&gt;rtxi&lt;/code&gt;. To navigate to its issues page, click on &lt;code&gt;Issues&lt;/code&gt; on the right sidebar.  &lt;/p&gt;
+
+&lt;p&gt;Click on &lt;code&gt;Issues&lt;/code&gt;. It’s on the sidebar to the right. If you haven’t logged in to GitHub already, you will be prompted to now. This will open up a new page that shows all the issues posted to the repository. Look through them to see if the issue you are having is related to something someone else posted. If it is, you can add to the existing discussion. If not, then open up a new issue.  &lt;/p&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;col-xs-12 col-sm-6 col-md-5 col-md-offset-1&quot;&gt;
+		&lt;a href=&quot;/assets/img/tutorials/rtxi-github-rtxi-page.png&quot;&gt;
+			&lt;img src=&quot;/assets/img/tutorials/rtxi-github-rtxi-page.png&quot; class=&quot;img-responsive&quot; /&gt;
+		&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;col-sm-6 col-xs-12 col-md-5&quot;&gt;
+		&lt;a href=&quot;/assets/img/tutorials/rtxi-github-rtxi-issues.png&quot;&gt;&lt;figure&gt;
+			&lt;img src=&quot;/assets/img/tutorials/rtxi-github-rtxi-issues.png&quot; class=&quot;img-responsive&quot; /&gt;
+		&lt;/figure&gt;&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;write-up-your-issue&quot;&gt;3. Write up your issue.&lt;/h4&gt;
+&lt;p&gt;Click the appropriate button for whether you’re opening a new issue or joining an existing thread. Please be as clear and detailed as possible in your comments, as only posting things like “RTXI is crashing” or “X isn’t working” doesn’t help us figure out what the issue is.  &lt;/p&gt;
+
+&lt;p&gt;For your posts, we ask (but don’t require) you do provide the following information when appropriate:  &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;The version of RTXI you are using.&lt;/strong&gt;  If you used a live CD to install RTXI, just say that. If you compiled from source, go to your clone of the RTXI repository and run &lt;code&gt;git log&lt;/code&gt;. The most recent commit will have a string associated with it that looks like a random list of letters. Give us the string.  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Error messages from RTXI in the terminal.&lt;/strong&gt; If there are no error messages, no problem. If RTXI is crashing, it would be incredibly helpful if you used &lt;code&gt;gdb&lt;/code&gt; to provide a backtrace.  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;A clear description of the bug.&lt;/strong&gt; Describe the behavior you expect, the behavior that is happening, and the set of steps that trigger the error.  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Clear issue postings are incredibly helpful for us to start debugging your issues, and it also helps anyone else fully understand the issues you have.  &lt;/p&gt;
+</description>
+        <pubDate>Thu, 09 Apr 2015 00:00:00 -0400</pubDate>
+        <link>http://rtxi.org//docs/troubleshoot/2015/04/09/posting-bugs-and-issues/</link>
+        <guid isPermaLink="true">http://rtxi.org//docs/troubleshoot/2015/04/09/posting-bugs-and-issues/</guid>
+      </item>
+    
+      <item>
+        <title>How to Use Git</title>
+        <description>&lt;p&gt;Below are instructions for installing and using Git. Git is a version control tool that enables users to track revisions and changes in files and coordinate with collaborators. It is often used for software development. &lt;/p&gt;
+
+&lt;p&gt;Unlike many applications, such as Microsoft Word, editing and saving files overwrites data. This makes it difficult to track changes without creating different file names, a process that can get messy very quickly. &lt;/p&gt;
+
+&lt;p&gt;Git takes snapshots of files a user wants to track and maintains a history of changes that have occurred. This makes backtracking and checking revisions a simple process, which is especially helpful for large projects with many developers. It also functions as a collaborative tool by enabling users to make local copies of a common project and modify them as needed. Users track their own changes and those of others, and Git incorporates tools that enable branching and merging of whatever changes people make.  &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.phdcomics.com/comics/archive/phd101212s.gif&quot;&gt;
+	&lt;img src=&quot;http://www.phdcomics.com/comics/archive/phd101212s.gif&quot; class=&quot;img-responsive&quot; style=&quot;max-height:400px; float:right; margin:10px;&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Installing git is not the same as using GitHub. GitHub uses git, but it is a remote server that users can use as a central location for storing data. See the instructions for &lt;a href=&quot;https://github.com/join&quot;&gt;opening a GitHub account&lt;/a&gt;.  &lt;/p&gt;
+
+&lt;h4 id=&quot;installing-git-on-linux&quot;&gt;Installing Git on Linux&lt;/h4&gt;
+
+&lt;p&gt;Open the terminal. You can do this from within the Applications menu in GNOME or by using the &lt;code&gt;CTRL+Alt+t&lt;/code&gt; shortcut. Enter:  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get install git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; When telling people to enter commands, it is common practice to use &lt;code&gt;$&lt;/code&gt; at the start of each line to signify that it is to be entered in the terminal. Also, &lt;code&gt;#&lt;/code&gt; is used to signify root permissions rather than having people enter &lt;code&gt;sudo&lt;/code&gt;. In either case, you DO NOT have to enter &lt;code&gt;$&lt;/code&gt; or &lt;code&gt;#&lt;/code&gt; in the terminal. For example, in the above command. just enter the text &lt;code&gt;sudo apt-get install git&lt;/code&gt; and hit &lt;code&gt;ENTER&lt;/code&gt;.  &lt;/p&gt;
+
+&lt;p&gt;Once Git is installed, configure it with your username and/or email address. This is preferred in development scenarios so that everyone can identify what modifications were made by which user. GitHub also maps Git user email addresses to GitHub accounts. Note that you do not have to give your real name. Any name will do, as all that is needed is a way to identify who has done what. Technically, Git does not check email address validity, either, but for collaborate work, it is best to provide some address so that people can ask each other questions about changes. &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git config --global user.name &lt;span class=&quot;s1&quot;&gt;&amp;#39;Your name here&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git config --global user.email your@address.here&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;git&lt;/code&gt; part of each command specifies that the script that follows contains Git commands. Git provides a library of functions for executing version control. Rather than have them directly incorporated into system libraries, they are made accessible by preceding the command with &lt;code&gt;git&lt;/code&gt;. Therefore, these commands and all other git commands we will use start with &lt;code&gt;git&lt;/code&gt;. &lt;/p&gt;
+
+&lt;p&gt;The second part, &lt;code&gt;config&lt;/code&gt;, is used to configure information, which is stored in a hidden file. The tag &lt;code&gt;--global&lt;/code&gt; means that the changes to the user configuration are to affect all user repositories. The details are saved in a hidden file called .gitconfig stored at the base of the user’s home directory (&lt;code&gt;~/.gitconfig&lt;/code&gt;). Other options allow for different scopes of the effects of configuration changes. &lt;code&gt;--local&lt;/code&gt; is the default behavior and specifies that changes be written to hidden file in the working directory called &lt;code&gt;.git/config&lt;/code&gt;. You can see what has been set in the config files by running &lt;code&gt;git config --list&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Should you ever need help with a Git command, you can use &lt;code&gt;git help &amp;lt;commandname&amp;gt;&lt;/code&gt; to check the Git documentation in the terminal. For example, if unsure about &lt;code&gt;config&lt;/code&gt;, run &lt;code&gt;git help config&lt;/code&gt;.  &lt;/p&gt;
+
+&lt;h3 id=&quot;using-local-repositories&quot;&gt;Using Local Repositories&lt;/h3&gt;
+
+&lt;h4 id=&quot;initialization&quot;&gt;Initialization&lt;/h4&gt;
+
+&lt;p&gt;Git enables users to track local changes and development paths. First, go the base of your home directory and create some new directories:  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mkdir plugins
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;plugins
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mkdir practice
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;practice
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ..&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, from within the plugins directory, run:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git init&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;!--
+&lt;a href=&quot;/assets/img/tutorials/git-tutorial-1.png&quot;&gt;
+	&lt;img src=&quot;/assets/img/tutorials/git-tutorial-1.png&quot; class=&quot;img-responsive&quot;&gt;
+&lt;/a&gt;
+--&gt;
+
+&lt;p&gt;This command specifies that the directory is to be treated as a Git repository. By default, Git does not track &lt;em&gt;any&lt;/em&gt; files. User must enable it in a directory of their choosing. Once executed, this function creates a hidden directory called &lt;code&gt;.git/&lt;/code&gt; that stores information regarding the repository contained in the directory. &lt;/p&gt;
+
+&lt;!--
+&lt;a href=&quot;/assets/img/tutorials/git-tutorial-2.png&quot;&gt;
+	&lt;img src=&quot;/assets/img/tutorials/git-tutorial-2.png&quot; class=&quot;img-responsive&quot;&gt;
+&lt;/a&gt;
+--&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Git exists as a version control system. It is not advisable to use it for backing up big files, such as videos, binaries, etc. The entire process gets encumbered quickly. &lt;/p&gt;
+
+&lt;h4 id=&quot;a-nameaddaadding-files-to-the-staging-area&quot;&gt;&lt;a name=&quot;add&quot;&gt;&lt;/a&gt;Adding Files to the Staging Area&lt;/h4&gt;
+
+&lt;p&gt;The directory is currently empty, so create some files:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;touch file1.txt
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;touch file2.txt
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;touch file3.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;These files have been added to the repository, or in Git terminology, the &lt;strong&gt;working tree&lt;/strong&gt;. The working tree refers to all of the files that originate from the base of the directory, which in this case is &lt;code&gt;~/plugins&lt;/code&gt;. &lt;/p&gt;
+
+&lt;p&gt;By default, Git does not track files that are added to the directory. Users have to specify that they be tracked. This is done by the &lt;code&gt;add&lt;/code&gt; command. Git does, though tell what files are and are not being tracked. Simply use &lt;code&gt;git status&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add file1.txt file2.txt file3.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;git add&lt;/code&gt; adds the files to what is called the &lt;strong&gt;staging area&lt;/strong&gt;. Basically, this command generates a snapshot of the files and stores them without adding them to the permanent version history. In other words, Git is aware of the files, but it has not added them to the permanent version history. Basically, git has a 2-stage revision process. The first is to send modified or new files to the staging area, and the second is to commit them to the permanent version history. This has its advantages in that it enables users to add files to a repository as a group that together functions properly. Reverting from one set of changes to another is simply a process of switching to another snapshot in the permanent history. This process is explained later. &lt;/p&gt;
+
+&lt;p&gt;To show what files are in the stating area, use:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git status&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;!--
+&lt;a href=&quot;/assets/img/tutorials/git-tutorial-3.png&quot;&gt;
+	&lt;img src=&quot;/assets/img/tutorials/git-tutorial-3.png&quot; class=&quot;img-responsive&quot;&gt;
+&lt;/a&gt;
+--&gt;
+
+&lt;p&gt;If needed, it is possible to unstage files that were added with &lt;code&gt;git add&lt;/code&gt;. Git gives the user the command 
+&lt;code&gt;git rm --cached &amp;lt;filename&amp;gt;&lt;/code&gt;. Try it on one of the files and see the changes made to the staging area. &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git rm --cached file1.txt
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git status&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;!--
+&lt;a href=&quot;/assets/img/tutorials/git-tutorial-4.png&quot;&gt;
+	&lt;img src=&quot;/assets/img/tutorials/git-tutorial-4.png&quot; class=&quot;img-responsive&quot;&gt;
+&lt;/a&gt;
+--&gt;
+
+&lt;p&gt;The following assumes that all three files are added to the staging area. You can add all files to the staging area by running &lt;code&gt;git add -A&lt;/code&gt;. &lt;/p&gt;
+
+&lt;h4 id=&quot;a-namecommitacommiting-files&quot;&gt;&lt;a name=&quot;commit&quot;&gt;&lt;/a&gt;Commiting Files&lt;/h4&gt;
+
+&lt;p&gt;With the files added to the staging area, the next step is to add them to the permanent version history. In Git, this process is called a &lt;strong&gt;commit&lt;/strong&gt;. Use the &lt;code&gt;commit&lt;/code&gt; command. &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit file1.txt file2.txt file3.txt -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;First commit&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;commit&lt;/code&gt; command adds files in the staging area to the repository. Each commit requires a message that is intended to describe the changes that took place. This can be done in the command line by using &lt;code&gt;-m&lt;/code&gt; followed by the message in quotation marks. If this is omitted, Git defaults to a text editor where users can type the message. The &lt;code&gt;commit&lt;/code&gt; command is completed when the user saves the message and exits the editor.  &lt;/p&gt;
+
+&lt;p&gt;If you opt to not specify the filenames for the commit, git will commit all the files in the staging area.  &lt;/p&gt;
+
+&lt;p&gt;Because all the files in the staging area were committed in the last command, there are all removed from the staging area. You can check with &lt;code&gt;git status&lt;/code&gt;.  &lt;/p&gt;
+
+&lt;p&gt;The version history is in essence a list of commits. To view the complete history of the project, use:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git log&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This outputs a list of all the commits, when they were made, the author, the commit messages, and other information. The string at the top of seemingly random letters is an encrypted hash of the changes that were made. A hash is a string that encodes data and is produced by a hash function. Ideally, a hash function is implemented such that a small change in the data it encodes results in a large, unpredictable change in the hash. This enables users to check the file’s integrity and makes it exceedingly difficult to alter the commit history.  &lt;/p&gt;
+
+&lt;!--
+&lt;a href=&quot;/assets/img/tutorials/git-tutorial-5.png&quot;&gt;
+	&lt;img src=&quot;/assets/img/tutorials/git-tutorial-5.png&quot; class=&quot;img-responsive&quot;&gt;
+&lt;/a&gt;
+--&gt;
+
+&lt;h4 id=&quot;a-nameundoaoptional-undo-a-commit&quot;&gt;&lt;a name=&quot;undo&quot;&gt;&lt;/a&gt;(Optional) Undo a Commit&lt;/h4&gt;
+
+&lt;p&gt;If you ever commit something and wish to revert your changes, use the &lt;code&gt;reset&lt;/code&gt; command. There are several options. The first is:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git reset --hard HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This command erases &lt;strong&gt;everything&lt;/strong&gt; that was altered after the previous commit and sets the working tree to the previous commit. The &lt;code&gt;--hard&lt;/code&gt; induces the erasure, and &lt;code&gt;HEAD~1&lt;/code&gt; moves to the previous commit. &lt;code&gt;HEAD&lt;/code&gt; is a pointer that Git uses to point to a specific commit in a branch. &lt;code&gt;HEAD&lt;/code&gt; by default points to the latest commit, so to access previous ones, use &lt;code&gt;~X&lt;/code&gt; where X is the number of commits ago you want to go. &lt;/p&gt;
+
+&lt;p&gt;Be very careful when using &lt;code&gt;--hard&lt;/code&gt;. &lt;/p&gt;
+
+&lt;p&gt;The second option:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git reset --mixed HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;-OR-&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git reset HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This file preserves the changes made but reverts the HEAD pointer back one commit. The changes are unstaged, so the working directory matches the previous commit. &lt;/p&gt;
+
+&lt;p&gt;The last option:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git reset --soft HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The only change is that the most recent commit is reversed. The staging area is the same; it reflects the changes that have been made between the commit to be erased and its predecessor. This option exactly reverses the effects of a &lt;code&gt;git commit&lt;/code&gt; command. &lt;/p&gt;
+
+&lt;p&gt;The following assumes that the commit has not been reversed. All three files are committed in the repository. &lt;/p&gt;
+
+&lt;h4 id=&quot;a-namebranchabranching-repositories&quot;&gt;&lt;a name=&quot;branch&quot;&gt;&lt;/a&gt;Branching Repositories&lt;/h4&gt;
+
+&lt;p&gt;Now that a commit has been made, branch off and create a new working tree. Currently, HEAD points to the last commit of the original branch, called &lt;code&gt;master&lt;/code&gt;. This is the default name for a new git repository. It is generally best practice to branch off of master to make changes and then merge changes back to master once they have been thoroughly audited. That way, whatever code is in the master branch is guaranteed to work.  &lt;/p&gt;
+
+&lt;p&gt;Create a branch called &lt;code&gt;testing&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch testing&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This creates a new branch called &lt;code&gt;testing&lt;/code&gt;. By default, it copies the state pointed to by HEAD, but it is possible to branch off of previous commits. To list the available branches, use &lt;code&gt;git branch&lt;/code&gt;. To switch to the newly created branch, use:  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout testing&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, HEAD is pointing to &lt;code&gt;testing&lt;/code&gt; instead of &lt;code&gt;master&lt;/code&gt;. Any commits made will be applied to &lt;code&gt;testing&lt;/code&gt; as long as it is checked out. &lt;/p&gt;
+
+&lt;!--
+&lt;a href=&quot;/assets/img/tutorials/git-tutorial-6.png&quot;&gt;
+	&lt;img src=&quot;/assets/img/tutorials/git-tutorial-6.png&quot; class=&quot;img-responsive&quot;&gt;
+&lt;/a&gt;
+--&gt;
+
+&lt;h4 id=&quot;a-namecommitbranchacommiting-branches&quot;&gt;&lt;a name=&quot;commitbranch&quot;&gt;&lt;/a&gt;Commiting Branches&lt;/h4&gt;
+
+&lt;p&gt;Change the current files. This command will add text to the files saying, “This is &lt;filename&gt;&quot;. You can use `more &lt;filename&gt;` or `cat &lt;filename&gt;` to output the contents of a file into the terminal. &lt;/filename&gt;&lt;/filename&gt;&lt;/filename&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;find . -maxdepth &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; -type f &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; xargs -I &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; bash -c &lt;span class=&quot;s2&quot;&gt;&amp;quot;echo &amp;#39;This is &amp;#39;{} &amp;gt; {}&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now that the files have been altered, run &lt;code&gt;git status&lt;/code&gt; to see what Git has noticed. Stage the changes and commit them:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add .
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit . -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;First Branch Commit&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;.&lt;/code&gt; operator causes commands to affect all files in a directory. Using it is easier than typing individual file names. &lt;/p&gt;
+
+&lt;!--
+&lt;a href=&quot;/assets/img/tutorials/git-tutorial-7.png&quot;&gt;
+	&lt;img src=&quot;/assets/img/tutorials/git-tutorial-7.png&quot; class=&quot;img-responsive&quot;&gt;
+&lt;/a&gt;
+--&gt;
+
+&lt;h4 id=&quot;a-namecompareacomparing-branches&quot;&gt;&lt;a name=&quot;compare&quot;&gt;&lt;/a&gt;Comparing Branches&lt;/h4&gt;
+
+&lt;p&gt;Now that &lt;code&gt;master&lt;/code&gt; and &lt;code&gt;testing&lt;/code&gt; differ with one another, switch between them to see the differences.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ls &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; xargs cat
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout master
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ls &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; xargs cat&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Individually looking through files in different branches can be cumbersome. To output the differences directly, use the &lt;code&gt;diff&lt;/code&gt; command. &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git diff master testing&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The output should look like:&lt;/p&gt;
+
+&lt;!--
+&lt;a href=&quot;/assets/img/tutorials/git-tutorial-8.png&quot;&gt;
+	&lt;img src=&quot;/assets/img/tutorials/git-tutorial-8.png&quot; class=&quot;img-responsive&quot;&gt;
+&lt;/a&gt;
+--&gt;
+
+&lt;h4 id=&quot;a-namemergeamerging-branches&quot;&gt;&lt;a name=&quot;merge&quot;&gt;&lt;/a&gt;Merging Branches&lt;/h4&gt;
+
+&lt;p&gt;Now, merge the changes in &lt;code&gt;testing&lt;/code&gt; to &lt;code&gt;master&lt;/code&gt;. Check out the &lt;code&gt;master&lt;/code&gt; branch and use the &lt;code&gt;merge&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout master
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git merge testing&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You will see an output that summarizes the changes. The &lt;code&gt;merge&lt;/code&gt; command creates a new commit that follows the previous version of &lt;code&gt;master&lt;/code&gt;. &lt;/p&gt;
+
+&lt;!--
+&lt;a href=&quot;/assets/img/tutorials/git-tutorial-9.png&quot;&gt;
+	&lt;img src=&quot;/assets/img/tutorials/git-tutorial-9.png&quot; class=&quot;img-responsive&quot;&gt;
+&lt;/a&gt;
+--&gt;
+
+&lt;p&gt;If the merge is successful, there is no need for the &lt;code&gt;testing&lt;/code&gt; branch. Delete it. Make sure that the &lt;code&gt;testing&lt;/code&gt; branch isn’t currently checked out.  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch -d testing&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;a-namerreposausing-remote-repositories&quot;&gt;&lt;a name=&quot;rrepos&quot;&gt;&lt;/a&gt;Using Remote Repositories&lt;/h3&gt;
+
+&lt;p&gt;Remote repositories refer to storage locations outside a user’s local repository. The remote in this example is GitHub, and the repository we’ll be using is for the &lt;a href=&quot;https://github.com/rtxi/plugin-template&quot;&gt;plugin template&lt;/a&gt;. If you want to have your own remote repository on GitHub, you will need to create an account with them and using their website to initialize the repository. &lt;/p&gt;
+
+&lt;h4 id=&quot;a-namecloneacloning-a-github-repository&quot;&gt;&lt;a name=&quot;clone&quot;&gt;&lt;/a&gt;Cloning a GitHub Repository&lt;/h4&gt;
+
+&lt;p&gt;The format for cloning repositories from GitHub is: &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/&amp;lt;username&amp;gt;/&amp;lt;repository-name&amp;gt;.git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To clone from our repositories, the username is &lt;code&gt;rtxi&lt;/code&gt; and the repositories are all listed on https://github.com/rtxi. To install the plugin template:  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/ &lt;span class=&quot;c&quot;&gt;# this line isn&amp;#39;t really needed&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/rtxi/plugin-template.git
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;plugin-template&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In addition to the files copied from GitHub, Git stores the address of the remote repository. By default, the name is &lt;code&gt;origin&lt;/code&gt;. See details on remote repositories with &lt;code&gt;git remote -v&lt;/code&gt;. &lt;/p&gt;
+
+&lt;h4 id=&quot;a-namepushapushing-to-a-remote&quot;&gt;&lt;a name=&quot;push&quot;&gt;&lt;/a&gt;Pushing to a Remote&lt;/h4&gt;
+
+&lt;p&gt;Make some changes to the directory. Add some files, edit them, etc. Then, stage and commit them. &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;touch file1 file2 file3
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add .
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit . &lt;span class=&quot;s2&quot;&gt;&amp;quot;Local commit to push to remote repository&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You will not actually be able to execute the command below successfully. We don’t allow everyone to push to our repositories. This is what you’d do, though, if you could. &lt;/p&gt;
+
+&lt;p&gt;Now, send these changes to the remote. The command Git uses for this is &lt;code&gt;push&lt;/code&gt;. &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git push https://github.com/&amp;lt;username&amp;gt;/plugin-template.git master &lt;span class=&quot;c&quot;&gt;# will fail&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Git pushes the changes to the master branch of the remote repository referenced by the URL. Git also supports aliases for remote URLs. By default, the URL from which you clone a repository is saved as &lt;code&gt;origin&lt;/code&gt;. You can view the remotes tracked by a repository by running &lt;code&gt;git remote -v&lt;/code&gt;.  &lt;/p&gt;
+
+&lt;h4 id=&quot;a-namepullapulling-changes-from-a-remote&quot;&gt;&lt;a name=&quot;pull&quot;&gt;&lt;/a&gt;Pulling Changes from a Remote&lt;/h4&gt;
+
+&lt;p&gt;Just as one can push changes from a local machine to a remote, it is possible to ‘pull’ changes back from the remote to the local machine. This comes into play when modifying the same project on several machines or by several people. To pull the code and automatically merge the differences, use:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git pull origin&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If you want to observe the changes but not merge them, use:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git fetch origin&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This command fetches the changes from the remote repository for the user to compare with files on the local machine. Once they are determined to be safe for merging, enter the following from within the directory to which changes are to be merged:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git merge &amp;lt;fetchedremote&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You can use this method to keep your modules and RTXI up to date.  &lt;/p&gt;
+
+&lt;h3 id=&quot;a-namesummaryasummary&quot;&gt;&lt;a name=&quot;summary&quot;&gt;&lt;/a&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;The above tutorial is a very basic introduction to Git. Git has many functions, and many of them overlap in their functionality. As such, there are often many ways to implement what was described above.  &lt;/p&gt;
+
+&lt;p&gt;Should you need more detail, the &lt;a href=&quot;http://git-scm.com/documentation&quot;&gt;Git documentation&lt;/a&gt; is an excellent place to start. Additional help can be found throughout the web:&lt;br /&gt;
+ - An &lt;a href=&quot;http://try.github.io/levels/1/challenges/1&quot;&gt;interactive tutorial&lt;/a&gt; for Git syntax.&lt;br /&gt;
+ - A &lt;a href=&quot;http://www.vogella.com/tutorials/Git/article.html&quot;&gt;user-made tutorial&lt;/a&gt;&lt;br /&gt;
+ - A detailed site by Atlassian with &lt;a href=&quot;https://www.atlassian.com/git/&quot;&gt;tutorials on Git and workflow&lt;/a&gt;  &lt;/p&gt;
+</description>
+        <pubDate>Tue, 07 Apr 2015 00:00:00 -0400</pubDate>
+        <link>http://rtxi.org//docs/tutorials/2015/04/07/how-to-use-git/</link>
+        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2015/04/07/how-to-use-git/</guid>
+      </item>
+    
+      <item>
         <title>Setting a Default Boot Kernel</title>
         <description>&lt;p&gt;It can get annoying choosing the real-time kernel from the submenu every time you boot your computer, especially if you miss the timing and it boots generic Linux.  &lt;/p&gt;
 
@@ -649,28 +1006,6 @@ Some influential environment variables:
         <pubDate>Tue, 18 Nov 2014 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//papers/2014/11/18/combined-action-potential-and-dynamic-clamp-for-accurate-computational-modelling-of-the-cardiac-ikr-current/</link>
         <guid isPermaLink="true">http://rtxi.org//papers/2014/11/18/combined-action-potential-and-dynamic-clamp-for-accurate-computational-modelling-of-the-cardiac-ikr-current/</guid>
-      </item>
-    
-      <item>
-        <title>Membrane potential-dependent integration of synaptic inputs in entorhinal stellate neurons</title>
-        <description>&lt;p&gt;Stellate cells (SCs) of the medial entorhinal cortex exhibit robust spontaneous membrane-potential oscillations (MPOs) in the theta (4–12 Hz) frequency band as well as theta-frequency resonance in their membrane impedance spectra. Past experimental and modeling work suggests that these features may contribute to the phase-locking of SCs to the entorhinal theta rhythm and may be important for forming the hexagonally tiled grid cell place fields exhibited by these neurons in vivo. Among the major biophysical mechanisms contributing to MPOs is a population of persistent (non-inactivating or slowly inactivating) sodium channels. The resulting persistent sodium conductance (GNaP) gives rise to an apparent increase in input resistance as the cell approaches threshold. In this study, we used dynamic clamp to test the hypothesis that this increased input resistance gives rise to voltage-dependent, and thus MPO phase-dependent, changes in the amplitude of excitatory and inhibitory post-synaptic potential (PSP) amplitudes. We find that PSP amplitude depends on membrane potential, exhibiting a 5–10% increase in amplitude per mV depolarization. The effect is larger than—and sums quasi-linearly with—the effect of the synaptic driving force, V - Esyn. Given that input-driven MPOs 10 mV in amplitude are commonly observed in MEC stellate cells in vivo, this voltage- and phase-dependent synaptic gain is large enough to modulate PSP amplitude by over 50% during theta-frequency MPOs. Phase-dependent synaptic gain may therefore impact the phase locking and phase precession of grid cells in vivo to ongoing network oscillations. © 2014 Wiley Periodicals, Inc.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 25 Jul 2014 00:00:00 -0400</pubDate>
-        <link>http://rtxi.org//papers/2014/07/25/membrane-potential-dependent-integration-of-synaptic-inputs-in-entorhinal-stellate-neurons/</link>
-        <guid isPermaLink="true">http://rtxi.org//papers/2014/07/25/membrane-potential-dependent-integration-of-synaptic-inputs-in-entorhinal-stellate-neurons/</guid>
-      </item>
-    
-      <item>
-        <title>Functional identification of an antennal lobe DM4 projection neuron of the fruit fly</title>
-        <description>&lt;p&gt;A rich set of genetic tools and extensive anatomical data make the olfactory system of the fruit fly a neural circuit of choice for studying function in sensory systems. Though a substantial amount of work has been published on the neural coding of olfactory sensory neurons (OSNs) of the fruit fly, yet little is known how projection neurons (PNs) encode time-varying odor stimuli [1]. Here we address this question with in vivo experiments coupled with a phenomenological characterization of the spiking activity of PNs.&lt;/p&gt;
-
-&lt;p&gt;Recently, a new class of identification algorithms called Channel Identification Machines (CIMs) [2] was proposed for identifying dendritic processing in simple neural circuits using conditional phase response curves (cPRCs) [3]. By combining cPRCs with the reduced project-integrated-and-fire neuron (PIF) model [4], the CIM algorithms identify a complete phenomenological description of spike generation of a biological neuron for weak to moderately strong stimuli. Moreover, the identification method employed does not require white noise stimuli nor an infinitesimal pulse injection protocol as widely used in the past [5]. &lt;/p&gt;
-
-&lt;p&gt;Here we identify the PNs both in silico and in vivo. Starting with simulations, we investigate the feasibility of the CIM method on PNs modeled as pseudo uni-polar neurons in silico, as shown in Figures 1.(B) and 1.(C). We then systematically convert the CIM method into a step-by-step experimental protocol, and carry it out in vivo by injecting currents into PNs using the patch clamping technique [6,7]. A snapshot of PN patching is depicted in Figure 1.(A). &lt;/p&gt;
-</description>
-        <pubDate>Tue, 01 Jul 2014 00:00:00 -0400</pubDate>
-        <link>http://rtxi.org//papers/2014/07/01/functional-identification-of-an-antennal-lobe-dm4-projection-neuron-of-the-fruit-fly/</link>
-        <guid isPermaLink="true">http://rtxi.org//papers/2014/07/01/functional-identification-of-an-antennal-lobe-dm4-projection-neuron-of-the-fruit-fly/</guid>
       </item>
     
   </channel>
