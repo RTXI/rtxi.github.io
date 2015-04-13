@@ -13,15 +13,16 @@ $ sudo apt-get install nodejs ruby imagemagick libmagickwand-dev npm curl
 
 Ruby is used for all the gems you need to use Jekyll to build the site. You can use the default gem, but I'd prefer you use RVM so that we an keep the ruby version consistent. It'll also save you a lot of pain when if have problems with gem compatibility.  
 
-If you haven't already, set preferences for your terminal emulator so that it is a login shell. Otherwise, the RVM commands above won't work properly.  
-
 I'm currently using v2.2.0. To install RVM (from their website): 
 ````
 $ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-$ curl -sSL https://get.rvm.io | bash -s stable --ruby
+$ \curl -sSL https://get.rvm.io | bash -s stable --ruby
 $ rvm install 2.2.0
 $ rvm use 2.2.0
 ````
+
+If you haven't already, set preferences for your terminal emulator so that it is a login shell. Otherwise, the RVM commands above won't work properly.  
+
 Now, you'll need to install the bundler gem:  
 ````
 $ gem install bundler
@@ -36,6 +37,7 @@ Now, install the node packages (bower and grunt-cli):
 ````
 $ sudo npm -g install bower grunt-cli
 ````
+  
 
 Now, you need to install the website's dependencies. This is done in the website directory. Clone the website and switch to the 'build' branch:  
 ````
