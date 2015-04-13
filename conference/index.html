@@ -294,24 +294,20 @@ div.background {
 				</tr>
 				<tr>
 					 <td>1530-1600</td>
-					 <td>Architecture of RTXI --- This section will go over the hardware [procesors, DAQs, graphics cards] and software [threading architecture, RT and nonRT threads] and explain how they work to provide &quot;hard real-time&quot;. We will show
-						  the basic code structure and explain that any code in the execute loop is run on the RT thread and anything outside is on the nonRT thread. We will show the software architecture diagram and simultaneously show each module (e.g., oscilloscope,
-						  data recorder, etc).</td>
-					 <td></td>
+					 <td><b>Workshop Part 1: Architecture of RTXI</b><br>
+					 We will go over the hardware (processors, DAQs, graphics cards) and software (threading architecture, RT and non-RT threads) components of RTXI and then explain how they provide hard real-time performance. We will show the basic code structure and explain how to run real-time code within the RTXI framework. This section will also include a brief demonstration of each system module (e.g. the oscilloscope, data recorder, etc.) within the context of RTXI's software architecture diagram.</td>
+					 <td>Y. Patel<br>A. George</td>
 				</tr>
 				<tr>
 					 <td>1600-1625</td>
-					 <td>RTXI Live Demos and Coffee Break --- We will setup stations (probably 4-5) that people can walk around and interact with while getting coffee. We will have a representative at each of these stations to help explain what the workspace is
-						  doing/how it&#39;s working. This will be a pre-defined set of workspaces that we walk through setting up and testing, with the purpose of letting attendees know that it&#39;s a very easy to use interface. These will be tested thoroughly
-						  prior to presentation. These stations will be left running for people to see during the reception too.</td>
-					 <td></td>
+					 <td><b>Workshop Part 2: RTXI Live Demos</b> (and Coffee Break) <br>
+					 We will setup stations running RTXI for everyone to try out while getting coffee. RTXI users at each station will help explain what the workspace is doing and how it's working. This will be a pre-defined set of workspaces that we walk through setting up and testing, with the purpose of familiarizing attendees with the interface. Stations will be left running for people to use during the reception.</td>
+					 <td>Y. Patel<br>A. George</td>
 				</tr>
 				<tr>
 					 <td>1625-1700</td>
-					 <td>Profiling and Troubleshooting RT performance in RTXI --- This session will use the fact that the audience now knows the hardware and software pieces of the system and has seen the different workspaces at stations to talk about where each
-						  could fail and things that have to be considered in the case of each of those workspaces. Ansel would highlight why hardware matters (graphics cards, DAQs), why proper drivers/kernels matter, and how to tell if something is not really
-						  real-time (by teaching how the tests work, the scripts we&#39;ve written to test the systems, and how to interpret the output of those scripts. We will then go over all the new resources we have put into place - github, website, numerous
-						  modules, and the contact emails for help.</td>
+					 <td><b>Workshop Part 3: Profiling and Troubleshooting RT performance</b><br>
+					 This session will focus on how each workspace set up could fail and considerations for dealing with problems in each. Special attention will be given to hardware matters (graphics cards, DAQs), proper driver and kernel configurations, and benchmarking real-time performance with our built-in tests. Mention will also be given to all the new resources we have put into place, such as GitHub, our website, numerous modules, and the contact us for help / making arrangements for us to come to you and get you set up.</td>
 					 <td>A. George</td>
 				</tr>
 				<tr>
@@ -389,7 +385,8 @@ div.background {
 				</tr>
 				<tr>
 					 <td>1345-1700</td>
-					 <td>Advanced Workshops --- Topics to be covered include kernel configurations and how to install from scratch, writing plugins, and discussing code sections.</td>
+					 <td><b>Advanced Workshops</b><br>
+					 Topics to be covered include how to customize the kernel for specific hardware, installing RTXI from scratch, writing custom plugins from templates, and discussing code sections of RTXI and the Default GUI framework.</td>
 					 <td></td>
 				</tr>
 			</tbody>
