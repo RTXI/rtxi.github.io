@@ -2,6 +2,7 @@
 title: Editing the Plugin Template
 categories: docs tutorials
 layout: docpost
+published: false
 ---
 
 RTXI uses a modular structure to implement things in real time. Each module has a well-defined function that fits within a framework. We already provide many modules, both added on as modules and built-into RTXI. If you need to customize a module from scratch, we provide a template that simplifies the process so that no users touch the real-time framework, called the plugin template.  
