@@ -7,6 +7,60 @@
     <atom:link href="http://rtxi.org/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Making New Modules in RTXI</title>
+        <description>&lt;p&gt;Outlined here is the development process for making new RTXI modules. We recommend our users to build their modules by using MyPluginGUI as the template. MyPluginGUI defines a basic GUI with customizable widgets and is found in the Plugin-Template directory of our GitHub repository. Anyone is free to fork off of it to create their own modules. GitHub provides &lt;a href=&quot;https://help.github.com/articles/fork-a-repo&quot;&gt;its own documentation&lt;/a&gt; on how to fork other users’ repositories. We strongly recommend reading it. &lt;/p&gt;
+
+&lt;h3 id=&quot;the-general-process-of-modifying-rtxi-plugins-is-as-follows&quot;&gt;The general process of modifying RTXI plugins is as follows:&lt;/h3&gt;
+
+&lt;h4 id=&quot;fork-from-rtxis-github-page&quot;&gt;1. Fork from RTXI’s GitHub page&lt;/h4&gt;
+&lt;p&gt;From our site, go to the Plugin-Template repository. Contained there are the source files for MyPluginGUI, which is the default template from which we encourage users to develop.  &lt;/p&gt;
+
+&lt;p&gt;Forking will create a copy of our repository in your own GitHub account for you to modify. &lt;/p&gt;
+
+&lt;h4 id=&quot;clone-the-repository-on-your-local-machine&quot;&gt;2. Clone the repository on your local machine&lt;/h4&gt;
+
+&lt;p&gt;Now, clone the repository. Developers for new modules are expected to base it on MyPluginGUI. Type:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/&amp;lt;username&amp;gt;/plugin-template plugin_template&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that &amp;lt;username&amp;gt; represents the username of your own GitHub account, not that of RTXI. That is the case because users cannot modify repositories without the permission of their owners. Because MyPluginGUI was forked and copied into your own repository, you are completely free to edit it, and that will not affect the copy in the RTXI repository. &lt;/p&gt;
+
+&lt;p&gt;In the command, the last parameter, &lt;code&gt;plugin_template&lt;/code&gt;, sets the name of the directory in which all the cloned information will be stored. This parameter is optional. If left blank, the directory name defaults to the name of the repository being cloned. &lt;/p&gt;
+
+&lt;p&gt;Now that clone is executed, look at the directory contents and you will see a subdirectory called &lt;code&gt;plugin_template&lt;/code&gt;. Inside there are the source files for MyPluginGUI. An explanation of the header and source files is viewable &lt;a href=&quot;https://github.com/RTXI/tutorials/wiki/MyPluginGUI-Base-Code&quot;&gt;FIX THIS LINK!!!&lt;/a&gt;. &lt;/p&gt;
+
+&lt;h4 id=&quot;modify-files&quot;&gt;3. Modify files&lt;/h4&gt;
+&lt;p&gt;Modify the RTXI files to reflect the changes and functionalities you want to implement. Also, be sure to rename the source files to something other than my_plugin_gui, preferable something that reflects the module’s function. A quick and easy way to change the name from my_plugin_gui is to use the &lt;code&gt;sed&lt;/code&gt; and &lt;code&gt;mv&lt;/code&gt; commands. &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sed -i &lt;span class=&quot;s1&quot;&gt;&amp;#39;s/plugin-template/&amp;lt;new_name_here&amp;gt;/g&amp;#39;&lt;/span&gt; plugin-template.* Makefile
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sed -i &lt;span class=&quot;s1&quot;&gt;&amp;#39;s/PluginTemplate/&amp;lt;NewNameHere&amp;gt;/g&amp;#39;&lt;/span&gt; plugin-template.* Makefile
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mv plugin-template.cpp &amp;lt;new_name_here&amp;gt;.cpp
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mv plugin-template.h &amp;lt;new_name_here&amp;gt;.h&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Additionally, we request that users document their changes within the files. As a general rule, document it such that one can be confident that anyone with programming experience will be able to understand the changes implemented. &lt;/p&gt;
+
+&lt;p&gt;To install the module on your system, run:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;make
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo make install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;push-changes-to-your-own-github-repository&quot;&gt;4. Push changes to your own GitHub repository&lt;/h4&gt;
+
+&lt;p&gt;Commit your changes and push them back to your repository. (To learn what that means, &lt;a href=&quot;/docs/tutorials/2015/04/07/how-to-use-git/&quot;&gt;read this&lt;/a&gt;.)  &lt;/p&gt;
+
+&lt;p&gt;This will install your module in RTXI, and it will be available among all of your installed modules when you use the ‘Load Modules’ in the drop-down menu for ‘Modules’ in the RTXI main window. &lt;/p&gt;
+
+&lt;h4 id=&quot;submit-a-pull-request-for-your-plugin&quot;&gt;5. Submit a pull request for your plugin&lt;/h4&gt;
+&lt;p&gt;Go to the home page for your repository and select ‘Pull Requests’ on the sidebar. This will take you to a page where you can submit pull requests to all of the projects to which you contribute and view the status of those requests. &lt;/p&gt;
+
+&lt;p&gt;GitHub provides its own complete documentation on how to &lt;a href=&quot;https://help.github.com/articles/creating-a-pull-request&quot;&gt;create a pull request&lt;/a&gt; and &lt;a href=&quot;https://help.github.com/articles/using-pull-requests&quot;&gt;how to use them&lt;/a&gt; in general for project development. &lt;/p&gt;
+</description>
+        <pubDate>Fri, 10 Apr 2015 00:00:00 -0400</pubDate>
+        <link>http://rtxi.org//docs/tutorials/2015/04/10/making-new-rtxi-modules/</link>
+        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2015/04/10/making-new-rtxi-modules/</guid>
+      </item>
+    
+      <item>
         <title>Posting Bugs and Issues on GitHub</title>
         <description>&lt;p&gt;RTXI is in active development, and our work depends heavily on user feedback. This tutorial provides instructions for creating bug reports, posting questions about issues, making feature requests, etc. through GitHub. Though email will also work, we strongly encourage using GitHub so that users can see existing issues and contribute to overall discussion. To use GitHub, you will need to create a &lt;a href=&quot;https://github.com/join&quot;&gt;GitHub account&lt;/a&gt;.  &lt;/p&gt;
 
@@ -993,19 +1047,6 @@ Some influential environment variables:
         <pubDate>Wed, 03 Dec 2014 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/faqs/2014/12/03/can-i-use-a-different-linux-distro/</link>
         <guid isPermaLink="true">http://rtxi.org//docs/faqs/2014/12/03/can-i-use-a-different-linux-distro/</guid>
-      </item>
-    
-      <item>
-        <title>Combined action potential- and dynamic-clamp for accurate computational modelling of the cardiac IKr current</title>
-        <description>&lt;p&gt;In the present work Action-Potential clamp (APC) and Dynamic clamp (DC) were used in combination in order to optimize the Luo–Rudy (LRd) mathematical formulation of the guinea-pig rapid delayed rectifier K+ current (IKr), and to validate the optimized model. To this end, IKr model parameters were adjusted to fit the experimental E4031-sensitive current (IE4031) recorded under APC in guinea-pig myocytes. Currents generated by LRd model (ILRd) and the optimized one (IOpt) were then compared by testing their suitability to replace IE4031 under DC.&lt;/p&gt;
-
-&lt;p&gt;Under APC, ILRd was significantly larger than IE4031 (mean current densities 0.51 ± 0.01 vs 0.21 ± 0.05 pA/pF; p &amp;lt; 0.001), mainly because of different rectification. IOpt mean density (0.17 ± 0.01 pA/pF) was similar to the IE4031 one (NS); moreover, IOpt accurately reproduced IE4031 distribution along the different AP phases. Models were then compared under DC by blocking native IKr (5 μM E4031) and replacing it with ILRd or IOpt. Whereas injection of ILRd overshortened AP duration (APD90) (by 25% of its pre-block value), IOpt injection restored AP morphology and duration to overlap pre-block values.&lt;/p&gt;
-
-&lt;p&gt;This study highlights the power of APC and DC for the identification of reliable formulations of ionic current models. An optimized model of IKr has been obtained which fully reversed E4031 effects on the AP. The model strongly diverged from the widely used Luo–Rudy formulation; this can be particularly relevant to the in silico analysis of AP prolongation caused by IKr blocking or alterations.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 18 Nov 2014 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//papers/2014/11/18/combined-action-potential-and-dynamic-clamp-for-accurate-computational-modelling-of-the-cardiac-ikr-current/</link>
-        <guid isPermaLink="true">http://rtxi.org//papers/2014/11/18/combined-action-potential-and-dynamic-clamp-for-accurate-computational-modelling-of-the-cardiac-ikr-current/</guid>
       </item>
     
   </channel>
