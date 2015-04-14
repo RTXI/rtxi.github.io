@@ -2,6 +2,7 @@
 title: Editing the Plugin Template
 categories: docs tutorials
 layout: docpost
+published: false
 extra_css: "
 <style>
 .modal .modal-dialog { width: 90%; }
@@ -21,7 +22,7 @@ This document is more focused on getting a module running within our plugin fram
 **Note:** The following relies on RTXI 2.0 and the Qt4 libraries. There are big changes in API between v2.0 and Qt4 and v1.4 and Qt3, respectively, but this tutorial should get you started for those versions, too. **Knowing C++ will also help.**  
 
 ###Editing the GUI
-This section will add a set of buttons to the UI and connect them to functions within the module. Use this as an example if you want to add buttons to trigger events in your module. Just keep in mind, as will be reiterated many, many, many, many times in this tutorial, **do not let the GUI directly alter real-time components**.   
+This section will add a third button to the UI and connect it to a function within the module. Use this as an example if you want to add buttons to trigger events in your module. Just keep in mind, as will be reiterated many, many, many, many times in this tutorial, **do not let the GUI directly alter real-time components**.   
 
 ####1. Clone the plugin template from GitHub.  
 {% highlight bash %}
