@@ -2,7 +2,11 @@
 title: Editing the Plugin Template
 categories: docs tutorials
 layout: docpost
-published: false
+extra_css: "
+<style>
+.modal .modal-dialog { width: 90%; }
+</style>
+"
 ---
 
 RTXI uses a modular structure to implement things in real time. Each module has a well-defined function that fits within a framework. We already provide many modules, both added on as modules and built-into RTXI. If you need to customize a module from scratch, we provide a template that simplifies the process so that no users touch the real-time framework, called the plugin template.  
@@ -34,4 +38,50 @@ $ mv plugin-template.cpp custom-plugin.cpp
 
 Strictly speaking, you don't have to do this. But for the remainder of this tutorial, the sources will be assumed to be custom-plugin.* and the module class to be CustomPlugin.   
 
-####3. 
+####3. Edit the header file. 
+<div class="row">
+	<div class="col-xs-12 col-sm-4 col-sm-offset-2">
+		<button type="button" data-toggle="modal" data-target="#button_before" class="btn btn-lg btn-danger center-block">
+			Before
+		</button>
+	</div>
+	<div class="col-xs-12 col-sm-4">
+		<button type="button" data-toggle="modal" data-target="#button_after" class="btn btn-lg btn-danger center-block">
+			After
+		</button>
+	</div>
+</div>
+
+<div class="modal fade" id="button_before" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="modaltitle">
+	<div class="modal-dialog"><div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<h2 class="modal-title">plugin-template.h</h2>
+		</div>
+		<div class="modal-body">
+			{% include plugin-template-h.html %}
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+		</div>
+	</div></div>
+</div>
+
+<div class="modal fade" id="button_after" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="modaltitle">
+	<div class="modal-dialog"><div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<h2 class="modal-title">custom-plugin.h</h2>
+		</div>
+		<div class="modal-body">
+			{% include plugin-template-cpp.html %}
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+		</div>
+	</div></div>
+</div>
