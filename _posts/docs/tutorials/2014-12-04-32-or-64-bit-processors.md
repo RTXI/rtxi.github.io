@@ -12,32 +12,44 @@ One extra consideration is the operating system. Applications other than drivers
 
 Altogether, none of this is likely to be an issue with machines from the past few years. Lately, AMD and Intel have introduced different brand names and code names for their processors, which can get confusing quite easily. In case you're running older hardware, here's a list of a few 64-bit capable processors.
 
-<div class="col-md-6">  
-<strong>AMD</strong> (aka "x86-64", "AMD64", or "x64"):  
-<ol>
-   <li> Athlon 64  </li>
-   <li> AMD Athlon 64 X2 </li>
-   <li> AMD Athlon 64 FX </li>
-   <li> AMD Athlon II (X2/X3/X4) </li>
-   <li> AMD Opteron </li>
-   <li> AMD Turion 64 </li>
-   <li> AMD Turion 64 X2 </li>
-   <li> AMD Sempron ("Palermo" E6 stepping and all "Manila" models) </li>
-   <li> AMD Phenom (X2/X3/X4) </li>
-   <li> AMD Phenom II (X2/X3/X4) </li>
-</ol>
+<div class="col-md-6"> 
+<table class="table"> 
+	<thead>
+		<tr>
+			<th><strong>AMD</strong> (aka "x86-64", "AMD64", or "x64")</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr><td> Athlon 64 </td></tr>
+		<tr><td> AMD Athlon 64 X2 </td></tr>
+		<tr><td> AMD Athlon 64 FX </td></tr>
+		<tr><td> AMD Athlon II (X2/X3/X4) </td></tr>
+		<tr><td> AMD Opteron </td></tr>
+		<tr><td> AMD Turion 64 </td></tr>
+		<tr><td> AMD Turion 64 X2 </td></tr>
+		<tr><td> AMD Sempron ("Palermo" E6 stepping and all "Manila" models) </td></tr>
+		<tr><td> AMD Phenom (X2/X3/X4) </td></tr>
+		<tr><td> AMD Phenom II (X2/X3/X4) </td></tr>
+	</tbody>
+</table>
 </div>
 
 <div class="col-md-6">  
-<strong>Intel</strong> (aka "IA-32e", "EM64T", or "Intel 64"):   
-<ol>
-   <li> Netburst family </li>
-   <li> some Celeron D's: LGA 775 "Prescott" models </li>
-   <li> some Pentium 4's: "Prescott 2M," "Irwindale" "Cedar Mill" </li>
-   <li> Pentium D </li>
-   <li> Pentium Extreme Edition </li>
-   <li> Intel Core </li>
-   <li> Xeon: Core 2, Dual Core, Celeron </li>
-   <li> Nehalem: Core i3, i5, i7, Intel Atom </li>
-</ol>
+<table class="table"> 
+	<thead>
+		<tr>
+			<th><strong>Intel</strong> (aka "IA-32e", "EM64T", or "Intel 64"</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr><td> Netburst family </td></tr>
+		<tr><td> some Celeron D's: LGA 775 "Prescott" models </td></tr>
+		<tr><td> some Pentium 4's: "Prescott 2M," "Irwindale" "Cedar Mill" </td></tr>
+		<tr><td> Pentium D </td></tr>
+		<tr><td> Pentium Extreme Edition </td></tr>
+		<tr><td> Intel Core </td></tr>
+		<tr><td> Xeon: Core 2, Dual Core, Celeron </td></tr>
+		<tr><td> Nehalem: Core i3, i5, i7, Intel Atom </td></tr>
+	</tbody>
+</table>
 </div>
