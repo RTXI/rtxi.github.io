@@ -4,7 +4,7 @@ categories: docs tutorials
 layout: docpost
 ---
 
-This is an explanation for the code found in the [plugin template module](/modules/plugin-template/) and a brief introduction to the DefaultGUI framework it abstracts. The plugin template is intended as an easy way to start building applications from scratch, but you can fork [any other module](/modules/), too. Below is the contents of `plugin-template.cpp` and `plugin-template.h`. Click on a function to see an explanation of what it does and how it relates to RTXI's framework. If anything is unclear, [let us know](https://github.com/rtxi/rtxi.github.io/issues).  
+This is an explanation for the code found in the [plugin template module](/modules/plugin-template/) and a brief introduction to the DefaultGUI framework it abstracts. The plugin template is a starting point for building modules from scratch, but you can fork [any other module](/modules/), too. Below is the contents of `plugin-template.cpp` and `plugin-template.h`. Click on a function to see an explanation of what it does and how it relates to RTXI's framework. If anything is unclear, [let us know](https://github.com/rtxi/rtxi.github.io/issues).  
 
 This tutorial will assume the reader has a basic understanding of C++, such as how to include libraries and source files, classes, inheritance, etc. For a quick run-down of C++ for people already familiar with programming, try [here](http://www.cplusplus.com/doc/tutorial/).  
 
