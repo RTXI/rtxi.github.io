@@ -21,3 +21,5 @@ $ sudo update-grub
 {% endhighlight %}
 
 From now on, GRUB will boot the last-used kernel by default. If you want to choose a different one, select it manually.  
+
+**Note:** If you have a LUKS-encrypted volume or otherwise encrypt your boot partition, this will fail. You will have to manually change the `GRUB_DEFAULT` options to something like `"1>2"`, for example, which will make GRUB boot the kernel listed as the third option in the submenu opened on the second line of the main menu.  
