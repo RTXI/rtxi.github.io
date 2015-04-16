@@ -1,5 +1,5 @@
 ---
-title: RTXI and Dynamic Clamp
+title: Using RTXI for Dynamic Clamp
 layout: docpost
 categories: docs tutorials
 ---
