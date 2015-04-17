@@ -7,6 +7,131 @@
     <atom:link href="http://rtxi.org/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Porting to RTXI v2.0</title>
+        <description>&lt;p&gt;RTXI v2.0 has been in development for a while, and its release will introduce many changes in the current v1.4 release. Most of these changes should have a limited impact on your modules, but even in that case, you will need to make some edits to your code to port it to v2.0. This tutorial will focus on some common changes that should cover most use-cases. The changes mostly have to do with:    &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Upgrading from Qt3 to Qt4  &lt;/li&gt;
+  &lt;li&gt;Upgrading Qwt5 to Qwt6  &lt;/li&gt;
+  &lt;li&gt;Changes to the DefaultGUIModel class&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;upgrading-from-qt3-to-qt4&quot;&gt;Upgrading from Qt3 to Qt4&lt;/h4&gt;
+&lt;p&gt;Qt3 is an old version of the Qt library. It was released in 2001 and superceded by Qt4 in 2005. It introduced many breaking changes to its API and classes, so it’s taken a while to upgrade RTXI’s codebase to properly use Qt4. We recommend that you look through the documentation Nokia provides on its website for porting from Qt3 to Qt4: &lt;a href=&quot;http://doc.qt.io/qt-4.8/porting4.html&quot;&gt;http://doc.qt.io/qt-4.8/porting4.html&lt;/a&gt;.  &lt;/p&gt;
+
+&lt;h4 id=&quot;porting-modules-that-abstract-from-defaultguimodel&quot;&gt;Porting Modules that Abstract from &lt;code&gt;DefaultGUIModel&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;For v2.0, the code exposed to users has been simplified and the customizability enhanced. The most significant change is in the &lt;code&gt;createGUI&lt;/code&gt; function and how the UI is generated. There are also some simple changes that correspond to syntax and class name changes in Qt4. They are as follows:  &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. Change &lt;code&gt;#includes&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
+Libraries for Qt4 are included differently. To include them directly, change the names as indicated in the Qt4 documentation. For example, &lt;code&gt;&amp;lt;qpushbutton.h&amp;gt;&lt;/code&gt; becomes &lt;code&gt;&amp;lt;QPushButton&amp;gt;&lt;/code&gt;. Look through the Qt4 documentation to see what the name changes are. Another, simpler option is to just remove all the q* includes and replace them with &lt;code&gt;&amp;lt;QtGui&amp;gt;&lt;/code&gt;. &lt;code&gt;QtGui&lt;/code&gt; will make Qt pull in all the libraries needed to compile whatever Qt classes are present in the code without the need to specify them directly.  &lt;/p&gt;
+
+&lt;p&gt;Essentially, something like:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;main_window.h&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qgridview.h&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qhbox.h&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qhbuttongroup.h&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qlabel.h&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qlayout.h&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qpushbutton.h&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qtimer.h&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qtooltip.h&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qvalidator.h&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qvbox.h&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qwhatsthis.h&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div style=&quot;text-align:center;&quot;&gt;becomes&lt;br /&gt;&amp;nbsp;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;main_window.h&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;QtGui&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;2. Change &lt;code&gt;QWhatsThis&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
+This call is made by default in the constructors of module classes that abstract from DefaultGUIModel. Change:  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;QWhatsThis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;text&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div style=&quot;text-align:center;&quot;&gt;to&lt;br /&gt;&amp;nbsp;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;setWhatsThis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;3. Add a resize timer&lt;/strong&gt;&lt;br /&gt;
+At the end of the contructor, after the module has been built and the &lt;code&gt;refresh&lt;/code&gt; function has been called, add the line:  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;QTimer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;singleShot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SLOT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resizeMe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;4. Switch to &lt;code&gt;createGUI + customizeGUI&lt;/code&gt; API&lt;/strong&gt;&lt;br /&gt;
+In v1.4, the GUI is created using DefaultGUIModel’s &lt;code&gt;createGUI&lt;/code&gt; function. If you wanted to add any custom elements, you had to overload the function and copy/paste the code in the &lt;code&gt;default_gui_model.cpp&lt;/code&gt; and then add your own stuff. That’s changed now.  &lt;/p&gt;
+
+&lt;p&gt;You no longer should overload the &lt;code&gt;createGUI&lt;/code&gt; function. Now, just call DefaultGUIModel’s &lt;code&gt;createGUI&lt;/code&gt; function and then call a new function, &lt;code&gt;customizeGUI&lt;/code&gt;, to, well, customize it. &lt;/p&gt;
+
+&lt;p&gt;Define &lt;code&gt;customizeGUI&lt;/code&gt; within the modules you are building. Call it &lt;strong&gt;after&lt;/strong&gt; &lt;code&gt;createGUI&lt;/code&gt; returns. To use &lt;code&gt;customizeGUI&lt;/code&gt; properly, you need to do:  &lt;/p&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;&lt;p&gt;Grab the module layout object created by &lt;code&gt;createGUI&lt;/code&gt;:  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;QGridLayout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customLayout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DefaultGUIModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;/li&gt;
+	&lt;li&gt;&lt;p&gt;Add custom elements to the layout. For more explanation about this, see the example &lt;code&gt;customizeGUI&lt;/code&gt; function defined in the plugin template. &lt;br /&gt;  
+	&lt;a href=&quot;/docs/tutorials/2015/04/15/understanding-plugin-template/&quot;&gt;http://rtxi.org/docs/tutorials/2015/04/15/understanding-plugin-template/&lt;/a&gt;&lt;/p&gt;
+	&lt;/li&gt;
+	&lt;li&gt;&lt;p&gt;Set the edited layout.  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;setLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;5. Enforce types for get/set methods on RTXI workspace variables&lt;/strong&gt;&lt;br /&gt;
+RTXI workspace variables are displayed in the UI as &lt;code&gt;QStrings&lt;/code&gt;, and within the code they are regularly converted to the native types they are supposed to represent in memory, such as &lt;code&gt;int&lt;/code&gt;, &lt;code&gt;double&lt;/code&gt;, and &lt;code&gt;string&lt;/code&gt;. v2.0 should take the calls in v1.4 without issue, but if you run into problems, check the types of the variables you are using.  &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; v2.0 &lt;strong&gt;does not&lt;/strong&gt; support strings for &lt;code&gt;PARAMETER&lt;/code&gt; variables. Use the &lt;code&gt;COMMENT&lt;/code&gt; type instead.  &lt;/p&gt;
+</description>
+        <pubDate>Fri, 17 Apr 2015 00:00:00 -0400</pubDate>
+        <link>http://rtxi.org//docs/tutorials/2015/04/17/porting-to-rtxi-v2/</link>
+        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2015/04/17/porting-to-rtxi-v2/</guid>
+      </item>
+    
+      <item>
+        <title>List of Resources</title>
+        <description>&lt;p&gt;There are a lot of things you need to know to be able to fully use RTXI. Fortunately, these things aren’t hard to learn, and there is already plenty of documentation online to help you learn it. This is a non-exhaustive list of some good resources to learn what you need. They aren’t listed in any specific order.  &lt;/p&gt;
+
+&lt;h4 id=&quot;using-git&quot;&gt;Using Git&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://git-scm.com/book/en/v2&quot;&gt;http://git-scm.com/book/en/v2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://rogerdudler.github.io/git-guide/&quot;&gt;http://rogerdudler.github.io/git-guide/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.atlassian.com/git/tutorials/&quot;&gt;https://www.atlassian.com/git/tutorials/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;using-github&quot;&gt;Using GitHub&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://guides.github.com/&quot;&gt;https://guides.github.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;learning-programming-and-c&quot;&gt;Learning Programming and C++&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cplusplus.com/doc/tutorial/&quot;&gt;http://www.cplusplus.com/doc/tutorial/&lt;/a&gt; (prior programming experience helps)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.penguinprogrammer.co.uk/c-beginners-tutorial/&quot;&gt;http://www.penguinprogrammer.co.uk/c-beginners-tutorial/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;qt-and-gui-creation&quot;&gt;Qt and GUI Creation&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://doc.qt.io/qt-4.8/]&quot;&gt;http://doc.qt.io/qt-4.8/&lt;/a&gt;&lt;br /&gt;
+&lt;strong&gt;Note:&lt;/strong&gt; Be careful with some of the Qt tutorials. You don’t need to instatiate things like QApplication objects, create qmake.pro files, etc. because RTXI takes care of that. Pay attention to what the UI classes are and how to use the signal/slot API.  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Again, this is a non-exhaustive list of a tiny subset of all that’s available online and in print. It takes time to learn these things, just as it does with anything else.  &lt;/p&gt;
+</description>
+        <pubDate>Thu, 16 Apr 2015 00:00:00 -0400</pubDate>
+        <link>http://rtxi.org//docs/tutorials/2015/04/16/resource-list/</link>
+        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2015/04/16/resource-list/</guid>
+      </item>
+    
+      <item>
         <title>Understanding the Plugin Template</title>
         <description>&lt;p&gt;This is an explanation for the code found in the &lt;a href=&quot;/modules/plugin-template/&quot;&gt;plugin template module&lt;/a&gt; and a brief introduction to the DefaultGUI framework it abstracts. The plugin template is a starting point for building modules from scratch, but you can fork &lt;a href=&quot;/modules/&quot;&gt;any other module&lt;/a&gt;, too. Below is the contents of &lt;code&gt;plugin-template.cpp&lt;/code&gt; and &lt;code&gt;plugin-template.h&lt;/code&gt;. Click on a function to see an explanation of what it does and how it relates to RTXI’s framework. If anything is unclear, &lt;a href=&quot;https://github.com/rtxi/rtxi.github.io/issues&quot;&gt;let us know&lt;/a&gt;.  &lt;/p&gt;
 
@@ -823,7 +948,7 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
         <title>RTXI 2015 Deadline Approaching</title>
         <description>&lt;p&gt;The deadline for registering for the RTXI 2015 conference is fast approacing. Register now to book your position here. Noteworthy dates:  &lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Registration:&lt;/strong&gt; April 3&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;Registration:&lt;/strong&gt; April 30&lt;br /&gt;
 &lt;strong&gt;Hotel:&lt;/strong&gt; April 15  &lt;/p&gt;
 
 &lt;p&gt;The conference is May 7-8 at the Georgia Academy of Medicine. Registration is $75 for students and $125 for everyone else. Fee waivers are liberally available upon request.  &lt;/p&gt;
@@ -954,21 +1079,6 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
       </item>
     
       <item>
-        <title>Let There Be News!</title>
-        <description>&lt;p&gt;There is now a news section on the home page! Look in future for an RSS feed.   &lt;/p&gt;
-
-&lt;p&gt;This page is more for me to test that my automation ‘scripts’ are working than to tell you anything remotely substantive.  &lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;I think I’ll add another news post after this one just to check if the spacing works out alright.  &lt;/p&gt;
-</description>
-        <pubDate>Mon, 22 Dec 2014 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//news/2014/12/22/let-there-be-news/</link>
-        <guid isPermaLink="true">http://rtxi.org//news/2014/12/22/let-there-be-news/</guid>
-      </item>
-    
-      <item>
         <title>New Website</title>
         <description>&lt;p&gt;We now have a new website. It’s not quite feature-rich yet, but it’s a nice, fresh site to coincide with the long-planned release of RTXI 2.0. Look here in the future for all documentation, tutorials, videos, etc. related to using RTXI and closed-loop, real-time electrophysiology in general. 
 While not complete, the new site got a few things ready that we think you’ll like:  &lt;/p&gt;
@@ -1039,7 +1149,7 @@ While not complete, the new site got a few things ready that we think you’ll l
       </item>
     
       <item>
-        <title>RTXI and Dynamic Clamp</title>
+        <title>Using RTXI for Dynamic Clamp</title>
         <description>&lt;p&gt;The dynamic clamp is a real-time electrophysiology technique where simulated membrane conductances are artificially injected into a cell via intracellular electrodes. It works by reading membrane potentials, amplifiing, and then feeding them into a dynamic clamp system that contains a model of the desired membrane conductance and generates a current to be injected back into the cell in real time. For digital systems, the membrane conductance is a set of equations that must be computed, whereas for an analog system, the current is the output of a dedicated electrical circuit. The injected dynamic clamp current acts on the cell in parallel with other membrane currents which, depending on the model equations, can represent ion channels, electrical coupling between cells, or synaptic input. This technique has many possible uses. With neurons, it can be used to construct hybrid networks of real and model neurons and even attach virtual dendrites. For an excellent video tutorial, see this video for the following paper in the Journal of Visualized Experiments.  &lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/dclamp.png&quot; alt=&quot;Dynamic Clamp Figure&quot; /&gt;  &lt;/p&gt;
@@ -1369,23 +1479,6 @@ Some influential environment variables:
         <pubDate>Wed, 03 Dec 2014 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/faqs/2014/12/03/how-do-i-use-more-than-one-daq/</link>
         <guid isPermaLink="true">http://rtxi.org//docs/faqs/2014/12/03/how-do-i-use-more-than-one-daq/</guid>
-      </item>
-    
-      <item>
-        <title>Can I use RTAI instead of Xenomai?</title>
-        <description>&lt;p&gt;Yes, you can use RTAI. Before v2.0, RTXI ran on an RTAI-patched kernel. Xenomai is actually a fork of RTAI and is designed to be much easier to customize and patch. To use RTXI, you will not be able to run our install_rtxi.sh script. Instead, you will need to download RTAI and patch then install a kernel manually.  &lt;/p&gt;
-
-&lt;p&gt;Once you have the kernel running, go to your RTXI git directory and run:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sh autogen.sh
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./configure --enable-rtai
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;make
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo make install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Wed, 03 Dec 2014 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//docs/faqs/2014/12/03/can-i-use-rtai-instead-of-xenomai/</link>
-        <guid isPermaLink="true">http://rtxi.org//docs/faqs/2014/12/03/can-i-use-rtai-instead-of-xenomai/</guid>
       </item>
     
   </channel>
