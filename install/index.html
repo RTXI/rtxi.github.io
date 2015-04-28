@@ -7,8 +7,9 @@ layout: default
    <h2 class="page-header">Installing RTXI</h2>
 </div>
 
+<!--
 <div class="container"><div class="row">
-	<div class="lead col-sm-10">RTXI 2.0 is nearing full release; there's just <a href="https://github.com/rtxi/rtxi/issues">some final bugs</a>. You're welcome to try it, but if you need something that immediately works, use RTXI 1.4. 
+	<div class="lead col-sm-10">RTXI 2.0 (is nearing full release; there's just <a href="https://github.com/rtxi/rtxi/issues">some final bugs</a>. You're welcome to try it, but if you need something that immediately works, use RTXI 1.4. 
 	</div>
 	<div class="col-sm-2" style="text-align: center">
 		<div class="row">
@@ -29,6 +30,7 @@ layout: default
 		</div>
 	</div>
 </div><hr /></div>
+-->
 
 <div class="container">
    <p class="lead">There are three ways to install RTXI 2.0:</p>
@@ -71,7 +73,7 @@ layout: default
 
 			<div class="row">
 				<div class="col-xs-12 col-sm-3 col-lg-2 col-sm-offset-3 col-lg-offset-4" style="text-align: center">
-					<a href="https://dl.dropboxusercontent.com/u/49869589/rtxi-2.0-ubuntu-v5-amd64.iso" download>
+					<a href="https://dl.dropboxusercontent.com/u/49869589/rtxi-2.0-ubuntu-v6-amd64.iso" download>
 						<button type="button" class="btn btn-danger" style="margin-bottom: 5px">
 							<span class="glyphicon glyphicon-cloud-download"></span> RTXI 2.0	64-bit
 						</button>
@@ -300,7 +302,6 @@ $ sudo apt-get install git
 			{% highlight bash %}
 $ git clone https://github.com/rtxi/rtxi
 $ cd rtxi
-$ git checkout qt4
 			{% endhighlight %}
 			<p><b>Tip:</b> The above code will download the source files to wherever you are in your filesystem. If you are within your own user directory, then the source files will only be accessible to your account, not anyone else's. To download the source code in a central location that all users can access, consider: </p>
 			{% highlight bash %}
@@ -309,7 +310,6 @@ $ sudo mv rtxi /home/
 $ cd /home
 $ sudo find rtxi \( -type d -exec chmod u+rwx,g+rwx,o+rx {} \; -o -type f -exec chmod u+rw,g+rw,o+r {} \; \)
 $ cd /home/rtxi/
-$ git checkout qt4
 			{% endhighlight %}
 			<p><b>Note:</b> Don't do this if you have a user named "rtxi". Rename the RTXI folder you cloned to something else.
 			</p>
@@ -319,7 +319,7 @@ $ git checkout qt4
 			<h4 class="lead media-heading">
 				{% increment customcount %}. Install RTXI and real-time kernel dependencies. 
 			</h4>
-			<p>Install the dependencies for RTXI and for installing the real-time (RT) kernel. Assuming you are in the cloned RTXI directory and on the qt4 branch, run:
+			<p>Install the dependencies for RTXI and for installing the real-time (RT) kernel. Assuming you are in the cloned RTXI directory, run:
 			</p>
 			{% highlight bash %}
 $ cd scripts
@@ -435,18 +435,16 @@ $ sudo rtxi
 			<h4 class="lead media-heading">
 				{% increment upgradecount %}. Clone the RTXI GitHub repository.
 			</h4>
-			<p>If you haven't already cloned our GitHub repo, run the following in the terminal. RTXI 2.0 is currently on the qt4 branch. 
+			<p>If you haven't already cloned our GitHub repo, run the following in the terminal.  
 			</p>
 			{% highlight bash %}
 $ git clone https://github.com/rtxi/rtxi.git
 $ cd rtxi
-$ git checkout qt4
 			{% endhighlight %}
-			<p>If you already have a clone of the repository, just make sure you switch to the qt4 branch and pull any updates that may have taken place.
+			<p>If you already have a clone of the repository, go to it and run:
 			</p>
 			{% highlight bash %}
-$ git checkout qt4
-$ git pull origin qt4
+$ git pull origin master
 			{% endhighlight %}
 
 			<!-- 2. Install dependencies -->
