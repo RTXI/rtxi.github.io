@@ -100,6 +100,11 @@ RTXI workspace variables are displayed in the UI as &lt;code&gt;QStrings&lt;/cod
         <title>List of Resources</title>
         <description>&lt;p&gt;There are a lot of things you need to know to be able to fully use RTXI. Fortunately, these things aren’t hard to learn, and there is already plenty of documentation online to help you learn it. This is a non-exhaustive list of some good resources to learn what you need. They aren’t listed in any specific order.  &lt;/p&gt;
 
+&lt;h4 id=&quot;using-the-command-line&quot;&gt;Using the Command Line&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ryanstutorials.net/linuxtutorial/&quot;&gt;http://ryanstutorials.net/linuxtutorial/&lt;/a&gt; (see sections on how to navigate around the filesystem and manipulate files)  &lt;/li&gt;
+&lt;/ol&gt;
+
 &lt;h4 id=&quot;using-git&quot;&gt;Using Git&lt;/h4&gt;
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;http://git-scm.com/book/en/v2&quot;&gt;http://git-scm.com/book/en/v2&lt;/a&gt;&lt;/li&gt;
@@ -124,7 +129,7 @@ RTXI workspace variables are displayed in the UI as &lt;code&gt;QStrings&lt;/cod
 &lt;strong&gt;Note:&lt;/strong&gt; Be careful with some of the Qt tutorials. You don’t need to instatiate things like QApplication objects, create qmake.pro files, etc. because RTXI takes care of that. Pay attention to what the UI classes are and how to use the signal/slot API.  &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Again, this is a non-exhaustive list of a tiny subset of all that’s available online and in print. It takes time to learn these things, just as it does with anything else.  &lt;/p&gt;
+&lt;p&gt;Again, this is a non-exhaustive list of a tiny subset of all that’s available online and in print. It takes some time to learn these things, just as it does with anything else. It also wouldn’t hurt to learn these things in general, Qt excepted. Unix-like environments are very common on clusters for computational research; Git and GitHub are widely used for coding projects; and C++ very fast and good to learn, especially given that other languages often use it as a backend to speed up loops and other heavy sections of code.  &lt;/p&gt;
 </description>
         <pubDate>Thu, 16 Apr 2015 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//docs/tutorials/2015/04/16/resource-list/</link>
