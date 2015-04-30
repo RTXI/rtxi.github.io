@@ -85,7 +85,7 @@ extra_js: "
       <button type="button" class="btn btn-danger btn active all-papers" data-filter="*" role="button" data-toggle="button" aria-pressed="true">All</button>
    </div>
    {% for post in site.categories.papers %} 
-      {% capture chunkflag %}{{ forloop.index | modulo:15 }}{% endcapture %}
+      {% capture chunkflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
       {% if chunkflag == "0"%}
          {% assign flag = "true" %}
       {% endif %}
@@ -96,7 +96,7 @@ extra_js: "
          {% capture startyear %}{{ thisyear }}{% endcapture %}
       {% elsif thisyear != lastyear  and  flag == "true" %}
       <div class="btn-group" role="group">
-         <button type="button" class="btn btn-danger btn" data-filter=".chunk{{ chunkvar}}" role="button" data-toggle="button">'{{ lastyear }}-{{startyear}}</button>
+         <button type="button" class="btn btn-danger btn" data-filter=".chunk{{ chunkvar}}" role="button" data-toggle="button">{% if lastyear == startyear %}'{{ lastyear }}{% else %}'{{ lastyear }}-{{startyear}}{% endif %}</button>
       </div>
          {% assign flag == "false" %}
          {% capture startyear %}{{ thisyear }}{% endcapture %}
@@ -105,7 +105,7 @@ extra_js: "
       {% capture lastyear %}{{ thisyear }}{% endcapture %}
    {% endfor %}
    <div class="btn-group" role="group">
-      <button type="button" class="btn btn-danger btn" data-filter=".chunk{{ chunkvar}}" role="button" data-toggle="button">'{{ lastyear }}-{{startyear}}</button>
+      <button type="button" class="btn btn-danger btn" data-filter=".chunk{{ chunkvar}}" role="button" data-toggle="button">{% if lastyear == startyear %}'{{ lastyear }}{% else %}'{{ lastyear }}-{{startyear}}{% endif %}</button>
    </div>
 </div></div>
 <div style="border-bottom: 1px solid #eee; margin-bottom: 10px;" class="container">&nbsp;</div>
@@ -114,7 +114,7 @@ extra_js: "
 {% assign flag = "false" %}
 <div class="container"><div class="row isotope" id="oopsgrid">
    {% for post in site.categories.papers %}
-      {% capture chunkflag %}{{ forloop.index | modulo:15 }}{% endcapture %}
+      {% capture chunkflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
       {% capture thisyear %}{{ post.date | date: '%y' }}{% endcapture %}
       {% if chunkflag == "0" %}
          {% assign flag = "true" %}
