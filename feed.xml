@@ -7,6 +7,19 @@
     <atom:link href="http://rtxi.org/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Repolarization Reserve Evolves Dynamically During the Cardiac Action Potential: Effects of Transient Outward Currents on Early Afterdepolarizations</title>
+        <description>&lt;p&gt;&lt;strong&gt;Background&lt;/strong&gt; — Transient outward K currents (Ito) have been reported both to suppress and facilitate early afterdepolarizations (EADs) when repolarization reserve is reduced. Here we used the dynamic clamp technique to analyze how Ito accounts for these paradoxical effects on EADs by influencing the dynamic evolution of repolarization reserve during the action potential.  &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Methods and Results&lt;/strong&gt; — Isolated patch-clamped rabbit ventricular myocytes were exposed to either oxidative stress (H2O2) or hypokalemia to induce bradycardia-dependent EADs at a long pacing cycle length (PCL) of 6 s, when native rabbit Ito is substantial. EADs disappeared when the PCL was shortened to 1 s, when Ito becomes negligible due to incomplete recovery from inactivation. During 6-s PCL, EADs were blocked by the Ito blocker 4-aminopyridine, but reappeared when a virtual current with appropriate Ito-like properties was reintroduced using the dynamic clamp (n=141 trials). During 1-s PCL in the absence of 4-aminopyridine, adding a virtual Ito-like current (n=1,113 trials) caused EADs to reappear over a wide range of Ito conductance (0.005-0.15 nS/pF), particularly when inactivation kinetics were slow (τinact≥20 ms) and the pedestal (non-inactivating component) was small (&amp;lt;25% of peak Ito). Faster inactivation or larger pedestals tended to suppress EADs.  &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Conclusions&lt;/strong&gt; — Repolarization reserve evolves dynamically during the cardiac action potential. Whereas sufficiently large Ito can suppress EADs, a wide range of intermediate Ito properties can promote EADs by influencing the temporal evolution of other currents affecting late repolarization reserve. These findings raise caution in targeting Ito as an antiarrhythmic strategy.  &lt;/p&gt;
+</description>
+        <pubDate>Mon, 20 Apr 2015 00:00:00 -0400</pubDate>
+        <link>http://rtxi.org//papers/2015/04/20/repolarization-reserve-evolves-dynamically-during-cardiac-action-potential/</link>
+        <guid isPermaLink="true">http://rtxi.org//papers/2015/04/20/repolarization-reserve-evolves-dynamically-during-cardiac-action-potential/</guid>
+      </item>
+    
+      <item>
         <title>Porting to RTXI v2.0</title>
         <description>&lt;p&gt;RTXI v2.0 has been in development for a while, and its release will introduce many changes in the current v1.4 release. Most of these changes should have a limited impact on your modules, but even in that case, you will need to make some edits to your code to port it to v2.0. This tutorial will focus on some common changes that should cover most use-cases. The changes mostly have to do with:    &lt;/p&gt;
 
@@ -1084,6 +1097,15 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
       </item>
     
       <item>
+        <title>Neural ensemble communities: open-source approaches to hardware for large-scale electrophysiology</title>
+        <description>&lt;p&gt;One often-overlooked factor when selecting a platform for large-scale electrophysiology is whether or not a particular data acquisition system is ‘open’ or ‘closed’: that is, whether or not the system’s schematics and source code are available to end users. Open systems have a reputation for being difficult to acquire, poorly documented, and hard to maintain. With the arrival of more powerful and compact integrated circuits, rapid prototyping services, and web-based tools for collaborative development, these stereotypes must be reconsidered. We discuss some of the reasons why multichannel extracellular electrophysiology could benefit from open-source approaches and describe examples of successful community-driven tool development within this field. In order to promote the adoption of open-source hardware and to reduce the need for redundant development efforts, we advocate a move toward standardized interfaces that connect each element of the data processing pipeline. This will give researchers the flexibility to modify their tools when necessary, while allowing them to continue to benefit from the high-quality products and expertise provided by commercial vendors.  &lt;/p&gt;
+</description>
+        <pubDate>Wed, 17 Dec 2014 00:00:00 -0500</pubDate>
+        <link>http://rtxi.org//papers/2014/12/17/neural-ensemble-communities/</link>
+        <guid isPermaLink="true">http://rtxi.org//papers/2014/12/17/neural-ensemble-communities/</guid>
+      </item>
+    
+      <item>
         <title>New Website</title>
         <description>&lt;p&gt;We now have a new website. It’s not quite feature-rich yet, but it’s a nice, fresh site to coincide with the long-planned release of RTXI 2.0. Look here in the future for all documentation, tutorials, videos, etc. related to using RTXI and closed-loop, real-time electrophysiology in general. 
 While not complete, the new site got a few things ready that we think you’ll like:  &lt;/p&gt;
@@ -1403,87 +1425,6 @@ Some influential environment variables:
         <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/troubleshoot/2014/12/04/benchmarking-real-time-performance/</link>
         <guid isPermaLink="true">http://rtxi.org//docs/troubleshoot/2014/12/04/benchmarking-real-time-performance/</guid>
-      </item>
-    
-      <item>
-        <title>32 or 64 Bit? Your Processor Explained</title>
-        <description>&lt;p&gt;64-bit and 32-bit refer to how addresses and memory are handled in different instruction set architectures. For clarity, the terms ‘32-bit’ and ‘64-bit’ have dual meanings. The first refers to the size of addressable chunks of memory. Memory is organized in chunks, called words, that a processor can handle at once. 32 and 64-bit systems respectively handle chunks of memory that are 32 and 64 bits in size. The second meaning refers to the size of the addresses used to catalog all of the addressable points in memory. In other words, each word in memory has an address that the processor uses to find it. 32-bit systems use 32-bit-long addresses, and the same follows for 64-bit ones. Note that it just so happens that these systems have the same address size and word size. It’s not necessarily the case. For instance, early PCs often had 8-bit words and 16-bit addresses.  &lt;/p&gt;
-
-&lt;p&gt;Most commercially available systems today come with 64-bit capable processors and pre-installed 64-bit operating systems. 32-bit applications are compatible with them because the 64-bit format is backwards-compatible. The space addressable by 32 bits is a subset of what is addressed with 64, and the processors are built to handle 32-bit chunks of memory. Simply put, if you have a 64-bit compatible processor, run 64-bit software.  &lt;/p&gt;
-
-&lt;p&gt;One extra consideration is the operating system. Applications other than drivers and similar software interface with the hardware through the operating system. Therefore, it is important to consider the type of operating system installed. 32-bit OSes can only handle 32-bit operations, but 64-bit ones can properly use both.  &lt;/p&gt;
-
-&lt;p&gt;Altogether, none of this is likely to be an issue with machines from the past few years. Lately, AMD and Intel have introduced different brand names and code names for their processors, which can get confusing quite easily. In case you’re running older hardware, here’s a list of a few 64-bit capable processors.&lt;/p&gt;
-
-&lt;div class=&quot;col-md-6&quot;&gt; 
-&lt;table class=&quot;table&quot;&gt; 
-	&lt;thead&gt;
-		&lt;tr&gt;
-			&lt;th&gt;&lt;strong&gt;AMD&lt;/strong&gt; (aka &quot;x86-64&quot;, &quot;AMD64&quot;, or &quot;x64&quot;)&lt;/th&gt;
-		&lt;/tr&gt;
-	&lt;/thead&gt;
-	&lt;tbody&gt;
-		&lt;tr&gt;&lt;td&gt; Athlon 64 &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; AMD Athlon 64 X2 &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; AMD Athlon 64 FX &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; AMD Athlon II (X2/X3/X4) &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; AMD Opteron &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; AMD Turion 64 &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; AMD Turion 64 X2 &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; AMD Sempron (&quot;Palermo&quot; E6 stepping and all &quot;Manila&quot; models) &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; AMD Phenom (X2/X3/X4) &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; AMD Phenom II (X2/X3/X4) &lt;/td&gt;&lt;/tr&gt;
-	&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;col-md-6&quot;&gt;  
-&lt;table class=&quot;table&quot;&gt; 
-	&lt;thead&gt;
-		&lt;tr&gt;
-			&lt;th&gt;&lt;strong&gt;Intel&lt;/strong&gt; (aka &quot;IA-32e&quot;, &quot;EM64T&quot;, or &quot;Intel 64&quot;&lt;/th&gt;
-		&lt;/tr&gt;
-	&lt;/thead&gt;
-	&lt;tbody&gt;
-		&lt;tr&gt;&lt;td&gt; Netburst family &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; some Celeron D&#39;s: LGA 775 &quot;Prescott&quot; models &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; some Pentium 4&#39;s: &quot;Prescott 2M,&quot; &quot;Irwindale&quot; &quot;Cedar Mill&quot; &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; Pentium D &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; Pentium Extreme Edition &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; Intel Core &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; Xeon: Core 2, Dual Core, Celeron &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; Nehalem: Core i3, i5, i7, Intel Atom &lt;/td&gt;&lt;/tr&gt;
-	&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//docs/tutorials/2014/12/04/32-or-64-bit-processors/</link>
-        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2014/12/04/32-or-64-bit-processors/</guid>
-      </item>
-    
-      <item>
-        <title>How do I use more than one DAQ?</title>
-        <description>&lt;p&gt;RTXI has no built-in software limitations on the number of DAQ cards. You will need to edit the configuration file, however. Here is the relevant excerpt of /etc/rtxi.conf:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;OBJECT&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;component=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;plugin&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;library=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;comedi_driver.so&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;2&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;PARAM&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;/dev/comedi0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/PARAM&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;PARAM&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Num Devices&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/PARAM&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;OBJECT&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;13&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/OBJECT&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Edit the lines to add another COMEDI device and change the number of devices:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;PARAM&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;/dev/comedi0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/PARAM&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;PARAM&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;/dev/comedi1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/PARAM&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;PARAM&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Num Devices&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/PARAM&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This applies to the COMEDI drivers that come with RTAI and haven’t been tested with ANALOGY. In theory, it’ll work. Just replace “comedi” with “analogy” in the names. &lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 03 Dec 2014 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//docs/faqs/2014/12/03/how-do-i-use-more-than-one-daq/</link>
-        <guid isPermaLink="true">http://rtxi.org//docs/faqs/2014/12/03/how-do-i-use-more-than-one-daq/</guid>
       </item>
     
   </channel>
