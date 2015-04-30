@@ -1,5 +1,5 @@
 ---
-title: Neural ensemble communities: open-source approaches to hardware for large-scale electrophysiology
+title: "Neural ensemble communities: open-source approaches to hardware for large-scale electrophysiology"
 categories: papers
 layout: paper
 
