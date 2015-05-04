@@ -977,23 +977,6 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
       </item>
     
       <item>
-        <title>Linux Freezes after Reboot</title>
-        <description>&lt;p&gt;If you reboot the computer and the computer displays a laggy log-in screen, it’s probably because kexec-tools are handling reboots. The utility normally is used to perform ‘warm reboots,’ which is when the computer reloads a kernel without fully shutting the system down. The lag is probably because kexec-tools is rebooting to a non-RT kernel. The easiest thing to do here is to disable kexec-tools from handling reboots. To do so:  &lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Open /etc/default/kexec (as root).&lt;/li&gt;
-  &lt;li&gt;Change &lt;code&gt;LOAD_KEXEC&lt;/code&gt; from &lt;code&gt;true&lt;/code&gt; to &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Save and exit. &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Now, kexec-tools will no longer handle reboots, and your system reboot as one would expect. &lt;/p&gt;
-</description>
-        <pubDate>Mon, 02 Mar 2015 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//docs/troubleshoot/2015/03/02/linux-frozen-after-reboot/</link>
-        <guid isPermaLink="true">http://rtxi.org//docs/troubleshoot/2015/03/02/linux-frozen-after-reboot/</guid>
-      </item>
-    
-      <item>
         <title>Using Graphics Cards</title>
         <description>&lt;p&gt;Choosing graphics cards can be a thorny issue in standard Linux alone, let alone real-time Linux. Often, open-source drivers lag behind proprietary ones in terms of compatibility with newer hardware and displays. The two main types, AMD and Nvidia, are supported for the most part within Linux.  &lt;/p&gt;
 
@@ -1025,38 +1008,25 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 
 &lt;ol&gt;
   &lt;li&gt;When does the system freeze or slow down?&lt;br /&gt;
-    &lt;ol&gt;
+    &lt;ul&gt;
       &lt;li&gt;Does it freeze after you pick a kernel in the GRUB menu?  &lt;/li&gt;
       &lt;li&gt;Does the freeze affect all kernels? Or is it just the real-time one(s)?  &lt;/li&gt;
-    &lt;/ol&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;What graphics card are you using?&lt;br /&gt;
-    &lt;ol&gt;
+    &lt;ul&gt;
       &lt;li&gt;Is it Nvidia or AMD?  &lt;/li&gt;
       &lt;li&gt;Are you using open-source or proprietary drivers?  &lt;/li&gt;
-    &lt;/ol&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Are the DAQ drivers loaded? Open the Control Panel module in RTXI and see if the “analogy0” channel is open. If not, the drivers aren’t detecting your DAQ. (Applies to RT kernels. Non-RT kernels can’t touch the DAQ.)  &lt;/li&gt;
+  &lt;li&gt;If running an RT kernel, are the DAQ drivers loaded? Open the Control Panel module in RTXI and see if the “analogy0” channel is open. If not, the drivers aren’t detecting your DAQ.  &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;The issues could be caused by several issues, like your graphics card not being fully supported, the DAQ driver interfering with framebuffers, etc. One thing that we’ve noticed while debugging our own systems is that on some Nvidia cards, the nouveau driver is incompatible with analogy, causing the GUI to freeze. One almost fix to this is to disable kernel mode setting. Here’s now to do it:  &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt; Open the /etc/default/grub file as root.&lt;/li&gt;
-&lt;li&gt; Edit the GRUB_CMDLINE_LINUX_DEFAULT line to read:  
+&lt;p&gt;Issues can have several causes, like your graphics card not being fully supported by the driver, the DAQ driver interfering with framebuffers, interrupt line collisions, etc. If you have issues, you are encouraged to contact us for help. Here are some tips and fixes for common problems.  &lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;GRUB_CMDLINE_LINUX_DEFAULT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;quiet splash nomodeset i915.modeset=0 nouveau.modeset=0&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-  &lt;/li&gt;
-&lt;li&gt; Update GRUB.  
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo update-grub&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;This prevents the kernel from using the nvidia card to compute the UI. Unfortunately, one side-effect is to offload the UI to the CPU, making it run slower and degrading real-time performance.  &lt;/p&gt;
-
-&lt;p&gt;To undo this change, just remove the edits made the the /etc/default/grub file and run &lt;code&gt;update-grub&lt;/code&gt; again.  &lt;/p&gt;
+&lt;p&gt;If your system freezes when it boots, it couls be caused by interrupt collisions between the graphics driver and the analogy driver. We’ve noticied this happening most frequently on machines with Nvidia cards. You can fix this by opening up the computer and moving the graphics card to a different PCI slot. &lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Feb 2015 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/troubleshoot/2015/02/23/system-frozen-or-slow/</link>
@@ -1425,6 +1395,63 @@ Some influential environment variables:
         <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/troubleshoot/2014/12/04/benchmarking-real-time-performance/</link>
         <guid isPermaLink="true">http://rtxi.org//docs/troubleshoot/2014/12/04/benchmarking-real-time-performance/</guid>
+      </item>
+    
+      <item>
+        <title>32 or 64 Bit? Your Processor Explained</title>
+        <description>&lt;p&gt;64-bit and 32-bit refer to how addresses and memory are handled in different instruction set architectures. For clarity, the terms ‘32-bit’ and ‘64-bit’ have dual meanings. The first refers to the size of addressable chunks of memory. Memory is organized in chunks, called words, that a processor can handle at once. 32 and 64-bit systems respectively handle chunks of memory that are 32 and 64 bits in size. The second meaning refers to the size of the addresses used to catalog all of the addressable points in memory. In other words, each word in memory has an address that the processor uses to find it. 32-bit systems use 32-bit-long addresses, and the same follows for 64-bit ones. Note that it just so happens that these systems have the same address size and word size. It’s not necessarily the case. For instance, early PCs often had 8-bit words and 16-bit addresses.  &lt;/p&gt;
+
+&lt;p&gt;Most commercially available systems today come with 64-bit capable processors and pre-installed 64-bit operating systems. 32-bit applications are compatible with them because the 64-bit format is backwards-compatible. The space addressable by 32 bits is a subset of what is addressed with 64, and the processors are built to handle 32-bit chunks of memory. Simply put, if you have a 64-bit compatible processor, run 64-bit software.  &lt;/p&gt;
+
+&lt;p&gt;One extra consideration is the operating system. Applications other than drivers and similar software interface with the hardware through the operating system. Therefore, it is important to consider the type of operating system installed. 32-bit OSes can only handle 32-bit operations, but 64-bit ones can properly use both.  &lt;/p&gt;
+
+&lt;p&gt;Altogether, none of this is likely to be an issue with machines from the past few years. Lately, AMD and Intel have introduced different brand names and code names for their processors, which can get confusing quite easily. In case you’re running older hardware, here’s a list of a few 64-bit capable processors.&lt;/p&gt;
+
+&lt;div class=&quot;col-md-6&quot;&gt; 
+&lt;table class=&quot;table&quot;&gt; 
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;&lt;strong&gt;AMD&lt;/strong&gt; (aka &quot;x86-64&quot;, &quot;AMD64&quot;, or &quot;x64&quot;)&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;&lt;td&gt; Athlon 64 &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; AMD Athlon 64 X2 &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; AMD Athlon 64 FX &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; AMD Athlon II (X2/X3/X4) &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; AMD Opteron &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; AMD Turion 64 &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; AMD Turion 64 X2 &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; AMD Sempron (&quot;Palermo&quot; E6 stepping and all &quot;Manila&quot; models) &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; AMD Phenom (X2/X3/X4) &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; AMD Phenom II (X2/X3/X4) &lt;/td&gt;&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;col-md-6&quot;&gt;  
+&lt;table class=&quot;table&quot;&gt; 
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;&lt;strong&gt;Intel&lt;/strong&gt; (aka &quot;IA-32e&quot;, &quot;EM64T&quot;, or &quot;Intel 64&quot;&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;&lt;td&gt; Netburst family &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; some Celeron D&#39;s: LGA 775 &quot;Prescott&quot; models &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; some Pentium 4&#39;s: &quot;Prescott 2M,&quot; &quot;Irwindale&quot; &quot;Cedar Mill&quot; &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; Pentium D &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; Pentium Extreme Edition &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; Intel Core &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; Xeon: Core 2, Dual Core, Celeron &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; Nehalem: Core i3, i5, i7, Intel Atom &lt;/td&gt;&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
+        <link>http://rtxi.org//docs/tutorials/2014/12/04/32-or-64-bit-processors/</link>
+        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2014/12/04/32-or-64-bit-processors/</guid>
       </item>
     
   </channel>
