@@ -1024,9 +1024,32 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;Issues can have several causes, like your graphics card not being fully supported by the driver, the DAQ driver interfering with framebuffers, interrupt line collisions, etc. If you have issues, you are encouraged to contact us for help. Here are some tips and fixes for common problems.  &lt;/p&gt;
+&lt;p&gt;These types of issues can have several causes. It can be your graphics card not being fully supported by the driver, the DAQ driver interfering with framebuffers, interrupt line collisions, etc. If you have issues, you are encouraged to contact us for help. Here are some tips and fixes for common problems:  &lt;/p&gt;
 
-&lt;p&gt;If your system freezes when it boots, it couls be caused by interrupt collisions between the graphics driver and the analogy driver. We’ve noticied this happening most frequently on machines with Nvidia cards. You can fix this by opening up the computer and moving the graphics card to a different PCI slot. &lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;dl class=&quot;dl-horizontal&quot;&gt;
+	&lt;dt&gt;Freezing at Boot&lt;/dt&gt;
+		&lt;dd&gt;If your system freezes when it boots, it couls be caused by interrupt collisions between the graphics driver and the analogy driver. We&#39;ve noticied this happening most frequently on machines with Nvidia cards. You can fix this by opening up the computer and moving the graphics card to a different PCI slot.&lt;br /&gt;&lt;br /&gt;
+		If you don&#39;t have a spare port, you&#39;ll need to get a new graphics card. We recommend AMD cards that have been released long enough for Ubuntu to fully support them. A list of compatible cards is available &lt;a href=&quot;https://help.ubuntu.com/community/RadeonDriver&quot;&gt; on Ubuntu&#39;s site.&lt;/a&gt; 
+		&lt;/dd&gt;
+	&lt;br /&gt;
+	&lt;dt&gt;Poor Performance&lt;/dt&gt;
+		&lt;dd&gt;If your system has consistently poor performance, visible within the Performance Measurement Module, that worsens when the DAQ channels are opened, it is likely because the graphics drivers are not using kernel modesetting properly. What that means is that the CPU is handling things the graphics card should, causing it to interfere with the real-time processes it needs to devote time to doing.  &lt;br /&gt;&lt;br /&gt;
+		This is likely caused by the graphics card being not fully supported by open-source drivers. You may need to replace your driver. To see if your system is using the graphics driver, run: 
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo lshw -C display &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; grep configuration&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+		If you don&#39;t see your graphics driver (radeon or nouveau) listed, then it&#39;s not being properly used. You can also check this by looking at the &lt;code&gt;dmesg&lt;/code&gt; output:
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;dmesg &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; grep &lt;span class=&quot;s2&quot;&gt;&amp;quot;radeon\|nouveau&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+		If the driver is working properly, you&#39;ll see a lot of output. If not, you probably won&#39;t see anything. &lt;br /&gt;&lt;br /&gt;
+		Let us know if you need help with this issue. Sending us the output from the above commands will help immensely in figuring out your problem.  
+		&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;Hardware can be idiosyncratic and interfere with real-time, but lucky for you, we’re here to help.  &lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Feb 2015 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/troubleshoot/2015/02/23/system-frozen-or-slow/</link>
