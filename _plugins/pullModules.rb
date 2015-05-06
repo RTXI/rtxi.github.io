@@ -23,34 +23,26 @@ module Jekyll
             next if excludelist.include? repo
             repo_urls.store(repo, { "base"=>repoprefix+repo, 
                                     "readme"=>rawprefix.join(repo)+"README.md", 
-#                                    "screenshot"=>rawprefix.join(repo)+"images/"+repo+".png" })
                                     "screenshot"=>rawprefix.join(repo)+repo+".png" })
          end
-#			puts repo_urls
          return repo_urls
       end
 
       def getExcludeList
          # Not done yet, hard-coded for now.
-         excludelist = ["rtxi", "tutorials", "rtxi.github.io", "user-manual", "logos", "live-image", "analysis-tools", "poster", "dsp-lib", "plot-lib", "python-plugin", "dynamo-examples"]
+         excludelist = ["rtxi", "tutorials", "rtxi.github.io", "user-manual", "logos", "live-image", "analysis-tools", "poster", "dsp-lib", "plot-lib", "python-plugin", "dynamo-examples", "conference-2015"]
          return excludelist
       end
 
       def generate(site)
          apiurl = "https://api.github.com/orgs/rtxi/repos?per_page=100"
-#         rawprefix = ["https://raw.githubusercontent.com/RTXI/", "/master/images/"]
          rawprefix = ["https://raw.githubusercontent.com/RTXI/", "/master/"]
          repoprefix = "https://github.com/rtxi/"
          build_dir = "modules"
 
          repos = getRepoList(apiurl)
-#         repos = ["neuron", "membrane-test", "signal-generator"]
          excludelist = getExcludeList
          repo_urls = makeURLs(repos, rawprefix, repoprefix, excludelist)
-
-#         unless File.directory? (build_dir)
-#            FileUtils.mkdir_p(build_dir)
-#         end
 
          repo_data = {}
          repo_urls.each_pair do |repo, index|
@@ -120,9 +112,7 @@ module Jekyll
 
             htmltext = yamlheader + forkmebanner + GitHub::Markdown.render(text)
 
-#            File.open(filename, "w") { |file| file.write(htmltext) }
             File.open(build_dir+"/"+repo+"/"+repo+".png", "w") { |file| file.write(image) }
-#            File.open("images/"+repo+".png", "w") { |file| file.write(image) }
 
             begin
                site.pages << ModulePage.new(site, site.source, File.join("modules",repo), "index.html", htmltext)
@@ -144,8 +134,6 @@ module Jekyll
 
          self.process(@name)
          begin
-#            self.read_yaml("_"+dir, name)
-#            self.read_yaml(dir, name)
             self.content = filecontent
             if self.content =~ /\A(---\s*\n.*?\n?)^(---\s*$\n?)/m
                self.content = $POSTMATCH
