@@ -8,7 +8,7 @@ Choosing graphics cards can be a thorny issue in standard Linux alone, let alone
 
 For RTXI, we strongly encourage you to use the open-source drivers. Nouveau is the open-source one for Nvidia cards, and radeon is for AMD ones. No configuration or input on your part is needed to use them. When you install Linux and boot, your kernel will detect the graphics hardware and load the corresponding driver. You can check to see if your driver is loaded by running:  
 {% highlight bash %}
-$ lsmod | grep "radeon\|nvidia"
+$ lsmod | grep "radeon\|nouveau"
 {% endhighlight %}
 
 The reason we use open-source drivers is that they use the kernel to directly leverage the graphics card to compute things like the UI and desktop. Proprietary drivers, while technically doing the same thing, function differently and can degrade real-time performance by causing latencies to spike to as high as 100us on some machines. Skipping the drivers altogether forces the CPU to compute the UI, which when coupled with the RT kernel, will make the UI slow and laggy and the real-time performance poorer.  
