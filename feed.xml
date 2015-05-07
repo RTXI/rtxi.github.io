@@ -7,6 +7,34 @@
     <atom:link href="http://rtxi.org/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Hardware for RTXI</title>
+        <description>&lt;p&gt;If you’re buying new equipment to use for RTXI, there are some things you should consider in before your purchase. They are all easy to meet, and they’ll help you get set up with a properly performing installation of RTXI.  &lt;/p&gt;
+
+&lt;h4 id=&quot;computer&quot;&gt;Computer&lt;/h4&gt;
+&lt;p&gt;Most computers built in the last few years will run Linux, but some will perform better for real-time applications. Here are some points to consider when buying new hardware:  &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;What is the CPU type?&lt;/strong&gt; We recommend using Intel processors, though AMD ones work, too.  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;How many PCI/PCIe slots are there?&lt;/strong&gt; You will need one PCI or PCIe slot for a graphics card and another PCI slot for a DAQ.  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;What type of graphics card is needed?&lt;/strong&gt; Use an AMD card rather than an Nvidia one.  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;resources&quot;&gt;Resources&lt;/h4&gt;
+&lt;p&gt;Here is a list of resources for hardware that different drivers support.   &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.ubuntu.com/community/RadeonDriver#Fully_Supported&quot;&gt;&lt;strong&gt;AMD driver (radeon)&lt;/strong&gt;&lt;/a&gt;  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wiki.freedesktop.org/nouveau/FAQ/#index14h3&quot;&gt;&lt;strong&gt;Nvidia driver (nouveau)&lt;/strong&gt;&lt;/a&gt;  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://xenomai.org/analogy-practical-presentation/#ni_pcimio&quot;&gt;&lt;strong&gt;DAQ driver (analogy)&lt;/strong&gt;&lt;/a&gt;  &lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Wed, 06 May 2015 00:00:00 -0400</pubDate>
+        <link>http://rtxi.org//docs/tutorials/2015/05/06/hardware-for-rtxi/</link>
+        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2015/05/06/hardware-for-rtxi/</guid>
+      </item>
+    
+      <item>
         <title>Repolarization Reserve Evolves Dynamically During the Cardiac Action Potential: Effects of Transient Outward Currents on Early Afterdepolarizations</title>
         <description>&lt;p&gt;&lt;strong&gt;Background&lt;/strong&gt; — Transient outward K currents (Ito) have been reported both to suppress and facilitate early afterdepolarizations (EADs) when repolarization reserve is reduced. Here we used the dynamic clamp technique to analyze how Ito accounts for these paradoxical effects on EADs by influencing the dynamic evolution of repolarization reserve during the action potential.  &lt;/p&gt;
 
@@ -982,7 +1010,7 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 
 &lt;p&gt;For RTXI, we strongly encourage you to use the open-source drivers. Nouveau is the open-source one for Nvidia cards, and radeon is for AMD ones. No configuration or input on your part is needed to use them. When you install Linux and boot, your kernel will detect the graphics hardware and load the corresponding driver. You can check to see if your driver is loaded by running:  &lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;lsmod &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; grep &lt;span class=&quot;s2&quot;&gt;&amp;quot;radeon\|nvidia&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;lsmod &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; grep &lt;span class=&quot;s2&quot;&gt;&amp;quot;radeon\|nouveau&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;The reason we use open-source drivers is that they use the kernel to directly leverage the graphics card to compute things like the UI and desktop. Proprietary drivers, while technically doing the same thing, function differently and can degrade real-time performance by causing latencies to spike to as high as 100us on some machines. Skipping the drivers altogether forces the CPU to compute the UI, which when coupled with the RT kernel, will make the UI slow and laggy and the real-time performance poorer.  &lt;/p&gt;
 
@@ -1418,63 +1446,6 @@ Some influential environment variables:
         <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/troubleshoot/2014/12/04/benchmarking-real-time-performance/</link>
         <guid isPermaLink="true">http://rtxi.org//docs/troubleshoot/2014/12/04/benchmarking-real-time-performance/</guid>
-      </item>
-    
-      <item>
-        <title>32 or 64 Bit? Your Processor Explained</title>
-        <description>&lt;p&gt;64-bit and 32-bit refer to how addresses and memory are handled in different instruction set architectures. For clarity, the terms ‘32-bit’ and ‘64-bit’ have dual meanings. The first refers to the size of addressable chunks of memory. Memory is organized in chunks, called words, that a processor can handle at once. 32 and 64-bit systems respectively handle chunks of memory that are 32 and 64 bits in size. The second meaning refers to the size of the addresses used to catalog all of the addressable points in memory. In other words, each word in memory has an address that the processor uses to find it. 32-bit systems use 32-bit-long addresses, and the same follows for 64-bit ones. Note that it just so happens that these systems have the same address size and word size. It’s not necessarily the case. For instance, early PCs often had 8-bit words and 16-bit addresses.  &lt;/p&gt;
-
-&lt;p&gt;Most commercially available systems today come with 64-bit capable processors and pre-installed 64-bit operating systems. 32-bit applications are compatible with them because the 64-bit format is backwards-compatible. The space addressable by 32 bits is a subset of what is addressed with 64, and the processors are built to handle 32-bit chunks of memory. Simply put, if you have a 64-bit compatible processor, run 64-bit software.  &lt;/p&gt;
-
-&lt;p&gt;One extra consideration is the operating system. Applications other than drivers and similar software interface with the hardware through the operating system. Therefore, it is important to consider the type of operating system installed. 32-bit OSes can only handle 32-bit operations, but 64-bit ones can properly use both.  &lt;/p&gt;
-
-&lt;p&gt;Altogether, none of this is likely to be an issue with machines from the past few years. Lately, AMD and Intel have introduced different brand names and code names for their processors, which can get confusing quite easily. In case you’re running older hardware, here’s a list of a few 64-bit capable processors.&lt;/p&gt;
-
-&lt;div class=&quot;col-md-6&quot;&gt; 
-&lt;table class=&quot;table&quot;&gt; 
-	&lt;thead&gt;
-		&lt;tr&gt;
-			&lt;th&gt;&lt;strong&gt;AMD&lt;/strong&gt; (aka &quot;x86-64&quot;, &quot;AMD64&quot;, or &quot;x64&quot;)&lt;/th&gt;
-		&lt;/tr&gt;
-	&lt;/thead&gt;
-	&lt;tbody&gt;
-		&lt;tr&gt;&lt;td&gt; Athlon 64 &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; AMD Athlon 64 X2 &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; AMD Athlon 64 FX &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; AMD Athlon II (X2/X3/X4) &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; AMD Opteron &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; AMD Turion 64 &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; AMD Turion 64 X2 &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; AMD Sempron (&quot;Palermo&quot; E6 stepping and all &quot;Manila&quot; models) &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; AMD Phenom (X2/X3/X4) &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; AMD Phenom II (X2/X3/X4) &lt;/td&gt;&lt;/tr&gt;
-	&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;col-md-6&quot;&gt;  
-&lt;table class=&quot;table&quot;&gt; 
-	&lt;thead&gt;
-		&lt;tr&gt;
-			&lt;th&gt;&lt;strong&gt;Intel&lt;/strong&gt; (aka &quot;IA-32e&quot;, &quot;EM64T&quot;, or &quot;Intel 64&quot;&lt;/th&gt;
-		&lt;/tr&gt;
-	&lt;/thead&gt;
-	&lt;tbody&gt;
-		&lt;tr&gt;&lt;td&gt; Netburst family &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; some Celeron D&#39;s: LGA 775 &quot;Prescott&quot; models &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; some Pentium 4&#39;s: &quot;Prescott 2M,&quot; &quot;Irwindale&quot; &quot;Cedar Mill&quot; &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; Pentium D &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; Pentium Extreme Edition &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; Intel Core &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; Xeon: Core 2, Dual Core, Celeron &lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt; Nehalem: Core i3, i5, i7, Intel Atom &lt;/td&gt;&lt;/tr&gt;
-	&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//docs/tutorials/2014/12/04/32-or-64-bit-processors/</link>
-        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2014/12/04/32-or-64-bit-processors/</guid>
       </item>
     
   </channel>
