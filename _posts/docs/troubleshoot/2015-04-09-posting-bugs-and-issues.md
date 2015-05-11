@@ -11,7 +11,7 @@ RTXI is in active development, and our work depends heavily on user feedback. Th
 ####1. Navigate to the repository.
 <div class="row">
 	<div class="col-md-8 col-xs-12"> 
-Go to our GitHub page (<a href="https://github.com/rtxi">https://github.com/rtxi</a>). On the page, use the search bar or scroll down until you find the software you want to report. If you experience a bug within RTXI and its built-in modules, look for the `rtxi` repository. If it's a module you have problems with, find the repository that correponds to the module name. Also, if you have questions about anything on this website, go to the `rtxi.github.io` repository.  
+Go to our GitHub page (<a href="https://github.com/rtxi">https://github.com/rtxi</a>). On the page, use the search bar or scroll down until you find the software you want to report. If you experience a bug within RTXI and its built-in modules, look for the <code>rtxi</code> repository. If it's a module you have problems with, find the repository that correponds to the module name. Also, if you have questions about anything on this website, go to the <code>rtxi.github.io</code> repository.  
 		<div>&nbsp;</div>
 	</div>
 	<div class="col-md-4 col-xs-12">
