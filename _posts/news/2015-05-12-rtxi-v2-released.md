@@ -13,4 +13,6 @@ New features:
 3. **Enhanced Performance:** For 2.0, we've switched from RTAI to Xenomai, a more versatile real-time kernel, providing a more robust and stable hard real-time system.  
 4. **Open Development:** We've migrated the project to GitHub, an excellent forum for development and all our documentation. Submit an issue; make a feature request; or watch our repository to stay up-to-date.  
 
-Try out v2.0. You'll like it. You can use the live CD to demo RTXI and later install it, or you can install a generic Linux distribution of your choice and use your installation scripts. Look through the documentation on the website to find installation instructions, notes on hardware configurations, RTXI modules, documentation, and more.  
+Try out v2.0. You can use the [live CD](/install) to demo RTXI and later install it, or you can install a generic Linux distribution of your choice and use our installation scripts.  
+
+Look through all the documentation on the website to find installation instructions, notes on hardware configurations, RTXI modules, documentation, and more. Let us know if you have issues or questions.  
