@@ -7,6 +7,28 @@
     <atom:link href="http://rtxi.org/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>RTXI 2.0 Released</title>
+        <description>&lt;p&gt;We’ve been working hard over the past year to put together the new and improved Real-Time eXperiment Interface.  &lt;/p&gt;
+
+&lt;p&gt;New features:  &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Improved UI:&lt;/strong&gt; We’ve upgraded the UI framework from Qt3 to Qt4, which provides RTXI with many built-in performance improvements.  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;New Linux Base:&lt;/strong&gt; RTXI 2.0 runs on Ubuntu GNOME 14.04 LTS - with it, you’ll get a stable desktop.  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Enhanced Performance:&lt;/strong&gt; For 2.0, we’ve switched from RTAI to Xenomai, a more versatile real-time kernel, providing a more robust and stable hard real-time system.  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Open Development:&lt;/strong&gt; We’ve migrated the project to GitHub, an excellent forum for development and all our documentation. Submit an issue; make a feature request; or watch our repository to stay up-to-date.  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Try out v2.0. You can use the &lt;a href=&quot;/install&quot;&gt;live CD&lt;/a&gt; to demo RTXI and later install it, or you can install a generic Linux distribution of your choice and use our installation scripts.  &lt;/p&gt;
+
+&lt;p&gt;Look through all the documentation on the website to find installation instructions, notes on hardware configurations, RTXI modules, documentation, and more. Let us know if you have issues or questions.  &lt;/p&gt;
+</description>
+        <pubDate>Tue, 12 May 2015 00:00:00 -0400</pubDate>
+        <link>http://rtxi.org//docs/news/2015/05/12/rtxi-v2-released/</link>
+        <guid isPermaLink="true">http://rtxi.org//docs/news/2015/05/12/rtxi-v2-released/</guid>
+      </item>
+    
+      <item>
         <title>Hardware for RTXI</title>
         <description>&lt;p&gt;If you’re buying new equipment to use for RTXI, there are some things you should consider in before your purchase. They are all easy to meet, and they’ll help you get set up with a properly performing installation of RTXI.  &lt;/p&gt;
 
@@ -574,7 +596,7 @@ RTXI workspace variables are displayed in the UI as &lt;code&gt;QStrings&lt;/cod
 &lt;h4 id=&quot;navigate-to-the-repository&quot;&gt;1. Navigate to the repository.&lt;/h4&gt;
 &lt;div class=&quot;row&quot;&gt;
 	&lt;div class=&quot;col-md-8 col-xs-12&quot;&gt; 
-Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https://github.com/rtxi&lt;/a&gt;). On the page, use the search bar or scroll down until you find the software you want to report. If you experience a bug within RTXI and its built-in modules, look for the `rtxi` repository. If it&#39;s a module you have problems with, find the repository that correponds to the module name. Also, if you have questions about anything on this website, go to the `rtxi.github.io` repository.  
+Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https://github.com/rtxi&lt;/a&gt;). On the page, use the search bar or scroll down until you find the software you want to report. If you experience a bug within RTXI and its built-in modules, look for the &lt;code&gt;rtxi&lt;/code&gt; repository. If it&#39;s a module you have problems with, find the repository that correponds to the module name. Also, if you have questions about anything on this website, go to the &lt;code&gt;rtxi.github.io&lt;/code&gt; repository.  
 		&lt;div&gt;&amp;nbsp;&lt;/div&gt;
 	&lt;/div&gt;
 	&lt;div class=&quot;col-md-4 col-xs-12&quot;&gt;
@@ -1414,38 +1436,6 @@ Some influential environment variables:
         <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/faqs/2014/12/04/can-i-run-rtxi-in-non-real-time/</link>
         <guid isPermaLink="true">http://rtxi.org//docs/faqs/2014/12/04/can-i-run-rtxi-in-non-real-time/</guid>
-      </item>
-    
-      <item>
-        <title>Benchmarking Real-time Performance</title>
-        <description>&lt;p&gt;Here is a list of tools for benchmarking real-time performance, both for the operating system and for the RTXI application itself. In general, you should use these to test newly installed kernels, but you can also use them to help diagnose performance issues experienced when running RTXI.  &lt;/p&gt;
-
-&lt;h3 id=&quot;xenomai-based-tests&quot;&gt;Xenomai-based Tests&lt;/h3&gt;
-&lt;p&gt;Xenomai comes with benchmarking tools for both real-time and user-space kernels. They are accessible from &lt;code&gt;/usr/xenomai/bin&lt;/code&gt;   &lt;/p&gt;
-
-&lt;h4 id=&quot;latency-test&quot;&gt;Latency Test&lt;/h4&gt;
-&lt;p&gt;This test will verify the overall performance of your system and is the best indicator of your real-time performance. It will immediately let you know if you have successfully installed a correctly functioning real-time kernel. In oneshot mode, it measures the difference in time between the expected switch time and the time when a task is actually called by the scheduler. This test prints one line every second and gives you the minimum, average, and maximum latencies for that period as well the minimum and maximum overall latencies that occurred over the entire test. Open up some other programs, copy some files from one location to another, and load the network connection to see how it affects the latency. You should find slightly higher latencies with the user space test than the kernel space test.  &lt;/p&gt;
-
-&lt;p&gt;Your real-time performance is limited by the maximum latency (lat max) you can achieve and you generally don’t want to be doing other tasks. You also should not see any overruns, which occurs when the latency completely exceeds your nominal period. Negative time in the latency test is due to the fact that RTAI performs a calibration at startup that tries to minimize the jitter in the real-time task and anticipates the call. To calibrate for negative latencies, run: &lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# echo 0 &amp;gt; /proc/xenomai/latency&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;If you periodically see an overrun (perhaps every 64 seconds) that results in a maximum latency of several hundred microseconds, you may have an SMI (System Maintenance Interrupt) issue. This feature can be found on certain chipsets e.g. Intel 82845 845. Disabling SMI can cause some computers to overheat and may damage those computers. Other “latency killers” are: heavy DMA activities (using the hard disk), using an accelerated X-server, USB legacy support, power management (APM and ACPI), and CPU frequency scaling. If you have disabled all of these in the kernel already, check your BIOS and see if you can disable them there.  &lt;/p&gt;
-
-&lt;h4 id=&quot;preempt-test&quot;&gt;Preempt Test&lt;/h4&gt;
-&lt;p&gt;This test is a stress utility that verifies the real-time schedulers under heavy processing load. This software combines the latency calibration task with a fast and slow task to have two levels of preemption.  &lt;/p&gt;
-
-&lt;h4 id=&quot;switch-test&quot;&gt;Switch Test&lt;/h4&gt;
-&lt;p&gt;This test provides information about the maximum amount of time RTAI needs to disable interrupts. The test uses a repeated sequence of suspend/resume and semaphore signal/wait calls under a heavy processing load. The switching time should be less than the maximum latency time. The real latency limitation is seldom due to RTAI but an intrinsic drawback of using a general purpose CPU for real-time applications.  &lt;/p&gt;
-
-&lt;h3 id=&quot;rtxi-based-tests&quot;&gt;RTXI-based Tests&lt;/h3&gt;
-&lt;p&gt;Internal RTXI performance benchmarks are still in development. Currently, the performance_measurement module can be used to track the accumulated average cycle time and the accumulated average computation time and compare them to the nominal real-time period.  &lt;/p&gt;
-
-&lt;p&gt;The performance measurement module is included in RTXI by default, under the System heading in the menubar. Running it while running modules versus nothing else will show you the performance cost your modules. If you see high computation times relative to your real-time period, consider increading your RT period or simplifying your module(s). &lt;/p&gt;
-</description>
-        <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//docs/troubleshoot/2014/12/04/benchmarking-real-time-performance/</link>
-        <guid isPermaLink="true">http://rtxi.org//docs/troubleshoot/2014/12/04/benchmarking-real-time-performance/</guid>
       </item>
     
   </channel>
