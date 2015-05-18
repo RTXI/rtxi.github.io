@@ -2,7 +2,12 @@
 title: Hardware for RTXI
 categories: docs tutorials
 layout: docpost
+published: false
 ---
+
+<!-- 
+This is outdated, superceded by the Getting Started page. Why don't I just delete this page, you ask. Well...
+-->
 
 If you're buying new equipment to use for RTXI, there are some things you should consider in before your purchase. They are all easy to meet, and they'll help you get set up with a properly performing installation of RTXI.  
 
