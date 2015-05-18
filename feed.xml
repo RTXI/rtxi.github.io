@@ -7,6 +7,64 @@
     <atom:link href="http://rtxi.org/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Getting Started</title>
+        <description>&lt;p&gt;To get started with RTXI for your experiments, there are some hardware requirements you need to satisfy. They’re pretty easy to meet, and they’ll get you set up with a properly performing RTXI installation.  &lt;/p&gt;
+
+&lt;p&gt;You will need:  &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Computer&lt;/li&gt;
+  &lt;li&gt;Data acquisition card (DAQ)&lt;/li&gt;
+  &lt;li&gt;Graphics card (may come with computer)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;computer&quot;&gt;Computer&lt;/h4&gt;
+&lt;p&gt;Most computers built in the last few years will run Linux, but some will perform better for real-time applications. Here are some points to consider when buying new hardware:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;What is the CPU type?&lt;/strong&gt; We recommend using Intel processors, though AMD ones work, too.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;How many PCI/PCIe slots are there?&lt;/strong&gt; You will need one PCI or PCIe slot for a graphics card and another PCI slot for a DAQ.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Also, you should have a machine with at least &lt;strong&gt;4 GB of RAM&lt;/strong&gt;. While Linux can run with less, you will see degraded performance. Over the past few years, operating systems have been built under the assumption of increasingly capable hardware, and Linux has been no exception.  &lt;/p&gt;
+
+&lt;h4 id=&quot;daq&quot;&gt;DAQ&lt;/h4&gt;
+&lt;p&gt;RTXI is tested and developed on systems using National Instruments (NI) cards. While the Xenomai project creates drivers for cards made by other vendors, we do not test them and cannot give you a recommendation to use them. &lt;/p&gt;
+
+&lt;p&gt;If buying a new NI DAQ, get an &lt;strong&gt;M-series&lt;/strong&gt; card. &lt;strong&gt;Do not get an X-series card&lt;/strong&gt;. Open-source drivers do not currently exist for them, so they cannot be used for data acquisition. For a complete list of what drivers are available for what hardware, look here:  &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://xenomai.org/analogy-practical-presentation/#ni_pcimio&quot;&gt;&lt;strong&gt;List of DAQs supported by the analogy driver&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;graphics-card&quot;&gt;Graphics Card&lt;/h4&gt;
+&lt;p&gt;You should get a discrete graphics card. Using integrated graphics will cause UI computation to be offloaded to the CPU, which at the same time has to handle real-time processes. Based on the systems we’ve benchmarked so far, you’re better off using an AMD card than an Nvidia one. You are also recommended to use open-source drivers instead of their proprietary counterparts.  &lt;/p&gt;
+
+&lt;p&gt;What this means for you is that when buying/acquiring a computer, you need to check the type of graphics card it has. You also need to check whether it is supported by open-source drivers. (Often, newer hardware needs some time for the people who code the drivers to extend support for them.) &lt;/p&gt;
+
+&lt;p&gt;Here is a list of graphics card supported by the Nvidia open-source driver (nouveau) and the AMD one (radeon):  &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.ubuntu.com/community/RadeonDriver#Fully_Supported&quot;&gt;&lt;strong&gt;AMD driver (radeon)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wiki.freedesktop.org/nouveau/FAQ/#index14h3&quot;&gt;&lt;strong&gt;Nvidia driver (nouveau)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;installing-rtxi&quot;&gt;Installing RTXI&lt;/h3&gt;
+
+&lt;p&gt;Look through our &lt;a href=&quot;/install&quot;&gt;installation instructions&lt;/a&gt; to see how to install RTXI 2.0. You can install RTXI with our live CD, or you can install a generic version of Linux and then manually compile and install RTXI and its real-time dependencies. It’s up to you.  &lt;/p&gt;
+
+&lt;p&gt;If you run into issues, look through our available &lt;a href=&quot;/docs&quot;&gt;documentation&lt;/a&gt;, and if it doesn’t help, email us or &lt;a href=&quot;https://github.com/rtxi/rtxi/issues&quot;&gt;submit an issue on GitHub&lt;/a&gt;. We recommend you do the latter. &lt;/p&gt;
+
+&lt;h4 id=&quot;note&quot;&gt;Note&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/rtxi/rtxi.github.io/issues/&quot;&gt;Let us know&lt;/a&gt; if any links are broken. They are all supposed to point directly to lists of hardware compatible with drivers. If they don’t, something went terrible wrong, and we need to fix the links.   &lt;/p&gt;
+</description>
+        <pubDate>Wed, 01 Jan 2020 00:00:00 -0500</pubDate>
+        <link>http://rtxi.org//docs/tutorials/2020/01/01/getting-started/</link>
+        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2020/01/01/getting-started/</guid>
+      </item>
+    
+      <item>
         <title>RTXI 2.0 Released</title>
         <description>&lt;p&gt;We’ve been working hard over the past year to put together the new and improved Real-Time eXperiment Interface.  &lt;/p&gt;
 
@@ -26,34 +84,6 @@
         <pubDate>Tue, 12 May 2015 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//docs/news/2015/05/12/rtxi-v2-released/</link>
         <guid isPermaLink="true">http://rtxi.org//docs/news/2015/05/12/rtxi-v2-released/</guid>
-      </item>
-    
-      <item>
-        <title>Hardware for RTXI</title>
-        <description>&lt;p&gt;If you’re buying new equipment to use for RTXI, there are some things you should consider in before your purchase. They are all easy to meet, and they’ll help you get set up with a properly performing installation of RTXI.  &lt;/p&gt;
-
-&lt;h4 id=&quot;computer&quot;&gt;Computer&lt;/h4&gt;
-&lt;p&gt;Most computers built in the last few years will run Linux, but some will perform better for real-time applications. Here are some points to consider when buying new hardware:  &lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;What is the CPU type?&lt;/strong&gt; We recommend using Intel processors, though AMD ones work, too.  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;How many PCI/PCIe slots are there?&lt;/strong&gt; You will need one PCI or PCIe slot for a graphics card and another PCI slot for a DAQ.  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;What type of graphics card is needed?&lt;/strong&gt; Use an AMD card rather than an Nvidia one.  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;resources&quot;&gt;Resources&lt;/h4&gt;
-&lt;p&gt;Here is a list of resources for hardware that different drivers support.   &lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://help.ubuntu.com/community/RadeonDriver#Fully_Supported&quot;&gt;&lt;strong&gt;AMD driver (radeon)&lt;/strong&gt;&lt;/a&gt;  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://wiki.freedesktop.org/nouveau/FAQ/#index14h3&quot;&gt;&lt;strong&gt;Nvidia driver (nouveau)&lt;/strong&gt;&lt;/a&gt;  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://xenomai.org/analogy-practical-presentation/#ni_pcimio&quot;&gt;&lt;strong&gt;DAQ driver (analogy)&lt;/strong&gt;&lt;/a&gt;  &lt;/li&gt;
-&lt;/ol&gt;
-
-</description>
-        <pubDate>Wed, 06 May 2015 00:00:00 -0400</pubDate>
-        <link>http://rtxi.org//docs/tutorials/2015/05/06/hardware-for-rtxi/</link>
-        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2015/05/06/hardware-for-rtxi/</guid>
       </item>
     
       <item>
