@@ -25,12 +25,19 @@ These types of issues can have several causes. It can be your graphics card not 
 <dl class="dl-horizontal">
 	<dt>Freezing at Boot</dt>
 		<dd>If your system freezes when it boots, it couls be caused by interrupt collisions between the graphics driver and the analogy driver. We've noticied this happening most frequently on machines with Nvidia cards. You can fix this by opening up the computer and moving the graphics card to a different PCI slot.<br><br>
+		If that doesn't fix your system, you can delve deeper to find out whether there are still interrupt collisions. When Linux freezes, you can drop to another tty by entering <code>Ctrl+Alt+F2</code>. You can then enter you login information. From the new shell, enter:  
+
+{% highlight bash %}
+$ lspci -v | less
+{% endhighlight %}
+		Scroll through the output and check if anything has the same IRQ number as the DAQ (the National Instuments card) or the graphics card. Occasionally, things like the Ethernet card or a USB port can interfere.  
 		If you don't have a spare port, you'll need to get a new graphics card. We recommend AMD cards that have been released long enough for Ubuntu to fully support them. A list of compatible cards is available <a href="https://help.ubuntu.com/community/RadeonDriver"> on Ubuntu's site.</a> 
 		</dd>
 	<br>
 	<dt>Poor Performance</dt>
 		<dd>If your system has consistently poor performance, visible within the Performance Measurement Module, that worsens when the DAQ channels are opened, it is likely because the graphics drivers are not using kernel modesetting properly. What that means is that the CPU is handling things the graphics card should, causing it to interfere with the real-time processes it needs to devote time to doing.  <br><br>
-		This is likely caused by the graphics card being not fully supported by open-source drivers. You may need to replace your driver. To see if your system is using the graphics driver, run: 
+		This is likely caused by the graphics card being not fully supported by open-source drivers. You may need to replace your driver. To see if your system is using the graphics driver, run:  
+
 {% highlight bash %}
 $ sudo lshw -C display | grep configuration
 {% endhighlight %}
