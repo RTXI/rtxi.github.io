@@ -1111,12 +1111,19 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 &lt;dl class=&quot;dl-horizontal&quot;&gt;
 	&lt;dt&gt;Freezing at Boot&lt;/dt&gt;
 		&lt;dd&gt;If your system freezes when it boots, it couls be caused by interrupt collisions between the graphics driver and the analogy driver. We&#39;ve noticied this happening most frequently on machines with Nvidia cards. You can fix this by opening up the computer and moving the graphics card to a different PCI slot.&lt;br /&gt;&lt;br /&gt;
+		If that doesn&#39;t fix your system, you can delve deeper to find out whether there are still interrupt collisions. When Linux freezes, you can drop to another tty by entering &lt;code&gt;Ctrl+Alt+F2&lt;/code&gt;. You can then enter you login information. From the new shell, enter:  
+
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;lspci -v &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; less&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+		Scroll through the output and check if anything has the same IRQ number as the DAQ (the National Instuments card) or the graphics card. Occasionally, things like the Ethernet card or a USB port can interfere.  
 		If you don&#39;t have a spare port, you&#39;ll need to get a new graphics card. We recommend AMD cards that have been released long enough for Ubuntu to fully support them. A list of compatible cards is available &lt;a href=&quot;https://help.ubuntu.com/community/RadeonDriver&quot;&gt; on Ubuntu&#39;s site.&lt;/a&gt; 
 		&lt;/dd&gt;
 	&lt;br /&gt;
 	&lt;dt&gt;Poor Performance&lt;/dt&gt;
 		&lt;dd&gt;If your system has consistently poor performance, visible within the Performance Measurement Module, that worsens when the DAQ channels are opened, it is likely because the graphics drivers are not using kernel modesetting properly. What that means is that the CPU is handling things the graphics card should, causing it to interfere with the real-time processes it needs to devote time to doing.  &lt;br /&gt;&lt;br /&gt;
-		This is likely caused by the graphics card being not fully supported by open-source drivers. You may need to replace your driver. To see if your system is using the graphics driver, run: 
+		This is likely caused by the graphics card being not fully supported by open-source drivers. You may need to replace your driver. To see if your system is using the graphics driver, run:  
+
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo lshw -C display &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; grep configuration&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
