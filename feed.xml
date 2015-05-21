@@ -1315,7 +1315,7 @@ While not complete, the new site got a few things ready that we think you’ll l
 
 &lt;p&gt;There are various software available for working with HDF5 files. To simply browse the file structure, you can use the free HDFView application. HDFView provides some limited editing capabilities. For trials where only a single channel is saved, you can also preview a plot of the data. To extract the data for analysis and for complete editing capabilities, APIs are available for MATLAB, GNU Octave, Igor Pro, Mathematica, Python, Scilab, and other software. See this list maintained by the HDF Group.&lt;/p&gt;
 
-&lt;p&gt;We provide here a collection of MATLAB functions and a simple GUI for browsing through the trials of an RTXI v1.3 HDF5 file with addtional examples of how to extract data and add new datasets to your file. &lt;strong&gt;To load RTXI HDF5 files into MATLAB, you no longer need to “matlabize” your HDF5 files, provided you use the MATLAB functions in RTXIh5.zip.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We provide here a collection of MATLAB functions and a simple GUI for browsing through the trials of an RTXI v1.3 HDF5 file with addtional examples of how to extract data and add new datasets to your file. &lt;strong&gt;To load RTXI HDF5 files into MATLAB, you no longer need to “matlabize” your HDF5 files, provided you use the MATLAB functions in &lt;a href=&quot;https://dl.dropboxusercontent.com/u/49869589/RTXIh5.zip&quot;&gt;RTXIh5.zip.&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/tutorials/2014/12/04/rtxi-hdf5-data-files/</link>
