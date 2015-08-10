@@ -30,6 +30,7 @@ Now that clone is executed, look at the directory contents and you will see a su
 Modify the RTXI files to reflect the changes and functionalities you want to implement. Also, be sure to rename the source files to something other than my_plugin_gui, preferable something that reflects the module's function. A quick and easy way to change the name from my_plugin_gui is to use the `sed` and `mv` commands. 
 {% highlight bash %}
 $ sed -i 's/plugin-template/<new_name_here>/g' plugin-template.* Makefile
+$ sed -i 's/plugin_template/<new_name_here>/g' plugin-template.* Makefile
 $ sed -i 's/PluginTemplate/<NewNameHere>/g' plugin-template.* Makefile
 $ mv plugin-template.cpp <new_name_here>.cpp
 $ mv plugin-template.h <new_name_here>.h
