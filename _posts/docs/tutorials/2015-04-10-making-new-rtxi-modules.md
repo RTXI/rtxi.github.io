@@ -27,16 +27,20 @@ In the command, the last parameter, `plugin_template`, sets the name of the dire
 Now that clone is executed, look at the directory contents and you will see a subdirectory called `plugin_template`. Inside there are the source files for MyPluginGUI. An explanation of the header and source files is viewable [FIX THIS LINK!!!](https://github.com/RTXI/tutorials/wiki/MyPluginGUI-Base-Code). 
 
 ####3. Modify files
-Modify the RTXI files to reflect the changes and functionalities you want to implement. Also, be sure to rename the source files to something other than my_plugin_gui, preferable something that reflects the module's function. A quick and easy way to change the name from my_plugin_gui is to use the `sed` and `mv` commands. 
+Modify the RTXI files to run the code you want. When you compile and install your module, be sure to rename the source files and classes to something other than `plugin-template` or `PluginTemplate`, respectively. It's preferable to name it  something that reflects what it does. A quick and easy way to change the names of the files, classes, and binary is to use the `sed` and `mv` commands:  
 {% highlight bash %}
-$ sed -i 's/plugin-template/<new_name_here>/g' plugin-template.* Makefile
+$ sed -i 's/plugin-template/<new_name_here>/g' plugin-template.* Makefile 
 $ sed -i 's/plugin_template/<new_name_here>/g' plugin-template.* Makefile
 $ sed -i 's/PluginTemplate/<NewNameHere>/g' plugin-template.* Makefile
 $ mv plugin-template.cpp <new_name_here>.cpp
 $ mv plugin-template.h <new_name_here>.h
 {% endhighlight %}
 
-Additionally, we request that users document their changes within the files. As a general rule, document it such that one can be confident that anyone with programming experience will be able to understand the changes implemented. 
+The first `sed` command will search out any instance of the string `plugin-template` in your source files and replace them with a string you enter in place of the placeholder `<new_name_here>`. The next two `sed` commands will do the same. The `mv` commands will rename the files.  
+
+Note that all commands that use the placeholder `<new_name_here>` assume that you provide the same string for each instance of the placeholder. Not following this convention *could* cause bugs that prevent your module from compiling if, for example, your sources file names and the `#includes` within them come out differently.  
+
+Additionally, it's good practive to document your code. As a general rule, document it so that you're confident that anyone with programming experience will be able to understand what your code and overall module do.  
 
 To install the module on your system, run:
 {% highlight bash %}
