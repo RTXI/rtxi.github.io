@@ -590,6 +590,7 @@ RTXI workspace variables are displayed in the UI as &lt;code&gt;QStrings&lt;/cod
 &lt;p&gt;Modify the RTXI files to reflect the changes and functionalities you want to implement. Also, be sure to rename the source files to something other than my_plugin_gui, preferable something that reflects the module’s function. A quick and easy way to change the name from my_plugin_gui is to use the &lt;code&gt;sed&lt;/code&gt; and &lt;code&gt;mv&lt;/code&gt; commands. &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sed -i &lt;span class=&quot;s1&quot;&gt;&amp;#39;s/plugin-template/&amp;lt;new_name_here&amp;gt;/g&amp;#39;&lt;/span&gt; plugin-template.* Makefile
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sed -i &lt;span class=&quot;s1&quot;&gt;&amp;#39;s/plugin_template/&amp;lt;new_name_here&amp;gt;/g&amp;#39;&lt;/span&gt; plugin-template.* Makefile
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sed -i &lt;span class=&quot;s1&quot;&gt;&amp;#39;s/PluginTemplate/&amp;lt;NewNameHere&amp;gt;/g&amp;#39;&lt;/span&gt; plugin-template.* Makefile
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mv plugin-template.cpp &amp;lt;new_name_here&amp;gt;.cpp
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mv plugin-template.h &amp;lt;new_name_here&amp;gt;.h&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
