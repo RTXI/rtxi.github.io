@@ -5,5 +5,6 @@ var class_r_t_1_1_device =
     [ "getActive", "class_r_t_1_1_device.html#a9a6e5e815caccfaddb891428ee2445de", null ],
     [ "read", "class_r_t_1_1_device.html#a8bcab6a3ccdf03622b054c0e2537bdfa", null ],
     [ "setActive", "class_r_t_1_1_device.html#a2da1c5c55327dc6eb9d15821d62400b2", null ],
-    [ "write", "class_r_t_1_1_device.html#a553b1517a083554354c44d4a9c81eb5a", null ]
+    [ "write", "class_r_t_1_1_device.html#a553b1517a083554354c44d4a9c81eb5a", null ],
+    [ "active", "class_r_t_1_1_device.html#a5a6bc48869887cb18ee9937ff3367043", null ]
 ];

@@ -8,5 +8,12 @@ var class_scope_1_1_channel =
     [ "getOffset", "class_scope_1_1_channel.html#a6f8ccbe7f11e8e6c1701a439b52ca00f", null ],
     [ "getPen", "class_scope_1_1_channel.html#ac2dd34849d741c0bda23bf21248e24f5", null ],
     [ "getScale", "class_scope_1_1_channel.html#afc0c56f50c01ec7b18943f017dcf7a1f", null ],
-    [ "Scope", "class_scope_1_1_channel.html#a921193447f6e42f596ac0a7694b02830", null ]
+    [ "Scope", "class_scope_1_1_channel.html#a921193447f6e42f596ac0a7694b02830", null ],
+    [ "curve", "class_scope_1_1_channel.html#a5792823adde47767909aad46e250f6ce", null ],
+    [ "data", "class_scope_1_1_channel.html#a4ce8855bcb267b586061f5e3e87c64fd", null ],
+    [ "info", "class_scope_1_1_channel.html#aed9093d11d090bf0c559864aa2feee9f", null ],
+    [ "label", "class_scope_1_1_channel.html#ac31b1518655901ba451da3b5bb898cb4", null ],
+    [ "offset", "class_scope_1_1_channel.html#adce871756758aab9d5052d1f9548d97d", null ],
+    [ "prevdata", "class_scope_1_1_channel.html#a7b3e51d1836e88d80a986ec78bd402d1", null ],
+    [ "scale", "class_scope_1_1_channel.html#a3dfb1c9abf6e83c9562eee984e50346e", null ]
 ];

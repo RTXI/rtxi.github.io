@@ -1,7 +1,26 @@
 var searchData=
 [
-  ['quan_5fcoeff',['Quan_Coeff',['../class_direct_form_fir.html#a50d1adf6461311dda828d50701402a5d',1,'DirectFormFir']]],
-  ['quan_5fenab',['Quan_Enab',['../class_direct_form_fir.html#a7ea6186da2fe9e15165a0d46fe87d1b8',1,'DirectFormFir']]],
-  ['quan_5fin_5fbuf',['Quan_In_Buf',['../class_direct_form_fir.html#a7567e951f4ebd8fb7e60f66f4a823a0e',1,'DirectFormFir']]],
-  ['quant_5fcoeff',['Quant_Coeff',['../class_fir_filter_design.html#a8247e7d006effed0dc9b303bb776bc04',1,'FirFilterDesign']]]
+  ['range',['range',['../struct_analogy_device_1_1analog__channel__t.html#a755a89bd413cf80ca08bf6813750571c',1,'AnalogyDevice::analog_channel_t']]],
+  ['ratesspin',['ratesSpin',['../class_oscilloscope_1_1_panel.html#aef40fb9b3cea83077550c0875d3c4f46',1,'Oscilloscope::Panel']]],
+  ['rateupdate',['rateUpdate',['../class_system_control_panel.html#a994f189bde71b4c002fcbb8951d6d782',1,'SystemControlPanel']]],
+  ['rbutton',['rButton',['../class_data_recorder_1_1_panel.html#a01812ba14e92f32cdab4537c9b30d343',1,'DataRecorder::Panel']]],
+  ['recording',['recording',['../class_data_recorder_1_1_panel.html#ae347e5849cae49deb703df6f8a541b68',1,'DataRecorder::Panel']]],
+  ['recordstatus',['recordStatus',['../class_data_recorder_1_1_panel.html#af393dfc93c499fd4a16b8ffc0bb9e4b9',1,'DataRecorder::Panel']]],
+  ['recstatus',['recStatus',['../class_data_recorder_1_1_plugin.html#a8ab3ef810efe20ce4b0d272160422990',1,'DataRecorder::Plugin']]],
+  ['reference',['reference',['../struct_analogy_device_1_1analog__channel__t.html#a5a4dbe272d4e19a0d0bf2eec0d559c2f',1,'AnalogyDevice::analog_channel_t']]],
+  ['refresh',['refresh',['../class_scope.html#a886f37671a58de2a95cfcb345a7e5bb2',1,'Scope']]],
+  ['refreshsspin',['refreshsSpin',['../class_oscilloscope_1_1_panel.html#a7c122525a6ff0ab9c1d6ec2ea43173ef',1,'Oscilloscope::Panel']]],
+  ['reset',['reset',['../class_main_window.html#ad9882772b8a1f84f5d0ec95a1c573062',1,'MainWindow']]],
+  ['resetmaxtimer',['resetMaxTimer',['../class_performance_measurement_1_1_panel.html#aa4a99f1e61f9b9e3db465c0eede1533f',1,'PerformanceMeasurement::Panel']]],
+  ['retval',['retval',['../class_r_t_1_1_event.html#ab7c6141c0e8276ce4deb0eb5286dbc49',1,'RT::Event']]],
+  ['rptr',['rptr',['../class_fifo.html#a257541fcc3abd57e0396c11b71fd49ce',1,'Fifo']]],
+  ['rt_5fdevice_5finsert_5fevent',['RT_DEVICE_INSERT_EVENT',['../namespace_event.html#a6465f55af2a74966804d180212b4e674',1,'Event']]],
+  ['rt_5fdevice_5fremove_5fevent',['RT_DEVICE_REMOVE_EVENT',['../namespace_event.html#a8074bc9c144a1ae587880cd8cf818bc9',1,'Event']]],
+  ['rt_5fperiod_5fevent',['RT_PERIOD_EVENT',['../namespace_event.html#ac45189ba1f74e84f6ade93b9a4ebb70a',1,'Event']]],
+  ['rt_5fpostperiod_5fevent',['RT_POSTPERIOD_EVENT',['../namespace_event.html#a9fcea2690bdcd6a3f6ceca8b37883d4e',1,'Event']]],
+  ['rt_5fpreperiod_5fevent',['RT_PREPERIOD_EVENT',['../namespace_event.html#a863b313b5bc3d64c62f2546a2dd8fb23',1,'Event']]],
+  ['rt_5fthread_5finsert_5fevent',['RT_THREAD_INSERT_EVENT',['../namespace_event.html#a508a12add1961c39ea8d8ec7eeeaef34',1,'Event']]],
+  ['rt_5fthread_5fremove_5fevent',['RT_THREAD_REMOVE_EVENT',['../namespace_event.html#a174395dc788d701f8dcbf3c219ef999e',1,'Event']]],
+  ['rthandlerlist',['rthandlerList',['../class_event_1_1_manager.html#ab9588fe9cef92a9347263a78c9c87d14',1,'Event::Manager']]],
+  ['rwlock',['rwlock',['../class_r_w_lock_1_1_read_locker.html#a29cc8da49916101a8211511d35d08cd3',1,'RWLock::ReadLocker::rwlock()'],['../class_r_w_lock_1_1_write_locker.html#ab1e31ccd3ad9e0fc68c8c50f7e567cca',1,'RWLock::WriteLocker::rwlock()'],['../class_r_w_lock.html#a659f523c63ce1566fb33c20b492d7a71',1,'RWLock::rwlock()']]]
 ];

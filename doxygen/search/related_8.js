@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['mag',['mag',['../classcomplex.html#a8ec7caf0b3814f1f319bfefd80f91d56',1,'complex']]],
-  ['mag_5fsqrd',['mag_sqrd',['../classcomplex.html#a6cc7e144c2495c9aa0104b7126ad441b',1,'complex']]],
-  ['manager',['Manager',['../class_plugin_1_1_object.html#adddd5c43ff870a047aa66db4edf82a7e',1,'Plugin::Object::Manager()'],['../class_settings_1_1_object.html#adddd5c43ff870a047aa66db4edf82a7e',1,'Settings::Object::Manager()'],['../class_settings_1_1_object_1_1_state.html#adddd5c43ff870a047aa66db4edf82a7e',1,'Settings::Object::State::Manager()'],['../class_workspace_1_1_instance.html#adddd5c43ff870a047aa66db4edf82a7e',1,'Workspace::Instance::Manager()']]],
-  ['matrix_3c_20t_20_3e',['matrix&lt; T &gt;',['../singletonvector.html#a7413c8cd676a7afe251d435f4bc9160b',1,'vector']]]
+  ['panel',['Panel',['../class_connector_1_1_plugin.html#ac4e63dfd61166ef47eb1ae509c490784',1,'Connector::Plugin::Panel()'],['../class_data_recorder_1_1_channel.html#ac4e63dfd61166ef47eb1ae509c490784',1,'DataRecorder::Channel::Panel()'],['../class_data_recorder_1_1_plugin.html#ac4e63dfd61166ef47eb1ae509c490784',1,'DataRecorder::Plugin::Panel()'],['../class_oscilloscope_1_1_plugin.html#ac4e63dfd61166ef47eb1ae509c490784',1,'Oscilloscope::Plugin::Panel()'],['../class_scope.html#ac4e63dfd61166ef47eb1ae509c490784',1,'Scope::Panel()'],['../class_performance_measurement_1_1_plugin.html#ac4e63dfd61166ef47eb1ae509c490784',1,'PerformanceMeasurement::Plugin::Panel()'],['../class_user_prefs_1_1_prefs.html#ac4e63dfd61166ef47eb1ae509c490784',1,'UserPrefs::Prefs::Panel()']]]
 ];

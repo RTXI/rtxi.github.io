@@ -1,6 +1,5 @@
 var namespaces =
 [
-    [ "ComediLib", "namespace_comedi_lib.html", null ],
     [ "Connector", "namespace_connector.html", null ],
     [ "DAQ", "namespace_d_a_q.html", null ],
     [ "DataRecorder", "namespace_data_recorder.html", null ],

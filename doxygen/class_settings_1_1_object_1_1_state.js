@@ -14,5 +14,8 @@ var class_settings_1_1_object_1_1_state =
     [ "xml", "class_settings_1_1_object_1_1_state.html#abb2e76d41b3b210b5b21317127099ae3", null ],
     [ "xml", "class_settings_1_1_object_1_1_state.html#afe390af7f7d8e1e55f537341b477b96e", null ],
     [ "Manager", "class_settings_1_1_object_1_1_state.html#adddd5c43ff870a047aa66db4edf82a7e", null ],
-    [ "Object", "class_settings_1_1_object_1_1_state.html#a0720b5f434e636e22a3ed34f847eec57", null ]
+    [ "Object", "class_settings_1_1_object_1_1_state.html#a0720b5f434e636e22a3ed34f847eec57", null ],
+    [ "id", "class_settings_1_1_object_1_1_state.html#a7d8570e71fd76c6603e9ffc185ef2b79", null ],
+    [ "paramMap", "class_settings_1_1_object_1_1_state.html#a7e3dae188403dff09e85710f3c702016", null ],
+    [ "stateMap", "class_settings_1_1_object_1_1_state.html#a57fa7a5d66a7cf77cb5e7d8eede5ca38", null ]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x',['x',['../class_generator_w_noise.html#abb6d7e67375516334954d0d0fd0dc38a',1,'GeneratorWNoise']]]
+  ['zerooffset',['zerooffset',['../struct_analogy_device_1_1analog__channel__t.html#ab821636ad360710c0b561b1757eba0e8',1,'AnalogyDevice::analog_channel_t']]]
 ];
