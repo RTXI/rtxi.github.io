@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['panel',['Panel',['../class_connector_1_1_plugin.html#ac4e63dfd61166ef47eb1ae509c490784',1,'Connector::Plugin::Panel()'],['../class_data_recorder_1_1_channel.html#ac4e63dfd61166ef47eb1ae509c490784',1,'DataRecorder::Channel::Panel()'],['../class_data_recorder_1_1_plugin.html#ac4e63dfd61166ef47eb1ae509c490784',1,'DataRecorder::Plugin::Panel()'],['../class_oscilloscope_1_1_plugin.html#ac4e63dfd61166ef47eb1ae509c490784',1,'Oscilloscope::Plugin::Panel()'],['../class_scope.html#ac4e63dfd61166ef47eb1ae509c490784',1,'Scope::Panel()'],['../class_performance_measurement_1_1_plugin.html#ac4e63dfd61166ef47eb1ae509c490784',1,'PerformanceMeasurement::Plugin::Panel()'],['../class_user_prefs_1_1_prefs.html#ac4e63dfd61166ef47eb1ae509c490784',1,'UserPrefs::Prefs::Panel()']]],
-  ['polynomial',['Polynomial',['../class_cmplx_polynomial.html#af3841474533d8bd1db7c131548d0bc27',1,'CmplxPolynomial']]]
+  ['scope',['Scope',['../class_oscilloscope_1_1_panel.html#a921193447f6e42f596ac0a7694b02830',1,'Oscilloscope::Panel::Scope()'],['../class_scope_1_1_channel.html#a921193447f6e42f596ac0a7694b02830',1,'Scope::Channel::Scope()']]],
+  ['system',['System',['../class_r_t_1_1_event.html#af18a9ee98e70982bfe2975391d7221a5',1,'RT::Event']]],
+  ['systemcontrolpanel',['SystemControlPanel',['../class_system_control.html#a076ddaf4880777b044c4d9cbf1db78c3',1,'SystemControl']]]
 ];

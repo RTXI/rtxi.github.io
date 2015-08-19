@@ -1,14 +1,15 @@
 var searchData=
 [
-  ['bartlettperiodogram',['BartlettPeriodogram',['../class_bartlett_periodogram.html#ad65544d3bb857720b1606ca1cd6e3571',1,'BartlettPeriodogram']]],
-  ['basicplot',['BasicPlot',['../class_basic_plot.html#ad1f9ef4ce674823c2c065afb22ad3c13',1,'BasicPlot']]],
-  ['begin',['begin',['../class_r_t_1_1_list.html#a65244c404843926445971cac844506e0',1,'RT::List::begin(void)'],['../class_r_t_1_1_list.html#ad39ae660cd7dab096bd9709c2fd49de9',1,'RT::List::begin(void) const ']]],
-  ['bessel_5fi_5fzero',['bessel_I_zero',['../bessel_8cpp.html#a0d49c4e9a1220e503ec297382355e868',1,'bessel_I_zero(double x):&#160;bessel.cpp'],['../bessel_8h.html#a0d49c4e9a1220e503ec297382355e868',1,'bessel_I_zero(double x):&#160;bessel.cpp']]],
-  ['besseltransfunc',['BesselTransFunc',['../class_bessel_trans_func.html#ab667f67cdd7ce438a8809932a19402f4',1,'BesselTransFunc']]],
-  ['bilineartransf',['BilinearTransf',['../bilinear_8cpp.html#a0c60dc27650412efc4493755cf2c6e81',1,'BilinearTransf(FilterTransFunc *analog_filter, double sampling_interval):&#160;bilinear.cpp'],['../bilinear_8h.html#a0c60dc27650412efc4493755cf2c6e81',1,'BilinearTransf(FilterTransFunc *analog_filter, double sampling_interval):&#160;bilinear.cpp']]],
-  ['bitrev',['bitrev',['../bitrev_8cpp.html#a0ce13e78fe4abc3c58b532e07fb5e882',1,'bitrev(int in_val, int num_bits):&#160;bitrev.cpp'],['../bitrev_8h.html#a0ce13e78fe4abc3c58b532e07fb5e882',1,'bitrev(int in_val, int num_bits):&#160;bitrev.cpp']]],
-  ['blacken',['blacken',['../class_default_g_u_i_line_edit.html#a35e8ef9d78916c8efc0208431d8c1d3b',1,'DefaultGUILineEdit']]],
-  ['block',['Block',['../class_i_o_1_1_block.html#a5da4534c5f64eedba3b3ee41cce32796',1,'IO::Block']]],
-  ['burgmethod',['BurgMethod',['../class_burg_method.html#a25a0c0159d7a4206379baea59702fe2e',1,'BurgMethod']]],
-  ['butterworthtransfunc',['ButterworthTransFunc',['../class_butterworth_trans_func.html#ab011aa747accf526b71ead958e1eff79',1,'ButterworthTransFunc']]]
+  ['about',['about',['../class_main_window.html#a858ab2fabf7cf2c38a7a1a8f51f4686a',1,'MainWindow']]],
+  ['aboutqt',['aboutQt',['../class_main_window.html#a8d361f7de40fda23a5cb6d6fd1fa6714',1,'MainWindow']]],
+  ['acquireid',['acquireID',['../class_settings_1_1_manager.html#af4480fb35289813103fb4318eb17b1ad',1,'Settings::Manager']]],
+  ['activatechannel',['activateChannel',['../class_oscilloscope_1_1_panel.html#aae5bf05ae3c9a7e02a40d26dfc57b027',1,'Oscilloscope::Panel']]],
+  ['adjustdatasize',['adjustDataSize',['../class_oscilloscope_1_1_panel.html#a66ba84e13ca667cbea244626f014838a',1,'Oscilloscope::Panel']]],
+  ['analog_5fexists',['analog_exists',['../class_analogy_device.html#a75204ffbddec860d130ba14d61b47976',1,'AnalogyDevice']]],
+  ['analogydevice',['AnalogyDevice',['../class_analogy_device.html#a2efee10b257c305bb878216fa93af9b6',1,'AnalogyDevice']]],
+  ['analogydriver',['AnalogyDriver',['../class_analogy_driver.html#afad0d95c296db21c8076b46430ec196d',1,'AnalogyDriver']]],
+  ['apply',['apply',['../class_oscilloscope_1_1_panel.html#ae60ffbd5549b2d95f1e03c1ba63155a3',1,'Oscilloscope::Panel::apply()'],['../class_system_control_panel.html#a55d470ab069bd417dfb3503e06f991da',1,'SystemControlPanel::apply()'],['../class_user_prefs_1_1_panel.html#a686228a6ec38ccc90791ef72bb406be7',1,'UserPrefs::Panel::apply()']]],
+  ['applychanneltab',['applyChannelTab',['../class_oscilloscope_1_1_panel.html#ab62f4cf88da1a205212be92a1707f286',1,'Oscilloscope::Panel']]],
+  ['applydisplaytab',['applyDisplayTab',['../class_oscilloscope_1_1_panel.html#aaa306e10ffc49354f1dbbecb9651b73d',1,'Oscilloscope::Panel']]],
+  ['atomicfifo',['AtomicFifo',['../class_atomic_fifo.html#aab09025319009fa72555cdd93cad9367',1,'AtomicFifo']]]
 ];

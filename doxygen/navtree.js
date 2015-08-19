@@ -20,21 +20,17 @@ var NAVTREE =
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", "functions_vars" ],
-        [ "Typedefs", "functions_type.html", "functions_type" ],
-        [ "Enumerations", "functions_enum.html", "functions_enum" ],
-        [ "Enumerator", "functions_eval.html", "functions_eval" ],
-        [ "Related Functions", "functions_rela.html", "functions_rela" ]
+        [ "Typedefs", "functions_type.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Enumerator", "functions_eval.html", null ],
+        [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Files", null, [
       [ "File List", "files.html", "files" ],
       [ "File Members", "globals.html", [
-        [ "All", "globals.html", "globals_dup" ],
-        [ "Functions", "globals_func.html", "globals_func" ],
-        [ "Variables", "globals_vars.html", null ],
-        [ "Typedefs", "globals_type.html", null ],
-        [ "Enumerations", "globals_enum.html", null ],
-        [ "Enumerator", "globals_eval.html", null ],
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -43,58 +39,16 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_r_t_x_iprintfilter_8h.html",
-"class_adaptive_fir.html#a722e04edfb0a40ca96a8b15ac44cf773",
-"class_comedi_device.html#afb78872a031c953755fc156dce0ba561",
-"class_filter_trans_func.html#ac7d7b99f52acfa93717552964870c0cc",
-"class_incremental_plot.html#a3eafcf1c79dd6144d6c0d19a1c0fa77e",
-"class_r_t_1_1_list_1_1_node.html#a4e614fb972b65df3096ffa44b8a47635",
-"class_signal_source.html#aad23182c2321e3670430607137687fd4",
-"classt_m_series.html#a11130105122b8ca5d4c985d7c743b4f8a0da8fe7e08bdfb0097b0330c42d36c9b",
-"classt_m_series.html#a11130105122b8ca5d4c985d7c743b4f8a629f9e83de6943b656af1f6bc91cb8a0",
-"classt_m_series.html#a11130105122b8ca5d4c985d7c743b4f8aada8ecf64c3fba692d49885df2c790c1",
-"classt_m_series.html#a1f8baceb92dd1eed9b92f1e6197f8f21",
-"classt_m_series_1_1t_a_i___command__2.html#a716b9122c25b3d9bce42bb662097646d",
-"classt_m_series_1_1t_a_i___mode__1.html#a0e27e7899e8bd11ca329212436ee6463a0b4d67024247556380f6525644f4dd8b",
-"classt_m_series_1_1t_a_i___mode__3.html#a7255739f1f02f27a233fd9354d4e37dea079c70aa8a5b4f39b664f50f625786bc",
-"classt_m_series_1_1t_a_i___s_i2___load___b.html#a994bd9cd13c94da0305968c67cffab20a9e8bf982eb31f2c28a559b1f62d156bf",
-"classt_m_series_1_1t_a_i___status__1.html#ab75ab575e2d81a481ca970678d0d7cb6a205ac1ba5d1820e742830bc900270e19",
-"classt_m_series_1_1t_a_o___command__1.html#a1b909960d804c0e1e66e54f689a4918f",
-"classt_m_series_1_1t_a_o___f_i_f_o___data.html#aecfef844c80cc4fe2df543784dd7afcda846df929ef230c13de5f7c4bf16b75be",
-"classt_m_series_1_1t_a_o___mode__3.html#aaa82764d9be1baae93216ad6afd0116c",
-"classt_m_series_1_1t_a_o___s_t_a_r_t___select.html#ad9acee502e8b89de067f277d1d60e9b4",
-"classt_m_series_1_1t_a_o___trigger___select.html#a597d1dc568b9be11b2598d09daaa6acba0bb8b99a98f9efd39422d7dd27b50bd0",
-"classt_m_series_1_1t_analog___trigger___etc.html#a7acd8f883f2f818824fd7405981c1c61",
-"classt_m_series_1_1t_c_d_i_o___command.html#a84ca7dbd1ee0812fb92843c828b05d0d",
-"classt_m_series_1_1t_c_d_o___mode.html#aff4fdcef64ecc7e98194028b80a6b84fa5ffc459b242528f3370df05aef84ee28",
-"classt_m_series_1_1t_d_i_o___reserved__1.html#a7fba47471596a4a1db0678cb6a52466ba152466a3254cc98946638789671e0777",
-"classt_m_series_1_1t_g1___d_m_a___config.html#a68f11f49edc72c3ea6c3dd5a00d09ffd",
-"classt_m_series_1_1t_interrupt___a___ack.html#a684bf2acff8aa89910ac06e1390417bb",
-"classt_m_series_1_1t_interrupt___b___enable.html#af2b75c4a0de8a93c9d559373216736ef",
-"classt_m_series_1_1t_joint___status__2.html#a761a862618994eb25876b92a9f509c80",
-"classt_m_series_1_1t_p_f_i___filter.html#a6eebea5d463e5c94f78336acfebe95a4",
-"classt_m_series_1_1t_p_f_i___output___select__2.html#a0be67a7404835ea5ab2f7d2c762d7a63a9146e76ac991c97240c85d256b1f5a4c",
-"classt_m_series_1_1t_p_f_i___output___select__4.html#a835745880ef30f22076b979892820d75a03eec7b5667188cfa5359862ed6093bd",
-"classt_m_series_1_1t_p_f_i___output___select__6.html#ab167768e91853dfa334d98f3a9ed5e61",
-"classt_m_series_1_1t_r_t_s_i___shared___m_u_x.html#a77f6d3ddea7538abde93aa5f3d819950",
-"classt_m_series_1_1t_r_t_s_i___trig___direction.html#a1470df6f9e668ce4a6b1f1baaf2500b0a7bed33b0fc3503915eae077a151cfff5",
-"classt_m_series_1_1t_s_c_x_i___output___enable.html#a3f617594c6efaa7354449ac16e2b2f07ac2d5ef88357e85952a74e93dbbe7e2e8",
-"classt_t_i_o.html#a7d24104c22c9b6153e18a2cb8b8ac179a4705d033f349cccda84e5e40c8ef0687",
-"classt_t_i_o_1_1t_g01___joint___status__1.html#aaa1c244b527da8e56bd0924d8e325cf8",
-"classt_t_i_o_1_1t_g0___command.html#af98ae831146a193122a4e6f91ad002c7",
-"classt_t_i_o_1_1t_g0___load___a.html#ae607ff928129a6f742b1b74adb64de53",
-"classt_t_i_o_1_1t_g0___save___high.html#a5cfe7b39165049c5c17e96548e09c9f8ac1a33bb5b583b269e9bb9de2612e7923",
-"classt_t_i_o_1_1t_g1___counting___mode.html#a640cb4bbcc8779f01f5427e5e3f158bc",
-"classt_t_i_o_1_1t_g1___m_series___a_b_z.html#a565d874dcd9274d99dd445233a413398",
-"classt_t_i_o_1_1t_g1___second___gate.html#a4f0a1062a3c1884bc906d416800de9e9",
-"complex_8h.html#abc560c7de7f30da959209b234c07ee26",
-"fs__resp_8h_source.html",
-"goldsrh2_8cpp.html#a89863577783900bbbf335667334dbc19",
-"osi_bus_8h.html#af8a11f2848dd7e3faed928be8f69aa8bae94385a655910f79fbc849ef41efc9bd",
-"scope_8h.html",
-"test__fifo_8cpp.html#a514a17a158494db619d75310fadaba5e"
+"analogy__device_8cpp.html",
+"class_data_recorder_1_1_plugin.html#aa64736ba4d68c2bb02f3fc0c9aa726e0",
+"class_oscilloscope_1_1_panel.html#a68447e09a5404fd402538de7ab6b7bf0",
+"class_r_w_lock.html#a4a73a634a2d5b5092a547fa03c17d8b5",
+"class_workspace_1_1_instance.html#a739d5dd349876ceffd1ccff2605f5759",
+"namespace_oscilloscope.html"
 ];
 
+var SYNCONMSG = 'click to disable panel synchronisation';
+var SYNCOFFMSG = 'click to enable panel synchronisation';
 var SYNCONMSG = 'click to disable panel synchronisation';
 var SYNCOFFMSG = 'click to enable panel synchronisation';
 var navTreeSubIndices = new Array();
@@ -119,21 +73,6 @@ function stripPath2(uri)
   return m ? uri.substring(i-6) : s;
 }
 
-function hashValue()
-{
-  return $(location).attr('hash').substring(1).replace(/[^\w\-]/g,'');
-}
-
-function hashUrl()
-{
-  return '#'+hashValue();
-}
-
-function pathName()
-{
-  return $(location).attr('pathname').replace(/[^-A-Za-z0-9+&@#/%?=~_|!:,.;\(\)]/g, '');
-}
-
 function localStorageSupported()
 {
   try {
@@ -156,7 +95,7 @@ function deleteLink()
 {
   if (localStorageSupported()) {
     window.localStorage.setItem('navpath','');
-  }
+  } 
 }
 
 function cachedLink()
@@ -228,13 +167,11 @@ var animationInProgress = false;
 function gotoAnchor(anchor,aname,updateLocation)
 {
   var pos, docContent = $('#doc-content');
-  var ancParent = $(anchor.parent());
-  if (ancParent.hasClass('memItemLeft') ||
-      ancParent.hasClass('fieldname') ||
-      ancParent.hasClass('fieldtype') ||
-      ancParent.is(':header'))
+  if (anchor.parent().attr('class')=='memItemLeft' ||
+      anchor.parent().attr('class')=='fieldtype' ||
+      anchor.parent().is(':header')) 
   {
-    pos = ancParent.position().top;
+    pos = anchor.parent().position().top;
   } else if (anchor.position()) {
     pos = anchor.position().top;
   }
@@ -292,7 +229,7 @@ function newNode(o, po, text, link, childrenData, lastNode)
     a.className = stripPath(link.replace('#',':'));
     if (link.indexOf('#')!=-1) {
       var aname = '#'+link.split('#')[1];
-      var srcPage = stripPath(pathName());
+      var srcPage = stripPath($(location).attr('pathname'));
       var targetPage = stripPath(link.split('#')[0]);
       a.href = srcPage!=targetPage ? url : "javascript:void(0)"; 
       a.onclick = function(){
@@ -386,13 +323,14 @@ function glowEffect(n,duration)
 
 function highlightAnchor()
 {
-  var aname = hashUrl();
+  var aname = $(location).attr('hash');
   var anchor = $(aname);
   if (anchor.parent().attr('class')=='memItemLeft'){
-    var rows = $('.memberdecls tr[class$="'+hashValue()+'"]');
+    var rows = $('.memberdecls tr[class$="'+
+               window.location.hash.substring(1)+'"]');
     glowEffect(rows.children(),300); // member without details
-  } else if (anchor.parent().attr('class')=='fieldname'){
-    glowEffect(anchor.parent().parent(),1000); // enum value
+  } else if (anchor.parents().slice(2).prop('tagName')=='TR') {
+    glowEffect(anchor.parents('div.memitem'),1000); // enum value
   } else if (anchor.parent().attr('class')=='fieldtype'){
     glowEffect(anchor.parent().parent(),1000); // struct field
   } else if (anchor.parent().is(":header")) {
@@ -407,7 +345,7 @@ function selectAndHighlight(hash,n)
 {
   var a;
   if (hash) {
-    var link=stripPath(pathName())+':'+hash.substring(1);
+    var link=stripPath($(location).attr('pathname'))+':'+hash.substring(1);
     a=$('.item a[class$="'+link+'"]');
   }
   if (a && a.length) {
@@ -518,13 +456,14 @@ function navTo(o,root,hash,relpath)
   if (link) {
     var parts = link.split('#');
     root = parts[0];
-    if (parts.length>1) hash = '#'+parts[1].replace(/[^\w\-]/g,'');
+    if (parts.length>1) hash = '#'+parts[1];
     else hash='';
   }
   if (hash.match(/^#l\d+$/)) {
     var anchor=$('a[name='+hash.substring(1)+']');
     glowEffect(anchor.parent(),1000); // line number
     hash=''; // strip line number anchors
+    //root=root.replace(/_source\./,'.'); // source link to doc link
   }
   var url=root+hash;
   var i=-1;
@@ -558,7 +497,7 @@ function toggleSyncButton(relpath)
   if (navSync.hasClass('sync')) {
     navSync.removeClass('sync');
     showSyncOff(navSync,relpath);
-    storeLink(stripPath2(pathName())+hashUrl());
+    storeLink(stripPath2($(location).attr('pathname'))+$(location).attr('hash'));
   } else {
     navSync.addClass('sync');
     showSyncOn(navSync,relpath);
@@ -598,7 +537,7 @@ function initNavTree(toroot,relpath)
   }
 
   $(window).load(function(){
-    navTo(o,toroot,hashUrl(),relpath);
+    navTo(o,toroot,window.location.hash,relpath);
     showRoot();
   });
 
@@ -606,20 +545,21 @@ function initNavTree(toroot,relpath)
      if (window.location.hash && window.location.hash.length>1){
        var a;
        if ($(location).attr('hash')){
-         var clslink=stripPath(pathName())+':'+hashValue();
-         a=$('.item a[class$="'+clslink.replace(/</g,'\\3c ')+'"]');
+         var clslink=stripPath($(location).attr('pathname'))+':'+
+                               $(location).attr('hash').substring(1);
+         a=$('.item a[class$="'+clslink+'"]');
        }
        if (a==null || !$(a).parent().parent().hasClass('selected')){
          $('.item').removeClass('selected');
          $('.item').removeAttr('id');
        }
-       var link=stripPath2(pathName());
-       navTo(o,link,hashUrl(),relpath);
+       var link=stripPath2($(location).attr('pathname'));
+       navTo(o,link,$(location).attr('hash'),relpath);
      } else if (!animationInProgress) {
        $('#doc-content').scrollTop(0);
        $('.item').removeClass('selected');
        $('.item').removeAttr('id');
-       navTo(o,toroot,hashUrl(),relpath);
+       navTo(o,toroot,window.location.hash,relpath);
      }
   })
 }

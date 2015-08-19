@@ -10,5 +10,6 @@ var class_r_t_1_1_list_1_1const__iterator =
     [ "operator--", "class_r_t_1_1_list_1_1const__iterator.html#a93fb31305b7db4f79a345f93427c2e0e", null ],
     [ "operator--", "class_r_t_1_1_list_1_1const__iterator.html#a986146f06ac98e6cbbe32b077bb65e30", null ],
     [ "operator->", "class_r_t_1_1_list_1_1const__iterator.html#a5fecbd0451046d8d9278d06da8e25b6e", null ],
-    [ "operator==", "class_r_t_1_1_list_1_1const__iterator.html#ab3e215fdd60b9608fe2194ff75066087", null ]
+    [ "operator==", "class_r_t_1_1_list_1_1const__iterator.html#ab3e215fdd60b9608fe2194ff75066087", null ],
+    [ "current", "class_r_t_1_1_list_1_1const__iterator.html#a485af38d1f6e2df762d21d6f94821e1b", null ]
 ];

@@ -11,5 +11,6 @@ var class_settings_1_1_object =
     [ "getID", "class_settings_1_1_object.html#a885bafd7f638ab96382439c556c802a2", null ],
     [ "load", "class_settings_1_1_object.html#a240ce8427963c12d1bdc364035d34711", null ],
     [ "save", "class_settings_1_1_object.html#afb75f45be984b7d6f2dc182622131503", null ],
-    [ "Manager", "class_settings_1_1_object.html#adddd5c43ff870a047aa66db4edf82a7e", null ]
+    [ "Manager", "class_settings_1_1_object.html#adddd5c43ff870a047aa66db4edf82a7e", null ],
+    [ "id", "class_settings_1_1_object.html#a98014c938e73d534a23c5edef0d5433d", null ]
 ];

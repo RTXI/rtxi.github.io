@@ -1,7 +1,12 @@
 var class_analogy_device =
 [
+    [ "analog_channel_t", "struct_analogy_device_1_1analog__channel__t.html", "struct_analogy_device_1_1analog__channel__t" ],
+    [ "channel_t", "struct_analogy_device_1_1channel__t.html", "struct_analogy_device_1_1channel__t" ],
+    [ "digital_channel_t", "struct_analogy_device_1_1digital__channel__t.html", "struct_analogy_device_1_1digital__channel__t" ],
+    [ "subdevice_t", "struct_analogy_device_1_1subdevice__t.html", "struct_analogy_device_1_1subdevice__t" ],
     [ "AnalogyDevice", "class_analogy_device.html#a2efee10b257c305bb878216fa93af9b6", null ],
     [ "~AnalogyDevice", "class_analogy_device.html#a5cb4b7b8b76781aa680fa80fc4b99f5a", null ],
+    [ "analog_exists", "class_analogy_device.html#a75204ffbddec860d130ba14d61b47976", null ],
     [ "doLoad", "class_analogy_device.html#a8633edcce548d1d99a14ef8f4bef9c68", null ],
     [ "doSave", "class_analogy_device.html#a10185923d58da3bd7d67b416e4101e64", null ],
     [ "getAnalogCalibrationActive", "class_analogy_device.html#ae66790d0aa095530832a2367e942e7bd", null ],
@@ -33,5 +38,8 @@ var class_analogy_device =
     [ "setAnalogZeroOffset", "class_analogy_device.html#a30843ecb6a82aa5db0daa09e208d04a5", null ],
     [ "setChannelActive", "class_analogy_device.html#ae6cd8448eab12ea1e8b7c0c3b2f094c4", null ],
     [ "setDigitalDirection", "class_analogy_device.html#a57cbd47af660cb4658e664c4abbb83e1", null ],
-    [ "write", "class_analogy_device.html#a3c7e8ac46241218b9c357dbcc3914ddb", null ]
+    [ "write", "class_analogy_device.html#a3c7e8ac46241218b9c357dbcc3914ddb", null ],
+    [ "deviceName", "class_analogy_device.html#af9866747fb1431e08af11962dec19b87", null ],
+    [ "dsc", "class_analogy_device.html#a57eadaa9264e0c38fa4630103e1938fa", null ],
+    [ "subdevice", "class_analogy_device.html#add0d406094af30680dd2d8b808434026", null ]
 ];

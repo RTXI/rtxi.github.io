@@ -1,8 +1,10 @@
 var class_r_t_1_1_list =
 [
     [ "const_iterator", "class_r_t_1_1_list_1_1const__iterator.html", "class_r_t_1_1_list_1_1const__iterator" ],
+    [ "InsertListNodeEvent", "class_r_t_1_1_list_1_1_insert_list_node_event.html", "class_r_t_1_1_list_1_1_insert_list_node_event" ],
     [ "iterator", "class_r_t_1_1_list_1_1iterator.html", "class_r_t_1_1_list_1_1iterator" ],
     [ "Node", "class_r_t_1_1_list_1_1_node.html", "class_r_t_1_1_list_1_1_node" ],
+    [ "RemoveListNodeEvent", "class_r_t_1_1_list_1_1_remove_list_node_event.html", "class_r_t_1_1_list_1_1_remove_list_node_event" ],
     [ "List", "class_r_t_1_1_list.html#a4001c23ecfd21f52137b9ffdb3f43482", null ],
     [ "~List", "class_r_t_1_1_list.html#a3854f1d6273165e9b7cad2d5173f3d74", null ],
     [ "begin", "class_r_t_1_1_list.html#a65244c404843926445971cac844506e0", null ],
@@ -14,5 +16,8 @@ var class_r_t_1_1_list =
     [ "insertRT", "class_r_t_1_1_list.html#a6e94355355567339a5eb4c95b343d1aa", null ],
     [ "remove", "class_r_t_1_1_list.html#adcfc3eca0dbedd3af99e1a292afed260", null ],
     [ "removeRT", "class_r_t_1_1_list.html#a545ce00360370565217a5438056e6b60", null ],
-    [ "size", "class_r_t_1_1_list.html#a9194754497b2207a143d337228bf734e", null ]
+    [ "size", "class_r_t_1_1_list.html#a9194754497b2207a143d337228bf734e", null ],
+    [ "count", "class_r_t_1_1_list.html#ab60bb3a56ec0f8bc3fa712fdb4581824", null ],
+    [ "head", "class_r_t_1_1_list.html#a2d137c38cc7c449e8823e0682a2d6aab", null ],
+    [ "tail", "class_r_t_1_1_list.html#aaa46c3e828384b21e64fa874ea52b86a", null ]
 ];

@@ -1,13 +1,19 @@
 var searchData=
 [
-  ['label',['label',['../struct_default_g_u_i_model_1_1param__t.html#a46e5882bacd5127033ab167694ff35db',1,'DefaultGUIModel::param_t']]],
-  ['lag_5fwin',['Lag_Win',['../class_generic_window.html#a0d0a12cd2c5214f75733342c9ee43306',1,'GenericWindow']]],
-  ['lambda1',['lambda1',['../class_fir_ideal_filter.html#a72e4454dbeb220ac699c3302a8a809e1',1,'FirIdealFilter']]],
-  ['lambda2',['lambda2',['../class_fir_ideal_filter.html#abecdde5808a17155065b42cf3f0fa8d5',1,'FirIdealFilter']]],
-  ['layout',['layout',['../class_default_g_u_i_model.html#a2e0305f99215ead50899338c53d7d8ac',1,'DefaultGUIModel']]],
-  ['lb_5freserved_5f0',['LB_Reserved_0',['../classt_m_series.html#a937bd4b0502ec5b193ea7df36cb7d6f1',1,'tMSeries']]],
-  ['lb_5freserved_5f1',['LB_Reserved_1',['../classt_m_series.html#a50bdb7ea5f317261d0bba08adc5f5153',1,'tMSeries']]],
-  ['length',['Length',['../class_generic_window.html#a014c3e11856624f6b8ff4d737c198e53',1,'GenericWindow::Length()'],['../structmatrix_1_1mrep.html#a62b5f5a51137c517b0179d09bd7f4250',1,'matrix::mrep::length()'],['../structvector_1_1vrep.html#ab25368f4063e3177ea140f6b66a09e33',1,'vector::vrep::length()']]],
-  ['logfile',['LogFile',['../goldsrch_8cpp.html#a89863577783900bbbf335667334dbc19',1,'LogFile():&#160;goldsrch.cpp'],['../goldsrh2_8cpp.html#a89863577783900bbbf335667334dbc19',1,'LogFile():&#160;goldsrh2.cpp'],['../optmiz2_8cpp.html#a89863577783900bbbf335667334dbc19',1,'LogFile():&#160;optmiz2.cpp']]],
-  ['long_5fout_5fquan_5ffactor',['Long_Out_Quan_Factor',['../class_direct_form_fir.html#a09528b5f92bea1df374f94a06fb707cc',1,'DirectFormFir']]]
+  ['magic_5fnumber',['magic_number',['../class_plugin_1_1_object.html#a60aabbab044540c119895df0e6b641dc',1,'Plugin::Object::magic_number()'],['../class_plugin_1_1_object.html#a1be17659d6b7fbb389c8b74d0014bd23',1,'Plugin::Object::MAGIC_NUMBER()']]],
+  ['max_5fparams',['MAX_PARAMS',['../class_event_1_1_object.html#a3dc1a3523a64a2e77261d65a8a56449b',1,'Event::Object']]],
+  ['maxdata',['maxdata',['../struct_analogy_device_1_1analog__channel__t.html#a5cd9308d6fb62ba4644542d2b0d21865',1,'AnalogyDevice::analog_channel_t']]],
+  ['maxduration',['maxDuration',['../class_performance_measurement_1_1_panel.html#a05a2b79bc8c1fb2e9036a2b1f1b7f403',1,'PerformanceMeasurement::Panel']]],
+  ['maxdurationedit',['maxDurationEdit',['../class_performance_measurement_1_1_panel.html#aba743768a7d3e7e6561e9746161a3845',1,'PerformanceMeasurement::Panel']]],
+  ['maximumpriority',['MaximumPriority',['../class_r_t_1_1_thread.html#a25390ad5d7a3def167952cb63746a491',1,'RT::Thread']]],
+  ['maxtimestep',['maxTimestep',['../class_performance_measurement_1_1_panel.html#a7c64250ee7da83022a5a4e88e9126232',1,'PerformanceMeasurement::Panel']]],
+  ['maxtimestepedit',['maxTimestepEdit',['../class_performance_measurement_1_1_panel.html#a8391d1413a18eeaaeeb8e953b2b02527',1,'PerformanceMeasurement::Panel']]],
+  ['mdiarea',['mdiArea',['../class_main_window.html#a2cf260be7b6fe87b2537169b9301e768',1,'MainWindow']]],
+  ['menuid',['menuID',['../class_connector_1_1_plugin.html#a5dca857492417d3116a40b8085f13ca1',1,'Connector::Plugin::menuID()'],['../class_data_recorder_1_1_plugin.html#a8fb9d513480261d88ff005ae3afdde1d',1,'DataRecorder::Plugin::menuID()'],['../class_oscilloscope_1_1_plugin.html#a1c9c5808c810a76e0ebd8c3bc0bbdd05',1,'Oscilloscope::Plugin::menuID()'],['../class_performance_measurement_1_1_plugin.html#a32c045d3f240e2b9f5ce02f60317379d',1,'PerformanceMeasurement::Plugin::menuID()'],['../class_system_control.html#a7e6a2db4a1b2bbd79827f996b1634641',1,'SystemControl::menuID()'],['../class_user_prefs_1_1_prefs.html#a8ccb8ce711b3012a6f1ab2cf4fe7f564',1,'UserPrefs::Prefs::menuID()'],['../class_user_prefs_1_1_panel.html#acb6dcdcac1ff5401a4ac6d83d86e94d9',1,'UserPrefs::Panel::menuID()']]],
+  ['minimumpriority',['MinimumPriority',['../class_r_t_1_1_thread.html#a137f7e762cdbcb6165388e3cdeb128f1',1,'RT::Thread']]],
+  ['model_5fmakefile_5fpath',['model_makefile_path',['../class_dynamo_model_loader.html#ab91f0f14092e600387c6001d1b95111c',1,'DynamoModelLoader']]],
+  ['modifybutton',['modifyButton',['../class_default_g_u_i_model.html#a153f341461909de2ddf467ceb583e79a',1,'DefaultGUIModel']]],
+  ['modulemenu',['moduleMenu',['../class_main_window.html#acaa3fde4a5f8dbf281f9c9b6a0f7d607',1,'MainWindow']]],
+  ['mutex',['mutex',['../class_cmd_line.html#a80952d4877f65ebdfa44383eabc28c95',1,'CmdLine::mutex()'],['../class_d_a_q_1_1_manager.html#aedb99c60869cc15b0018c3c35f72de5a',1,'DAQ::Manager::mutex()'],['../class_event_1_1_manager.html#a80f554dd0a9b8a656df8ce16989afadc',1,'Event::Manager::mutex()'],['../class_fifo.html#a23e2d00f3ee95e60f220b13adfbe054f',1,'Fifo::mutex()'],['../class_i_o_1_1_connector.html#a071bc2220ae0ef357d23a34987eef0f9',1,'IO::Connector::mutex()'],['../class_i_o_1_1_block.html#a8f501a215de19c84161c2a28f7d1d5fa',1,'IO::Block::mutex()'],['../class_mutex_1_1_locker.html#a78dd1bb7221ca3a864097bc9ca43c444',1,'Mutex::Locker::mutex()'],['../class_mutex.html#a8feb0b01916c1feedd1f0c0dcd74081b',1,'Mutex::mutex()'],['../class_plugin_1_1_manager.html#afd180a54222b1a5674079e1a7683f5bb',1,'Plugin::Manager::mutex()'],['../class_settings_1_1_manager.html#a20ea6689fcf00b11529242b77fca4ace',1,'Settings::Manager::mutex()'],['../class_workspace_1_1_manager.html#acf06df61c6424b00439e0279b88daa39',1,'Workspace::Manager::mutex()'],['../class_data_recorder_1_1_panel.html#af7ad27121d0b2f97329be4650f14e007',1,'DataRecorder::Panel::mutex()']]],
+  ['myname',['myname',['../class_default_g_u_i_model.html#a301bb07e42aee6cd817875a88dad0546',1,'DefaultGUIModel']]]
 ];

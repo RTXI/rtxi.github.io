@@ -13,5 +13,6 @@ var class_r_w_lock =
     [ "tryReadLock", "class_r_w_lock.html#af44a2bb62bcb878aa5b117d9d298f601", null ],
     [ "tryWriteLock", "class_r_w_lock.html#a06ba773e67fa5cca3787de43d0fda7a9", null ],
     [ "unlock", "class_r_w_lock.html#a837d2cc5f9133c9ee31140a233aa21fd", null ],
-    [ "writeLock", "class_r_w_lock.html#a2c3e47fc8d6cda69e75fbeabfda91c90", null ]
+    [ "writeLock", "class_r_w_lock.html#a2c3e47fc8d6cda69e75fbeabfda91c90", null ],
+    [ "rwlock", "class_r_w_lock.html#a659f523c63ce1566fb33c20b492d7a71", null ]
 ];

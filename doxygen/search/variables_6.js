@@ -1,14 +1,21 @@
 var searchData=
 [
-  ['f',['f',['../structmatrix_1_1mrep.html#afc16cd1c1527564038e963d45648b64a',1,'matrix::mrep::f()'],['../structvector_1_1vrep.html#a0e71f17a366f5137dc15b5e0d7598aa4',1,'vector::vrep::f()'],['../uniont_eeprom_f32.html#a55331d2f5b6e61d9c36616dd1279feab',1,'tEepromF32::f()']]],
-  ['fifo',['fifo',['../structfifo__test__info__t.html#ac2c04b80d85ccc2778b54c907483e614',1,'fifo_test_info_t']]],
-  ['filename',['filename',['../structoptions.html#a75095d0fef3a789cbd08d1808a9e4bf1',1,'options']]],
-  ['filter_5fdesign',['Filter_Design',['../class_fir_filter_response.html#a6c2f7a89f3ea36281e2e718c73a25ce4',1,'FirFilterResponse::Filter_Design()'],['../class_iir_filter_response.html#abb144e46271b45da9a397d9413a26182',1,'IirFilterResponse::Filter_Design()']]],
-  ['filter_5fis_5fdenormalized',['Filter_Is_Denormalized',['../class_filter_trans_func.html#a3e59c7ed1c4dfe6bbc4850b7f583cf2d',1,'FilterTransFunc']]],
-  ['filter_5forder',['Filter_Order',['../class_filter_trans_func.html#a4246b58e471c89123f9bf38965c9ca5d',1,'FilterTransFunc']]],
-  ['fir_5ftype',['Fir_Type',['../class_linear_phase_fir_design.html#a2220d57faf52a57095382c1e4b4211ed',1,'LinearPhaseFirDesign']]],
+  ['fd',['fd',['../class_r_t_file.html#a0747d9e66f3f8bd8cb0d196c9eae2ac8',1,'RTFile']]],
+  ['fdm',['fdm',['../class_cmd_line.html#a3b2a8901cf696f64b51b43ee9d70bed5',1,'CmdLine']]],
+  ['fds',['fds',['../class_cmd_line.html#a446397c6384be84fdc559c736286bff5',1,'CmdLine']]],
+  ['fifo',['fifo',['../class_r_t_file.html#acf5b88ce1182ad1db77004d531bd7026',1,'RTFile::fifo()'],['../class_data_recorder_1_1_panel.html#a06895432f73df441de58ca620efba164',1,'DataRecorder::Panel::fifo()'],['../class_oscilloscope_1_1_panel.html#a3ec370a08efff9ab17b283962e5c4951',1,'Oscilloscope::Panel::fifo()']]],
+  ['fifosize',['fifoSize',['../class_atomic_fifo.html#af9bbe94da0501278eceb6f734bbb68c2',1,'AtomicFifo']]],
+  ['file',['file',['../class_data_recorder_1_1_panel.html#a2875512d297b663c7afb3d522ea83b05',1,'DataRecorder::Panel']]],
+  ['fileformatedit',['fileFormatEdit',['../class_data_recorder_1_1_panel.html#a39c3fcca3f632503e35b1f17610df7ec',1,'DataRecorder::Panel']]],
+  ['filegroup',['fileGroup',['../class_data_recorder_1_1_panel.html#adbe6a57af3779794e3ad14e7b4b894e0',1,'DataRecorder::Panel']]],
+  ['filemenu',['fileMenu',['../class_main_window.html#a426da48f6e2f865b07a28533c07c4f7a',1,'MainWindow']]],
+  ['filenameedit',['fileNameEdit',['../class_data_recorder_1_1_panel.html#a0dbc0681ee778f548a158a09cab62cc9',1,'DataRecorder::Panel']]],
+  ['filesize',['fileSize',['../class_data_recorder_1_1_panel.html#a67287daffe20d793198a1af50ece5e2b',1,'DataRecorder::Panel']]],
+  ['filesizelbl',['fileSizeLbl',['../class_data_recorder_1_1_panel.html#a9a66b192965a120241fdd9d9cb7d9ffb',1,'DataRecorder::Panel']]],
+  ['filterssubmenu',['filtersSubMenu',['../class_main_window.html#ac7931b3113a60430179a59f5f7a1db82',1,'MainWindow']]],
+  ['finished',['finished',['../class_r_t_1_1_system.html#a184b752be1344d79bb58a61c45f7dc15',1,'RT::System']]],
+  ['fixedcount',['fixedcount',['../class_data_recorder_1_1_panel.html#a1e3f3986ae2619ed72caf45c5c70fa3f',1,'DataRecorder::Panel']]],
   ['flags',['flags',['../struct_i_o_1_1channel__t.html#a25079ab02c941fd67ce51bfe95168556',1,'IO::channel_t']]],
-  ['freq',['freq',['../class_generator_sine.html#afec85da84bdb0ee1f9fd1f0a38d79675',1,'GeneratorSine::freq()'],['../class_generator_zap.html#ae5fd503a77da347513bd7066d8e6ea3f',1,'GeneratorZap::freq()']]],
-  ['freq2',['freq2',['../class_generator_zap.html#a29e42d3aa12572e25e1965c0e6ff2b4e',1,'GeneratorZap']]],
-  ['freq_5fresp',['Freq_Resp',['../class_iir_filter_response.html#a04e54d5f9f8f986f584e7d04bd48861b',1,'IirFilterResponse']]]
+  ['freqedit',['freqEdit',['../class_system_control_panel.html#a9c3bbbe697acd9f576ea33ffaae311d1',1,'SystemControlPanel']]],
+  ['frequnitlist',['freqUnitList',['../class_system_control_panel.html#a8ffb664964d86fa6f331760254ab2c94',1,'SystemControlPanel']]]
 ];

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['joint_5freset',['Joint_Reset',['../classt_m_series.html#a11e332ec211599f302ce533798fef405',1,'tMSeries']]],
-  ['joint_5fstatus_5f1',['Joint_Status_1',['../classt_m_series.html#a0679ea459314dc196e88f1912ba5242c',1,'tMSeries']]],
-  ['joint_5fstatus_5f2',['Joint_Status_2',['../classt_m_series.html#a95652546f88cd47e496743fbe8b8f7c0',1,'tMSeries']]]
+  ['jitter',['jitter',['../class_performance_measurement_1_1_panel.html#aa51709fd96a5aff832099cfba749b93b',1,'PerformanceMeasurement::Panel']]],
+  ['junk',['junk',['../class_default_g_u_i_model.html#a69b7d93f36361eec2f22cae934c2ec9f',1,'DefaultGUIModel']]]
 ];

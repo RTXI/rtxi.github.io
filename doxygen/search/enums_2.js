@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['estim_5fmethod_5ft',['ESTIM_METHOD_T',['../adaptype_8h.html#aefb7496ef190106e211bf5ac61e754ce',1,'adaptype.h']]]
+  ['update_5fflags_5ft',['update_flags_t',['../class_default_g_u_i_model.html#aa0405d1dceb86b5b4e328fe3cfc62e22',1,'DefaultGUIModel']]]
 ];

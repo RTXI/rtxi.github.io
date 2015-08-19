@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['error_5fmsg',['ERROR_MSG',['../debug_8h.html#aa8de68725c5a7aaec6a54bbbd8e655e5',1,'debug.h']]],
-  ['externc',['EXTERNC',['../osi_platform_8h.html#a95e1d92b2619a326b2e86600f3d23100',1,'osiPlatform.h']]]
+  ['prefetch_5fread',['prefetch_read',['../compiler_8h.html#aa6a6900a2fdda020faf7580442ed736a',1,'compiler.h']]],
+  ['prefetch_5fwrite',['prefetch_write',['../compiler_8h.html#ae441b981b43cdfc770c43b6756c4481c',1,'compiler.h']]]
 ];

@@ -1,18 +1,13 @@
 var searchData=
 [
-  ['h_5fsub_5fzero',['H_Sub_Zero',['../class_filter_trans_func.html#a55ecf511b0e9547e684eefd0e02c3b52',1,'FilterTransFunc']]],
-  ['half_5flag_5fwin',['Half_Lag_Win',['../class_generic_window.html#a7fe86b86851be30fa6fb12a0e738ec84',1,'GenericWindow']]],
-  ['half_5flength',['Half_Length',['../class_generic_window.html#afe0166a38b3d1f0fd7fe07388838c8c5',1,'GenericWindow']]],
-  ['hamming_2ecpp',['hamming.cpp',['../hamming_8cpp.html',1,'']]],
-  ['hamming_2eh',['hamming.h',['../hamming_8h.html',1,'']]],
-  ['hammingwindow',['HammingWindow',['../class_hamming_window.html',1,'HammingWindow'],['../class_hamming_window.html#aa1fe64843d18fb5723527e06033bb702',1,'HammingWindow::HammingWindow()']]],
+  ['handle',['handle',['../class_plugin_1_1_object.html#aa034e538039111f48ecaa36f65e1daac',1,'Plugin::Object']]],
   ['handler',['Handler',['../class_event_1_1_handler.html',1,'Event']]],
   ['handler',['Handler',['../class_event_1_1_manager.html#a814a99fe9f92ee19167a82c9113c8c48',1,'Event::Manager::Handler()'],['../class_event_1_1_handler.html#a3fe377092f103b12115a03a1af424d5c',1,'Event::Handler::Handler()']]],
-  ['hann_2ecpp',['hann.cpp',['../hann_8cpp.html',1,'']]],
-  ['hann_2eh',['hann.h',['../hann_8h.html',1,'']]],
-  ['hannwindow',['HannWindow',['../class_hann_window.html',1,'HannWindow'],['../class_hann_window.html#ae1d78fcc73ca5e4f1a74b5d6a43fbe93',1,'HannWindow::HannWindow()']]],
-  ['herm_5ftoep_5fcol_5f1',['Herm_Toep_Col_1',['../class_toeplitz_matrix.html#a270918a5e90071e2fa0e1c79e0a12ca8',1,'ToeplitzMatrix']]],
-  ['horizontalscrollbar',['horizontalScrollBar',['../class_scroll_zoomer.html#aaf74af0d6e41e902c18af9fd57bfd5bb',1,'ScrollZoomer']]],
-  ['hscrollbarmode',['hScrollBarMode',['../class_scroll_zoomer.html#a92c5dcd1cb35af061212e7038c5a56dd',1,'ScrollZoomer']]],
-  ['hscrollbarposition',['hScrollBarPosition',['../class_scroll_zoomer.html#a73fffc13556379071aaff56f99e7c378',1,'ScrollZoomer']]]
+  ['handlerlist',['handlerList',['../class_event_1_1_manager.html#acf5e7551aaa25c18b41170853e19ec52',1,'Event::Manager']]],
+  ['hdf',['HDF',['../class_user_prefs_1_1_panel.html#a0e77d7f2207dff1bc16b1cbde2fd5bac',1,'UserPrefs::Panel']]],
+  ['hdfbufferedit',['HDFBufferEdit',['../class_user_prefs_1_1_panel.html#a321b2848cf18391d024287b0791dded3',1,'UserPrefs::Panel']]],
+  ['head',['head',['../class_atomic_fifo.html#aa5c7d19c5ed77e24bd8634382588ed1d',1,'AtomicFifo::head()'],['../class_r_t_1_1_list.html#a2d137c38cc7c449e8823e0682a2d6aab',1,'RT::List::head()']]],
+  ['helpmenu',['helpMenu',['../class_main_window.html#a947c15e520bfea60338b2577f67146b8',1,'MainWindow']]],
+  ['highlightconnectionbox',['highlightConnectionBox',['../class_connector_1_1_panel.html#ad3bfd40c0a82fbb8f7ef68d772bc898b',1,'Connector::Panel']]],
+  ['hscl',['hScl',['../class_scope.html#a7dca1397b445a8f82d484d63a8bbe2e4',1,'Scope']]]
 ];

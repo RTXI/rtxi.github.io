@@ -1,29 +1,5 @@
 var searchData=
 [
-  ['ma_5fest_2ecpp',['ma_est.cpp',['../ma__est_8cpp.html',1,'']]],
-  ['ma_5fest_2eh',['ma_est.h',['../ma__est_8h.html',1,'']]],
-  ['ma_5fproc_2ecpp',['ma_proc.cpp',['../ma__proc_8cpp.html',1,'']]],
-  ['ma_5fproc_2eh',['ma_proc.h',['../ma__proc_8h.html',1,'']]],
-  ['ma_5fsrc_2ecpp',['ma_src.cpp',['../ma__src_8cpp.html',1,'']]],
-  ['ma_5fsrc_2eh',['ma_src.h',['../ma__src_8h.html',1,'']]],
-  ['main_2ecpp',['main.cpp',['../src_2main_8cpp.html',1,'']]],
-  ['main_2ecpp',['main.cpp',['../testsuite_2main_8cpp.html',1,'']]],
-  ['main_5fwindow_2ecpp',['main_window.cpp',['../main__window_8cpp.html',1,'']]],
-  ['main_5fwindow_2eh',['main_window.h',['../main__window_8h.html',1,'']]],
-  ['matrix_2eh',['matrix.h',['../matrix_8h.html',1,'']]],
-  ['matrix_5ft_2ecpp',['matrix_t.cpp',['../matrix__t_8cpp.html',1,'']]],
-  ['matrix_5ft_2eh',['matrix_t.h',['../matrix__t_8h.html',1,'']]],
-  ['misdefs_2eh',['misdefs.h',['../misdefs_8h.html',1,'']]],
-  ['mod_5fyuwa_2ecpp',['mod_yuwa.cpp',['../mod__yuwa_8cpp.html',1,'']]],
-  ['mod_5fyuwa_2eh',['mod_yuwa.h',['../mod__yuwa_8h.html',1,'']]],
-  ['model_5floader_2ecpp',['model_loader.cpp',['../model__loader_8cpp.html',1,'']]],
-  ['model_5floader_2eh',['model_loader.h',['../model__loader_8h.html',1,'']]],
-  ['mr_5flpf_2ecpp',['mr_lpf.cpp',['../mr__lpf_8cpp.html',1,'']]],
-  ['mr_5flpf_2eh',['mr_lpf.h',['../mr__lpf_8h.html',1,'']]],
-  ['msdcost_2ecpp',['msdcost.cpp',['../msdcost_8cpp.html',1,'']]],
-  ['msdcost_2eh',['msdcost.h',['../msdcost_8h.html',1,'']]],
-  ['msmrcost_2ecpp',['msmrcost.cpp',['../msmrcost_8cpp.html',1,'']]],
-  ['msmrcost_2eh',['msmrcost.h',['../msmrcost_8h.html',1,'']]],
-  ['mutex_2ecpp',['mutex.cpp',['../mutex_8cpp.html',1,'']]],
-  ['mutex_2eh',['mutex.h',['../mutex_8h.html',1,'']]]
+  ['userprefs_2ecpp',['userprefs.cpp',['../userprefs_8cpp.html',1,'']]],
+  ['userprefs_2eh',['userprefs.h',['../userprefs_8h.html',1,'']]]
 ];

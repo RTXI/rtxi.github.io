@@ -1,28 +1,5 @@
 var searchData=
 [
-  ['dan_5fpdgm_2ecpp',['dan_pdgm.cpp',['../dan__pdgm_8cpp.html',1,'']]],
-  ['dan_5fpdgm_2eh',['dan_pdgm.h',['../dan__pdgm_8h.html',1,'']]],
-  ['daq_2ecpp',['daq.cpp',['../daq_8cpp.html',1,'']]],
-  ['daq_2eh',['daq.h',['../daq_8h.html',1,'']]],
-  ['data_5frecorder_2ecpp',['data_recorder.cpp',['../data__recorder_8cpp.html',1,'']]],
-  ['data_5frecorder_2eh',['data_recorder.h',['../data__recorder_8h.html',1,'']]],
-  ['debug_2eh',['debug.h',['../debug_8h.html',1,'']]],
-  ['default_5fgui_5fmodel_2ecpp',['default_gui_model.cpp',['../default__gui__model_8cpp.html',1,'']]],
-  ['default_5fgui_5fmodel_2eh',['default_gui_model.h',['../default__gui__model_8h.html',1,'']]],
-  ['dif_5fniso_2ecpp',['dif_niso.cpp',['../dif__niso_8cpp.html',1,'']]],
-  ['dif_5fniso_2eh',['dif_niso.h',['../dif__niso_8h.html',1,'']]],
-  ['dif_5fsino_2ecpp',['dif_sino.cpp',['../dif__sino_8cpp.html',1,'']]],
-  ['dif_5fsino_2eh',['dif_sino.h',['../dif__sino_8h.html',1,'']]],
-  ['dir1_5fiir_2ecpp',['dir1_iir.cpp',['../dir1__iir_8cpp.html',1,'']]],
-  ['dir1_5fiir_2eh',['dir1_iir.h',['../dir1__iir_8h.html',1,'']]],
-  ['dirform1_2ecpp',['dirform1.cpp',['../dirform1_8cpp.html',1,'']]],
-  ['dirform1_2eh',['dirform1.h',['../dirform1_8h.html',1,'']]],
-  ['dit_5fniso_2ecpp',['dit_niso.cpp',['../dit__niso_8cpp.html',1,'']]],
-  ['dit_5fniso_2eh',['dit_niso.h',['../dit__niso_8h.html',1,'']]],
-  ['dit_5fsino_2ecpp',['dit_sino.cpp',['../dit__sino_8cpp.html',1,'']]],
-  ['dit_5fsino_2eh',['dit_sino.h',['../dit__sino_8h.html',1,'']]],
-  ['dolph_2ecpp',['dolph.cpp',['../dolph_8cpp.html',1,'']]],
-  ['dolph_2eh',['dolph.h',['../dolph_8h.html',1,'']]],
-  ['dynamo_5fmodel_5floader_2ecpp',['dynamo_model_loader.cpp',['../dynamo__model__loader_8cpp.html',1,'']]],
-  ['dynamo_5fmodel_5floader_2eh',['dynamo_model_loader.h',['../dynamo__model__loader_8h.html',1,'']]]
+  ['event_2ecpp',['event.cpp',['../event_8cpp.html',1,'']]],
+  ['event_2eh',['event.h',['../event_8h.html',1,'']]]
 ];
