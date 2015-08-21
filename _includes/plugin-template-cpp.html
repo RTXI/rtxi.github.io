@@ -3,7 +3,6 @@
 #include <plugin-template.h>
 #include <main_window.h>
 #include <iostream>
-#include <QtGui>
 
 extern "C" Plugin::Object *createRTXIPlugin(void){
 	return new PluginTemplate();
@@ -30,6 +29,11 @@ PluginTemplate::~PluginTemplate(void) { }
 
 void PluginTemplate::execute(void) {
 	return;
+}
+
+void PluginTemplate::initParameters(void) {
+	some_parameter = 0;
+	some_state=0;
 }
 
 void PluginTemplate::update(DefaultGUIModel::update_flags_t flag) {

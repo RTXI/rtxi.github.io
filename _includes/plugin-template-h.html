@@ -1,6 +1,5 @@
 <div class="container">
 {% highlight cpp %}
-#include <QMdiArea>
 #include <default_gui_model.h>
 
 class PluginTemplate : public DefaultGUIModel {
@@ -25,6 +24,8 @@ class PluginTemplate : public DefaultGUIModel {
 		double some_parameter;
 		double some_state;
 		double period;
+
+		void initParameters();
 	
 	private slots:
 	// these are custom functions that can also be connected

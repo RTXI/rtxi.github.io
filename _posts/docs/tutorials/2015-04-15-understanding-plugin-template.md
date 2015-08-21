@@ -16,15 +16,11 @@ This tutorial will assume the reader has a basic understanding of C++, such as h
 * DefaultGUIModel with a custom GUI.
 */
 
-#include <QMdiArea>
 #include <default_gui_model.h>
 {% endhighlight %}
 </a></div>
 
 <div class="collapse" id="header1">
-	<p><code>QMdiArea</code> refers to a Qt4 class that manages MDI windows, windows subclassed under the main application window. This provides a method for Qt to take care of allocating, freeing memory for widgets when they are opened or closed within the RTXI application.
-	</p>
-
 	<p><code>default_gui_model.h</code> is the header for the <code>DefaultGUIModel</code> class that <code>PluginTemplate</code> abstracts from. The file itself is stored in <code>include/default_gui_model.h</code> in the <a href="https://github.com/rtxi/rtxi">RTXI repository</a>. <code>DefaultGUI</code> is on its own a mechanism by which users can create their own plugins. <code>PluginTemplate</code> simply obscures some of the more arcane functions and provides a more simplified programming experience. 
 	</p>
 </div>
@@ -38,7 +34,7 @@ class PluginTemplate : public DefaultGUIModel {
 </a></div>
 
 <div class="collapse" id="header2">
-	<p> The <code>PluginTemplate</code> abstracts from <code>DefaultGUIModel</code> to fit within RTXI's framework. To fit within that of Qt4, it uses the <code>Q_OBJECT</code> macro, used to insert code that implements the signals and slots methods used for communication between different <code>QObjects</code>. <code>QObjects</code> are a basic class from which other Qt classes are derived. Basically, the <code>Q_OBJECT</code> macro indicates that the class is to be treated as a <code>QObject</code>. 
+	<p> The <code>PluginTemplate</code> abstracts from <code>DefaultGUIModel</code> to fit within RTXI's framework. To fit within the Qt framework, it uses the <code>Q_OBJECT</code> macro, which tells Qt's meta-object compiler to insert code into the class that implement signals and slots. Signals and slots are how different <code>QObjects</code> communicate with one another. One <code>QObject</code> sends a signal that is received by another <code>QObject</code>'s slot. The <code>Q_OBJECT</code> macro indicates that the class is to be treated as a <code>QObject</code>. 
 	</p>
 </div>
 
@@ -76,11 +72,15 @@ class PluginTemplate : public DefaultGUIModel {
       double some_parameter;
       double some_state;
       double period;
+
+		void initParameters();
 {% endhighlight %}
 </a></div>
 
 <div class="collapse" id="header4">
 	<p>The <code>update</code> function is used to inject custom code around events triggered within the UI. Definitions of what those states are are found in the source file. 
+	</p>
+	<p>The <code>initParameters</code> function can also be used to initialize parameters. It is called within the module constructor, which is defined in the source files, too. 
 	</p>
 </div>
 
@@ -115,12 +115,11 @@ class PluginTemplate : public DefaultGUIModel {
 #include <plugin-template.h>
 #include <main_window.h>
 #include <iostream>
-#include <QtGui>
 {% endhighlight %}
 </a></div>
 
 <div class="collapse" id="source1">
-	<p><code>QtGui</code> is used to include all the Qt-related UI elements, like buttons, widgets, text boxes, etc. <code>main_window.h</code> is the header file for the main RTXI application window. It's included here so that the module being created can reference the main window as it's parent. In other words, the modules will be displayed within the main window, and if the main window is closed, so are the modules. <code>iostream</code> is for writing things to standard output (i.e. the terminal). In the base code, <code>PluginTemplate</code> doesn't write to output, but you can change that if you'd like. Just remember to avoid writes within the <code>execute</code> function, or you'll crash RTXI or, even worse, crash the desktop. 
+	<p><code>main_window.h</code> is the header file for the main RTXI application window. It's included here so that the module being created can reference the main window as it's parent. That way, the modules will be displayed within the main window. <code>iostream</code> is for writing things to standard output (i.e. the terminal). In the base code, <code>PluginTemplate</code> doesn't write to output, but you can change that if you'd like. Just remember to avoid writes within the <code>execute</code> function, or you'll crash RTXI. 
 	</p>
 </div>
 
@@ -184,6 +183,7 @@ PluginTemplate::PluginTemplate(void) : DefaultGUIModel("PluginTemplate with Cust
    setWhatsThis("<p><b>PluginTemplate:</b><br>QWhatsThis description.</p>");
    DefaultGUIModel::createGUI(vars, num_vars); // this is required to create the GUI
    customizeGUI();
+	initParameters();
    update( INIT ); // this is optional, you may place initialization code directly into the construct    or
    refresh(); // this is required to update the GUI with parameter and state values
    QTimer::singleShot(0, this, SLOT(resizeMe()));
@@ -201,7 +201,23 @@ PluginTemplate::~PluginTemplate(void) { }
 		<li>The <code>vars[]</code> array</li>
 		<li><code>num_vars</code></li>
 	</ol>
-	<p>The functions called within the constructor are defined later. The <code>QTimer::singleShot</code> call is so make the UI resize properly if the <code>customizeGUI</code> adds/removes UI elements. 
+	<p>The functions called within the constructor are defined later. The <code>QTimer::singleShot</code> call is so make the UI resize properly if <code>customizeGUI</code> is used to edit the default UI.  
+	</p>
+</div>
+
+<div><a data-toggle="collapse" data-target="#source4-5">
+{% highlight cpp %}
+
+void PluginTemplate::initParameters(void) {
+	some_parameter = 0;
+	some_state = 0;
+   return;
+}
+{% endhighlight %}
+</a></div>
+
+<div class="collapse" id="source4-5">
+	<p>The <code>initParameters</code> function is an optional function you can use to initialize variables. Of course, you can define all this in the module constructor. Note that here, the variablles that are initialized are those that are ultimately linked to a <code>PARAMATER</code> and <code>STATE</code>. Therefore, <code>initParameters</code> should be called before <code>update(INIT)</code>.  
 	</p>
 </div>
 
