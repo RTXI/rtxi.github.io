@@ -94,19 +94,21 @@ What `grunt deploy` does is minify all the HTML on the site (i.e. delete comment
 The site is designed to have each part of it as self-contained as possible. Each category in the navigation bar points to one page that displays all of the information pertaining to that category. That way, text is not repeated in different sections, ultimately leading to the problem of conflicting instructions that plagued the prior site.  
 
 The start of each file contains YAML front matter. It's a Jekyll thing. Every page needs a title and a layout. The layouts are all stored in `_layouts`. There are currently four layouts for the site:  
+ 
 1. `default.html`: used for every page unless otherwise specified. The `extra_css` and `extra_js` allow custom CSS and Javascript to be added to each page without the need for a new layout.  
-2. `docpost.html`: Used for all posts that appear on the Docs page. 
+2. `docpost.html`: Used for all posts that appear on the Docs page.  
 3. `module.html`: Used for all the module pages.  
 4. `paper.html`: Used for all the papers on the site related to RTXI.  
 
 The `_includes` folder has some HTML elements that get repeated on lots of pages, like the footer and navigation bar. You can also store text that gets repeated a lot here. That way, if you change it, you only need to edit one place. Use Liquid tags to include the files here.  
 
 Most of the pages are straight-forward. The following pages are just straight HTML with a Jekyll header:   
-1. /
-2. /contact
-3. /conference
-4. /install
-5. /stats
+
+1. /  
+2. /contact  
+3. /conference  
+4. /install  
+5. /stats  
 
 The following is a description of how 'aggregator' pages are put together. 
 
@@ -145,4 +147,4 @@ and then replace it with:
 repos = []
 ````
 
-Now, grunt won't try to pull all 50ish modules on GitHub every time you save changes. JUST BE SURE TO UNDO THIS BEFORE DEPLOYING TO GITHUB!!!!!!  If you forget, you'll remove all the modules on the site.  
+Now, grunt won't try to pull all 50ish modules on GitHub every time you save changes. JUST BE SURE TO UNDO THIS BEFORE DEPLOYING TO GITHUB!!!!!!  If you forget, you'll remove all the module pages on the site.  
