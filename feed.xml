@@ -243,15 +243,11 @@ RTXI workspace variables are displayed in the UI as &lt;code&gt;QStrings&lt;/cod
 &lt;span class=&quot;cm&quot;&gt;* DefaultGUIModel with a custom GUI.&lt;/span&gt;
 &lt;span class=&quot;cm&quot;&gt;*/&lt;/span&gt;
 
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;QMdiArea&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;cp&quot;&gt;#include &amp;lt;default_gui_model.h&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/a&gt;&lt;/div&gt;
 
 &lt;div class=&quot;collapse&quot; id=&quot;header1&quot;&gt;
-	&lt;p&gt;&lt;code&gt;QMdiArea&lt;/code&gt; refers to a Qt4 class that manages MDI windows, windows subclassed under the main application window. This provides a method for Qt to take care of allocating, freeing memory for widgets when they are opened or closed within the RTXI application.
-	&lt;/p&gt;
-
 	&lt;p&gt;&lt;code&gt;default_gui_model.h&lt;/code&gt; is the header for the &lt;code&gt;DefaultGUIModel&lt;/code&gt; class that &lt;code&gt;PluginTemplate&lt;/code&gt; abstracts from. The file itself is stored in &lt;code&gt;include/default_gui_model.h&lt;/code&gt; in the &lt;a href=&quot;https://github.com/rtxi/rtxi&quot;&gt;RTXI repository&lt;/a&gt;. &lt;code&gt;DefaultGUI&lt;/code&gt; is on its own a mechanism by which users can create their own plugins. &lt;code&gt;PluginTemplate&lt;/code&gt; simply obscures some of the more arcane functions and provides a more simplified programming experience. 
 	&lt;/p&gt;
 &lt;/div&gt;
@@ -265,7 +261,7 @@ RTXI workspace variables are displayed in the UI as &lt;code&gt;QStrings&lt;/cod
 &lt;/a&gt;&lt;/div&gt;
 
 &lt;div class=&quot;collapse&quot; id=&quot;header2&quot;&gt;
-	&lt;p&gt; The &lt;code&gt;PluginTemplate&lt;/code&gt; abstracts from &lt;code&gt;DefaultGUIModel&lt;/code&gt; to fit within RTXI&#39;s framework. To fit within that of Qt4, it uses the &lt;code&gt;Q_OBJECT&lt;/code&gt; macro, used to insert code that implements the signals and slots methods used for communication between different &lt;code&gt;QObjects&lt;/code&gt;. &lt;code&gt;QObjects&lt;/code&gt; are a basic class from which other Qt classes are derived. Basically, the &lt;code&gt;Q_OBJECT&lt;/code&gt; macro indicates that the class is to be treated as a &lt;code&gt;QObject&lt;/code&gt;. 
+	&lt;p&gt; The &lt;code&gt;PluginTemplate&lt;/code&gt; abstracts from &lt;code&gt;DefaultGUIModel&lt;/code&gt; to fit within RTXI&#39;s framework. To fit within the Qt framework, it uses the &lt;code&gt;Q_OBJECT&lt;/code&gt; macro, which tells Qt&#39;s meta-object compiler to insert code into the class that implement signals and slots. Signals and slots are how different &lt;code&gt;QObjects&lt;/code&gt; communicate with one another. One &lt;code&gt;QObject&lt;/code&gt; sends a signal that is received by another &lt;code&gt;QObject&lt;/code&gt;&#39;s slot. The &lt;code&gt;Q_OBJECT&lt;/code&gt; macro indicates that the class is to be treated as a &lt;code&gt;QObject&lt;/code&gt;. 
 	&lt;/p&gt;
 &lt;/div&gt;
 
@@ -300,12 +296,16 @@ RTXI workspace variables are displayed in the UI as &lt;code&gt;QStrings&lt;/cod
 
       &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;some_parameter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
       &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;some_state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;period&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;period&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+		&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initParameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/a&gt;&lt;/div&gt;
 
 &lt;div class=&quot;collapse&quot; id=&quot;header4&quot;&gt;
 	&lt;p&gt;The &lt;code&gt;update&lt;/code&gt; function is used to inject custom code around events triggered within the UI. Definitions of what those states are are found in the source file. 
+	&lt;/p&gt;
+	&lt;p&gt;The &lt;code&gt;initParameters&lt;/code&gt; function can also be used to initialize parameters. It is called within the module constructor, which is defined in the source files, too. 
 	&lt;/p&gt;
 &lt;/div&gt;
 
@@ -338,13 +338,12 @@ RTXI workspace variables are displayed in the UI as &lt;code&gt;QStrings&lt;/cod
 
 &lt;span class=&quot;cp&quot;&gt;#include &amp;lt;plugin-template.h&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;cp&quot;&gt;#include &amp;lt;main_window.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;QtGui&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/a&gt;&lt;/div&gt;
 
 &lt;div class=&quot;collapse&quot; id=&quot;source1&quot;&gt;
-	&lt;p&gt;&lt;code&gt;QtGui&lt;/code&gt; is used to include all the Qt-related UI elements, like buttons, widgets, text boxes, etc. &lt;code&gt;main_window.h&lt;/code&gt; is the header file for the main RTXI application window. It&#39;s included here so that the module being created can reference the main window as it&#39;s parent. In other words, the modules will be displayed within the main window, and if the main window is closed, so are the modules. &lt;code&gt;iostream&lt;/code&gt; is for writing things to standard output (i.e. the terminal). In the base code, &lt;code&gt;PluginTemplate&lt;/code&gt; doesn&#39;t write to output, but you can change that if you&#39;d like. Just remember to avoid writes within the &lt;code&gt;execute&lt;/code&gt; function, or you&#39;ll crash RTXI or, even worse, crash the desktop. 
+	&lt;p&gt;&lt;code&gt;main_window.h&lt;/code&gt; is the header file for the main RTXI application window. It&#39;s included here so that the module being created can reference the main window as it&#39;s parent. That way, the modules will be displayed within the main window. &lt;code&gt;iostream&lt;/code&gt; is for writing things to standard output (i.e. the terminal). In the base code, &lt;code&gt;PluginTemplate&lt;/code&gt; doesn&#39;t write to output, but you can change that if you&#39;d like. Just remember to avoid writes within the &lt;code&gt;execute&lt;/code&gt; function, or you&#39;ll crash RTXI. 
 	&lt;/p&gt;
 &lt;/div&gt;
 
@@ -406,6 +405,7 @@ RTXI workspace variables are displayed in the UI as &lt;code&gt;QStrings&lt;/cod
    &lt;span class=&quot;n&quot;&gt;setWhatsThis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;lt;p&amp;gt;&amp;lt;b&amp;gt;PluginTemplate:&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;QWhatsThis description.&amp;lt;/p&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
    &lt;span class=&quot;n&quot;&gt;DefaultGUIModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;createGUI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_vars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// this is required to create the GUI&lt;/span&gt;
    &lt;span class=&quot;n&quot;&gt;customizeGUI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;initParameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
    &lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INIT&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// this is optional, you may place initialization code directly into the construct    or&lt;/span&gt;
    &lt;span class=&quot;n&quot;&gt;refresh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// this is required to update the GUI with parameter and state values&lt;/span&gt;
    &lt;span class=&quot;n&quot;&gt;QTimer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;singleShot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SLOT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resizeMe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()));&lt;/span&gt;
@@ -423,7 +423,22 @@ RTXI workspace variables are displayed in the UI as &lt;code&gt;QStrings&lt;/cod
 		&lt;li&gt;The &lt;code&gt;vars[]&lt;/code&gt; array&lt;/li&gt;
 		&lt;li&gt;&lt;code&gt;num_vars&lt;/code&gt;&lt;/li&gt;
 	&lt;/ol&gt;
-	&lt;p&gt;The functions called within the constructor are defined later. The &lt;code&gt;QTimer::singleShot&lt;/code&gt; call is so make the UI resize properly if the &lt;code&gt;customizeGUI&lt;/code&gt; adds/removes UI elements. 
+	&lt;p&gt;The functions called within the constructor are defined later. The &lt;code&gt;QTimer::singleShot&lt;/code&gt; call is so make the UI resize properly if &lt;code&gt;customizeGUI&lt;/code&gt; is used to edit the default UI.  
+	&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div&gt;&lt;a data-toggle=&quot;collapse&quot; data-target=&quot;#source4-5&quot;&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PluginTemplate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;initParameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;some_parameter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;some_state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class=&quot;collapse&quot; id=&quot;source4-5&quot;&gt;
+	&lt;p&gt;The &lt;code&gt;initParameters&lt;/code&gt; function is an optional function you can use to initialize variables. Of course, you can define all this in the module constructor. Note that here, the variablles that are initialized are those that are ultimately linked to a &lt;code&gt;PARAMATER&lt;/code&gt; and &lt;code&gt;STATE&lt;/code&gt;. Therefore, &lt;code&gt;initParameters&lt;/code&gt; should be called before &lt;code&gt;update(INIT)&lt;/code&gt;.  
 	&lt;/p&gt;
 &lt;/div&gt;
 
