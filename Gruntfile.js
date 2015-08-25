@@ -109,10 +109,6 @@ module.exports = function(grunt) {
                'bower install',
                'npm install',
                'bundle install',
-/*
-               'mkdir -p assets',
-               'mkdir -p assets/less',
-*/
             ].join(' && ')
          },
          update: {
@@ -120,7 +116,6 @@ module.exports = function(grunt) {
                'bower update', 
                'bundle update',
 					'npm update',
-               'echo "check if npm update is still broken"'
             ].join(' && ')
          }
       },
