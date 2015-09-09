@@ -8,6 +8,7 @@ This issue can be caused by many tings, and getting to its specific cause will r
 
 1. When does the system freeze or slow down?  
 	- Does it freeze after you pick a kernel in the GRUB menu?  
+	- Does RTXI cause the slowdown or is it slow upon boot?  
 	- Does the freeze affect all kernels? Or is it just the real-time one(s)?  
 
 2. What graphics card are you using?  
@@ -15,6 +16,8 @@ This issue can be caused by many tings, and getting to its specific cause will r
 	- Are you using open-source or proprietary drivers?  
 
 3. If running an RT kernel, are the DAQ drivers loaded? Open the Control Panel module in RTXI and see if the "analogy0" channel is open. If not, the drivers aren't detecting your DAQ.  
+
+4. How is your BIOS configured? Some settings, such as multithreading, frequency scaling, and spread-spectrum clocking, degrade real-time performance and should be disabled.  
 
 <br>
 
