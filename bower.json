@@ -21,9 +21,9 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.1",
-    "isotope": "~2.1.0",
-    "font-awesome": "~4.2.0",
-    "octicons": "~2.1.2"
+    "bootstrap": "~3.3.5",
+    "isotope": "~2.2.2",
+    "font-awesome": "~4.4.0",
+    "octicons": "~3.1.0"
   }
 }
