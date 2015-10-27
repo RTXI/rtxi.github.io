@@ -12,6 +12,38 @@ markdown: kramdown #rdiscount
 highlighter: pygments
 permalink: pretty #/:categories/:title
 
+img: "/assets/img"
+
+pis: 
+ - name: Robert Butera
+   face: robert_butera.jpg
+   where: Georgia Insititute of Technology
+   url: https://neurolab.gatech.edu/labs/butera
+ - name: David Christini
+   face: david_christini.jpg
+   where: Weill Cornell Medical College
+   url: http://christinilab.org
+ - name: Chuck Dorval
+   face: chuck_dorval.jpg
+   where: The University of Utah
+   url: https://www.bioen.utah.edu/directory/profile.php?userID=593
+ - name: John White
+   face: john_white.jpg
+   where: Boston University
+   url: https://sites.google.com/site/johnwhitelab/
+
+developers:
+ - name: Ansel George
+   face: ansel_george.jpg
+   where: Weill Cornell Medical College
+ - name: Francis Ortega 
+   face: francis_ortega.jpg
+   where: Weill Cornell Medical College
+ - name: Yogi Patel
+   face: yogi_patel.jpg
+   where: Georgia Insititute of Technology
+
+
 gems:
    - jekyll-sitemap
 
