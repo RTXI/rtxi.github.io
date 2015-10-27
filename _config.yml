@@ -6,7 +6,7 @@ url: "http://rtxi.org"
 author :
    name : Ansel George
    email : info@rtxi.org
-   github : anselg
+   github : rtxi
 
 markdown: kramdown #rdiscount
 highlighter: pygments
