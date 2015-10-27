@@ -129,7 +129,7 @@ extra_js: "
       {% capture lastyear %}{{ thisyear }}{% endcapture %}
    
       <div class="item col-sm-6 col-md-4 chunk{{chunkvar}}" data-category="chunk{{chunkvar}}">
-         <a href="{{ post.url }}">
+         <a href="{{ post.url }}" style="text-decoration:none;color:inherit;">
             <div class="panel panel-primary">
                <div class="panel-heading"><h4 class="panel-title">{{ post.title }}</h4></div>
                <div class="panel-body hidden-xs">{{ post.excerpt | truncate:750 }}</div>
