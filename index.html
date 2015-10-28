@@ -11,7 +11,7 @@ layout: default
 
 	<div class="row">
 		<div class="col-xs-12"><p>
-				 <strong>RTXI</strong>, the <strong>Real-Time eXperiment Interface</strong>, is a <strong>hard real-time</strong> data acquisition and controls application for use in a biological research. At the core of RTXI is a Real-Time Operating System (RTOS), which uses the Linux kernel to provide <strong>deterministic</strong> control in a variety of experimental settings. It is <strong>fast</strong>, <strong>free</strong>, and <strong>open-source</strong>. Our system is currently used in labs all over to world to probe diverse, technologically challenging problems, such as dynamic probing of ion-channel function, control of cardiac arrhythmia dynamics, and control of deep-brain stimulation patterns.
+			<strong>RTXI</strong>, the <strong>Real-Time eXperiment Interface</strong>, is a <strong>hard real-time</strong> data acquisition and control application for biological research. At its core is a Real-Time Operating System (RTOS), which uses a modified Linux kernel to provide <strong>deterministic</strong> control in a variety of experimental settings. RTXI is a <strong>fast</strong>, <strong>free</strong>, and <strong>open-source</strong> system currently used in labs all over the world to probe diverse, technologically challenging problems, such as dynamic probing of ion-channel function, control of cardiac arrhythmia dynamics, and control of deep-brain stimulation patterns.  
 		</p></div>
 	</div>
   
@@ -32,7 +32,7 @@ layout: default
 
 	<h3 class="page-header" style="text-align:center">About Us</h3>
 
-	<div class="row">
+	<div class="container"><div class="row">
 		<p>
 			RTXI is a collaborative effort among four labs in three institutions. The primary investigators are:
 		</p>
@@ -52,9 +52,9 @@ layout: default
 			</a>
 		</div>
 		{% endfor %}
-	</div>
+	</div></div>
   
-	<div class="row">
+	<div class="container"><div class="row">
 		<p>Current developers: </p>
 
 		{% for supahacka in site.developers %}
@@ -71,22 +71,22 @@ layout: default
 			</a>
 		</div>
 		{% endfor %}
-	</div>
+	</div></div>
 
 <!--
 News - all news posts go here, and there's also an RSS feed.
 --> 
 	<div class="container">
-	<div class="text-center">
-		Subscribe to our <a href="/feed.xml">RSS feed</a>.
-	</div>
-	{% for post in site.categories.news %}
-	<div class="media row"><div class="media-body">
-		<h4 class="media-heading lead"><a href="{{ post.url }}">{{ post.title }}</a></h4>
-		<div>&nbsp;&nbsp;{{ post.date | date_to_string }}</div>
-		<div>{{ post.excerpt | truncate: 300 }}</div>
-	</div></div>
-	{% endfor %}
+		<div class="text-center">
+			Subscribe to our <a href="/feed.xml">RSS feed</a>.
+		</div>
+		{% for post in site.categories.news %}
+		<div class="media row"><div class="media-body">
+			<h4 class="media-heading lead"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+			<div>&nbsp;&nbsp;{{ post.date | date_to_string }}</div>
+			<div>{{ post.excerpt | truncate: 300 }}</div>
+		</div></div>
+		{% endfor %}
 	</div>
 
 </div>
