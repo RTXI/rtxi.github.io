@@ -65,6 +65,47 @@
       </item>
     
       <item>
+        <title>RTXI Fall Newsletter</title>
+        <description>&lt;p&gt;There have been lots of new developments in RTXI over the past few months. Look forward to the upcoming release of RTXI 2.1, and we encourage those of you attending SfN 2015 to check out our poster!&lt;/p&gt;
+
+&lt;h4 id=&quot;upcoming-features-in-rtxi-21&quot;&gt;Upcoming Features in RTXI 2.1&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;New Plotting Tools&lt;/strong&gt; - We’ve created a new analysis-tools module that will directly plot HDF data saved by the data recorder.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;UI Upgrades&lt;/strong&gt; - We’ve upgraded RTXI’s UI framework from Qt4 to Qt5, the most up-to-date version available.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Bugfixes and Tweaks&lt;/strong&gt; - RTXI is continually improving under the hood, and for 2.1, we bundled in lots of bugfixes, UI tweaks, and performance enhancements.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Improved User-friendliness&lt;/strong&gt; - RTXI now checks for updates, and the new module-installer makes finding and installing the modules you need easier than ever.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Arduino Support&lt;/strong&gt; - The new Arduino module provides an interface between RTXI and Arduino computers. Note that this is non-RT.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;New Module Installer&lt;/strong&gt; - A new Module Installer allows you to find and install modules within RTXI itself.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;check-us-out-at-sfn&quot;&gt;Check us out at SfN:&lt;/h4&gt;
+
+&lt;p&gt;We’ll be presenting a poster at this year’s Society for Neuroscience Conference. If you’re also attending, feel free to stop by. Look out for poster 267.23 / BB66 during the 1:00 -5 :00 PM session on October 18. We’ll be in Hall A.&lt;/p&gt;
+
+&lt;h4 id=&quot;contact-us&quot;&gt;Contact Us:&lt;/h4&gt;
+
+&lt;p&gt;You can reach out to us via email and through GitHub. Let us know if you have any questions or issues. We’re around 24/7, and we’ll do whatever we can to get RTXI working for you. We’ll even come to you in person.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 09 Oct 2015 00:00:00 -0400</pubDate>
+        <link>http://rtxi.org//news/2015/10/09/fall-newsletter/</link>
+        <guid isPermaLink="true">http://rtxi.org//news/2015/10/09/fall-newsletter/</guid>
+      </item>
+    
+      <item>
         <title>RTXI 2.0 Released</title>
         <description>&lt;p&gt;We’ve been working hard over the past year to put together the new and improved Real-Time eXperiment Interface.  &lt;/p&gt;
 
@@ -1110,6 +1151,7 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
   &lt;li&gt;When does the system freeze or slow down?&lt;br /&gt;
     &lt;ul&gt;
       &lt;li&gt;Does it freeze after you pick a kernel in the GRUB menu?  &lt;/li&gt;
+      &lt;li&gt;Does RTXI cause the slowdown or is it slow upon boot?  &lt;/li&gt;
       &lt;li&gt;Does the freeze affect all kernels? Or is it just the real-time one(s)?  &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -1119,7 +1161,10 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
       &lt;li&gt;Are you using open-source or proprietary drivers?  &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;If running an RT kernel, are the DAQ drivers loaded? Open the Control Panel module in RTXI and see if the “analogy0” channel is open. If not, the drivers aren’t detecting your DAQ.  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If running an RT kernel, are the DAQ drivers loaded? Open the Control Panel module in RTXI and see if the “analogy0” channel is open. If not, the drivers aren’t detecting your DAQ.  &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;How is your BIOS configured? Some settings, such as multithreading, frequency scaling, and spread-spectrum clocking, degrade real-time performance and should be disabled.  &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1165,7 +1210,7 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
     
       <item>
         <title>RTXI 2015 Registration Open!</title>
-        <description>&lt;p&gt;Just reminding everyone that registration for RTXI 2015 is now open! Check out our &lt;a href=&quot;/conference/&quot;&gt;conference page&lt;/a&gt; to learn about our upcoming conference. &lt;a href=&quot;http://petitinstitute.gatech.edu/rtxi-2015-workshop&quot;&gt;Registration is open&lt;/a&gt; until April 1st at 5:00 PM Eastern Time.  &lt;/p&gt;
+        <description>&lt;p&gt;Just reminding everyone that registration for RTXI 2015 is now open! Check out our &lt;a href=&quot;/conference/&quot;&gt;conference page&lt;/a&gt; to learn about our upcoming conference. Registration is open until April 1st at 5:00 PM Eastern Time.  &lt;/p&gt;
 </description>
         <pubDate>Wed, 21 Jan 2015 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//news/2015/01/21/rtxi-2015-registration-is-open/</link>
@@ -1478,21 +1523,6 @@ Some influential environment variables:
         <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/tutorials/2014/12/04/manually-configuring-rtxi/</link>
         <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2014/12/04/manually-configuring-rtxi/</guid>
-      </item>
-    
-      <item>
-        <title>Can I run RTXI in non-real-time?</title>
-        <description>&lt;p&gt;RTXI can be run in non-real-time to debug your code. This will require that you manually configure and recompile RTXI. In the RTXI directory, go to the scripts directory and run:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo ./install-rtxi.sh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;You will be prompted to enter your system configuration. Select “2” to run in non-real-time (POSIX). &lt;/p&gt;
-
-&lt;p&gt;Running RTXI in non-real-time is useful for debugging purposes mainly, and it also allows the application to be installed without having to install a real-time kernel beforehand.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//docs/faqs/2014/12/04/can-i-run-rtxi-in-non-real-time/</link>
-        <guid isPermaLink="true">http://rtxi.org//docs/faqs/2014/12/04/can-i-run-rtxi-in-non-real-time/</guid>
       </item>
     
   </channel>
