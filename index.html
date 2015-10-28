@@ -6,84 +6,171 @@ layout: default
 {% include carousel.html %}
 
 <div class="container">
- 
-	<h2 class="page-header" style="text-align:center">Introducing RTXI</h2>
 
-	<div class="row">
-		<div class="col-xs-12"><p>
-			<strong>RTXI</strong>, the <strong>Real-Time eXperiment Interface</strong>, is a <strong>hard real-time</strong> data acquisition and control application for biological research. At its core is a Real-Time Operating System (RTOS), which uses a modified Linux kernel to provide <strong>deterministic</strong> control in a variety of experimental settings. RTXI is a <strong>fast</strong>, <strong>free</strong>, and <strong>open-source</strong> system currently used in labs all over the world to probe diverse, technologically challenging problems, such as dynamic probing of ion-channel function, control of cardiac arrhythmia dynamics, and control of deep-brain stimulation patterns.  
-		</p></div>
-	</div>
-  
-	<div class="row">
-		<div class="col-sm-6">
-			<h3 class="page-header" style="text-align:center">Why real-time?</h3>
-			<p>Experimentalists' ability to perturb biological systems has traditionally been limited to rigid pre-programmed protocols or more flexible, albeit reflex-constrained, operator-controlled protocols. In contrast, real-time control allows dynamic probing of biological systems by parameter perturbations calculated from instantaneous system measurements. With it, researchers can address diverse unanswered questions that are not amenable to traditional approaches.  
-			</p>
-		</div>
-		<div class="col-sm-6">
-			<h3 class="page-header" style="text-align:center">Why RTXI?</h3>
-			<p>Unfortunately, real-time control is not possible with standard operating systems and software. Furthermore, commercial real-time systems are costly and often designed for industrial applications, and the proprietary software licenses and drivers that come with them constrain their flexibility in experimental settings. To get away from that, we developed RTXI. It's fast, free, and flexible, and it's compatible with a wide range of experimentation hardware.  
-			</p>
-		</div>
-	</div>
+	<div class="col-lg-9"><div class="row">
 
-	<h3 class="page-header" style="text-align:center">About Us</h3>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h2 class="" style="text-align:center">Introducing RTXI</h2>
+			</div>
 
-	<div class="container"><div class="row">
-		<p>RTXI is a collaborative effort among four labs in three institutions. The primary investigators are:
-		</p>
-
-		<!-- add all the faces of our delightful pis here. -->
-		{% for pi in site.pis %}
-		<div class="col-sm-6 col-md-4">
-			<a href="{{ pi.url }}" class="thumbnail" style="text-decoration:none;color:inherit">
-				<div class="row" style="display:flex;align-items:center;justify-content:center">
-					<div class="col-xs-4">
-						<img class="img-responsive" src="{{ site.img }}/{{ pi.face }}"></img>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-xs-12"><p>
+						<strong>RTXI</strong>, the <strong>Real-Time eXperiment Interface</strong>, is a <strong>hard real-time</strong> data acquisition and control application for biological research. At its core is a Real-Time Operating System (RTOS), which uses a modified Linux kernel to provide <strong>deterministic</strong> control in a variety of experimental settings. RTXI is a <strong>fast</strong>, <strong>free</strong>, and <strong>open-source</strong> system currently used in labs all over the world to probe diverse, technologically challenging problems, such as dynamic probing of ion-channel function, control of cardiac arrhythmia dynamics, and control of deep-brain stimulation patterns.  
+					</p></div>
+				</div>
+		  
+				<div class="row">
+					<div class="col-sm-6">
+						<h3 class="page-header" style="text-align:center">Why real-time?</h3>
+						<p>Experimentalists' ability to perturb biological systems has traditionally been limited to rigid pre-programmed protocols or more flexible, albeit reflex-constrained, operator-controlled protocols. In contrast, real-time control allows dynamic probing of biological systems by parameter perturbations calculated from instantaneous system measurements. With it, researchers can address diverse unanswered questions that are not amenable to traditional approaches.  
+						</p>
 					</div>
-					<div class="col-xs-8">
-						<div><b>{{ pi.name }}</b><br>{{ pi.where }}</div>
+					<div class="col-sm-6">
+						<h3 class="page-header" style="text-align:center">Why RTXI?</h3>
+						<p>Unfortunately, real-time control is not possible with standard operating systems and software. Furthermore, commercial real-time systems are costly and often designed for industrial applications, and the proprietary software licenses and drivers that come with them constrain their flexibility in experimental settings. To get away from that, we developed RTXI. It's fast, free, and flexible, and it's compatible with a wide range of experimentation hardware.  
+						</p>
 					</div>
 				</div>
-			</a>
-		</div>
-		{% endfor %}
-	</div></div>
-  
-	<div class="container"><div class="row">
-		<p>Current developers: </p>
 
-		{% for supahacka in site.developers %}
-		<div class="col-sm-6 col-md-4">
-			<a class="thumbnail" style="text-decoration:none;color:inherit">
-				<div class="row" style="display:flex;align-items:center;justify-content:center">
-					<div class="col-xs-4">
-						<img class="img-responsive" src="{{ site.img }}/{{ supahacka.face }}"></img>
-					</div>
-					<div class="col-xs-8">
-						<div><b>{{ supahacka.name }}</b><br>{{ supahacka.where }}</div>
-					</div>
-				</div>
-			</a>
+				<img class="img-responsive" style="margin: 0 auto; padding-top:20px" src="{{ site.img }}/dclamp.png"></img> 
+
+			</div>
+
+			<div class="panel-footer">
+				<a href="/docs">
+					<button type="button" class="pull-right btn btn-primary btn-lg">Read the Docs</button>
+				</a>
+				<div class="clearfix"></div>
+			</div>
 		</div>
-		{% endfor %}
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="" style="text-align:center">About Us</h3>
+			</div>
+
+			<div class="panel-body">
+				<div class="row">
+
+					<!-- add all the faces of our delightful pis here. -->
+					<div class="col-sm-6 col-md-6">
+					<h4>Primary Investigators</h4>
+					{% for pi in site.pis %}
+						<a href="{{ pi.url }}" class="thumbnail" style="color:inherit">
+							<div class="row" style="display:flex;align-items:center;justify-content:center">
+								<div class="col-xs-4">
+									<img class="img-responsive" src="{{ site.img }}/{{ pi.face }}"></img>
+								</div>
+								<div class="col-xs-8">
+									<div><b>{{ pi.name }}</b><br>{{ pi.where }}</div>
+								</div>
+							</div>
+						</a>
+					{% endfor %}
+					</div>
+					
+					<div class="col-sm-6 col-md-6">
+					<h4>Current Developers</h4>
+					{% for supahacka in site.developers %}
+						<a class="thumbnail" style="color:inherit">
+							<div class="row" style="display:flex;align-items:center;justify-content:center">
+								<div class="col-xs-4">
+									<img class="img-responsive" src="{{ site.img }}/{{ supahacka.face }}"></img>
+								</div>
+								<div class="col-xs-8">
+									<div><b>{{ supahacka.name }}</b><br>{{ supahacka.where }}</div>
+								</div>
+							</div>
+						</a>
+					{% endfor %}
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
 	</div></div>
 
 <!--
 News - all news posts go here, and there's also an RSS feed.
 --> 
-	<div class="container">
-		<div class="text-center">
-			Subscribe to our <a href="/feed.xml">RSS feed</a>.
-		</div>
-		{% for post in site.categories.news %}
-		<div class="media row"><div class="media-body">
-			<h4 class="media-heading lead"><a href="{{ post.url }}">{{ post.title }}</a></h4>
-			<div>&nbsp;&nbsp;{{ post.date | date_to_string }}</div>
-			<div>{{ post.excerpt | truncate: 300 }}</div>
-		</div></div>
-		{% endfor %}
-	</div>
 
+	<div class="row"><div class="col-lg-3">
+		<div class="panel panel-success">
+			<div class="panel-heading" style="text-align:center">
+				<h3>News 
+					<a href="/feed.xml" style="color:inherit">
+						<i class="pull-right fa fa-rss"></i>
+					</a>
+				</h3>
+			</div>
+
+			<div class="panel-body">
+				{% for post in site.categories.news | limit:5 %}
+				<div class="media"><div class="media-body">
+					<h4 class="media-heading"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+					<div class="text-muted">&nbsp;&nbsp;{{ post.date | date_to_string }}</div>
+					<div>{{ post.excerpt | truncate: 300 }}</div>
+				</div></div>
+				{% endfor %}
+			</div>
+
+			</div>
+		</div>
+	</div></div>
+
+</div>
+
+<div class="container">
+</div>
+	
+<div class="container">
+	<div class="panel panel-info">
+
+		<div class="panel-heading">
+			<h3 class="" style="text-align:center">Latest Publications</h3>
+		</div>
+
+		<div class="panel-body"><div class="row">
+
+			<!-- looks messy, but this is how to get a masony-like layout without javascript -->
+			<div class="col-sm-12 col-md-6">
+				{% for post in site.categories.papers | limit:2 %}
+				<div class="row"><div class="col-xs-12">
+					<a href="{{ post.url }}" style="color:inherit;">
+						<div class="panel">
+							<div class="panel-heading"><h4 class="panel-title">{{ post.title }}</h4></div>
+							<div class="panel-body hidden-xs">{{ post.excerpt | truncate:500 }}</div>
+						</div>
+					</a>
+				</div></div>
+				{% endfor %}
+			</div>
+
+			<div class="col-sm-12 col-md-6">
+				{% for post in site.categories.papers | offset:2 | limit:2 %}
+				<div class="row"><div class="col-xs-12">
+					<a href="{{ post.url }}" style="color:inherit;">
+						<div class="panel">
+							<div class="panel-heading"><h4 class="panel-title">{{ post.title }}</h4></div>
+							<div class="panel-body hidden-xs">{{ post.excerpt | truncate:500 }}</div>
+						</div>
+					</a>
+				</div></div>
+				{% endfor %}
+			</div>
+
+		</div></div>
+		
+		<div class="panel-footer">
+			<a href="/papers/">
+				<button type="button" class="pull-right btn btn-primary btn-lg">All Publications</button>
+			</a>
+			<div class="clearfix"></div>
+		</div>
+	
+	</div>
 </div>
