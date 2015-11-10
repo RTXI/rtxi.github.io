@@ -115,7 +115,7 @@ module.exports = function(grunt) {
             command: [ 
                'bower update', 
                'bundle update',
-					'npm update',
+               'npm update',
             ].join(' && ')
          }
       },
@@ -208,10 +208,10 @@ module.exports = function(grunt) {
       watch: {
          content: {
             files: [
-               '_includes/*',
-               '_layouts/*',
+               '_includes/**',
+               '_layouts/**',
                '_posts/**',
-               '_plugins/*',
+               '_plugins/**',
                'conference/**',
                'community/**',
                'papers/**',
@@ -223,6 +223,7 @@ module.exports = function(grunt) {
                'assets/img/**',
                '_config.yml',
                'index.html',
+               'manual.html',
                '404.html',
                'README.md',
                'favicon.ico'
