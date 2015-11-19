@@ -5,7 +5,7 @@
 RTXI contains many features that enable users to quickly implement complex interactive experimental protocols:
 </p>
 
-<ul class="">
+<ul>
 	<li> Modular signal-and-slots architecture that allows multiple instantiations of user modules, makes it easy to reuse code such as event detection and online analysis algorithms, and allows branching logic so that signals (such as acquired data) can be routed through multiple algorithms in parallel </li>
 	<li> Data acquisition system that can stream multiple channels of acquired or computed data along with experimental metadata and user comments with timestamps </li>
 	<li> Ability to interface with a variety of multifunction DAQ cards and external hardware through analog or digital channels, e.g. via TTL pulses </li>
@@ -17,6 +17,21 @@ RTXI contains many features that enable users to quickly implement complex inter
 	<li> Ability to ``play back" previously acquired data or surrogate data as if it were being acquired in real-time for debugging or simulation purposes </li>
 	<li> A complete simulation platform that can be used to solve systems of differential equations in real-time and integrate biological signals acquired in real-time with model systems </li>
 </ul>
+
+<!--
+<ul class="list-group">
+	<li class="list-group-item"> Modular signal-and-slots architecture that allows multiple instantiations of user modules, makes it easy to reuse code such as event detection and online analysis algorithms, and allows branching logic so that signals (such as acquired data) can be routed through multiple algorithms in parallel </li>
+	<li class="list-group-item"> Data acquisition system that can stream multiple channels of acquired or computed data along with experimental metadata and user comments with timestamps </li>
+	<li class="list-group-item"> Ability to interface with a variety of multifunction DAQ cards and external hardware through analog or digital channels, e.g. via TTL pulses </li>
+	<li class="list-group-item"> Ability to change experimental parameters on-the-fly without recompiling or stopping real-time execution </li>
+	<li class="list-group-item"> Ability to save and reload your entire working environment with custom parameter settings </li>
+	<li class="list-group-item"> Virtually no limit to algorithms that can be implemented since user modules are written in \cpp </li>
+	<li class="list-group-item"> Real-time digital oscilloscope that can plot any acquired or computed signal </li>
+	<li class="list-group-item"> Base class for constructing user modules with a customized graphical user interface to experimental protocols </li>
+	<li class="list-group-item"> Ability to ``play back" previously acquired data or surrogate data as if it were being acquired in real-time for debugging or simulation purposes </li>
+	<li class="list-group-item"> A complete simulation platform that can be used to solve systems of differential equations in real-time and integrate biological signals acquired in real-time with model systems </li>
+</ul>
+-->
 
 <p> In addition, RTXI is available on a Live CD, which provides a complete real-time Linux operating system with RTXI without installing anything on your computer. This live environment allows you to mount your existing hard drive and you can conduct experiments and collect data. Note that the real-time performance will be slower compared with an actually installed system. Running the live environment from a USB flash drive is faster than from an actual CD. A DAQ card does not need to be installed for RTXI to run and RTXI can be successfully run on many laptops, including Intel MacBooks and MacBook Pros.
 </p>
