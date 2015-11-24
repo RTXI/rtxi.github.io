@@ -74,7 +74,7 @@ layout: default
 					<div class="col-sm-6 col-md-6">
 					<h4>Current Developers</h4>
 					{% for supahacka in site.developers %}
-						<a class="thumbnail" style="color:inherit">
+						<a href="{{ supahacka.url }}" class="thumbnail" style="color:inherit">
 							<div class="row" style="display:flex;align-items:center;justify-content:center">
 								<div class="col-xs-4">
 									<img class="img-responsive" src="{{ site.img }}/{{ supahacka.face }}"></img>
