@@ -218,6 +218,7 @@ module.exports = function(grunt) {
                'install/**',
                'contact/**',
                'docs/**',
+               'manual/**',
                'stats/**',
                'modules/index.html',
                'assets/img/**',
