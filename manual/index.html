@@ -1,0 +1,91 @@
+---
+title: User Guide
+layout: default
+category: docs
+permalink: /docs/manual/
+sections: 
+ - name: Introduction
+   tag: intro
+ - name: Overview
+   tag: overview
+ - name: Dynamic Clamp
+   tag: dynamic_clamp
+ - name: Features
+   tag: features
+ - name: Hardware Specs
+   tag: hardware
+ - name: Real-time Performance
+   tag: rt_performance
+ - name: RTXI Menu
+   tag: menus
+ - name: RTXI System Modules
+   tag: core_modules
+ - name: RTXI User Modules
+   tag: user_modules
+ - name: Making RTXI Modules
+   tag: making_modules
+ - name: Data Acquisition
+   tag: data_acquisition
+ - name: RTXI Utilities
+   tag: utilities
+
+extra_js: "
+<script>
+var navHeight = $('.navbar').outerHeight(true) + 10;
+var topblockHeight = $('#topblock').outerHeight(true);
+
+/* activate sidebar */
+$('#sidebar').affix({
+  offset: {
+    top: topblockHeight
+  }
+});
+
+/* activate scrollspy menu */
+$('body').scrollspy({
+	target: '#leftCol',
+	offset: navHeight
+});
+
+</script>
+"
+extra_css: "
+<style>
+#sidebar.affix-top {
+  position: static;
+  margin-top:30px;
+}
+  
+#sidebar.affix {
+  position: fixed;
+  top:70px;
+}
+</style>
+"
+---
+
+<div class="container">
+
+	<div class="row" id="topblock"><div class="col-xs-12">
+		<h2 class="page-header">{{ page.title }}</h2>
+		<p class="lead">blah</p>
+	</div></div>
+		
+
+	<div class="row">
+		<nav class="col-sm-3 hidden-xs" id="leftCol">
+			<ul class="nav nav-pills nav-stacked" id="sidebar">
+			{% for section in page.sections %}
+				<li><a href="#{{ section.tag }}">{{ section.name }}</a></li>
+			{% endfor %}
+			</ul>
+		</nav>
+
+		<div class="col-sm-9">
+		{% for section in page.sections %}
+			<div id="{{ section.tag }}">{% include manual/{{ section.tag }}.html %}</div>
+		{% endfor %}
+		</div>
+	</div>
+	
+</div>
