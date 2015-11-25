@@ -36,12 +36,15 @@ developers:
  - name: Ansel George
    face: ansel_george.jpg
    where: Weill Cornell Medical College
+   url: https://github.com/anselg
  - name: Francis Ortega 
    face: francis_ortega.jpg
    where: Weill Cornell Medical College
+   url: https://github.com/francis-ortega
  - name: Yogi Patel
    face: yogi_patel.jpg
    where: Georgia Insititute of Technology
+   url: https://github.com/yapatel
 
 
 gems:
