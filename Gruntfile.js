@@ -38,8 +38,7 @@ module.exports = function(grunt) {
             less: 'bower_components/font-awesome/less',
             css: 'bower_components/font-awesome/css',
             fonts: 'bower_components/font-awesome/fonts'
-         },
-         octicons: 'bower_components/octicons/octicons'
+         }
       },
 
 		/*
@@ -63,15 +62,6 @@ module.exports = function(grunt) {
             },
             files: { 
                '<%= paths.assets.css %>/font-awesome.min.css' : '<%= paths.assets.less %>/font-awesome-base.less'
-            }
-         },
-         octicons: {
-            options: {
-               comporess: true,
-               paths: '<% paths.octicons %>'
-            },
-            files: {
-               '<%= paths.assets.css %>/octicons.min.css' : '<%= paths.assets.less %>/octicons.less'
             }
          }
       },
@@ -154,18 +144,6 @@ module.exports = function(grunt) {
                   cwd: '<%= paths.font_awesome.less %>/',
                   src: ['font-awesome.less', 'variables.less'], 
                   dest: '<%= paths.assets.less %>/.font-awesome/',
-                  expand: true
-               },
-               {
-                  cwd: '<%= paths.octicons %>/',
-                  src: ['*.svg', '*.eot', '*.ttf', '*.woff'],
-                  dest: '<%= paths.assets.fonts %>/',
-                  expand: true
-               },
-               {
-                  cwd: '<%= paths.octicons %>/',
-                  src: 'octicons.less', 
-                  dest: '<%= paths.assets.less %>/.octicons/',
                   expand: true
                },
                {
