@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<title>{{ page.title }} | {{ site.tagline }}</title>
 
-      <!-- Bootstrap core CSS -->
-      <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-      <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
-      {{ page.extra_css }}
+		<!-- Bootstrap core CSS -->
+		<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+		{{ page.extra_css }}
 
-      <!-- Favicons -->
-      <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-      <link rel="icon" href="/favicon.ico">
+		<!-- Favicons -->
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="icon" href="/favicon.ico">
+	</head>
 
-   </head>
+	{% include navbar.html %}
 
-   {% include navbar.html %}
+	<body style=padding-top:30px>
+	{{ content }}
+	</body>
 
-   <body style=padding-top:30px>
-      {{ content }}
-   </body>
+	{% include footer.html %}
 
-   {% include footer.html %}
-
-   <script src="/assets/js/jquery.min.js"></script>
-   <script src="/assets/js/bootstrap.min.js"></script>
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/bootstrap.min.js"></script>
 	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-5550734-5', 'auto');
-	  ga('send', 'pageview');
+		ga('create', 'UA-5550734-5', 'auto');
+		ga('send', 'pageview');
 	</script>
 
-   {{ page.extra_js }}
+	{{ page.extra_js }}
 
 </html>
