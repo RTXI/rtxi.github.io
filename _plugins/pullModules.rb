@@ -98,10 +98,10 @@ module Jekyll
                "}</style>"+
                "<span id=\"forkongithub\">"+
                   "<div class=\"hidden-xs\">"+
-                     "<a href=\"https://github.com/rtxi/#{repo}\">Fork #{repo.gsub(/-/,' ').split.map(&:capitalize).join(' ')} <span style=\"padding-left:5px\" class=\"octicon octicon-mark-github\"></span></a>"+
+                     "<a href=\"https://github.com/rtxi/#{repo}\">Fork #{repo.gsub(/-/,' ').split.map(&:capitalize).join(' ')} <span style=\"padding-left:5px\" class=\"fa fa-lg fa-github\"></span></a>"+
                   "</div>"+
                   "<div class=\"visible-xs\">"+
-                     "<a href=\"https://github.com/rtxi/#{repo}\"><span class=\"octicon octicon-mark-github\"></span></a>"+
+                     "<a href=\"https://github.com/rtxi/#{repo}\"><span class=\"fa fa-lg fa-github\"></span></a>"+
                   "</div>"+
                "</span>"
             yamlheader = "---\n" +
