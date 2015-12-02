@@ -5,4 +5,22 @@ Although RTXI is dependent on Linux, it is a complete desktop application and co
 The \textbf{File Menu} is used to save and load settings files that capture the entire working environment. This includes settings configured in the System Control Panel, such as channel gains, parameters set within modules, and connections between modules. Reloading a settings files will also restore the window sizes and positions at the time the file was created. Recently used settings files are also available from this menu.
 </p>
 
+<img src="{{ site.img }}/manual/fileMenu.png" alt="RTXI files menu">
 
+<p>
+The \textbf{Modules Menu} is used to load user modules or compile DYNAMO model descriptions. User modules are shared libraries that are installed to \texttt{/usr/local/lib/rtxi} during the compilation process. Choosing "Load User Module" opens a file dialog box at this location, from where users may select modules based on the *.so filename. Choosing "Load DYNAMO Model" will open a file dialog box that can be used to select a *.dynamo file containing a DYNAMO model description. This file will be parsed to generate a \cpp header and implementation file that will then be compiled to produce an RTXI module based on the \texttt{DefaultGUIModel} class. After the initial parsing and compilation, this module may then be loaded using the first menu item as with other user modules.  
+</p>
+
+<img src="{{ site.img }}/manual/modulesMenu.png" alt="RTXI modules menu">
+
+<p>
+The \textbf{System Menu} is used load core RTXI system features and modules. The Control Panel is used to configure channels and set the nominal system period (or sampling rate). The Oscilloscope is the digital oscilloscope that can be used to plot any signal in real-time. The HDF Data Recorder allows users to select signals to stream to a HDF5 file in real-time. The Connector is used to specify connections between modules and the DAQ card. The Performance Measurement module displays running statistics on the computational load currently used by RTXI and how it compares to the nominal system period, or the amount of time available for performing the computations. There is also a Preferences panel for specifying commonly used directories, etc.
+</p>
+
+<img src="{{ site.img }}/manual/helpMenu.png" alt="RTXI help menu">
+
+<p>
+The \textbf{Help Menu} contains important information about your system and RTXI. Choosing the "What's This" menu item turns the mouse cursor from a pointer into a question mark. In this mode, clicking on any module will display a window with contextual help, if available, about that module.
+</p>
+
+<img src="{{ site.img }}/manual/systemMenu.png" alt="RTXI system menu">
