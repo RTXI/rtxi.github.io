@@ -1,16 +1,16 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Making New Modules in RTXI | The Real-time eXperiment Interface</title><link href="/assets/css/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/pygments.css" rel="stylesheet"><link href="/assets/css/octicons.min.css" rel="stylesheet"><link href="/assets/css/font-awesome.min.css" rel="stylesheet"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.ico"></head><style>h1, h2, h3, h4, h5, h6 {
-      padding-bottom: 9px;
-      margin: 40px 0 20px;
-      border-bottom: 1px solid #eee;
-      font-weight: normal;
-   }
-   img {
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-      max-width: 100%;
-      height: auto;
-   }</style><style>body {
+<!DOCTYPE html><html lang="en" itemscope itemtype="http://scheme.org/Article"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta itemprop="name" content="Making New Modules in RTXI"><meta itemprop="description" content="Outlined here is the development process for making new RTXI modules. We recommend our users to build their modules by using MyPluginGUI as the template. MyPluginGUI defines a basic GUI with custom..."><meta itemprop="image" content="http://rtxi.org/assets/img/rtxi-logo-square.png"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Making New Modules in RTXI"><meta name="twitter:description" content="Outlined here is the development process for making new RTXI modules. We recommend our users to build their modules by using MyPluginGUI as the template. MyPluginGUI defines a basic GUI with custom..."><meta name="twitter:image:src" content="http://rtxi.org/assets/img/rtxi-logo-square.png"><meta property="og:title" content="Making New Modules in RTXI"><meta property="og:type" content="article"><meta property="og:url" content="http://rtxi.org/docs/tutorials/2015/04/10/making-new-rtxi-modules/"><meta property="og:image" content="http://rtxi.org/assets/img/rtxi-logo-square.png"><meta property="og:description" content="Outlined here is the development process for making new RTXI modules. We recommend our users to build their modules by using MyPluginGUI as the template. MyPluginGUI defines a basic GUI with custom..."><meta property="og:site_name" content="RTXI | The Real-time eXperiment Interface"><meta property="article:section" content=""><meta property="article:tag" content=""><title>Making New Modules in RTXI | The Real-time eXperiment Interface</title><link href="/assets/css/bootstrap.min.css" rel="stylesheet"><link href="/assets/css/pygments.css" rel="stylesheet"><link href="/assets/css/font-awesome.min.css" rel="stylesheet"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.ico"></head><style>h1, h2, h3, h4, h5, h6 {
+			padding-bottom: 9px;
+			margin: 40px 0 20px;
+			border-bottom: 1px solid #eee;
+			font-weight: normal;
+		}
+		img {
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}</style><style>body {
    padding-top:50px;
    padding-bottom:30px;
 }</style><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" rel="home" href="/"><b>RTXI</b></a></div><div class="row"><div id="navbar" class="navbar-collapse collapse navbar-right" style="text-align:center"><ul class="nav navbar-nav"><li><a href="/install/">Install</a></li><li class="active"><a href="/modules/">Modules</a></li><li><a href="/papers/">Papers</a></li><li class="active"><a href="/docs/">Docs</a></li><li><a href="/stats/">Stats</a></li><li><a href="/community/">Community</a></li><li><a href="/contact/">Contact</a></li><li><a href="/feed.xml"><i class="fa fa-rss fa-inverse"></i></a></li></ul></div></div></div></nav><body style="padding-top:30px"><div class="container"><h3 class="page-header">Making New Modules in RTXI</h3><p>Outlined here is the development process for making new RTXI modules. We recommend our users to build their modules by using MyPluginGUI as the template. MyPluginGUI defines a basic GUI with customizable widgets and is found in the Plugin-Template directory of our GitHub repository. Anyone is free to fork off of it to create their own modules. GitHub provides <a href="https://help.github.com/articles/fork-a-repo">its own documentation</a> on how to fork other users’ repositories. We strongly recommend reading it.</p><h3 id="the-general-process-of-modifying-rtxi-plugins-is-as-follows">The general process of modifying RTXI plugins is as follows:</h3><h4 id="fork-from-rtxis-github-page">1. Fork from RTXI’s GitHub page</h4><p>From our site, go to the Plugin-Template repository. Contained there are the source files for MyPluginGUI, which is the default template from which we encourage users to develop.</p><p>Forking will create a copy of our repository in your own GitHub account for you to modify.</p><h4 id="clone-the-repository-on-your-local-machine">2. Clone the repository on your local machine</h4><p>Now, clone the repository. Developers for new modules are expected to base it on MyPluginGUI. Type:</p><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git clone https://github.com/&lt;username&gt;/plugin-template plugin_template</code></pre></div><p>Note that &lt;username&gt; represents the username of your own GitHub account, not that of RTXI. That is the case because users cannot modify repositories without the permission of their owners. Because MyPluginGUI was forked and copied into your own repository, you are completely free to edit it, and that will not affect the copy in the RTXI repository.</p><p>In the command, the last parameter, <code>plugin_template</code>, sets the name of the directory in which all the cloned information will be stored. This parameter is optional. If left blank, the directory name defaults to the name of the repository being cloned.</p><p>Now that clone is executed, look at the directory contents and you will see a subdirectory called <code>plugin_template</code>. Inside there are the source files for MyPluginGUI. An explanation of the header and source files is viewable <a href="https://github.com/RTXI/tutorials/wiki/MyPluginGUI-Base-Code">FIX THIS LINK!!!</a>.</p><h4 id="modify-files">3. Modify files</h4><p>Modify the RTXI files to run the code you want. When you compile and install your module, be sure to rename the source files and classes to something other than <code>plugin-template</code> or <code>PluginTemplate</code>, respectively. It’s preferable to name it something that reflects what it does. A quick and easy way to change the names of the files, classes, and binary is to use the <code>sed</code> and <code>mv</code> commands:</p><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sed -i <span class="s1">&#39;s/plugin-template/&lt;new_name_here&gt;/g&#39;</span> plugin-template.* Makefile 
@@ -34,9 +34,9 @@ body {
   height: -60px;
   background-color: #c1c1c1;
 }</style><div class="footer"><div class="container"><div class="row"><div class="col-sm-6 text-center" style="margin-top:50px; margin-bottom:10px"><a href="http://www.nih.gov/"><img class="img-responsive" src="/assets/img/nih-logo-trans.svg"></a></div><div class="col-sm-6 text-center" style="margin-top:55px"><a href="https://github.com/rtxi"><img class="img-responsive" src="/assets/img/github-logo.svg"></a></div></div><div style="margin-bottom:40px"></div></div></div><script src="/assets/js/jquery.min.js"></script><script src="/assets/js/bootstrap.min.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-5550734-5', 'auto');
-	  ga('send', 'pageview');</script></html>
+		ga('create', 'UA-5550734-5', 'auto');
+		ga('send', 'pageview');</script></html>
