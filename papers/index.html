@@ -10,7 +10,7 @@ extra_js: "
    $( function () {
 		var qsRegex;
   
-      var $container = $('#oopsgrid').isotope({
+      var $container = $('#papergrid').isotope({
          itemSelector: '.item',
          layoutMode: 'masonry',
 /*
@@ -132,7 +132,7 @@ extra_js: "
 
 {% capture chunkvar %}{% increment chunkbodycount %}{% endcapture %}
 {% assign flag = "false" %}
-<div class="container"><div class="row isotope" id="oopsgrid">
+<div class="container"><div class="row isotope" id="papergrid">
    {% for post in site.categories.papers %}
       {% capture chunkflag %}{{ forloop.index | modulo:page.modulus }}{% endcapture %}
       {% capture thisyear %}{{ post.date | date: '%y' }}{% endcapture %}
