@@ -132,7 +132,13 @@ extra_js: "
          <a href="{{ post.url }}" style="color:inherit;">
             <div class="panel panel-primary">
                <div class="panel-heading"><h4 class="panel-title">{{ post.title }}</h4></div>
-               <div class="panel-body hidden-xs">{{ post.excerpt | truncate:750 }}</div>
+               <div class="panel-body hidden-xs">
+						<div hidden>{% for author in post.authors %}
+						            {{ author.name }} 
+						            {% endfor %}
+						</div>
+						{{ post.excerpt | truncate:750 }}
+					</div>
             </div>
          </a>
       </div>
