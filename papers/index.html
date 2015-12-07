@@ -33,7 +33,7 @@ extra_js: "
 			});
 		}, 300 ) );
 
-      $('#oopsfilters').on( 'click', 'button', function() {
+      $('#paperfilters').on( 'click', 'button', function() {
          var filterValue = $(this).attr('data-filter');
 			$('#quicksearch').val('');
          $container.isotope({ filter: filterValue });
@@ -75,12 +75,14 @@ extra_js: "
 
 <div>&nbsp;</div>
 <div class="container">
-	<p><input type="text" id="quicksearch" placeholder=" Search all papers" style="width:100%" /></p>
+	<p><input type="text" id="quicksearch" placeholder=" Search all papers" 
+	    style="width:100%" />
+	</p>
 </div>
 
 {% capture chunkvar %}{% increment chunkcount %}{% endcapture %}
 {% assign flag="false" %}
-<div class="container"><div id="oopsfilters" class="btn-group btn-group-justified" role="group" data-toggle="buttons">
+<div class="container"><div id="paperfilters" class="btn-group btn-group-justified" role="group" data-toggle="buttons">
    <div class="btn-group" role="group">
       <button type="button" class="btn btn-danger btn active all-papers" data-filter="*" role="button" data-toggle="button" aria-pressed="true">All</button>
    </div>
@@ -133,9 +135,9 @@ extra_js: "
             <div class="panel panel-primary">
                <div class="panel-heading"><h4 class="panel-title">{{ post.title }}</h4></div>
                <div class="panel-body hidden-xs">
-						<div hidden>{% for author in post.authors %}
-						            {{ author.name }} 
-						            {% endfor %}
+						<div hidden> {% for author in post.authors %}
+						             {{ author.name }} 
+						             {% endfor %}
 						</div>
 						{{ post.excerpt | truncate:750 }}
 					</div>
