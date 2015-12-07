@@ -4,6 +4,9 @@ layout: paper
 categories: papers
 
 reference: "Lazar and Yeh: Functional identification of an antennal lobe DM4 rojection neuron of the fruit fly. BMC Neuroscience 2014 15(Suppl 1):P5"
+authors: 
+ - name: Aurel Lazar
+ - name: Yeh
 link: http://www.dx.doi.org/10.1186/1471-2202-15-S1-P5
 ---
 

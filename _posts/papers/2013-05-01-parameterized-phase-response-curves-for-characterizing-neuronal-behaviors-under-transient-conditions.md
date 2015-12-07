@@ -4,6 +4,9 @@ layout: paper
 categories: papers
 
 reference: Miranda-Domínguez and Netoff. "Parameterized phase response curves for characterizing neuronal behaviors under transient conditions." Journal of Neurophysiology. 1 May 2013 Vol.109 no.2306-2316
+authors: 
+ - name: Oscar Miranda Dominguez
+ - name: Tay Netoff
 link: http://jn.physiology.org/content/109/9/2306.long
 ---
 

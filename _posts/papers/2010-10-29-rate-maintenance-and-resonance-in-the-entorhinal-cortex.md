@@ -4,6 +4,12 @@ layout: paper
 categories: papers
 
 reference: J. S. Haas, T. Kreuz, A. Torcini, A. Politi, and H. D. I. Abarbanel, “Rate maintenance and resonance in the entorhinal cortex,” Eur J Neurosci, Oct. 2010.
+authors: 
+ - name: Haas
+ - name: Kreuz
+ - name: Torcini
+ - name: Politi
+ - name: Abarbanel
 link: http://dx.doi.org/10.1111/j.1460-9568.2010.07455.x
 ---
 

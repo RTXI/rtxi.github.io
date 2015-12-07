@@ -4,6 +4,12 @@ layout: paper
 categories: papers
 
 reference: "Nguyen, T. P., Singh, N., Xie, Y., Qu, Z. & Weiss, J. N. Repolarization Reserve Evolves Dynamically During the Cardiac Action Potential: Effects of Transient Outward Currents on Early Afterdepolarizations. Circulation: Arrhythmia and Electrophysiology (2015). doi:10.1161/CIRCEP.114.002451"
+authors: 
+ - name: Nguyen
+ - name: Singh
+ - name: Xie
+ - name: Qu
+ - name: Weiss
 link: "https://dx.doi.org/10.1161/CIRCEP.114.002451"
 ---
 

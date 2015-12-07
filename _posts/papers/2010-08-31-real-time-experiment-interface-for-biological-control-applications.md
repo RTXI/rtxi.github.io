@@ -3,7 +3,13 @@ title: Real-time Experiment Interface for Biological Control Applications
 layout: paper
 categories: papers
 
-reference: Lin RJ, Bettencourt J, Wha Ite J, Christini DJ, Butera RJ. Real-time Experiment Interface for biological control applications. Conf Proc IEEE Eng Med Biol Soc (2010) vol. 1 pp. 4160-3
+reference: Lin RJ, Bettencourt J, White J, Christini DJ, Butera RJ. Real-time Experiment Interface for biological control applications. Conf Proc IEEE Eng Med Biol Soc (2010) vol. 1 pp. 4160-3
+authors: 
+ - name: Risa Lin
+ - name: Jonathan Bettencourt
+ - name: John White
+ - name: David Christini
+ - name: Rob Butera
 link: http://dx.doi.org/10.1109/IEMBS.2010.5627397
 ---
 

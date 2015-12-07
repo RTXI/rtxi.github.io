@@ -4,6 +4,10 @@ layout: paper
 categories: papers
 
 reference: C. J. Lobb, C. J. Wilson, and C. A. Paladini, “High Frequency, Short Latency Disinhibition Bursting of Midbrain Dopaminergic Neurons,” J Neurophysiol, Mar. 2011.
+authors: 
+ - name: Lobb
+ - name: Wilson
+ - name: Paladini
 link: http://dx.doi.org/10.1152/jn.01076.2010
 ---
 

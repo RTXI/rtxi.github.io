@@ -4,6 +4,9 @@ layout: paper
 categories: papers
 
 reference: M. P. Sceniak and S. L. Sabo, “Modulation of firing rate by background synaptic noise statistics in rat visual cortical neurons,” J Neurophysiol, vol. 104, no. 5, pp. 2792–2805, Aug. 2010.
+authors:
+ - name: Sceniak
+ - name: Sabo
 link: http://dx.doi.org/10.1152/jn.00023.2010
 ---
 

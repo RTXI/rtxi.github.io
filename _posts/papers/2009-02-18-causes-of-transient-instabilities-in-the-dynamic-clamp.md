@@ -4,6 +4,9 @@ layout: paper
 categories: papers
 
 reference: "Preyer, A.J., Butera, R.J. Causes of Transient Instabilities in the Dynamic Clamp (2009) IEEE Transactions on Neural Systems and Rehabilitation Engineering, 17 (2): 190-198."
+authors: 
+ - name: Preyer
+ - name: Rob Butera
 link: http://dx.doi.org/10.1109/TNSRE.2009.2015205
 ---
 

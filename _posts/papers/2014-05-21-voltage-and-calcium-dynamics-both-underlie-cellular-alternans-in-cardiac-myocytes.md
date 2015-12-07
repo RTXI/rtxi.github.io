@@ -4,6 +4,11 @@ layout: paper
 categories: papers
 
 reference: Groenendaal, W., Ortega, F. A., Krogh-Madsen, T. & Christini, D. J. Voltage and Calcium Dynamics Both Underlie Cellular Alternans in Cardiac Myocytes. Biophysical Journal 106, 2222–2232 (2014).
+authors: 
+ - name: Willemijn Groenendall
+ - name: Francis Ortega
+ - name: Trine Krogh-Madsen
+ - name: David Christini
 link: "http://dx.doi.org/10.1016/j.bpj.2014.03.048"
 ---
 

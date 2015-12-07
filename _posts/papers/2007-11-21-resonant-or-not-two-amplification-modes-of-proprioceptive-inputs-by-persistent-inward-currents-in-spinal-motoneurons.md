@@ -3,7 +3,11 @@ title: Resonant or Not, Two Amplification Modes of Proprioceptive Inputs by Pers
 layout: paper
 categories: papers
 
-reference: "Marin Manuel, Claude Meunier, Maud Donnet, and Daniel Zytnicki Resonant or Not, Two Amplification Modes of Proprioceptive Inputs by Persistent Inward Currents in Spinal Motoneurons (2007) Journal of Neuroscience, 27(47):12977-12988."
+reference: "Marin Manuel, Claude Meunier, Maud Donnet, and Daniel Zytnicki. Resonant or Not, Two Amplification Modes of Proprioceptive Inputs by Persistent Inward Currents in Spinal Motoneurons (2007) Journal of Neuroscience, 27(47):12977-12988."
+authors: 
+ - name: Marin Manuel
+ - name: Claude Meunier
+ - name: Daniel Zytnicki
 link: http://dx.doi.org/10.1523/JNEUROSCI.3299-07.2007
 ---
 

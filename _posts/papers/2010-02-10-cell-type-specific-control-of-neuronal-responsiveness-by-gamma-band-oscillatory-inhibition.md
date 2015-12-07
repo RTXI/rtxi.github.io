@@ -4,6 +4,10 @@ layout: paper
 categories: papers
 
 reference: "Otte S, Hasenstaub A, Callaway EM. Cell Type-Specific Control of Neuronal Responsiveness by Gamma-Band Oscillatory Inhibition (2010) J Neurosci, 30 (6): 2150-2159."
+authors: 
+ - name: Otte
+ - name: Hasenstaub
+ - name: Callaway
 link: http://dx.doi.org/10.1523/JNEUROSCI.4818-09.2010
 ---
 

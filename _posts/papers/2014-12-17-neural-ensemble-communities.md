@@ -4,6 +4,11 @@ categories: papers
 layout: paper
 
 reference: "Siegle, J. H., Hale, G. J., Newman, J. P. & Voigts, J. Neural ensemble communities: open-source approaches to hardware for large-scale electrophysiology. Current Opinion in Neurobiology 32, 53–59 (2015)."
+authors: 
+ - name: Josh Siegle
+ - name: Hale
+ - name: John Newman
+ - name: Voights
 link: https://dx.doi.org/10.1016/j.conb.2014.11.004
 ---
 

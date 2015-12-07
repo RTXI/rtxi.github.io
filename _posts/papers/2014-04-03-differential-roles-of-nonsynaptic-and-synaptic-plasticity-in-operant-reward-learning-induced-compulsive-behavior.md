@@ -4,6 +4,12 @@ layout: paper
 categories: papers
 
 reference: "Fred Sieling, Alexis Bédécarrats, John Simmers, Astrid A. Prinz, Romuald Nargeot, Differential Roles of Nonsynaptic and Synaptic Plasticity in Operant Reward Learning-Induced Compulsive Behavior, Current Biology, Volume 24, Issue 9, 5 May 2014, Pages 941-950, ISSN 0960-9822"
+authors: 
+ - name: Fred Sieling
+ - name: Alexis Bedecarrats
+ - name: John Simmers
+ - name: Astrid Prinz
+ - name: Romuald Nargeot
 link: "http://dx.doi.org/10.1016/j.cub.2014.03.004"
 ---
 

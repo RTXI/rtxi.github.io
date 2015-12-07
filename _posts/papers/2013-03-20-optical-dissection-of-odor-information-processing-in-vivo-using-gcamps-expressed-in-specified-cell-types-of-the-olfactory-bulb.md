@@ -4,6 +4,14 @@ layout: paper
 categories: papers
 
 reference: "Matt Wachowiak, Michael N. Economo, Marta Díaz-Quesada, Daniela Brunert, Daniel W. Wesson, John A. White, and Markus Rothermel. Optical Dissection of Odor Information Processing In Vivo Using GCaMPs Expressed in Specified Cell Types of the Olfactory Bulb. The Journal of Neuroscience, 20 March 2013, 33(12): 5285-5300;"
+authors: 
+ - name: Matt Wachowiak
+ - name: Michael Economo
+ - name: Marta Diaz-Quesada
+ - name: Daniela Burnert
+ - name: Daniel Wesson
+ - name: John White
+ - name: Markus Rothermel
 link: http://www.jneurosci.org/content/33/12/5285.long
 ---
 

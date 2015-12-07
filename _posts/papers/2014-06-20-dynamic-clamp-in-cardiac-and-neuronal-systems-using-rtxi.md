@@ -4,6 +4,12 @@ layout: paper
 categories: papers
 
 reference: Ortega, F., Butera, R., Christini, D., White, J. & Dorval, A., II. in Patch-Clamp Methods and Protocols (eds. Martina, M. & Taverna, S.) 1183, 327–354 (Springer New York, 2014).
+authors: 
+ - name: Franics Ortega
+ - name: Robert Butera
+ - name: David Christini
+ - name: John White
+ - name: Chuck Dorval
 link: http://link.springer.com/protocol/10.1007/978-1-4939-1096-0\_21
 ---
 

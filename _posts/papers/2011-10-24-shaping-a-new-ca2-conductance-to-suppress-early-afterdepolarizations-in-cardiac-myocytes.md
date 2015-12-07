@@ -4,6 +4,14 @@ layout: paper
 categories: papers
 
 reference: R. V. Madhvani, Y. Xie, A. Pantazis, A. Garfinkel, Z. Qu, J. N. Weiss, and R. Olcese, “Shaping a New Ca2+ Conductance to Suppress Early Afterdepolarizations in Cardiac Myocytes.,” J Physiol (Lond), Oct. 2011.
+authors: 
+ - name: Madhvani
+ - name: Xie
+ - name: Pantazis
+ - name: Garfinkel
+ - name: Qu
+ - name: Weiss
+ - name: Olcese
 link: http://dx.doi.org/10.1113/jphysiol.2011.219600
 ---
 

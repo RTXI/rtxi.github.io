@@ -4,6 +4,13 @@ layout: paper
 categories: papers
 
 reference: Chiara Bartolucci, Claudia Altomare, Marco Bennati, Simone Furini, Antonio Zaza, Stefano Severi, Combined action potential- and dynamic-clamp for accurate computational modelling of the cardiac IKr current, Journal of Molecular and Cellular Cardiology, Available online 18 November 2014, ISSN 0022-2828. 
+authors: 
+ - name: Chiara Bartolucci
+ - name: Claudia Altomare
+ - name: Marco Bennati
+ - name: Simone Furini
+ - name: Antonio Zaza
+ - name: Stefano Severi
 link: "http://dx.doi.org/10.1016/j.yjmcc.2014.11.011"
 ---
 

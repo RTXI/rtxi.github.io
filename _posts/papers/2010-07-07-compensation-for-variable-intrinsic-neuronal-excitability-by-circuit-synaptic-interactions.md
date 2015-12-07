@@ -4,6 +4,9 @@ layout: paper
 categories: papers
 
 reference: R. Grashow and T. Brookings, “Compensation for variable intrinsic neuronal excitability by circuit-synaptic interactions,” J Neurosci, vol. 30, no. 27, pp. 9145–9156, Jul. 2010.
+authors: 
+ - name: Grashow
+ - name: Brookings
 link: http://www.jneurosci.org/content/30/27/9145.full
 ---
 

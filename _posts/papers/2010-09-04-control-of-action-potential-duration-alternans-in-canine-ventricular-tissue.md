@@ -4,6 +4,11 @@ layout: paper
 categories: papers
 
 reference: Kanu, U.; Iravanian, S.; Gilmour, R.F.; Christini, D.J., "Control of action potential duration alternans in canine ventricular tissue," Engineering in Medicine and Biology Society (EMBC), 2010 Annual International Conference of the IEEE , vol., no., pp.1997,2000, Aug. 31 2010-Sept. 4 2010
+authors: 
+ - name: Kanu
+ - name: Iravanian
+ - name: Gilmour
+ - name: David Christini
 link: http://ieeexplore.ieee.org/xpls/icp.jsp?arnumber=5627828
 ---
 

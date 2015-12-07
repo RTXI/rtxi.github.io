@@ -33,7 +33,7 @@ extra_js: "
 			});
 		}, 300 ) );
 
-      $('#oopsfilters').on( 'click', 'button', function() {
+      $('#paperfilters').on( 'click', 'button', function() {
          var filterValue = $(this).attr('data-filter');
 			$('#quicksearch').val('');
          $container.isotope({ filter: filterValue });
@@ -75,14 +75,20 @@ extra_js: "
 
 <div>&nbsp;</div>
 <div class="container">
-	<p><input type="text" id="quicksearch" placeholder=" Search all papers" style="width:100%" /></p>
+	<p><input type="text" id="quicksearch" placeholder=" Search all papers" 
+	    style="width:100%" />
+	</p>
 </div>
 
 {% capture chunkvar %}{% increment chunkcount %}{% endcapture %}
 {% assign flag="false" %}
-<div class="container"><div id="oopsfilters" class="btn-group btn-group-justified" role="group" data-toggle="buttons">
+<div class="container"><div id="paperfilters" role="group" data-toggle="buttons"
+                            class="btn-group btn-group-justified">
    <div class="btn-group" role="group">
-      <button type="button" class="btn btn-danger btn active all-papers" data-filter="*" role="button" data-toggle="button" aria-pressed="true">All</button>
+      <button type="button" class="btn btn-danger btn active all-papers" 
+		        data-filter="*" role="button" data-toggle="button" 
+		        aria-pressed="true">All
+		</button>
    </div>
    {% for post in site.categories.papers %} 
       {% capture chunkflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
@@ -96,7 +102,12 @@ extra_js: "
          {% capture startyear %}{{ thisyear }}{% endcapture %}
       {% elsif thisyear != lastyear  and  flag == "true" %}
       <div class="btn-group" role="group">
-         <button type="button" class="btn btn-danger btn" data-filter=".chunk{{ chunkvar}}" role="button" data-toggle="button">{% if lastyear == startyear %}'{{ lastyear }}{% else %}'{{ lastyear }}-{{startyear}}{% endif %}</button>
+         <button type="button" class="btn btn-danger btn" data-toggle="button"
+			        data-filter=".chunk{{ chunkvar }}" role="button">
+				{% if lastyear == startyear %}'{{ lastyear }}
+				{% else %}'{{ lastyear }}-{{startyear}}
+				{% endif %}
+			</button>
       </div>
          {% assign flag == "false" %}
          {% capture startyear %}{{ thisyear }}{% endcapture %}
@@ -105,9 +116,15 @@ extra_js: "
       {% capture lastyear %}{{ thisyear }}{% endcapture %}
    {% endfor %}
    <div class="btn-group" role="group">
-      <button type="button" class="btn btn-danger btn" data-filter=".chunk{{ chunkvar}}" role="button" data-toggle="button">{% if lastyear == startyear %}'{{ lastyear }}{% else %}'{{ lastyear }}-{{startyear}}{% endif %}</button>
+      <button type="button" class="btn btn-danger btn" role="button" 
+		        data-toggle="button" data-filter=".chunk{{ chunkvar}}">
+			{% if lastyear == startyear %}'{{ lastyear }}
+			{% else %}'{{ lastyear }}-{{startyear}}
+			{% endif %}
+		</button>
    </div>
 </div></div>
+
 <div style="border-bottom: 1px solid #eee; margin-bottom: 10px;" class="container">&nbsp;</div>
 
 {% capture chunkvar %}{% increment chunkbodycount %}{% endcapture %}
@@ -128,11 +145,20 @@ extra_js: "
       {% endif %}
       {% capture lastyear %}{{ thisyear }}{% endcapture %}
    
-      <div class="item col-sm-6 col-md-4 chunk{{chunkvar}}" data-category="chunk{{chunkvar}}">
+      <div class="item col-sm-6 col-md-4 chunk{{chunkvar}}" 
+		     data-category="chunk{{chunkvar}}">
          <a href="{{ post.url }}" style="color:inherit;">
             <div class="panel panel-primary">
-               <div class="panel-heading"><h4 class="panel-title">{{ post.title }}</h4></div>
-               <div class="panel-body hidden-xs">{{ post.excerpt | truncate:750 }}</div>
+               <div class="panel-heading">
+						<h4 class="panel-title">{{ post.title }}</h4>
+					</div>
+               <div class="panel-body hidden-xs">
+						<div hidden> {% for author in post.authors %}
+						             {{ author.name }} 
+						             {% endfor %}
+						</div>
+						{{ post.excerpt | truncate:750 }}
+					</div>
             </div>
          </a>
       </div>

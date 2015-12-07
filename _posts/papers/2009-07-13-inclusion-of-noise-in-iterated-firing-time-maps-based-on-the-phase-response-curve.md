@@ -4,6 +4,10 @@ layout: paper
 categories: papers
 
 reference: Sieling, Fred H., Canavier, Carmen C, Prinz, Astrid A. Inclusion of noise in iterated firing time maps based on the phase response curve. Phys Rev E (2010) vol. 81 (6 Pt 1) pp. 061923.
+authors: 
+ - name: Fred Sieling
+ - name: Carmen Canaveir
+ - name: Astrid Prinz
 link: http://dx.doi.org/10.1186/1471-2202-10-S1-P345
 ---
 

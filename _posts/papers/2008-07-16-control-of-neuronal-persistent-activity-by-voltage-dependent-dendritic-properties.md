@@ -4,6 +4,13 @@ layout: paper
 categories: papers
 
 reference: "Idoux E, Eugene D, Chambaz A, Magnani C, White JA, Moore LE. Control of Neuronal Persistent Activity by Voltage-Dependent Dendritic Properties (2008 ) J Neurophys, 100 (3): 1278-86."
+authors: 
+ - name: Erwin Idoux
+ - name: Eugene
+ - name: Chambaz
+ - name: Magnani
+ - name: John White
+ - name: Moore
 link: http://dx.doi.org/10.1152/jn.90559.2008
 ---
 

@@ -4,6 +4,11 @@ layout: paper
 categories: papers
 
 reference: Wilson, C. J., Barraza, D., Troyer, T. & Farries, M. A. Predicting the Responses of Repetitively Firing Neurons to Current Noise. PLoS Comput Biol 10, e1003612 (2014).
+authors: 
+ - name: Wilson
+ - name: Barraza
+ - name: Troyer
+ - name: Farries
 link: "http://dx.doi.org/10.1371/journal.pcbi.1003612"
 ---
 

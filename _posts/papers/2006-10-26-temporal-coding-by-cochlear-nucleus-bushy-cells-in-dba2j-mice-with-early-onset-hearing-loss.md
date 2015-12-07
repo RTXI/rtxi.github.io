@@ -4,6 +4,9 @@ layout: paper
 categories: papers
 
 reference: "Y. Wang and P. Manis, “Temporal coding by cochlear nucleus bushy cells in DBA/2J mice with early onset hearing loss,” J Assoc Res Otolaryngol, vol. 7, no. 4, pp. 412–424, Dec. 2006."
+authors: 
+ - name: Wang
+ - name: Manis
 link: http://dx.doi.org/10.1007/s10162-006-0052-9
 ---
 

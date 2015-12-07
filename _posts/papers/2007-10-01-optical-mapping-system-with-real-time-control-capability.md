@@ -4,6 +4,9 @@ layout: paper
 categories: papers
 
 reference: "Shahriar Iravanian and David J. Christini. Optical mapping system with real-time control capability (2007) Am J Physiol Heart Circ Physiol, 293 (4): H2605-H2611."
+authors: 
+ - name: Shahriar Iravanian
+ - name: David Christini
 link: http://dx.doi.org/10.1152/ajpheart.00588.2007
 ---
 

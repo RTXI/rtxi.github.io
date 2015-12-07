@@ -4,6 +4,11 @@ layout: paper
 categories: papers
 
 reference: "Butera RJ, Wilson CG, Delnegro CA, Smith JC. A methodology for achieving high-speed rates for artificial conductance injection in electrically excitable biological cells (2001) IEEE Trans Biomed Eng, 48: 1460–70."
+authors: 
+ - name: Robert Butera
+ - name: Wilson
+ - name: Delnegro
+ - name: Smith
 link: http://dx.doi.org/10.1109/10.966605
 ---
 

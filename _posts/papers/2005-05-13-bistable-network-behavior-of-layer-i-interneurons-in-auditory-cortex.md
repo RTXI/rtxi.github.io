@@ -4,6 +4,10 @@ layout: paper
 categories: papers
 
 reference: "E. Merriam, T. I. Netoff, and M. Banks, “Bistable network behavior of layer I interneurons in auditory cortex,” J Neurosci, vol. 25, no. 26, pp. 6175–6186, Jun. 2005."
+authors: 
+ - name: Merriam
+ - name: Tay Netoff
+ - name: Banks
 link: http://dx.doi.org/10.1523/JNEUROSCI.0512-05.2005
 ---
 

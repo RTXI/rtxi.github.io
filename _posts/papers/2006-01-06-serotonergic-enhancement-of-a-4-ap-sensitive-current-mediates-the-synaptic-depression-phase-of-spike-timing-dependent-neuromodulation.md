@@ -4,6 +4,11 @@ layout: paper
 categories: papers
 
 reference: "A. Sakurai, N. Darghouth, R. J. Butera, and P. Katz, “Serotonergic enhancement of a 4-AP-sensitive current mediates the synaptic depression phase of spike timing-dependent neuromodulation,” J Neurosci, vol. 26, no. 7, pp. 2010–2021, 2006."
+authors: 
+ - name: Sakurai
+ - name: Darghouth
+ - name: Rob Butera
+ - name: Katz
 link: http://dx.doi.org/10.1523/JNEUROSCI.2599-05.2006
 ---
 

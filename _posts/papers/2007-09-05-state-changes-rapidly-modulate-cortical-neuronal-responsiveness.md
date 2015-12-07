@@ -4,6 +4,10 @@ layout: paper
 categories: papers
 
 reference: "Hasenstaub A, Sachdev RNS, McCormick DA. State Changes Rapidly Modulate Cortical Neuronal Responsiveness (2007) J Neurosci, 27 (36): 9607-9622."
+authors: 
+ - name: Hasenstaub
+ - name: Sachdev
+ - name: McCormick
 link: http://dx.doi.org/10.1523/JNEUROSCI.2184-07.2007
 ---
 

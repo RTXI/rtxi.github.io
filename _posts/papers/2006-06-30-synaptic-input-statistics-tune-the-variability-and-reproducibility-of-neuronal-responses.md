@@ -4,6 +4,9 @@ layout: paper
 categories: papers
 
 reference: "Dorval AD, White JA. Synaptic input statistics tune the variability and reproducibility of neuronal responses (2006) Chaos, 16 (2): 026105."
+authors: 
+ - name: Chuck Dorval
+ - name: John White
 link: http://dx.doi.org/10.1063/1.2209427
 ---
 

@@ -4,6 +4,9 @@ layout: paper
 categories: papers
 
 reference: Mike Skocik and Alexay Kozhevnikov., “Real-time system for studies of the effects of acoustic feedback on animal vocalizations.,” Frontiers in Neural Circuits. 2013 Jan 7;6.
+authors: 
+ - name: Mike Skocik
+ - name: Alexay Kozhevnikov
 link: http://dx.doi.org/10.3389/fncir.2012.00111
 ---
 

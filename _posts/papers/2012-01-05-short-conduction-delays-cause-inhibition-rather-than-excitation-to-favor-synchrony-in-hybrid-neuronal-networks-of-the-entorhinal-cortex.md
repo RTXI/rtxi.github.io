@@ -4,6 +4,12 @@ layout: paper
 categories: papers
 
 reference: S. Wang, L. Chandrasekaran, F. R. Fernandez, J. A. White, and C. C. Canavier, “Short Conduction Delays Cause Inhibition Rather than Excitation to Favor Synchrony in Hybrid Neuronal Networks of the Entorhinal Cortex,” PLoS Comput Biol, vol. 8, no. 1, p. e1002306, Jan. 2012.
+authors: 
+ - name: Wang
+ - name: Chandrasekaran
+ - name: Fernando Fernandez
+ - name: John White
+ - name: Canavier
 link: http://dx.doi.org/10.1371/journal.pcbi.1002306
 ---
 

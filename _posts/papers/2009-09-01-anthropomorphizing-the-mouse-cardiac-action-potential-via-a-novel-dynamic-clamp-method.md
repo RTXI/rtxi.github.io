@@ -4,6 +4,9 @@ layout: paper
 categories: papers
 
 reference: "Ahrens-Nicklas RC, Christini DJ. Anthropomorphizing the Mouse Cardiac Action Potential via a Novel Dynamic Clamp Method (2009) Biophys J, 97 (10): 2684-2692."
+authors: 
+ - name: Ahrens-Nicklas
+ - name: David Christini
 link: http://dx.doi.org/10.1016/j.bpj.2009.09.002
 ---
 
