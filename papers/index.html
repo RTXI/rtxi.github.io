@@ -1,6 +1,8 @@
 ---
 title: Papers
 layout: default
+
+modulus: 10
 extra_js: "
    <script src='/assets/js/isotope.pkgd.min.js'></script>
 
@@ -8,7 +10,7 @@ extra_js: "
    $( function () {
 		var qsRegex;
   
-      var $container = $('#oopsgrid').isotope({
+      var $container = $('#papergrid').isotope({
          itemSelector: '.item',
          layoutMode: 'masonry',
 /*
@@ -26,7 +28,7 @@ extra_js: "
 					return qsRegex ? $(this).text().match( qsRegex ) : true;
 				}
 			});
-			$('.btn-group').each( function( i, buttonGroup ) {
+			$('.btn-toolbar').each( function( i, buttonGroup ) {
 				var $buttonGroup = $( buttonGroup );
 				$buttonGroup.find('.active').removeClass('active');
 				$buttonGroup.find('.all-papers').addClass('active');
@@ -39,7 +41,7 @@ extra_js: "
          $container.isotope({ filter: filterValue });
       });
 
-      $('.btn-group').each( function( i, buttonGroup ) {
+      $('.btn-toolbar').each( function( i, buttonGroup ) {
          var $buttonGroup = $( buttonGroup );
          $buttonGroup.on( 'click', 'button', function() {
             $buttonGroup.find('.active').removeClass('active');
@@ -82,16 +84,14 @@ extra_js: "
 
 {% capture chunkvar %}{% increment chunkcount %}{% endcapture %}
 {% assign flag="false" %}
-<div class="container"><div id="paperfilters" role="group" data-toggle="buttons"
-                            class="btn-group btn-group-justified">
-   <div class="btn-group" role="group">
-      <button type="button" class="btn btn-danger btn active all-papers" 
-		        data-filter="*" role="button" data-toggle="button" 
-		        aria-pressed="true">All
-		</button>
-   </div>
+<div class="container"><div id="paperfilters" role="toolbar" data-toggle="buttons"
+                            class="btn-toolbar">
+	<button type="button" class="btn btn-danger btn active all-papers" 
+	        data-filter="*" role="button" data-toggle="button" 
+	        aria-pressed="true" style="margin-bottom:5px">All
+	</button>
    {% for post in site.categories.papers %} 
-      {% capture chunkflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
+      {% capture chunkflag %}{{ forloop.index | modulo:page.modulus }}{% endcapture %}
       {% if chunkflag == "0"%}
          {% assign flag = "true" %}
       {% endif %}
@@ -103,7 +103,8 @@ extra_js: "
       {% elsif thisyear != lastyear  and  flag == "true" %}
       <div class="btn-group" role="group">
          <button type="button" class="btn btn-danger btn" data-toggle="button"
-			        data-filter=".chunk{{ chunkvar }}" role="button">
+			        data-filter=".chunk{{ chunkvar }}" role="button" 
+			        style="margin-bottom:5px">
 				{% if lastyear == startyear %}'{{ lastyear }}
 				{% else %}'{{ lastyear }}-{{startyear}}
 				{% endif %}
@@ -117,7 +118,8 @@ extra_js: "
    {% endfor %}
    <div class="btn-group" role="group">
       <button type="button" class="btn btn-danger btn" role="button" 
-		        data-toggle="button" data-filter=".chunk{{ chunkvar}}">
+		        data-toggle="button" data-filter=".chunk{{ chunkvar}}" 
+		        style="margin-bottom:5px">
 			{% if lastyear == startyear %}'{{ lastyear }}
 			{% else %}'{{ lastyear }}-{{startyear}}
 			{% endif %}
@@ -125,13 +127,14 @@ extra_js: "
    </div>
 </div></div>
 
-<div style="border-bottom: 1px solid #eee; margin-bottom: 10px;" class="container">&nbsp;</div>
+<div style="border-bottom: 2px solid #eee; margin-bottom: 10px;" 
+     class="container">&nbsp;</div>
 
 {% capture chunkvar %}{% increment chunkbodycount %}{% endcapture %}
 {% assign flag = "false" %}
-<div class="container"><div class="row isotope" id="oopsgrid">
+<div class="container"><div class="row isotope" id="papergrid">
    {% for post in site.categories.papers %}
-      {% capture chunkflag %}{{ forloop.index | modulo:20 }}{% endcapture %}
+      {% capture chunkflag %}{{ forloop.index | modulo:page.modulus }}{% endcapture %}
       {% capture thisyear %}{{ post.date | date: '%y' }}{% endcapture %}
       {% if chunkflag == "0" %}
          {% assign flag = "true" %}
