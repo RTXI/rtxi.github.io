@@ -4,6 +4,10 @@ layout: paper
 categories: papers
 
 reference: "Cui J, Canavier CC, Butera RJ. Functional phase response curves: a method for understanding synchronization of adapting neurons (2009) J Neurophysiol, 102: 387–398."
+authors: 
+ - name: Cui
+ - name: Canavier
+ - name: Rob Butera
 link: http://dx.doi.org/10.1152/jn.00037.2009
 ---
 

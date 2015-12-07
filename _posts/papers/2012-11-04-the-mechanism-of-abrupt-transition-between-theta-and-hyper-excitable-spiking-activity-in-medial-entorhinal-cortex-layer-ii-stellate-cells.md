@@ -4,6 +4,10 @@ layout: paper
 categories: papers
 
 reference: T. Kispersky, J. A. White, and H. G. Rotstein, “The Mechanism of Abrupt Transition between Theta and Hyper-Excitable Spiking Activity in Medial Entorhinal Cortex Layer II Stellate Cells,” PLoS One, vol. 5, no. 11, p. e13697, 2010.
+authors: 
+ - name: Tilman Kispersky
+ - name: John White
+ - name: Rotstein
 link: http://dx.doi.org/10.1371/journal.pone.0013697
 ---
 

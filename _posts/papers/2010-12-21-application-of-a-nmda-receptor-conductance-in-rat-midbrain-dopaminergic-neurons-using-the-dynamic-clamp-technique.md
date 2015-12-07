@@ -4,6 +4,10 @@ layout: paper
 categories: papers
 
 reference: O Miranda-Domínguez, J Gonia and T I Netoff. Firing rate control of a neuron using a linear proportional-integral controller. J. Neural Eng. (2010) Vol. 7 No. 6.
+authors: 
+ - name: Mirando-Dominguez
+ - name: Gonia
+ - name: Tay Netoff
 link: http://dx.doi.org/10.1088/1741-2560/7/6/066004
 ---
 

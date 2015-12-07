@@ -4,6 +4,8 @@ layout: paper
 categories: papers
 
 reference: Boykin, Erin R. et al. "Detecting effective connectivity in networks of coupled neuronal oscillators." 2012. Journal of Computational Neuroscience. 32:3. 
+authors: 
+ - name: Erin Boykin
 link: http://dx.doi.org/10.1007/s10827-011-0367-3
 ---
 

@@ -4,6 +4,9 @@ layout: paper
 categories: papers
 
 reference: E. Idoux and J. Mertz, “Control of local intracellular calcium concentration with dynamic-clamp controlled 2-photon uncaging.,” PLoS One, vol. 6, no. 12, p. e28685, 2011.
+authors: 
+ - name: Erwin Idoux
+ - name: Jerome Mertz
 link: http://dx.doi.org/10.1371/journal.pone.0028685
 ---
 

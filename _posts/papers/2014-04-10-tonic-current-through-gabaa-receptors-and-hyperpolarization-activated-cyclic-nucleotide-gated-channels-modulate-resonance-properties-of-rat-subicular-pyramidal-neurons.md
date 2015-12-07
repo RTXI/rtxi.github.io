@@ -4,6 +4,9 @@ layout: paper
 categories: papers
 
 reference: "Sah, N. & Sikdar, S. K. Tonic current through GABAA receptors and hyperpolarization-activated cyclic nucleotide-gated channels modulate resonance properties of rat subicular pyramidal neurons. Eur J Neurosci 40, 2241–2254 (2014)"
+authors: 
+ - name: Sah
+ - name: Sikdar
 link: "http://dx.doi.org/10.1111/ejn.12581"
 ---
 

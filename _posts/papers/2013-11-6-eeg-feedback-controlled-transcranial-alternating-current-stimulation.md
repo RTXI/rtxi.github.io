@@ -4,6 +4,9 @@ layout: paper
 categories: papers
 
 reference: Boyle, M.R.; Frohlich, F., "EEG feedback-controlled transcranial alternating current stimulation," Neural Engineering (NER), 2013 6th International IEEE/EMBS Conference on , vol., no., pp.140,143, 6-8 Nov. 2013
+authors: 
+ - name: Michael Boyle
+ - name: Flavio Frohlich
 link: http://ieeexplore.ieee.org/xpls/icp.jsp?arnumber=6695891
 ---
 

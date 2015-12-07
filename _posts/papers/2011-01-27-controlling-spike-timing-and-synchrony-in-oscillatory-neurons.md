@@ -4,6 +4,11 @@ layout: paper
 categories: papers
 
 reference: Stigen, Tyler, Per Danzl, Jeff Moehlis, and Theoden Netoff. Controlling Spike Timing and Synchrony in Oscillatory Neurons. J Neurophysiol (2011) pp. 
+authors: 
+ - name: Tyler Stigen
+ - name: Per Danzl
+ - name: Jeff Moehlis
+ - name: Tay Netoff
 link: http://dx.doi.org/10.1152/jn.00898.2010
 ---
 

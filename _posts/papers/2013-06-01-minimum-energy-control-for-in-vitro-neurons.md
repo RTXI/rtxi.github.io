@@ -4,6 +4,11 @@ layout: paper
 categories: papers
 
 reference: Ali Nabi and Tyler Stigen and Jeff Moehlis and Theoden Netoff. "Minimum energy control for in vitro neurons." 2013 J. Neural Eng. 10 036005
+authors: 
+ - name: Ali Nabi
+ - name: Tyler Stigen
+ - name: Jeff Moehlis
+ - name: Tay Netoff
 link: http://dx.doi.org/10.1088/1741-2560/10/3/036005
 ---
 

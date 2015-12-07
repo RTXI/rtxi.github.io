@@ -4,6 +4,9 @@ layout: paper
 categories: papers
 
 reference: "Alan D. Dorval and John A. White. Channel Noise is Essential for Perithreshold Oscillations in Entorhinal Stellate Neurons (2005) J Neurosci, 25 (43): 10025-10028."
+authors: 
+ - name: Chuck Dorval
+ - name: John White
 link: http://dx.doi.org/10.1523/JNEUROSCI.3557-05.2005
 ---
 

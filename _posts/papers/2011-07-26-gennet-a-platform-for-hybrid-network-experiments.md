@@ -4,6 +4,11 @@ layout: paper
 categories: papers
 
 reference: "Kispersky, Tilman J, Economo, Michael N, Randeria, Pratik, White, John A. GenNet: A Platform for Hybrid Network Experiments. Front Neuroinform (2011) vol. 5 pp. 11."
+authors: 
+ - name: Tilman Kispersky
+ - name: Michael Economo
+ - name: Pratik Randeria
+ - name: John White
 link: http://dx.doi.org/10.3389/fninf.2011.00011
 ---
 

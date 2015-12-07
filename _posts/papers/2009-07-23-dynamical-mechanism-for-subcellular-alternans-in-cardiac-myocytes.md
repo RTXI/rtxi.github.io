@@ -4,6 +4,11 @@ layout: paper
 categories: papers
 
 reference: S. A. Gaeta, G. Bub, G. W. Abbott, and D. J. Christini, “Dynamical mechanism for subcellular alternans in cardiac myocytes,” Circ Res, vol. 105, no. 4, pp. 335–342, Aug. 2009.
+authors: 
+ - name: Steve Gaeta
+ - name: Gil Bub
+ - name: Greg Abbott
+ - name: David Christini
 link: http://dx.doi.org/10.1161/CIRCRESAHA.109.197590
 ---
 

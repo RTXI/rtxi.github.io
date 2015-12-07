@@ -4,6 +4,9 @@ layout: paper
 categories: papers
 
 reference: "Fernandez FR, White JA. Reduction of Spike Afterdepolarization by Increased Leak Conductance Alters Interspike Interval Variability (2009) J Neurosci, 29 (4): 973-986."
+authors: 
+ - name: Fernando Fernandez
+ - name: John White
 link: http://dx.doi.org/10.1523/JNEUROSCI.4195-08.2009
 ---
 

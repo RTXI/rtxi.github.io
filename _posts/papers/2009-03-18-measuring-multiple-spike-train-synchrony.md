@@ -4,6 +4,12 @@ layout: paper
 categories: papers
 
 reference: "Kreuz T, Chicharro D, Andrzejak RG, Haas JS, Abarbanel, HD. Measuring multiple spike train synchrony (2009) J Neurosci Methods, 183 (2): 287-299."
+authors:
+ - name: Kreuz
+ - name: Chicharro
+ - name: Andrzejak
+ - name: Haas
+ - name: Abarbanel
 link: http://dx.doi.org/10.1016/j.jneumeth.2009.06.039
 ---
 

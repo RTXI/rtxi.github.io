@@ -4,6 +4,9 @@ layout: paper
 categories: papers
 
 reference: M. N. Economo and J. A. White, “Membrane Properties and the Balance between Excitation and Inhibition Control Gamma-Frequency Oscillations Arising from Feedback Inhibition.,” PLoS Comput Biol, vol. 8, no. 1, p. e1002354, Jan. 2012.
+authors: 
+ - name: Michael Economo
+ - name: John White
 link: http://dx.doi.org/10.1371/journal.pcbi.1002354
 ---
 

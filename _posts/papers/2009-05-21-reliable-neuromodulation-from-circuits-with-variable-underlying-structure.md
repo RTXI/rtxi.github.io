@@ -4,6 +4,10 @@ layout: paper
 categories: papers
 
 reference: R. Grashow, T. Brookings, and E. Marder, “Reliable neuromodulation from circuits with variable underlying structure,” Proc Natl Acad Sci U S A, vol. 106, no. 28, pp. 11742–11746, Jul. 2009.
+authors: 
+ - name: Grashow
+ - name: Brookings
+ - name: Eve Marder
 link: http://dx.doi.org/10.1073/pnas.0905614106
 ---
 

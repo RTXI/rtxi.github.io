@@ -4,6 +4,12 @@ layout: paper
 categories: papers
 
 reference: S. K. Maran, F. H. Sieling, K. Demla, A. A. Prinz, and C. C. Canavier, “Responses of a bursting pacemaker to excitation reveal spatial segregation between bursting and spiking mechanisms,” J Comput Neurosci, Mar. 2011.
+authors: 
+ - name: Maran
+ - name: Sieling
+ - name: Demla
+ - name: Prinz
+ - name: Canavier
 link: http://dx.doi.org/10.1007/s10827-011-0319-y
 ---
 

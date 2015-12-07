@@ -4,6 +4,9 @@ layout: paper
 categories: papers
 
 reference: "Preyer AJ, Butera RJ. Neuronal oscillators in Aplysia californica that demonstrate weak coupling in vitro (2005) Physical Review Letters, 95 (13): 138103."
+authors: 
+ - name: Preyer
+ - name: Rob Butera
 link: http://dx.doi.org/10.1103/PhysRevLett.95.138103
 ---
 

@@ -5,6 +5,12 @@ categories: papers
 
 reference: Bas-Jan Zandt , Tyler Stigen , Bennie ten Haken , Theoden Netoff , Michel J. A. M. van Putten
 Journal of NeurophysiologyPublished 1 October 2013Vol. 110no. 1469-1475DOI: 10.1152/jn.00250.2013
+authors: 
+ - name: Bas-Jan Zant
+ - name: Tyler Stigen
+ - name: Bennie ten Haken
+ - name: Tay Netoff
+ - name: Michel van Putten
 link: http://jn.physiology.org/content/110/7/1469.long
 ---
 

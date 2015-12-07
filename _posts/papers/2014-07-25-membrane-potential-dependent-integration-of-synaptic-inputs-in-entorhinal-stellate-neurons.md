@@ -4,6 +4,10 @@ layout: paper
 categories: papers
 
 reference: Economo, M. N., Martínez, J. J. & White, J. A. Membrane potential-dependent integration of synaptic inputs in entorhinal stellate neurons. Hippocampus 24, 1493–1505 (2014).
+authors: 
+ - name: Michael Economo
+ - name: Joey Martinez
+ - name: John White
 link: "http://dx.doi.org/10.1002/hipo.22329"
 ---
 

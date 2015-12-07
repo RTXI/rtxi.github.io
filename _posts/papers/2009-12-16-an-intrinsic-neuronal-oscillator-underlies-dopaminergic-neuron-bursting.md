@@ -4,6 +4,11 @@ layout: paper
 categories: papers
 
 reference: Deister CA, Teagarden MA, Wilson CJ, Paladini, CA. An Intrinsic Neuronal Oscillator Underlies Dopaminergic Neuron Bursting (2009) J Neurosci, 29 (50):15888-15897.
+authors: 
+ - name: Deister
+ - name: Teagarden
+ - name: Wilson
+ - name: Christopher Paladini
 link: http://dx.doi.org/10.1523/JNEUROSCI.4053-09.2009
 ---
 

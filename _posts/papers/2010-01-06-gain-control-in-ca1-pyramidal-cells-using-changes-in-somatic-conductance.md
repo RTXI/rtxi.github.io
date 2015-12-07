@@ -4,6 +4,9 @@ layout: paper
 categories: papers
 
 reference: "Fernandez FR, White JA. Gain Control in CA1 Pyramidal Cells Using Changes in Somatic Conductance (2010) J Neurosci, 30 (1): 230-241."
+authors: 
+ - name: Fernando Fernandez
+ - name: John White
 link: http://dx.doi.org/10.1523/JNEUROSCI.3995-09.2010
 ---
 

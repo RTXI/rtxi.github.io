@@ -4,6 +4,10 @@ layout: paper
 categories: papers
 
 reference: "I. Raikov, A. Preyer and R.J. Butera, MRCI: a flexible real-time dynamic clamp system for electrophysiology experiments, J. Neurosci. Methods 132 (2004), pp. 109–123."
+authors: 
+ - name: Raikov
+ - name: Preyer
+ - name: Butera
 link: http://dx.doi.org/10.1016/j.jneumeth.2003.08.002
 ---
 

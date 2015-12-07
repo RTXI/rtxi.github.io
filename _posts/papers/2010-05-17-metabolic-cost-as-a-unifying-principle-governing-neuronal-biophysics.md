@@ -4,6 +4,10 @@ layout: paper
 categories: papers
 
 reference: A. R. Hasenstaub, S. Otte, E. Callaway, and T. J. Sejnowski, “Metabolic cost as a unifying principle governing neuronal biophysics,” Proc Natl Acad Sci U S A, vol. 107, no. 27, pp. 12329–12334, Jul. 2010.
+authors: 
+ - name: Hasenstaub
+ - name: Otto
+ - name: Sejnowski
 link: http://dx.doi.org/10.1073/pnas.0914886107
 ---
 

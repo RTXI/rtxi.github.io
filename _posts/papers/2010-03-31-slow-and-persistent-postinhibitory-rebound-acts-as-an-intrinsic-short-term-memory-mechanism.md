@@ -3,7 +3,11 @@ title: Slow and Persistent Postinhibitory Rebound Acts as an Intrinsic Short-ter
 layout: paper
 categories: papers
 
-reference: J.-M. Goaillard, A. L. Taylor, S. R. Pulver, and E. Marder, “Slow and persistent postinhibitory rebound acts as an intrinsic short-term memory mechanism,” J Neurosci, vol. 30, no. 13, pp. 4687–4692, Mar. 2010.
+reference: J.M. Goaillard, A. L. Taylor, S. R. Pulver, and E. Marder, “Slow and persistent postinhibitory rebound acts as an intrinsic short-term memory mechanism,” J Neurosci, vol. 30, no. 13, pp. 4687–4692, Mar. 2010.
+authors: 
+ - name: Goaillard
+ - name: Taylor
+ - name: Eve Marder
 link: http://dx.doi.org/10.1523/JNEUROSCI.2998-09.2010
 ---
 

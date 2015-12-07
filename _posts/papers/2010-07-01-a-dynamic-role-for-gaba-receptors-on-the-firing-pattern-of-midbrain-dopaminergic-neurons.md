@@ -4,6 +4,8 @@ layout: paper
 categories: papers
 
 reference: Lobb et al. A dynamic role for GABA receptors on the firing pattern of midbrain dopaminergic neurons. J Neurophysiol (2010) vol. 104 (1) pp. 403-13
+authors: 
+ - name: Lobb
 link: http://dx.doi.org/10.1152/jn.00204.2010
 ---
 

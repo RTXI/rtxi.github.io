@@ -4,6 +4,10 @@ layout: paper
 category: papers
 
 reference: Bauer, J.A; Lambert, K.M.; White, J.A, "The Past, Present, and Future of Real-Time Control in Cellular Electrophysiology," Biomedical Engineering, IEEE Transactions on , vol.61, no.5, pp.1448,1456, May 2014
+authors: 
+ - name: Jenny Bauer
+ - name: Katherine Lambert
+ - name: John White
 link: http://dx.doi.org/10.1109/TBME.2014.2314619
 ---
 

@@ -4,6 +4,9 @@ layout: paper
 categories: papers
 
 reference: Nowotny, T. & Varona, P. in Encyclopedia of Computational Neuroscience (eds. Jaeger, D. & Jung, R.) 1–4 (Springer New York, 2014).
+authors:
+ - name: Nowotny
+ - name: Varona
 link: "http://dx.doi.org/10.1007/978-1-4614-7320-6_126-2"
 ---
 

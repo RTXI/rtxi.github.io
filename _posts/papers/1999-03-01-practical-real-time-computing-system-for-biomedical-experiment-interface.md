@@ -4,6 +4,10 @@ layout: paper
 categories: papers
 
 reference: "Christini DJ, Stein KM, Markowitz SM, Lerman BB. Practical real-time computing system for biomedical experiment interface. Ann Biomed Eng. 1999 Mar-Apr;27(2):180-6. PubMed PMID: 10199694."
+authors: 
+ - name: David Christini
+ - name: Stein
+ - name: Markowitz
 link: "http://www.ncbi.nlm.nih.gov/pubmed/10199694"
 ---
 

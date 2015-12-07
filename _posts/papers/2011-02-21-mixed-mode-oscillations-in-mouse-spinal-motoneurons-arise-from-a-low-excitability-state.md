@@ -4,6 +4,12 @@ layout: paper
 categories: papers
 
 reference: C. Iglesias, C. Meunier, M. Manuel, Y. Timofeeva, N. Delestrée, and D. Zytnicki, “Mixed mode oscillations in mouse spinal motoneurons arise from a low excitability state,” J Neurosci, vol. 31, no. 15, pp. 5829–5840, Apr. 2011.
+authors: 
+ - name: Iglesias
+ - name: Meunier
+ - name: Timofeeva
+ - name: Delestree
+ - name: Zytnicki
 link: http://dx.doi.org/10.1523/JNEUROSCI.6363-10.2011
 ---
 

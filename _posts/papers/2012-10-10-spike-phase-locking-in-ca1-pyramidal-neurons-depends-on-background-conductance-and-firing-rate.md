@@ -4,6 +4,13 @@ layout: paper
 categories: papers
 
 reference: Broicher T, Malerba P, Dorval AD, Borisyuk A, Fernandez FR, White JA., “Spike Phase Locking in CA1 Pyramidal Neurons Depends on Background Conductance and Firing Rate.,” J Neurosci. 2012 Oct 10;32(41):14374-88.
+authors: 
+ - name: Broicher
+ - name: Malerba
+ - name: Chuck Dorval
+ - name: Borisyuk
+ - name: Fernando Fernandez
+ - name: John White
 link: http://dx.doi.org/10.1523/JNEUROSCI.0842-12.2012
 ---
 

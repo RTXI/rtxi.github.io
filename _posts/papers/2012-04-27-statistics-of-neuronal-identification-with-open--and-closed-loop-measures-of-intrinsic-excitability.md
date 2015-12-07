@@ -4,6 +4,10 @@ layout: paper
 categories: papers
 
 reference: Ted Brookings, Rachel Grashow and Eve Marder, "Statistics of neuronal identification with open- and closed-loop measures of intrinsic excitability," Frontiers in Neural Circuits, vol. 6, no. 19. 2012.
+authors: 
+ - name: Ted Brookings
+ - name: Rachel Grashow
+ - name: Eve Marder
 link: http://dx.doi.org/10.3389/fncir.2012.00019
 ---
 

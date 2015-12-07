@@ -4,6 +4,10 @@ layout: paper
 categories: papers
 
 reference: "Sieling FH, Canavier CC, Prinz AA. Predictions of Phase-Locking in Excitatory Hybrid Networks: Excitation Does Not Promote Phase-Locking in Pattern-Generating Networks as Reliably as Inhibition (2009) Journal of Neurophysiology, 102 (1): 69-84."
+authors: 
+ - name: Sieling
+ - name: Canaveir
+ - name: Astrid Prinz
 link: http://dx.doi.org/10.1152/jn.00091.2009
 ---
 

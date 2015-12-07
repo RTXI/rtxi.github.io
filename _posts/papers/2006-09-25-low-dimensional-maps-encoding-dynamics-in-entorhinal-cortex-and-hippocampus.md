@@ -4,6 +4,14 @@ layout: paper
 categories: papers
 
 reference: "D. Pervouchine, T. I. Netoff, H. Rotstein, J. A. White, M. Cunningham, M. Whittington, and N. Kopell, “Low-dimensional maps encoding dynamics in entorhinal cortex and hippocampus,” Neural Comput, vol. 18, no. 11, pp. 2617–2650, Nov. 2006."
+authors: 
+ - name: Pervouchine
+ - name: Tay Netoff
+ - name: Rotstein
+ - name: John White
+ - name: Cunningham
+ - name: Whittington
+ - name: Kopell
 link: http://dx.doi.org/10.1162/neco.2006.18.11.2617
 ---
 
