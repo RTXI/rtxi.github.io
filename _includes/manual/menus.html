@@ -8,7 +8,7 @@ The <b>File Menu</b> is used to save and load settings files that capture the en
 <img src="{{ site.img }}/manual/fileMenu.png" alt="RTXI files menu">
 
 <p>
-The <b>Modules Menu</b> is used to load user modules or compile DYNAMO model descriptions. User modules are shared libraries that are installed to <code>/usr/local/lib/rtxi</code> during the compilation process. Choosing "Load User Module" opens a file dialog box at this location, from where users may select modules based on the *.so filename. Choosing "Load DYNAMO Model" will open a file dialog box that can be used to select a *.dynamo file containing a DYNAMO model description. This file will be parsed to generate a cpp header and implementation file that will then be compiled to produce an RTXI module based on the <code>DefaultGUIModel</code> class. After the initial parsing and compilation, this module may then be loaded using the first menu item as with other user modules.  
+The <b>Modules Menu</b> is used to load user modules. User modules are shared libraries that are installed to <code>/usr/local/lib/rtxi</code> during the compilation process. Choosing "Load User Module" opens a file dialog box at this location, from where users may select modules based on the *.so filename.
 </p>
 
 <img src="{{ site.img }}/manual/modulesMenu.png" alt="RTXI modules menu">
