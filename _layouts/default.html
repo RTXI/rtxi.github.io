@@ -8,13 +8,13 @@
       
 		<!-- Schema.org markup. (Google+ uses it.) -->
       <meta itemprop="name" content="{{ page.title }}">
-      <meta itemprop="description" content="{{ page.content | strip_html | truncate:200 }}">
+      <meta itemprop="description" content="{{ page.tag_content | strip_html | truncate:200 }}">
       <meta itemprop="image" content="{{ site.url }}{{ site.img }}/{{ site.square_icon }}"> 
 
       <!-- Twitter card data. Why? Just because. -->
       <meta name="twitter:card" content="summary">
       <meta name="twitter:title" content="{{ page.title }}">
-      <meta name="twitter:description" content="{{ page.content | strip_html | truncate:200 }}">
+      <meta name="twitter:description" content="{{ page.tag_content | strip_html | truncate:200 }}">
       <meta name="twitter:image:src" content="{{ site.url }}{{ site.img }}/{{ site.square_icon }}">
 
       <!-- Open Graph data. -->
@@ -22,7 +22,7 @@
       <meta property="og:type" content="article">
       <meta property="og:url" content="{{ site.url }}{{ page.url }}">
       <meta property="og:image" content="{{ site.url }}{{ site.img }}/{{ site.square_icon }}"> 
-      <meta property="og:description" content="{{ page.content | strip_html | truncate:200 }}">
+      <meta property="og:description" content="{{ page.tag_content | strip_html | truncate:200 }}">
       <meta property="og:site_name" content="{{ site.name }} | {{ site.tagline }}">
       <meta property="article:section" content="{{ page.category }}">
       <meta property="article:tag" content="{{ page.tags }}" >

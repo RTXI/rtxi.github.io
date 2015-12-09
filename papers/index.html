@@ -2,6 +2,7 @@
 title: Papers
 layout: default
 modulus: 10
+tag_content: "If your use of RTXI leads to publication, please cite RTXI in your paper. We get our funding from the NIH, and citations will help when our grant renewal comes around. Cite: Lin et al. Real-time Experiment Interface for biological control applications. Conf Proc IEEE Eng Med Biol Soc (2010) vol. 1 pp. 4160-3."
 
 extra_js: "
    <script src='/assets/js/isotope.pkgd.min.js'></script>
@@ -13,9 +14,6 @@ extra_js: "
       var $container = $('#papergrid').isotope({
          itemSelector: '.item',
          layoutMode: 'masonry',
-/*
-         filter: 'rate'
-*/
 			filter: function() {
 				return qsRegex ? $(this).text().match( qsRegex ) : true;
 			}
@@ -89,7 +87,7 @@ extra_js: "
         class="btn-toolbar" style="display:inline-block">
 		<button type="button" class="btn btn-danger btn active all-papers" 
 				  data-filter="*" role="button" data-toggle="button" 
-				  aria-pressed="true" style="margin-bottom:5px">All
+				  aria-pressed="true" style="margin-top:5px">All
 		</button>
 		{% for post in site.categories.papers %} 
 			{% capture chunkflag %}{{ forloop.index | modulo:page.modulus }}{% endcapture %}
@@ -104,7 +102,7 @@ extra_js: "
 			{% elsif thisyear != lastyear  and  flag == "true" %}
 			<button type="button" class="btn btn-danger btn" data-toggle="button"
 					  data-filter=".chunk{{ chunkvar }}" role="button" 
-					  style="margin-bottom:5px">
+					  style="margin-top:5px">
 				{% if lastyear == startyear %}'{{ lastyear }}
 				{% else %}'{{ lastyear }}-{{startyear}}
 				{% endif %}
@@ -117,7 +115,7 @@ extra_js: "
 		{% endfor %}
 		<button type="button" class="btn btn-danger btn" role="button" 
 				  data-toggle="button" data-filter=".chunk{{ chunkvar}}" 
-				  style="margin-bottom:5px">
+				  style="margin-top:5px">
 			{% if lastyear == startyear %}'{{ lastyear }}
 			{% else %}'{{ lastyear }}-{{startyear}}
 			{% endif %}

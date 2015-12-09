@@ -1,6 +1,7 @@
 name: "RTXI"
 tagline: "The Real-time eXperiment Interface"
 description: "RTXI is a fast, open-source system for hard real-time, closed-loop data acquisition and stimulation for electrophysiology experiments."
+rtxi_version: 2.1
 
 url: "http://rtxi.org"
 author :
