@@ -1,7 +1,7 @@
 ---
 title: Stats
 layout: default
-tag_content: "Below are real-time benchmarks from our own machines. You can view the instructions for making here or on the <a href="/install">Install</a> page."
+tag_content: "Below are real-time benchmarks from our own machines. You can view the instructions for making here or on the Install page. Compare your performance with ours. We also encourage you to send us your benchmarks. That way, we can build a comprehensive list of what performance can be expected from what hardware."
 
 extra_css: "
 <style>
@@ -15,16 +15,15 @@ extra_css: "
 	<div class="row">
 		<div class="col-sm-8">
 			<p>Below are real-time benchmarks from our own machines. You can view the instructions for making here or on the <a href="/install">Install</a> page.</p>
+			<p>Compare your performance with ours. We also encourage you to send us your benchmarks. That way, we can build a comprehensive list of what performance can be expected from what hardware.</p>
 		</div>
 
 		<div class="col-sm-4">
-			<button type="button" data-toggle="modal" data-target="#benchmarking" class="btn btn-lg btn-danger center-block">
+			<button type="button" data-toggle="modal" data-target="#benchmarking" class="btn btn-danger center-block">
 				View Benchmarking<br> Instructions
 			</button>
 		</div>
 	</div>
-
-	<div>&nbsp;</div>
 
 	<div class="modal fade" id="benchmarking" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="modaltitle">
 		<div class="modal-dialog"><div class="modal-content">
@@ -43,20 +42,18 @@ extra_css: "
 		</div></div>
 	</div>
 
-	<p class="lead">Compare your performance with ours. We also encourage you to send us your benchmarks. That way, we can build a comprehensive list of what performance can be expected from what hardware.</p>
-
 	<h3 class="page-header">Machine 1</h3>
-	<a href="/assets/img/benchmarks/test_rt_plot_puffin.svg">
-		<img class="img-responsive" src="/assets/img/benchmarks/test_rt_plot_puffin.svg"></img>
+	<a href="{{ site.img }}/benchmarks/test_rt_plot_puffin.svg">
+		<img class="img-responsive" src="{{ site.img }}/benchmarks/test_rt_plot_puffin.svg"></img>
 	</a>
 
 	<h3 class="page-header">Machine 2</h3>
-	<a href="/assets/img/benchmarks/test_rt_plot_cockatiel.svg">
-		<img class="img-responsive" src="/assets/img/benchmarks/test_rt_plot_cockatiel.svg"></img>
+	<a href="{{ site.img }}/benchmarks/test_rt_plot_cockatiel.svg">
+		<img class="img-responsive" src="{{ site.img }}/benchmarks/test_rt_plot_cockatiel.svg"></img>
 	</a>
 <!--
-	<a href="/assets/img/benchmarks/performance_50kHz_cockatiel.png">
-		<img class="img-responsive" src="/assets/img/benchmarks/performance_50kHz_cockatiel.png"></img>
+	<a href="{{ site.img }}/benchmarks/performance_50kHz_cockatiel.png">
+		<img class="img-responsive" src="{{ site.img }}/benchmarks/performance_50kHz_cockatiel.png"></img>
 	</a>
 -->
 </div>
