@@ -8,31 +8,6 @@ tag_content: "There are three ways to install RTXI: Use our Ubuntu-based live CD
    <h2 class="page-header">Installing RTXI</h2>
 </div>
 
-<!--
-<div class="container"><div class="row">
-	<div class="lead col-sm-10">RTXI 2.0 (is nearing full release; there's just <a href="https://github.com/rtxi/rtxi/issues">some final bugs</a>. You're welcome to try it, but if you need something that immediately works, use RTXI 1.4. 
-	</div>
-	<div class="col-sm-2" style="text-align: center">
-		<div class="row">
-			<div class="col-xs-12">
-				<a download href="https://dl.dropboxusercontent.com/u/49869589/ubuntu-10.04-desktop-i386-rtxi-0.iso">
-					<button type="button" class="btn btn-danger" style="margin-top: 10px">
-						<span class="glyphicon glyphicon-cloud-download"></span> Live CD
-					</button>
-				</a>
-			</div>
-			<div class="col-xs-12">
-				<a href="/install/legacy/">
-					<button type="button" class="btn btn-danger" style="margin-top: 5px">
-						<span class="glyphicon glyphicon-cloud-download"></span> Sources
-					</button>
-				</a>
-			</div>
-		</div>
-	</div>
-</div><hr /></div>
--->
-
 <div class="container">
    <p>There are three ways to install RTXI:</p>
    <dl class="dl-horizontal">
@@ -66,7 +41,7 @@ tag_content: "There are three ways to install RTXI: Use our Ubuntu-based live CD
 			
 			<!-- 1. Download the live image -->
 			<h4 class="lead media-heading">
-				{% increment standardcount %}. Download the live RTXI 2.0 image.
+				{% increment standardcount %}. Download the live RTXI {{ site.rtxi_version }} image.
 			</h4>
 
 			<p>We currently have Ubuntu live CDs. You can use them to test RTXI without touching your hard drive, format your hard drive, and install RTXI alongside existing operating systems.  
@@ -76,14 +51,14 @@ tag_content: "There are three ways to install RTXI: Use our Ubuntu-based live CD
 				<div class="col-xs-12 col-sm-3 col-lg-2 col-sm-offset-3 col-lg-offset-4" style="text-align: center">
 					<a href="http://relic.rtxi.org/iso/rtxi-2.0-ubuntu-v7-amd64.iso" download>
 						<button type="button" class="btn btn-danger" style="margin-bottom: 5px">
-							<span class="glyphicon glyphicon-cloud-download"></span> RTXI 2.0	64-bit
+							<span class="glyphicon glyphicon-cloud-download"></span> RTXI {{ site.rtxi_version }} 64-bit
 						</button>
 					</a>
 				</div>
 				<div class="col-xs-12 col-sm-3 col-lg-2" style="text-align: center">
                <a href="http://relic.rtxi.org/iso/rtxi-2.0-ubuntu-v7-i386.iso" download>
 						<button type="button" class="btn btn-danger" style="margin-bottom: 5px">
-							<span class="glyphicon glyphicon-cloud-download"></span> RTXI 2.0	32-bit
+							<span class="glyphicon glyphicon-cloud-download"></span> RTXI {{ site.rtxi_version }} 32-bit
 						</button>
 					</a>
 				</div>
@@ -207,14 +182,14 @@ tag_content: "There are three ways to install RTXI: Use our Ubuntu-based live CD
 			</p>
 			<div class="row">
 				<div class="col-xs-12 col-sm-4 col-sm-offset-2" style="text-align: center">
-					<a href="http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04.2/release/ubuntu-gnome-14.04.2-desktop-amd64.iso" download>
+					<a href="http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04.3/release/ubuntu-gnome-14.04.3-desktop-amd64.iso" download>
 						<button type="button" class="btn btn-danger" style="margin-bottom: 5px">
 							<span class="glyphicon glyphicon-cloud-download"></span> Ubuntu 14.04 64-bit
 						</button>
 					</a>
 				</div>
 				<div class="col-xs-12 col-sm-4" style="text-align: center">
-					<a href="http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04.2/release/ubuntu-gnome-14.04.2-desktop-i386.iso" download>
+					<a href="http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04.3/release/ubuntu-gnome-14.04.3-desktop-i386.iso" download>
 						<button type="button" class="btn btn-danger" style="margin-bottom: 5px">
 							<span class="glyphicon glyphicon-cloud-download"></span> Ubuntu 14.04 32-bit
 						</button>
@@ -264,7 +239,7 @@ tag_content: "There are three ways to install RTXI: Use our Ubuntu-based live CD
 			{% highlight bash %}
 $ sudo apt-get install git
 			{% endhighlight %}
-			<p>Once git is installed, use it to download the RTXI source code and access the source code for v2.0. 
+			<p>Once git is installed, use it to download the RTXI source code and access the source code for v{{ site.rtxi_version }}. 
 			</p>
 			{% highlight bash %}
 $ git clone https://github.com/rtxi/rtxi
@@ -426,22 +401,22 @@ $ cd scripts/
 $ ./install_dependencies.sh
 			{% endhighlight %}
 
-			<!-- 3. Install RTXI 2.0 -->
+			<!-- 3. Install RTXI -->
 			<div>&nbsp;</div>
 			<h4 class="lead media-heading">
-				{% increment upgradecount %}. Install RTXI 2.0.
+				{% increment upgradecount %}. Install RTXI {{ site.rtxi_version }}.
 			</h4>
 			<p>Run the installation script, also in the <code>scripts/</code> directory.
 			</p>
 			{% highlight bash %}
 $ ./install_rtxi.sh
 			{% endhighlight %}
-			<p>You will be prompted to select a configuration: 1 for Xenomai (real-time) or 2 for POSIX (non-real-time). Soon, RTXI will be compiled and installed. When finished, you can run v2.0 with:
+			<p>You will be prompted to select a configuration: 1 for Xenomai (real-time) or 2 for POSIX (non-real-time). Soon, RTXI will be compiled and installed. When finished, you can run v{{ site.rtxi_version }} with:
 			</p>
 			{% highlight bash %}
 $ sudo rtxi
 			{% endhighlight %}
-			<p><b>Note:</b> This will not work if you are running an RTAI-patched kernel. To compile RTXI v2.0 for RTAI kernels, see our relevant information on the FAQs section of the <a href="/docs/">documentation page</a> or the <a href="/docs/tutorials/2014/12/04/manually-configuring-rtxi/">full documentation for configuration options</a>.
+			<p><b>Note:</b> This will not work if you are running an RTAI-patched kernel. To compile RTXI v{{ site.rtxi_version }} for RTAI kernels, see our relevant information on the FAQs section of the <a href="/docs/">documentation page</a> or the <a href="/docs/tutorials/2014/12/04/manually-configuring-rtxi/">full documentation for configuration options</a>.
 			</p>
 
 			<!-- 4. (Re)install modules -->
@@ -449,9 +424,9 @@ $ sudo rtxi
 			<h4 class="lead media-heading">
 				{% increment upgradecount %}. Install modules.
 			</h4>
-			<p>All available modules in v1.4 came packaged with RTXI. For v2.0, we have split modules into separate GitHub repositories so that everyone only installs the modules they need. Customization also is on a per-module basis. When all modules are built into RTXI, customizing them means forking the entirety of RTXI itself. 
+			<p>All available modules in v1.4 came packaged with RTXI. For v2.0 onwards, we have split modules into separate GitHub repositories so that everyone only installs the modules they need. Customization also is on a per-module basis. When all modules are built into RTXI, customizing them means forking the entirety of RTXI itself. 
 			</p>
-			<p>What this means for you is that at this point, you've installed RTXI v2.0, but your modules are still configured for v1.4. You will have to update them manually. Go to our <a href="/modules/">modules page</a> to find all the modules already upgraded for v2.0. If you're using your own custom modules, then they will need to be updated to use Qt4 instead of Qt3 and take into account some small API changes. Check out the <a href="http://qt-project.org/doc/qt-4.8/porting4.html">Qt documentation for porting to Qt4</a>.
+			<p>What this means for you is that at this point, you've installed RTXI v{{ site.rtxi_version }}, but your modules are still configured for v1.4. You will have to update them manually. Go to our <a href="/modules/">modules page</a> to find all the modules already upgraded for v{{ site.rtxi_version }}. If you're using your own custom modules, then they will need to be updated to use Qt4 instead of Qt3 and take into account some small API changes. Check out the <a href="http://qt-project.org/doc/qt-4.8/porting4.html">Qt documentation for porting to Qt4</a>.
 			</p>
 
 		</div></div>
