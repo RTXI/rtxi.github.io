@@ -1,6 +1,4 @@
-\chapter{Writing Custom User Modules}
-\label{custommodules}
-\index{modules, custom}
+<h4 class="page-header">Writing Custom User Modules</h4>
 
 \section{Forking Existing Modules}
 The easiest method of developing modules is to adapt existing ones for your own purposes. Users can fork modules on our GitHub repository (https://github.com/RTXI) within GitHub or only on their own machines.\seealso{Chapter \ref{rtximoduleslist}\\ \texttt{RTXI Modules}}\ Descriptions of existing modules are available in the Utilities section. 
@@ -51,7 +49,7 @@ The \texttt{PLUGIN\_NAME} is the name of the shared object library (*.so) file w
 
 \subsection{Define model parameters, inputs, and outputs}
 
-\texttt{DefaultGUIModel} uses a special workspace variable \texttt{vars[]} to define quantities in the module. The declaration of these types follows a simple syntax. Every \texttt{DefaultGUIModel} \attention module must have a workspace variable of type \texttt{variable\_t} as shown in the \texttt{vars[]} of the Neuron module. 
+\texttt{DefaultGUIModel} uses a special workspace variable \texttt{vars[]} to define quantities in the module. The declaration of these types follows a simple syntax. Every \texttt{DefaultGUIModel} module must have a workspace variable of type \texttt{variable\_t} as shown in the \texttt{vars[]} of the Neuron module. 
 
 \begin{maxipage}
 \begin{example}
@@ -81,11 +79,11 @@ Declaring an \texttt{INPUT} creates a slot for your module to acquire data from 
 
 \texttt{STATE} variables and \texttt{PARAMETER}s are numeric datatypes. State variables are internal model variables that cannot be modified by the user through the GUI. Their values may be constant or they may change over time. Use a \texttt{STATE} to track the values of intermediate or computed quantities that can then be saved via the Data Recorder. A \texttt{PARAMETER} will accept user input through the GUI and can be modified on-the-fly during real-time execution. State variables and parameters appear in the GUI in the order that they are declared. In the example code, this mechanism is used to monitor the ion channel's activation variables, which are dependent on membrane voltage and integrated in real-time. A \texttt{COMMENT} is similar to a \texttt{PARAMETER}, but is used to store text strings such as information about the experiment that you would like to log. These are saved to the Data Recorder just like parameters, but should not be modified in real-time during model execution.
 
-\attention If your parameter name contains a forward slash ``/", its values will not be automatically saved by the Data Recorder. This is a limitation of the HDF5 file format, which uses a directory-like syntax for specifying the data structure.
+If your parameter name contains a forward slash ``/", its values will not be automatically saved by the Data Recorder. This is a limitation of the HDF5 file format, which uses a directory-like syntax for specifying the data structure.
 
 \subsection{Initialize the model}
 
-The next section is the model constructor. If you changed the class name, this would read ``\texttt{YOURMODEL::YOURMODEL}". You can set the text that will appear in the title bar of your module window using the first argument of the constructor method. \attention The next required line is a call to the \texttt{createGUI()} function which generates the GUI shown in Figure \ref{NeuronGUI}. In this section, you should initialize all the variables and parameter values and make sure that the GUI reflects the actual values that are being used. In this example, much of this code is performed by the \seealso{Chapter \ref{DefaultGUIModel update}\\\texttt{update()}} \texttt{update()} function under the \texttt{INIT} flag. In other modules downloadable from our website, you will find a separate \texttt{initParameters()} function that handles all variable initializations. 
+The next section is the model constructor. If you changed the class name, this would read ``\texttt{YOURMODEL::YOURMODEL}". You can set the text that will appear in the title bar of your module window using the first argument of the constructor method. The next required line is a call to the \texttt{createGUI()} function which generates the GUI shown in Figure \ref{NeuronGUI}. In this section, you should initialize all the variables and parameter values and make sure that the GUI reflects the actual values that are being used. In this example, much of this code is performed by the \seealso{Chapter \ref{DefaultGUIModel update}\\\texttt{update()}} \texttt{update()} function under the \texttt{INIT} flag. In other modules downloadable from our website, you will find a separate \texttt{initParameters()} function that handles all variable initializations. 
 
 It is convenient to perform unit conversions when calling these functions so that the GUI accepts input in more user-friendly units. Finally, you should call \texttt{refresh()} to update the GUI to reflect your changes. The GUI textboxes will be initialized to the current values of the variables and \texttt{STATE} variables will be updated periodically during model execution. 
 \begin{maxipage}
@@ -111,109 +109,127 @@ RT::System::getInstance()->getPeriod();
 This returns the period in nanoseconds. 
 
 
-\subsection{The execute() loop}
-\label{DefaultGUIModel execute}
-The \texttt{execute()} function will run to completion on every time step. The computations performed here must complete within the real-time period that you have set in the \seealso{Chapter \ref{system control panel} \\System Control Panel}System Control panel to maintain system stability. The efficiency of your code here will affect the performance of your system. You should use private variables defined in the class header rather than creating variables inside the function on every time step. If you absolutely must create a variable inside \texttt{execute()}, use a static call so that the same memory block is used each time. \attention You should be wary of using \texttt{do-while} and \texttt{for} structures if you are uncertain how long these loops will take to complete. Within the execute function, you must also be careful to bound the output signal and perform your own error checking to maintain the stability of the closed-loop. Notice that at the end, we have set \texttt{output(0)} to update the membrane voltage signal emitted by this module. RTXI's signals-and-slots architecture allows you to \attention connect any signal to any slot. There is no error checking to ensure that the connection is valid, eg. that quantities with matching units of measurement are connected.
+The \texttt{execute()} function will run to completion on every time step. The computations performed here must complete within the real-time period that you have set in the \seealso{Chapter \ref{system control panel} \\System Control Panel}System Control panel to maintain system stability. The efficiency of your code here will affect the performance of your system. You should use private variables defined in the class header rather than creating variables inside the function on every time step. If you absolutely must create a variable inside \texttt{execute()}, use a static call so that the same memory block is used each time. You should be wary of using \texttt{do-while} and \texttt{for} structures if you are uncertain how long these loops will take to complete. Within the execute function, you must also be careful to bound the output signal and perform your own error checking to maintain the stability of the closed-loop. Notice that at the end, we have set \texttt{output(0)} to update the membrane voltage signal emitted by this module. RTXI's signals-and-slots architecture allows you to connect any signal to any slot. There is no error checking to ensure that the connection is valid, eg. that quantities with matching units of measurement are connected.
 
-%\bigskip\hrule
-\begin{maxipage}
-\begin{example}
-void Neuron::execute(void) $\{$\\
-\hspace{.5cm}for (int i = 0; i < steps; ++i)\\
-\hspace{1cm}solve(period / steps, y); // integrate equations\\
-\hspace{.5cm}output(0) = V * 1e-3; // convert to mV\\
-$\}$\\
-\end{example}
-\end{maxipage}
-%\bigskip
-%\hrule
+{% highlight cpp %}
+void Neuron::execute(void) {
+	for (int i = 0; i < steps; ++i) {
+		solve(period / steps, y); // integrate equations
+	}
+	output(0) = V * 1e-3; // convert to mV
+}
+{% endhighlight %}
 
-\subsection{The update() function}
-\label{DefaultGUIModel update}
 
-The \texttt{update{}} function implemented in \texttt{DefaultGUIModel} that is designed to handle function calls depending on the state of the GUI. It provides several flags to help organize code and handle events in modules. 
-\begin{itemize}
-\item \texttt{INIT}: non-event related but useful for placing code to initialize the model
-\item \texttt{MODIFY}: called when the "Modify" button is pressed in the GUI
-\item \texttt{PAUSE}: called when the model is paused
-\item \texttt{UNPAUSE}: called when the model is unpaused
-\label{pause flag}\item \texttt{PERIOD}: called when the real-time period of the system is changed
-\end{itemize}
+<h5 class="page-header">The update() function</h5>
 
-Under the \texttt{INIT} flag, you should initialize any variables or GUI settings that were not already addressed in the constructor. To assign a variable as a \texttt{STATE} variable in the GUI, use:
+<p>
+The <code>update()</code> function implemented in <code>DefaultGUIModel</code> that is designed to handle function calls depending on the state of the GUI. It provides several flags to help organize code and handle events in modules. 
+</p>
 
-\begin{example}\index{setState()}
-setState("YOUR\_GUI\_LABEL", YOUR\_VARIABLE);
-\end{example}
+<dl class="dl-horizontal">
+	<dt><code>INIT</code></dt> 
+		<dd>non-event related but useful for placing code to initialize the model</dd>
+	<dt><code>MODIFY</code></dt> 
+		<dd>called when the "Modify" button is pressed in the GUI</dd>
+	<dt><code>PAUSE</code></dt> 
+		<dd>called when the model is paused</dd>
+	<dt><code>UNPAUSE</code></dt> 
+		<dd>called when the model is unpaused</dd>
+	<dt><code>PERIOD</code></dt> 
+		<dd>called when the real-time period of the system is changed</dd>
+</dl>
 
-\attention \texttt{YOUR\_GUI\_LABEL} must exactly match the label that you set in \texttt{variable\_t vars$\left[\right]$} above. 
+<p>
+Under the <code>INIT</code> flag, you should initialize any variables or GUI settings that were not already addressed in the constructor. To assign a variable as a <code>STATE</code> variable in the GUI, use:
+</p>
 
-Similarly, you initialize the GUI for a \texttt{PARAMETER} with:
-\begin{example}\index{setParameter()}
-setParameter("YOUR\_GUI\_LABEL", YOUR\_VARIABLE);
-\end{example}
+{% highlight cpp %}
+setState("YOUR_GUI_LABEL", YOUR_VARIABLE);
+{% endhighlight %}
 
+<p>
+<code>YOUR_GUI_LABEL</code> must exactly match the label that you set in <code>variable_t vars[]</code> above. 
+</p>
+
+<p>
+Similarly, you initialize the GUI for a <code>PARAMETER</code> with:
+</p>
+
+{% highlight cpp %}
+setParameter("YOUR_GUI_LABEL", YOUR_VARIABLE);
+{% endhighlight %}
+</p>
+
+<p>
 It is often the case that you may want to display units in the GUI with more convenient physiological units of measurement, eg. mV instead of V. In that case, you can call the function as follows:
-\begin{example}\index{setParameter()}
-setParameter("E\_Na", E\_Na*1000); // convert to mV\\
-\end{example}
+</p>
 
-\attention Always comment your units. Otherwise, your code will not be readily readable by other or even yourself later on. 
+{% highlight cpp %}
+setParameter("E_Na", E_Na*1000); // convert to mV
+{% endhighlight %}
 
-Under the \texttt{MODIFY} flag, you should grab all the values in the GUI textboxes and update the values of the parameters as follows:
-\begin{example}
-YOUR\_VARIABLE = getParameter("YOUR\_GUI\_LABEL").toDouble();
-\end{example}
+<p>
+Always comment your units. Otherwise, your code will not be readily readable by other or even yourself later on. 
+</p>
 
-If you do any unit conversions with \texttt{setParameter()}, make sure you do the inverse with \texttt{getParameter()}. You may also want to add code to the \texttt{PAUSE} flag to set the output of your module to zero, e.g. the amplitude of an injected current. \attention In some cases, you will want to reset certain internal variables when you stop or start the model eg. a counter that keeps track of your model execution time. Under the \texttt{PERIOD} flag, you will always want to update your model with the new real-time period. 
+<p>
+Under the <code>MODIFY</code> flag, you should grab all the values in the GUI textboxes and update the values of the parameters as follows:
+</p>
 
-\begin{maxipage}
-\begin{example}
-void Neuron::update(DefaultGUIModel::update\_flags\_t flag) $\{$\\
-\hspace{.5cm}switch (flag) $\{$\\
-\hspace{1cm}case INIT:\\
-\hspace{1.5cm}setState("m", m);\\
-\hspace{1.5cm}setState("h", h);\\
-\hspace{1.5cm}setState("n", n);\\
-\hspace{1.5cm}setParameter("V0", V0);\\
-\hspace{1.5cm}setParameter("Cm", Cm);\\
-\hspace{1.5cm}setParameter("G\_Na\_max", G\_Na\_max);\\
-\hspace{1.5cm}setParameter("E\_Na", E\_Na);\\
-\hspace{1.5cm}setParameter("G\_K\_max", G\_K\_max);\\
-\hspace{1.5cm}setParameter("E\_K", E\_K);\\
-\hspace{1.5cm}setParameter("G\_L", G\_L);\\
-\hspace{1.5cm}setParameter("E\_L", E\_L);\\
-\hspace{1.5cm}setParameter("Iapp\_offset", Iapp\_offset);\\
-\hspace{1.5cm}setParameter("rate", rate);\\
-\hspace{1.5cm}break;\\
-\hspace{1cm}case MODIFY:\\
-\hspace{1.5cm}V0 = getParameter("V0").toDouble();\\
-\hspace{1.5cm}Cm = getParameter("Cm").toDouble();\\
-\hspace{1.5cm}G\_Na\_max = getParameter("G\_Na\_max").toDouble();\\
-\hspace{1.5cm}E\_Na = getParameter("E\_Na").toDouble();\\
-\hspace{1.5cm}G\_K\_max = getParameter("G\_K\_max").toDouble();\\
-\hspace{1.5cm}E\_K = getParameter("E\_K").toDouble();\\
-\hspace{1.5cm}G\_L = getParameter("G\_L").toDouble();\\
-\hspace{1.5cm}E\_L = getParameter("E\_L").toDouble();\\
-\hspace{1.5cm}Iapp\_offset = getParameter("Iapp\_offset").toDouble();\\
-\hspace{1.5cm}rate = getParameter("rate").toDouble();\\
-\hspace{1.5cm}steps = static\_cast (ceil(period * rate / 1000.0));\\
-\hspace{1.5cm}V = V0;\\
-\hspace{1.5cm}m = m\_inf(V0);\\
-\hspace{1.5cm}h = h\_inf(V0);\\
-\hspace{1.5cm}n = n\_inf(V0);\\
-\hspace{1.5cm}break;\\
-\hspace{1cm}case PAUSE:\\
-\hspace{1.5cm}break;\\
-\hspace{1cm}case UNPAUSE:\\
-\hspace{1.5cm}break;\\
-\hspace{1cm}case PERIOD:\\
-\hspace{1.5cm}period = RT::System::getInstance()->getPeriod() * 1e-6; // ms\\
-\hspace{1.5cm}steps = static\_cast (ceil(period * rate / 1000.0));\\
-\hspace{1.5cm}break;\\
-\hspace{1cm}default:\\
-\hspace{1.5cm}break;\\
-\hspace{.5cm}$\}$\\
-$\}$
-\end{example}
-\end{maxipage}
+{% highlight cpp %}
+YOUR_VARIABLE = getParameter("YOUR_GUI_LABEL").toDouble();
+{% endhighlight %}
+
+<p>
+If you do any unit conversions with <code>setParameter()</code>, make sure you do the inverse with <code>getParameter()</code>. You may also want to add code to the <code>PAUSE</code> flag to set the output of your module to zero, e.g. the amplitude of an injected current. In some cases, you will want to reset certain internal variables when you stop or start the model eg. a counter that keeps track of your model execution time. Under the <code>PERIOD</code> flag, you will always want to update your model with the new real-time period. 
+</p>
+
+{% highlight cpp %}
+void Neuron::update(DefaultGUIModel::update_flags_t flag) {
+	switch (flag) {
+		case INIT:
+		setState("m", m);
+		setState("h", h);
+		setState("n", n);
+		setParameter("V0", V0);
+		setParameter("Cm", Cm);
+		setParameter("G_Na_max", G_Na_max);
+		setParameter("E_Na", E_Na);
+		setParameter("G_K_max", G_K_max);
+		setParameter("E_K", E_K);
+		setParameter("G_L", G_L);
+		setParameter("E_L", E_L);
+		setParameter("Iapp_offset", Iapp_offset);
+		setParameter("rate", rate);
+		break;
+	case MODIFY:
+		V0 = getParameter("V0").toDouble();
+		Cm = getParameter("Cm").toDouble();
+		G_Na_max = getParameter("G_Na_max").toDouble();
+		E_Na = getParameter("E_Na").toDouble();
+		G_K_max = getParameter("G_K_max").toDouble();
+		E_K = getParameter("E_K").toDouble();
+		G_L = getParameter("G_L").toDouble();
+		E_L = getParameter("E_L").toDouble();
+		Iapp_offset = getParameter("Iapp_offset").toDouble();
+		rate = getParameter("rate").toDouble();
+		steps = static_cast (ceil(period * rate / 1000.0));
+		V = V0;
+		m = m_inf(V0);
+		h = h_inf(V0);
+		n = n_inf(V0);
+		break;
+	case PAUSE:
+		break;
+	case UNPAUSE:
+		break;
+	case PERIOD:
+		period = RT::System::getInstance()->getPeriod() * 1e-6; // ms
+		steps = static_cast (ceil(period * rate / 1000.0));
+		break;
+	default:
+		break;
+		}
+}
+{% endhighlight %}
