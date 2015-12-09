@@ -38,7 +38,20 @@ module.exports = function(grunt) {
             less: 'bower_components/font-awesome/less',
             css: 'bower_components/font-awesome/css',
             fonts: 'bower_components/font-awesome/fonts'
-         }
+         },
+			datatables: {
+				js: "bower_components/datatables.net/js"
+			},
+			datatables_bs: {
+				js: "bower_components/datatables.net-bs/js",
+				css: "bower_components/datatables.net-bs/css"
+			},
+			datatables_responsive: {
+				js: "bower_components/datatables.net-responsive/js"
+			},
+			datatables_responsive_bs: {
+				css: "bower_components/datatables.net-responsive-bs/css"
+			}
       },
 
 		/*
@@ -157,6 +170,36 @@ module.exports = function(grunt) {
                   src: '*.min.js',
                   dest: '<%= paths.assets.js %>',
                   expand: true
+               },
+               {
+                  cwd: '<%= paths.datatables.js %>/',
+                  src: 'jquery.dataTables.min.js',
+                  dest: '<%= paths.assets.js %>/',
+                  expand: true
+               },
+               {
+                  cwd: '<%= paths.datatables_bs.js %>/',
+                  src: 'dataTables.bootstrap.min.js',
+                  dest: '<%= paths.assets.js %>/',
+                  expand: true
+               },
+               {
+                  cwd: '<%= paths.datatables_bs.css %>/',
+                  src: 'dataTables.bootstrap.min.css',
+                  dest: '<%= paths.assets.css %>/',
+                  expand: true
+               },
+               {
+                  cwd: '<%= paths.datatables_responsive.js %>/',
+                  src: 'dataTables.responsive.min.js',
+                  dest: '<%= paths.assets.js %>/',
+                  expand: true
+               },
+               {
+                  cwd: '<%= paths.datatables_responsive_bs.css %>/',
+                  src: 'responsive.bootstrap.min.css',
+                  dest: '<%= paths.assets.css %>/',
+                  expand: true
                }
             ]
          }
@@ -241,5 +284,5 @@ module.exports = function(grunt) {
    grunt.registerTask('default', ['shell:build', 'connect', 'watch']);
    grunt.registerTask('init', ['shell:init','copy','less']);
    grunt.registerTask('update', ['shell:update','copy','less']);
-   grunt.registerTask('deploy', ['htmlmin', 'buildcontrol:master'])
+   grunt.registerTask('deploy', ['htmlmin', 'buildcontrol:master']);
 };
