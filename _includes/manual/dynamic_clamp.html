@@ -1,37 +1,47 @@
-<h4 class="page-header">Introduction to Dynamic Clamp</h4
+<h4 class="page-header">Introduction to Dynamic Clamp</h4>
 <p>
 Traditionally, the properties of electrically excitable cells are assessed using current clamp and voltage clamp electrophysiology protocols. In <b>current clamp</b>, an electrical current waveform is specified and applied to the cell through a microelectrode while the transmembrane potential is recorded. In <b>voltage clamp</b>, a desired voltage waveform is specified and analog circuitry is used to determine and inject a current that is necessary to maintain, or clamp, the membrane potential at the specified values. The <b>dynamic clamp</b> allows the insertion of artificial membrane conductances, such as ion channels, by injecting current that is a function of the cell's membrane potential. The injected current is computed by computer software or analog circuitry based on the equivalent circuit model of an excitable cell (Fig. \ref{fig:circuit}). The artificial conductance is effectively in parallel with other membrane processes, each of which contributes to the total transmembrane current.  
 </p>
 
-<p>
-\begin{figure}
-\begin{center}
-\includegraphics[width=4.5in]{dclampcircuit.pdf}
-\caption[Equivalent circuit model of an excitable cell]{Equivalent circuit model of an excitable cell where $V_m$ represents the transmembrane potential, $C_m$ represents the membrane capacitance, and each conductance is defined by a reversal potential $E_{i}$ and a conductance $g_{i}$. In this model, the voltage-dependent sodium and potassium ion channels are depicted as variable resistors where $g_{i}=g_{i}(V_{m})$ . The reversal potential (or equilibrium potential) of an ion is the value of transmembrane voltage at which diffusive and electrical forces counterbalance, so that there is no net ion flow across the membrane. The reversal potential is represented as a battery since the potential difference $V_{\textrm{m}}-E_{i}$ gives the driving force across the membrane for that ionic current.}
-\label{fig:circuit}
-\end{center}
-\end{figure}
-</p>
+<figure class="figure">
+	<img src="{{ site.img }}/manual/dclampcircuit.svg" class="figure-img img-fluid">
+	<figcaption class="figure-caption">Equivalent circuit model of an excitable cell where <em>V<sub>m</sub></em> represents the transmembrane potential, <em>C<sub>m</sub></em> represents the membrane capacitance, and each conductance is defined by a reversal potential <em>E<sub>i</sub></em> and a conductance <em>g<sub>i</sub></em>. In this model, the voltage-dependent sodium and potassium ion channels are depicted as variable resistors where <em>g<sub>i</sub></em>=<em>g<sub>i</sub></em>(<em>V<sub>m</sub>)</em> . The reversal potential (or equilibrium potential) of an ion is the value of transmembrane voltage at which diffusive and electrical forces counterbalance, so that there is no net ion flow across the membrane. The reversal potential is represented as a battery since the potential difference <em>V<sub>m</sub></em>-<em>E<sub>i</sub></em> gives the driving force across the membrane for that ionic current.
+	</figcaption>
+</figure>
 
 <p>
-The total transmembrane current is related to changes in the membrane potential, $V_{m}$, through the following equation: \index{neuron model}
-\begin{eqnarray}
-C_{m} \frac{dV_{m}}{dt} =-\Sigma I_{i}
-\end{eqnarray}
-where $C_{m}$ is the membrane capacitance. Any conductance that can be described mathematically can be applied to a neuron using the dynamic clamp. The current passing through an ion channel, for example, is often described by Ohm's law using the following conductance-based equation:  
-\begin{eqnarray}\index{ion channel model}
-I_{i} & = & g_{i}(V_{m})(V_{m}-E_{i}) \\
-g_{i}(V_{m}) & = & \bar{g}_{i}m^{\textrm{p}}h^{\textrm{q}} 
-\end{eqnarray}
-where $\bar{g}$ is the maximal conductance, and $m$ and $h$ are voltage-dependent activation and inactivation gating variables ($p$ and $q$ are integers) that describe the kinetic activation of the channel. Gating variables have values between 0 and 1 to scale the channel conductance and are typically described by a first order differential equation:  
-\begin{eqnarray}
-\frac{dx}{dt} & = & \frac{x_{\infty}(V_{m})-x}{\tau (V_{m})} 
-\end{eqnarray}
+The total transmembrane current is related to changes in the membrane potential, <em>V<sub>m</sub></em>, through the following equation:
+</p>
+
+<p class="lead"><center>
+	<em>C<sub>m</sub></em> <em>dV<sub>m</sub></em>/<em>dt</em> = -&Sigma; <em>I<sub>i</sub></em>
+</center></p>
+
+<p>
+where <em>C<sub>m</sub></em> is the membrane capacitance. Any conductance that can be described mathematically can be applied to a neuron using the dynamic clamp. The current passing through an ion channel, for example, is often described by Ohm's law using the following conductance-based equation:  
+</p>
+
+<p class="lead"><center>
+	<em>I<sub>i</sub></em> = <em>g<sub>i</sub></em> <em>V<sub>m</sub></em>(<em>V<sub>m</sub></em>-<em>E<sub>i</sub></em>) 
+	<br>
+	<br>
+	<em>g<sub>i</sub></em><em>V<sub>m</sub></em> = <em style="text-decoration:overline">g<sub>i</sub></em> <em>m<sup>p<sub>h<sup>q</sup></sub></sup></em>
+</center></p>
+
+<p>
+where <em style="text-decoration:overline">g</em> is the maximal conductance, and <em>m</em> and <em/>h</em> are voltage-dependent activation and inactivation gating variables (<em>p</em> and <em>q</em> are integers) that describe the kinetic activation of the channel. Gating variables have values between 0 and 1 to scale the channel conductance and are typically described by a first order differential equation:  
+</p>
+
+<p class="lead"><center>
+<em><sup>dx</sup>/<sub>dt</sub></em> = <em><sup>x<sub>&infin;</sub>V<sub>m</sub>-x</sup> / <sub>&tau;V<sub>m</sub></sub></em>
+</center></p>
+
+<p>
 The membrane potential is re-sampled and the equations are re-evaluated on every computational cycle of the dynamic clamp system. As such, the dynamic clamp is also sometimes termed <b>conductance clamp</b> or <b>conductance injection</b>.  
 </p>
 
 <p>
-While the dynamic clamp was first demonstrated in cardiac electrophysiology to electrically couple embryonic chick myocytes \cite{Wilders:2006p930}, the technique was independently introduced \cite{Robinson:1993p1193,Sharp:1993p983} and is now more prevalent in neural electrophysiology \cite{Economo:2010p1795,Prinz:2004p985,Goaillard:2006p1175}. Applications of this technique include the insertion of non-native ion channels (a virtual ``knock-in''), subtraction of native ion channels (a virtual ``knock-out"), and simulation of synapses and electrical gap junctions to create small networks of biological and/or simulated neurons. By varying the parameter values of a model channel or synapse, experiments can be conducted to determine how these properties shape membrane dynamics and neuron activity. These approaches have made the dynamic clamp a valuable tool for studying the intrinsic properties of single neurons and the behavior of small neural networks.  
+While the dynamic clamp was first demonstrated in cardiac electrophysiology to <a href="{% post_url /papers/2006-07-27-dynamic-clamp-powerful-tool-in-cardiac-electrophysiology %}">electrically couple embryonic chick myocytes</a>, the technique was independently introduced (see <a href="http://dx.doi.org/10.1016/0165-0270(93)90119-C">Robinson, 1993</a> and <a href="http://jn.physiology.org/content/69/3/992">Sharp, 1993</a>) and is now more prevalent in neural electrophysiology \cite{Economo:2010p1795,Prinz:2004p985,Goaillard:2006p1175}. Applications of this technique include the insertion of non-native ion channels (a virtual ``knock-in''), subtraction of native ion channels (a virtual ``knock-out"), and simulation of synapses and electrical gap junctions to create small networks of biological and/or simulated neurons. By varying the parameter values of a model channel or synapse, experiments can be conducted to determine how these properties shape membrane dynamics and neuron activity. These approaches have made the dynamic clamp a valuable tool for studying the intrinsic properties of single neurons and the behavior of small neural networks.  
 
 <p>
 Dynamic clamp studies have also made important contributions to our understanding of neuronal dynamics under in vivo-like conditions in which neurons receive a constant barrage of synaptic inputs which can easily reach thousands of events per second. Artificial synaptic input can be constructed from pre-recorded activity of presynaptic neurons but is more commonly based on statistical descriptions of noisy conductance waveforms. This high conductance state has been shown to enhance the cell's responsiveness to small inputs, also known as its gain \cite{Chance:2002p1075,Destexhe:2003p1021,Sceniak:2010p1258}, and can change the signal integration of synaptic input, creating distinct modes of firing patterns \cite{Wolfart:2005p1138,Steriade:2001p4667,Rudolph:2003p4555,Destexhe:2001p1044}. The statistics of current-based versus conductance-based input, such as correlations and relative balance between excitation and inhibition, are translated differently into output statistics such as the membrane potential distribution, the distribution of interspike intervals (ISIs), the coefficient of variation (CV), and the mean and variance of the neuron's output firing rate \cite{Tiesinga:2000p1134,Rudolph:2003p4554,Kumar:2008p4586,Salinas:2000p4826}. Together, these factors result in a dynamical behavior of the neuron that is usually quite different from the intrinsic dynamics of the voltage-gated currents.  
@@ -42,7 +52,7 @@ Results from dynamic clamp experiments must be carefully interpreted due to seve
 </p>
 
 <p>
-Compared to other real-time closed-loop experimental protocols, the dynamic clamp has perhaps the most stringent performance requirements. These limitations involve numerical, algorithmic, and hardware platform-specific issues. Dynamic clamp performance depends on how accurately the model is solved, measurement error in sampling the voltage, and the sampling rate of the system. \index{sampling rate}The sampling rate determines how much time is in a given computational cycle for various operations to be performed, and the duration of the cycle restricts the types of numerical methods that may be used to integrate the gating variables. Thus, the computational performance of dynamic clamp suffers from a trade-off between the speed of computation and numerical accuracy. Dynamic clamp sampling rates are currently chosen based on the limits of the hardware platform being used and the temporal dynamics being simulated. While it is possible to compute the time step necessary for the Euler and exponential Euler methods to achieve a desired one-step integration accuracy for a known voltage measurement error, few studies employ this technique \cite{Butera:2004p1073}. In simulations of dynamic clamp, Euler integration was insufficient to model fast sodium Na$_{v}$ channels at sampling rates under 30 kHz and nearly identical integration results for three different deterministic integration methods was only achieved at rates $\geq$50 kHz \cite{Milescu:2008p1216}. Standard performance benchmarks are needed for dynamic clamp to justify the sampling rates that are used.  
+Compared to other real-time closed-loop experimental protocols, the dynamic clamp has perhaps the most stringent performance requirements. These limitations involve numerical, algorithmic, and hardware platform-specific issues. Dynamic clamp performance depends on how accurately the model is solved, measurement error in sampling the voltage, and the sampling rate of the system. \index{sampling rate}The sampling rate determines how much time is in a given computational cycle for various operations to be performed, and the duration of the cycle restricts the types of numerical methods that may be used to integrate the gating variables. Thus, the computational performance of dynamic clamp suffers from a trade-off between the speed of computation and numerical accuracy. Dynamic clamp sampling rates are currently chosen based on the limits of the hardware platform being used and the temporal dynamics being simulated. While it is possible to compute the time step necessary for the Euler and exponential Euler methods to achieve a desired one-step integration accuracy for a known voltage measurement error, few studies employ this technique \cite{Butera:2004p1073}. In simulations of dynamic clamp, Euler integration was insufficient to model fast sodium Na<em><sub>v</sub><em> channels at sampling rates under 30 kHz and nearly identical integration results for three different deterministic integration methods was only achieved at rates <em>\geq<em>50 kHz \cite{Milescu:2008p1216}. Standard performance benchmarks are needed for dynamic clamp to justify the sampling rates that are used.  
 </p>
 
 <p>
