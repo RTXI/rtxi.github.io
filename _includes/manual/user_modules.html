@@ -4,25 +4,20 @@ RTXI comes with a set of core system modules. All modules are compiled as Linux 
 </p>
 
 <p>
-User modules are available on the RTXI website (http://www.rtxi.org/modules) as zipped files or tarballs and also on our GitHub repository (https://github.com/RTXI). Each module usually consists of a single class header file (*.h), class implementation file (*.cpp), a Makefile that informs the GCC compiler, and a directory for legacy modules used in previous versions of RTXI. For simplicity, we recommend that user modules be stored together in a single directory (such as <code>$HOME/modules</code>). To extract a module compressed as a tarball, in this case the plugin template, directory and compile the module:
+A list of available modules is available on this website (http://www.rtxi.org/modules). You can download them through our GitHub repository (https://github.com/RTXI). Each module usually consists of a header file (*.h), class implementation file (*.cpp), a Makefile that informs the GCC compiler, a README file, and a LICENSE. 
 </p>
-
-{% highlight bash %}
-$ tar xvf plugin_template.tar.gz
-$ cd plugin-template
-$ sudo make install
-{% endhighlight %} 
 
 <p>
 If you have Git installed, you can also download and install modules by running:
 </p>
 
 {% highlight bash %}
-$ git clone https://github.com/rtxi/plugin-template.git
-$ cd plugin-template
+$ git clone https://github.com/rtxi/<MODULE_NAME>.git
+$ cd <MODULE_NAME>
+$ make
 $ sudo make install
 {% endhighlight %} 
 
 <p>
-This process will create an RTXI shared object library (*.so extension), which will then be copied to <code>/usr/local/lib/rtxi</code>, where RTXI will initially look for them. User modules must be recompiled if any changes are made to their sources after installation. Note that when reinstalling modules, the corresponding *.so files are overwritten, so always make sure that different modules have unique names. Instructions for writing custom user modules are given in Chapter .
+The compilation and installation process will create an RTXI shared object library (*.so extension) in <code>/usr/local/lib/rtxi</code>, where RTXI will initially look for them. User modules must be recompiled if any changes are made to their sources after installation. Note that when reinstalling modules, the corresponding *.so files are overwritten, so always make sure that different modules have unique names. 
 </p>

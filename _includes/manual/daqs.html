@@ -121,14 +121,3 @@ You will need to exit and restart RTXI for the new configuration to take effect.
 <p>
 RTXI automatically detects the manufacturer and board names of available DAQ cards and the number and type of input and output channels. The first DAQ card installed in your system is assigned the Linux device name: <code>/dev/analogy0</code>. Additional DAQ cards are assigned device names <code>/dev/analogy1</code> and so on. You can check that your DAQ card has been correctly detected and see the corresponding device name by clicking <b>Help</b> --> <b>About ANALOGY</b> from the RTXI menu bar.
 </p>
-
-<p>
-To calibrate your DAQ card, use the analogy_calibrate utility as follows for each ANALOGY device:
-{% highlight bash %}
-$ sudo analogy_calibrate --reset --dump --calibrate --results --verbose /dev/analogy0
-{% endhighlight %}
-
-<p>
-If you are using a National Instruments M-Series card, you will need to use the <code>analogy_soft_calibrate</code> utility instead.
-</p>
-

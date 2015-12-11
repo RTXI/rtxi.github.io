@@ -7,7 +7,7 @@ The easiest method of developing modules is to adapt existing ones for your own 
 <h4 class="page-header">Using the <code>DefaultGUIModel</code> Class</h4>
 
 <p>
-User modules are implemented within RTXI as custom C<code>++</code> classes. The recommended way to create a module is to abstract from our provided base class named <code>DefaultGUIModel</code>. <code>DefaultGUIModel</code> constructs a simple graphical user interface (GUI) that allows users to interact with parameters and activate real-time code. Modules abstracted from it also inherit its methods for hard real-time execution and event handling, generating and accept signals, and capturing metadata automatically by the Data Recorder in HDF5 format. 
+User modules are implemented within RTXI as custom <code>C++</code> classes. The recommended way to create a module is to abstract from our provided base class named <code>DefaultGUIModel</code>. <code>DefaultGUIModel</code> constructs a simple graphical user interface (GUI) that allows users to interact with parameters and activate real-time code. Modules abstracted from it also inherit its methods for hard real-time execution and event handling, generating and accept signals, and capturing metadata automatically by the Data Recorder in HDF5 format. 
 </p>
 
 <p>
@@ -16,14 +16,14 @@ The following sections describe the <code>Neuron</code> module, a Hodgkin-Huxley
 
 <figure class="figure">
 	<img src="{{ site.img }}/manual/hhneuron.png" class="figure-img img-fluid">
-	<figcaption class="figure-caption">The <code>Neuron</code> module is a Hodgkin-Huxley model neuron described by conductance-based differential equations. This GUI provides an interface by which a user can modify parameters, such as the conductance of the ion channels, on-the-fly and start and stop real-time execution of the module 
+	<figcaption class="figure-caption">The <code>Neuron</code> module is a Hodgkin-Huxley model neuron described by conductance-based differential equations. This GUI provides an interface by which a user can modify parameters, such as the conductance of the ion channels, on-the-fly and start and stop real-time execution of the module.  
 	</figcaption>
 </figure>
 
 <h4 class="page-header">Creating your own module class</h4>
 
 <p>
-The quickest way to create a new user module is to duplicate an existing module directory and rename the files and the class. This involves renaming the class header (*.h) file, the class implementation (*.cpp) file, editing the Makefile and editing any instances of the old class name within each of these files. The latter include the class name, scope names, the constructor, and the deconstructor. A template user module is <a href="https://github.com/RTXI/plugin-template">available online</a>.  
+The quickest way to create a new user module is to duplicate an existing module directory and rename the files and the class. This involves renaming the class header (*.h) file, the class implementation (*.cpp) file, and editing the Makefile and any instances of the old class name within each of these files (class names, scope names, the constructor, and the deconstructor). A template user module is <a href="https://github.com/RTXI/plugin-template">available online</a>.  
 </p>
 
 <p>
