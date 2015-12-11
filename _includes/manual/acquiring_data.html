@@ -1,153 +1,144 @@
-<h4 class="page-header">Acquiring Data (Model Cell Tutorial)</h4>
+<h3 class="page-header">Acquiring Data (Model Cell Tutorial)</h3>
 
 <p>
-This section presents a tutorial similar to those described by Molecular Devices for their suite of electrophysiology products. This exercise uses a CLAMP-1U model cell with an Axon\tm Axoclamp\tm 2B amplifier operating in bridge mode. Connect the HS-2A-x0.1LU headstage to the ME1 PROBE connector and the HS-2A-x1LU head stage to the ME2 probe connector on the back panel of the amplifier.
+This section presents a tutorial similar to those described by Molecular Devices for their suite of electrophysiology products. This exercise uses a CLAMP-1U model cell with an Axon Axoclamp 2B amplifier operating in bridge mode. Connect the HS-2A-x0.1LU headstage to the ME1 PROBE connector and the HS-2A-x1LU head stage to the ME2 probe connector on the back panel of the amplifier.
 </p>
 
-<p>
-\marginlabel{\textbf{Connect equipment\\to DAQ card}} Make the following connections between the amplifier and the DAQ card. 
-\begin{enumerate}
-\item Axoclamp 10Vm Output $\rightarrow$ DAQ Analog Input 0
-\item Axoclamp Im Output $\rightarrow$ DAQ Analog Input 1
-\item DAQ Analog Output 0 $\rightarrow$ Axoclamp EXT. ME1 COMMAND
-\end{enumerate}
-</p>
+{% assign stepcount = 1 %}
+
+<h4 class="page-header">{{ stepcount }}. Connect your equipment to the DAQ.</h4>
+{% assign stepcount = stepcount | plus: 1 %}
 
 <p>
-\marginlabel{\textbf{Start RTXI}} If you installed RTXI using a Live USB, you can start RTXI from the Applications menu. However, it is a good idea to start RTXI from the terminal since some modules output error messages or warnings to the terminal: 
-\begin{example}
-\$ sudo rtxi
-\end{example}
-\vspace{1cm}
-\marginlabel{\textbf{Configure DAQ Channels}} \index{DAQ, configuration}While RTXI automatically detects the available channels on your DAQ card, to use them, you must configure them within the RTXI Control Panel. From the \textbf{System} menu on the RTXI menu bar, choose \textbf{Control Panel}. The default device should be your DAQ card listed as \texttt{/dev/analogy0}. The analog channels on most multifunction DAQ cards have a range of -10 V to +10 V based on a ground reference and this is the default in RTXI. You should check the specifications for your DAQ card and choose the corresponding settings in RTXI. For Analog Input 0, the amplifier specifies that the signal has a gain of 10 applied (10Vm). Invert this and enter a scale of 0.1 V/V for this channel. Click the \textbf{``Active"} toggle button and click the \textbf{``Apply"} button. You will not acquire any actual data on a channel until it has been set to ``Active."
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=4in]{axoclamptutorial0.png} 
-\caption[Axoclamp Tutorial: Analog Input 0]{Configuring Axoclamp 10Vm output on Analog Input 0} 
-\end{center}
-\label{fig:axoclamptutorial0}
-\end{figure}
+Make the following connections between the amplifier and the DAQ card. 
 </p>
 
-<p>
-\newpage For the membrane current assigned to Analog Input 1, the Axoclamp amplifier specifies that there is a gain of 10 $\div$ H mV/nA. Since the headstage gain on ME1 is H=0.1, the conversion is 100 mV/nA or 0.1 V/nA. Invert this to get a scale of 10 nA/V. You may set the ``Scale" dropdown box to either units of volts or amperes but this does not affect the computation. \attention Note that you must compute the total gain applied to a channel by any combination of hardware and software along the path of the signal. For example, if you are using the Axon\tm Multiclamp\tm Microelectrode Amplifier by Molecular Devices, you should take into account Multiclamp Commander software gain.
-</p>
+<ol>
+	<li> Axoclamp 10Vm Output  -->  DAQ Analog Input 0 </li>
+	<li> Axoclamp Im Output  -->  DAQ Analog Input 1 </li>
+	<li> DAQ Analog Output 0  -->  Axoclamp EXT. ME1 COMMAND </li>
+</ol>
+
+<h4 class="page-header">{{ stepcount }}. Start RTXI.</h4>
+{% assign stepcount = stepcount | plus: 1 %}
 
 <p>
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=4in]{axoclamptutorial1.png} 
-\caption[Axoclamp Tutorial: Analog Input 1]{Configuring Axoclamp Im output on Analog Input 1} 
-\end{center}
-\label{fig:axoclamptutorial1}
-\end{figure}
-\vspace{1.5cm}
+If you installed RTXI using a Live USB, you can start RTXI from the Applications menu. However, it is a good idea to start RTXI from the terminal since some modules output error messages or warnings to the terminal: 
 </p>
+
+{% highlight bash %}
+$ sudo rtxi
+{% endhighlight %}
+
+<h4 class="page-header">{{ stepcount }}. Configure DAQ channels.</h4>
+{% assign stepcount = stepcount | plus: 1 %}
+
+<p>
+While RTXI automatically detects the available channels on your DAQ card, to use them, you must configure them within the RTXI Control Panel. From the <b>System</b> menu on the RTXI menu bar, choose <b>Control Panel</b>. The default device should be your DAQ card listed as <code>/dev/analogy0</code>. The analog channels on most multifunction DAQ cards have a range of -10 V to +10 V based on a ground reference and this is the default in RTXI. You should check the specifications for your DAQ card and choose the corresponding settings in RTXI. For Analog Input 0, the amplifier specifies that the signal has a gain of 10 applied (10Vm). Invert this and enter a scale of 0.1 V/V for this channel. Click the <b>Active</b> toggle button and click the <b>Apply</b> button. You will not acquire any actual data on a channel until it has been set to "Active."
+</p>
+
+<figure class="figure">
+	<img class="figure-img img-fluid" src="{{ site.img }}/manual/axoclamptutorial0.png">
+	<figcaption class="figure-caption">Configuring Axoclamp 10Vm output on Analog Input 0
+	</figcaption>
+</figure>
+
+<p>
+For the membrane current assigned to Analog Input 1, the Axoclamp amplifier specifies that there is a gain of 10 / H mV/nA. Since the headstage gain on ME1 is H=0.1, the conversion is 100 mV/nA or 0.1 V/nA. Invert this to get a scale of 10 nA/V. You may set the "Scale" dropdown box to either units of volts or amperes but this does not affect the computation. Note that you must compute the total gain applied to a channel by any combination of hardware and software along the path of the signal. For example, if you are using the Axon Multiclamp Microelectrode Amplifier by Molecular Devices, you should take into account Multiclamp Commander software gain.
+</p>
+
+<figure class="figure">
+	<img class="figure-img img-fluid" src="{{ site.img }}/manual/axoclamptutorial1.png">
+	<figcaption class="figure-caption">Configuring Axoclamp Im output on Analog Input 1
+	</figcaption>
+</figure>
 
 <p>
 For the EXT. ME1 COMMAND assigned to Analog Output 0, the Axoclamp specified a gain of 10 x H nA/V, which comes to 1 nA/V. Invert this to get a scale of 1 GV/A.
 </p>
 
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=4in]{axoclamptutorial2.png} 
-\caption[Axoclamp Tutorial: Analog Output 0]{Configuring EXT. ME1 COMMAND on Analog Output 0}
-\end{center}
-\label{fig:axoclamptutorial2}
-\end{figure}
+<figure class="figure">
+	<img class="figure-img img-fluid" src="{{ site.img }}/manual/axoclamptutorial2.png">
+	<figcaption class="figure-caption">Configuring EXT. ME1 COMMAND on Analog Output 0
+	</figcaption>
+</figure>
+
+<p>
+The Thread Tab of the System Control Panel allows you to set the real-time period or sampling rate of the system. The default sampling rate is 1 kHz, which is sufficient for this exercise.
+</p>
+
+<h4 class="page-header">{{ stepcount }}. Configure stimulus module.</h4>
+{% assign stepcount = stepcount | plus: 1 %}
+
+<p>
+The Istep module generates current step stimuli (square wave pulses). Install the Istep module according to the directions in Chapter  and load it by selecting <b>Modules</b> --> <b>Load Modules</b> from the RTXI menu bar. Set the amplitude of the current pulse to 5 nA and set the width of the pulse to 40 ms using the Period and Duty Cycle options. The number of pulses is set using the Cycles option.
+</p>
+
+<figure class="figure">
+	<img class="figure-img img-fluid" src="{{ site.img }}/manual/istep.png">
+	<figcaption class="figure-caption">The Istep module delivers current step pulses.
+	</figcaption>
+</figure>
+
+<h4 class="page-header">{{ stepcount }}. Configure the oscilloscope.</h4>
+{% assign stepcount = stepcount | plus: 1 %}
+
+<p>
+Start the Oscilloscope by selecting <b>System</b> --> <b>Oscilloscope</b> from the RTXI menu bar. Right click anywhere in the Oscilloscope window to bring up the context menu and select the <b>Properties</b> menu. The <b>Channel Tab</b> is used to select signals to plot and set an appropriate scale and line style. The architecture of RTXI is based on modular components that have input and output signals. The DAQ card is abstracted as a DAQ device block such that a signal acquired on an input channel of the DAQ <i>card</i> becomes an output signal of the DAQ <i>device</i> within RTXI. To plot the voltage acquired on Analog Input 0, use the dropdown box to select <b>Output</b>. The rightmost dropdown box will automatically be populated with the analog input channels of the DAQ card. Click the <b>Active</b> toggle button to plot the signal. 
+</p>
+
+<figure class="figure">
+	<img class="figure-img img-fluid" src="{{ site.img }}/manual/oscilloscope1.png">
+	<figcaption class="figure-caption">The Oscilloscope Channel Tab allows you to select signals to plot and choose different scales and line styles.
+	</figcaption>
+</figure>
+
+<p>
+When a signal is plotted, the Oscilloscope will generate a legend in the lower part of the window. In the <b>Display Properties</b> section, choose a scale and if needed, an offset. You may also choose a linestyle in the <b>Line Properties</b> section. You must click the <b>Apply</b> button for these changes to take effect. Each signal may have a different scale and different line style. Use the System Control Panel to plot Analog Input 0 and Analog Input 1 to monitor the voltage and the current applied to the model cell. You should also plot the "Iout" output signal of the Istep module.
 </p>
 
 <p>
-\attention The Thread Tab of the System Control Panel allows you to set the real-time period or sampling rate \index{sampling rate} of the system. The default sampling rate is 1 kHz, which is sufficient for this exercise.
+To generate signals from the Istep module, untoggle the <b>Pause</b> button. RTXI will begin executing the real-time code specified in this module. You should see pulses in the Istep signal in the Oscilloscope window. You can use the textboxes in the GUI to change the parameter values. The text will turn red but there will be no change in the module's output signal until you click the <b>Modify</b> button. Clicking this button initiates an event that will update the parameter in real-time and you should see the corresponding change immediately in the Oscilloscope. At this point, you  should not see any pulses in Analog Input 1 from your DAQ card, which is the current actually delivered by the amplifier. To apply this stimulus to the model cell, you need to make a connection between the Istep module and the DAQ card. From the RTXI menu bar, select <b>System</b> --> <b>Connector</b>. 
 </p>
 
+<figure class="figure">
+	<img class="figure-img img-fluid" src="{{ site.img }}/manual/connector1.png">
+	<figcaption class="figure-caption">The Connector allows you to create connections between user modules or between modules and the DAQ card.
+	</figcaption>
+</figure>
+
 <p>
-\vspace{1cm}
-\marginlabel{textbf{Configure stimulus module}} The Istep module generates  current step stimuli (square wave pulses). Install the Istep module according to the directions in Chapter \ref{module installation} and load it by selecting \textbf{Modules}$\rightarrow$\textbf{Load Modules} from the RTXI menu bar. Set the amplitude of the current pulse to 5 nA and set the width of the pulse to 40 ms using the Period and Duty Cycle options. The number of pulses is set using the Cycles option.
+The Connector module populates the <b>Output Block</b> with the available signals in your workspace and the <b>Input Block</b> with the available slots, or destinations. Select the Istep module in the "Output Block" and the "Iout" signal. Choose your DAQ card (<code>/dev/analogy0</code>) in the "Input Block" and the Analog Output 0 channel. To make the connection, click the central ">" toggle button. Now, the Oscilloscope should show matching data for both Istep: Iout and Analog Input 1.
 </p>
 
+<h4 class="page-header">{{ stepcount }}. Balance the bridge in the bath.</h4>
+{% assign stepcount = stepcount | plus: 1 %}
+
 <p>
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=2.2in]{istep.png} 
-\caption[Istep]{The Istep module delivers current step pulses.} 
-\end{center}
-\label{fig:istep}
-\end{figure}
+Switch the CLAMP-1U model cell to the BATH position. Use the amplifier INPUT OFFSET knob to zero out the voltage based on the readings in the Oscilloscope. The Oscilloscope shows the actual sample values (with the channel gain applied) that will later be saved using the Data Recorder module. If your amplifier or other control software indicates a nonzero voltage when RTXI reports a zero voltage, calibrating your DAQ card may eliminate this offset. Unpause the Istep module to begin delivering current pulses to the model cell. Adjust the BRIDGE knob until the voltage deflection is eliminated and then adjust the CAPACITANCE NEUTRALIZATION knob until the residual transients are minimized. Now switch the model cell to the CELL position. If you have correctly tuned these settings, you should see a response to each current pulse.
 </p>
 
-<p>
-\vspace{1cm}
-\marginlabel{\textbf{Configure Oscilloscope}} Start the Oscilloscope by selecting \textbf{System}$\rightarrow$\textbf{Oscilloscope} from the RTXI menu bar. Right click anywhere in the Oscilloscope window to bring up the context menu and select the \textbf{Properties} menu. \seealso{Chapter \ref{Oscilloscope}\\Oscilloscope}The \textbf{Channel Tab} is used to select signals to plot and set an appropriate scale and line style. The architecture of RTXI is based on modular components that have input and output signals. \attention The DAQ card is abstracted as a DAQ device block such that a signal acquired on an input channel of the DAQ \emph{card} becomes an output signal of the DAQ \emph{device} within RTXI. To plot the voltage acquired on Analog Input 0, use the dropdown box to select \textbf{``Output"}. The rightmost dropdown box will automatically be populated with the analog input channels of the DAQ card. Click the \textbf{``Active"} toggle button to plot the signal. 
+<figure class="figure">
+	<img class="figure-img img-fluid" src="{{ site.img }}/manual/axoclamptutorial3.png">
+	<figcaption class="figure-caption">Model cell response to current injection pulses with correctly balanced bridge and capacitance neutralization.
+	</figcaption>
+</figure>
+
+<figure class="figure">
+	<img class="figure-img img-fluid" src="{{ site.img }}/manual/axoclamptutorial4.png">
+	<figcaption class="figure-caption">The Data Recorder saves any synchronous signal in your workspace to an HDF5 file.
+	</figcaption>
+</figure>
+
+<h4 class="page-header">{{ stepcount }}. Saving data.</h4>
+{% assign stepcount = stepcount | plus: 1 %}
+
+<p>To record data, select <b>System</b> --> <b>Data Recorder</b> from the RTXI menu bar. The <b>Block</b> menu is a list of your DAQ card(s) and any loaded user modules. Selecting a block device then populates the <b>Type</b> and <b>Channel</b> menus. Select the Analog Input 0 channel from your DAQ device and click the <b>$>$</b> button. To remove a channel from the list, highlight it in the listbox and click the <code><</code> button. Before you can start recording, you must select a file by clicking the <b>Choose File</b> button. Click <b>Start Recording</b> to begin recording and <b>Stop Recording</b> to stop recording.
 </p>
 
-<p>
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=4.5in]{oscilloscope1.png} 
-\caption[Oscilloscope]{The Oscilloscope Channel Tab allows you to select signals to plot and choose different scales and line styles.} 
-\end{center}
-\end{figure}
-</p>
+<h4 class="page-header">{{ stepcount }}. Saving your workspace.</h4>
+{% assign stepcount = stepcount | plus: 1 %}
 
 <p>
-When a signal is plotted, the Oscilloscope will generate a legend in the lower part of the window. In the \textbf{Display Properties} section, choose a scale and if needed, an offset. You may also choose a linestyle in the \textbf{Line Properties} section. You must click the \textbf{Apply} button for these changes to take effect. Each signal may have a different scale and different line style. Use the System Control Panel to plot Analog Input 0 and Analog Input 1 to monitor the voltage and the current applied to the model cell. You should also plot the ``Iout" output signal of the Istep module.
-</p>
-
-<p>
-\vspace{1cm}
-\marginlabel{\textbf{Connect Signals\\Within RTXI}}To generate signals from the Istep module, untoggle the \textbf{``Pause"} button. RTXI will begin executing the real-time code specified in this module. You should see pulses in the Istep signal in the Oscilloscope window. You can use the textboxes in the GUI to change the parameter values. The text will turn red but there will be no change in the module's output signal until you click the \textbf{``Modify"} button. Clicking this button initiates an event that will update the parameter in real-time and you should see the corresponding change immediately in the Oscilloscope. At this point, you  should not see any pulses in Analog Input 1 from your DAQ card, which is the current actually delivered by the amplifier. To apply this stimulus to the model cell, you need to make a connection between the Istep module and the DAQ card. From the RTXI menu bar, select \textbf{System}$\rightarrow$\textbf{Connector}. 
-</p>
-
-<p>
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=4.5in]{connector1.png} 
-\caption[Connector]{The Connector allows you to create connections between user modules or between modules and the DAQ card.} 
-\end{center}
-\end{figure}
-</p>
-
-<p>
-The Connector module populates the \textbf{``Output Block"} with the available signals in your workspace and the \textbf{``Input Block"} with the available slots, or destinations. Select the Istep module in the ``Output Block" and the ``Iout" signal. Choose your DAQ card (\texttt{/dev/analogy0}) in the ``Input Block" and the Analog Output 0 channel. To make the connection, click the central ``==$>$" toggle button. Now, the Oscilloscope should show matching data for both Istep: Iout and Analog Input 1.
-</p>
-
-<p>
-\vspace{1cm}
-\marginlabel{\textbf{Balance the Bridge\\ in the Bath}}
-Switch the CLAMP-1U model cell to the BATH position. Use the amplifier INPUT OFFSET knob to zero out the voltage based on the readings in the Oscilloscope. The Oscilloscope shows the actual sample values (with the channel gain applied) that will later be saved using the Data Recorder module. If your amplifier or other control software indicates a nonzero voltage when RTXI reports a zero voltage, \seealso{Chapter \ref{comedi calibration}\\ANALOGY calibration}calibrating your DAQ card may eliminate this offset. Unpause the Istep module to begin delivering current pulses to the model cell. Adjust the BRIDGE knob until the voltage deflection is eliminated and then adjust the CAPACITANCE NEUTRALIZATION knob until the residual transients are minimized. Now switch the model cell to the CELL position. If you have correctly tuned these settings, you should see a response to each current pulse as in Figure \ref{balancedbridge}.
-</p>
-
-<p>
-\begin{figure}[h!]
-\begin{maxipage}
-\begin{center}
-\includegraphics[width=5.2in]{axoclamptutorial3.png} 
-\caption[Axoclamp Tutorial: Balanced Bridge]{Model cell response to current injection pulses with correctly balanced bridge and capacitance neutralization}
-\label{fig:balancedbridge}
-\end{center}
-\end{maxipage}
-\end{figure}
-</p>
-
-
-<p>
-\begin{figure}[h!]
-\begin{maxipage}
-\begin{center}
-\includegraphics[width=5in]{axoclamptutorial4.png} 
-\caption[Data Recorder]{The Data Recorder saves any synchronous signal in your workspace to an HDF5 file.} 
-\end{center}
-\end{maxipage}
-\end{figure}
-</p>
-
-<p>
-\marginlabel{\textbf{Saving Data}}To record data, select \textbf{System}$\rightarrow$\textbf{Data Recorder} from the RTXI menu bar. The \textbf{``Block"} menu is a list of your DAQ card(s) and any loaded user modules. Selecting a block device then populates the \textbf{``Type"} and \textbf{``Channel"} menus. Select the Analog Input 0 channel from your DAQ device and click the \textbf{``$>$"} button. To remove a channel from the list, highlight it in the listbox and click the \textbf{``$<$"} button. Before you can start recording, you must select a file by clicking the \textbf{``Choose File"} button. Click \textbf{``Start Recording"} to begin recording and \textbf{``Stop Recording"} to stop recording.
-</p>
-
-<p>
-\vspace{1cm}
-\marginlabel{\textbf{Saving Your Workspace}}
-At this point, you have configured several channels on the DAQ card and the Oscilloscope, set custom parameters for a user module, and connected the module to the DAQ card to generate an external signal. RTXI allows you to save all these settings to a file by selecting \textbf{File}$\rightarrow$\textbf{Save Workspace} from the RTXI menu bar. To reload the file and reconstruct your entire working environment, select   \textbf{File}$\rightarrow$\textbf{Load Workspace}.
+At this point, you have configured several channels on the DAQ card and the Oscilloscope, set custom parameters for a user module, and connected the module to the DAQ card to generate an external signal. RTXI allows you to save all these settings to a file by selecting <b>File</b> --> <b>Save Workspace</b> from the RTXI menu bar. To reload the file and reconstruct your entire working environment, select <b>File</b> --> <b>Load Workspace</b>.
 </p>
