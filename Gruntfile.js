@@ -8,6 +8,7 @@ module.exports = function(grunt) {
    grunt.loadNpmTasks('grunt-contrib-copy');
    grunt.loadNpmTasks('grunt-contrib-less');
    grunt.loadNpmTasks('grunt-contrib-uglify');
+   grunt.loadNpmTasks('grunt-contrib-cssmin');
    grunt.loadNpmTasks('grunt-contrib-concat');
    grunt.loadNpmTasks('grunt-contrib-connect');
    grunt.loadNpmTasks('grunt-contrib-htmlmin');
@@ -33,7 +34,8 @@ module.exports = function(grunt) {
             less: 'bower_components/bootstrap/less'
          },
          jquery: 'bower_components/jquery/dist',
-         isotope: 'bower_components/isotope/dist',
+			isotope: 'bower_components/isotope/dist',
+         pygments: 'bower_components/pygments/css',
          font_awesome: {
             less: 'bower_components/font-awesome/less',
             css: 'bower_components/font-awesome/css',
@@ -172,6 +174,12 @@ module.exports = function(grunt) {
                   expand: true
                },
                {
+                  cwd: '<%= paths.pygments %>/',
+                  src: '*.css',
+                  dest: '<%= paths.assets.css %>/.pygments/',
+                  expand: true
+               },
+               {
                   cwd: '<%= paths.datatables.js %>/',
                   src: 'jquery.dataTables.min.js',
                   dest: '<%= paths.assets.js %>/',
@@ -204,6 +212,71 @@ module.exports = function(grunt) {
             ]
          }
       },
+
+      /*
+       * Concatenate JavaScript and CSS files. 
+       *  
+       */
+      concat: {
+         options: {
+            separator: ';\n'
+         },
+         datatables_js: {
+            src: ['<%= paths.assets.js %>/jquery.dataTables.min.js',
+                  '<%= paths.assets.js %>/dataTables.bootstrap.min.js',
+				      '<%= paths.assets.js %>/dataTables.responsive.min.js'],
+            dest: '<%= paths.assets.js %>/dataTables.js'
+         },
+         datatables_css: {
+            src: ['<%= paths.assets.css %>/dataTables.bootstrap.min.css',
+                  '<%= paths.assets.css %>/responsive.bootstrap.min.css'],
+            dest: '<%= paths.assets.css %>/dataTables.css'
+         },
+         default_js: {
+            src: ['<%= paths.assets.js %>/jquery.min.js',
+                  '<%= paths.assets.js %>/bootstrap.min.js'],
+            dest: '<%= paths.assets.js %>/default.js'
+         },
+         default_css: {
+            src: ['<%= paths.assets.css %>/bootstrap.min.css',
+                  '<%= paths.assets.css %>/font-awesome.min.css',
+                  '<%= paths.assets.css %>/pygments.css'],
+            dest: '<%= paths.assets.css %>/default.css'
+         }
+      },
+
+      /*
+       *  
+       */
+      uglify: {
+         default_js: {
+            files: {
+               '<%= paths.assets.js %>/default.min.js': ['<%= paths.assets.js %>/default.js']
+            }
+         },
+         datatables_js: {
+            files: {
+               '<%= paths.assets.js %>/dataTables.min.js': ['<%= paths.assets.js %>/dataTables.js']
+            }
+         }
+      },
+
+      /*
+       *  
+       */
+      cssmin: {
+         default_css: {
+            files: {
+               '<%= paths.assets.css %>/default.min.css': ['<%= paths.assets.css %>/default.css']
+            }
+         },
+         dataTables_css: {
+            files: {
+               '<%= paths.assets.css %>/dataTables.min.css': ['<%= paths.assets.css %>/dataTables.css']
+            }
+         }
+      },
+
 
       /*
        *  Minify HTML in the _site folder. Don't do this in the build directory, or I will hurt you. 
@@ -243,6 +316,8 @@ module.exports = function(grunt) {
                'stats/**',
                'modules/index.html',
                'assets/img/**',
+               'assets/js/**',
+               'assets/css/**',
                '_config.yml',
                'index.html',
                'manual.html',
@@ -251,6 +326,20 @@ module.exports = function(grunt) {
                'favicon.ico'
             ],
             tasks: ['shell:build'],
+            options: {
+               livereload: true
+            }
+         },
+         css: {
+            files: [ '<%= paths.assets.css %>/*.css' ],
+            tasks: ['concat', 'cssmin', 'shell:build'],
+            options: {
+               livereload: true
+            }
+         },
+         js: {
+            files: [ '<%= paths.assets.js %>/*.js' ],
+            tasks: ['concat', 'uglify', 'shell:build'],
             options: {
                livereload: true
             }
@@ -282,7 +371,8 @@ module.exports = function(grunt) {
 	 *  Set of available grunt tasks: 'grunt', 'grunt init', 'grunt update', and 'grunt deploy'. 
 	 */
    grunt.registerTask('default', ['shell:build', 'connect', 'watch']);
-   grunt.registerTask('init', ['shell:init','copy','less']);
-   grunt.registerTask('update', ['shell:update','copy','less']);
+   grunt.registerTask('init', ['shell:init','copy','less', 'concat', 'cssmin', 'uglify']);
+	grunt.registerTask('rebuild', ['copy', 'less', 'concat', 'cssmin', 'uglify'])
+   grunt.registerTask('update', ['shell:update','copy','rebuild']);
    grunt.registerTask('deploy', ['htmlmin', 'buildcontrol:master']);
 };
