@@ -4,7 +4,7 @@ For closed loop experiments using RTXI, your computer must be equipped with an a
 </p>
 
 <p>
-Most RTXI users use products developed by National Instruments. ANALOGY, a set of drivers derived from COMEDI, provides support for many NI DAQs, for low-level drivers for cards using a 8255 chip for three channels of 8 bit digital input or output, and for standard PC parallel ports. A list of currently supported NI cards and their corresponding ANALOGY driver and other ANALOGY-supported DAQ manufacturers is given below.
+Most RTXI users use products developed by National Instruments. ANALOGY, a set of drivers derived from ANALOGY, provides support for many NI DAQs, for low-level drivers for cards using a 8255 chip for three channels of 8 bit digital input or output, and for standard PC parallel ports. A list of currently supported NI cards and their corresponding ANALOGY driver and other ANALOGY-supported DAQ manufacturers is given below.
 </p>
 
 <!-- make this a table "DAQ manufacturers with ANALOGY-supported hardware"-->
@@ -98,19 +98,19 @@ Most RTXI users use products developed by National Instruments. ANALOGY, a set o
 RTXI has no built-in software limitations on the number of DAQ cards but is configured for only one card by default. If you want to use additional cards, you will need to edit the configuration file. Here is the relevant excerpt of <code>/etc/rtxi.conf</code>:
 </p>
 {% highlight xml %}
-<OBJECT component="plugin" library="comedi_driver.so" id="2">
-<PARAM name="0">/dev/comedi0</PARAM>
+<OBJECT component="plugin" library="analogy_driver.so" id="2">
+<PARAM name="0">/dev/analogy0</PARAM>
 <PARAM name="Num Devices">1</PARAM>
 <OBJECT id="13" name="0" />
 </OBJECT>
 {% endhighlight %}
 
 <p>
-Edit the lines to add another COMEDI device and change the number of devices:
+Edit the lines to add another ANALOGY device and change the number of devices:
 </p>
 {% highlight xml %}
-<PARAM name="0">/dev/comedi0</PARAM>
-<PARAM name="1">/dev/comedi1</PARAM>
+<PARAM name="0">/dev/analogy0</PARAM>
+<PARAM name="1">/dev/analogy1</PARAM>
 <PARAM name="Num Devices">2</PARAM>
 {% endhighlight %}
 
@@ -119,16 +119,16 @@ You will need to exit and restart RTXI for the new configuration to take effect.
 </p>
 
 <p>
-RTXI automatically detects the manufacturer and board names of available DAQ cards and the number and type of input and output channels. The first DAQ card installed in your system is assigned the Linux device name: <code>/dev/comedi0</code>. Additional DAQ cards are assigned device names <code>/dev/comedi1</code> and so on. You can check that your DAQ card has been correctly detected and see the corresponding device name by clicking <b>Help</b> --> <b>About COMEDI</b> from the RTXI menu bar.
+RTXI automatically detects the manufacturer and board names of available DAQ cards and the number and type of input and output channels. The first DAQ card installed in your system is assigned the Linux device name: <code>/dev/analogy0</code>. Additional DAQ cards are assigned device names <code>/dev/analogy1</code> and so on. You can check that your DAQ card has been correctly detected and see the corresponding device name by clicking <b>Help</b> --> <b>About ANALOGY</b> from the RTXI menu bar.
 </p>
 
 <p>
-To calibrate your DAQ card, use the comedi_calibrate utility as follows for each COMEDI device:
+To calibrate your DAQ card, use the analogy_calibrate utility as follows for each ANALOGY device:
 {% highlight bash %}
-$ sudo comedi_calibrate --reset --dump --calibrate --results --verbose /dev/comedi0
+$ sudo analogy_calibrate --reset --dump --calibrate --results --verbose /dev/analogy0
 {% endhighlight %}
 
 <p>
-If you are using a National Instruments M-Series card, you will need to use the <code>comedi_soft_calibrate</code> utility instead.
+If you are using a National Instruments M-Series card, you will need to use the <code>analogy_soft_calibrate</code> utility instead.
 </p>
 

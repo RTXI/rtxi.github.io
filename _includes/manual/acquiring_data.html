@@ -1,4 +1,4 @@
-<h3 class="page-header">Acquiring Data (Model Cell Tutorial)</h3>
+<h3 class="page-header">Model Cell Tutorial</h3>
 
 <p>
 This section presents a tutorial similar to those described by Molecular Devices for their suite of electrophysiology products. This exercise uses a CLAMP-1U model cell with an Axon Axoclamp 2B amplifier operating in bridge mode. Connect the HS-2A-x0.1LU headstage to the ME1 PROBE connector and the HS-2A-x1LU head stage to the ME2 probe connector on the back panel of the amplifier.
@@ -23,7 +23,7 @@ Make the following connections between the amplifier and the DAQ card.
 {% assign stepcount = stepcount | plus: 1 %}
 
 <p>
-If you installed RTXI using a Live USB, you can start RTXI from the Applications menu. However, it is a good idea to start RTXI from the terminal since some modules output error messages or warnings to the terminal: 
+You can start RTXI from the Applications menu or from the terminal. Generally, it's a good idea to start RTXI from the terminal. That way, you can see any error messages that a module may output. Open a terminal and run: 
 </p>
 
 {% highlight bash %}
@@ -34,7 +34,7 @@ $ sudo rtxi
 {% assign stepcount = stepcount | plus: 1 %}
 
 <p>
-While RTXI automatically detects the available channels on your DAQ card, to use them, you must configure them within the RTXI Control Panel. From the <b>System</b> menu on the RTXI menu bar, choose <b>Control Panel</b>. The default device should be your DAQ card listed as <code>/dev/analogy0</code>. The analog channels on most multifunction DAQ cards have a range of -10 V to +10 V based on a ground reference and this is the default in RTXI. You should check the specifications for your DAQ card and choose the corresponding settings in RTXI. For Analog Input 0, the amplifier specifies that the signal has a gain of 10 applied (10Vm). Invert this and enter a scale of 0.1 V/V for this channel. Click the <b>Active</b> toggle button and click the <b>Apply</b> button. You will not acquire any actual data on a channel until it has been set to "Active."
+While RTXI automatically detects the available channels on your DAQ card, to use them, you must configure them within the RTXI Control Panel. From the <b>System</b> menu on the RTXI menu bar, choose <b>Control Panel</b>. The default device should be your DAQ card listed as <code>/dev/analogy0</code>. The analog channels on most multifunction DAQ cards have a range of -10 V to +10 V based on a ground reference and this is the default in RTXI. You should check the specifications for your DAQ card and choose the corresponding settings in RTXI. For Analog Input 0, the amplifier specifies that the signal has a gain of 10 applied (10Vm). Invert this and enter a scale of 0.1 V/V for this channel. Click the <b>Active</b> toggle button and click the <b>Apply</b> button. 
 </p>
 
 <figure class="figure">
