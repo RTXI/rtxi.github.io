@@ -1,4 +1,4 @@
-<h4 class="page-header">Real-time Performance</h4>
+<h3 class="page-header">Real-time Performance</h3>
 <p>
 RTAI provides several command line utilities for testing your real-time performance. These are available in your RTAI installation directory (usually <code>/usr/realtime</code>) in the <code>/testsuite</code> directory. There are both user and kernel space versions of the tests. If you already have RTAI kernel modules loaded, which is the case if you installed from the Live CD, you will only be able to run the userspace tests. These tests will be more accurate and you can see how the performance changes if you add additional processing load on your system as the test runs. The most important test is the latency test since this will verify that you are actually running a hard real-time system. Sample output for each of these tests is provided below. To run each test, within the appropriate directory, execute: <code>$ sudo ./run</code> If you installed RTXI from the Live CD, these tests are available from the RTXI folder in the Ubuntu Applications menu. You will need to type the root password. To stop execution of the test, use the keyboard shortcut <code>CTRL-C</code>.
 </p>
@@ -7,7 +7,7 @@ RTAI provides several command line utilities for testing your real-time performa
 There are many factors that affect your real-time performance. The maximum computational rate at which you can integrate differential equations for dynamic clamp is actually not dependent on absolute processor speed. For simple applications such as a single ion channel, similar results can be obtained on 200 MHz or 2 GHz processors. The limiting factors actually involve the design of the motherboard and chipset, the cost of reading and writing to a DAQ card, and the cost of accessing the hard disk when streaming data. Multi-processor systems or multicore processors also operate differently than single processors. RTXI allows the system to distribute processes among individual cores and does not assign any operations to particular cores. The user can use the <code>isolcpus</code> boot option to limit real-time operation to a single core and let all other operations be distributed among other available cores. It is also recommended that the computer be disconnected from a network, especially if is a wireless network, and to plot only the minimum number of signals in the Oscilloscope module as possible.
 </p>
 
-<h5 class="page-header">Latency Test</h5>
+<h4 class="page-header">Latency Test</h4>
 <p>
 This test will verify the overall performance of your system. In oneshot mode, it measures the difference in time between the expected switch time and the time when a task is actually called by the scheduler. This test prints one line every second and gives you the minimum, average, and maximum latencies for that period as well the minimum and maximum overall latencies that occurred over the entire test. Open up some other programs, copy some files from one location to another, and load the network connection to see how it affects the latency. You should find slightly higher latencies with the user space test than the kernel space test. Your real-time performance is limited by the maximum latency (lat max) you can achieve and you generally don't want to be doing other tasks. You also should not see any overruns, which occurs when the latency completely exceeds your nominal period. Negative time in the latency test is due to the fact that RTAI performs a calibration at startup that tries to minimize the jitter in the real-time task and anticipates the call.
 </p>
@@ -31,7 +31,7 @@ RTD| -1491| -1524| -1440| 3349| 3395| 0
 If you periodically see an overrun (perhaps every 64 seconds) that results in a maximum latency of several hundred microseconds, you may have an SMI (System Maintenance Interrupt) issue. This feature can be found on certain chipsets e.g. Intel 82845 845. Disabling SMI can cause some computers to overheat and may damage those computers. Other latency killers are: heavy DMA activities (using the hard disk), using an accelerated Xserver, USB legacy support, power management (APM and ACPI), and CPU frequency scaling. If you have disabled all of these in the kernel already, check your BIOS and see if you can disable them there.
 </p>
 
-<h5 class="page-header">Preempt Test</h5>
+<h4 class="page-header">Preempt Test</h4>
 <p>
 This test is a stress utility that verifies the real-time schedulers under heavy processing load. This software combines the latency calibration task with a fast and slow task to have two levels of preemption. 
 </p>
@@ -45,7 +45,7 @@ RTD| -1782| -1135| 1930| 3228| 2724
 RTD| -1782| -1166| 1930| 3228| 2724
 {% endhighlight %}
 
-<h5 class="page-header">Switches Test</h5>
+<h4 class="page-header">Switches Test</h4>
 <p>
 This test provides information about the maximum amount of time RTAI needs to disable interrupts. The test uses a repeated sequence of suspend/resume and semaphore signal/wait calls under a heavy processing load. The switching time should be less than the maximum latency time. The real latency limitation is seldom due to RTAI but an intrinsic drawback of using a general purpose CPU for real-time applications.
 </p>

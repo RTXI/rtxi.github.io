@@ -1,4 +1,4 @@
-<h4 class="page-header">Data Acquisition Cards</h4>
+<h3 class="page-header">Data Acquisition Cards</h3>
 <p>
 For closed loop experiments using RTXI, your computer must be equipped with an analog-to-digital converter (ADC) to acquire data and a digital-to-analog converter (DAC) to generate signals. Of course, external hardware such as an oscilloscope or function (waveform) generator can be used in conjunction with RTXI. A popular option is to purchase a commercial multifunction data acquisition card that provides analog input and output, digital input and output, and counter/timer circuitry. DAQ cards using the USB interface are <i>not compatible</i> with RTXI because USB drivers in Linux are not capable of hard real-time operation. Furthermore, the USB interface can only achieve a maximum sampling rate of approximately 1 kHz, insufficient for some closed-loop real-time applications. Many DAQ cards using the PCI, PCI express, or PXI interface are available from a variety of manufacturers. Your choice of DAQ card should depend on the number of analog and/or digital channels that you need, the amount of data resolution (eg. 12, 16-bit), sampling resolution, speed, and whether you need simultaneous or sequential sampling of multiple input channels.
 </p>
@@ -93,7 +93,7 @@ Most RTXI users use products developed by National Instruments. ANALOGY, a set o
 	</table>
 </div>
 
-<h5 class="page-header">Adding more DAQ cards</h5>
+<h4 class="page-header">Adding more DAQ cards</h4>
 <p>
 RTXI has no built-in software limitations on the number of DAQ cards but is configured for only one card by default. If you want to use additional cards, you will need to edit the configuration file. Here is the relevant excerpt of <code>/etc/rtxi.conf</code>:
 </p>

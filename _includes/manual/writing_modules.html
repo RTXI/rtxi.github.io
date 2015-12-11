@@ -20,7 +20,7 @@ The following sections describe the <code>Neuron</code> module, a Hodgkin-Huxley
 	</figcaption>
 </figure>
 
-<h5 class="page-header">Creating your own module class</h5>
+<h4 class="page-header">Creating your own module class</h4>
 
 <p>
 The quickest way to create a new user module is to duplicate an existing module directory and rename the files and the class. This involves renaming the class header (*.h) file, the class implementation (*.cpp) file, editing the Makefile and editing any instances of the old class name within each of these files. The latter include the class name, scope names, the constructor, and the deconstructor. A template user module is <a href="https://github.com/RTXI/plugin-template">available online</a>.  
@@ -30,7 +30,7 @@ The quickest way to create a new user module is to duplicate an existing module 
 Alternatively, you can browse through <a href="/modules/">our module repository</a> to find modules that perform functions similar to those desired. All our code is open-source, so you are free to fork our existing code and reconfigure it to meet your needs. 
 </p>
 
-<h5 class="page-header">Edit the Makefile</h5>
+<h4 class="page-header">Edit the Makefile</h4>
 <p>
 The Makefile instructs the compiler how to build your module and link it to RTXI. In RTXI v1.2 and later, the Makefile allows modules to be compiled outside the core RTXI source tree. The following sample Makefile installs a plugin called <code>my_plugin</code> with dependencies <code>included_class.h</code> and its source <code>included_class.cpp</code>. 
 </p>
@@ -53,7 +53,7 @@ include $(shell rtxi_plugin_config --pkgdata-dir)/Makefile.plugin_compile
 The <code>PLUGIN_NAME</code> is the name of the shared object library (*.so) file when it is compiled. All modules should be given unique names because the compilation process will automatically overwrite identically-named modules. The <code>HEADERS</code> and <code>SOURCES</code> should also be edited to reflect the new source file names. For simple modules based on a single class, a single header and source file is all that is needed. You may base your module on additional custom classes whose sources must then be included here as well. The <code>LIBS</code> flag is used for any additional library flags. Here, <code>-lgsl</code> links this module against the GNU Scientific Library.
 </p>
 
-<h5 class="page-header">Define model parameters, inputs, and outputs</h5>
+<h4 class="page-header">Define model parameters, inputs, and outputs</h4>
 
 <p>
 <code>DefaultGUIModel</code> uses a special workspace variable <code>vars[]</code> to define quantities in the module. The declaration of these types follows a simple syntax. Every <code>DefaultGUIModel</code> module must have a workspace variable of type <code>variable_t</code> as shown in the <code>vars[]</code> of the Neuron module. 
@@ -94,7 +94,7 @@ Declaring an <code>INPUT</code> creates a slot for your module to acquire data f
 If your parameter name contains a forward slash "/", its values will not be automatically saved by the Data Recorder. This is a limitation of the HDF5 file format, which uses a directory-like syntax for specifying the data structure.
 </p>
 
-<h5 class="page-header">Initialize the model</h5>
+<h4 class="page-header">Initialize the model</h4>
 
 <p>
 The next section is the model constructor. If you changed the class name, this would read "<code>YOURMODEL::YOURMODEL</code>". You can set the text that will appear in the title bar of your module window using the first argument of the constructor method. The next required line is a call to the <code>createGUI()</code> function which generates the GUI shown in Figure . In this section, you should initialize all the variables and parameter values and make sure that the GUI reflects the actual values that are being used. In this example, much of this code is performed by the <code>update()</code> function under the <code>INIT</code> flag. In other modules downloadable from our website, you will find a separate <code>initParameters()</code> function that handles all variable initializations. 
@@ -142,7 +142,7 @@ void Neuron::execute(void) {
 {% endhighlight %}
 
 
-<h5 class="page-header">The update() function</h5>
+<h4 class="page-header">The update() function</h4>
 
 <p>
 The <code>update()</code> function implemented in <code>DefaultGUIModel</code> that is designed to handle function calls depending on the state of the GUI. It provides several flags to help organize code and handle events in modules. 
