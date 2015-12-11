@@ -7,4 +7,5 @@ node_modules/
 Gemfile.lock
 assets/less/src/*
 assets/css/src/*
+!assets/css/src/pygments.css
 assets/js/src/*
