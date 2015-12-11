@@ -195,7 +195,7 @@ module.exports = function(grunt) {
                   cwd: '<%= paths.datatables_bs.css %>/',
                   src: 'dataTables.bootstrap.min.css',
                   dest: '<%= paths.assets.css %>/src/',
-               expand: true
+                  expand: true
                },
                {
                   cwd: '<%= paths.datatables_responsive.js %>/',
@@ -331,14 +331,14 @@ module.exports = function(grunt) {
             }
          },
          css: {
-            files: [ '<%= paths.assets.css %>/*.css' ],
+            files: [ '<%= paths.assets.css %>/src/*.css' ],
             tasks: ['concat', 'cssmin', 'shell:build'],
             options: {
                livereload: true
             }
          },
          js: {
-            files: [ '<%= paths.assets.js %>/*.js' ],
+            files: [ '<%= paths.assets.js %>/src/*.js' ],
             tasks: ['concat', 'uglify', 'shell:build'],
             options: {
                livereload: true
