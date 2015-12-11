@@ -40,9 +40,9 @@ var topblockHeight = $('#topblock').outerHeight(true);
 
 /* activate sidebar */
 $('#sidebar').affix({
-  offset: {
-    top: topblockHeight
-  }
+	offset: {
+		top: topblockHeight
+	}
 });
 
 /* activate scrollspy menu */
@@ -51,18 +51,30 @@ $('body').scrollspy({
 	offset: navHeight
 });
 
+/* enable smooth scrolling */
+$('#leftCol a').on('click', function(event) {
+	event.preventDefault();
+	var hash = this.hash;
+
+	$('html, body').animate({
+		scrollTop: $(hash).offset().top
+	}, 400, function() {
+		window.location.hash = hash;
+	});
+});
 </script>
 "
+
 extra_css: "
 <style>
 #sidebar.affix-top {
-  position: static;
-  margin-top: 30px;
+	position: static;
+	margin-top: 30px;
 }
   
 #sidebar.affix {
-  position: fixed;
-  top:70px;
+	position: fixed;
+	top:70px;
 }
 
 img {
@@ -82,7 +94,6 @@ img {
 
 	<div class="row" id="topblock"><div class="col-xs-12">
 		<h2 class="page-header">{{ page.title }}</h2>
-		<div class="lead">blah</div>
 	</div></div>
 		
 
@@ -97,7 +108,7 @@ img {
 
 		<div class="col-sm-9">
 		{% for section in page.sections %}
-			<div id="{{ section.tag }}">{% include manual/{{ section.tag }}.html %}</div>
+			<div id="{{ section.tag }}" style="padding-top:30px; margin-top:-30px">{% include manual/{{ section.tag }}.html %}</div>
 		{% endfor %}
 		</div>
 	</div>
