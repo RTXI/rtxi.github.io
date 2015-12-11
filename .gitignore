@@ -5,4 +5,6 @@ _site
 bower_components/
 node_modules/
 Gemfile.lock
-assets/less/.*
+assets/less/src/*
+assets/css/src/*
+assets/js/src/*

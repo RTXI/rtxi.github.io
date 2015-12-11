@@ -67,7 +67,7 @@ module.exports = function(grunt) {
                paths: '<%= paths.bootstrap.less %>/'
             },
             files: { 
-               '<%= paths.assets.css %>/bootstrap.min.css' : '<%= paths.assets.less %>/bootstrap-base.less'
+               '<%= paths.assets.css %>/src/bootstrap.min.css' : '<%= paths.assets.less %>/bootstrap-base.less'
             }
          },
          font_awesome: {
@@ -76,7 +76,7 @@ module.exports = function(grunt) {
                paths: '<%= paths.font_awesome.less %>/'
             },
             files: { 
-               '<%= paths.assets.css %>/font-awesome.min.css' : '<%= paths.assets.less %>/font-awesome-base.less'
+               '<%= paths.assets.css %>/src/font-awesome.min.css' : '<%= paths.assets.less %>/font-awesome-base.less'
             }
          }
       },
@@ -134,13 +134,13 @@ module.exports = function(grunt) {
                {
                   cwd: '<%= paths.bootstrap.less %>/',
                   src: ['bootstrap.less', 'variables.less'], 
-                  dest: '<%= paths.assets.less %>/.bootstrap/',
+                  dest: '<%= paths.assets.less %>/src/bootstrap/',
                   expand: true
                },
                {
                   cwd: '<%= paths.bootstrap.js %>/',
                   src: 'bootstrap.min.js', 
-                  dest: '<%= paths.assets.js %>/',
+                  dest: '<%= paths.assets.js %>/src/',
                   expand: true
                },
                {
@@ -158,13 +158,13 @@ module.exports = function(grunt) {
                {
                   cwd: '<%= paths.font_awesome.less %>/',
                   src: ['font-awesome.less', 'variables.less'], 
-                  dest: '<%= paths.assets.less %>/.font-awesome/',
+                  dest: '<%= paths.assets.less %>/src/font-awesome/',
                   expand: true
                },
                {
                   cwd: '<%= paths.jquery %>/',
                   src: 'jquery.min.js',
-                  dest: '<%= paths.assets.js %>/',
+                  dest: '<%= paths.assets.js %>/src',
                   expand: true
                },
                {
@@ -176,37 +176,37 @@ module.exports = function(grunt) {
                {
                   cwd: '<%= paths.pygments %>/',
                   src: '*.css',
-                  dest: '<%= paths.assets.css %>/.pygments/',
+                  dest: '<%= paths.assets.css %>/src/pygments/',
                   expand: true
                },
                {
                   cwd: '<%= paths.datatables.js %>/',
                   src: 'jquery.dataTables.min.js',
-                  dest: '<%= paths.assets.js %>/',
+                  dest: '<%= paths.assets.js %>/src/',
                   expand: true
                },
                {
                   cwd: '<%= paths.datatables_bs.js %>/',
                   src: 'dataTables.bootstrap.min.js',
-                  dest: '<%= paths.assets.js %>/',
+                  dest: '<%= paths.assets.js %>/src/',
                   expand: true
                },
                {
                   cwd: '<%= paths.datatables_bs.css %>/',
                   src: 'dataTables.bootstrap.min.css',
-                  dest: '<%= paths.assets.css %>/',
-                  expand: true
+                  dest: '<%= paths.assets.css %>/src/',
+               expand: true
                },
                {
                   cwd: '<%= paths.datatables_responsive.js %>/',
                   src: 'dataTables.responsive.min.js',
-                  dest: '<%= paths.assets.js %>/',
+                  dest: '<%= paths.assets.js %>/src/',
                   expand: true
                },
                {
                   cwd: '<%= paths.datatables_responsive_bs.css %>/',
                   src: 'responsive.bootstrap.min.css',
-                  dest: '<%= paths.assets.css %>/',
+                  dest: '<%= paths.assets.css %>/src/',
                   expand: true
                }
             ]
@@ -222,26 +222,26 @@ module.exports = function(grunt) {
             separator: ';\n'
          },
          datatables_js: {
-            src: ['<%= paths.assets.js %>/jquery.dataTables.min.js',
-                  '<%= paths.assets.js %>/dataTables.bootstrap.min.js',
-				      '<%= paths.assets.js %>/dataTables.responsive.min.js'],
-            dest: '<%= paths.assets.js %>/dataTables.js'
+            src: ['<%= paths.assets.js %>/src/jquery.dataTables.min.js',
+                  '<%= paths.assets.js %>/src/dataTables.bootstrap.min.js',
+				      '<%= paths.assets.js %>/src/dataTables.responsive.min.js'],
+            dest: '<%= paths.assets.js %>/src/dataTables.js'
          },
          datatables_css: {
-            src: ['<%= paths.assets.css %>/dataTables.bootstrap.min.css',
-                  '<%= paths.assets.css %>/responsive.bootstrap.min.css'],
-            dest: '<%= paths.assets.css %>/dataTables.css'
+            src: ['<%= paths.assets.css %>/src/dataTables.bootstrap.min.css',
+                  '<%= paths.assets.css %>/src/responsive.bootstrap.min.css'],
+            dest: '<%= paths.assets.css %>/src/dataTables.css'
          },
          default_js: {
-            src: ['<%= paths.assets.js %>/jquery.min.js',
-                  '<%= paths.assets.js %>/bootstrap.min.js'],
-            dest: '<%= paths.assets.js %>/default.js'
+            src: ['<%= paths.assets.js %>/src/jquery.min.js',
+                  '<%= paths.assets.js %>/src/bootstrap.min.js'],
+            dest: '<%= paths.assets.js %>/src/default.js'
          },
          default_css: {
-            src: ['<%= paths.assets.css %>/bootstrap.min.css',
-                  '<%= paths.assets.css %>/font-awesome.min.css',
-                  '<%= paths.assets.css %>/pygments.css'],
-            dest: '<%= paths.assets.css %>/default.css'
+            src: ['<%= paths.assets.css %>/src/bootstrap.min.css',
+                  '<%= paths.assets.css %>/src/font-awesome.min.css',
+                  '<%= paths.assets.css %>/src/pygments.css'],
+            dest: '<%= paths.assets.css %>/src/default.css'
          }
       },
 
@@ -251,12 +251,12 @@ module.exports = function(grunt) {
       uglify: {
          default_js: {
             files: {
-               '<%= paths.assets.js %>/default.min.js': ['<%= paths.assets.js %>/default.js']
+               '<%= paths.assets.js %>/default.min.js': ['<%= paths.assets.js %>/src/default.js']
             }
          },
          datatables_js: {
             files: {
-               '<%= paths.assets.js %>/dataTables.min.js': ['<%= paths.assets.js %>/dataTables.js']
+               '<%= paths.assets.js %>/dataTables.min.js': ['<%= paths.assets.js %>/src/dataTables.js']
             }
          }
       },
@@ -267,12 +267,12 @@ module.exports = function(grunt) {
       cssmin: {
          default_css: {
             files: {
-               '<%= paths.assets.css %>/default.min.css': ['<%= paths.assets.css %>/default.css']
+               '<%= paths.assets.css %>/default.min.css': ['<%= paths.assets.css %>/src/default.css']
             }
          },
          dataTables_css: {
             files: {
-               '<%= paths.assets.css %>/dataTables.min.css': ['<%= paths.assets.css %>/dataTables.css']
+               '<%= paths.assets.css %>/dataTables.min.css': ['<%= paths.assets.css %>/src/dataTables.css']
             }
          }
       },
