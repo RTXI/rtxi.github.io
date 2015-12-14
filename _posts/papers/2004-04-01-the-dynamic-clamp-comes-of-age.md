@@ -8,8 +8,7 @@ authors:
  - name: Astrid Prinz 
  - name: Abbott
  - name: Eve Marder
-link: "
-http://dx.doi.org/10.1016/j.tins.2004.02.004"
+link: "http://dx.doi.org/10.1016/j.tins.2004.02.004"
 ---
 
 The dynamic clamp uses computer simulation to introduce artificial membrane or synaptic conductances into biological neurons and to create hybrid circuits of real and model neurons. In the ten years since it was first developed, the dynamic clamp has become a widely used tool for the study of neural systems at the cellular and circuit levels. This review describes recent state-of-the-art implementations of the dynamic clamp and summarizes insights gained through its use, ranging from the role of voltage-dependent conductances in shaping neuronal activity to the effects of synaptic dynamics on network behavior and the impact of in vivo-like input on neuronal information processing.  
