@@ -3,7 +3,7 @@ title: "The dynamic clamp compes of age"
 layout: paper
 categories: papers
 
-reference: "Prinz, A. A., Abbott, L. . & Marder, E. The dynamic clamp comes of age. Trends in Neurosciences 27, 218–224 (2004).
+reference: "Prinz, A. A., Abbott, L. . & Marder, E. The dynamic clamp comes of age. Trends in Neurosciences 27, 218–224 (2004)."
 authors: 
  - name: Astrid Prinz 
  - name: Abbott
