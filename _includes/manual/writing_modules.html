@@ -35,7 +35,7 @@ Alternatively, you can browse through <a href="/modules/">our module repository<
 The Makefile instructs the compiler how to build your module and link it to RTXI. In RTXI v1.2 and later, the Makefile allows modules to be compiled outside the core RTXI source tree. The following sample Makefile installs a plugin called <code>my_plugin</code> with dependencies <code>included_class.h</code> and its source <code>included_class.cpp</code>. 
 </p>
 
-{% highlight cpp %}
+{% highlight bash %}
 PLUGIN_NAME = my_plugin  
 
 HEADERS = my_plugin.h \ 
@@ -60,7 +60,7 @@ The <code>PLUGIN_NAME</code> is the name of the shared object library (*.so) fil
 </p>
 
 {% highlight cpp %}
-static DefaultGUIModel::variable_t vars$left[right]$ = {
+static DefaultGUIModel::variable_t vars[] = {
 	{"Iapp", "A", DefaultGUIModel::INPUT,},
 	{"Vm", "V", DefaultGUIModel::OUTPUT,},
 	{"V0", "mV", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
