@@ -9,7 +9,7 @@ tag_content: "These are legacy instructions for installing RTXI v1.4 from source
 </div>
 
 <div class="container">
-	<p>These are legacy instructions for installing RTXI v1.4 from source. Alternatively, you can use our <a href="http://relic.rtxi.org/iso/ubuntu-10.04-desktop-i386-rtxi-0.iso">v1.4 live CD</a>, which uses Ubuntu 10.04. Due to its age, many libraries v1.4 uses have become outdated, and they can cause errors and prevent prevent successful installation. These instructions were tested in Ubuntu 14.04, Ubuntu 12.04, Debian 8, and Debian 7. To install RTXI 1.4 from source, follow these steps:  
+	<p>These are legacy instructions for installing RTXI v1.4 from source. Alternatively, you can use our <a href="http://relic.rtxi.org/iso/ubuntu-10.04-desktop-i386-rtxi-0.iso">v1.4 live CD</a>, which uses Ubuntu 10.04. Due to its age, many libraries v1.4 uses have become outdated, and they can cause errors and prevent prevent successful installation. These instructions are intended to work for Ubuntu 12.04/14.04 and Debian 7/8. To install RTXI 1.4 from source, follow these steps:  
 	</p>
 	
 <!--
@@ -51,7 +51,19 @@ $ git clone https://github.com/rtxi/rtxi.git
 $ cd rtxi
 {% endhighlight %}
 
-	<!-- 2. Run the setup script -->
+	<!-- 2. Check out a specific commit -->
+	<h4 class="lead media-heading">
+		{% increment standardcount %}. Check out the last v1.4 commit. 
+	</h4>
+
+	<p>Check out the last commit on master that built RTXI v1.4. Run <code> git checkout</code> with the commit hash as follows: 
+	</p>
+
+{% highlight bash %}
+$ git checkout 8178f288310377284c1058ca2d188a1a8ae309fc
+{% endhighlight %}
+
+	<!-- 3. Run the setup script -->
 	<h4 class="lead media-heading">
 		{% increment standardcount %}. Run the setup script.  
 	</h4>
@@ -87,5 +99,8 @@ $ ./setup.sh
 {% highlight bash %}
 $ rtxi
 {% endhighlight %}
+
+	<p>Depending on the installation option you chose, you may need to run <code>sudo rtxi</code>.
+	</p>
 
 </div>
