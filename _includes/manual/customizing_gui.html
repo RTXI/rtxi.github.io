@@ -27,16 +27,16 @@ As is, Neuron does not use <code>customizeGUI</code>. Suppose, though, that we w
 
 {% highlight cpp %}
 void Neuron::customizeLayout(void) {
-	QGridLayout *customlayout = DefaultGUIModel::getLayout();
+   QGridLayout *customlayout = DefaultGUIModel::getLayout();
 
-	QGroupBox *buttongroup = new QGroupBox;
-	QHBoxLayout *buttonlayout = new QButtonLayout;
-	QPushButton *aBttn = new QPushButton("Button A", buttonlayout);
-	QPushButton *bBttn = new QPushButton("Button B", buttonlayout);
-	buttongroup->setLayout(buttonlayout);
+   QGroupBox *buttongroup = new QGroupBox;
+   QHBoxLayout *buttonlayout = new QButtonLayout;
+   QPushButton *aBttn = new QPushButton("Button A", buttonlayout);
+   QPushButton *bBttn = new QPushButton("Button B", buttonlayout);
+   buttongroup->setLayout(buttonlayout);
 
-	customlayout->addWidget(buttongroup, 0, 0)
-	setLayout(customlayout);
+   customlayout->addWidget(buttongroup, 0, 0)
+   setLayout(customlayout);
 }
 {% endhighlight %}
 

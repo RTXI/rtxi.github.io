@@ -61,20 +61,20 @@ The <code>PLUGIN_NAME</code> is the name of the shared object library (*.so) fil
 
 {% highlight cpp %}
 static DefaultGUIModel::variable_t vars[] = {
-	{"Iapp", "A", DefaultGUIModel::INPUT,},
-	{"Vm", "V", DefaultGUIModel::OUTPUT,},
-	{"V0", "mV", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
-	{"Cm", "uF/cm^2", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
-	{"G_Na_max", "mS/cm^2", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
-	{"E_Na", "mV", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
-	{"G_K_max", "mS/cm^2", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
-	{"E_K", "mV", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
-	{"G_L", "mS/cm^2", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
-	{"E_L", "mV", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
-	{"rate", "Hz",  DefaultGUIModel::PARAMETER|DefaultGUIModel::UINTEGER,},
-	{"m" "Sodium Activation", DefaultGUIModel::STATE,},
-	{"h", "Sodium Inactivation", DefaultGUIModel::STATE,},
-	{"n", "Potassium Activation", DefaultGUIModel::STATE,},
+   {"Iapp", "A", DefaultGUIModel::INPUT,},
+   {"Vm", "V", DefaultGUIModel::OUTPUT,},
+   {"V0", "mV", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
+   {"Cm", "uF/cm^2", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
+   {"G_Na_max", "mS/cm^2", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
+   {"E_Na", "mV", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
+   {"G_K_max", "mS/cm^2", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
+   {"E_K", "mV", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
+   {"G_L", "mS/cm^2", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
+   {"E_L", "mV", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
+   {"rate", "Hz",  DefaultGUIModel::PARAMETER|DefaultGUIModel::UINTEGER,},
+   {"m" "Sodium Activation", DefaultGUIModel::STATE,},
+   {"h", "Sodium Inactivation", DefaultGUIModel::STATE,},
+   {"n", "Potassium Activation", DefaultGUIModel::STATE,},
 };
 {% endhighlight %}
 
@@ -106,14 +106,14 @@ It is convenient to perform unit conversions when calling these functions so tha
 
 {% highlight cpp %}
 Neuron::Neuron(void) : DefaultGUIModel("Neuron", ::vars, ::num_vars) {
-	createGUI(vars, num_vars); // creates the GUI 
-	V = V0;
-	m = m_inf(V0);
-	h = h_inf(V0);
-	n = n_inf(V0);
-	period = RT::System::getInstance()->getPeriod() * 1e-6; // convert ns to ms
-	update(INIT); // calls the update() function with the INIT flag
-	refresh(); // refreshes the GUI to reflect parameter values stored in variables
+   createGUI(vars, num_vars); // creates the GUI 
+   V = V0;
+   m = m_inf(V0);
+   h = h_inf(V0);
+   n = n_inf(V0);
+   period = RT::System::getInstance()->getPeriod() * 1e-6; // convert ns to ms
+   update(INIT); // calls the update() function with the INIT flag
+   refresh(); // refreshes the GUI to reflect parameter values stored in variables
 }
 {% endhighlight %}
 
@@ -134,10 +134,10 @@ The <code>execute()</code> function will run to completion on every time step. T
 
 {% highlight cpp %}
 void Neuron::execute(void) {
-	for (int i = 0; i < steps; ++i) {
-		solve(period / steps, y); // integrate equations
-	}
-	output(0) = V * 1e-3; // convert to mV
+   for (int i = 0; i < steps; ++i) {
+      solve(period / steps, y); // integrate equations
+   }
+   output(0) = V * 1e-3; // convert to mV
 }
 {% endhighlight %}
 
@@ -206,51 +206,53 @@ YOUR_VARIABLE = getParameter("YOUR_GUI_LABEL").toDouble();
 If you do any unit conversions with <code>setParameter()</code>, make sure you do the inverse with <code>getParameter()</code>. You may also want to add code to the <code>PAUSE</code> flag to set the output of your module to zero, e.g. the amplitude of an injected current. In some cases, you will want to reset certain internal variables when you stop or start the model eg. a counter that keeps track of your model execution time. Under the <code>PERIOD</code> flag, you will always want to update your model with the new real-time period. 
 </p>
 
+<div>
 {% highlight cpp %}
 void Neuron::update(DefaultGUIModel::update_flags_t flag) {
-	switch (flag) {
-		case INIT:
-		setState("m", m);
-		setState("h", h);
-		setState("n", n);
-		setParameter("V0", V0);
-		setParameter("Cm", Cm);
-		setParameter("G_Na_max", G_Na_max);
-		setParameter("E_Na", E_Na);
-		setParameter("G_K_max", G_K_max);
-		setParameter("E_K", E_K);
-		setParameter("G_L", G_L);
-		setParameter("E_L", E_L);
-		setParameter("Iapp_offset", Iapp_offset);
-		setParameter("rate", rate);
-		break;
-	case MODIFY:
-		V0 = getParameter("V0").toDouble();
-		Cm = getParameter("Cm").toDouble();
-		G_Na_max = getParameter("G_Na_max").toDouble();
-		E_Na = getParameter("E_Na").toDouble();
-		G_K_max = getParameter("G_K_max").toDouble();
-		E_K = getParameter("E_K").toDouble();
-		G_L = getParameter("G_L").toDouble();
-		E_L = getParameter("E_L").toDouble();
-		Iapp_offset = getParameter("Iapp_offset").toDouble();
-		rate = getParameter("rate").toDouble();
-		steps = static_cast (ceil(period * rate / 1000.0));
-		V = V0;
-		m = m_inf(V0);
-		h = h_inf(V0);
-		n = n_inf(V0);
-		break;
-	case PAUSE:
-		break;
-	case UNPAUSE:
-		break;
-	case PERIOD:
-		period = RT::System::getInstance()->getPeriod() * 1e-6; // ms
-		steps = static_cast (ceil(period * rate / 1000.0));
-		break;
-	default:
-		break;
-		}
+   switch (flag) {
+      case INIT:
+      setState("m", m);
+      setState("h", h);
+      setState("n", n);
+      setParameter("V0", V0);
+      setParameter("Cm", Cm);
+      setParameter("G_Na_max", G_Na_max);
+      setParameter("E_Na", E_Na);
+      setParameter("G_K_max", G_K_max);
+      setParameter("E_K", E_K);
+      setParameter("G_L", G_L);
+      setParameter("E_L", E_L);
+      setParameter("Iapp_offset", Iapp_offset);
+      setParameter("rate", rate);
+      break;
+   case MODIFY:
+      V0 = getParameter("V0").toDouble();
+      Cm = getParameter("Cm").toDouble();
+      G_Na_max = getParameter("G_Na_max").toDouble();
+      E_Na = getParameter("E_Na").toDouble();
+      G_K_max = getParameter("G_K_max").toDouble();
+      E_K = getParameter("E_K").toDouble();
+      G_L = getParameter("G_L").toDouble();
+      E_L = getParameter("E_L").toDouble();
+      Iapp_offset = getParameter("Iapp_offset").toDouble();
+      rate = getParameter("rate").toDouble();
+      steps = static_cast (ceil(period * rate / 1000.0));
+      V = V0;
+      m = m_inf(V0);
+      h = h_inf(V0);
+      n = n_inf(V0);
+      break;
+   case PAUSE:
+      break;
+   case UNPAUSE:
+      break;
+   case PERIOD:
+      period = RT::System::getInstance()->getPeriod() * 1e-6; // ms
+      steps = static_cast (ceil(period * rate / 1000.0));
+      break;
+   default:
+      break;
+   }
 }
 {% endhighlight %}
+</div>
