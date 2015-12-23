@@ -10,8 +10,6 @@ sections:
    tag: overview
  - name: Dynamic Clamp
    tag: dynamic_clamp
- - name: Features
-   tag: features
  - name: Hardware Specs
    tag: hardware
  - name: DAQs
@@ -28,6 +26,8 @@ sections:
    tag: hdf
 
 unused_sections: 
+ - name: Overview
+   tag: overview
  - name: Forking Modules
    tag: writing_modules
  - name: DefaultGUI
@@ -100,7 +100,7 @@ img {
 		
 
 	<div class="row">
-		<nav class="col-sm-3 hidden-xs" id="leftCol">
+		<nav class="col-sm-3 col-lg-2 hidden-xs" id="leftCol">
 			<ul class="nav nav-pills nav-stacked" id="sidebar">
 			{% for section in page.sections %}
 				<li><a href="#{{ section.tag }}">{{ section.name }}</a></li>
@@ -108,7 +108,7 @@ img {
 			</ul>
 		</nav>
 
-		<div class="col-sm-9">
+		<div class="col-sm-9 col-lg-10">
 		{% for section in page.sections %}
 			<div id="{{ section.tag }}" style="padding-top:30px; margin-top:-30px">{% include manual/{{ section.tag }}.html %}</div>
 		{% endfor %}
