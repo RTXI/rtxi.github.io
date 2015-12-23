@@ -22,23 +22,19 @@ Real-time signals in RTXI are streamed to the <i>Synchronous Data</i> structure 
 </figure>
 
 <p>
-There are various software available for working with HDF5 files. To simply browse the file structure, you can use the free HDFView application. HDFView provides some limited editing capabilities. For trials where only a single channel is saved, you can also preview a plot of the data. To extract the data for analysis and for complete editing capabilities, APIs are available for MATLAB, GNU Octave, Igor Pro, Mathematica, Python, Scilab, and other software. For real-time streaming of multiple signals, an HDF5 data type is used in RTXI that does not map efficiently onto MATLAB native data types. While MATLAB can read this data using its low-level functions, this process can be very slow. To load RTXI HDF5 files quickly into MATLAB, you will first need to run a small utility function on your HDF5 file to convert the <i>Synchronous Data</i> dataset to a different data type. This function is compiled when RTXI is compiled and is located in <code>rtxi/hdf</code>. To convert your HDF5 file:
+There are various software available for working with HDF5 files. To simply browse the file structure, you can use the free HDFView application:
 </p>
 
 {% highlight bash %}
-$ rtxi_hdf_matlablize YOUR_FILE.h5
+$ sudo apt-get install hdfview
 {% endhighlight %}
 
 <p>
-To make this utility accessible from any directory on your system, make a symbolic link in <code>/usr/bin</code> to the location of this function in your RTXI source directory. If you installed RTXI from the Live CD, the source directory is <code>/home/rtxi</code>:
+HDFView provides some limited editing capabilities. For trials where only a single channel is saved, you can also preview a plot of the data. To extract the data for analysis and for complete editing capabilities, APIs are available for MATLAB, GNU Octave, Igor Pro, Mathematica, Python, Scilab, and other software.  
 </p>
 
-{% highlight bash %}
-$ sudo ln -s RTXI_SRC_DIR/hdf/rtxi_hdf_matlabize /usr/bin/rtxi_hdf_matlabize
-{% endhighlight %}
-
 <p>
-RTXI also includes a simple MATLAB GUI for quickly viewing the data within a single trial. The MATLAB code is available in <code>rtxi/hdf/RTXIh5_MATLAB</code>. A sample m-file called <code>example.m</code> provides examples of how to extract data to the MATLAB workspace, use the GUI browser, and add new datasets to your file. It is also possible to embed binary formats, such as images, within a trial.
+RTXI also includes a simple MATLAB GUI for quickly viewing the data within a single trial. The MATLAB code is available in the <a href="https://github.com/rtxi/analysis-tools">Analysis Tools repository</a>. A sample m-file called <code>example.m</code> provides examples of how to extract data to the MATLAB workspace, use the GUI browser, and add new datasets to your file. It is also possible to embed binary formats, such as images, within a trial.
 </p>
 
 <p>
