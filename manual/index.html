@@ -1,0 +1,118 @@
+---
+title: User Manual
+layout: default
+category: docs
+permalink: /docs/manual/
+sections: 
+ - name: Introduction
+   tag: intro
+ - name: Overview
+   tag: overview
+ - name: Dynamic Clamp
+   tag: dynamic_clamp
+ - name: Features
+   tag: features
+ - name: Hardware Specs
+   tag: hardware
+ - name: DAQs
+   tag: daqs
+ - name: Real-time Performance
+   tag: rt_performance
+ - name: RTXI Menu
+   tag: menus
+ - name: System Modules
+   tag: core_modules
+ - name: User Modules
+   tag: user_modules
+ - name: HDF Files
+   tag: hdf
+
+unused_sections: 
+ - name: Forking Modules
+   tag: writing_modules
+ - name: DefaultGUI
+   tag: customizing_gui
+ - name: Model Cell Tutorial
+   tag: acquiring_data
+
+extra_js: "
+<script>
+var navHeight = $('.navbar').outerHeight(true) + 10;
+var topblockHeight = $('#topblock').outerHeight(true);
+
+/* activate sidebar */
+$('#sidebar').affix({
+	offset: {
+		top: topblockHeight
+	}
+});
+
+/* activate scrollspy menu */
+$('body').scrollspy({
+	target: '#leftCol',
+	offset: navHeight
+});
+
+/* enable smooth scrolling */
+$('#leftCol a').on('click', function(event) {
+	event.preventDefault();
+	var hash = this.hash;
+
+	$('html, body').animate({
+		scrollTop: $(hash).offset().top
+	}, 200, function() {
+		window.location.hash = hash;
+	});
+});
+</script>
+"
+
+extra_css: "
+<style>
+#sidebar.affix-top {
+	position: static;
+	margin-top: 30px;
+}
+  
+#sidebar.affix {
+	position: fixed;
+	top:70px;
+}
+
+img {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+</style>
+"
+---
+
+<div class="container">
+
+	<div class="row" id="topblock"><div class="col-xs-12">
+		<h2 class="page-header">{{ page.title }}</h2>
+	</div></div>
+		
+
+	<div class="row">
+		<nav class="col-sm-3 hidden-xs" id="leftCol">
+			<ul class="nav nav-pills nav-stacked" id="sidebar">
+			{% for section in page.sections %}
+				<li><a href="#{{ section.tag }}">{{ section.name }}</a></li>
+			{% endfor %}
+			</ul>
+		</nav>
+
+		<div class="col-sm-9">
+		{% for section in page.sections %}
+			<div id="{{ section.tag }}" style="padding-top:30px; margin-top:-30px">{% include manual/{{ section.tag }}.html %}</div>
+		{% endfor %}
+		</div>
+	</div>
+	
+</div>
