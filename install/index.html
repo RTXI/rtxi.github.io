@@ -424,10 +424,23 @@ $ sudo rtxi
 			<h4 class="lead media-heading">
 				{% increment upgradecount %}. Install modules.
 			</h4>
-			<p>All available modules in v1.4 came packaged with RTXI. For v2.0 onwards, we have split modules into separate GitHub repositories so that everyone only installs the modules they need. Customization also is on a per-module basis. When all modules are built into RTXI, customizing them means forking the entirety of RTXI itself. 
+			<p>All available modules in v1.4 came packaged with RTXI. For v2.0 onwards, modules are split into separate GitHub repositories. Customization also is on a per-module basis. Also, for v1.x, RTXI used the Qt3 framework to build the UI. For v2.0, we moved to Qt4, and with v2.1, we moved to Qt5. 
 			</p>
-			<p>What this means for you is that at this point, you've installed RTXI v{{ site.rtxi_version }}, but your modules are still configured for v1.4. You will have to update them manually. Go to our <a href="/modules/">modules page</a> to find all the modules already upgraded for v{{ site.rtxi_version }}. If you're using your own custom modules, then they will need to be updated to use Qt4 instead of Qt3 and take into account some small API changes. Check out the <a href="http://qt-project.org/doc/qt-4.8/porting4.html">Qt documentation for porting to Qt4</a>.
+			<p>What this means for you is that at this point, you've installed RTXI v{{ site.rtxi_version }}, but you need to recompile your modules to use updated dependencies. If you are using the DefaultGUI framework, this may be as simple as recompiling your code, but if you added custom Qt elements, you may need to port your code to reflect changes in Qt. 
 			</p>
+			<p>All modules on the <a href="/modules/">modules page</a> are up-to-date for v{{ site.rtxi_version }}. See the following documentation on porting to old Qt code to Qt5. 
+			</p>
+			<ul>
+				<li><a href="https://wiki.qt.io/Transition_from_Qt_4.x_to_Qt5">
+					Transition from Qt 4.x to Qt5
+				</a></li>
+				<li><a href="http://doc.qt.io/qt-5/portingguide.html">
+					Qt5 Porting Guide
+				</a></li>
+				<li><a href="http://qt-project.org/doc/qt-4.8/porting4.html">
+					Porting from Qt3 to Qt4
+				</a></li>
+			</ul>
 
 		</div></div>
 
