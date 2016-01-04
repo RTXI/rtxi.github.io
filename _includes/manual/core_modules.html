@@ -3,7 +3,7 @@
 The following modules are included in RTXI by default and are available through the <b>System</b> menu. All settings edited in each of these modules can be saved and reloaded via workspaces. Save by choosing <b>File</b> --> <b>Save Workspace</b> from the RTXI menu bar. This will create a basic *.set file that you can load in the future to recreate this environment or use as a foundation for additional *.set files.  
 </p>
 
-<h4 class="page-header">System Control Panel</h4>
+<h4 id="control_panel" class="page-header">System Control Panel</h4>
 
 <p>
 The System Control Panel allows you to set important parameters on all the input and output channels of your DAQ card and set the nominal real-time period of your system. To keep the number of RT events to a minimum, all changes made in the Control Panel are not set until the <b>Apply</b> button is pressed. 
@@ -31,7 +31,7 @@ The System Control Panel allows you to set important parameters on all the input
 	</dd>
 </dl>
 
-<h4 class="page-header">Oscilloscope</h4>
+<h4 id="oscilloscope" class="page-header">Oscilloscope</h4>
 
 <p>
 The Oscilloscope allows you to plot any system signal, such as signals from/to the DAQ card and signals from user modules. Each signal may have a different vertical scale and line style and a legend is automatically generated in the Oscilloscope window. 
@@ -65,7 +65,7 @@ The Oscilloscope allows you to plot any system signal, such as signals from/to t
 	</dd>
 </dl>
 
-<h4 class="page-header">Data Recorder</h4>
+<h4 id="data_recorder" class="page-header">Data Recorder</h4>
 <p>
 The Data Recorder module allows users to stream synchronous data to a HDF5 file. Open the module by selecting <b>System</b> --> <b>Data Recorder</b> from the RTXI menu bar. 
 </p>
@@ -91,7 +91,7 @@ The Data Recorder module allows users to stream synchronous data to a HDF5 file.
 	</dd>
 </dl>
 
-<h4 class="page-header">Connector</h4>
+<h4 id="connector" class="page-header">Connector</h4>
 <p>The Connector module allows you to create data streams between modules or between modules and the DAQ card. </p>
 
 <img src="{{ site.img }}/manual/connector.png">
@@ -118,9 +118,9 @@ The Data Recorder module allows users to stream synchronous data to a HDF5 file.
 	</dd>
 </dl>
 
-<h4 class="page-header">Real-time Benchmarks</h4>
+<h4 id="rt_benchmarks" class="page-header">Real-time Benchmarks</h4>
 <p>
-The RTBenchmarks module gives you timing statistics for RTXI. For hard real-time performance, all operations must complete within the nominal system period. This module continuously keeps track of the time needed to complete these tasks, as well as the actual real-time period. In addition, the module reports the worst case total computation time and the worst case time step for however long the module was openor the statistics were last reset.
+The RT Benchmarks module gives you timing statistics for RTXI. For hard real-time performance, all operations must complete within the nominal system period. This module continuously keeps track of the time needed to complete these tasks, as well as the actual real-time period. In addition, the module reports the worst case total computation time and the worst case time step for however long the module was openor the statistics were last reset.
 </p>
 
 <img src="{{ site.img }}/manual/performancebenchmark0.png">
