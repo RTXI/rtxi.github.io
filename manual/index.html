@@ -34,7 +34,6 @@ sections:
       tag: connector
     - name: RT Benchmarks
       tag: rt_benchmarks
-   subsection_tag: core_modules_sub
  - name: User Modules
    tag: user_modules
  - name: Plugin Template 
@@ -152,12 +151,8 @@ img {
 				{% if section.subsections == nil %} 
 				<li><a href="#{{ section.tag }}">{{ section.name }}</a></li>
 				{% else %}
-				<li><a data-target-"#{{ section.subsection_tag }}" 
-				       href="#{{ section.tag }}">{{ section.name }}
-				    </a>
-					<ul id="{{ section.subsection_tag }}" 
-					    class="nav collapse" 
-					    style="padding-left:20px">
+				<li><a href="#{{ section.tag }}">{{ section.name }}</a>
+					<ul class="nav collapse" style="padding-left:20px">
 						{% for subsection in section.subsections %}
 						<li><a href="#{{ subsection.tag }}">{{ subsection.name }}</a></li>
 						{% endfor %}
