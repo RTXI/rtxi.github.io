@@ -62,7 +62,6 @@ exclude:
  - "Gemfile"
  - "Gemfile.lock"
  - "LICENSE"
- - "relic" 
  - "assets/less/"
  - "Gruntfile.js"
  - "package.json"
