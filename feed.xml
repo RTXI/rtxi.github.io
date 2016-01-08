@@ -769,6 +769,32 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
       </item>
     
       <item>
+        <title>Linux Freezes after Reboot</title>
+        <description>&lt;p&gt;If you do an OS-based reboot of your the computer and your log-in screen is laggy or displays errors, it’s probably because &lt;code&gt;kexec-tools&lt;/code&gt; are handling reboots. 
+When compiling an RT kernel, you were prompted whether or not to let &lt;code&gt;kexec-tools&lt;/code&gt; handle reboots. 
+You are advised in the installation instructions (and here) to not allow that.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;kexec-tools&lt;/code&gt; utility normally is used to perform ‘warm reboots,’ which is when the computer reloads a kernel without fully shutting the system down. 
+(In contrast, a cold reboot is when you fully shut down the computer, meaning that the machine fully stops and it begins to cool down.) 
+The lag you experience is probably because kexec-tools is rebooting to a non-RT kernel. 
+Your system is at that point should not be relied on for running real-time applications.&lt;/p&gt;
+
+&lt;p&gt;To temporarily fix this, fully shutdown the computer to do a cold reboot. To permanently fix it, disable kexec-tools from handling reboots:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open /etc/default/kexec (as root).&lt;/li&gt;
+  &lt;li&gt;Change &lt;code&gt;LOAD_KEXEC&lt;/code&gt; from &lt;code&gt;true&lt;/code&gt; to &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Save and exit.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Now, kexec-tools will no longer handle reboots, and your system reboot as one would expect.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 02 Mar 2015 00:00:00 -0500</pubDate>
+        <link>http://rtxi.org//docs/troubleshoot/2015/03/02/linux-frozen-after-reboot/</link>
+        <guid isPermaLink="true">http://rtxi.org//docs/troubleshoot/2015/03/02/linux-frozen-after-reboot/</guid>
+      </item>
+    
+      <item>
         <title>Using Graphics Cards</title>
         <description>&lt;p&gt;Choosing graphics cards can be a thorny issue in standard Linux alone, let alone real-time Linux. Often, open-source drivers lag behind proprietary ones in terms of compatibility with newer hardware and displays. The two main types, AMD and Nvidia, are supported for the most part within Linux.&lt;/p&gt;
 
@@ -1174,21 +1200,6 @@ Some influential environment variables:
         <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/tutorials/2014/12/04/manually-configuring-rtxi/</link>
         <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2014/12/04/manually-configuring-rtxi/</guid>
-      </item>
-    
-      <item>
-        <title>Can I run RTXI in non-real-time?</title>
-        <description>&lt;p&gt;RTXI can be run in non-real-time to debug your code. This will require that you manually configure and recompile RTXI. In the RTXI directory, go to the scripts directory and run:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo ./install-rtxi.sh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;You will be prompted to enter your system configuration. Select “2” to run in non-real-time (POSIX).&lt;/p&gt;
-
-&lt;p&gt;Running RTXI in non-real-time is useful for debugging purposes mainly, and it also allows the application to be installed without having to install a real-time kernel beforehand.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//docs/faqs/2014/12/04/can-i-run-rtxi-in-non-real-time/</link>
-        <guid isPermaLink="true">http://rtxi.org//docs/faqs/2014/12/04/can-i-run-rtxi-in-non-real-time/</guid>
       </item>
     
   </channel>

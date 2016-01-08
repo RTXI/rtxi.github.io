@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="en" itemscope itemtype="http://scheme.org/Article"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="If you do an OS-based reboot of your the computer and your log-in screen is laggy or displays errors, it's probably because `kexec-tools` are handling reboots. 
+When compiling an RT kernel, you wer..."><meta itemprop="name" content="Linux Freezes after Reboot"><meta itemprop="description" content="If you do an OS-based reboot of your the computer and your log-in screen is laggy or displays errors, it's probably because `kexec-tools` are handling reboots. 
+When compiling an RT kernel, you wer..."><meta itemprop="image" content="http://rtxi.org/assets/img/rtxi-logo-square.png"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Linux Freezes after Reboot"><meta name="twitter:description" content="If you do an OS-based reboot of your the computer and your log-in screen is laggy or displays errors, it's probably because `kexec-tools` are handling reboots. 
+When compiling an RT kernel, you wer..."><meta name="twitter:image:src" content="http://rtxi.org/assets/img/rtxi-logo-square.png"><meta property="og:title" content="Linux Freezes after Reboot"><meta property="og:type" content="article"><meta property="og:url" content="http://rtxi.org/docs/troubleshoot/2015/03/02/linux-frozen-after-reboot/"><meta property="og:image" content="http://rtxi.org/assets/img/rtxi-logo-square.png"><meta property="og:description" content="If you do an OS-based reboot of your the computer and your log-in screen is laggy or displays errors, it's probably because `kexec-tools` are handling reboots. 
+When compiling an RT kernel, you wer..."><meta property="og:site_name" content="RTXI | The Real-time eXperiment Interface"><meta property="article:section" content=""><meta property="article:tag" content=""><title>Linux Freezes after Reboot | The Real-time eXperiment Interface</title><link href="/assets/css/default.min.css" rel="stylesheet"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.ico"></head><style>h1, h2, h3, h4, h5, h6 {
+			padding-bottom: 9px;
+			margin: 40px 0 20px;
+			border-bottom: 1px solid #eee;
+			font-weight: normal;
+		}
+		img {
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}</style><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" rel="home" href="/"><b>RTXI</b></a></div><div class="row"><div id="navbar" class="navbar-collapse collapse navbar-right" style="text-align:center"><ul class="nav navbar-nav"><li><a href="/install/">Install</a></li><li><a href="/modules/">Modules</a></li><li><a href="/papers/">Papers</a></li><li class="active"><a href="/docs/">Docs</a></li><li><a href="/stats/">Stats</a></li><li><a href="/community/">Community</a></li><li><a href="/contact/">Contact</a></li><li><a href="/feed.xml"><i class="fa fa-rss fa-inverse"></i></a></li></ul></div></div></div></nav><body style="padding-top:30px"><div class="container"><h3 class="page-header">Linux Freezes after Reboot</h3><p>If you do an OS-based reboot of your the computer and your log-in screen is laggy or displays errors, it’s probably because <code>kexec-tools</code> are handling reboots. When compiling an RT kernel, you were prompted whether or not to let <code>kexec-tools</code> handle reboots. You are advised in the installation instructions (and here) to not allow that.</p><p>The <code>kexec-tools</code> utility normally is used to perform ‘warm reboots,’ which is when the computer reloads a kernel without fully shutting the system down. (In contrast, a cold reboot is when you fully shut down the computer, meaning that the machine fully stops and it begins to cool down.) The lag you experience is probably because kexec-tools is rebooting to a non-RT kernel. Your system is at that point should not be relied on for running real-time applications.</p><p>To temporarily fix this, fully shutdown the computer to do a cold reboot. To permanently fix it, disable kexec-tools from handling reboots:</p><ol><li>Open /etc/default/kexec (as root).</li><li>Change <code>LOAD_KEXEC</code> from <code>true</code> to <code>false</code></li><li>Save and exit.</li></ol><p>Now, kexec-tools will no longer handle reboots, and your system reboot as one would expect.</p></div></body><style>html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+  margin-top: 10px;
+}
+.footer {
+  position: absolute;
+  top: 100%;
+  bottom: auto;
+  width: 100%;
+  height: -60px;
+  background-color: #c1c1c1;
+}</style><div class="footer"><div class="container"><div class="row"><div class="col-sm-6 text-center" style="margin-top:50px; margin-bottom:10px"><a href="http://www.nih.gov/"><img class="img-responsive" src="/assets/img/nih-logo-trans.svg"></a></div><div class="col-sm-6 text-center" style="margin-top:55px"><a href="https://github.com/rtxi"><img class="img-responsive" src="/assets/img/github-logo.svg"></a></div></div><div style="margin-bottom:40px"></div></div></div><script src="/assets/js/default.min.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-5550734-5', 'auto');
+		ga('send', 'pageview');</script></html>
