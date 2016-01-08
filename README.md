@@ -1,7 +1,7 @@
 #RTXI Website  
 
-**Requirements:** nodejs, ruby, bower, grunt, bundler  
-**Limitations:** this is written assuming you're working using Linux (apt-based)  
+**Requirements:** nodejs, npm, ruby, bower, grunt, bundler  
+**Limitations:** this is written assuming you're working using some (apt-based) Linux distro 
 
 ##Downloading and Building the Site
 If you want to build and edit the site on your own, you'll need to install some dependencies:  
@@ -63,7 +63,9 @@ $ grunt
 
 `npm install` installs all the node dependencies for the project (grunt, basically), and once grunt is installed, use it to download all the CSS/JS, etc. used to build the site.   
 
-The site should now be hosted on port 4000, so enter the url `localhost:4000` in your browser. Grunt will watch the directory and reload the site whenever there is a change to a file it's watching. What this means is that you can have a page you're working on open in the browser, open the corresponding source file in a text editor, and whenever you save changes to the file, the page in your browser will automatically get updated. This behavior is biggest reason went through all the trouble of using grunt.  
+The site should now be hosted on port 4000, so enter the url `localhost:4000` in your browser. Grunt will watch the directory and reload the site whenever there is a change to a file it's watching. The files and directories that grunt watches are set in `Gruntfile.js`.  
+
+What this means is that you can have a page you're working on open in the browser (localhost:4000/path/to/page), open the corresponding source file in a text editor, and whenever you save changes to the file, the page in your browser will automatically get updated. This behavior is biggest reason to go through all the trouble of installing grunt. 
 
 To kill grunt, use `CTRL+C` in the terminal.  
 
@@ -72,7 +74,7 @@ All the website files are either Markdown files or plain HTML.
 
 Brief overview of file hierarchy:  
  * **assets/** - used to hold all .js, .css, fonts, images, and .less files  
- * **_posts/** - some of the pages are rended using Jekyll's built-in post system. All pages that categorized as news, faqs, tutorials, papers, or troubleshooting are formatted as posts. (Only posts can be formatted with Markdown.)  
+ * **_posts/** - some of the pages are rended using Jekyll's built-in post system. All pages that categorized as news, faqs, tutorials, papers, or troubleshooting are formatted as posts.   
  * **index.html** - the home page  
  * **_includes/** - HTML snippets included in files using Liquid-format {{ tags }}  
  * **_layouts/** - layouts for HTML pages  
@@ -81,7 +83,7 @@ Brief overview of file hierarchy:
  * **_plugins/** - plugins that extend Jekyll's functionality. The only plugin there, `pull_modules.rb` pulls the modules from our repo and turns them into site pages.  
  * **bower.json** - list of dependencies bower handles (Bootstrap, jQuery, Isotope, font-awesome, and Octicons)  
  * **package.json** - list of dependencies installed by npm (Grunt stuff)  
- *  **google...** - a junk google file needed to verify my account so I can use their webmaster tools.  
+ *  **google...** - an empty file needed to verify the google webmaster account.  
  * **Gemfile** and **Gemfile.lock** - list of ruby gems the site depends on. Handled by bundler.  
  * **Gruntfile.js** - The file that makes all the magic happen. (It's the config file that grunt uses to run.)  
  * **CNAME** - the url of the site
