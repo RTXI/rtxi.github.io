@@ -55,7 +55,7 @@ $ sudo make install
             {% if module.url contains "modules" and module.url != "/modules/" %}
                <tr>
                   <td><a href="{{ module.url }}">{{ module.title }}</a></td>
-                  <td style="white-space: nowrap;"> {{ module.content | split:"<!--start-->" | last | split:"<!--end-->" | first }} 
+                  <td style="white-space: nowrap;"> {{ module.content | split:"<!--start-->" | last | split:"<!--end-->" | first | strip_html | truncate:500 }} 
                   </td>
                </tr>
             {% endif %}
@@ -77,7 +77,7 @@ $ sudo make install
             {% if module.url contains "modules" and module.url != "/modules/" %}
                <tr>
                   <td><a href="{{ module.url }}">{{ module.title }}</a></td>
-                  <td> {{ module.content | split:"<!--start-->" | last | split:"<!--end-->" | first }} 
+                  <td> {{ module.content | split:"<!--start-->" | last | split:"<!--end-->" | first | strip_html | truncate:500 }} 
                   </td>
                </tr>
             {% endif %}
