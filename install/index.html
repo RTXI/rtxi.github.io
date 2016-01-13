@@ -82,15 +82,17 @@ tag_content: "There are three ways to install RTXI: Use our Ubuntu-based live CD
 			
 			<dl class="dl-horizontal">
 				<dt>Linux</dt>
-					<dd>Clone the ISO image from the command line with <code>dd</code> or use applications like <a href="http://unetbootin.sourceforge.net/">UNetbootin</a> or <a href="https://apps.ubuntu.com/cat/applications/usb-creator-gtk/">USB Creator</a>. Check your distro's package repository to see if they're available.</dd>
+					<dd>Clone the ISO image from the command line with <code>dd</code> or use applications like <s>UNetbootin</s> or <a href="https://apps.ubuntu.com/cat/applications/usb-creator-gtk/">USB Creator</a>. Check your distro's package repository to see if they're available.</dd>
 				<dt>Windows</dt>
-					<dd>Try <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a> or <a href="http://unetbootin.sourceforge.net/">UNetbootin</a>.</dd>
+					<dd>Try <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a> or <s>UNetbootin</s>.</dd>
 				<dt>MacOS</dt>
-				<dd>Same programs. Try <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a> or <s>UNetbootin</s>.</dd>
+					<dd>Same programs. Try <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a> or <s>UNetbootin</s>.</dd>
 			</dl>
 			
-			<p>
-				We cannot not guarantee these installation programs will produce bootable live USBs for your system. This area tends to be a bit finnicky. Thus far, we've had greater success with burning DVDs than making USBs. Should you have any difficulties, let us know. 
+			<p>For live-USB-creating applications, look through the instructions on their websites or let their UIs guide you through making a bootable USB image. When prompted for a CD image, point the program to the ISO image you just downloaded, and when prompted for a installation destination, choose a USB drive you inserted into your computer. 
+			</p>
+
+			<p>We cannot not guarantee these installation programs will produce bootable live USBs for your system. This area tends to be a bit finnicky. Should you have any difficulties, let us know. 
 			</p>
 
 			<!-- 3. Boot into RTXI system -->
@@ -105,7 +107,7 @@ tag_content: "There are three ways to install RTXI: Use our Ubuntu-based live CD
 				From the menu, look for your boot options. There you can manually override the boot order of devices on your system. If you're booting from a DVD or USB, look for your DVD drive or USB label, respectively, and set them to be first in your boot order. Save you changes and exit your BIOS menu. 
 			</p>
 			<p>
-				<strong>Reminder:</strong> In the next step, you will be installing an operating system on your hard drive. Back it up if you haven't already.
+			<strong>Reminder:</strong> In the next step, you will be installing an operating system on your hard drive. <strong>Back up</strong> any files that are on it, because depending on how you choose to install Linux, they will be lost once the installation is complete.  
 			</p>
 			
 			<!-- 4. Install RTXI -->
@@ -114,14 +116,29 @@ tag_content: "There are three ways to install RTXI: Use our Ubuntu-based live CD
 				{% increment standardcount %}. Install RTXI via the installer. 
 			</h4>
 			<p>
-				When booting, you can choose to go directly to the installer or boot into the live desktop. Currently, the installer does not work from within the desktop, so to install RTXI, go to either install option in the boot menu.
-			</p>
-			<p><b>Note:</b> If you do go into the live desktop, you can try RTXI by selecting it from the applications menu or by opening a terminal and running <code>sudo rtxi</code>. If you want to install RTXI afterwards, simply restart the machine and select either installer from the boot menu. 
-			</p>
-			<p>
-				The installer will guide you through setting up the system name, passwords, networks, and partitioning. If unsure of what to do, use defaults when available.
+				When booting, you can choose to go directly to the installer or boot into the live desktop. The installer will guide you through setting up the system name, passwords, networks, and partitioning. If unsure of what to do, use defaults when available.
 			</p>
 
+			<!-- (Optional) Partition a hard drive
+			<div>&nbsp;</div>
+			<h4 class="lead media-heading">
+				(Optional) Partition your hard drive. 	
+			</h4>
+			<p>
+				If your hard drive already has an operating system (Windows, MacOS, etc.) installed, you can use the installer so that it installs Linux alongside it, leaving the original OS intact. Whenever you start you computer, you can choose which operating system from a boot menu. 
+			</p>
+
+			<p>The way the installer does this is by paritioning your hard drive. Say you start with Windows installed on a 500 GB hard drive. What the installer does is let you shrink the space Windows has available to it to something smaller, and then use the newly freed space to install Linux. 
+			</p>
+
+			<p><b>Note:</b> The partition shrinking/resizing step can be very time consuming, and you should not try to shrink a parition to a size smaller that the amount of data already saved on it. 
+			</p>
+
+			<p><b>Warning:</b> We <b>STRONGLY</b> recommend you back up your hard drive if you plan to partition your system because, though unlikely, the partitioning tool could break your existing OS. 
+			</p>
+
+			<p>Here are the general steps for paritioning your hard drive:</p>
+ -->
 			<!-- 5. Boot into RTXI -->
 			<div>&nbsp;</div>
 			<h4 class="lead media-heading">
@@ -190,12 +207,13 @@ tag_content: "There are three ways to install RTXI: Use our Ubuntu-based live CD
 			
 			<dl class="dl-horizontal">
 				<dt>Linux</dt>
-					<dd>Clone the ISO image from the command line with <code>dd</code> or use applications like <a href="http://unetbootin.sourceforge.net/">UNetbootin</a> or <a href="https://apps.ubuntu.com/cat/applications/usb-creator-gtk/">USB Creator</a>. Check your distro's package repository to see if they're available.</dd>
+					<dd>Clone the ISO image from the command line with <code>dd</code> or use applications like <s>UNetbootin</s> or <a href="https://apps.ubuntu.com/cat/applications/usb-creator-gtk/">USB Creator</a>. Check your distro's package repository to see if they're available.</dd>
 				<dt>Windows</dt>
-					<dd>Try <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a> or <a href="http://unetbootin.sourceforge.net/">UNetbootin</a>.</dd>
+					<dd>Try <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a> or <s>UNetbootin</s>.</dd>
 				<dt>MacOS</dt>
-					<dd>Same programs. Try <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a> or <a href="http://unetbootin.sourceforge.net/">UNetbootin</a>.</dd>
+					<dd>Same programs. Try <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a> or <s>UNetbootin</s>.</dd>
 			</dl>
+			
 			
 			<!-- 3. Install and boot into RTXI system -->
 			<div>&nbsp;</div>
