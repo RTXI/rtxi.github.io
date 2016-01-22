@@ -577,6 +577,9 @@
     <loc>http://rtxi.org/modules/clamp-protocol/</loc>
   </url>
   <url>
+    <loc>http://rtxi.org/modules/arduino/</loc>
+  </url>
+  <url>
     <loc>http://rtxi.org/doxygen/class_event_1_1_r_t_handler.html</loc>
     <lastmod>2015-12-08T19:13:57-05:00</lastmod>
   </url>
