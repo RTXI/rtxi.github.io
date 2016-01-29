@@ -272,28 +272,22 @@ RTXI workspace variables are displayed in the UI as &lt;code&gt;QStrings&lt;/cod
     
       <item>
         <title>Making New Modules in RTXI</title>
-        <description>&lt;p&gt;Outlined here is the development process for making new RTXI modules. We recommend our users to build their modules by using MyPluginGUI as the template. MyPluginGUI defines a basic GUI with customizable widgets and is found in the Plugin-Template directory of our GitHub repository. Anyone is free to fork off of it to create their own modules. GitHub provides &lt;a href=&quot;https://help.github.com/articles/fork-a-repo&quot;&gt;its own documentation&lt;/a&gt; on how to fork other users’ repositories. We strongly recommend reading it.&lt;/p&gt;
+        <description>&lt;p&gt;Outlined here is the development process for making new RTXI modules. For simplicity, we provide a template module, called Plugin Template, for users to customize without needing to writing everything from scratch. Plugin Template defines a basic GUI with customizable widgets and is found &lt;a href=&quot;https://github.com/rtxi/plugin-template&quot;&gt;on our GitHub repository&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;the-general-process-of-modifying-rtxi-plugins-is-as-follows&quot;&gt;The general process of modifying RTXI plugins is as follows:&lt;/h3&gt;
 
-&lt;h4 id=&quot;fork-from-rtxis-github-page&quot;&gt;1. Fork from RTXI’s GitHub page&lt;/h4&gt;
-&lt;p&gt;From our site, go to the Plugin-Template repository. Contained there are the source files for MyPluginGUI, which is the default template from which we encourage users to develop.&lt;/p&gt;
-
-&lt;p&gt;Forking will create a copy of our repository in your own GitHub account for you to modify.&lt;/p&gt;
-
-&lt;h4 id=&quot;clone-the-repository-on-your-local-machine&quot;&gt;2. Clone the repository on your local machine&lt;/h4&gt;
+&lt;h4 id=&quot;clone-the-repository-from-our-github-page&quot;&gt;1. Clone the repository from our GitHub page.&lt;/h4&gt;
+&lt;p&gt;From our site, go to the &lt;a href=&quot;https://github.com/rtxi/plugin-template&quot;&gt;Plugin-Template repository&lt;/a&gt;. Download the source files:&lt;/p&gt;
 
 &lt;p&gt;Now, clone the repository. Developers for new modules are expected to base it on MyPluginGUI. Type:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/&amp;lt;username&amp;gt;/plugin-template plugin_template&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/rtxi/plugin-template.git custom_module&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Note that &amp;lt;username&amp;gt; represents the username of your own GitHub account, not that of RTXI. That is the case because users cannot modify repositories without the permission of their owners. Because MyPluginGUI was forked and copied into your own repository, you are completely free to edit it, and that will not affect the copy in the RTXI repository.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;custom_module&lt;/code&gt; is the name of the directory git will create when downloading the source code. You can change it to whatever you want. If you don’t specify a name, it will default to &lt;code&gt;plugin-template&lt;/code&gt;, the name of the repository on GitHub.&lt;/p&gt;
 
-&lt;p&gt;In the command, the last parameter, &lt;code&gt;plugin_template&lt;/code&gt;, sets the name of the directory in which all the cloned information will be stored. This parameter is optional. If left blank, the directory name defaults to the name of the repository being cloned.&lt;/p&gt;
+&lt;p&gt;Once the module is downloaded, look inside the new directory for Plugin Template’s source code. An explanation of the header and source files is available in the our &lt;a href=&quot;http://rtxi.org/docs/manual/#customizing_gui&quot;&gt;user manual&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Now that clone is executed, look at the directory contents and you will see a subdirectory called &lt;code&gt;plugin_template&lt;/code&gt;. Inside there are the source files for MyPluginGUI. An explanation of the header and source files is viewable &lt;a href=&quot;https://github.com/RTXI/tutorials/wiki/MyPluginGUI-Base-Code&quot;&gt;FIX THIS LINK!!!&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h4 id=&quot;modify-files&quot;&gt;3. Modify files&lt;/h4&gt;
+&lt;h4 id=&quot;modify-files&quot;&gt;2. Modify files.&lt;/h4&gt;
 &lt;p&gt;Modify the RTXI files to run the code you want. When you compile and install your module, be sure to rename the source files and classes to something other than &lt;code&gt;plugin-template&lt;/code&gt; or &lt;code&gt;PluginTemplate&lt;/code&gt;, respectively. It’s preferable to name it  something that reflects what it does. A quick and easy way to change the names of the files, classes, and binary is to use the &lt;code&gt;sed&lt;/code&gt; and &lt;code&gt;mv&lt;/code&gt; commands:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sed -i &lt;span class=&quot;s1&quot;&gt;&amp;#39;s/plugin-template/&amp;lt;new_name_here&amp;gt;/g&amp;#39;&lt;/span&gt; plugin-template.* Makefile 
@@ -306,23 +300,15 @@ RTXI workspace variables are displayed in the UI as &lt;code&gt;QStrings&lt;/cod
 
 &lt;p&gt;Note that all commands that use the placeholder &lt;code&gt;&amp;lt;new_name_here&amp;gt;&lt;/code&gt; assume that you provide the same string for each instance of the placeholder. Not following this convention &lt;em&gt;could&lt;/em&gt; cause bugs that prevent your module from compiling if, for example, your sources file names and the &lt;code&gt;#includes&lt;/code&gt; within them come out differently.&lt;/p&gt;
 
-&lt;p&gt;Additionally, it’s good practive to document your code. As a general rule, document it so that you’re confident that anyone with programming experience will be able to understand what your code and overall module do.&lt;/p&gt;
+&lt;p&gt;Additionally, it’s good practice to document your code. As a general rule, document it so that you’re confident that anyone with programming experience will be able to understand what your code and overall module do.&lt;/p&gt;
 
-&lt;p&gt;To install the module on your system, run:&lt;/p&gt;
+&lt;h4 id=&quot;compile-and-install&quot;&gt;3. Compile and install.&lt;/h4&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;make
+&lt;p&gt;Once you’re ready to compile and install your module, go to the base of your module directory and execute:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;make 
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo make install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;push-changes-to-your-own-github-repository&quot;&gt;4. Push changes to your own GitHub repository&lt;/h4&gt;
-
-&lt;p&gt;Commit your changes and push them back to your repository. (To learn what that means, &lt;a href=&quot;/docs/tutorials/2015/04/07/how-to-use-git/&quot;&gt;read this&lt;/a&gt;.)&lt;/p&gt;
-
-&lt;p&gt;This will install your module in RTXI, and it will be available among all of your installed modules when you use the ‘Load Modules’ in the drop-down menu for ‘Modules’ in the RTXI main window.&lt;/p&gt;
-
-&lt;h4 id=&quot;submit-a-pull-request-for-your-plugin&quot;&gt;5. Submit a pull request for your plugin&lt;/h4&gt;
-&lt;p&gt;Go to the home page for your repository and select ‘Pull Requests’ on the sidebar. This will take you to a page where you can submit pull requests to all of the projects to which you contribute and view the status of those requests.&lt;/p&gt;
-
-&lt;p&gt;GitHub provides its own complete documentation on how to &lt;a href=&quot;https://help.github.com/articles/creating-a-pull-request&quot;&gt;create a pull request&lt;/a&gt; and &lt;a href=&quot;https://help.github.com/articles/using-pull-requests&quot;&gt;how to use them&lt;/a&gt; in general for project development.&lt;/p&gt;
 </description>
         <pubDate>Fri, 10 Apr 2015 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//docs/tutorials/2015/04/10/making-new-rtxi-modules/</link>
