@@ -4,7 +4,7 @@ categories: docs faqs
 layout: default
 ---
 
-There are several reasons for RTXI to not open.
+There are several reasons for RTXI to not open. 
 
 <ol>
 	<li><strong>RTXI is already running.</strong>

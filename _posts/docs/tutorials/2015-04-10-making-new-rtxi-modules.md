@@ -4,7 +4,7 @@ categories: docs tutorials
 layout: docpost
 ---
 
-Outlined here is the development process for making new RTXI modules. For simplicity, we provide a template module, called Plugin Template, for users to customize without needing to writing everything from scratch. Plugin Template defines a basic GUI with customizable widgets and is found [on our GitHub repository](https://github.com/rtxi/plugin-template). 
+Outlined here is the development process for making new RTXI modules. For simplicity, we provide a template module, called Plugin Template, for users to customize without needing to writing everything from scratch. Plugin Template defines a basic GUI with customizable widgets and is found [on our GitHub repository](https://github.com/rtxi/plugin-template).   
 
 
 ###The general process of modifying RTXI plugins is as follows:  

@@ -60,7 +60,7 @@ faq_modulus: 20
             {% endif %}
 					<div>&nbsp;</div>
                <h4 class="media-heading lead"><a href="{{ post.url }}">{{ post.title }}</a></h4>
-               <div>{{ post.excerpt | truncate:300 }}</div>
+               <div>{{ post.excerpt | strip_html | truncatewords:100 }}</div>
          {% endfor %}
          </div>
       </div>
@@ -103,7 +103,7 @@ faq_modulus: 20
                {% endif %}
             {% endif %}
                <h4 class="lead media-heading"><a href="{{ post.url }}">{{ post.title }}</a></h4>
-               <div>{{ post.excerpt | truncate:300 }}</div>
+               <div>{{ post.excerpt | strip_html | truncatewords:100 }}</div>
 					<div>&nbsp;</div>
          {% endfor %}
          </div>
