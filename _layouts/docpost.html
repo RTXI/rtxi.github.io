@@ -55,10 +55,9 @@
 		}
 	</style>
 
-	{% include navbar.html %}
-
-	<body style="padding-top:30px">
-		<div class="container">
+	<body>
+		{% include navbar.html %}
+		<div class="container" style="padding-top:30px">
 			<h3 class="page-header">{{ page.title }}</h3>
 			{{ content }}
 		</div>

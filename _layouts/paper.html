@@ -39,14 +39,12 @@
 		<link rel="icon" href="/favicon.ico">
 	</head>
 
-	{% include navbar.html %}
+	<body>
+		{% include navbar.html %}
 
-	<body style=padding-top:30px>
-		<div class="container">
+		<div class="container" style=padding-top:30px>
 			<h3 class="page-header">{{ page.title }}</h3>
-		</div>
 
-		<div class="container">
 			<div class="col-xs-12 col-sm-10" 
 			     style="font-size:14px; margin-bottom:20px; font-weight:300;">
 				{{ page.reference }}
