@@ -9,9 +9,9 @@ author :
    email : info@rtxi.org
    github : rtxi
 
-markdown: kramdown #rdiscount
-highlighter: pygments
-permalink: pretty #/:categories/:title
+markdown: kramdown 
+highlighter: rouge 
+permalink: pretty 
 
 img: "/assets/img"
 square_icon: "rtxi-logo-square.png"
@@ -52,7 +52,7 @@ developers:
 gems:
  - jekyll-sitemap
  - jekyll-redirect-from
-  
+ - jekyll-paginate
 
 defaults:
    values:
