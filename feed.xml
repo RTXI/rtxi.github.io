@@ -7,64 +7,6 @@
     <atom:link href="http://rtxi.org/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Getting Started</title>
-        <description>&lt;p&gt;To get started with RTXI for your experiments, there are some hardware requirements you need to satisfy. They’re pretty easy to meet, and they’ll get you set up with a properly performing RTXI installation.&lt;/p&gt;
-
-&lt;p&gt;You will need:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Computer&lt;/li&gt;
-  &lt;li&gt;Data acquisition card (DAQ)&lt;/li&gt;
-  &lt;li&gt;Graphics card (may come with computer)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;computer&quot;&gt;Computer&lt;/h4&gt;
-&lt;p&gt;Most computers built in the last few years will run Linux, but some will perform better for real-time applications. Here are some points to consider when buying new hardware:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;What is the CPU type?&lt;/strong&gt; We recommend using Intel processors, though AMD ones work, too.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;How many PCI/PCIe slots are there?&lt;/strong&gt; You will need one PCI or PCIe slot for a graphics card and another PCI slot for a DAQ.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Also, you should have a machine with at least &lt;strong&gt;4 GB of RAM&lt;/strong&gt;. While Linux can run with less, you will see degraded performance. Over the past few years, operating systems have been built under the assumption of increasingly capable hardware, and Linux has been no exception.&lt;/p&gt;
-
-&lt;h4 id=&quot;daq&quot;&gt;DAQ&lt;/h4&gt;
-&lt;p&gt;RTXI is tested and developed on systems using National Instruments (NI) cards. While the Xenomai project creates drivers for cards made by other vendors, we do not test them and cannot give you a recommendation to use them.&lt;/p&gt;
-
-&lt;p&gt;If buying a new NI DAQ, get an &lt;strong&gt;M-series&lt;/strong&gt; card. &lt;strong&gt;Do not get an X-series card&lt;/strong&gt;. Open-source drivers do not currently exist for them, so they cannot be used for data acquisition. For a complete list of what drivers are available for what hardware, look here:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://xenomai.org/analogy-practical-presentation/#ni_pcimio&quot;&gt;&lt;strong&gt;List of DAQs supported by the analogy driver&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;graphics-card&quot;&gt;Graphics Card&lt;/h4&gt;
-&lt;p&gt;You should get a discrete graphics card. Using integrated graphics will cause UI computation to be offloaded to the CPU, which at the same time has to handle real-time processes. Based on the systems we’ve benchmarked so far, you’re better off using an AMD card than an Nvidia one. You are also recommended to use open-source drivers instead of their proprietary counterparts.&lt;/p&gt;
-
-&lt;p&gt;What this means for you is that when buying/acquiring a computer, you need to check the type of graphics card it has. You also need to check whether it is supported by open-source drivers. (Often, newer hardware needs some time for the people who code the drivers to extend support for them.)&lt;/p&gt;
-
-&lt;p&gt;Here is a list of graphics card supported by the Nvidia open-source driver (nouveau) and the AMD one (radeon):&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://help.ubuntu.com/community/RadeonDriver#Fully_Supported&quot;&gt;&lt;strong&gt;AMD driver (radeon)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://wiki.freedesktop.org/nouveau/FAQ/#index14h3&quot;&gt;&lt;strong&gt;Nvidia driver (nouveau)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;installing-rtxi&quot;&gt;Installing RTXI&lt;/h3&gt;
-
-&lt;p&gt;Look through our &lt;a href=&quot;/install&quot;&gt;installation instructions&lt;/a&gt; to see how to install RTXI 2.0. You can install RTXI with our live CD, or you can install a generic version of Linux and then manually compile and install RTXI and its real-time dependencies. It’s up to you.&lt;/p&gt;
-
-&lt;p&gt;If you run into issues, look through our available &lt;a href=&quot;/docs&quot;&gt;documentation&lt;/a&gt;, and if it doesn’t help, email us or &lt;a href=&quot;https://github.com/rtxi/rtxi/issues&quot;&gt;submit an issue on GitHub&lt;/a&gt;. We recommend you do the latter.&lt;/p&gt;
-
-&lt;h4 id=&quot;note&quot;&gt;Note&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/rtxi/rtxi.github.io/issues/&quot;&gt;Let us know&lt;/a&gt; if any links are broken. They are all supposed to point directly to lists of hardware compatible with drivers. If they don’t, something went terrible wrong, and we need to fix the links.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 01 Jan 2020 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//docs/tutorials/2020/01/01/getting-started/</link>
-        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2020/01/01/getting-started/</guid>
-      </item>
-    
-      <item>
         <title>RTXI Fall Newsletter</title>
         <description>&lt;p&gt;There have been lots of new developments in RTXI over the past few months. Look forward to the upcoming release of RTXI 2.1, and we encourage those of you attending SfN 2015 to check out our poster!&lt;/p&gt;
 
@@ -153,60 +95,60 @@
 &lt;h4 id=&quot;upgrading-from-qt3-to-qt4&quot;&gt;Upgrading from Qt3 to Qt4&lt;/h4&gt;
 &lt;p&gt;Qt3 is an old version of the Qt library. It was released in 2001 and superceded by Qt4 in 2005. It introduced many breaking changes to its API and classes, so it’s taken a while to upgrade RTXI’s codebase to properly use Qt4. We recommend that you look through the documentation Nokia provides on its website for porting from Qt3 to Qt4: &lt;a href=&quot;http://doc.qt.io/qt-4.8/porting4.html&quot;&gt;http://doc.qt.io/qt-4.8/porting4.html&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h4 id=&quot;porting-modules-that-abstract-from-defaultguimodel&quot;&gt;Porting Modules that Abstract from &lt;code&gt;DefaultGUIModel&lt;/code&gt;&lt;/h4&gt;
-&lt;p&gt;For v2.0, the code exposed to users has been simplified and the customizability enhanced. The most significant change is in the &lt;code&gt;createGUI&lt;/code&gt; function and how the UI is generated. There are also some simple changes that correspond to syntax and class name changes in Qt4. They are as follows:&lt;/p&gt;
+&lt;h4 id=&quot;porting-modules-that-abstract-from-defaultguimodel&quot;&gt;Porting Modules that Abstract from &lt;code class=&quot;highlighter-rouge&quot;&gt;DefaultGUIModel&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;For v2.0, the code exposed to users has been simplified and the customizability enhanced. The most significant change is in the &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function and how the UI is generated. There are also some simple changes that correspond to syntax and class name changes in Qt4. They are as follows:&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;1. Change &lt;code&gt;#includes&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
-Libraries for Qt4 are included differently. To include them directly, change the names as indicated in the Qt4 documentation. For example, &lt;code&gt;&amp;lt;qpushbutton.h&amp;gt;&lt;/code&gt; becomes &lt;code&gt;&amp;lt;QPushButton&amp;gt;&lt;/code&gt;. Look through the Qt4 documentation to see what the name changes are. Another, simpler option is to just remove all the q* includes and replace them with &lt;code&gt;&amp;lt;QtGui&amp;gt;&lt;/code&gt;. &lt;code&gt;QtGui&lt;/code&gt; will make Qt pull in all the libraries needed to compile whatever Qt classes are present in the code without the need to specify them directly.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. Change &lt;code class=&quot;highlighter-rouge&quot;&gt;#includes&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
+Libraries for Qt4 are included differently. To include them directly, change the names as indicated in the Qt4 documentation. For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;qpushbutton.h&amp;gt;&lt;/code&gt; becomes &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;QPushButton&amp;gt;&lt;/code&gt;. Look through the Qt4 documentation to see what the name changes are. Another, simpler option is to just remove all the q* includes and replace them with &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;QtGui&amp;gt;&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;QtGui&lt;/code&gt; will make Qt pull in all the libraries needed to compile whatever Qt classes are present in the code without the need to specify them directly.&lt;/p&gt;
 
 &lt;p&gt;Essentially, something like:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;main_window.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qgridview.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qhbox.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qhbuttongroup.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qlabel.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qlayout.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qpushbutton.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qtimer.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qtooltip.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qvalidator.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qvbox.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;qwhatsthis.h&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;main_window.h&amp;gt;
+#include &amp;lt;qgridview.h&amp;gt;
+#include &amp;lt;qhbox.h&amp;gt;
+#include &amp;lt;qhbuttongroup.h&amp;gt;
+#include &amp;lt;qlabel.h&amp;gt;
+#include &amp;lt;qlayout.h&amp;gt;
+#include &amp;lt;qpushbutton.h&amp;gt;
+#include &amp;lt;qtimer.h&amp;gt;
+#include &amp;lt;qtooltip.h&amp;gt;
+#include &amp;lt;qvalidator.h&amp;gt;
+#include &amp;lt;qvbox.h&amp;gt;
+#include &amp;lt;qwhatsthis.h&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;div style=&quot;text-align:center;&quot;&gt;becomes&lt;br /&gt;&amp;nbsp;&lt;/div&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;main_window.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;QtGui&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;main_window.h&amp;gt;
+#include &amp;lt;QtGui&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;div&gt;&amp;nbsp;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;2. Change &lt;code&gt;QWhatsThis&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;2. Change &lt;code class=&quot;highlighter-rouge&quot;&gt;QWhatsThis&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
 This call is made by default in the constructors of module classes that abstract from DefaultGUIModel. Change:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;QWhatsThis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;text&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;QWhatsThis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;div style=&quot;text-align:center;&quot;&gt;to&lt;br /&gt;&amp;nbsp;&lt;/div&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;setWhatsThis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;setWhatsThis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;div&gt;&amp;nbsp;&lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;3. Add a resize timer&lt;/strong&gt;&lt;br /&gt;
-At the end of the contructor, after the module has been built and the &lt;code&gt;refresh&lt;/code&gt; function has been called, add the line:&lt;/p&gt;
+At the end of the contructor, after the module has been built and the &lt;code class=&quot;highlighter-rouge&quot;&gt;refresh&lt;/code&gt; function has been called, add the line:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;QTimer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;singleShot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SLOT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resizeMe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;QTimer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;singleShot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SLOT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resizeMe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;div&gt;&amp;nbsp;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;4. Switch to &lt;code&gt;createGUI + customizeGUI&lt;/code&gt; API&lt;/strong&gt;&lt;br /&gt;
-In v1.4, the GUI is created using DefaultGUIModel’s &lt;code&gt;createGUI&lt;/code&gt; function. If you wanted to add any custom elements, you had to overload the function and copy/paste the code in the &lt;code&gt;default_gui_model.cpp&lt;/code&gt; and then add your own stuff. That’s changed now.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4. Switch to &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI + customizeGUI&lt;/code&gt; API&lt;/strong&gt;&lt;br /&gt;
+In v1.4, the GUI is created using DefaultGUIModel’s &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function. If you wanted to add any custom elements, you had to overload the function and copy/paste the code in the &lt;code class=&quot;highlighter-rouge&quot;&gt;default_gui_model.cpp&lt;/code&gt; and then add your own stuff. That’s changed now.&lt;/p&gt;
 
-&lt;p&gt;You no longer should overload the &lt;code&gt;createGUI&lt;/code&gt; function. Now, just call DefaultGUIModel’s &lt;code&gt;createGUI&lt;/code&gt; function and then call a new function, &lt;code&gt;customizeGUI&lt;/code&gt;, to, well, customize it.&lt;/p&gt;
+&lt;p&gt;You no longer should overload the &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function. Now, just call DefaultGUIModel’s &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function and then call a new function, &lt;code class=&quot;highlighter-rouge&quot;&gt;customizeGUI&lt;/code&gt;, to, well, customize it.&lt;/p&gt;
 
-&lt;p&gt;Define &lt;code&gt;customizeGUI&lt;/code&gt; within the modules you are building. Call it &lt;strong&gt;after&lt;/strong&gt; &lt;code&gt;createGUI&lt;/code&gt; returns. To use &lt;code&gt;customizeGUI&lt;/code&gt; properly, you need to do:&lt;/p&gt;
+&lt;p&gt;Define &lt;code class=&quot;highlighter-rouge&quot;&gt;customizeGUI&lt;/code&gt; within the modules you are building. Call it &lt;strong&gt;after&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; returns. To use &lt;code class=&quot;highlighter-rouge&quot;&gt;customizeGUI&lt;/code&gt; properly, you need to do:&lt;/p&gt;
 
 &lt;ol&gt;
 	&lt;li&gt;&lt;p&gt;Grab the module layout object created by &lt;code&gt;createGUI&lt;/code&gt;:  &lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;QGridLayout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customLayout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DefaultGUIModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;QGridLayout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customLayout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DefaultGUIModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 	&lt;/li&gt;
 	&lt;li&gt;&lt;p&gt;Add custom elements to the layout. For more explanation about this, see the example &lt;code&gt;customizeGUI&lt;/code&gt; function defined in the plugin template. &lt;br /&gt;  
@@ -214,16 +156,16 @@ In v1.4, the GUI is created using DefaultGUIModel’s &lt;code&gt;createGUI&lt;/
 	&lt;/li&gt;
 	&lt;li&gt;&lt;p&gt;Set the edited layout.  &lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;setLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;setLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 	&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;div&gt;&amp;nbsp;&lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;5. Enforce types for get/set methods on RTXI workspace variables&lt;/strong&gt;&lt;br /&gt;
-RTXI workspace variables are displayed in the UI as &lt;code&gt;QStrings&lt;/code&gt;, and within the code they are regularly converted to the native types they are supposed to represent in memory, such as &lt;code&gt;int&lt;/code&gt;, &lt;code&gt;double&lt;/code&gt;, and &lt;code&gt;string&lt;/code&gt;. v2.0 should take the calls in v1.4 without issue, but if you run into problems, check the types of the variables you are using.&lt;/p&gt;
+RTXI workspace variables are displayed in the UI as &lt;code class=&quot;highlighter-rouge&quot;&gt;QStrings&lt;/code&gt;, and within the code they are regularly converted to the native types they are supposed to represent in memory, such as &lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;double&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt;. v2.0 should take the calls in v1.4 without issue, but if you run into problems, check the types of the variables you are using.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; v2.0 &lt;strong&gt;does not&lt;/strong&gt; support strings for &lt;code&gt;PARAMETER&lt;/code&gt; variables. Use the &lt;code&gt;COMMENT&lt;/code&gt; type instead.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; v2.0 &lt;strong&gt;does not&lt;/strong&gt; support strings for &lt;code class=&quot;highlighter-rouge&quot;&gt;PARAMETER&lt;/code&gt; variables. Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;COMMENT&lt;/code&gt; type instead.&lt;/p&gt;
 </description>
         <pubDate>Fri, 17 Apr 2015 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//docs/tutorials/2015/04/17/porting-to-rtxi-v2/</link>
@@ -281,24 +223,24 @@ RTXI workspace variables are displayed in the UI as &lt;code&gt;QStrings&lt;/cod
 
 &lt;p&gt;Now, clone the repository. Developers for new modules are expected to base it on MyPluginGUI. Type:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/rtxi/plugin-template.git custom_module&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git clone https://github.com/rtxi/plugin-template.git custom_module&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;code&gt;custom_module&lt;/code&gt; is the name of the directory git will create when downloading the source code. You can change it to whatever you want. If you don’t specify a name, it will default to &lt;code&gt;plugin-template&lt;/code&gt;, the name of the repository on GitHub.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;custom_module&lt;/code&gt; is the name of the directory git will create when downloading the source code. You can change it to whatever you want. If you don’t specify a name, it will default to &lt;code class=&quot;highlighter-rouge&quot;&gt;plugin-template&lt;/code&gt;, the name of the repository on GitHub.&lt;/p&gt;
 
 &lt;p&gt;Once the module is downloaded, look inside the new directory for Plugin Template’s source code. An explanation of the header and source files is available in the our &lt;a href=&quot;http://rtxi.org/docs/manual/#customizing_gui&quot;&gt;user manual&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h4 id=&quot;modify-files&quot;&gt;2. Modify files.&lt;/h4&gt;
-&lt;p&gt;Modify the RTXI files to run the code you want. When you compile and install your module, be sure to rename the source files and classes to something other than &lt;code&gt;plugin-template&lt;/code&gt; or &lt;code&gt;PluginTemplate&lt;/code&gt;, respectively. It’s preferable to name it  something that reflects what it does. A quick and easy way to change the names of the files, classes, and binary is to use the &lt;code&gt;sed&lt;/code&gt; and &lt;code&gt;mv&lt;/code&gt; commands:&lt;/p&gt;
+&lt;p&gt;Modify the RTXI files to run the code you want. When you compile and install your module, be sure to rename the source files and classes to something other than &lt;code class=&quot;highlighter-rouge&quot;&gt;plugin-template&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;PluginTemplate&lt;/code&gt;, respectively. It’s preferable to name it  something that reflects what it does. A quick and easy way to change the names of the files, classes, and binary is to use the &lt;code class=&quot;highlighter-rouge&quot;&gt;sed&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;mv&lt;/code&gt; commands:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sed -i &lt;span class=&quot;s1&quot;&gt;&amp;#39;s/plugin-template/&amp;lt;new_name_here&amp;gt;/g&amp;#39;&lt;/span&gt; plugin-template.* Makefile 
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sed -i &lt;span class=&quot;s1&quot;&gt;&amp;#39;s/plugin_template/&amp;lt;new_name_here&amp;gt;/g&amp;#39;&lt;/span&gt; plugin-template.* Makefile
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sed -i &lt;span class=&quot;s1&quot;&gt;&amp;#39;s/PluginTemplate/&amp;lt;NewNameHere&amp;gt;/g&amp;#39;&lt;/span&gt; plugin-template.* Makefile
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mv plugin-template.cpp &amp;lt;new_name_here&amp;gt;.cpp
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mv plugin-template.h &amp;lt;new_name_here&amp;gt;.h&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sed -i &lt;span class=&quot;s1&quot;&gt;&#39;s/plugin-template/&amp;lt;new_name_here&amp;gt;/g&#39;&lt;/span&gt; plugin-template.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Makefile 
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sed -i &lt;span class=&quot;s1&quot;&gt;&#39;s/plugin_template/&amp;lt;new_name_here&amp;gt;/g&#39;&lt;/span&gt; plugin-template.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Makefile
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sed -i &lt;span class=&quot;s1&quot;&gt;&#39;s/PluginTemplate/&amp;lt;NewNameHere&amp;gt;/g&#39;&lt;/span&gt; plugin-template.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Makefile
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mv plugin-template.cpp &amp;lt;new_name_here&amp;gt;.cpp
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mv plugin-template.h &amp;lt;new_name_here&amp;gt;.h&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;The first &lt;code&gt;sed&lt;/code&gt; command will search out any instance of the string &lt;code&gt;plugin-template&lt;/code&gt; in your source files and replace them with a string you enter in place of the placeholder &lt;code&gt;&amp;lt;new_name_here&amp;gt;&lt;/code&gt;. The next two &lt;code&gt;sed&lt;/code&gt; commands will do the same. The &lt;code&gt;mv&lt;/code&gt; commands will rename the files.&lt;/p&gt;
+&lt;p&gt;The first &lt;code class=&quot;highlighter-rouge&quot;&gt;sed&lt;/code&gt; command will search out any instance of the string &lt;code class=&quot;highlighter-rouge&quot;&gt;plugin-template&lt;/code&gt; in your source files and replace them with a string you enter in place of the placeholder &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;new_name_here&amp;gt;&lt;/code&gt;. The next two &lt;code class=&quot;highlighter-rouge&quot;&gt;sed&lt;/code&gt; commands will do the same. The &lt;code class=&quot;highlighter-rouge&quot;&gt;mv&lt;/code&gt; commands will rename the files.&lt;/p&gt;
 
-&lt;p&gt;Note that all commands that use the placeholder &lt;code&gt;&amp;lt;new_name_here&amp;gt;&lt;/code&gt; assume that you provide the same string for each instance of the placeholder. Not following this convention &lt;em&gt;could&lt;/em&gt; cause bugs that prevent your module from compiling if, for example, your sources file names and the &lt;code&gt;#includes&lt;/code&gt; within them come out differently.&lt;/p&gt;
+&lt;p&gt;Note that all commands that use the placeholder &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;new_name_here&amp;gt;&lt;/code&gt; assume that you provide the same string for each instance of the placeholder. Not following this convention &lt;em&gt;could&lt;/em&gt; cause bugs that prevent your module from compiling if, for example, your sources file names and the &lt;code class=&quot;highlighter-rouge&quot;&gt;#includes&lt;/code&gt; within them come out differently.&lt;/p&gt;
 
 &lt;p&gt;Additionally, it’s good practice to document your code. As a general rule, document it so that you’re confident that anyone with programming experience will be able to understand what your code and overall module do.&lt;/p&gt;
 
@@ -306,8 +248,8 @@ RTXI workspace variables are displayed in the UI as &lt;code&gt;QStrings&lt;/cod
 
 &lt;p&gt;Once you’re ready to compile and install your module, go to the base of your module directory and execute:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;make 
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo make install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;make 
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo make install &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
         <pubDate>Fri, 10 Apr 2015 00:00:00 -0400</pubDate>
@@ -337,9 +279,9 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 &lt;/div&gt;
 
 &lt;h4 id=&quot;open-an-issue-on-the-repository-page&quot;&gt;2. Open an issue on the repository page.&lt;/h4&gt;
-&lt;p&gt;Each module has an issue page where you can view, submit, and comment on current development issues. Pictured is the repository page for &lt;code&gt;rtxi&lt;/code&gt;. To navigate to its issues page, click on &lt;code&gt;Issues&lt;/code&gt; on the right sidebar.&lt;/p&gt;
+&lt;p&gt;Each module has an issue page where you can view, submit, and comment on current development issues. Pictured is the repository page for &lt;code class=&quot;highlighter-rouge&quot;&gt;rtxi&lt;/code&gt;. To navigate to its issues page, click on &lt;code class=&quot;highlighter-rouge&quot;&gt;Issues&lt;/code&gt; on the right sidebar.&lt;/p&gt;
 
-&lt;p&gt;Click on &lt;code&gt;Issues&lt;/code&gt;. It’s on the sidebar to the right. If you haven’t logged in to GitHub already, you will be prompted to now. This will open up a new page that shows all the issues posted to the repository. Look through them to see if the issue you are having is related to something someone else posted. If it is, you can add to the existing discussion. If not, then open up a new issue.&lt;/p&gt;
+&lt;p&gt;Click on &lt;code class=&quot;highlighter-rouge&quot;&gt;Issues&lt;/code&gt;. It’s on the sidebar to the right. If you haven’t logged in to GitHub already, you will be prompted to now. This will open up a new page that shows all the issues posted to the repository. Look through them to see if the issue you are having is related to something someone else posted. If it is, you can add to the existing discussion. If not, then open up a new issue.&lt;/p&gt;
 
 &lt;div class=&quot;row&quot;&gt;
 	&lt;div class=&quot;col-xs-12 col-sm-6 col-md-5 col-md-offset-1&quot;&gt;
@@ -360,8 +302,8 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 &lt;p&gt;For your posts, we ask (but don’t require) you do provide the following information when appropriate:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;The version of RTXI you are using.&lt;/strong&gt;  If you used a live CD to install RTXI, just say that. If you compiled from source, go to your clone of the RTXI repository and run &lt;code&gt;git log&lt;/code&gt;. The most recent commit will have a string associated with it that looks like a random list of letters. Give us the string.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Error messages from RTXI in the terminal.&lt;/strong&gt; If there are no error messages, no problem. If RTXI is crashing, it would be incredibly helpful if you used &lt;code&gt;gdb&lt;/code&gt; to provide a backtrace.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The version of RTXI you are using.&lt;/strong&gt;  If you used a live CD to install RTXI, just say that. If you compiled from source, go to your clone of the RTXI repository and run &lt;code class=&quot;highlighter-rouge&quot;&gt;git log&lt;/code&gt;. The most recent commit will have a string associated with it that looks like a random list of letters. Give us the string.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Error messages from RTXI in the terminal.&lt;/strong&gt; If there are no error messages, no problem. If RTXI is crashing, it would be incredibly helpful if you used &lt;code class=&quot;highlighter-rouge&quot;&gt;gdb&lt;/code&gt; to provide a backtrace.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;A clear description of the bug.&lt;/strong&gt; Describe the behavior you expect, the behavior that is happening, and the set of steps that trigger the error.&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -388,22 +330,22 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 
 &lt;h4 id=&quot;installing-git-on-linux&quot;&gt;Installing Git on Linux&lt;/h4&gt;
 
-&lt;p&gt;Open the terminal. You can do this from within the Applications menu in GNOME or by using the &lt;code&gt;CTRL+Alt+t&lt;/code&gt; shortcut. Enter:&lt;/p&gt;
+&lt;p&gt;Open the terminal. You can do this from within the Applications menu in GNOME or by using the &lt;code class=&quot;highlighter-rouge&quot;&gt;CTRL+Alt+t&lt;/code&gt; shortcut. Enter:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get install git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo apt-get install git&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; When telling people to enter commands, it is common practice to use &lt;code&gt;$&lt;/code&gt; at the start of each line to signify that it is to be entered in the terminal. Also, &lt;code&gt;#&lt;/code&gt; is used to signify root permissions rather than having people enter &lt;code&gt;sudo&lt;/code&gt;. In either case, you DO NOT have to enter &lt;code&gt;$&lt;/code&gt; or &lt;code&gt;#&lt;/code&gt; in the terminal. For example, in the above command. just enter the text &lt;code&gt;sudo apt-get install git&lt;/code&gt; and hit &lt;code&gt;ENTER&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; When telling people to enter commands, it is common practice to use &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; at the start of each line to signify that it is to be entered in the terminal. Also, &lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt; is used to signify root permissions rather than having people enter &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt;. In either case, you DO NOT have to enter &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt; in the terminal. For example, in the above command. just enter the text &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install git&lt;/code&gt; and hit &lt;code class=&quot;highlighter-rouge&quot;&gt;ENTER&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Once Git is installed, configure it with your username and/or email address. This is preferred in development scenarios so that everyone can identify what modifications were made by which user. GitHub also maps Git user email addresses to GitHub accounts. Note that you do not have to give your real name. Any name will do, as all that is needed is a way to identify who has done what. Technically, Git does not check email address validity, either, but for collaborate work, it is best to provide some address so that people can ask each other questions about changes.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git config --global user.name &lt;span class=&quot;s1&quot;&gt;&amp;#39;Your name here&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git config --global user.email your@address.here&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git config --global user.name &lt;span class=&quot;s1&quot;&gt;&#39;Your name here&#39;&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git config --global user.email your@address.here&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;The &lt;code&gt;git&lt;/code&gt; part of each command specifies that the script that follows contains Git commands. Git provides a library of functions for executing version control. Rather than have them directly incorporated into system libraries, they are made accessible by preceding the command with &lt;code&gt;git&lt;/code&gt;. Therefore, these commands and all other git commands we will use start with &lt;code&gt;git&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; part of each command specifies that the script that follows contains Git commands. Git provides a library of functions for executing version control. Rather than have them directly incorporated into system libraries, they are made accessible by preceding the command with &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;. Therefore, these commands and all other git commands we will use start with &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;The second part, &lt;code&gt;config&lt;/code&gt;, is used to configure information, which is stored in a hidden file. The tag &lt;code&gt;--global&lt;/code&gt; means that the changes to the user configuration are to affect all user repositories. The details are saved in a hidden file called .gitconfig stored at the base of the user’s home directory (&lt;code&gt;~/.gitconfig&lt;/code&gt;). Other options allow for different scopes of the effects of configuration changes. &lt;code&gt;--local&lt;/code&gt; is the default behavior and specifies that changes be written to hidden file in the working directory called &lt;code&gt;.git/config&lt;/code&gt;. You can see what has been set in the config files by running &lt;code&gt;git config --list&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The second part, &lt;code class=&quot;highlighter-rouge&quot;&gt;config&lt;/code&gt;, is used to configure information, which is stored in a hidden file. The tag &lt;code class=&quot;highlighter-rouge&quot;&gt;--global&lt;/code&gt; means that the changes to the user configuration are to affect all user repositories. The details are saved in a hidden file called .gitconfig stored at the base of the user’s home directory (&lt;code class=&quot;highlighter-rouge&quot;&gt;~/.gitconfig&lt;/code&gt;). Other options allow for different scopes of the effects of configuration changes. &lt;code class=&quot;highlighter-rouge&quot;&gt;--local&lt;/code&gt; is the default behavior and specifies that changes be written to hidden file in the working directory called &lt;code class=&quot;highlighter-rouge&quot;&gt;.git/config&lt;/code&gt;. You can see what has been set in the config files by running &lt;code class=&quot;highlighter-rouge&quot;&gt;git config --list&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Should you ever need help with a Git command, you can use &lt;code&gt;git help &amp;lt;commandname&amp;gt;&lt;/code&gt; to check the Git documentation in the terminal. For example, if unsure about &lt;code&gt;config&lt;/code&gt;, run &lt;code&gt;git help config&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Should you ever need help with a Git command, you can use &lt;code class=&quot;highlighter-rouge&quot;&gt;git help &amp;lt;commandname&amp;gt;&lt;/code&gt; to check the Git documentation in the terminal. For example, if unsure about &lt;code class=&quot;highlighter-rouge&quot;&gt;config&lt;/code&gt;, run &lt;code class=&quot;highlighter-rouge&quot;&gt;git help config&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;using-local-repositories&quot;&gt;Using Local Repositories&lt;/h3&gt;
 
@@ -411,16 +353,16 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 
 &lt;p&gt;Git enables users to track local changes and development paths. First, go the base of your home directory and create some new directories:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mkdir plugins
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;plugins
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mkdir practice
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;practice
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ..&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mkdir plugins
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;plugins
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mkdir practice
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;practice
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ..&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Now, from within the plugins directory, run:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git init&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git init&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;!--
 &lt;a href=&quot;/assets/img/tutorials/git-tutorial-1.png&quot;&gt;
@@ -428,7 +370,7 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 &lt;/a&gt;
 --&gt;
 
-&lt;p&gt;This command specifies that the directory is to be treated as a Git repository. By default, Git does not track &lt;em&gt;any&lt;/em&gt; files. User must enable it in a directory of their choosing. Once executed, this function creates a hidden directory called &lt;code&gt;.git/&lt;/code&gt; that stores information regarding the repository contained in the directory.&lt;/p&gt;
+&lt;p&gt;This command specifies that the directory is to be treated as a Git repository. By default, Git does not track &lt;em&gt;any&lt;/em&gt; files. User must enable it in a directory of their choosing. Once executed, this function creates a hidden directory called &lt;code class=&quot;highlighter-rouge&quot;&gt;.git/&lt;/code&gt; that stores information regarding the repository contained in the directory.&lt;/p&gt;
 
 &lt;!--
 &lt;a href=&quot;/assets/img/tutorials/git-tutorial-2.png&quot;&gt;
@@ -442,21 +384,21 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 
 &lt;p&gt;The directory is currently empty, so create some files:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;touch file1.txt
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;touch file2.txt
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;touch file3.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;touch file1.txt
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;touch file2.txt
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;touch file3.txt&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;These files have been added to the repository, or in Git terminology, the &lt;strong&gt;working tree&lt;/strong&gt;. The working tree refers to all of the files that originate from the base of the directory, which in this case is &lt;code&gt;~/plugins&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;These files have been added to the repository, or in Git terminology, the &lt;strong&gt;working tree&lt;/strong&gt;. The working tree refers to all of the files that originate from the base of the directory, which in this case is &lt;code class=&quot;highlighter-rouge&quot;&gt;~/plugins&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;By default, Git does not track files that are added to the directory. Users have to specify that they be tracked. This is done by the &lt;code&gt;add&lt;/code&gt; command. Git does, though tell what files are and are not being tracked. Simply use &lt;code&gt;git status&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;By default, Git does not track files that are added to the directory. Users have to specify that they be tracked. This is done by the &lt;code class=&quot;highlighter-rouge&quot;&gt;add&lt;/code&gt; command. Git does, though tell what files are and are not being tracked. Simply use &lt;code class=&quot;highlighter-rouge&quot;&gt;git status&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add file1.txt file2.txt file3.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git add file1.txt file2.txt file3.txt&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;code&gt;git add&lt;/code&gt; adds the files to what is called the &lt;strong&gt;staging area&lt;/strong&gt;. Basically, this command generates a snapshot of the files and stores them without adding them to the permanent version history. In other words, Git is aware of the files, but it has not added them to the permanent version history. Basically, git has a 2-stage revision process. The first is to send modified or new files to the staging area, and the second is to commit them to the permanent version history. This has its advantages in that it enables users to add files to a repository as a group that together functions properly. Reverting from one set of changes to another is simply a process of switching to another snapshot in the permanent history. This process is explained later.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git add&lt;/code&gt; adds the files to what is called the &lt;strong&gt;staging area&lt;/strong&gt;. Basically, this command generates a snapshot of the files and stores them without adding them to the permanent version history. In other words, Git is aware of the files, but it has not added them to the permanent version history. Basically, git has a 2-stage revision process. The first is to send modified or new files to the staging area, and the second is to commit them to the permanent version history. This has its advantages in that it enables users to add files to a repository as a group that together functions properly. Reverting from one set of changes to another is simply a process of switching to another snapshot in the permanent history. This process is explained later.&lt;/p&gt;
 
 &lt;p&gt;To show what files are in the stating area, use:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git status&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git status&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;!--
 &lt;a href=&quot;/assets/img/tutorials/git-tutorial-3.png&quot;&gt;
@@ -464,11 +406,11 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 &lt;/a&gt;
 --&gt;
 
-&lt;p&gt;If needed, it is possible to unstage files that were added with &lt;code&gt;git add&lt;/code&gt;. Git gives the user the command 
-&lt;code&gt;git rm --cached &amp;lt;filename&amp;gt;&lt;/code&gt;. Try it on one of the files and see the changes made to the staging area.&lt;/p&gt;
+&lt;p&gt;If needed, it is possible to unstage files that were added with &lt;code class=&quot;highlighter-rouge&quot;&gt;git add&lt;/code&gt;. Git gives the user the command 
+&lt;code class=&quot;highlighter-rouge&quot;&gt;git rm --cached &amp;lt;filename&amp;gt;&lt;/code&gt;. Try it on one of the files and see the changes made to the staging area.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git rm --cached file1.txt
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git status&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git rm --cached file1.txt
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git status&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;!--
 &lt;a href=&quot;/assets/img/tutorials/git-tutorial-4.png&quot;&gt;
@@ -476,23 +418,23 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 &lt;/a&gt;
 --&gt;
 
-&lt;p&gt;The following assumes that all three files are added to the staging area. You can add all files to the staging area by running &lt;code&gt;git add -A&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The following assumes that all three files are added to the staging area. You can add all files to the staging area by running &lt;code class=&quot;highlighter-rouge&quot;&gt;git add -A&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h4 id=&quot;a-namecommitacommiting-files&quot;&gt;&lt;a name=&quot;commit&quot;&gt;&lt;/a&gt;Commiting Files&lt;/h4&gt;
 
-&lt;p&gt;With the files added to the staging area, the next step is to add them to the permanent version history. In Git, this process is called a &lt;strong&gt;commit&lt;/strong&gt;. Use the &lt;code&gt;commit&lt;/code&gt; command.&lt;/p&gt;
+&lt;p&gt;With the files added to the staging area, the next step is to add them to the permanent version history. In Git, this process is called a &lt;strong&gt;commit&lt;/strong&gt;. Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;commit&lt;/code&gt; command.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit file1.txt file2.txt file3.txt -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;First commit&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git commit file1.txt file2.txt file3.txt -m &lt;span class=&quot;s2&quot;&gt;&quot;First commit&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;The &lt;code&gt;commit&lt;/code&gt; command adds files in the staging area to the repository. Each commit requires a message that is intended to describe the changes that took place. This can be done in the command line by using &lt;code&gt;-m&lt;/code&gt; followed by the message in quotation marks. If this is omitted, Git defaults to a text editor where users can type the message. The &lt;code&gt;commit&lt;/code&gt; command is completed when the user saves the message and exits the editor.&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;commit&lt;/code&gt; command adds files in the staging area to the repository. Each commit requires a message that is intended to describe the changes that took place. This can be done in the command line by using &lt;code class=&quot;highlighter-rouge&quot;&gt;-m&lt;/code&gt; followed by the message in quotation marks. If this is omitted, Git defaults to a text editor where users can type the message. The &lt;code class=&quot;highlighter-rouge&quot;&gt;commit&lt;/code&gt; command is completed when the user saves the message and exits the editor.&lt;/p&gt;
 
 &lt;p&gt;If you opt to not specify the filenames for the commit, git will commit all the files in the staging area.&lt;/p&gt;
 
-&lt;p&gt;Because all the files in the staging area were committed in the last command, there are all removed from the staging area. You can check with &lt;code&gt;git status&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Because all the files in the staging area were committed in the last command, there are all removed from the staging area. You can check with &lt;code class=&quot;highlighter-rouge&quot;&gt;git status&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;The version history is in essence a list of commits. To view the complete history of the project, use:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git log&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git log&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;This outputs a list of all the commits, when they were made, the author, the commit messages, and other information. The string at the top of seemingly random letters is an encrypted hash of the changes that were made. A hash is a string that encodes data and is produced by a hash function. Ideally, a hash function is implemented such that a small change in the data it encodes results in a large, unpredictable change in the hash. This enables users to check the file’s integrity and makes it exceedingly difficult to alter the commit history.&lt;/p&gt;
 
@@ -504,45 +446,45 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 
 &lt;h4 id=&quot;a-nameundoaoptional-undo-a-commit&quot;&gt;&lt;a name=&quot;undo&quot;&gt;&lt;/a&gt;(Optional) Undo a Commit&lt;/h4&gt;
 
-&lt;p&gt;If you ever commit something and wish to revert your changes, use the &lt;code&gt;reset&lt;/code&gt; command. There are several options. The first is:&lt;/p&gt;
+&lt;p&gt;If you ever commit something and wish to revert your changes, use the &lt;code class=&quot;highlighter-rouge&quot;&gt;reset&lt;/code&gt; command. There are several options. The first is:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git reset --hard HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git reset --hard HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;This command erases &lt;strong&gt;everything&lt;/strong&gt; that was altered after the previous commit and sets the working tree to the previous commit. The &lt;code&gt;--hard&lt;/code&gt; induces the erasure, and &lt;code&gt;HEAD~1&lt;/code&gt; moves to the previous commit. &lt;code&gt;HEAD&lt;/code&gt; is a pointer that Git uses to point to a specific commit in a branch. &lt;code&gt;HEAD&lt;/code&gt; by default points to the latest commit, so to access previous ones, use &lt;code&gt;~X&lt;/code&gt; where X is the number of commits ago you want to go.&lt;/p&gt;
+&lt;p&gt;This command erases &lt;strong&gt;everything&lt;/strong&gt; that was altered after the previous commit and sets the working tree to the previous commit. The &lt;code class=&quot;highlighter-rouge&quot;&gt;--hard&lt;/code&gt; induces the erasure, and &lt;code class=&quot;highlighter-rouge&quot;&gt;HEAD~1&lt;/code&gt; moves to the previous commit. &lt;code class=&quot;highlighter-rouge&quot;&gt;HEAD&lt;/code&gt; is a pointer that Git uses to point to a specific commit in a branch. &lt;code class=&quot;highlighter-rouge&quot;&gt;HEAD&lt;/code&gt; by default points to the latest commit, so to access previous ones, use &lt;code class=&quot;highlighter-rouge&quot;&gt;~X&lt;/code&gt; where X is the number of commits ago you want to go.&lt;/p&gt;
 
-&lt;p&gt;Be very careful when using &lt;code&gt;--hard&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Be very careful when using &lt;code class=&quot;highlighter-rouge&quot;&gt;--hard&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;The second option:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git reset --mixed HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git reset --mixed HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;-OR-&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git reset HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git reset HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;This file preserves the changes made but reverts the HEAD pointer back one commit. The changes are unstaged, so the working directory matches the previous commit.&lt;/p&gt;
 
 &lt;p&gt;The last option:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git reset --soft HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git reset --soft HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;The only change is that the most recent commit is reversed. The staging area is the same; it reflects the changes that have been made between the commit to be erased and its predecessor. This option exactly reverses the effects of a &lt;code&gt;git commit&lt;/code&gt; command.&lt;/p&gt;
+&lt;p&gt;The only change is that the most recent commit is reversed. The staging area is the same; it reflects the changes that have been made between the commit to be erased and its predecessor. This option exactly reverses the effects of a &lt;code class=&quot;highlighter-rouge&quot;&gt;git commit&lt;/code&gt; command.&lt;/p&gt;
 
 &lt;p&gt;The following assumes that the commit has not been reversed. All three files are committed in the repository.&lt;/p&gt;
 
 &lt;h4 id=&quot;a-namebranchabranching-repositories&quot;&gt;&lt;a name=&quot;branch&quot;&gt;&lt;/a&gt;Branching Repositories&lt;/h4&gt;
 
-&lt;p&gt;Now that a commit has been made, branch off and create a new working tree. Currently, HEAD points to the last commit of the original branch, called &lt;code&gt;master&lt;/code&gt;. This is the default name for a new git repository. It is generally best practice to branch off of master to make changes and then merge changes back to master once they have been thoroughly audited. That way, whatever code is in the master branch is guaranteed to work.&lt;/p&gt;
+&lt;p&gt;Now that a commit has been made, branch off and create a new working tree. Currently, HEAD points to the last commit of the original branch, called &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;. This is the default name for a new git repository. It is generally best practice to branch off of master to make changes and then merge changes back to master once they have been thoroughly audited. That way, whatever code is in the master branch is guaranteed to work.&lt;/p&gt;
 
-&lt;p&gt;Create a branch called &lt;code&gt;testing&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Create a branch called &lt;code class=&quot;highlighter-rouge&quot;&gt;testing&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch testing&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git branch testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;This creates a new branch called &lt;code&gt;testing&lt;/code&gt;. By default, it copies the state pointed to by HEAD, but it is possible to branch off of previous commits. To list the available branches, use &lt;code&gt;git branch&lt;/code&gt;. To switch to the newly created branch, use:&lt;/p&gt;
+&lt;p&gt;This creates a new branch called &lt;code class=&quot;highlighter-rouge&quot;&gt;testing&lt;/code&gt;. By default, it copies the state pointed to by HEAD, but it is possible to branch off of previous commits. To list the available branches, use &lt;code class=&quot;highlighter-rouge&quot;&gt;git branch&lt;/code&gt;. To switch to the newly created branch, use:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout testing&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git checkout testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Now, HEAD is pointing to &lt;code&gt;testing&lt;/code&gt; instead of &lt;code&gt;master&lt;/code&gt;. Any commits made will be applied to &lt;code&gt;testing&lt;/code&gt; as long as it is checked out.&lt;/p&gt;
+&lt;p&gt;Now, HEAD is pointing to &lt;code class=&quot;highlighter-rouge&quot;&gt;testing&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;. Any commits made will be applied to &lt;code class=&quot;highlighter-rouge&quot;&gt;testing&lt;/code&gt; as long as it is checked out.&lt;/p&gt;
 
 &lt;!--
 &lt;a href=&quot;/assets/img/tutorials/git-tutorial-6.png&quot;&gt;
@@ -554,14 +496,14 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 
 &lt;p&gt;Change the current files. This command will add text to the files saying, “This is &lt;filename&gt;&quot;. You can use `more &lt;filename&gt;` or `cat &lt;filename&gt;` to output the contents of a file into the terminal.&lt;/filename&gt;&lt;/filename&gt;&lt;/filename&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;find . -maxdepth &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; -type f &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; xargs -I &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; bash -c &lt;span class=&quot;s2&quot;&gt;&amp;quot;echo &amp;#39;This is &amp;#39;{} &amp;gt; {}&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;find . -maxdepth 1 -type f | xargs -I &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; bash -c &lt;span class=&quot;s2&quot;&gt;&quot;echo &#39;This is &#39;{} &amp;gt; {}&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Now that the files have been altered, run &lt;code&gt;git status&lt;/code&gt; to see what Git has noticed. Stage the changes and commit them:&lt;/p&gt;
+&lt;p&gt;Now that the files have been altered, run &lt;code class=&quot;highlighter-rouge&quot;&gt;git status&lt;/code&gt; to see what Git has noticed. Stage the changes and commit them:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add .
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit . -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;First Branch Commit&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git add .
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git commit . -m &lt;span class=&quot;s2&quot;&gt;&quot;First Branch Commit&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;The &lt;code&gt;.&lt;/code&gt; operator causes commands to affect all files in a directory. Using it is easier than typing individual file names.&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; operator causes commands to affect all files in a directory. Using it is easier than typing individual file names.&lt;/p&gt;
 
 &lt;!--
 &lt;a href=&quot;/assets/img/tutorials/git-tutorial-7.png&quot;&gt;
@@ -571,15 +513,15 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 
 &lt;h4 id=&quot;a-namecompareacomparing-branches&quot;&gt;&lt;a name=&quot;compare&quot;&gt;&lt;/a&gt;Comparing Branches&lt;/h4&gt;
 
-&lt;p&gt;Now that &lt;code&gt;master&lt;/code&gt; and &lt;code&gt;testing&lt;/code&gt; differ with one another, switch between them to see the differences.&lt;/p&gt;
+&lt;p&gt;Now that &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;testing&lt;/code&gt; differ with one another, switch between them to see the differences.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ls &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; xargs cat
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout master
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ls &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; xargs cat&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ls | xargs cat
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git checkout master
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ls | xargs cat&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Individually looking through files in different branches can be cumbersome. To output the differences directly, use the &lt;code&gt;diff&lt;/code&gt; command.&lt;/p&gt;
+&lt;p&gt;Individually looking through files in different branches can be cumbersome. To output the differences directly, use the &lt;code class=&quot;highlighter-rouge&quot;&gt;diff&lt;/code&gt; command.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git diff master testing&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git diff master testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The output should look like:&lt;/p&gt;
 
@@ -591,12 +533,12 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 
 &lt;h4 id=&quot;a-namemergeamerging-branches&quot;&gt;&lt;a name=&quot;merge&quot;&gt;&lt;/a&gt;Merging Branches&lt;/h4&gt;
 
-&lt;p&gt;Now, merge the changes in &lt;code&gt;testing&lt;/code&gt; to &lt;code&gt;master&lt;/code&gt;. Check out the &lt;code&gt;master&lt;/code&gt; branch and use the &lt;code&gt;merge&lt;/code&gt; command.&lt;/p&gt;
+&lt;p&gt;Now, merge the changes in &lt;code class=&quot;highlighter-rouge&quot;&gt;testing&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;. Check out the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch and use the &lt;code class=&quot;highlighter-rouge&quot;&gt;merge&lt;/code&gt; command.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout master
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git merge testing&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git checkout master
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git merge testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;You will see an output that summarizes the changes. The &lt;code&gt;merge&lt;/code&gt; command creates a new commit that follows the previous version of &lt;code&gt;master&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You will see an output that summarizes the changes. The &lt;code class=&quot;highlighter-rouge&quot;&gt;merge&lt;/code&gt; command creates a new commit that follows the previous version of &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;.&lt;/p&gt;
 
 &lt;!--
 &lt;a href=&quot;/assets/img/tutorials/git-tutorial-9.png&quot;&gt;
@@ -604,9 +546,9 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 &lt;/a&gt;
 --&gt;
 
-&lt;p&gt;If the merge is successful, there is no need for the &lt;code&gt;testing&lt;/code&gt; branch. Delete it. Make sure that the &lt;code&gt;testing&lt;/code&gt; branch isn’t currently checked out.&lt;/p&gt;
+&lt;p&gt;If the merge is successful, there is no need for the &lt;code class=&quot;highlighter-rouge&quot;&gt;testing&lt;/code&gt; branch. Delete it. Make sure that the &lt;code class=&quot;highlighter-rouge&quot;&gt;testing&lt;/code&gt; branch isn’t currently checked out.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch -d testing&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git branch -d testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;a-namerreposausing-remote-repositories&quot;&gt;&lt;a name=&quot;rrepos&quot;&gt;&lt;/a&gt;Using Remote Repositories&lt;/h3&gt;
 
@@ -616,45 +558,45 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 
 &lt;p&gt;The format for cloning repositories from GitHub is:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/&amp;lt;username&amp;gt;/&amp;lt;repository-name&amp;gt;.git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git clone https://github.com/&amp;lt;username&amp;gt;/&amp;lt;repository-name&amp;gt;.git&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;To clone from our repositories, the username is &lt;code&gt;rtxi&lt;/code&gt; and the repositories are all listed on https://github.com/rtxi. To install the plugin template:&lt;/p&gt;
+&lt;p&gt;To clone from our repositories, the username is &lt;code class=&quot;highlighter-rouge&quot;&gt;rtxi&lt;/code&gt; and the repositories are all listed on https://github.com/rtxi. To install the plugin template:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/ &lt;span class=&quot;c&quot;&gt;# this line isn&amp;#39;t really needed&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/rtxi/plugin-template.git
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;plugin-template&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/ &lt;span class=&quot;c&quot;&gt;# this line isn&#39;t really needed&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git clone https://github.com/rtxi/plugin-template.git
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;plugin-template&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;In addition to the files copied from GitHub, Git stores the address of the remote repository. By default, the name is &lt;code&gt;origin&lt;/code&gt;. See details on remote repositories with &lt;code&gt;git remote -v&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In addition to the files copied from GitHub, Git stores the address of the remote repository. By default, the name is &lt;code class=&quot;highlighter-rouge&quot;&gt;origin&lt;/code&gt;. See details on remote repositories with &lt;code class=&quot;highlighter-rouge&quot;&gt;git remote -v&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h4 id=&quot;a-namepushapushing-to-a-remote&quot;&gt;&lt;a name=&quot;push&quot;&gt;&lt;/a&gt;Pushing to a Remote&lt;/h4&gt;
 
 &lt;p&gt;Make some changes to the directory. Add some files, edit them, etc. Then, stage and commit them.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;touch file1 file2 file3
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add .
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit . &lt;span class=&quot;s2&quot;&gt;&amp;quot;Local commit to push to remote repository&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;touch file1 file2 file3
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git add .
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git commit . &lt;span class=&quot;s2&quot;&gt;&quot;Local commit to push to remote repository&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You will not actually be able to execute the command below successfully. We don’t allow everyone to push to our repositories. This is what you’d do, though, if you could.&lt;/p&gt;
 
-&lt;p&gt;Now, send these changes to the remote. The command Git uses for this is &lt;code&gt;push&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now, send these changes to the remote. The command Git uses for this is &lt;code class=&quot;highlighter-rouge&quot;&gt;push&lt;/code&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git push https://github.com/&amp;lt;username&amp;gt;/plugin-template.git master &lt;span class=&quot;c&quot;&gt;# will fail&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git push https://github.com/&amp;lt;username&amp;gt;/plugin-template.git master &lt;span class=&quot;c&quot;&gt;# will fail&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Git pushes the changes to the master branch of the remote repository referenced by the URL. Git also supports aliases for remote URLs. By default, the URL from which you clone a repository is saved as &lt;code&gt;origin&lt;/code&gt;. You can view the remotes tracked by a repository by running &lt;code&gt;git remote -v&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Git pushes the changes to the master branch of the remote repository referenced by the URL. Git also supports aliases for remote URLs. By default, the URL from which you clone a repository is saved as &lt;code class=&quot;highlighter-rouge&quot;&gt;origin&lt;/code&gt;. You can view the remotes tracked by a repository by running &lt;code class=&quot;highlighter-rouge&quot;&gt;git remote -v&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h4 id=&quot;a-namepullapulling-changes-from-a-remote&quot;&gt;&lt;a name=&quot;pull&quot;&gt;&lt;/a&gt;Pulling Changes from a Remote&lt;/h4&gt;
 
 &lt;p&gt;Just as one can push changes from a local machine to a remote, it is possible to ‘pull’ changes back from the remote to the local machine. This comes into play when modifying the same project on several machines or by several people. To pull the code and automatically merge the differences, use:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git pull origin&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git pull origin&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;If you want to observe the changes but not merge them, use:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git fetch origin&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git fetch origin&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;This command fetches the changes from the remote repository for the user to compare with files on the local machine. Once they are determined to be safe for merging, enter the following from within the directory to which changes are to be merged:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git merge &amp;lt;fetchedremote&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git merge &amp;lt;fetchedremote&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;You can use this method to keep your modules and RTXI up to date.&lt;/p&gt;
 
@@ -689,11 +631,11 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 
 &lt;p&gt;Save your edits (again, you need to be root), and update GRUB by running:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo update-grub&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo update-grub&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;From now on, GRUB will boot the last-used kernel by default. If you want to choose a different one, select it manually.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you have a LUKS-encrypted volume or otherwise encrypt your boot partition, this will fail. You will have to manually change the &lt;code&gt;GRUB_DEFAULT&lt;/code&gt; options to something like &lt;code&gt;&quot;1&amp;gt;2&quot;&lt;/code&gt;, for example, which will make GRUB boot the kernel listed as the third option in the submenu opened on the second line of the main menu.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you have a LUKS-encrypted volume or otherwise encrypt your boot partition, this will fail. You will have to manually change the &lt;code class=&quot;highlighter-rouge&quot;&gt;GRUB_DEFAULT&lt;/code&gt; options to something like &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;1&amp;gt;2&quot;&lt;/code&gt;, for example, which will make GRUB boot the kernel listed as the third option in the submenu opened on the second line of the main menu.&lt;/p&gt;
 </description>
         <pubDate>Wed, 01 Apr 2015 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//docs/tutorials/2015/04/01/setting-a-default-boot-kernel/</link>
@@ -708,13 +650,13 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 	&lt;li&gt;&lt;strong&gt;RTXI is already running.&lt;/strong&gt;
 		&lt;p&gt;If you run &lt;code&gt;rtxi&lt;/code&gt; in the terminal and get this output, RTXI is already running:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo rtxi
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo rtxi
 ../src/rt_os-xenomai.cpp:123:RT::OS::createTask : failed to create task
-../src/rt.cpp:157:RT::System::System : failed to create realtime thread&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+../src/rt.cpp:157:RT::System::System : failed to create realtime thread&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 		&lt;p&gt;The error happens because only one instance of RTXI can be running on the system. Check who is running it by entering:&lt;/p&gt; 
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps ax -o euser,comm &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; grep rtxi&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ps ax -o euser,comm | grep rtxi&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 		&lt;p&gt;If the command shows someone else&#39;s username, that means they have RTXI open. Bug them about closing it or close it yourself by running &lt;code&gt;$ sudo pkill rtxi&lt;/code&gt;. Note that workspaces, open files, etc. will &lt;strong&gt;not&lt;/strong&gt; be saved when force-closing RTXI. 
 		&lt;/p&gt;
@@ -725,7 +667,7 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 	&lt;li&gt;&lt;strong&gt;You aren&#39;t using a real-time kernel.&lt;/strong&gt;&lt;/li&gt;
 		&lt;p&gt;Check the kernel you are using. Run this in the terminal:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;uname -r&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;uname -r&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 		&lt;p&gt;You will get one line of output that tells you what kernel you are using. If it has the word &quot;xenomai&quot; in it, then it&#39;s a real-time kernel. If not, then it isn&#39;t.
 		&lt;/p&gt; 
@@ -756,11 +698,11 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
     
       <item>
         <title>Linux Freezes after Reboot</title>
-        <description>&lt;p&gt;If you do an OS-based reboot of your the computer and your log-in screen is laggy or displays errors, it’s probably because &lt;code&gt;kexec-tools&lt;/code&gt; are handling reboots. 
-When compiling an RT kernel, you were prompted whether or not to let &lt;code&gt;kexec-tools&lt;/code&gt; handle reboots. 
+        <description>&lt;p&gt;If you do an OS-based reboot of your the computer and your log-in screen is laggy or displays errors, it’s probably because &lt;code class=&quot;highlighter-rouge&quot;&gt;kexec-tools&lt;/code&gt; are handling reboots. 
+When compiling an RT kernel, you were prompted whether or not to let &lt;code class=&quot;highlighter-rouge&quot;&gt;kexec-tools&lt;/code&gt; handle reboots. 
 You are advised in the installation instructions (and here) to not allow that.&lt;/p&gt;
 
-&lt;p&gt;The &lt;code&gt;kexec-tools&lt;/code&gt; utility normally is used to perform ‘warm reboots,’ which is when the computer reloads a kernel without fully shutting the system down. 
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;kexec-tools&lt;/code&gt; utility normally is used to perform ‘warm reboots,’ which is when the computer reloads a kernel without fully shutting the system down. 
 (In contrast, a cold reboot is when you fully shut down the computer, meaning that the machine fully stops and it begins to cool down.) 
 The lag you experience is probably because kexec-tools is rebooting to a non-RT kernel. 
 Your system is at that point should not be relied on for running real-time applications.&lt;/p&gt;
@@ -769,7 +711,7 @@ Your system is at that point should not be relied on for running real-time appli
 
 &lt;ol&gt;
   &lt;li&gt;Open /etc/default/kexec (as root).&lt;/li&gt;
-  &lt;li&gt;Change &lt;code&gt;LOAD_KEXEC&lt;/code&gt; from &lt;code&gt;true&lt;/code&gt; to &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Change &lt;code class=&quot;highlighter-rouge&quot;&gt;LOAD_KEXEC&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;Save and exit.&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -786,7 +728,7 @@ Your system is at that point should not be relied on for running real-time appli
 
 &lt;p&gt;For RTXI, we strongly encourage you to use the open-source drivers. Nouveau is the open-source one for Nvidia cards, and radeon is for AMD ones. No configuration or input on your part is needed to use them. When you install Linux and boot, your kernel will detect the graphics hardware and load the corresponding driver. You can check to see if your driver is loaded by running:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;lsmod &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; grep &lt;span class=&quot;s2&quot;&gt;&amp;quot;radeon\|nouveau&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;lsmod | grep &lt;span class=&quot;s2&quot;&gt;&quot;radeon&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\|&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;nouveau&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The reason we use open-source drivers is that they use the kernel to directly leverage the graphics card to compute things like the UI and desktop. Proprietary drivers, while technically doing the same thing, function differently and can degrade real-time performance by causing latencies to spike to as high as 100us on some machines. Skipping the drivers altogether forces the CPU to compute the UI, which when coupled with the RT kernel, will make the UI slow and laggy and the real-time performance poorer.&lt;/p&gt;
 
@@ -842,7 +784,7 @@ Your system is at that point should not be relied on for running real-time appli
 		If that doesn&#39;t fix your system, you can delve deeper to find out whether there are still interrupt collisions. When Linux freezes, you can drop to another tty by entering &lt;code&gt;Ctrl+Alt+F2&lt;/code&gt;. You can then enter you login information. From the new shell, enter:  
 
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;lspci -v &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; less&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;lspci -v | less&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 		Scroll through the output and check if anything has the same IRQ number as the DAQ (the National Instuments card) or the graphics card. Occasionally, things like the Ethernet card or a USB port can interfere.  
 		If you don&#39;t have a spare port, you&#39;ll need to get a new graphics card. We recommend AMD cards that have been released long enough for Ubuntu to fully support them. A list of compatible cards is available &lt;a href=&quot;https://help.ubuntu.com/community/RadeonDriver&quot;&gt; on Ubuntu&#39;s site.&lt;/a&gt; 
@@ -853,11 +795,11 @@ Your system is at that point should not be relied on for running real-time appli
 		This is likely caused by the graphics card being not fully supported by open-source drivers. You may need to replace your driver. To see if your system is using the graphics driver, run:  
 
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo lshw -C display &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; grep configuration&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo lshw -C display | grep configuration&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 		If you don&#39;t see your graphics driver (radeon or nouveau) listed, then it&#39;s not being properly used. You can also check this by looking at the &lt;code&gt;dmesg&lt;/code&gt; output:
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;dmesg &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; grep &lt;span class=&quot;s2&quot;&gt;&amp;quot;radeon\|nouveau&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;dmesg | grep &lt;span class=&quot;s2&quot;&gt;&quot;radeon&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\|&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;nouveau&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 		If the driver is working properly, you&#39;ll see a lot of output. If not, you probably won&#39;t see anything. &lt;br /&gt;&lt;br /&gt;
 		Let us know if you need help with this issue. Sending us the output from the above commands will help immensely in figuring out your problem.  
@@ -886,7 +828,7 @@ Your system is at that point should not be relied on for running real-time appli
 
 &lt;p&gt;You can correct this behavior by running (as root):&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# echo 0 &amp;gt; /proc/xenomai/latency&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# echo 0 &amp;gt; /proc/xenomai/latency&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;What this means is that the latency test will not try to factor out the time to compute the timer.&lt;/p&gt;
 </description>
@@ -1054,59 +996,59 @@ While not complete, the new site got a few things ready that we think you’ll l
         <title>Manually Configuring RTXI</title>
         <description>&lt;p&gt;You can manually configure RTXI with many options. For example, you can run RTXI 2.0 using the RTAI rather than the default Xenomai, and you can set up RTXI in non-real-time mode using the POSIX interface. You may also direct RTXI to libraries/packages in non-standard locations. The full configure options for are below:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;configure&lt;span class=&quot;s1&quot;&gt;&amp;#39; configures RTXI trunk to adapt to many kinds of systems.&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;configure&lt;span class=&quot;s1&quot;&gt;&#39; configures RTXI trunk to adapt to many kinds of systems.
 
-&lt;span class=&quot;s1&quot;&gt;Usage: ./configure [OPTION]... [VAR=VALUE]...&lt;/span&gt;
+Usage: ./configure [OPTION]... [VAR=VALUE]...
 
-&lt;span class=&quot;s1&quot;&gt;To assign environment variables (e.g., CC, CFLAGS...), specify them as&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;VAR=VALUE.  See below for descriptions of some of the useful variables.&lt;/span&gt;
+To assign environment variables (e.g., CC, CFLAGS...), specify them as
+VAR=VALUE.  See below for descriptions of some of the useful variables.
 
-&lt;span class=&quot;s1&quot;&gt;Defaults for the options are specified in brackets.&lt;/span&gt;
+Defaults for the options are specified in brackets.
 
-&lt;span class=&quot;s1&quot;&gt;Configuration:&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;  -h, --help              display this help and exit&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;      --help=short        display options specific to this package&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;      --help=recursive    display the short help of all the included packages&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;  -V, --version           display version information and exit&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;  -q, --quiet, --silent   do not print `checking...&amp;#39;&lt;/span&gt; messages
-      --cache-file&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;FILE   cache &lt;span class=&quot;nb&quot;&gt;test &lt;/span&gt;results in FILE &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;disabled&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  -C, --config-cache      &lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;--cache-file&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;config.cache&lt;span class=&quot;s1&quot;&gt;&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;  -n, --no-create         do not create output files&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;      --srcdir=DIR        find the sources in DIR [configure dir or `..&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+Configuration:
+  -h, --help              display this help and exit
+      --help=short        display options specific to this package
+      --help=recursive    display the short help of all the included packages
+  -V, --version           display version information and exit
+  -q, --quiet, --silent   do not print `checking...&#39;&lt;/span&gt; messages
+      --cache-file&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;FILE   cache &lt;span class=&quot;nb&quot;&gt;test &lt;/span&gt;results &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;FILE &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;disabled]
+  -C, --config-cache      &lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;--cache-file&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;config.cache&lt;span class=&quot;s1&quot;&gt;&#39;
+  -n, --no-create         do not create output files
+      --srcdir=DIR        find the sources in DIR [configure dir or `..&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
 
 Installation directories:
-  --prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PREFIX         install architecture-independent files in PREFIX
-                          &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/usr/local&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --exec-prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;EPREFIX   install architecture-dependent files in EPREFIX
-                          &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PREFIX&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+  --prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PREFIX         install architecture-independent files &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;PREFIX
+                          &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/usr/local]
+  --exec-prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;EPREFIX   install architecture-dependent files &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;EPREFIX
+                          &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PREFIX]
 
-By default, &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;make install&lt;span class=&quot;s1&quot;&gt;&amp;#39; will install all the files in&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;`/usr/local/bin&amp;#39;&lt;/span&gt;, &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;/usr/local/lib&lt;span class=&quot;s1&quot;&gt;&amp;#39; etc.  You can specify&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;an installation prefix other than `/usr/local&amp;#39;&lt;/span&gt; using &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;--prefix&lt;span class=&quot;s1&quot;&gt;&amp;#39;,&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;for instance `--prefix=$HOME&amp;#39;&lt;/span&gt;.
+By default, &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;make install&lt;span class=&quot;s1&quot;&gt;&#39; will install all the files in
+`/usr/local/bin&#39;&lt;/span&gt;, &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;/usr/local/lib&lt;span class=&quot;s1&quot;&gt;&#39; etc.  You can specify
+an installation prefix other than `/usr/local&#39;&lt;/span&gt; using &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;--prefix&lt;span class=&quot;s1&quot;&gt;&#39;,
+for instance `--prefix=$HOME&#39;&lt;/span&gt;.
 
 For better control, use the options below.
 
 Fine tuning of the installation directories:
-  --bindir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR            user executables &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;EPREFIX/bin&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --sbindir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR           system admin executables &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;EPREFIX/sbin&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --libexecdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR        program executables &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;EPREFIX/libexec&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --sysconfdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR        &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt;-only single-machine data &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PREFIX/etc&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --sharedstatedir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR    modifiable architecture-independent data &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PREFIX/com&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --localstatedir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR     modifiable single-machine data &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PREFIX/var&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --libdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR            object code libraries &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;EPREFIX/lib&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --includedir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR        C header files &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PREFIX/include&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --oldincludedir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR     C header files &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; non-gcc &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/usr/include&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --datarootdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR       &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt;-only arch.-independent data root &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PREFIX/share&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --datadir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR           &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt;-only architecture-independent data &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DATAROOTDIR&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --infodir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR           info documentation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DATAROOTDIR/info&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --localedir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR         locale-dependent data &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DATAROOTDIR/locale&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --mandir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR            man documentation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DATAROOTDIR/man&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --docdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR            documentation root &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DATAROOTDIR/doc/rtxi&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --htmldir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR           html documentation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DOCDIR&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --dvidir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR            dvi documentation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DOCDIR&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --pdfdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR            pdf documentation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DOCDIR&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --psdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR             ps documentation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DOCDIR&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+  --bindir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR            user executables &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;EPREFIX/bin]
+  --sbindir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR           system admin executables &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;EPREFIX/sbin]
+  --libexecdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR        program executables &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;EPREFIX/libexec]
+  --sysconfdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR        &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt;-only single-machine data &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PREFIX/etc]
+  --sharedstatedir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR    modifiable architecture-independent data &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PREFIX/com]
+  --localstatedir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR     modifiable single-machine data &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PREFIX/var]
+  --libdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR            object code libraries &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;EPREFIX/lib]
+  --includedir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR        C header files &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PREFIX/include]
+  --oldincludedir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR     C header files &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;non-gcc &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/usr/include]
+  --datarootdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR       &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt;-only arch.-independent data root &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PREFIX/share]
+  --datadir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR           &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt;-only architecture-independent data &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DATAROOTDIR]
+  --infodir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR           info documentation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DATAROOTDIR/info]
+  --localedir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR         locale-dependent data &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DATAROOTDIR/locale]
+  --mandir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR            man documentation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DATAROOTDIR/man]
+  --docdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR            documentation root &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DATAROOTDIR/doc/rtxi]
+  --htmldir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR           html documentation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DOCDIR]
+  --dvidir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR            dvi documentation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DOCDIR]
+  --pdfdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR            pdf documentation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DOCDIR]
+  --psdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR             ps documentation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DOCDIR]
 
 Program names:
   --program-prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PREFIX            prepend PREFIX to installed program names
@@ -1114,23 +1056,23 @@ Program names:
   --program-transform-name&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PROGRAM   run sed PROGRAM on installed program names
 
 X features:
-  --x-includes&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR    X include files are in DIR
-  --x-libraries&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR   X library files are in DIR
+  --x-includes&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR    X include files are &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;DIR
+  --x-libraries&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR   X library files are &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;DIR
 
 System types:
-  --build&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;BUILD     configure &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; building on BUILD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;guessed&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --host&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;HOST       cross-compile to build programs to run on HOST &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;BUILD&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+  --build&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;BUILD     configure &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;building on BUILD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;guessed]
+  --host&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;HOST       cross-compile to build programs to run on HOST &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;BUILD]
 
 Optional Features:
   --disable-option-checking  ignore unrecognized --enable/--with options
-  --disable-FEATURE       &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; not include FEATURE &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;same as --enable-FEATURE&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;no&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-  --enable-FEATURE&lt;span class=&quot;o&quot;&gt;[=&lt;/span&gt;ARG&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;  include FEATURE &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ARG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --enable-shared&lt;span class=&quot;o&quot;&gt;[=&lt;/span&gt;PKGS&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;  build shared libraries &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --enable-static&lt;span class=&quot;o&quot;&gt;[=&lt;/span&gt;PKGS&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;  build static libraries &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --enable-fast-install&lt;span class=&quot;o&quot;&gt;[=&lt;/span&gt;PKGS&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-                          optimize &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; fast installation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+  --disable-FEATURE       &lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;not include FEATURE &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;same as --enable-FEATURE&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;no&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  --enable-FEATURE[&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ARG]  include FEATURE &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ARG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes]
+  --enable-shared[&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PKGS]  build shared libraries &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes]
+  --enable-static[&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PKGS]  build static libraries &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes]
+  --enable-fast-install[&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PKGS]
+                          optimize &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;fast installation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes]
   --disable-dependency-tracking  speeds up one-time build
-  --enable-dependency-tracking   &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; not reject slow dependency extractors
+  --enable-dependency-tracking   &lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;not reject slow dependency extractors
   --disable-libtool-lock  avoid locking &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;might &lt;span class=&quot;nb&quot;&gt;break &lt;/span&gt;parallel builds&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
   --enable-xenomai        build the Xenomai interface
   --enable-posix          build the POSIX non-RT interface
@@ -1141,51 +1083,108 @@ Optional Features:
   --enable-clampprotocol     build the clamp protocol module &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;enabled&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 
 Optional Packages:
-  --with-PACKAGE&lt;span class=&quot;o&quot;&gt;[=&lt;/span&gt;ARG&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;    use PACKAGE &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ARG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --without-PACKAGE       &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; not use PACKAGE &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;same as --with-PACKAGE&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;no&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  --with-PACKAGE[&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ARG]    use PACKAGE &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ARG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes]
+  --without-PACKAGE       &lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;not use PACKAGE &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;same as --with-PACKAGE&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;no&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
   --with-cppunit-prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PFX   Prefix where CppUnit is installed &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;optional&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
   --with-cppunit-exec-prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PFX  Exec prefix where CppUnit is installed &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;optional&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
   --with-pic              try to use only PIC/non-PIC objects &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;use
-                          both&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  --with-gnu-ld           assume the C compiler uses GNU ld &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;no&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+                          both]
+  --with-gnu-ld           assume the C compiler uses GNU ld &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;no]
   --with-x                use the X Window System
-  --with-Qt-dir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR       DIR is equal to &lt;span class=&quot;nv&quot;&gt;$QTDIR&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; you have followed the
+  --with-Qt-dir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR       DIR is equal to &lt;span class=&quot;nv&quot;&gt;$QTDIR&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;you have followed the
                           installation instructions of Trolltech. Header files
-                          are in DIR/include, binary utilities are in DIR/bin.
-                          The library is in DIR/lib, unless --with-Qt-lib-dir
+                          are &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;DIR/include, binary utilities are &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;DIR/bin.
+                          The library is &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;DIR/lib, unless --with-Qt-lib-dir
                           is also set.
   --with-Qt-include-dir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR
-                          Qt header files are in DIR
-  --with-Qt-bin-dir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR   Qt utilities such as moc and uic are in DIR
-  --with-Qt-lib-dir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR   The Qt library is in DIR
+                          Qt header files are &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;DIR
+  --with-Qt-bin-dir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR   Qt utilities such as moc and uic are &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;DIR
+  --with-Qt-lib-dir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR   The Qt library is &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;DIR
   --with-Qt-lib&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;LIB       Use -lLIB to link with the Qt library
   --with-rtai-config&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;FILE location of the rtai-config program
 
 Some influential environment variables:
-  CC          C compiler &lt;span class=&quot;nb&quot;&gt;command&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;  &lt;/span&gt;CFLAGS      C compiler flags
-  LDFLAGS     linker flags, e.g. -L &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; you have libraries in a
+  CC          C compiler &lt;span class=&quot;nb&quot;&gt;command
+  &lt;/span&gt;CFLAGS      C compiler flags
+  LDFLAGS     linker flags, e.g. -L &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;you have libraries &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;a
               nonstandard directory 
   LIBS        libraries to pass to the linker, e.g. -l
-  CPPFLAGS    C/C++/Objective C preprocessor flags, e.g. -I &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;
-              you have headers in a nonstandard directory 
+  CPPFLAGS    C/C++/Objective C preprocessor flags, e.g. -I &lt;span class=&quot;k&quot;&gt;if
+              &lt;/span&gt;you have headers &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;a nonstandard directory 
   CPP         C preprocessor
-  CXX         C++ compiler &lt;span class=&quot;nb&quot;&gt;command&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;  &lt;/span&gt;CXXFLAGS    C++ compiler flags
+  CXX         C++ compiler &lt;span class=&quot;nb&quot;&gt;command
+  &lt;/span&gt;CXXFLAGS    C++ compiler flags
   CXXCPP      C++ preprocessor
-  XMKMF       Path to xmkmf, Makefile generator &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; X Window System&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  XMKMF       Path to xmkmf, Makefile generator &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;X Window System&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;If there is a flag you want to set, say, &lt;code&gt;--enable-ni&lt;/code&gt;, go to the base of the RTXI git directory and run:&lt;/p&gt;
+&lt;p&gt;If there is a flag you want to set, say, &lt;code class=&quot;highlighter-rouge&quot;&gt;--enable-ni&lt;/code&gt;, go to the base of the RTXI git directory and run:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./configure --enable-ni
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;make -j&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;nproc&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo make install -j&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;nproc&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;./configure --enable-ni
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;make -j&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;nproc&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo make install -j&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;nproc&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;These three lines will apply your desired confguration to the build options and then compile and install RTXI.&lt;/p&gt;
 </description>
         <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/tutorials/2014/12/04/manually-configuring-rtxi/</link>
         <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2014/12/04/manually-configuring-rtxi/</guid>
+      </item>
+    
+      <item>
+        <title>32 or 64 Bit? Your Processor Explained</title>
+        <description>&lt;p&gt;64-bit and 32-bit refer to how addresses and memory are handled in different instruction set architectures. For clarity, the terms ‘32-bit’ and ‘64-bit’ have dual meanings. The first refers to the size of addressable chunks of memory. Memory is organized in chunks, called words, that a processor can handle at once. 32 and 64-bit systems respectively handle chunks of memory that are 32 and 64 bits in size. The second meaning refers to the size of the addresses used to catalog all of the addressable points in memory. In other words, each word in memory has an address that the processor uses to find it. 32-bit systems use 32-bit-long addresses, and the same follows for 64-bit ones. Note that it just so happens that these systems have the same address size and word size. It’s not necessarily the case. For instance, early PCs often had 8-bit words and 16-bit addresses.&lt;/p&gt;
+
+&lt;p&gt;Most commercially available systems today come with 64-bit capable processors and pre-installed 64-bit operating systems. 32-bit applications are compatible with them because the 64-bit format is backwards-compatible. The space addressable by 32 bits is a subset of what is addressed with 64, and the processors are built to handle 32-bit chunks of memory. Simply put, if you have a 64-bit compatible processor, run 64-bit software.&lt;/p&gt;
+
+&lt;p&gt;One extra consideration is the operating system. Applications other than drivers and similar software interface with the hardware through the operating system. Therefore, it is important to consider the type of operating system installed. 32-bit OSes can only handle 32-bit operations, but 64-bit ones can properly use both.&lt;/p&gt;
+
+&lt;p&gt;Altogether, none of this is likely to be an issue with machines from the past few years. Lately, AMD and Intel have introduced different brand names and code names for their processors, which can get confusing quite easily. In case you’re running older hardware, here’s a list of a few 64-bit capable processors.&lt;/p&gt;
+
+&lt;div class=&quot;col-md-6&quot;&gt; 
+&lt;table class=&quot;table&quot;&gt; 
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;&lt;strong&gt;AMD&lt;/strong&gt; (aka &quot;x86-64&quot;, &quot;AMD64&quot;, or &quot;x64&quot;)&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;&lt;td&gt; Athlon 64 &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; AMD Athlon 64 X2 &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; AMD Athlon 64 FX &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; AMD Athlon II (X2/X3/X4) &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; AMD Opteron &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; AMD Turion 64 &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; AMD Turion 64 X2 &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; AMD Sempron (&quot;Palermo&quot; E6 stepping and all &quot;Manila&quot; models) &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; AMD Phenom (X2/X3/X4) &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; AMD Phenom II (X2/X3/X4) &lt;/td&gt;&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;col-md-6&quot;&gt;  
+&lt;table class=&quot;table&quot;&gt; 
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;&lt;strong&gt;Intel&lt;/strong&gt; (aka &quot;IA-32e&quot;, &quot;EM64T&quot;, or &quot;Intel 64&quot;&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;&lt;td&gt; Netburst family &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; some Celeron D&#39;s: LGA 775 &quot;Prescott&quot; models &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; some Pentium 4&#39;s: &quot;Prescott 2M,&quot; &quot;Irwindale&quot; &quot;Cedar Mill&quot; &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; Pentium D &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; Pentium Extreme Edition &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; Intel Core &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; Xeon: Core 2, Dual Core, Celeron &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; Nehalem: Core i3, i5, i7, Intel Atom &lt;/td&gt;&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
+        <link>http://rtxi.org//docs/tutorials/2014/12/04/32-or-64-bit-processors/</link>
+        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2014/12/04/32-or-64-bit-processors/</guid>
       </item>
     
   </channel>
