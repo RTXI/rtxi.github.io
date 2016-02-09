@@ -235,23 +235,29 @@ tag_content: "There are three ways to install RTXI: Use our Ubuntu-based live CD
 			</h4>
 			<p>Open a terminal. You can use the applications menu or enter the <code>CTRL+ALT+t</code> shortcut. From the terminal, install the git package. Git is a version control system that can synchronize files over many machines. We use it for developing RTXI source code, which is hosted on <a href="https://github.com/rtxi">GitHub</a>. 
 			</p>
-			{% highlight bash %}
+
+{% highlight bash %}
 $ sudo apt-get install git
-			{% endhighlight %}
+{% endhighlight %}
+
 			<p>Once git is installed, use it to download the RTXI source code and access the source code for v{{ site.rtxi_version }}. 
 			</p>
-			{% highlight bash %}
+
+{% highlight bash %}
 $ git clone https://github.com/rtxi/rtxi
 $ cd rtxi
-			{% endhighlight %}
+{% endhighlight %}
+
 			<p><b>Tip:</b> The above code will download the source files to wherever you are in your filesystem. If you are within your own user directory, then the source files will only be accessible to your account, not anyone else's. To download the source code in a central location that all users can access, consider: </p>
-			{% highlight bash %}
+
+{% highlight bash %}
 $ git clone https://github.com/rtxi/rtxi
 $ sudo mv rtxi /home/
 $ cd /home
 $ sudo find rtxi \( -type d -exec chmod u+rwx,g+rwx,o+rx {} \; -o -type f -exec chmod u+rw,g+rw,o+r {} \; \)
 $ cd /home/rtxi/
-			{% endhighlight %}
+{% endhighlight %}
+
 			<p><b>Note:</b> Don't do this if you have a user named "rtxi". Rename the RTXI folder you cloned to something else.
 			</p>
 			
@@ -262,10 +268,12 @@ $ cd /home/rtxi/
 			</h4>
 			<p>Install the dependencies for RTXI and for installing the real-time (RT) kernel. Assuming you are in the cloned RTXI directory, run:
 			</p>
-			{% highlight bash %}
+
+{% highlight bash %}
 $ cd scripts
 $ ./install_dependencies.sh
-			{% endhighlight %}
+{% endhighlight %}
+
 			<p>The script will run for a while, updating your current packages and installing ones needed later.
 			</p>
 			
@@ -276,9 +284,11 @@ $ ./install_dependencies.sh
 			</h4>
 			<p>From the same directory, run:
 			</p>
-			{% highlight bash %}
+
+{% highlight bash %}
 $ ./install_rt_kernel.sh
-			{% endhighlight %}
+{% endhighlight %}
+
 			<p>The script will download the sources for the Linux kernel and the Xenomai patch. Before the kernel starts compiling, you will be prompted to edit the kernel config flags. A UI will pop up that looks as follows: 
 			</p>
 			<a href="{{ site.img }}/kernel-config-home.png"><img class="img-responsive center-block" src="{{ site.img }}/kernel-config-home.png"></a>
@@ -300,9 +310,11 @@ $ ./install_rt_kernel.sh
 					<div style="padding-left:2em;">--> Processor family</div><br>
 					<p>Select the option that corresponds to your processor type. If unsure of what processor you have, open another terminal run:
 					</p>
-					{% highlight bash %}
+
+{% highlight bash %}
 $ cat /proc/cpuinfo
-					{% endhighlight %}
+{% endhighlight %}
+
 					<p>This will display the CPU information needed to correctly select your configuration. Most newish computers with Intel processors usually have an i3, i5, or i7. For them, select <code>Core 2/newer Xeon</code>. 
 					</p>
 					<p><b>Note:</b> For 32-bit systems, <code>Enable -fstack-protector buffer overflow detection</code> should also be disabled</code></p>
@@ -339,9 +351,11 @@ $ cat /proc/cpuinfo
 			</h4>
 			<p>Install RTXI with the <code>install_rtxi.sh</code> script. Navigate back to your <code>rtxi/scripts/</code> directory and rum:
 			</p>
-			{% highlight bash %}
+
+{% highlight bash %}
 $ ./install_rtxi.sh
-			{% endhighlight %}
+{% endhighlight %}
+
 			<p>Give your password when prompted. The script will also prompt you for an installation mode.
 			</p>
 			<dl class="dl-horizontal">
@@ -351,10 +365,11 @@ $ ./install_rtxi.sh
 					<dd>RTXI will not perform in real-time, but with this option, it can be installed this way on systems without a real-time kernel. 
 			</dl>
 			<p>If you want real-time performance, enter "1" to use Xenomai and wait for RTXI to be installed. When the installation script terminates, RTXI is ready for you to use. To start RTXI, run:
-			{% highlight bash %}
-$ sudo rtxi
-			{% endhighlight %}
 			</p>
+
+{% highlight bash %}
+$ sudo rtxi
+{% endhighlight %}
 
 			<!-- 8. (Re)install modules -->
 			<div>&nbsp;</div>
@@ -378,15 +393,18 @@ $ sudo rtxi
 			</h4>
 			<p>If you haven't already cloned our GitHub repo, run the following in the terminal.  
 			</p>
-			{% highlight bash %}
+
+{% highlight bash %}
 $ git clone https://github.com/rtxi/rtxi.git
 $ cd rtxi
-			{% endhighlight %}
+{% endhighlight %}
+
 			<p>If you already have a clone of the repository, go to it and run:
 			</p>
-			{% highlight bash %}
+
+{% highlight bash %}
 $ git pull origin master
-			{% endhighlight %}
+{% endhighlight %}
 
 			<!-- 2. Install dependencies -->
 			<div>&nbsp;</div>
@@ -395,10 +413,12 @@ $ git pull origin master
 			</h4>
 			<p>Run the <code>install_dependencies.sh</code> script to download dependencies. The script is maintained for Ubuntu 14.04. If you are using a different or outdated distribution, like Ubuntu 10.04, you will have to look for differently-named packages. For old operating systems, some of these packages may no longer exist, and if that's the case, we strongly encourage you to upgrade.
 			</p>
-			{% highlight bash %}
+
+{% highlight bash %}
 $ cd scripts/
 $ ./install_dependencies.sh
-			{% endhighlight %}
+{% endhighlight %}
+
 
 			<!-- 3. Install RTXI -->
 			<div>&nbsp;</div>
@@ -407,14 +427,18 @@ $ ./install_dependencies.sh
 			</h4>
 			<p>Run the installation script, also in the <code>scripts/</code> directory.
 			</p>
-			{% highlight bash %}
+
+{% highlight bash %}
 $ ./install_rtxi.sh
-			{% endhighlight %}
+{% endhighlight %}
+
 			<p>You will be prompted to select a configuration: 1 for Xenomai (real-time) or 2 for POSIX (non-real-time). Soon, RTXI will be compiled and installed. When finished, you can run v{{ site.rtxi_version }} with:
 			</p>
-			{% highlight bash %}
+
+{% highlight bash %}
 $ sudo rtxi
-			{% endhighlight %}
+{% endhighlight %}
+
 			<p><b>Note:</b> This will not work if you are running an RTAI-patched kernel. To compile RTXI v{{ site.rtxi_version }} for RTAI kernels, see our relevant information on the FAQs section of the <a href="/docs/">documentation page</a> or the <a href="/docs/tutorials/2014/12/04/manually-configuring-rtxi/">full documentation for configuration options</a>.
 			</p>
 

@@ -35,7 +35,6 @@ module.exports = function(grunt) {
          },
          jquery: 'bower_components/jquery/dist',
 			isotope: 'bower_components/isotope/dist',
-         pygments: 'bower_components/pygments/css',
          font_awesome: {
             less: 'bower_components/font-awesome/less',
             css: 'bower_components/font-awesome/css',
@@ -174,12 +173,6 @@ module.exports = function(grunt) {
                   expand: true
                },
                {
-                  cwd: '<%= paths.pygments %>/',
-                  src: '*.css',
-                  dest: '<%= paths.assets.css %>/src/pygments/',
-                  expand: true
-               },
-               {
                   cwd: '<%= paths.datatables.js %>/',
                   src: 'jquery.dataTables.min.js',
                   dest: '<%= paths.assets.js %>/src/',
@@ -240,7 +233,7 @@ module.exports = function(grunt) {
          default_css: {
             src: ['<%= paths.assets.css %>/src/bootstrap.min.css',
                   '<%= paths.assets.css %>/src/font-awesome.min.css',
-                  '<%= paths.assets.css %>/src/pygments.css'],
+                  '<%= paths.assets.css %>/src/syntax.css'],
             dest: '<%= paths.assets.css %>/src/default.css'
          }
       },
