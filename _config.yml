@@ -63,6 +63,8 @@ exclude:
  - "Gemfile.lock"
  - "LICENSE"
  - "assets/less/"
+ - "assets/js/src/"
+ - "assets/css/src/"
  - "Gruntfile.js"
  - "package.json"
  - "node_modules"
