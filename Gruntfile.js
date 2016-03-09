@@ -132,7 +132,7 @@ module.exports = function(grunt) {
             files: [
                {
                   cwd: '<%= paths.bootstrap.less %>/',
-                  src: ['bootstrap.less', 'variables.less'], 
+                  src: ['*.less', 'mixins/'], 
                   dest: '<%= paths.assets.less %>/src/bootstrap/',
                   expand: true
                },

@@ -7,12 +7,13 @@ layout: docpost
 Outlined here is the development process for making new RTXI modules. For simplicity, we provide a template module, called Plugin Template, for users to customize without needing to writing everything from scratch. Plugin Template defines a basic GUI with customizable widgets and is found [on our GitHub repository](https://github.com/rtxi/plugin-template).   
 
 
-###The general process of modifying RTXI plugins is as follows:  
+###To fork RTXI modules:  
 
-####1. Clone the repository from our GitHub page.   
+####1. Clone the repository from GitHub.   
 From our site, go to the [Plugin-Template repository](https://github.com/rtxi/plugin-template). Download the source files:  
 
-Now, clone the repository. Developers for new modules are expected to base it on MyPluginGUI. Type:
+Now, clone the repository. Developers for new modules are expected to base it on MyPluginGUI. Type:  
+
 {% highlight bash %}
 $ git clone https://github.com/rtxi/plugin-template.git custom_module
 {% endhighlight %}
