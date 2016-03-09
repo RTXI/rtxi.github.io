@@ -216,9 +216,9 @@ RTXI workspace variables are displayed in the UI as &lt;code class=&quot;highlig
         <title>Making New Modules in RTXI</title>
         <description>&lt;p&gt;Outlined here is the development process for making new RTXI modules. For simplicity, we provide a template module, called Plugin Template, for users to customize without needing to writing everything from scratch. Plugin Template defines a basic GUI with customizable widgets and is found &lt;a href=&quot;https://github.com/rtxi/plugin-template&quot;&gt;on our GitHub repository&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&quot;the-general-process-of-modifying-rtxi-plugins-is-as-follows&quot;&gt;The general process of modifying RTXI plugins is as follows:&lt;/h3&gt;
+&lt;h3 id=&quot;to-fork-rtxi-modules&quot;&gt;To fork RTXI modules:&lt;/h3&gt;
 
-&lt;h4 id=&quot;clone-the-repository-from-our-github-page&quot;&gt;1. Clone the repository from our GitHub page.&lt;/h4&gt;
+&lt;h4 id=&quot;clone-the-repository-from-github&quot;&gt;1. Clone the repository from GitHub.&lt;/h4&gt;
 &lt;p&gt;From our site, go to the &lt;a href=&quot;https://github.com/rtxi/plugin-template&quot;&gt;Plugin-Template repository&lt;/a&gt;. Download the source files:&lt;/p&gt;
 
 &lt;p&gt;Now, clone the repository. Developers for new modules are expected to base it on MyPluginGUI. Type:&lt;/p&gt;
