@@ -47,20 +47,15 @@ tag_content: "There are three ways to install RTXI: Use our Ubuntu-based live CD
 			<p>We currently have Ubuntu live CDs. You can use them to test RTXI without touching your hard drive, format your hard drive, and install RTXI alongside existing operating systems.  
 			</p>
 
-			<div class="row">
-				<div class="col-xs-12 col-sm-3 col-lg-2 col-sm-offset-3 col-lg-offset-4" style="text-align: center">
-					<a href="http://relic.rtxi.org/iso/rtxi-2.0-ubuntu-v7-amd64.iso" download>
-						<button type="button" class="btn btn-danger" style="margin-bottom: 5px">
-							<span class="glyphicon glyphicon-cloud-download"></span> RTXI {{ site.rtxi_version }} 64-bit
-						</button>
+			<div class="container" style="text-align:center">
+				<div class="btn-toolbar" style="display:inline-block" role="toolbar">
+				{% for livecd in site.data.iso.rtxi %}
+					<a type="button" class="btn btn-danger btn" role="button" 
+                  href="{{ livecd.url }}" download style="margin-top:1em">
+						<span class="glyphicon glyphicon-cloud-download"></span> 
+						{{ livecd.name }} {{ livecd.version }} {{ livecd.arch }}
 					</a>
-				</div>
-				<div class="col-xs-12 col-sm-3 col-lg-2" style="text-align: center">
-               <a href="http://relic.rtxi.org/iso/rtxi-2.0-ubuntu-v7-i386.iso" download>
-						<button type="button" class="btn btn-danger" style="margin-bottom: 5px">
-							<span class="glyphicon glyphicon-cloud-download"></span> RTXI {{ site.rtxi_version }} 32-bit
-						</button>
-					</a>
+				{% endfor %}
 				</div>
 			</div>
 
@@ -178,20 +173,15 @@ tag_content: "There are three ways to install RTXI: Use our Ubuntu-based live CD
 			</h4>
 			<p>You can install RTXI on any Linux distribution you like. Keep in mind that the installation scripts we use work for Ubuntu and Debian. Your distribution may name or organize packages differently, so you'll have to account for that on your own. Below are download links for generic Ubuntu GNOME live CDs.  
 			</p>
-			<div class="row">
-				<div class="col-xs-12 col-sm-4 col-sm-offset-2" style="text-align: center">
-					<a href="http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04.3/release/ubuntu-gnome-14.04.3-desktop-amd64.iso" download>
-						<button type="button" class="btn btn-danger" style="margin-bottom: 5px">
-							<span class="glyphicon glyphicon-cloud-download"></span> Ubuntu 14.04 64-bit
-						</button>
+			<div class="container" style="text-align:center">
+				<div class="btn-toolbar" style="display:inline-block" role="toolbar">
+				{% for livecd in site.data.iso.ubuntu %}
+					<a type="button" class="btn btn-danger btn" role="button" 
+                  href="{{ livecd.url }}" download style="margin-top:1em">
+						<span class="glyphicon glyphicon-cloud-download"></span> 
+						{{ livecd.name }} {{ livecd.version }} {{ livecd.arch }}
 					</a>
-				</div>
-				<div class="col-xs-12 col-sm-4" style="text-align: center">
-					<a href="http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04.3/release/ubuntu-gnome-14.04.3-desktop-i386.iso" download>
-						<button type="button" class="btn btn-danger" style="margin-bottom: 5px">
-							<span class="glyphicon glyphicon-cloud-download"></span> Ubuntu 14.04 32-bit
-						</button>
-					</a>
+				{% endfor %}
 				</div>
 			</div>
 			

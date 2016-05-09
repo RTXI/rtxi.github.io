@@ -1,0 +1,22 @@
+ubuntu:
+ - arch: amd64
+   name: Ubuntu GNOME
+   version: 14.04.4
+   url:  "http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04.4/release/ubuntu-gnome-14.04.4-desktop-amd64.iso"
+
+ - arch: i386
+   name: Ubuntu GNOME
+   version: 14.04.4
+   url:  "http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04.4/release/ubuntu-gnome-14.04.4-desktop-amd64.iso"
+
+
+rtxi:
+ - arch: amd64
+   name: RTXI
+   version: 2.0
+   url:  "http://relic.rtxi.org/iso/rtxi-2.0-ubuntu-v7-amd64.iso"
+
+ - arch: i386
+   name: RTXI
+   version: 2.0
+   url:  "http://relic.rtxi.org/iso/rtxi-2.0-ubuntu-v7-i386.iso"
