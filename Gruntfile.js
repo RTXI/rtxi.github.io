@@ -295,6 +295,8 @@ module.exports = function(grunt) {
       watch: {
          content: {
             files: [
+               '_drafts/**',
+               '_data/**',
                '_includes/**',
                '_layouts/**',
                '_posts/**',
