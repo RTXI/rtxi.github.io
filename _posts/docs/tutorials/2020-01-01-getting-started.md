@@ -4,7 +4,10 @@ categories: docs tutorials
 layout: docpost
 ---
 
-To get started with RTXI for your experiments, there are some hardware requirements you need to satisfy. They're pretty easy to meet, and they'll get you set up with a properly performing RTXI installation.  
+To get started with RTXI for your experiments, there are some hardware requirements you need to satisfy. 
+They're pretty easy to meet, and they'll get you set up with a properly performing RTXI installation.  
+
+If you are not familiar with RTXI or what it can do, we recommend looking through the [manual](/manual) first. 
 
 You will need:  
 
