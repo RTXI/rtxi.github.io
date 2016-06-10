@@ -22,8 +22,8 @@ module Jekyll
          repos.each do |repo|
             next if excludelist.include? repo
             repo_urls.store(repo, { "base"=>repoprefix+repo, 
-                                    "readme"=>rawprefix.join(repo)+"README.md", 
-                                    "screenshot"=>rawprefix.join(repo)+repo+".png" })
+                                    "readme"=>rawprefix.join(repo)+"README.md" })#, 
+                                    #"screenshot"=>rawprefix.join(repo)+repo+".png" })
          end
          return repo_urls
       end
@@ -36,6 +36,16 @@ module Jekyll
 			               "dynamo-examples", "conference-2015"]
          return excludelist
       end
+
+		def replaceImageURLs(html, repo, rawprefix)
+			images = html.scan(/<img src="(.*.png)"/)
+         for idx in 0...images.count
+				imageurl = "#{rawprefix.join(repo)}"+images[idx][0]
+				html = html.gsub(/<img src=\"#{images[idx][0]}\"/, "<img src=\"#{imageurl}\"")
+			end
+			outputhtml = html;
+			return outputhtml
+		end
 
       def generate(site)
          apiurl = "https://api.github.com/orgs/rtxi/repos?per_page=100"
@@ -51,16 +61,16 @@ module Jekyll
          repo_urls.each_pair do |repo, index|
             begin
                text = open(index["readme"]) {|text| text.read }
-               image = open(index["screenshot"]) {|image| image.read }
+               #image = open(index["screenshot"]) {|image| image.read }
 
             rescue StandardError=>e
                puts "ERROR getting repo info: #{e}"
                next
             end
                
-            unless File.directory? (build_dir+"/"+repo)
-               FileUtils.mkdir_p(build_dir+"/"+repo)
-            end
+#            unless File.directory? (build_dir+"/"+repo)
+#               FileUtils.mkdir_p(build_dir+"/"+repo)
+#            end
 
             filename = build_dir+"/"+repo+"/index.html"
             forkmebanner = "<style>" +
@@ -113,9 +123,9 @@ module Jekyll
                         "cap-title: #{repo.gsub(/-/,' ').split.map(&:capitalize).join(' ')}\n" +
                         "---\n\n"
 
-            htmltext = yamlheader + forkmebanner + GitHub::Markdown.render(text)
+            htmltext = yamlheader + forkmebanner + replaceImageURLs(GitHub::Markdown.render(text), repo, rawprefix)
 
-            File.open(build_dir+"/"+repo+"/"+repo+".png", "w") { |file| file.write(image) }
+            #File.open(build_dir+"/"+repo+"/"+repo+".png", "w") { |file| file.write(image) }
 
             begin
                site.pages << ModulePage.new(site, site.source, File.join("modules",repo), "index.html", htmltext)
