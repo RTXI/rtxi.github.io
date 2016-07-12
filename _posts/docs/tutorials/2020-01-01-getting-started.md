@@ -23,6 +23,12 @@ Most computers built in the last few years will run Linux, but some will perform
 
 Also, you should have a machine with at least **4 GB of RAM**. While Linux can run with less, you will see degraded performance. Over the past few years, operating systems have been built under the assumption of increasingly capable hardware, and Linux has been no exception.  
 
+**Note:** The current generation of Intel processors (Skylake) requires firmware that is bundled into new Linux kernels, starting around kernel 4.1. 
+The kernel in RTXI 2.0 is based on kernel 3.8.13 and will not run on new machines. 
+When purchasing a computer, make sure it has an older processor. (Haswell/Broadwell will work.)
+
+We are testing a newer real-time kernel. Source code is available on the [rttweak branch](https://github.com/rtxi/rtxi/tree/rttweak) of our GitHub repository. 
+
 #### DAQ
 RTXI is tested and developed on systems using National Instruments (NI) cards. While the Xenomai project creates drivers for cards made by other vendors, we do not test them and cannot give you a recommendation to use them. 
 
