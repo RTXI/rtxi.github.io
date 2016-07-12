@@ -55,4 +55,6 @@ If you run into issues, look through our available [documentation](/docs), and i
 
 #### Note
 
-[Let us know](https://github.com/rtxi/rtxi.github.io/issues/) if any links are broken. They are all supposed to point directly to lists of hardware compatible with drivers. If they don't, something went terrible wrong, and we need to fix the links.   
+[Let us know](https://github.com/rtxi/rtxi.github.io/issues/) if any links are broken. 
+They are all supposed to point directly to lists of hardware compatible with drivers. 
+If they don't, something went terribly wrong, and we need to fix the links. 
