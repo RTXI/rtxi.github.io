@@ -10,10 +10,10 @@ RTXI v2.0 has been in development for a while, and its release will introduce ma
 2. Upgrading Qwt5 to Qwt6  
 3. Changes to the DefaultGUIModel class
 
-####Upgrading from Qt3 to Qt4
+#### Upgrading from Qt3 to Qt4
 Qt3 is an old version of the Qt library. It was released in 2001 and superceded by Qt4 in 2005. It introduced many breaking changes to its API and classes, so it's taken a while to upgrade RTXI's codebase to properly use Qt4. We recommend that you look through the documentation Nokia provides on its website for porting from Qt3 to Qt4: [http://doc.qt.io/qt-4.8/porting4.html](http://doc.qt.io/qt-4.8/porting4.html).  
 
-####Porting Modules that Abstract from `DefaultGUIModel`
+#### Porting Modules that Abstract from `DefaultGUIModel`
 For v2.0, the code exposed to users has been simplified and the customizability enhanced. The most significant change is in the `createGUI` function and how the UI is generated. There are also some simple changes that correspond to syntax and class name changes in Qt4. They are as follows:  
 
 **1. Change `#includes`**  

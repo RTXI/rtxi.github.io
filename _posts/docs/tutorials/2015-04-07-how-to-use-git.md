@@ -17,7 +17,7 @@ Git takes snapshots of files a user wants to track and maintains a history of ch
 
 **Note:** Installing git is not the same as using GitHub. GitHub uses git, but it is a remote server that users can use as a central location for storing data. See the instructions for [opening a GitHub account](https://github.com/join).  
 
-####Installing Git on Linux
+#### Installing Git on Linux
 
 Open the terminal. You can do this from within the Applications menu in GNOME or by using the `CTRL+Alt+t` shortcut. Enter:  
 {% highlight bash %}
@@ -38,9 +38,9 @@ The second part, `config`, is used to configure information, which is stored in 
 
 **Note:** Should you ever need help with a Git command, you can use `git help <commandname>` to check the Git documentation in the terminal. For example, if unsure about `config`, run `git help config`.  
 
-###Using Local Repositories
+### Using Local Repositories
 
-####Initialization 
+#### Initialization 
 
 Git enables users to track local changes and development paths. First, go the base of your home directory and create some new directories:  
 {% highlight bash %}
@@ -73,7 +73,7 @@ This command specifies that the directory is to be treated as a Git repository. 
 
 **Note:** Git exists as a version control system. It is not advisable to use it for backing up big files, such as videos, binaries, etc. The entire process gets encumbered quickly. 
 
-####<a name="add"></a>Adding Files to the Staging Area 
+#### <a name="add"></a>Adding Files to the Staging Area 
 
 The directory is currently empty, so create some files:
 {% highlight bash %}
@@ -118,7 +118,7 @@ $ git status
 
 The following assumes that all three files are added to the staging area. You can add all files to the staging area by running `git add -A`. 
 
-####<a name="commit"></a>Commiting Files 
+#### <a name="commit"></a>Commiting Files 
 
 With the files added to the staging area, the next step is to add them to the permanent version history. In Git, this process is called a **commit**. Use the `commit` command. 
 {% highlight bash %}
@@ -144,7 +144,7 @@ This outputs a list of all the commits, when they were made, the author, the com
 </a>
 -->
 
-####<a name="undo"></a>(Optional) Undo a Commit 
+#### <a name="undo"></a>(Optional) Undo a Commit 
 
 If you ever commit something and wish to revert your changes, use the `reset` command. There are several options. The first is:
 {% highlight bash %}
@@ -175,7 +175,7 @@ The only change is that the most recent commit is reversed. The staging area is 
 
 The following assumes that the commit has not been reversed. All three files are committed in the repository. 
 
-####<a name="branch"></a>Branching Repositories 
+#### <a name="branch"></a>Branching Repositories 
 
 Now that a commit has been made, branch off and create a new working tree. Currently, HEAD points to the last commit of the original branch, called `master`. This is the default name for a new git repository. It is generally best practice to branch off of master to make changes and then merge changes back to master once they have been thoroughly audited. That way, whatever code is in the master branch is guaranteed to work.  
 
@@ -198,7 +198,7 @@ Now, HEAD is pointing to `testing` instead of `master`. Any commits made will be
 </a>
 -->
 
-####<a name="commitbranch"></a>Commiting Branches 
+#### <a name="commitbranch"></a>Commiting Branches 
 
 Change the current files. This command will add text to the files saying, "This is <filename>". You can use `more <filename>` or `cat <filename>` to output the contents of a file into the terminal. 
 {% highlight bash %}
@@ -219,7 +219,7 @@ The `.` operator causes commands to affect all files in a directory. Using it is
 </a>
 -->
 
-####<a name="compare"></a>Comparing Branches 
+#### <a name="compare"></a>Comparing Branches 
 
 Now that `master` and `testing` differ with one another, switch between them to see the differences.
 {% highlight bash %}
@@ -242,7 +242,7 @@ The output should look like:
 </a>
 -->
 
-####<a name="merge"></a>Merging Branches 
+#### <a name="merge"></a>Merging Branches 
 
 Now, merge the changes in `testing` to `master`. Check out the `master` branch and use the `merge` command.
 {% highlight bash %}
@@ -263,11 +263,11 @@ If the merge is successful, there is no need for the `testing` branch. Delete it
 $ git branch -d testing
 {% endhighlight %}
 
-###<a name="rrepos"></a>Using Remote Repositories 
+### <a name="rrepos"></a>Using Remote Repositories 
 
 Remote repositories refer to storage locations outside a user's local repository. The remote in this example is GitHub, and the repository we'll be using is for the <a href="https://github.com/rtxi/plugin-template">plugin template</a>. If you want to have your own remote repository on GitHub, you will need to create an account with them and using their website to initialize the repository. 
 
-####<a name="clone"></a>Cloning a GitHub Repository  
+#### <a name="clone"></a>Cloning a GitHub Repository  
 
 The format for cloning repositories from GitHub is: 
 {% highlight bash %}
@@ -283,7 +283,7 @@ $ cd plugin-template
 
 In addition to the files copied from GitHub, Git stores the address of the remote repository. By default, the name is `origin`. See details on remote repositories with `git remote -v`. 
 
-####<a name="push"></a>Pushing to a Remote 
+#### <a name="push"></a>Pushing to a Remote 
 
 Make some changes to the directory. Add some files, edit them, etc. Then, stage and commit them. 
 {% highlight bash %}
@@ -301,7 +301,7 @@ $ git push https://github.com/<username>/plugin-template.git master # will fail
 
 Git pushes the changes to the master branch of the remote repository referenced by the URL. Git also supports aliases for remote URLs. By default, the URL from which you clone a repository is saved as `origin`. You can view the remotes tracked by a repository by running `git remote -v`.  
 
-####<a name="pull"></a>Pulling Changes from a Remote 
+#### <a name="pull"></a>Pulling Changes from a Remote 
 
 Just as one can push changes from a local machine to a remote, it is possible to 'pull' changes back from the remote to the local machine. This comes into play when modifying the same project on several machines or by several people. To pull the code and automatically merge the differences, use:
 {% highlight bash %}
@@ -319,7 +319,7 @@ $ git merge <fetchedremote>
 
 You can use this method to keep your modules and RTXI up to date.  
 
-###<a name="summary"></a>Summary 
+### <a name="summary"></a>Summary 
 
 The above tutorial is a very basic introduction to Git. Git has many functions, and many of them overlap in their functionality. As such, there are often many ways to implement what was described above.  
 

@@ -8,7 +8,7 @@ RTXI is in active development, and our work depends heavily on user feedback. Th
 
 **Note:** For the sake of absolute clarity, please do not actually create an issue in the process of going though this tutorial.  
 
-####1. Navigate to the repository.
+#### 1. Navigate to the repository.
 <div class="row">
 	<div class="col-md-8 col-xs-12"> 
 Go to our GitHub page (<a href="https://github.com/rtxi">https://github.com/rtxi</a>). On the page, use the search bar or scroll down until you find the software you want to report. If you experience a bug within RTXI and its built-in modules, look for the <code>rtxi</code> repository. If it's a module you have problems with, find the repository that correponds to the module name. Also, if you have questions about anything on this website, go to the <code>rtxi.github.io</code> repository.  
@@ -23,7 +23,7 @@ Go to our GitHub page (<a href="https://github.com/rtxi">https://github.com/rtxi
 	</div>
 </div>
 
-####2. Open an issue on the repository page.  
+#### 2. Open an issue on the repository page.  
 Each module has an issue page where you can view, submit, and comment on current development issues. Pictured is the repository page for `rtxi`. To navigate to its issues page, click on `Issues` on the right sidebar.  
 
 Click on `Issues`. It's on the sidebar to the right. If you haven't logged in to GitHub already, you will be prompted to now. This will open up a new page that shows all the issues posted to the repository. Look through them to see if the issue you are having is related to something someone else posted. If it is, you can add to the existing discussion. If not, then open up a new issue.  
@@ -41,7 +41,7 @@ Click on `Issues`. It's on the sidebar to the right. If you haven't logged in to
 	</div>
 </div>
 
-####3. Write up your issue. 
+#### 3. Write up your issue. 
 Click the appropriate button for whether you're opening a new issue or joining an existing thread. Please be as clear and detailed as possible in your comments, as only posting things like "RTXI is crashing" or "X isn't working" doesn't help us figure out what the issue is.  
 
 For your posts, we ask (but don't require) you do provide the following information when appropriate:  

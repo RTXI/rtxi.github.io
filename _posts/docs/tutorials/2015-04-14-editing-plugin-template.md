@@ -21,15 +21,15 @@ This document is more focused on getting a module running within our plugin fram
 
 **Note:** The following relies on RTXI 2.0 and the Qt4 libraries. There are big changes in API between v2.0 and Qt4 and v1.4 and Qt3, respectively, but this tutorial should get you started for those versions, too. **Knowing C++ will also help.**  
 
-###Editing the GUI
+### Editing the GUI
 This section will add a third button to the UI and connect it to a function within the module. Use this as an example if you want to add buttons to trigger events in your module. Just keep in mind, as will be reiterated many, many, many, many times in this tutorial, **do not let the GUI directly alter real-time components**.   
 
-####1. Clone the plugin template from GitHub.  
+#### 1. Clone the plugin template from GitHub.  
 {% highlight bash %}
 $ git clone https://github.com/rtxi/plugin-template.git
 {% endhighlight %}
 
-####2. Rename the files and class names (optional): 
+#### 2. Rename the files and class names (optional): 
 {% highlight bash %}
 $ sed -i 's/plugin_template/custom_plugin/g' Makefile plugin-template.cpp plugin-template.h
 $ sed -i 's/PluginTemplate/CustomPlugin/g' Makefile plugin-template.cpp plugin-template.h
@@ -39,7 +39,7 @@ $ mv plugin-template.cpp custom-plugin.cpp
 
 Strictly speaking, you don't have to do this. But for the remainder of this tutorial, the sources will be assumed to be custom-plugin.* and the module class to be CustomPlugin.   
 
-####3. Edit the header file. 
+#### 3. Edit the header file. 
 <div class="row">
 	<div class="col-xs-12 col-sm-4 col-sm-offset-2">
 		<button type="button" data-toggle="modal" data-target="#button_before" class="btn btn-lg btn-danger center-block">
