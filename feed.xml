@@ -742,8 +742,8 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 		&lt;/p&gt; 
 		&lt;p&gt;If it&#39;s not a real-time kernel, you&#39;ll have to reboot your computer and pick a real-time kernel in the GRUB boot menu that pops up. If you don&#39;t see it, enter the &quot;Advanced options...&quot; submenu and look there.
 		&lt;/p&gt;
-		&lt;p&gt;Also, see &lt;a href=&quot;/docs/tutorials/2015/04/01/setting-a-default-boot-kernel/&quot;&gt;this page about setting a default kernel.
-
+		&lt;p&gt;Also, see &lt;a href=&quot;/docs/tutorials/2015/04/01/setting-a-default-boot-kernel/&quot;&gt;this page about setting a default kernel.&amp;lt;/p&amp;gt;
+&amp;lt;/ol&amp;gt;
 &lt;/a&gt;&lt;/p&gt;&lt;/ol&gt;
 </description>
         <pubDate>Wed, 01 Apr 2015 00:00:00 -0400</pubDate>
