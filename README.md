@@ -80,7 +80,7 @@ Brief overview of file hierarchy:
  * **_layouts/** - layouts for HTML pages  
  * **_site/** - output of Jekyll HTML generation. It's filled out when you run `grunt`  
  * **_config.yml** - basic config info for the site, like the url, link formats, files to include, etc. Part of Jekyll  
- * **_plugins/** - plugins that extend Jekyll's functionality. The only plugin there, `pull_modules.rb` pulls the modules from our repo and turns them into site pages.  
+ * **_plugins/** - plugins that extend Jekyll's functionality. The only plugin there, `pullModules.rb` pulls the modules from our repo and turns them into site pages.  
  * **bower.json** - list of dependencies bower handles (Bootstrap, jQuery, Isotope, font-awesome, and Octicons)  
  * **package.json** - list of dependencies installed by npm (Grunt stuff)  
  *  **google...** - an empty file needed to verify the google webmaster account.  
@@ -151,15 +151,3 @@ Same basically as Troubleshooting. Use `category: docs troubleshoot`.
 The third: FAQs  
 Same as the first two. Only, DO NOT use the title in the markdown file. Just leave the title in the YAML front matter, and keep it in the form of a question. The FAQ posts aren't supposed to be accessible. Their content is all put on the docs page so that people click on a question and see the answer. The numbering is based on the date the faq post was made. You don't need to touch the numbering. It's done automatically.  
 
-
-### Tips: 
-When editing, disable `pullModules.rb`. (Again, I really am not good at ruby. It's so weird.)  You can do things like rename the file, move it, or something. What I do is edit the file and comment out the line:  
-````
-repos = getRepoList(apiurl)
-````
-and then replace it with: 
-````
-repos = []
-````  
-
-Now, grunt won't try to pull all 50ish modules on GitHub every time you save changes. JUST BE SURE TO UNDO THIS BEFORE DEPLOYING TO GITHUB!!!!!!  If you forget, you'll remove all the module pages on the site.    
