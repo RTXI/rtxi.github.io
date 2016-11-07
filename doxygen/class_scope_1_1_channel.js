@@ -14,6 +14,5 @@ var class_scope_1_1_channel =
     [ "info", "class_scope_1_1_channel.html#aed9093d11d090bf0c559864aa2feee9f", null ],
     [ "label", "class_scope_1_1_channel.html#ac31b1518655901ba451da3b5bb898cb4", null ],
     [ "offset", "class_scope_1_1_channel.html#adce871756758aab9d5052d1f9548d97d", null ],
-    [ "prevdata", "class_scope_1_1_channel.html#a7b3e51d1836e88d80a986ec78bd402d1", null ],
     [ "scale", "class_scope_1_1_channel.html#a3dfb1c9abf6e83c9562eee984e50346e", null ]
 ];

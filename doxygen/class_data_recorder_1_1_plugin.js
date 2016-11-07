@@ -11,7 +11,5 @@ var class_data_recorder_1_1_plugin =
     [ "removeDataRecorderPanel", "class_data_recorder_1_1_plugin.html#a002a33b353d056f99142287d8482673a", null ],
     [ "Panel", "class_data_recorder_1_1_plugin.html#ac4e63dfd61166ef47eb1ae509c490784", null ],
     [ "buffersize", "class_data_recorder_1_1_plugin.html#ae74e5874b98eb21e493aadc8cf63badd", null ],
-    [ "menuID", "class_data_recorder_1_1_plugin.html#a8fb9d513480261d88ff005ae3afdde1d", null ],
-    [ "panelList", "class_data_recorder_1_1_plugin.html#a835287c9b9fc247e7345ba05fe23bc45", null ],
-    [ "recStatus", "class_data_recorder_1_1_plugin.html#a8ab3ef810efe20ce4b0d272160422990", null ]
+    [ "panelList", "class_data_recorder_1_1_plugin.html#a835287c9b9fc247e7345ba05fe23bc45", null ]
 ];

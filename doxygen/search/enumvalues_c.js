@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['unpause',['UNPAUSE',['../class_default_g_u_i_model.html#aa0405d1dceb86b5b4e328fe3cfc62e22a1c21ce34c727c6d7525acac62df8df1e',1,'DefaultGUIModel']]]
+  ['start',['START',['../namespace_data_recorder.html#a41e62d9b808e110875ed9a80d4ccb161a5ee0827cda72d3561a26a23dc75acaca',1,'DataRecorder']]],
+  ['stop',['STOP',['../namespace_data_recorder.html#a41e62d9b808e110875ed9a80d4ccb161a449e1a4ffe2511581c9bb77ea9cac587',1,'DataRecorder']]],
+  ['sync',['SYNC',['../namespace_data_recorder.html#a41e62d9b808e110875ed9a80d4ccb161a4cc9d4e0f6412e3f4612864e7e28b4db',1,'DataRecorder']]]
 ];

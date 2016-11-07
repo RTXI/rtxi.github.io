@@ -9,6 +9,7 @@ var namespaces =
     [ "PerformanceMeasurement", "namespace_performance_measurement.html", null ],
     [ "Plugin", "namespace_plugin.html", null ],
     [ "RT", "namespace_r_t.html", "namespace_r_t" ],
+    [ "RTXIWizard", "namespace_r_t_x_i_wizard.html", null ],
     [ "Settings", "namespace_settings.html", null ],
     [ "UserPrefs", "namespace_user_prefs.html", null ],
     [ "Workspace", "namespace_workspace.html", null ]

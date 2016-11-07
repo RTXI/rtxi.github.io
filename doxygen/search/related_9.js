@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['qapplication',['QApplication',['../class_main_window.html#a8da0851f3642ab58835a6914112b9f05',1,'MainWindow']]]
+  ['norm',['norm',['../classcomplex.html#aebc29b67d8a2802844552eba1c8877d6',1,'complex']]]
 ];

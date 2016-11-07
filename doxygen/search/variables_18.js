@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['zerooffset',['zerooffset',['../struct_analogy_device_1_1analog__channel__t.html#ab821636ad360710c0b561b1757eba0e8',1,'AnalogyDevice::analog_channel_t']]]
+  ['x',['x',['../class_generator_w_noise.html#abb6d7e67375516334954d0d0fd0dc38a',1,'GeneratorWNoise']]],
+  ['x_5f',['X_',['../class_remez_algorithm.html#a631d731d187f67dd8a971b2b66d073e7',1,'RemezAlgorithm']]]
 ];
