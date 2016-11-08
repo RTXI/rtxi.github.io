@@ -1,6 +1,6 @@
 {
-  "name": "RTXI",
-  "version": "2.0.0",
+  "name": "rtxi",
+  "version": "2.1",
   "homepage": "rtxi.org",
   "description": "RTXI - the Real Time eXperiment Interface",
   "main": "index.html",
