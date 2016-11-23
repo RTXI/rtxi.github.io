@@ -1,38 +1,73 @@
 <h3 class="page-header">Writing Custom User Modules</h3>
 
 <p>
-The easiest method of developing modules is to adapt existing ones for your own purposes. Users can fork modules on our GitHub repository (https://github.com/RTXI) within GitHub or only on their own machines.  
+The easiest method of developing modules is to adapt existing ones for your own
+purposes. Users can fork modules on our GitHub repository
+(https://github.com/RTXI) within GitHub or only on their own machines.  
 </p>
 
 <h4 class="page-header">Using the <code>DefaultGUIModel</code> Class</h4>
 
 <p>
-User modules are implemented within RTXI as custom <code>C++</code> classes. The recommended way to create a module is to abstract from our provided base class named <code>DefaultGUIModel</code>. <code>DefaultGUIModel</code> constructs a simple graphical user interface (GUI) that allows users to interact with parameters and activate real-time code. Modules abstracted from it also inherit its methods for hard real-time execution and event handling, generating and accept signals, and capturing metadata automatically by the Data Recorder in HDF5 format. 
+User modules are implemented within RTXI as custom <code>C++</code> classes.
+The recommended way to create a module is to abstract from our provided base
+class named <code>DefaultGUIModel</code>. <code>DefaultGUIModel</code>
+constructs a simple graphical user interface (GUI) that allows users to
+interact with parameters and activate real-time code. Modules abstracted from
+it also inherit its methods for hard real-time execution and event handling,
+generating and accept signals, and capturing metadata automatically by the Data
+Recorder in HDF5 format. 
 </p>
 
 <p>
-The following sections describe the <code>Neuron</code> module, a Hodgkin-Huxley model neuron class abstracted from DefaultGUIModel that generates a membrane voltage signal and accepts an optional external current input. The GUI consists of a column of textboxes and associated labels that display the module's parameters and internal state variables. Parameters are user-editable variables displayed in black, and internal state variables are intermediate computed values that cannot be edited manually by the user. States are shown in gray. Also, at the top left corner of the window is a unique instance ID that is given to each instantiated user module. This ID is important when connecting input and output from one module to another. 
+The following sections describe the <code>Neuron</code> module, a
+Hodgkin-Huxley model neuron class abstracted from DefaultGUIModel that
+generates a membrane voltage signal and accepts an optional external current
+input. The GUI consists of a column of textboxes and associated labels that
+display the module's parameters and internal state variables. Parameters are
+user-editable variables displayed in black, and internal state variables are
+intermediate computed values that cannot be edited manually by the user. States
+are shown in gray. Also, at the top left corner of the window is a unique
+instance ID that is given to each instantiated user module. This ID is
+important when connecting input and output from one module to another. 
 </p>
 
 <figure class="figure">
-	<img src="{{ site.img }}/manual/hhneuron.png" class="figure-img img-fluid">
-	<figcaption class="figure-caption">The <code>Neuron</code> module is a Hodgkin-Huxley model neuron described by conductance-based differential equations. This GUI provides an interface by which a user can modify parameters, such as the conductance of the ion channels, on-the-fly and start and stop real-time execution of the module.  
-	</figcaption>
+  <img src="{{ site.img }}/manual/hhneuron.png" class="figure-img img-fluid">
+  <figcaption class="figure-caption">The <code>Neuron</code> module is a
+    Hodgkin-Huxley model neuron described by conductance-based differential
+    equations. This GUI provides an interface by which a user can modify
+    parameters, such as the conductance of the ion channels, on-the-fly and
+    start and stop real-time execution of the module.  
+  </figcaption>
 </figure>
 
 <h4 class="page-header">Creating your own module class</h4>
 
 <p>
-The quickest way to create a new user module is to duplicate an existing module directory and rename the files and the class. This involves renaming the class header (*.h) file, the class implementation (*.cpp) file, and editing the Makefile and any instances of the old class name within each of these files (class names, scope names, the constructor, and the deconstructor). A template user module is <a href="https://github.com/RTXI/plugin-template">available online</a>.  
+The quickest way to create a new user module is to duplicate an existing module
+directory and rename the files and the class. This involves renaming the class
+header (*.h) file, the class implementation (*.cpp) file, and editing the
+Makefile and any instances of the old class name within each of these files
+(class names, scope names, the constructor, and the deconstructor). A template
+user module is <a href="https://github.com/RTXI/plugin-template">available
+online</a>.  
 </p>
 
 <p>
-Alternatively, you can browse through <a href="/modules/">our module repository</a> to find modules that perform functions similar to those desired. All our code is open-source, so you are free to fork our existing code and reconfigure it to meet your needs. 
+Alternatively, you can browse through <a href="/modules/">our module
+  repository</a> to find modules that perform functions similar to those
+desired. All our code is open-source, so you are free to fork our existing code
+and reconfigure it to meet your needs. 
 </p>
 
 <h4 class="page-header">Edit the Makefile</h4>
 <p>
-The Makefile instructs the compiler how to build your module and link it to RTXI. In RTXI v1.2 and later, the Makefile allows modules to be compiled outside the core RTXI source tree. The following sample Makefile installs a plugin called <code>my_plugin</code> with dependencies <code>included_class.h</code> and its source <code>included_class.cpp</code>. 
+The Makefile instructs the compiler how to build your module and link it to
+RTXI. In RTXI v1.2 and later, the Makefile allows modules to be compiled
+outside the core RTXI source tree. The following sample Makefile installs a
+plugin called <code>my_plugin</code> with dependencies
+<code>included_class.h</code> and its source <code>included_class.cpp</code>. 
 </p>
 
 {% highlight bash %}
@@ -50,75 +85,136 @@ include $(shell rtxi_plugin_config --pkgdata-dir)/Makefile.plugin_compile
 {% endhighlight %}
 
 <p>
-The <code>PLUGIN_NAME</code> is the name of the shared object library (*.so) file when it is compiled. All modules should be given unique names because the compilation process will automatically overwrite identically-named modules. The <code>HEADERS</code> and <code>SOURCES</code> should also be edited to reflect the new source file names. For simple modules based on a single class, a single header and source file is all that is needed. You may base your module on additional custom classes whose sources must then be included here as well. The <code>LIBS</code> flag is used for any additional library flags. Here, <code>-lgsl</code> links this module against the GNU Scientific Library.
+The <code>PLUGIN_NAME</code> is the name of the shared object library (*.so)
+file when it is compiled. All modules should be given unique names because the
+compilation process will automatically overwrite identically-named modules. The
+<code>HEADERS</code> and <code>SOURCES</code> should also be edited to reflect
+the new source file names. For simple modules based on a single class, a single
+header and source file is all that is needed. You may base your module on
+additional custom classes whose sources must then be included here as well. The
+<code>LIBS</code> flag is used for any additional library flags. Here,
+<code>-lgsl</code> links this module against the GNU Scientific Library.
 </p>
 
 <h4 class="page-header">Define model parameters, inputs, and outputs</h4>
 
 <p>
-<code>DefaultGUIModel</code> uses a special workspace variable <code>vars[]</code> to define quantities in the module. The declaration of these types follows a simple syntax. Every <code>DefaultGUIModel</code> module must have a workspace variable of type <code>variable_t</code> as shown in the <code>vars[]</code> of the Neuron module. 
+<code>DefaultGUIModel</code> uses a special workspace variable
+<code>vars[]</code> to define quantities in the module. The declaration of
+these types follows a simple syntax. Every <code>DefaultGUIModel</code> module
+must have a workspace variable of type <code>variable_t</code> as shown in the
+<code>vars[]</code> of the Neuron module. 
 </p>
 
 {% highlight cpp %}
 static DefaultGUIModel::variable_t vars[] = {
-   {"Iapp", "A", DefaultGUIModel::INPUT,},
-   {"Vm", "V", DefaultGUIModel::OUTPUT,},
-   {"V0", "mV", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
-   {"Cm", "uF/cm^2", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
-   {"G_Na_max", "mS/cm^2", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
-   {"E_Na", "mV", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
-   {"G_K_max", "mS/cm^2", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
-   {"E_K", "mV", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
-   {"G_L", "mS/cm^2", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
-   {"E_L", "mV", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
-   {"rate", "Hz",  DefaultGUIModel::PARAMETER|DefaultGUIModel::UINTEGER,},
-   {"m" "Sodium Activation", DefaultGUIModel::STATE,},
-   {"h", "Sodium Inactivation", DefaultGUIModel::STATE,},
-   {"n", "Potassium Activation", DefaultGUIModel::STATE,},
+  {"Iapp", "A", DefaultGUIModel::INPUT,},
+  {"Vm", "V", DefaultGUIModel::OUTPUT,},
+  {"V0", "mV", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
+  {"Cm", "uF/cm^2", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
+  {"G_Na_max", "mS/cm^2", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
+  {"E_Na", "mV", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
+  {"G_K_max", "mS/cm^2", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
+  {"E_K", "mV", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
+  {"G_L", "mS/cm^2", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
+  {"E_L", "mV", DefaultGUIModel::PARAMETER|DefaultGUIModel::DOUBLE,},
+  {"rate", "Hz",  DefaultGUIModel::PARAMETER|DefaultGUIModel::UINTEGER,},
+  {"m" "Sodium Activation", DefaultGUIModel::STATE,},
+  {"h", "Sodium Inactivation", DefaultGUIModel::STATE,},
+  {"n", "Potassium Activation", DefaultGUIModel::STATE,},
 };
 {% endhighlight %}
 
 <p>
-Each element in <code>vars[]</code> defines an <code>INPUT</code>, <code>OUTPUT</code>, <code>PARAMETER</code>, <code>STATE</code> variable, or <code>COMMENT</code> for the module.  The first argument for each element is the label for the textbox in the GUI. This does not have to be the same as the variable name you use in the code to actually store the parameter value. The second argument is displayed as a Tooltip when you use your mouse to hover the cursor over that entry in the GUI. Enter any descriptive information here about the variable, such as an expanded form of your text label or the correct units of measurement. The third argument defines the variable as an input, output, etc. Notice that for parameters, you can also specify whether it is a double or integer numeric type. 
+Each element in <code>vars[]</code> defines an <code>INPUT</code>,
+<code>OUTPUT</code>, <code>PARAMETER</code>, <code>STATE</code> variable, or
+<code>COMMENT</code> for the module.  The first argument for each element is
+the label for the textbox in the GUI. This does not have to be the same as the
+variable name you use in the code to actually store the parameter value. The
+second argument is displayed as a Tooltip when you use your mouse to hover the
+cursor over that entry in the GUI. Enter any descriptive information here about
+the variable, such as an expanded form of your text label or the correct units
+of measurement. The third argument defines the variable as an input, output,
+etc. Notice that for parameters, you can also specify whether it is a double or
+integer numeric type. 
 </p>
 
 <p>
-Declaring an <code>INPUT</code> creates a slot for your module to acquire data from the DAQ card or from another module. An <code>OUTPUT</code> creates a signal that is emitted from your module that can be sent to your DAQ card or any other module. These inputs and outputs can be directed from the Connector or the Data Recorder modules. In the Neuron module below, there is only one input, Iapp, and its value is accessed as the variable <code>input(0)</code>. If additional inputs had been declared, they would be accessed as <code>input(1)</code>, <code>input(2)</code>, and so on. The same rules apply for outputs. 
+Declaring an <code>INPUT</code> creates a slot for your module to acquire data
+from the DAQ card or from another module. An <code>OUTPUT</code> creates a
+signal that is emitted from your module that can be sent to your DAQ card or
+any other module. These inputs and outputs can be directed from the Connector
+or the Data Recorder modules. In the Neuron module below, there is only one
+input, Iapp, and its value is accessed as the variable <code>input(0)</code>.
+If additional inputs had been declared, they would be accessed as
+<code>input(1)</code>, <code>input(2)</code>, and so on. The same rules apply
+for outputs. 
 </p>
 
 <p>
-<code>STATE</code> variables and <code>PARAMETER</code>s are numeric datatypes. State variables are internal model variables that cannot be modified by the user through the GUI. Their values may be constant or they may change over time. Use a <code>STATE</code> to track the values of intermediate or computed quantities that can then be saved via the Data Recorder. A <code>PARAMETER</code> will accept user input through the GUI and can be modified on-the-fly during real-time execution. State variables and parameters appear in the GUI in the order that they are declared. In the example code, this mechanism is used to monitor the ion channel's activation variables, which are dependent on membrane voltage and integrated in real-time. A <code>COMMENT</code> is similar to a <code>PARAMETER</code>, but is used to store text strings such as information about the experiment that you would like to log. These are saved to the Data Recorder just like parameters, but should not be modified in real-time during model execution.
+<code>STATE</code> variables and <code>PARAMETER</code>s are numeric datatypes.
+State variables are internal model variables that cannot be modified by the
+user through the GUI. Their values may be constant or they may change over
+time. Use a <code>STATE</code> to track the values of intermediate or computed
+quantities that can then be saved via the Data Recorder. A
+<code>PARAMETER</code> will accept user input through the GUI and can be
+modified on-the-fly during real-time execution. State variables and parameters
+appear in the GUI in the order that they are declared. In the example code,
+this mechanism is used to monitor the ion channel's activation variables, which
+are dependent on membrane voltage and integrated in real-time. A
+<code>COMMENT</code> is similar to a <code>PARAMETER</code>, but is used to
+store text strings such as information about the experiment that you would like
+to log. These are saved to the Data Recorder just like parameters, but should
+not be modified in real-time during model execution.
 </p>
 
 <p>
-If your parameter name contains a forward slash "/", its values will not be automatically saved by the Data Recorder. This is a limitation of the HDF5 file format, which uses a directory-like syntax for specifying the data structure.
+If your parameter name contains a forward slash "/", its values will not be
+automatically saved by the Data Recorder. This is a limitation of the HDF5 file
+format, which uses a directory-like syntax for specifying the data structure.
 </p>
 
 <h4 class="page-header">Initialize the model</h4>
 
 <p>
-The next section is the model constructor. If you changed the class name, this would read "<code>YOURMODEL::YOURMODEL</code>". You can set the text that will appear in the title bar of your module window using the first argument of the constructor method. The next required line is a call to the <code>createGUI()</code> function which generates the GUI shown in Figure . In this section, you should initialize all the variables and parameter values and make sure that the GUI reflects the actual values that are being used. In this example, much of this code is performed by the <code>update()</code> function under the <code>INIT</code> flag. In other modules downloadable from our website, you will find a separate <code>initParameters()</code> function that handles all variable initializations. 
+The next section is the model constructor. If you changed the class name, this
+would read "<code>YOURMODEL::YOURMODEL</code>". You can set the text that will
+appear in the title bar of your module window using the first argument of the
+constructor method. The next required line is a call to the
+<code>createGUI()</code> function which generates the GUI shown in Figure . In
+this section, you should initialize all the variables and parameter values and
+make sure that the GUI reflects the actual values that are being used. In this
+example, much of this code is performed by the <code>update()</code> function
+under the <code>INIT</code> flag. In other modules downloadable from our
+website, you will find a separate <code>initParameters()</code> function that
+handles all variable initializations. 
 </p>
 
 <p>
-It is convenient to perform unit conversions when calling these functions so that the GUI accepts input in more user-friendly units. Finally, you should call <code>refresh()</code> to update the GUI to reflect your changes. The GUI textboxes will be initialized to the current values of the variables and <code>STATE</code> variables will be updated periodically during model execution. 
+It is convenient to perform unit conversions when calling these functions so
+that the GUI accepts input in more user-friendly units. Finally, you should
+call <code>refresh()</code> to update the GUI to reflect your changes. The GUI
+textboxes will be initialized to the current values of the variables and
+<code>STATE</code> variables will be updated periodically during model
+execution. 
 </p>
 
 {% highlight cpp %}
 Neuron::Neuron(void) : DefaultGUIModel("Neuron", ::vars, ::num_vars) {
-   createGUI(vars, num_vars); // creates the GUI 
-   V = V0;
-   m = m_inf(V0);
-   h = h_inf(V0);
-   n = n_inf(V0);
-   period = RT::System::getInstance()->getPeriod() * 1e-6; // convert ns to ms
-   update(INIT); // calls the update() function with the INIT flag
-   refresh(); // refreshes the GUI to reflect parameter values stored in variables
+  createGUI(vars, num_vars); // creates the GUI 
+  V = V0;
+  m = m_inf(V0);
+  h = h_inf(V0);
+  n = n_inf(V0);
+  period = RT::System::getInstance()->getPeriod() * 1e-6; // convert ns to ms
+  update(INIT); // calls the update() function with the INIT flag
+  refresh(); // refreshes the GUI to reflect parameter values stored in variables
 }
 {% endhighlight %}
 
 <p>
-Notice the method for retrieving the real-time period (sampling rate) of the system:
+Notice the method for retrieving the real-time period (sampling rate) of the
+system:
 </p>
 {% highlight cpp %}
 RT::System::getInstance()->getPeriod();
@@ -129,15 +225,30 @@ This returns the period in nanoseconds.
 </p>
 
 <p>
-The <code>execute()</code> function will run to completion on every time step. The computations performed here must complete within the real-time period that you have set in the System Control panel to maintain system stability. The efficiency of your code here will affect the performance of your system. You should use private variables defined in the class header rather than creating variables inside the function on every time step. If you absolutely must create a variable inside <code>execute()</code>, use a static call so that the same memory block is used each time. You should be wary of using <code>do-while</code> and <code>for</code> structures if you are uncertain how long these loops will take to complete. Within the execute function, you must also be careful to bound the output signal and perform your own error checking to maintain the stability of the closed-loop. Notice that at the end, we have set <code>output(0)</code> to update the membrane voltage signal emitted by this module. RTXI's signals-and-slots architecture allows you to connect any signal to any slot. There is no error checking to ensure that the connection is valid, eg. that quantities with matching units of measurement are connected.
+The <code>execute()</code> function will run to completion on every time step.
+The computations performed here must complete within the real-time period that
+you have set in the System Control panel to maintain system stability. The
+efficiency of your code here will affect the performance of your system. You
+should use private variables defined in the class header rather than creating
+variables inside the function on every time step. If you absolutely must create
+a variable inside <code>execute()</code>, use a static call so that the same
+memory block is used each time. You should be wary of using
+<code>do-while</code> and <code>for</code> structures if you are uncertain how
+long these loops will take to complete. Within the execute function, you must
+also be careful to bound the output signal and perform your own error checking
+to maintain the stability of the closed-loop. Notice that at the end, we have
+set <code>output(0)</code> to update the membrane voltage signal emitted by
+this module. RTXI's signals-and-slots architecture allows you to connect any
+signal to any slot. There is no error checking to ensure that the connection is
+valid, eg. that quantities with matching units of measurement are connected.
 </p>
 
 {% highlight cpp %}
 void Neuron::execute(void) {
-   for (int i = 0; i < steps; ++i) {
-      solve(period / steps, y); // integrate equations
-   }
-   output(0) = V * 1e-3; // convert to mV
+  for (int i = 0; i < steps; ++i) {
+    solve(period / steps, y); // integrate equations
+  }
+  output(0) = V * 1e-3; // convert to mV
 }
 {% endhighlight %}
 
@@ -145,24 +256,28 @@ void Neuron::execute(void) {
 <h4 class="page-header">The update() function</h4>
 
 <p>
-The <code>update()</code> function implemented in <code>DefaultGUIModel</code> that is designed to handle function calls depending on the state of the GUI. It provides several flags to help organize code and handle events in modules. 
+The <code>update()</code> function implemented in <code>DefaultGUIModel</code>
+that is designed to handle function calls depending on the state of the GUI. It
+provides several flags to help organize code and handle events in modules. 
 </p>
 
 <dl class="dl-horizontal">
-	<dt><code>INIT</code></dt> 
-		<dd>non-event related but useful for placing code to initialize the model</dd>
-	<dt><code>MODIFY</code></dt> 
-		<dd>called when the "Modify" button is pressed in the GUI</dd>
-	<dt><code>PAUSE</code></dt> 
-		<dd>called when the model is paused</dd>
-	<dt><code>UNPAUSE</code></dt> 
-		<dd>called when the model is unpaused</dd>
-	<dt><code>PERIOD</code></dt> 
-		<dd>called when the real-time period of the system is changed</dd>
+  <dt><code>INIT</code></dt> 
+    <dd>non-event related but useful for placing code to initialize the model</dd>
+  <dt><code>MODIFY</code></dt> 
+    <dd>called when the "Modify" button is pressed in the GUI</dd>
+  <dt><code>PAUSE</code></dt> 
+    <dd>called when the model is paused</dd>
+  <dt><code>UNPAUSE</code></dt> 
+    <dd>called when the model is unpaused</dd>
+  <dt><code>PERIOD</code></dt> 
+    <dd>called when the real-time period of the system is changed</dd>
 </dl>
 
 <p>
-Under the <code>INIT</code> flag, you should initialize any variables or GUI settings that were not already addressed in the constructor. To assign a variable as a <code>STATE</code> variable in the GUI, use:
+Under the <code>INIT</code> flag, you should initialize any variables or GUI
+settings that were not already addressed in the constructor. To assign a
+variable as a <code>STATE</code> variable in the GUI, use:
 </p>
 
 {% highlight cpp %}
@@ -170,7 +285,8 @@ setState("YOUR_GUI_LABEL", YOUR_VARIABLE);
 {% endhighlight %}
 
 <p>
-<code>YOUR_GUI_LABEL</code> must exactly match the label that you set in <code>variable_t vars[]</code> above. 
+<code>YOUR_GUI_LABEL</code> must exactly match the label that you set in
+<code>variable_t vars[]</code> above. 
 </p>
 
 <p>
@@ -183,7 +299,9 @@ setParameter("YOUR_GUI_LABEL", YOUR_VARIABLE);
 </p>
 
 <p>
-It is often the case that you may want to display units in the GUI with more convenient physiological units of measurement, eg. mV instead of V. In that case, you can call the function as follows:
+It is often the case that you may want to display units in the GUI with more
+convenient physiological units of measurement, eg. mV instead of V. In that
+case, you can call the function as follows:
 </p>
 
 {% highlight cpp %}
@@ -191,11 +309,13 @@ setParameter("E_Na", E_Na*1000); // convert to mV
 {% endhighlight %}
 
 <p>
-Always comment your units. Otherwise, your code will not be readily readable by other or even yourself later on. 
+Always comment your units. Otherwise, your code will not be readily readable by
+other or even yourself later on. 
 </p>
 
 <p>
-Under the <code>MODIFY</code> flag, you should grab all the values in the GUI textboxes and update the values of the parameters as follows:
+Under the <code>MODIFY</code> flag, you should grab all the values in the GUI
+textboxes and update the values of the parameters as follows:
 </p>
 
 {% highlight cpp %}
@@ -203,56 +323,62 @@ YOUR_VARIABLE = getParameter("YOUR_GUI_LABEL").toDouble();
 {% endhighlight %}
 
 <p>
-If you do any unit conversions with <code>setParameter()</code>, make sure you do the inverse with <code>getParameter()</code>. You may also want to add code to the <code>PAUSE</code> flag to set the output of your module to zero, e.g. the amplitude of an injected current. In some cases, you will want to reset certain internal variables when you stop or start the model eg. a counter that keeps track of your model execution time. Under the <code>PERIOD</code> flag, you will always want to update your model with the new real-time period. 
+If you do any unit conversions with <code>setParameter()</code>, make sure you
+do the inverse with <code>getParameter()</code>. You may also want to add code
+to the <code>PAUSE</code> flag to set the output of your module to zero, e.g.
+the amplitude of an injected current. In some cases, you will want to reset
+certain internal variables when you stop or start the model eg. a counter that
+keeps track of your model execution time. Under the <code>PERIOD</code> flag,
+you will always want to update your model with the new real-time period. 
 </p>
 
 <div>
 {% highlight cpp %}
 void Neuron::update(DefaultGUIModel::update_flags_t flag) {
-   switch (flag) {
-      case INIT:
-      setState("m", m);
-      setState("h", h);
-      setState("n", n);
-      setParameter("V0", V0);
-      setParameter("Cm", Cm);
-      setParameter("G_Na_max", G_Na_max);
-      setParameter("E_Na", E_Na);
-      setParameter("G_K_max", G_K_max);
-      setParameter("E_K", E_K);
-      setParameter("G_L", G_L);
-      setParameter("E_L", E_L);
-      setParameter("Iapp_offset", Iapp_offset);
-      setParameter("rate", rate);
-      break;
-   case MODIFY:
-      V0 = getParameter("V0").toDouble();
-      Cm = getParameter("Cm").toDouble();
-      G_Na_max = getParameter("G_Na_max").toDouble();
-      E_Na = getParameter("E_Na").toDouble();
-      G_K_max = getParameter("G_K_max").toDouble();
-      E_K = getParameter("E_K").toDouble();
-      G_L = getParameter("G_L").toDouble();
-      E_L = getParameter("E_L").toDouble();
-      Iapp_offset = getParameter("Iapp_offset").toDouble();
-      rate = getParameter("rate").toDouble();
-      steps = static_cast (ceil(period * rate / 1000.0));
-      V = V0;
-      m = m_inf(V0);
-      h = h_inf(V0);
-      n = n_inf(V0);
-      break;
-   case PAUSE:
-      break;
-   case UNPAUSE:
-      break;
-   case PERIOD:
-      period = RT::System::getInstance()->getPeriod() * 1e-6; // ms
-      steps = static_cast (ceil(period * rate / 1000.0));
-      break;
-   default:
-      break;
-   }
+  switch (flag) {
+    case INIT:
+    setState("m", m);
+    setState("h", h);
+    setState("n", n);
+    setParameter("V0", V0);
+    setParameter("Cm", Cm);
+    setParameter("G_Na_max", G_Na_max);
+    setParameter("E_Na", E_Na);
+    setParameter("G_K_max", G_K_max);
+    setParameter("E_K", E_K);
+    setParameter("G_L", G_L);
+    setParameter("E_L", E_L);
+    setParameter("Iapp_offset", Iapp_offset);
+    setParameter("rate", rate);
+    break;
+  case MODIFY:
+    V0 = getParameter("V0").toDouble();
+    Cm = getParameter("Cm").toDouble();
+    G_Na_max = getParameter("G_Na_max").toDouble();
+    E_Na = getParameter("E_Na").toDouble();
+    G_K_max = getParameter("G_K_max").toDouble();
+    E_K = getParameter("E_K").toDouble();
+    G_L = getParameter("G_L").toDouble();
+    E_L = getParameter("E_L").toDouble();
+    Iapp_offset = getParameter("Iapp_offset").toDouble();
+    rate = getParameter("rate").toDouble();
+    steps = static_cast (ceil(period * rate / 1000.0));
+    V = V0;
+    m = m_inf(V0);
+    h = h_inf(V0);
+    n = n_inf(V0);
+    break;
+  case PAUSE:
+    break;
+  case UNPAUSE:
+    break;
+  case PERIOD:
+    period = RT::System::getInstance()->getPeriod() * 1e-6; // ms
+    steps = static_cast (ceil(period * rate / 1000.0));
+    break;
+  default:
+    break;
+  }
 }
 {% endhighlight %}
 </div>

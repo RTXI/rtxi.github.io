@@ -1,14 +1,28 @@
 <h3 class="page-header">Real-time Performance</h3>
 <p>
-Xenomai provides several command line utilities for testing your real-time performance. These are available in your Xenomai installation directory at <code>/usr/xenomai/bin</code>). There are both user and kernel space versions of the available tools. When using these tests, keep in mind that they are most informative when the system is under processing loads, ideally loads similar to those added when you run RTXI. 
+Xenomai provides several command line utilities for testing your real-time
+performance. These are available in your Xenomai installation directory at
+<code>/usr/xenomai/bin</code>). There are both user and kernel space versions
+of the available tools. When using these tests, keep in mind that they are most
+informative when the system is under processing loads, ideally loads similar to
+those added when you run RTXI. 
 </p>
 
 <p>
-The most important test is the latency test. It measures the latency, or the difference in time between the expected switch time and the time a task is actually called by the scheduler. It is essentially a measure of the delay when a task is supposed to run and when it actually runs. For a system to run in real-time, the latency values <strong>must</strong> be below the frequency at which a task must be run. For example, to run something in real-time at 20 kHz, the latencies must remain below 50 us. Failure to do so constitutes an overrun. 
+The most important test is the latency test. It measures the latency, or the
+difference in time between the expected switch time and the time a task is
+actually called by the scheduler. It is essentially a measure of the delay when
+a task is supposed to run and when it actually runs. For a system to run in
+real-time, the latency values <strong>must</strong> be below the frequency at
+which a task must be run. For example, to run something in real-time at 20 kHz,
+the latencies must remain below 50 us. Failure to do so constitutes an overrun. 
 </p>
 
 <p>
-The latency test will perform latency calculations repeatedly (default 10 kHz) until stopped. To run, go to the <code>/usr/xenomai/bin</code> directory and execute: <code>$ sudo ./run</code>. To stop a running test, use <code>CTRL-C</code> in the terminal.
+The latency test will perform latency calculations repeatedly (default 10 kHz)
+until stopped. To run, go to the <code>/usr/xenomai/bin</code> directory and
+execute: <code>$ sudo ./run</code>. To stop a running test, use
+<code>CTRL-C</code> in the terminal.
 </p>
 
 {% highlight bash %}
@@ -29,7 +43,16 @@ RTD|     -2.716|     -2.193|     -0.455|       0|     0|     -2.725|      5.550
 {% endhighlight %}
 
 <p>
-The test prints one line every second and gives you the minimum, average, and maximum latencies for that period as well the minimum and maximum overall latencies that occurred over the entire test. Open up some other programs, copy some files from one location to another, and load the network connection to see how it affects the latency. The system's real-time performance is limited by the maximum latency (the 'lat worst' column). You should not any overruns, meaning that the latency completely exceeds the nominal period. Negative time values in the latency test is due to the fact that Xenomai performs a calibration at startup that tries to minimize the jitter in the real-time task and anticipates the call. You can correct this behavior by running (as root):
+The test prints one line every second and gives you the minimum, average, and
+maximum latencies for that period as well the minimum and maximum overall
+latencies that occurred over the entire test. Open up some other programs, copy
+some files from one location to another, and load the network connection to see
+how it affects the latency. The system's real-time performance is limited by
+the maximum latency (the 'lat worst' column). You should not any overruns,
+meaning that the latency completely exceeds the nominal period. Negative time
+values in the latency test is due to the fact that Xenomai performs a
+calibration at startup that tries to minimize the jitter in the real-time task
+and anticipates the call. You can correct this behavior by running (as root):
 </p>
 
 {% highlight bash %}
@@ -37,9 +60,32 @@ The test prints one line every second and gives you the minimum, average, and ma
 {% endhighlight %}
 
 <p>
-There are many factors that affect your real-time performance, which do not necessarily depend on your absolute processor speed. For simple applications such as a single ion channel, similar results can be obtained on 200 MHz or 2 GHz processors. The limiting factors actually involve the design of the motherboard and chipset, the cost of reading and writing to a DAQ card, and the cost of accessing the hard disk when streaming data. Multi-processor systems or multicore processors also operate differently than single processors. RTXI allows the system to distribute processes among individual cores and does not assign any operations to particular cores. The user can use the <code>isolcpus</code> and <code>xeno_hal.supported_cpus</code> boot options to limit real-time operations to a single core and let all other non real-time operations be distributed among other available cores. Generally, you'll get the best RT performance from your system if you disconnect from your network, especially if is a wireless network, and to plot only the minimum number of signals in the Oscilloscope module as possible.
+There are many factors that affect your real-time performance, which do not
+necessarily depend on your absolute processor speed. For simple applications
+such as a single ion channel, similar results can be obtained on 200 MHz or 2
+GHz processors. The limiting factors actually involve the design of the
+motherboard and chipset, the cost of reading and writing to a DAQ card, and the
+cost of accessing the hard disk when streaming data. Multi-processor systems or
+multicore processors also operate differently than single processors. RTXI
+allows the system to distribute processes among individual cores and does not
+assign any operations to particular cores. The user can use the
+<code>isolcpus</code> and <code>xeno_hal.supported_cpus</code> boot options to
+limit real-time operations to a single core and let all other non real-time
+operations be distributed among other available cores. Generally, you'll get
+the best RT performance from your system if you disconnect from your network,
+especially if is a wireless network, and to plot only the minimum number of
+signals in the Oscilloscope module as possible.
 </p>
 
 <p>
-If you periodically see an overrun (perhaps every 64 seconds) that results in a maximum latency of several hundred microseconds, you may have an SMI (System Maintenance Interrupt) issue. This feature can be found on certain chipsets e.g. Intel 82845 845. Disabling SMI can cause some computers to overheat and may damage those computers. Other latency killers are: heavy DMA activities (using the hard disk), using an accelerated Xserver, USB legacy support, power management (APM and ACPI), and CPU frequency scaling. If you have disabled all of these in the kernel already, check your BIOS and see if you can disable them there.If you installed RTXI using our Live CD or installation instructions, these are already correctly configured. 
+If you periodically see an overrun (perhaps every 64 seconds) that results in a
+maximum latency of several hundred microseconds, you may have an SMI (System
+Maintenance Interrupt) issue. This feature can be found on certain chipsets
+e.g. Intel 82845 845. Disabling SMI can cause some computers to overheat and
+may damage those computers. Other latency killers are: heavy DMA activities
+(using the hard disk), using an accelerated Xserver, USB legacy support, power
+management (APM and ACPI), and CPU frequency scaling. If you have disabled all
+of these in the kernel already, check your BIOS and see if you can disable them
+there.If you installed RTXI using our Live CD or installation instructions,
+these are already correctly configured. 
 </p>

@@ -1,7 +1,32 @@
 <h3 class="page-header">Hardware Requirements</h3>
 <p>
-RTXI is designed to run on a standard personal desktop computer. Computers with uniprocessors, multi-core processors, and multiple CPUs with and without hyperthreading are supported by Linux and RTXI, though typically more stable systems are realized with Intel rather than AMD processors. For multi-core computers, Xenomai will need to be manually configured during installation. In rare cases, a particular CPU and motherboard combination is not supported. Certain advanced motherboards may contain features that are not compatible with Xenomai, such as some integrated graphics chips that use hardware-level techniques to speed up computation. For video cards, we recommend you use an external one. Generally, NVIDIA cards have better Linux support than ATI/Radeon ones. This distinction is important because the greatest overhead in RTXI is related to data visualization in the oscilloscope. For newer graphics cards, you may need to manually install the Linux drivers, usually available on the manufacturer's website. Some systems may also include BIOS level or hardware interrupts that are not captured by Xenomai or advanced power management features. Sometimes these can be disabled by the user in the BIOS.
+RTXI is designed to run on a standard personal desktop computer. Computers with
+uniprocessors, multi-core processors, and multiple CPUs with and without
+hyperthreading are supported by Linux and RTXI, though typically more stable
+systems are realized with Intel rather than AMD processors. For multi-core
+computers, Xenomai will need to be manually configured during installation. In
+rare cases, a particular CPU and motherboard combination is not supported.
+Certain advanced motherboards may contain features that are not compatible with
+Xenomai, such as some integrated graphics chips that use hardware-level
+techniques to speed up computation. For video cards, we recommend you use an
+external one. Generally, NVIDIA cards have better Linux support than ATI/Radeon
+ones. This distinction is important because the greatest overhead in RTXI is
+related to data visualization in the oscilloscope. For newer graphics cards,
+you may need to manually install the Linux drivers, usually available on the
+manufacturer's website. Some systems may also include BIOS level or hardware
+interrupts that are not captured by Xenomai or advanced power management
+features. Sometimes these can be disabled by the user in the BIOS.
 </p>
 <p>
-The real-time Linux kernel has extremely low latencies and little software overhead. RTXI is also designed to minimize the number of dynamically loaded modules and keep overhead low. RTXI has been successfully tested on computers with Pentium III processors up to 4(8)-core Intel i7 processors. While the processor speed allows RTXI to complete more computations within a single real-time cycle, the amount of RAM and the amount of video memory have a significant impact on the stability and speed of the system. Users should also consider high speed hard drives, large cache sizes, and high speed bus interfaces. If you are purchasing an off-the-shelf desktop computer system and plan to add a DAQ card, be sure that your power supply is powerful enough to handle the extra load. At least a 450W power supply is recommended.
+The real-time Linux kernel has extremely low latencies and little software
+overhead. RTXI is also designed to minimize the number of dynamically loaded
+modules and keep overhead low. RTXI has been successfully tested on computers
+with Pentium III processors up to 4(8)-core Intel i7 processors. While the
+processor speed allows RTXI to complete more computations within a single
+real-time cycle, the amount of RAM and the amount of video memory have a
+significant impact on the stability and speed of the system. Users should also
+consider high speed hard drives, large cache sizes, and high speed bus
+interfaces. If you are purchasing an off-the-shelf desktop computer system and
+plan to add a DAQ card, be sure that your power supply is powerful enough to
+handle the extra load. At least a 450W power supply is recommended.
 </p>

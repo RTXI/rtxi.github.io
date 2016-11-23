@@ -1,154 +1,293 @@
 <h3 class="page-header">Core System Modules</h3>
 <p>
-The following modules are included in RTXI by default and are available through the <b>System</b> menu. All settings edited in each of these modules can be saved and reloaded via workspaces. Save by choosing <b>File</b> --> <b>Save Workspace</b> from the RTXI menu bar. This will create a basic *.set file that you can load in the future to recreate this environment or use as a foundation for additional *.set files.  
+The following modules are included in RTXI by default and are available through
+the <b>System</b> menu. All settings edited in each of these modules can be
+saved and reloaded via workspaces. Save by choosing <b>File</b> --> <b>Save
+Workspace</b> from the RTXI menu bar. This will create a basic *.set file that
+you can load in the future to recreate this environment or use as a foundation
+for additional *.set files.  
 </p>
 
 <h4 id="control_panel" class="page-header">System Control Panel</h4>
 
 <p>
-The System Control Panel allows you to set important parameters on all the input and output channels of your DAQ card and set the nominal real-time period of your system. To keep the number of RT events to a minimum, all changes made in the Control Panel are not set until the <b>Apply</b> button is pressed. 
+The System Control Panel allows you to set important parameters on all the
+input and output channels of your DAQ card and set the nominal real-time period
+of your system. To keep the number of RT events to a minimum, all changes made
+in the Control Panel are not set until the <b>Apply</b> button is pressed. 
 </p>
 
 <img src="{{ site.img }}/manual/systemcontrol0.png">
 
 <dl class="dl-horizontal">
-	<dt>DAQ Setup</dt>
-	<dd>
-		<p>RTXI automatically detects the manufacturer and board names of available DAQ cards and the number and type of input and output channels. The first DAQ card installed in your system is assigned the Linux device name: <code>/dev/analogy0</code>. Additional DAQ cards are assigned device names <code>/dev/analogy1</code> and so on. </p>
-		<p>You can use either the <b>Frequency</b> or <b>Period</b> entry boxes to set the real-time period. After you enter the value, hit <b>Apply</b> to set your changes.</p>
-	</dd>
-	<dt>Analog<br>Channels</dt>
-	<dd>
-		<p>The <b>Channel</b> submenu lists all avaiable analog input and output channels for the specified DAQ device. Picking a particular channel will allow you to activate the channel and also set the parameters of that channel via the <b>Range</b>, <b>Scale</b>, and <b>Offset</b> menus below. To activate a channel (i.e. tell the DAQ driver to start reading/writing the channel), press down the <b>Active</b> button, and then hit <b>Apply</b>. 
-		</p>
-		<p>NOTE: If you do not hit the <b>Apply</b> button before changing channels, all changes made , such as the range, activation state, etc. will be lost. 
-		</p>
-		<p>The <b>Range</b>, <b>Scale</b>, and <b>Offset</b> submenus set the acquisition range and the reference mode. By default, RTXI assumes that all analog DAQ input and output channels have a range from -10 V to +10 V, unity gain (or a scaling of 1 V/V), a 0 V offset, and a ground reference. You must set the correct options for each channel you are using to acquire and output the correct signal values. Remember to hit <b>Apply</b> to set your changes. 
-		</p>
-	</dd>
-	<dt>Digital I/O</dt>
-	<dd>If you DAQ supports digital I/O, use this section of the control panel to activate individual channels. All you need to do is set whether the channel is to an input or an output, hit the <b>Active</b> button, and the hit <b>Apply</b>. For digital outputs, RTXI will output 0 V when 'false' and 5 V when 'true'. 
-	</dd>
+  <dt>DAQ Setup</dt>
+  <dd>
+    <p>RTXI automatically detects the manufacturer and board names of available
+    DAQ cards and the number and type of input and output channels. The first
+    DAQ card installed in your system is assigned the Linux device name:
+    <code>/dev/analogy0</code>. Additional DAQ cards are assigned device names
+    <code>/dev/analogy1</code> and so on. 
+    </p>
+
+    <p>You can use either the <b>Frequency</b> or <b>Period</b> entry boxes to
+    set the real-time period. After you enter the value, hit <b>Apply</b> to
+    set your changes.
+    </p>
+  </dd>
+  <dt>Analog<br>Channels</dt>
+  <dd>
+    <p>The <b>Channel</b> submenu lists all avaiable analog input and output
+    channels for the specified DAQ device. Picking a particular channel will
+    allow you to activate the channel and also set the parameters of that
+    channel via the <b>Range</b>, <b>Scale</b>, and <b>Offset</b> menus below.
+    To activate a channel (i.e. tell the DAQ driver to start reading/writing
+    the channel), press down the <b>Active</b> button, and then hit
+    <b>Apply</b>. 
+    </p>
+
+    <p>NOTE: If you do not hit the <b>Apply</b> button before changing
+    channels, all changes made , such as the range, activation state, etc. will
+    be lost. 
+    </p>
+
+    <p>The <b>Range</b>, <b>Scale</b>, and <b>Offset</b> submenus set the
+    acquisition range and the reference mode. By default, RTXI assumes that all
+    analog DAQ input and output channels have a range from -10 V to +10 V,
+    unity gain (or a scaling of 1 V/V), a 0 V offset, and a ground reference.
+    You must set the correct options for each channel you are using to acquire
+    and output the correct signal values. Remember to hit <b>Apply</b> to set
+    your changes. 
+    </p>
+  </dd>
+  <dt>Digital I/O</dt>
+  <dd>If you DAQ supports digital I/O, use this section of the control panel to
+  activate individual channels. All you need to do is set whether the channel
+  is to an input or an output, hit the <b>Active</b> button, and the hit
+  <b>Apply</b>. For digital outputs, RTXI will output 0 V when 'false' and 5 V
+  when 'true'. 
+  </dd>
 </dl>
 
 <h4 id="oscilloscope" class="page-header">Oscilloscope</h4>
 
 <p>
-The Oscilloscope allows you to plot any system signal, such as signals from/to the DAQ card and signals from user modules. Each signal may have a different vertical scale and line style and a legend is automatically generated in the Oscilloscope window. 
+The Oscilloscope allows you to plot any system signal, such as signals from/to
+the DAQ card and signals from user modules. Each signal may have a different
+vertical scale and line style and a legend is automatically generated in the
+Oscilloscope window. 
 </p>
 
 <img src="{{ site.img }}/manual/oscilloscope0.png">
 
 <dl class="dl-horizontal">
-	<dt>Channel<dt>
-	<dd>
-		<p>Select signals to plot from the dropdown menu. You can plot any input or output from a loaded module or active channel on your DAQ. DAQ signals will appear as an ANALOGY source, eg. <code>analogy0</code>. Be sure to check whether you have to set additional settings in the System Control panel to compensate from gains from any additional instrumentation. Input to the DAQ card from external instrumentation, such as an external amplifier, is designated as output from the DAQ card within RTXI. RTXI will automatically detect how many input and output channels your card has. Signals from other modules will be identified by the module name and you can choose from any inputs, outputs, parameters, or states that are defined in those modules. </p>
-		<p>Use the <b>Scale</b> and <b>Offset</b> options to modify the signals being plotted. To actually plot the signal, you must depress the <b>Active</b> toggle button and hit <b>Apply.</b> Any modifications you make to the scaling, offset, or line style of the signal are not active until you hit <b>Apply</b> again. Note that plotting too many signals in real-time may affect your system performance and cause your GUI to freeze during program execution. Use the RT Performance module to watch the load on your system while the Oscilloscope is running. 
-		</p>
-	</dd>
+  <dt>Channel<dt>
+  <dd>
+    <p>Select signals to plot from the dropdown menu. You can plot any input or
+    output from a loaded module or active channel on your DAQ. DAQ signals will
+    appear as an ANALOGY source, eg. <code>analogy0</code>. Be sure to check
+    whether you have to set additional settings in the System Control panel to
+    compensate from gains from any additional instrumentation. Input to the DAQ
+    card from external instrumentation, such as an external amplifier, is
+    designated as output from the DAQ card within RTXI. RTXI will automatically
+    detect how many input and output channels your card has. Signals from other
+    modules will be identified by the module name and you can choose from any
+    inputs, outputs, parameters, or states that are defined in those modules.
+    </p>
+
+    <p>Use the <b>Scale</b> and <b>Offset</b> options to modify the signals
+    being plotted. To actually plot the signal, you must depress the
+    <b>Active</b> toggle button and hit <b>Apply.</b> Any modifications you
+    make to the scaling, offset, or line style of the signal are not active
+    until you hit <b>Apply</b> again. Note that plotting too many signals in
+    real-time may affect your system performance and cause your GUI to freeze
+    during program execution. Use the RT Performance module to watch the load
+    on your system while the Oscilloscope is running. 
+    </p>
+  </dd>
 </dl>
 
 <img src="{{ site.img }}/manual/oscilloscope1.png">
 
 <dl class="dl-horizontal">
-	<dt>Time/Div<dt>
-	<dd>
-		<p>Use the dropdown menu to set the time scale for the x-axis. Each "div" refers to the demarcations on the plot window. You can also set the refresh rate, or the number of times the plot window is refreshed per second, and you can set a downsampling rate for plotting. 
-		</p>
-	</dd>
-	<dt>Edge<dt>
-	<dd>
-		<p>Use the <b>Edge</b> option to set a trigger to freeze the oscilloscope when certain criteria are met by a specified channel. Set the trigger to operate on a rising or falling edge by clicking the <b>+</b> or <b>-</b> radio buttons, respectively. The <b>Channel</b> can be set to any active signal that is currently plotted on the oscilloscope. <b>Threshold</b> sets the threshold for the trigger channel you specified, and <b>Window</b> sets the amount of time that lapses before the trigger is reset again. The trigger threshold is indicated on the oscilloscope by a horizontal yellow dashed line.  
-		</p>
-		<p>To start the trigger, set everything in the menu and then hit the <b>Apply</b> button. To stop, select the <b>Off</b> radio button and hit <b>Apply</b> again. 
-		</p>
-	</dd>
+  <dt>Time/Div<dt>
+  <dd>
+    <p>Use the dropdown menu to set the time scale for the x-axis. Each "div"
+    refers to the demarcations on the plot window. You can also set the refresh
+    rate, or the number of times the plot window is refreshed per second, and
+    you can set a downsampling rate for plotting. 
+    </p>
+  </dd>
+  <dt>Edge<dt>
+  <dd>
+    <p>
+    Use the <b>Edge</b> option to set a trigger to freeze the oscilloscope when
+    certain criteria are met by a specified channel. Set the trigger to operate
+    on a rising or falling edge by clicking the <b>+</b> or <b>-</b> radio
+    buttons, respectively. The <b>Channel</b> can be set to any active signal
+    that is currently plotted on the oscilloscope. <b>Threshold</b> sets the
+    threshold for the trigger channel you specified, and <b>Window</b> sets the
+    amount of time that lapses before the trigger is reset again. The trigger
+    threshold is indicated on the oscilloscope by a horizontal yellow dashed
+    line.  
+    </p>
+
+    <p>To start the trigger, set everything in the menu and then hit the
+    <b>Apply</b> button. To stop, select the <b>Off</b> radio button and hit
+    <b>Apply</b> again. 
+    </p>
+  </dd>
 </dl>
 
 <h4 id="data_recorder" class="page-header">Data Recorder</h4>
 <p>
-The Data Recorder module allows users to stream synchronous data to a HDF5 file. Open the module by selecting <b>System</b> --> <b>Data Recorder</b> from the RTXI menu bar. 
+The Data Recorder module allows users to stream synchronous data to a HDF5
+file. Open the module by selecting <b>System</b> --> <b>Data Recorder</b> from
+the RTXI menu bar. 
 </p>
 
 <img src="{{ site.img }}/manual/datarecorder1.png">
 
 <dl class="dl-horizontal">
-	<dt>Channel<br>Selection</dt>
-	<dd>
-		<p>The <b>Block</b> menu is a list of your DAQ card(s) and any loaded user modules. Selecting a block device then populates the <b>Type</b> and <b>Channel</b> menus. Navigate the menus until you specify the channel you want to record. Then, hit <b>Add</b> to add the channel to the <b>Currently Recording</b> block. To remove a channel from the list, double-click its name in the list and then press the <b>Remove</b> button. <p>
-	<dt>File Control</dt>
-	<dd>
-		<p>Before you can start recording, you must select a file by clicking the <b>Choose File</b> button. Navigate to the directory where you want to save you file. From the menu, you can either create a new HDF file select an existing one. If you choose the latter, you can either append new data to the file, preserving any existing data, or you can simply overwite it, erasing any existing data and only saving new trials. </p>
-		<p>Click <b>Start Recording</b> to begin recording and <b>Stop Recording</b> to stop recording. For each module connected to the Data Recorder, it also grabs all the parameter values and saves them as metadata. In addition, it logs when any of these parameter values change so that you have a complete record of your experiment. 
-		</p>
-		<p>If you have a configuration such that Module A: Output 0 --> Module B: Input 0, saving Output 0 from Module A and Input 1 from Module B will give you exactly the same data. Similarly, saving <code>/dev/analogy0</code>: Analog Output 0 will save the signal that has been assigned to that channel (perhaps generated by a user module), not the actual signal the DAQ card is outputting. To check the actual output of the DAQ card, you will need to make a connection from that output to another input channel.
-		</p>
-	</dd>
-	<dt>Trial Metadata</dt>
-	<dd>
-		<p>Each time you start and stop the data recorder counts as one 'trial'. By default, the Data Recorder displays the current trial number, the size of your data file, and the length of time from your last trial. "Trials" have to do with the data structure heirarchy within the HDF files. More information on what that means is provided <a href="#hdf">below</a>.
-		</p>
-	</dd>
+  <dt>Channel<br>Selection</dt>
+  <dd>
+    <p>
+    The <b>Block</b> menu is a list of your DAQ card(s) and any loaded user
+    modules. Selecting a block device then populates the <b>Type</b> and
+    <b>Channel</b> menus. Navigate the menus until you specify the channel you
+    want to record. Then, hit <b>Add</b> to add the channel to the <b>Currently
+    Recording</b> block. To remove a channel from the list, double-click its
+    name in the list and then press the <b>Remove</b> button. 
+    <p>
+  <dt>File Control</dt>
+  <dd>
+    <p>
+    Before you can start recording, you must select a file by clicking the
+    <b>Choose File</b> button. Navigate to the directory where you want to save
+    you file. From the menu, you can either create a new HDF file select an
+    existing one. If you choose the latter, you can either append new data to
+    the file, preserving any existing data, or you can simply overwite it,
+    erasing any existing data and only saving new trials. 
+    </p>
+
+    <p>
+    Click <b>Start Recording</b> to begin recording and <b>Stop Recording</b>
+    to stop recording. For each module connected to the Data Recorder, it also
+    grabs all the parameter values and saves them as metadata. In addition, it
+    logs when any of these parameter values change so that you have a complete
+    record of your experiment. 
+    </p>
+
+    <p>
+    If you have a configuration such that Module A: Output 0 --> Module B:
+    Input 0, saving Output 0 from Module A and Input 1 from Module B will give
+    you exactly the same data. Similarly, saving <code>/dev/analogy0</code>:
+    Analog Output 0 will save the signal that has been assigned to that channel
+    (perhaps generated by a user module), not the actual signal the DAQ card is
+    outputting. To check the actual output of the DAQ card, you will need to
+    make a connection from that output to another input channel.
+    </p>
+  </dd>
+  <dt>Trial Metadata</dt>
+  <dd>
+    <p>
+    Each time you start and stop the data recorder counts as one 'trial'. By
+    default, the Data Recorder displays the current trial number, the size of
+    your data file, and the length of time from your last trial. "Trials" have
+    to do with the data structure heirarchy within the HDF files. More
+    information on what that means is provided <a href="#hdf">below</a>.
+    </p>
+  </dd>
 </dl>
 
 <h4 id="connector" class="page-header">Connector</h4>
-<p>The Connector module allows you to create data streams between modules or between modules and the DAQ card. </p>
+<p>The Connector module allows you to create data streams between modules or
+between modules and the DAQ card. 
+</p>
 
 <img src="{{ site.img }}/manual/connector.png">
 
 <dl class="dl-horizontal">
-	<dt>Source</dt>
-	<dd>
-		<p>The Source block displays all Input channels from your DAQ and all OUTPUT variables from any open modules. The name of each module and analogy device is displayed in the <b>Block</b> drop-down menu, and the name of each analog/digital input channel or module output channel is displayed in <b>Channel</b>. 
-		</p>
-		<p>RTXI automatically detects how many inputs are available on your DAQ card. Note that the module does not check whether the channels are enabled via the Control Panel. 
-		</p>
-	</dd>
-	<dt>Destination</dt>
-	<dd>
-		<p>The Destination block displays all Output channels on your DAQ and all INPUT variables from any open modules. The name of each module and analogy device is displayed in the <b>Block</b> drop-down menu, and the name of each analog/digital output channel or module input channel is displayed in <b>Channel</b>. 
-		</p>
-	</dd>
-	<dt>Connections</dt>
-	<dd>
-		<p>To connect one module from the other, select the desired Source and Destination channel. Then, click <b>Connect</b>. Now, every real-time period, the value of the Source channel is read in as input for the Destination channel. 
-		</p>
-		<p>All active connections are listed in the <b>Connections</b> box. To remove an existing connection, double-click on its entry in the list and again click the <b>Connect</b>button. 
-		</p>
-	</dd>
+  <dt>Source</dt>
+  <dd>
+    <p>
+    The Source block displays all Input channels from your DAQ and all
+    OUTPUT variables from any open modules. The name of each module and analogy
+    device is displayed in the <b>Block</b> drop-down menu, and the name of
+    each analog/digital input channel or module output channel is displayed in
+    <b>Channel</b>. 
+    </p>
+
+    <p>RTXI automatically detects how many inputs are available on your DAQ
+    card. Note that the module does not check whether the channels are enabled
+    via the Control Panel. 
+    </p>
+  </dd>
+  <dt>Destination</dt>
+  <dd>
+    <p>The Destination block displays all Output channels on your DAQ and all
+    INPUT variables from any open modules. The name of each module and analogy
+    device is displayed in the <b>Block</b> drop-down menu, and the name of
+    each analog/digital output channel or module input channel is displayed in
+    <b>Channel</b>. 
+    </p>
+  </dd>
+  <dt>Connections</dt>
+  <dd>
+    <p>To connect one module from the other, select the desired Source and
+    Destination channel. Then, click <b>Connect</b>. Now, every real-time
+    period, the value of the Source channel is read in as input for the
+    Destination channel. 
+    </p>
+    <p>All active connections are listed in the <b>Connections</b> box. To
+    remove an existing connection, double-click on its entry in the list and
+    again click the <b>Connect</b>button. 
+    </p>
+  </dd>
 </dl>
 
 <h4 id="rt_benchmarks" class="page-header">Real-time Benchmarks</h4>
 <p>
-The RT Benchmarks module gives you timing statistics for RTXI. For hard real-time performance, all operations must complete within the nominal system period. This module continuously keeps track of the time needed to complete these tasks, as well as the actual real-time period. In addition, the module reports the worst case total computation time and the worst case time step for however long the module was openor the statistics were last reset.
+The RT Benchmarks module gives you timing statistics for RTXI. For hard
+real-time performance, all operations must complete within the nominal system
+period. This module continuously keeps track of the time needed to complete
+these tasks, as well as the actual real-time period. In addition, the module
+reports the worst case total computation time and the worst case time step for
+however long the module was openor the statistics were last reset.
 </p>
 
 <img src="{{ site.img }}/manual/performancebenchmark0.png">
 
 <dl class="dl-horizontal">
-	<dt>Comp Time</dt>
-	<dd>
-		<p>The time it takes for all RT components (system modules + <code>execute</code> loops from user modules) to run in a single RT cycle.
-		</p>
-	</dd>
-	<dt>Peak Comp<br>Time</dt>
-	<dd>
-		<p>The peak computation time measured over the time the RT Benchmarks module was running or was last reset. 
-		</p>
-	</dd>
-	<dt>RT Period</dt>
-	<dd>
-		<p>The timestamp of the current RT period minus the timestamp from the last period. Basically, a measure of how long the previous period lasted. Ideally, this number is very close to the nominal RT period set in the Control Panel. 
-		</p>
-	</dd>
-	<dt>Peak RT<br>Period</dt>
-	<dd>
-		<p>The maximum RT Period measured over the time the RT Benchmarks module was running or was last reset. 
-		</p>
-	</dd>
-	<dt>RT Jitter</dt>
-	<dd>
-		<p>The standard deviation of all the real-time periods measured over the time since the RT Benchmarks module was opened or last reset. 
-		</p>
-	</dd>
+  <dt>Comp Time</dt>
+  <dd>
+    <p>The time it takes for all RT components (system modules +
+    <code>execute</code> loops from user modules) to run in a single RT cycle.
+    </p>
+  </dd>
+  <dt>Peak Comp<br>Time</dt>
+  <dd>
+    <p>The peak computation time measured over the time the RT Benchmarks
+    module was running or was last reset. 
+    </p>
+  </dd>
+  <dt>RT Period</dt>
+  <dd>
+    <p>The timestamp of the current RT period minus the timestamp from the last
+    period. Basically, a measure of how long the previous period lasted.
+    Ideally, this number is very close to the nominal RT period set in the
+    Control Panel. 
+    </p>
+  </dd>
+  <dt>Peak RT<br>Period</dt>
+  <dd>
+    <p>The maximum RT Period measured over the time the RT Benchmarks module
+    was running or was last reset. 
+    </p>
+  </dd>
+  <dt>RT Jitter</dt>
+  <dd>
+    <p>The standard deviation of all the real-time periods measured over the
+    time since the RT Benchmarks module was opened or last reset. 
+    </p>
+  </dd>
 </dl>
