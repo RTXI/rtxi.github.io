@@ -37,11 +37,11 @@ module.exports = function(grunt) {
       },
       jquery: 'bower_components/jquery/dist',
       isotope: 'bower_components/isotope/dist',
-      font_awesome: {
-        less: 'bower_components/font-awesome/less',
-        css: 'bower_components/font-awesome/css',
-        fonts: 'bower_components/font-awesome/fonts'
-      },
+      // font_awesome: {
+      //   less: 'bower_components/font-awesome/less',
+      //   css: 'bower_components/font-awesome/css',
+      //   fonts: 'bower_components/font-awesome/fonts'
+      // },
       datatables: {
         js: "bower_components/datatables.net/js"
       },
@@ -71,16 +71,16 @@ module.exports = function(grunt) {
           '<%= paths.assets.css %>/src/bootstrap.min.css' : 
             '<%= paths.assets.less %>/bootstrap-base.less'
         }
-      },
-      font_awesome: {
-        options: {
-          compress: true,
-          paths: '<%= paths.font_awesome.less %>/'
-        },
-        files: { 
-          '<%= paths.assets.css %>/src/font-awesome.min.css' : 
-            '<%= paths.assets.less %>/font-awesome-base.less'
-        }
+      // },
+      // font_awesome: {
+      //   options: {
+      //     compress: true,
+      //     paths: '<%= paths.font_awesome.less %>/'
+      //   },
+      //   files: { 
+      //     '<%= paths.assets.css %>/src/font-awesome.min.css' : 
+      //       '<%= paths.assets.less %>/font-awesome-base.less'
+      //   }
       }
     },
 
@@ -135,12 +135,12 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
-          {
-            cwd: '<%= paths.bootstrap.less %>/',
-            src: ['*.less', 'mixins/'], 
-            dest: '<%= paths.assets.less %>/src/bootstrap/',
-            expand: true
-          },
+          // {
+          //   cwd: '<%= paths.bootstrap.less %>/',
+          //   src: ['*.less', 'mixins/'], 
+          //   dest: '<%= paths.assets.less %>/src/bootstrap/',
+          //   expand: true
+          // },
           {
             cwd: '<%= paths.bootstrap.js %>/',
             src: 'bootstrap.min.js', 
@@ -153,18 +153,18 @@ module.exports = function(grunt) {
             dest: '<%= paths.assets.fonts %>/',
             expand: true
           },
-          {
-            cwd: '<%= paths.font_awesome.fonts %>/',
-            src: '*',
-            dest: '<%= paths.assets.fonts %>/',
-            expand: true
-          },
-          {
-            cwd: '<%= paths.font_awesome.less %>/',
-            src: ['font-awesome.less', 'variables.less'], 
-            dest: '<%= paths.assets.less %>/src/font-awesome/',
-            expand: true
-          },
+          // {
+          //   cwd: '<%= paths.font_awesome.fonts %>/',
+          //   src: '*',
+          //   dest: '<%= paths.assets.fonts %>/',
+          //   expand: true
+          // },
+          // {
+          //   cwd: '<%= paths.font_awesome.less %>/',
+          //   src: ['font-awesome.less', 'variables.less'], 
+          //   dest: '<%= paths.assets.less %>/src/font-awesome/',
+          //   expand: true
+          // },
           {
             cwd: '<%= paths.jquery %>/',
             src: 'jquery.min.js',
@@ -243,7 +243,7 @@ module.exports = function(grunt) {
       default_css: {
         src: [
           '<%= paths.assets.css %>/src/bootstrap.min.css',
-          '<%= paths.assets.css %>/src/font-awesome.min.css',
+          // '<%= paths.assets.css %>/src/font-awesome.min.css',
           '<%= paths.assets.css %>/src/syntax.css'
         ],
         dest: '<%= paths.assets.css %>/src/default.css'
