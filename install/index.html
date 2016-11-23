@@ -1,244 +1,376 @@
 ---
 title: Install
 layout: default
-tag_content: "There are three ways to install RTXI: Use our Ubuntu-based live CDs; install a generic Linux image, compile a Xenomai-patched kernel, and then install RTXI from source; or if you already use a previous version of RTXI, you can install the RTXI GUI without recompiling a kernel. "
+tag_content: "There are three ways to install RTXI: Use our Ubuntu-based live
+CDs; install a generic Linux image, compile a Xenomai-patched kernel, and then
+install RTXI from source; or if you already use a previous version of RTXI, you
+can install the RTXI GUI without recompiling a kernel. "
 ---
 
 <div class="container">
-   <h2 class="page-header">Installing RTXI</h2>
+  <h2 class="page-header">Installing RTXI</h2>
 </div>
 
 <div class="container">
-   <p>There are three ways to install RTXI:</p>
-   <dl class="dl-horizontal">
-      <dt>Standard</dt>
-         <dd>Use our Ubuntu-based live CDs. It's easier than manually installing RTXI, but differences between your system and the one used to make the live CD could affect real-time performance.</dd>
-      <br>
-      <dt>Custom</dt>
-         <dd>Install a generic Linux image, compile a Xenomai-patched kernel, and then install RTXI from source. It's more difficult, but the end result is better optimized. We recommend this option.</dd>
-      <br>
-      <dt>Upgrade</dt>
-         <dd>If you already use a previous version of RTXI, you can update your system without recompiling a kernel or reintstalling any of your OS. </dd>
-   </dl>
+  <p>There are three ways to install RTXI:</p>
+  <dl class="dl-horizontal">
+    <dt>Standard</dt>
+      <dd>Use our Ubuntu-based live CDs. It's easier than manually installing
+      RTXI, but differences between your system and the one used to make the
+      live CD could affect real-time performance.</dd>
+    <br>
+    <dt>Custom</dt>
+      <dd>Install a generic Linux image, compile a Xenomai-patched kernel, and
+      then install RTXI from source. It's more difficult, but the end result is
+      better optimized. We recommend this option.</dd>
+    <br>
+    <dt>Upgrade</dt>
+      <dd>If you already use a previous version of RTXI, you can update your
+      system without recompiling a kernel or reintstalling any of your OS.
+      </dd>
+  </dl>
 </div>
 
 <br>
 
 <div class="container">
-   <ul class="nav nav-pills nav-justified lead" role="tablist">
-      <li role="presentation" class="active"><a data-toggle="tab" href="#standard" role="tab">Standard</a></li>
-      <li role="presentation"><a data-toggle="tab" href="#custom" role="tab">Custom</a></li>
-      <li role="presentation"><a data-toggle="tab" href="#upgrade" role="tab">Upgrade</a></li>
-   </ul>
+  <ul class="nav nav-pills nav-justified lead" role="tablist">
+    <li role="presentation" class="active">
+      <a data-toggle="tab" href="#standard" role="tab">Standard</a>
+    </li>
+    <li role="presentation">
+      <a data-toggle="tab" href="#custom" role="tab">Custom</a>
+    </li>
+    <li role="presentation">
+      <a data-toggle="tab" href="#upgrade" role="tab">Upgrade</a>
+    </li>
+  </ul>
 
-   <!-- Counters created by increment start at 0. Initialize them here and catch the output -->
-   {% capture dummyvar %}{% increment standardcount %}{% endcapture %}
-   {% capture dummyvar %}{% increment customcount %}{% endcapture %}
-   {% capture dummyvar %}{% increment upgradecount %}{% endcapture %}
+  <!-- Counters created by increment start at 0. Initialize them here and catch
+    the output -->
+  {% capture dummyvar %}{% increment standardcount %}{% endcapture %}
+  {% capture dummyvar %}{% increment customcount %}{% endcapture %}
+  {% capture dummyvar %}{% increment upgradecount %}{% endcapture %}
 
-   <div class="tab-content">
-      <div id="standard" role="tabpanel" class="tab-pane fade in active"><div class="panel-body row">
-			
-			<!-- 1. Download the live image -->
-			<h4 class="lead media-heading">
-				{% increment standardcount %}. Download the live RTXI {{ site.rtxi_version }} image.
-			</h4>
+  <div class="tab-content">
+    <div id="standard" role="tabpanel" 
+         class="tab-pane fade in active">
+      <div class="panel-body row">
+      
+      <!-- 1. Download the live image -->
+      <h4 class="lead media-heading">
+        {% increment standardcount %}. Download the live RTXI {{ site.rtxi_version }} image.
+      </h4>
 
-			<p>We currently have Ubuntu live CDs. You can use them to test RTXI without touching your hard drive, format your hard drive, and install RTXI alongside existing operating systems.  
-			</p>
+      <p>We currently have Ubuntu live CDs. You can use them to test RTXI
+      without touching your hard drive, format your hard drive, and install
+      RTXI alongside existing operating systems.  
+      </p>
 
-			<div class="container" style="text-align:center">
-				<div class="btn-toolbar" style="display:inline-block" role="toolbar">
-				{% for livecd in site.data.iso.rtxi %}
-					<a type="button" class="btn btn-danger btn" role="button" 
-                  href="{{ livecd.url }}" download style="margin-top:1em">
-						<span class="glyphicon glyphicon-cloud-download"></span> 
-						{{ livecd.name }} {{ livecd.version }} {{ livecd.arch }}
-					</a>
-				{% endfor %}
-				</div>
-			</div>
+      <div class="container" style="text-align:center">
+        <div class="btn-toolbar" style="display:inline-block" role="toolbar">
+        {% for livecd in site.data.iso.rtxi %}
+          <a type="button" class="btn btn-danger btn" role="button" 
+            href="{{ livecd.url }}" download style="margin-top:1em">
+            <span class="glyphicon glyphicon-cloud-download"></span> 
+            {{ livecd.name }} {{ livecd.version }} {{ livecd.arch }}
+          </a>
+        {% endfor %}
+        </div>
+      </div>
 
-			<div>&nbsp;</div>
+      <div>&nbsp;</div>
 
-			<!-- legacy bit for RTXI 1.4 -->
-			<p>Our legacy version, RTXI 1.4, <a href="/install/legacy/">is available for now</a>. Keep in mind that v1.4 runs on the no-longer-maintained Ubuntu 10.04, and it requires now-deprecated libraries.
-			</p>
+      <!-- legacy bit for RTXI 1.4 -->
+      <p>Our legacy version, RTXI 1.4, <a href="/install/legacy/">is available
+        for now</a>. Keep in mind that v1.4 runs on the no-longer-maintained
+      Ubuntu 10.04, and it requires now-deprecated libraries.
+      </p>
 
-			<!-- 2. Burn the image to DVD or USB -->
-			<div>&nbsp;</div>
-			<h4 class="lead media-heading">
-				{% increment standardcount %}. Burn the image to a DVD or a USB drive.
-			</h4>
-			
-			<p>
-				You can use whatever DVD burner is available on your operating system. If you want a live USB, you may need additional software. For different operating systems, check out:
-			</p>
-			
-			<dl class="dl-horizontal">
-				<dt>Linux</dt>
-					<dd>Clone the ISO image from the command line with <code>dd</code> or use applications like <s>UNetbootin</s> or <a href="https://apps.ubuntu.com/cat/applications/usb-creator-gtk/">USB Creator</a>. Check your distro's package repository to see if they're available.</dd>
-				<dt>Windows</dt>
-					<dd>Try <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a> or <s>UNetbootin</s>.</dd>
-				<dt>MacOS</dt>
-					<dd>Same programs. Try <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a> or <s>UNetbootin</s>.</dd>
-			</dl>
-			
-			<p>For live-USB-creating applications, look through the instructions on their websites or let their UIs guide you through making a bootable USB image. When prompted for a CD image, point the program to the ISO image you just downloaded, and when prompted for a installation destination, choose a USB drive you inserted into your computer. 
-			</p>
+      <!-- 2. Burn the image to DVD or USB -->
+      <div>&nbsp;</div>
+      <h4 class="lead media-heading">
+        {% increment standardcount %}. Burn the image to a DVD or a USB drive.
+      </h4>
+      
+      <p>
+        You can use whatever DVD burner is available on your operating system.
+        If you want a live USB, you may need additional software. For different
+        operating systems, check out:
+      </p>
+      
+      <dl class="dl-horizontal">
+        <dt>Linux</dt>
+          <dd>
+          Clone the ISO image from the command line with <code>dd</code> or use
+          applications like <s>UNetbootin</s> or <a
+          href="https://apps.ubuntu.com/cat/applications/usb-creator-gtk/"> USB
+          Creator</a>. Check your distro's package repository to see if they're
+          available.
+          </dd>
+        <dt>Windows</dt>
+          <dd>Try <a href="http://www.linuxliveusb.com/">LinuxLive USB
+            Creator</a> or <s>UNetbootin</s>.</dd>
+        <dt>MacOS</dt>
+          <dd>Same programs. Try 
+          <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a> or
+          <s>UNetbootin</s>.
+          </dd>
+      </dl>
+      
+      <p>For live-USB-creating applications, look through the instructions on
+      their websites or let their UIs guide you through making a bootable USB
+      image. When prompted for a CD image, point the program to the ISO image
+      you just downloaded, and when prompted for a installation destination,
+      choose a USB drive you inserted into your computer. 
+      </p>
 
-			<p>We cannot not guarantee these installation programs will produce bootable live USBs for your system. This area tends to be a bit finnicky. Should you have any difficulties, let us know. 
-			</p>
+      <p>We cannot not guarantee these installation programs will produce
+      bootable live USBs for your system. This area tends to be a bit finnicky.
+      Should you have any difficulties, let us know. 
+      </p>
 
-			<!-- 3. Boot into RTXI system -->
-			<div>&nbsp;</div>
-			<h4 class="lead media-heading">
-				{% increment standardcount %}. Boot from the live image.
-			</h4>
-			<p>
-				If your computer isn't already set to boot from USB or DVD, you'll need to enter your BIOS settings. When cold-booting your computer, hit the necessary keys, usually <code>F2</code> or <code>F4</code>, and open the menu. (If you miss the timing, restart your computer and try again.)
-			</p>
-			<p>
-				From the menu, look for your boot options. There you can manually override the boot order of devices on your system. If you're booting from a DVD or USB, look for your DVD drive or USB label, respectively, and set them to be first in your boot order. Save you changes and exit your BIOS menu. 
-			</p>
-			<p>
-			<strong>Reminder:</strong> In the next step, you will be installing an operating system on your hard drive. <strong>Back up</strong> any files that are on it, because depending on how you choose to install Linux, they will be lost once the installation is complete.  
-			</p>
-			
-			<!-- 4. Install RTXI -->
-			<div>&nbsp;</div>
-			<h4 class="lead media-heading">
-				{% increment standardcount %}. Install RTXI via the installer. 
-			</h4>
-			<p>
-				When booting, you can choose to go directly to the installer or boot into the live desktop. The installer will guide you through setting up the system name, passwords, networks, and partitioning. If unsure of what to do, use defaults when available.
-			</p>
+      <!-- 3. Boot into RTXI system -->
+      <div>&nbsp;</div>
+      <h4 class="lead media-heading">
+        {% increment standardcount %}. Boot from the live image.
+      </h4>
+      <p>
+        If your computer isn't already set to boot from USB or DVD, you'll need
+        to enter your BIOS settings. When cold-booting your computer, hit the
+        necessary keys, usually <code>F2</code> or <code>F4</code>, and open
+        the menu. (If you miss the timing, restart your computer and try
+        again.)
+      </p>
+      <p>
+        From the menu, look for your boot options. There you can manually
+        override the boot order of devices on your system. If you're booting
+        from a DVD or USB, look for your DVD drive or USB label, respectively,
+        and set them to be first in your boot order. Save you changes and exit
+        your BIOS menu. 
+      </p>
+      <p>
+        <strong>Reminder:</strong> In the next step, you will be installing an
+        operating system on your hard drive. <strong>Back up</strong> any files
+        that are on it, because depending on how you choose to install Linux,
+        they will be lost once the installation is complete.  
+      </p>
+      
+      <!-- 4. Install RTXI -->
+      <div>&nbsp;</div>
+      <h4 class="lead media-heading">
+        {% increment standardcount %}. Install RTXI via the installer. 
+      </h4>
+      <p>
+        When booting, you can choose to go directly to the installer or boot
+        into the live desktop. The installer will guide you through setting up
+        the system name, passwords, networks, and partitioning. If unsure of
+        what to do, use defaults when available.
+      </p>
 
-			<!-- (Optional) Partition a hard drive
-			<div>&nbsp;</div>
-			<h4 class="lead media-heading">
-				(Optional) Partition your hard drive. 	
-			</h4>
-			<p>
-				If your hard drive already has an operating system (Windows, MacOS, etc.) installed, you can use the installer so that it installs Linux alongside it, leaving the original OS intact. Whenever you start you computer, you can choose which operating system from a boot menu. 
-			</p>
+      <!-- (Optional) Partition a hard drive
+      <div>&nbsp;</div>
+      <h4 class="lead media-heading">
+        (Optional) Partition your hard drive.   
+      </h4>
+      <p>
+        If your hard drive already has an operating system (Windows, MacOS,
+        etc.) installed, you can use the installer so that it installs Linux
+        alongside it, leaving the original OS intact. Whenever you start you
+        computer, you can choose which operating system from a boot menu. 
+      </p>
 
-			<p>The way the installer does this is by paritioning your hard drive. Say you start with Windows installed on a 500 GB hard drive. What the installer does is let you shrink the space Windows has available to it to something smaller, and then use the newly freed space to install Linux. 
-			</p>
+      <p>
+        The way the installer does this is by paritioning your hard drive. Say
+        you start with Windows installed on a 500 GB hard drive. What the
+        installer does is let you shrink the space Windows has available to it
+        to something smaller, and then use the newly freed space to install
+        Linux. 
+      </p>
 
-			<p><b>Note:</b> The partition shrinking/resizing step can be very time consuming, and you should not try to shrink a parition to a size smaller that the amount of data already saved on it. 
-			</p>
+      <p>
+        <b>Note:</b> The partition shrinking/resizing step can be very time
+        consuming, and you should not try to shrink a parition to a size
+        smaller that the amount of data already saved on it. 
+      </p>
 
-			<p><b>Warning:</b> We <b>STRONGLY</b> recommend you back up your hard drive if you plan to partition your system because, though unlikely, the partitioning tool could break your existing OS. 
-			</p>
+      <p>
+        <b>Warning:</b> We <b>STRONGLY</b> recommend you back up your hard
+        drive if you plan to partition your system because, though unlikely,
+        the partitioning tool could break your existing OS. 
+      </p>
 
-			<p>Here are the general steps for paritioning your hard drive:</p>
+      <p>Here are the general steps for paritioning your hard drive:</p>
  -->
-			<!-- 5. Boot into RTXI -->
-			<div>&nbsp;</div>
-			<h4 class="lead media-heading">
-				{% increment standardcount %}. Reboot into RTXI. 
-			</h4>
-			<p>
-				When the installer is done, you will be prompted to reboot your system. Reboot (and be careful to not re-enter the live image). RTXI is now installed!
-			</p>
+      <!-- 5. Boot into RTXI -->
+      <div>&nbsp;</div>
+      <h4 class="lead media-heading">
+        {% increment standardcount %}. Reboot into RTXI. 
+      </h4>
+      <p>
+        When the installer is done, you will be prompted to reboot your system.
+        Reboot (and be careful to not re-enter the live image). RTXI is now
+        installed!
+      </p>
 
-			<p>See how your system is performing. You may have graphics issues, but at this point, what do you is specific to your system. Look through our <a href="/docs">documentation page</a> to see pointers for dealing with graphics issues. 
-			</p>
+      <p>
+        See how your system is performing. You may have graphics issues, but at
+        this point, what do you is specific to your system. Look through our <a
+        href="/docs">documentation page</a> to see pointers for dealing with
+      graphics issues. 
+      </p>
 
-			<p>Below is an installation demo. Note that when you install RTXI on your own machine, you may get prompted to configure your network settings.
-			</p>
-		  
-			<div class="row"><div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-				<div class="embed-responsive embed-responsive-16by9">
-					<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/o8pTlggSD0Q"></iframe>
-				</div>
-			</div></div>
+      <p>
+        Below is an installation demo. Note that when you install RTXI on your
+        own machine, you may get prompted to configure your network settings.
+      </p>
+      
+      <div class="row"><div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" 
+                  src="https://www.youtube.com/embed/o8pTlggSD0Q">
+          </iframe>
+        </div>
+      </div></div>
 
-			<!-- 7. (Re)install modules -->
-			<div>&nbsp;</div>
-			<h4 class="lead media-heading">
-				{% increment standardcount %}. Install modules.
-			</h4>
-			<p>By default, a clean installation of RTXI only contains system modules. To use custom modules, you will need to download and install them separately. All RTXI modules are available on our <a href="https://github.com/rtxi">GitHub repository</a>. You can view all our modules and instructions for installing them on our <a href="/modules">modules page</a>. 
-			</p>
+      <!-- 7. (Re)install modules -->
+      <div>&nbsp;</div>
+      <h4 class="lead media-heading">
+        {% increment standardcount %}. Install modules.
+      </h4>
+      <p>
+        By default, a clean installation of RTXI only contains system modules.
+        To use custom modules, you will need to download and install them
+        separately. All RTXI modules are available on our 
+        <a href="https://github.com/rtxi">GitHub repository</a>. You can view 
+        all our modules and instructions for installing them on our 
+        <a href="/modules">modules page</a>.
+      </p>
 
-		</div></div> <!-- end standard information -->
+    </div></div> <!-- end standard information -->
 
-      <div id="custom" role="tabpanel" class="tab-pane fade"><div class="panel-body row">
+    <div id="custom" role="tabpanel" class="tab-pane fade">
+      <div class="panel-body row">
 
-			<!-- 1. Download generic Debian image -->
-			<h4 class="lead media-heading">
-				{% increment customcount %}. Download a generic Linux installation image.
-			</h4>
-			<p>You can install RTXI on any Linux distribution you like. Keep in mind that the installation scripts we use work for Ubuntu and Debian. Your distribution may name or organize packages differently, so you'll have to account for that on your own. Below are download links for generic Ubuntu GNOME live CDs.  
-			</p>
-			<div class="container" style="text-align:center">
-				<div class="btn-toolbar" style="display:inline-block" role="toolbar">
-				{% for livecd in site.data.iso.ubuntu %}
-					<a type="button" class="btn btn-danger btn" role="button" 
-                  href="{{ livecd.url }}" download style="margin-top:1em">
-						<span class="glyphicon glyphicon-cloud-download"></span> 
-						{{ livecd.name }} {{ livecd.version }} {{ livecd.arch }}
-					</a>
-				{% endfor %}
-				</div>
-			</div>
-			
-			<!-- 2. Burn the image to DVD or USB -->
-			<div>&nbsp;</div>
-			<h4 class="lead media-heading">
-				{% increment customcount %}. Burn the image to a DVD or a USB drive.
-			</h4>
-			
-			<p>
-				You can use whatever DVD burner is available on your operating system. If you want a live USB, you may need additional software. For different operating systems, check out:
-			</p>
-			
-			<dl class="dl-horizontal">
-				<dt>Linux</dt>
-					<dd>Clone the ISO image from the command line with <code>dd</code> or use applications like <s>UNetbootin</s> or <a href="https://apps.ubuntu.com/cat/applications/usb-creator-gtk/">USB Creator</a>. Check your distro's package repository to see if they're available.</dd>
-				<dt>Windows</dt>
-					<dd>Try <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a> or <s>UNetbootin</s>.</dd>
-				<dt>MacOS</dt>
-					<dd>Same programs. Try <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a> or <s>UNetbootin</s>.</dd>
-			</dl>
-			
-			
-			<!-- 3. Install and boot into RTXI system -->
-			<div>&nbsp;</div>
-			<h4 class="lead media-heading">
-				{% increment customcount %}. Follow the built-in installer and install the operating system.
-			</h4>
-			<p>
-			Boot into the live CD. When prompted, start the installation process. There are no special considerations to be made at this step. Installers are generally intuitive, but if you have issues, there is a plethora of information online for how to install various Linux distributions. You can find help for installing Ubuntu GNOME <a href="https://wiki.ubuntu.com/UbuntuGNOME/Installation/AutoInstallation">here</a>.
-			</p>
-			<p>When the installation is finished, reboot and log into your system. Be sure to remove the live media, or you might boot back into the live CD.
-			</p>
-			<p><b>Note:</b> You may have to edit your BIOS settings to let you boot from media other than your hard drive. When cold-booting your computer, hit the necessary keys, usually <code>F2</code> or <code>F4</code>, and open the menu. From the menu, look for your boot options. There you can manually override the boot order of devices on your system. If you're booting from a DVD or USB, look for your DVD drive or USB label, respectively, and set them to be first in your boot order. Save you changes and exit your BIOS menu. 
-			</p>
+      <!-- 1. Download generic Debian image -->
+      <h4 class="lead media-heading">
+        {% increment customcount %}. Download a generic Linux installation image.
+      </h4>
+      <p>
+        You can install RTXI on any Linux distribution you like. Keep in mind
+        that the installation scripts we use work for Ubuntu and Debian. Your
+        distribution may name or organize packages differently, so you'll have
+        to account for that on your own. Below are download links for generic
+        Ubuntu GNOME live CDs.  
+      </p>
+      <div class="container" style="text-align:center">
+        <div class="btn-toolbar" style="display:inline-block" role="toolbar">
+        {% for livecd in site.data.iso.ubuntu %}
+          <a type="button" class="btn btn-danger btn" role="button" 
+            href="{{ livecd.url }}" download style="margin-top:1em">
+            <span class="glyphicon glyphicon-cloud-download"></span> 
+            {{ livecd.name }} {{ livecd.version }} {{ livecd.arch }}
+          </a>
+        {% endfor %}
+        </div>
+      </div>
+      
+      <!-- 2. Burn the image to DVD or USB -->
+      <div>&nbsp;</div>
+      <h4 class="lead media-heading">
+        {% increment customcount %}. Burn the image to a DVD or a USB drive.
+      </h4>
+      
+      <p>
+        You can use whatever DVD burner is available on your operating system.
+        If you want a live USB, you may need additional software. For different
+        operating systems, check out:
+      </p>
+      
+      <dl class="dl-horizontal">
+        <dt>Linux</dt>
+          <dd>
+            Clone the ISO image from the command line with <code>dd</code> or
+            use applications like <s>UNetbootin</s> or 
+            <a href="https://apps.ubuntu.com/cat/applications/usb-creator-gtk/"> 
+            USB Creator</a>. Check your distro's package repository to see if 
+            they're available.
+          </dd>
+        <dt>Windows</dt>
+          <dd>Try <a href="http://www.linuxliveusb.com/">LinuxLive USB
+            Creator</a> or <s>UNetbootin</s>.</dd>
+        <dt>MacOS</dt>
+          <dd>Same programs. Try 
+            <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a> or
+          <s>UNetbootin</s>.</dd>
+      </dl>
+      
+      
+      <!-- 3. Install and boot into RTXI system -->
+      <div>&nbsp;</div>
+      <h4 class="lead media-heading">
+        {% increment customcount %}. Follow the built-in installer and install the operating system.
+      </h4>
+      <p>
+        Boot into the live CD. When prompted, start the installation process.
+        There are no special considerations to be made at this step. Installers
+        are generally intuitive, but if you have issues, there is a plethora of
+        information online for how to install various Linux distributions. You
+        can find help for installing Ubuntu GNOME 
+        <a href="https://wiki.ubuntu.com/UbuntuGNOME/Installation/AutoInstallation">
+          here</a>.
+      </p>
 
-			<!-- 4. Look at our github documentaiton for now... -->
-			<div>&nbsp;</div>
-			<h4 class="lead media-heading">
-				{% increment customcount %}. Clone the RTXI repository using git. 
-			</h4>
-			<p>Open a terminal. You can use the applications menu or enter the <code>CTRL+ALT+t</code> shortcut. From the terminal, install the git package. Git is a version control system that can synchronize files over many machines. We use it for developing RTXI source code, which is hosted on <a href="https://github.com/rtxi">GitHub</a>. 
-			</p>
+      <p>
+        When the installation is finished, reboot and log into your system. Be
+        sure to remove the live media, or you might boot back into the live CD.
+      </p>
+
+      <p>
+        <b>Note:</b> You may have to edit your BIOS settings to let you boot
+        from media other than your hard drive. When cold-booting your computer,
+        hit the necessary keys, usually <code>F2</code> or <code>F4</code>, and
+        open the menu. From the menu, look for your boot options. There you can
+        manually override the boot order of devices on your system. If you're
+        booting from a DVD or USB, look for your DVD drive or USB label,
+        respectively, and set them to be first in your boot order. Save you
+        changes and exit your BIOS menu. 
+      </p>
+
+      <!-- 4. Look at our github documentaiton for now... -->
+      <div>&nbsp;</div>
+      <h4 class="lead media-heading">
+        {% increment customcount %}. Clone the RTXI repository using git. 
+      </h4>
+
+      <p>
+        Open a terminal. You can use the applications menu or enter the
+        <code>CTRL+ALT+t</code> shortcut. From the terminal, install the git
+        package. Git is a version control system that can synchronize files
+        over many machines. We use it for developing RTXI source code, which is
+        hosted on <a href="https://github.com/rtxi">GitHub</a>. 
+      </p>
 
 {% highlight bash %}
 $ sudo apt-get install git
 {% endhighlight %}
 
-			<p>Once git is installed, use it to download the RTXI source code and access the source code for v{{ site.rtxi_version }}. 
-			</p>
+      <p>
+        Once git is installed, use it to download the RTXI source code and
+        access the source code for v{{ site.rtxi_version }}. 
+      </p>
 
 {% highlight bash %}
 $ git clone https://github.com/rtxi/rtxi
 $ cd rtxi
 {% endhighlight %}
 
-			<p><b>Tip:</b> The above code will download the source files to wherever you are in your filesystem. If you are within your own user directory, then the source files will only be accessible to your account, not anyone else's. To download the source code in a central location that all users can access, consider: </p>
+      <p>
+        <b>Tip:</b> The above code will download the source files to wherever
+        you are in your filesystem. If you are within your own user directory,
+        then the source files will only be accessible to your account, not
+        anyone else's. To download the source code in a central location that
+        all users can access, consider: </p>
 
 {% highlight bash %}
 $ git clone https://github.com/rtxi/rtxi
@@ -248,161 +380,251 @@ $ sudo find rtxi \( -type d -exec chmod u+rwx,g+rwx,o+rx {} \; -o -type f -exec 
 $ cd /home/rtxi/
 {% endhighlight %}
 
-			<p><b>Note:</b> Don't do this if you have a user named "rtxi". Rename the RTXI folder you cloned to something else.
-			</p>
-			
-			<!-- 5. Install dependencies -->
-			<div>&nbsp;</div>
-			<h4 class="lead media-heading">
-				{% increment customcount %}. Install RTXI and real-time kernel dependencies. 
-			</h4>
-			<p>Install the dependencies for RTXI and for installing the real-time (RT) kernel. Assuming you are in the cloned RTXI directory, run:
-			</p>
+      <p>
+        <b>Note:</b> Don't do this if you have a user named "rtxi". Rename the
+        RTXI folder you cloned to something else.
+      </p>
+      
+      <!-- 5. Install dependencies -->
+      <div>&nbsp;</div>
+      <h4 class="lead media-heading">
+        {% increment customcount %}. Install RTXI and real-time kernel dependencies. 
+      </h4>
+      <p>
+        Install the dependencies for RTXI and for installing the real-time (RT)
+        kernel. Assuming you are in the cloned RTXI directory, run:
+      </p>
 
 {% highlight bash %}
 $ cd scripts
 $ ./install_dependencies.sh
 {% endhighlight %}
 
-			<p>The script will run for a while, updating your current packages and installing ones needed later.
-			</p>
-			
-			<!-- 6. Install RT kernel -->
-			<div>&nbsp;</div>
-			<h4 class="lead media-heading">
-				{% increment customcount %}. Compile and install the real-time kernel. 
-			</h4>
-			<p>From the same directory, run:
-			</p>
+      <p>
+        The script will run for a while, updating your current packages and
+        installing ones needed later.
+      </p>
+      
+      <!-- 6. Install RT kernel -->
+      <div>&nbsp;</div>
+      <h4 class="lead media-heading">
+        {% increment customcount %}. Compile and install the real-time kernel. 
+      </h4>
+      <p>From the same directory, run:
+      </p>
 
 {% highlight bash %}
 $ ./install_rt_kernel.sh
 {% endhighlight %}
 
-			<p>The script will download the sources for the Linux kernel and the Xenomai patch. Before the kernel starts compiling, you will be prompted to edit the kernel config flags. A UI will pop up that looks as follows: 
-			</p>
-			<a href="{{ site.img }}/kernel-config-home.png"><img class="img-responsive center-block" src="{{ site.img }}/kernel-config-home.png"></a>
-			<p>This is the config menu that allows you to edit what you want compiled into the kernel. For optimal performance, edit the following options: 
-			</p>
-			<ol>
-				<li><p><b>Enable ANALOGY drivers.</b></p> 
-					 <div>From the top menu, follow the path:</div>
-					 <div style="padding-left:1em;">--> Real-Time sub-system</div>
-					 <div style="padding-left:2em;">--> Drivers</div>
-					 <div style="padding-left:3em;">--> Analogy</div><br>
-					 <p>Hit <code>SPACE</code> on all the drivers to have them built into the kernel. A "*" beside the field means that the drivers are set properly. Note that "M" means that the drivers will be built as kernel modules, not built into the kernel itself. "*" is the desired setting here, not "M".
-					 </p>
-					 <p>Hit <code>ESC</code> to get back to the top menu from where you started. Be careful to not exit the configuration menu.</p>
-				</li>
-				<li><p><b>Select your processor type.</b></p>
-					<div>From the top menu, follow the path: </div> 
-					<div style="padding-left:1em;">--> Processor type and features</div>
-					<div style="padding-left:2em;">--> Processor family</div><br>
-					<p>Select the option that corresponds to your processor type. If unsure of what processor you have, open another terminal run:
-					</p>
+      <p>
+        The script will download the sources for the Linux kernel and the
+        Xenomai patch. Before the kernel starts compiling, you will be prompted
+        to edit the kernel config flags. A UI will pop up that looks as
+        follows: 
+      </p>
+      <a href="{{ site.img }}/kernel-config-home.png">
+        <img class="img-responsive center-block" 
+             src="{{ site.img }}/kernel-config-home.png">
+      </a>
+      <p>
+        This is the config menu that allows you to edit what you want compiled
+        into the kernel. For optimal performance, edit the following options: 
+      </p>
+      <ol>
+        <li><p><b>Enable ANALOGY drivers.</b></p> 
+          <div>From the top menu, follow the path:</div>
+          <div style="padding-left:1em;">--> Real-Time sub-system</div>
+          <div style="padding-left:2em;">--> Drivers</div>
+          <div style="padding-left:3em;">--> Analogy</div><br>
+          <p>
+            Hit <code>SPACE</code> on all the drivers to have them built into
+            the kernel. A "*" beside the field means that the drivers are set
+            properly. Note that "M" means that the drivers will be built as
+            kernel modules, not built into the kernel itself. "*" is the
+            desired setting here, not "M".
+          </p>
+          <p>
+            Hit <code>ESC</code> to get back to the top menu from where you
+            started. Be careful to not exit the configuration menu.
+          </p>
+        </li>
+        <li><p><b>Select your processor type.</b></p>
+          <div>From the top menu, follow the path: </div> 
+          <div style="padding-left:1em;">--> Processor type and features</div>
+          <div style="padding-left:2em;">--> Processor family</div><br>
+          <p>
+            Select the option that corresponds to your processor type. If
+            unsure of what processor you have, open another terminal run:
+          </p>
 
 {% highlight bash %}
 $ cat /proc/cpuinfo
 {% endhighlight %}
 
-					<p>This will display the CPU information needed to correctly select your configuration. Most newish computers with Intel processors usually have an i3, i5, or i7. For them, select <code>Core 2/newer Xeon</code>. 
-					</p>
-					<p><b>Note:</b> For 32-bit systems, <code>Enable -fstack-protector buffer overflow detection</code> should also be disabled</code></p>
-				</li>
-				<li><p><b>Disable power management options.</b></p>
-					<div>You need to disable some CPU scaling capabilities of the kernel that can otherwise interrupt the real-time framework. From the top menu, follow the path and disable: </div>
-					<div style="padding-left:1em;">--> Power Management and ACPI options</div>
-					<div style="padding-left:2em;">--> Suspend to RAM (disable)</div>
-					<div style="padding-left:2em;">--> Hibernation (disable)</div>
-					<div style="padding-left:2em;">--> ACPI Support</div>
-					<div style="padding-left:3em;">--> Processor (disable)</div>
-					<div style="padding-left:2em;">--> Frequency Scaling (disable)</div>
-					<div style="padding-left:2em;">--> CPU Idle driver for Intel (disable)</div>
-					<div style="padding-left:2em;">--> CPU Idle PM support (disable)</div><br>
-					<p>To disable drivers, move the cursor to the item and hit <code>SPACE</code> until the field the left is blank.
-					</p>
-				</li>
-				<li><p><b>Disable COMEDI drivers.</b></p>
-					<div>The COMEDI drivers should be disabled, otherwise they will conflict with the ANALOGY drivers. From the top menu, follow the path and disable: </div>
-					<div style="padding-left:1em;">--> Device Drivers</div>
-					<div style="padding-left:2em;">--> Staging Drivers</div>
-					<div style="padding-left:3em;">--> Data Acquisition (comedi) (disable)</div>
-				</li>
-			</ol>
-			<p>Once all the flags have been set properly, exit to the top menu. Hit <code>ESC</code> again and choose <code><Yes></code> to save the configuration and compile the kernel. Compilation, depending on your system, can take 10 minutes to a few hours. You are free to leave the system. The <code>install_rt_kernel.sh</code> script will compile the kernel and install it automatically. When the script terminates successfully, reboot the system. 
-			</p>
-			<p>From the boot menu, select the "Advanced" option from the GRUB bootloader to open up a submenu that lists all the available kernels. The real-time kernel will be named <code>3.8.13-xenomai-2.6.3</code>. Select it and boot the system. 
-			</p>
-			
-			<!-- 7. Install RTXI -->
-			<div>&nbsp;</div>
-			<h4 class="lead media-heading">
-				{% increment customcount %}. Install RTXI. 
-			</h4>
-			<p>Install RTXI with the <code>install_rtxi.sh</code> script. Navigate back to your <code>rtxi/scripts/</code> directory and rum:
-			</p>
+          <p>
+            This will display the CPU information needed to correctly select
+            your configuration. Most newish computers with Intel processors
+            usually have an i3, i5, or i7. For them, select <code>Core 2/newer
+            Xeon</code>. 
+          </p>
+
+          <p>
+            <b>Note:</b> For 32-bit systems, <code>Enable -fstack-protector
+              buffer overflow detection</code> should also be
+            disabled</code>
+          </p>
+        </li>
+
+        <li><p><b>Disable power management options.</b></p>
+          <div>
+            You need to disable some CPU scaling capabilities of the kernel
+            that can otherwise interrupt the real-time framework. From the top
+            menu, follow the path and disable: 
+          </div>
+          <div style="padding-left:1em;">--> Power Management and ACPI options</div>
+          <div style="padding-left:2em;">--> Suspend to RAM (disable)</div>
+          <div style="padding-left:2em;">--> Hibernation (disable)</div>
+          <div style="padding-left:2em;">--> ACPI Support</div>
+          <div style="padding-left:3em;">--> Processor (disable)</div>
+          <div style="padding-left:2em;">--> Frequency Scaling (disable)</div>
+          <div style="padding-left:2em;">--> CPU Idle driver for Intel (disable)</div>
+          <div style="padding-left:2em;">--> CPU Idle PM support (disable)</div><br>
+          <p>
+            To disable drivers, move the cursor to the item and hit
+            <code>SPACE</code> until the field the left is blank.
+          </p>
+        </li>
+        <li><p><b>Disable COMEDI drivers.</b></p>
+          <div>
+            The COMEDI drivers should be disabled, otherwise they will conflict
+            with the ANALOGY drivers. From the top menu, follow the path and
+            disable: 
+          </div>
+          <div style="padding-left:1em;">--> Device Drivers</div>
+          <div style="padding-left:2em;">--> Staging Drivers</div>
+          <div style="padding-left:3em;">--> Data Acquisition (comedi) (disable)</div>
+        </li>
+      </ol>
+      <p>
+        Once all the flags have been set properly, exit to the top menu. Hit
+        <code>ESC</code> again and choose <code><Yes></code> to save the
+        configuration and compile the kernel. Compilation, depending on your
+        system, can take 10 minutes to a few hours. You are free to leave the
+        system. The <code>install_rt_kernel.sh</code> script will compile the
+        kernel and install it automatically. When the script terminates
+        successfully, reboot the system. 
+      </p>
+      <p>
+        From the boot menu, select the "Advanced" option from the GRUB
+        bootloader to open up a submenu that lists all the available kernels.
+        The real-time kernel will be named <code>3.8.13-xenomai-2.6.3</code>.
+        Select it and boot the system. 
+      </p>
+      
+      <!-- 7. Install RTXI -->
+      <div>&nbsp;</div>
+      <h4 class="lead media-heading">
+        {% increment customcount %}. Install RTXI. 
+      </h4>
+      <p>
+        Install RTXI with the <code>install_rtxi.sh</code> script. Navigate
+        back to your <code>rtxi/scripts/</code> directory and rum:
+      </p>
 
 {% highlight bash %}
 $ ./install_rtxi.sh
 {% endhighlight %}
 
-			<p>Give your password when prompted. The script will also prompt you for an installation mode.
-			</p>
-			<dl class="dl-horizontal">
-				<dt>Xenomai</dt>
-					<dd>Install RTXI so that it uses the real-time kernel.</dd>
-				<dt>Posix (non-rt)</dt>
-					<dd>RTXI will not perform in real-time, but with this option, it can be installed this way on systems without a real-time kernel. 
-			</dl>
-			<p>If you want real-time performance, enter "1" to use Xenomai and wait for RTXI to be installed. When the installation script terminates, RTXI is ready for you to use. To start RTXI, run:
-			</p>
+      <p>
+        Give your password when prompted. The script will also prompt you for
+        an installation mode.
+      </p>
+      <dl class="dl-horizontal">
+        <dt>Xenomai</dt>
+          <dd>Install RTXI so that it uses the real-time kernel.</dd>
+        <dt>Posix (non-rt)</dt>
+          <dd>
+            RTXI will not perform in real-time, but with this option, it can
+            be installed this way on systems without a real-time kernel. 
+          </dd>
+      </dl>
+
+      <p>
+        If you want real-time performance, enter "1" to use Xenomai and wait
+        for RTXI to be installed. When the installation script terminates, RTXI
+        is ready for you to use. To start RTXI, run:
+      </p>
 
 {% highlight bash %}
 $ sudo rtxi
 {% endhighlight %}
 
-			<!-- 8. (Re)install modules -->
-			<div>&nbsp;</div>
-			<h4 class="lead media-heading">
-				{% increment customcount %}. Install modules.
-			</h4>
-			<p>By default, a clean installation of RTXI only contains system modules. To use custom modules, you will need to download and install them separately. All RTXI modules are available on our <a href="https://github.com/rtxi">GitHub repository</a>. You can view all our modules and instructions for installing them on our <a href="/modules">modules page</a>. 
-			</p>
+      <!-- 8. (Re)install modules -->
+      <div>&nbsp;</div>
+      <h4 class="lead media-heading">
+        {% increment customcount %}. Install modules.
+      </h4>
 
-		</div></div> <!-- end custom information -->
+      <p>
+        By default, a clean installation of RTXI only contains system modules.
+        To use custom modules, you will need to download and install them
+        separately. All RTXI modules are available on our 
+        <a href="https://github.com/rtxi">GitHub repository</a>. You can view 
+        all our modules and instructions for installing them on our 
+        <a href="/modules">modules page</a>. 
+      </p>
 
-      <div id="upgrade" role="tabpanel" class="tab-pane fade"><div class="panel-body row">
+    </div></div> <!-- end custom information -->
 
-			<p><b>Note:</b> If you are currently using older distributions, like Ubuntu 10.04 and Debian 7, the following instructions will fail because RTXI depends on newer versions of the boost libraries and gcc, which aren't available. Though you can compile these dependencies from source, we recommend you use a newer LTS distro, like Ubuntu 14.04. Incompatibilities with older distros will only increase with time, especially as they exceed their support lifespan.
-			</p>
+    <div id="upgrade" role="tabpanel" class="tab-pane fade">
+      <div class="panel-body row">
 
-			<!-- 1. Clone the repo -->
-			<div>&nbsp;</div>
-			<h4 class="lead media-heading">
-				{% increment upgradecount %}. Clone the RTXI GitHub repository.
-			</h4>
-			<p>If you haven't already cloned our GitHub repo, run the following in the terminal.  
-			</p>
+      <p>
+        <b>Note:</b> If you are currently using older distributions, like
+        Ubuntu 10.04 and Debian 7, the following instructions will fail because
+        RTXI depends on newer versions of the boost libraries and gcc, which
+        aren't available. Though you can compile these dependencies from
+        source, we recommend you use a newer LTS distro, like Ubuntu 14.04.
+        Incompatibilities with older distros will only increase with time,
+        especially as they exceed their support lifespan.
+      </p>
+
+      <!-- 1. Clone the repo -->
+      <div>&nbsp;</div>
+      <h4 class="lead media-heading">
+        {% increment upgradecount %}. Clone the RTXI GitHub repository.
+      </h4>
+      <p>
+        If you haven't already cloned our GitHub repo, run the following in the
+        terminal.  
+      </p>
 
 {% highlight bash %}
 $ git clone https://github.com/rtxi/rtxi.git
 $ cd rtxi
 {% endhighlight %}
 
-			<p>If you already have a clone of the repository, go to it and run:
-			</p>
+      <p>If you already have a clone of the repository, go to it and run:
+      </p>
 
 {% highlight bash %}
 $ git pull origin master
 {% endhighlight %}
 
-			<!-- 2. Install dependencies -->
-			<div>&nbsp;</div>
-			<h4 class="lead media-heading">
-				{% increment upgradecount %}. Install and/or update dependencies.
-			</h4>
-			<p>Run the <code>install_dependencies.sh</code> script to download dependencies. The script is maintained for Ubuntu 14.04. If you are using a different or outdated distribution, like Ubuntu 10.04, you will have to look for differently-named packages. For old operating systems, some of these packages may no longer exist, and if that's the case, we strongly encourage you to upgrade.
-			</p>
+      <!-- 2. Install dependencies -->
+      <div>&nbsp;</div>
+      <h4 class="lead media-heading">
+        {% increment upgradecount %}. Install and/or update dependencies.
+      </h4>
+      <p>
+        Run the <code>install_dependencies.sh</code> script to download
+        dependencies. The script is maintained for Ubuntu 14.04. If you are
+        using a different or outdated distribution, like Ubuntu 10.04, you will
+        have to look for differently-named packages. For old operating systems,
+        some of these packages may no longer exist, and if that's the case, we
+        strongly encourage you to upgrade.
+      </p>
 
 {% highlight bash %}
 $ cd scripts/
@@ -410,63 +632,97 @@ $ ./install_dependencies.sh
 {% endhighlight %}
 
 
-			<!-- 3. Install RTXI -->
-			<div>&nbsp;</div>
-			<h4 class="lead media-heading">
-				{% increment upgradecount %}. Install RTXI {{ site.rtxi_version }}.
-			</h4>
-			<p>Run the installation script, also in the <code>scripts/</code> directory.
-			</p>
+      <!-- 3. Install RTXI -->
+      <div>&nbsp;</div>
+      <h4 class="lead media-heading">
+        {% increment upgradecount %}. Install RTXI {{ site.rtxi_version }}.
+      </h4>
+      <p>Run the installation script, also in the <code>scripts/</code> directory.
+      </p>
 
 {% highlight bash %}
 $ ./install_rtxi.sh
 {% endhighlight %}
 
-			<p>You will be prompted to select a configuration: 1 for Xenomai (real-time) or 2 for POSIX (non-real-time). Soon, RTXI will be compiled and installed. When finished, you can run v{{ site.rtxi_version }} with:
-			</p>
+      <p>
+        You will be prompted to select a configuration: 1 for Xenomai
+        (real-time) or 2 for POSIX (non-real-time). Soon, RTXI will be compiled
+        and installed. When finished, you can run v{{ site.rtxi_version }}
+        with:
+      </p>
 
 {% highlight bash %}
 $ sudo rtxi
 {% endhighlight %}
 
-			<p><b>Note:</b> This will not work if you are running an RTAI-patched kernel. To compile RTXI v{{ site.rtxi_version }} for RTAI kernels, see our relevant information on the FAQs section of the <a href="/docs/">documentation page</a> or the <a href="/docs/tutorials/2014/12/04/manually-configuring-rtxi/">full documentation for configuration options</a>.
-			</p>
+      <p>
+        <b>Note:</b> This will not work if you are running an RTAI-patched
+        kernel. To compile RTXI v{{ site.rtxi_version }} for RTAI kernels, see
+        our relevant information on the FAQs section of the 
+        <a href="/docs/">documentation page</a> or the 
+        <a href="/docs/tutorials/2014/12/04/manually-configuring-rtxi/"> 
+          full documentation for configuration options</a>.
+      </p>
 
-			<!-- 4. (Re)install modules -->
-			<div>&nbsp;</div>
-			<h4 class="lead media-heading">
-				{% increment upgradecount %}. Install modules.
-			</h4>
-			<p>All available modules in v1.4 came packaged with RTXI. For v2.0 onwards, modules are split into separate GitHub repositories. Customization also is on a per-module basis. Also, for v1.x, RTXI used the Qt3 framework to build the UI. For v2.0, we moved to Qt4, and with v2.1, we moved to Qt5. 
-			</p>
-			<p>What this means for you is that at this point, you've installed RTXI v{{ site.rtxi_version }}, but you need to recompile your modules to use updated dependencies. If you are using the DefaultGUI framework, this may be as simple as recompiling your code, but if you added custom Qt elements, you may need to port your code to reflect changes in Qt. 
-			</p>
-			<p>All modules on the <a href="/modules/">modules page</a> are up-to-date for v{{ site.rtxi_version }}. See the following documentation on porting to old Qt code to Qt5. 
-			</p>
-			<ul>
-				<li><a href="https://wiki.qt.io/Transition_from_Qt_4.x_to_Qt5">
-					Transition from Qt 4.x to Qt5
-				</a></li>
-				<li><a href="http://doc.qt.io/qt-5/portingguide.html">
-					Qt5 Porting Guide
-				</a></li>
-				<li><a href="http://qt-project.org/doc/qt-4.8/porting4.html">
-					Porting from Qt3 to Qt4
-				</a></li>
-			</ul>
+      <!-- 4. (Re)install modules -->
+      <div>&nbsp;</div>
+      <h4 class="lead media-heading">
+        {% increment upgradecount %}. Install modules.
+      </h4>
+      <p>
+        All available modules in v1.4 came packaged with RTXI. For v2.0
+        onwards, modules are split into separate GitHub repositories.
+        Customization also is on a per-module basis. Also, for v1.x, RTXI used
+        the Qt3 framework to build the UI. For v2.0, we moved to Qt4, and with
+        v2.1, we moved to Qt5. 
+      </p>
 
-		</div></div>
+      <p>
+        What this means for you is that at this point, you've installed RTXI
+        v{{ site.rtxi_version }}, but you need to recompile your modules to use
+        updated dependencies. If you are using the DefaultGUI framework, this
+        may be as simple as recompiling your code, but if you added custom Qt
+        elements, you may need to port your code to reflect changes in Qt. 
+      </p>
 
-   </div> <!-- end tab-content -->
-	
-	<div class="row"><div class="col-xs-12">
-		<h2 class="page-header">Benchmark RTXI and the RT Kernel</h2>
-		<p>The final step of any RTXI installation is to benchmark RTXI and the real-time kernel it uses. Tests center around the built-in xenomai latency test and the RT benchmarking module within RTXI. <a href="http://rtxi.org/docs/troubleshoot/2014/12/04/benchmarking-real-time-performance/">An explanation of what exactly the tests measure</a> is available in our documentation.  
-		</p>
-	</div></div>
+      <p>
+        All modules on the <a href="/modules/">modules page</a> are up-to-date
+        for v{{ site.rtxi_version }}. See the following documentation on
+        porting to old Qt code to Qt5. 
+      </p>
 
-	<div>&nbsp;</div>
+      <ul>
+        <li><a href="https://wiki.qt.io/Transition_from_Qt_4.x_to_Qt5">
+          Transition from Qt 4.x to Qt5
+        </a></li>
+        <li><a href="http://doc.qt.io/qt-5/portingguide.html">
+          Qt5 Porting Guide
+        </a></li>
+        <li><a href="http://qt-project.org/doc/qt-4.8/porting4.html">
+          Porting from Qt3 to Qt4
+        </a></li>
+      </ul>
 
-	{% include benchmarking.html %}
+    </div></div>
+
+  </div> <!-- end tab-content -->
+  
+  <div class="row"><div class="col-xs-12">
+    <h2 class="page-header">Benchmark RTXI and the RT Kernel</h2>
+
+    <p>
+      The final step of any RTXI installation is to benchmark RTXI and the
+      real-time kernel it uses. Tests center around the built-in xenomai
+      latency test and the RT benchmarking module within RTXI. 
+      <a href="http://rtxi.org/docs/troubleshoot/2014/12/04/benchmarking-real-time-performance/">
+        An explanation of what exactly the tests measure</a> is available in 
+      our documentation.  
+    </p>
+  </div>
+  </div>
+
+  <div>&nbsp;</div>
+
+  {% include benchmarking.html %}
 
 </div>

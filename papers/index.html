@@ -2,125 +2,140 @@
 title: Papers
 layout: default
 modulus: 10
-tag_content: "If your use of RTXI leads to publication, please cite RTXI in your paper. We get our funding from the NIH, and citations will help when our grant renewal comes around. Cite: Lin et al. Real-time Experiment Interface for biological control applications. Conf Proc IEEE Eng Med Biol Soc (2010) vol. 1 pp. 4160-3."
+tag_content: "If your use of RTXI leads to publication, please cite RTXI in
+your paper. We get our funding from the NIH, and citations will help when our
+grant renewal comes around. Cite: Lin et al. Real-time Experiment Interface for
+biological control applications. Conf Proc IEEE Eng Med Biol Soc (2010) vol. 1
+pp. 4160-3."
 
 extra_js: "
-   <script src='/assets/js/isotope.pkgd.min.js'></script>
+  <script src='/assets/js/isotope.pkgd.min.js'></script>
 
-   <script>
-   $( function () {
-		var qsRegex;
+  <script>
+  $( function () {
+    var qsRegex;
   
-      var $container = $('#papergrid').isotope({
-         itemSelector: '.item',
-         layoutMode: 'masonry',
-			filter: function() {
-				return qsRegex ? $(this).text().match( qsRegex ) : true;
-			}
+    var $container = $('#papergrid').isotope({
+      itemSelector: '.item',
+      layoutMode: 'masonry',
+      filter: function() {
+        return qsRegex ? $(this).text().match( qsRegex ) : true;
+      }
+    });
+
+    var $quicksearch = $('#quicksearch').keyup( debounce( function() {
+      qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+      $container.isotope({
+        filter: function() {
+          return qsRegex ? $(this).text().match( qsRegex ) : true;
+        }
       });
-
-		var $quicksearch = $('#quicksearch').keyup( debounce( function() {
-			qsRegex = new RegExp( $quicksearch.val(), 'gi' );
-			$container.isotope({
-				filter: function() {
-					return qsRegex ? $(this).text().match( qsRegex ) : true;
-				}
-			});
-			$('.btn-toolbar').each( function( i, buttonGroup ) {
-				var $buttonGroup = $( buttonGroup );
-				$buttonGroup.find('.active').removeClass('active');
-				$buttonGroup.find('.all-papers').addClass('active');
-			});
-		}, 300 ) );
-
-      $('#paperfilters').on( 'click', 'button', function() {
-         var filterValue = $(this).attr('data-filter');
-			$('#quicksearch').val('');
-         $container.isotope({ filter: filterValue });
-      });
-
       $('.btn-toolbar').each( function( i, buttonGroup ) {
-         var $buttonGroup = $( buttonGroup );
-         $buttonGroup.on( 'click', 'button', function() {
-            $buttonGroup.find('.active').removeClass('active');
-            $( this ).addClass('active');
-         });
+        var $buttonGroup = $( buttonGroup );
+        $buttonGroup.find('.active').removeClass('active');
+        $buttonGroup.find('.all-papers').addClass('active');
       });
-   });
+    }, 300 ) );
 
-	function debounce( fn, threshold ) {
-		var timeout;
-		return function debounced() {
-			if ( timeout ) {
-				clearTimeout( timeout );
-			}
-			function delayed() {
-				fn();
-				timeout = null;
-			}
-			timeout = setTimeout( delayed, threshold || 100 );
-		}
-	}
-   </script>
+    $('#paperfilters').on( 'click', 'button', function() {
+      var filterValue = $(this).attr('data-filter');
+      $('#quicksearch').val('');
+      $container.isotope({ filter: filterValue });
+    });
+
+    $('.btn-toolbar').each( function( i, buttonGroup ) {
+      var $buttonGroup = $( buttonGroup );
+      $buttonGroup.on( 'click', 'button', function() {
+        $buttonGroup.find('.active').removeClass('active');
+        $( this ).addClass('active');
+      });
+    });
+  });
+
+  function debounce( fn, threshold ) {
+    var timeout;
+    return function debounced() {
+      if ( timeout ) {
+        clearTimeout( timeout );
+      }
+      function delayed() {
+        fn();
+        timeout = null;
+      }
+      timeout = setTimeout( delayed, threshold || 100 );
+    }
+  }
+  </script>
 "
 ---
 
 <div class="container">
-   <h2 class="page-header">Papers</h2>
-   <p>If your use of RTXI leads to publication, please cite RTXI in your paper. We get our funding from the NIH, and citations will help when our grant renewal comes around. Cite: </p>
-   <div class="well">Lin et al. Real-time Experiment Interface for biological control applications. Conf Proc IEEE Eng Med Biol Soc (2010) vol. 1 pp. 4160-3</div>
-   
-   <p>Below is our list of papers that cite RTXI. We're always on the lookout for new research, but we'd love to hear from you if you've got something in the works.</p>
+  <h2 class="page-header">Papers</h2>
+  <p>
+    If your use of RTXI leads to publication, please cite RTXI in your paper.
+    We get our funding from the NIH, and citations will help when our grant
+    renewal comes around. Cite: 
+  </p>
+  <div class="well">
+    Lin et al. Real-time Experiment Interface for biological control
+    applications. Conf Proc IEEE Eng Med Biol Soc (2010) vol. 1 pp. 4160-3
+  </div>
+  
+  <p>
+    Below is our list of papers that cite RTXI. We're always on the lookout for
+    new research, but we'd love to hear from you if you've got something in the
+    works.
+  </p>
 </div>
 
 <div>&nbsp;</div>
 <div class="container">
-	<p><input type="text" id="quicksearch" placeholder=" Search all papers" 
-	    style="width:100%" />
-	</p>
+  <p><input type="text" id="quicksearch" placeholder=" Search all papers" 
+     style="width:100%" />
+  </p>
 </div>
 
 {% capture chunkvar %}{% increment chunkcount %}{% endcapture %}
 {% assign flag="false" %}
 <div class="container" style="text-align:center">
-	<div id="paperfilters" role="toolbar" data-toggle="buttons"
-        class="btn-toolbar" style="display:inline-block">
-		<button type="button" class="btn btn-danger btn active all-papers" 
-				  data-filter="*" role="button" data-toggle="button" 
-				  aria-pressed="true" style="margin-top:5px">All
-		</button>
-		{% for post in site.categories.papers %} 
-			{% capture chunkflag %}{{ forloop.index | modulo:page.modulus }}{% endcapture %}
-			{% if chunkflag == "0"%}
-				{% assign flag = "true" %}
-			{% endif %}
+  <div id="paperfilters" role="toolbar" data-toggle="buttons"
+      class="btn-toolbar" style="display:inline-block">
+    <button type="button" class="btn btn-danger btn active all-papers" 
+          data-filter="*" role="button" data-toggle="button" 
+          aria-pressed="true" style="margin-top:5px">All
+    </button>
+    {% for post in site.categories.papers %} 
+      {% capture chunkflag %}{{ forloop.index | modulo:page.modulus }}{% endcapture %}
+      {% if chunkflag == "0"%}
+        {% assign flag = "true" %}
+      {% endif %}
 
-			{% capture thisyear %}{{ post.date | date: '%y' }}{% endcapture %}
-			{% if forloop.index == 1 %}
-				{% capture chunkvar %}{% increment chunkcount %}{% endcapture %}
-				{% capture startyear %}{{ thisyear }}{% endcapture %}
-			{% elsif thisyear != lastyear  and  flag == "true" %}
-			<button type="button" class="btn btn-danger btn" data-toggle="button"
-					  data-filter=".chunk{{ chunkvar }}" role="button" 
-					  style="margin-top:5px">
-				{% if lastyear == startyear %}'{{ lastyear }}
-				{% else %}'{{ lastyear }}-{{startyear}}
-				{% endif %}
-			</button>
-				{% assign flag == "false" %}
-				{% capture startyear %}{{ thisyear }}{% endcapture %}
-				{% capture chunkvar %}{% increment chunkcount %}{% endcapture %}
-			{% endif %}
-			{% capture lastyear %}{{ thisyear }}{% endcapture %}
-		{% endfor %}
-		<button type="button" class="btn btn-danger btn" role="button" 
-				  data-toggle="button" data-filter=".chunk{{ chunkvar}}" 
-				  style="margin-top:5px">
-			{% if lastyear == startyear %}'{{ lastyear }}
-			{% else %}'{{ lastyear }}-{{startyear}}
-			{% endif %}
-		</button>
-	</div>
+      {% capture thisyear %}{{ post.date | date: '%y' }}{% endcapture %}
+      {% if forloop.index == 1 %}
+        {% capture chunkvar %}{% increment chunkcount %}{% endcapture %}
+        {% capture startyear %}{{ thisyear }}{% endcapture %}
+      {% elsif thisyear != lastyear  and  flag == "true" %}
+      <button type="button" class="btn btn-danger btn" data-toggle="button"
+            data-filter=".chunk{{ chunkvar }}" role="button" 
+            style="margin-top:5px">
+        {% if lastyear == startyear %}'{{ lastyear }}
+        {% else %}'{{ lastyear }}-{{startyear}}
+        {% endif %}
+      </button>
+        {% assign flag == "false" %}
+        {% capture startyear %}{{ thisyear }}{% endcapture %}
+        {% capture chunkvar %}{% increment chunkcount %}{% endcapture %}
+      {% endif %}
+      {% capture lastyear %}{{ thisyear }}{% endcapture %}
+    {% endfor %}
+    <button type="button" class="btn btn-danger btn" role="button" 
+          data-toggle="button" data-filter=".chunk{{ chunkvar}}" 
+          style="margin-top:5px">
+      {% if lastyear == startyear %}'{{ lastyear }}
+      {% else %}'{{ lastyear }}-{{startyear}}
+      {% endif %}
+    </button>
+  </div>
 </div>
 
 <div style="border-bottom: 2px solid #eee; margin-bottom: 10px;" 
@@ -129,37 +144,37 @@ extra_js: "
 {% capture chunkvar %}{% increment chunkbodycount %}{% endcapture %}
 {% assign flag = "false" %}
 <div class="container"><div class="row isotope" id="papergrid">
-   {% for post in site.categories.papers %}
-      {% capture chunkflag %}{{ forloop.index | modulo:page.modulus }}{% endcapture %}
-      {% capture thisyear %}{{ post.date | date: '%y' }}{% endcapture %}
-      {% if chunkflag == "0" %}
-         {% assign flag = "true" %}
-      {% endif %}
+  {% for post in site.categories.papers %}
+    {% capture chunkflag %}{{ forloop.index | modulo:page.modulus }}{% endcapture %}
+    {% capture thisyear %}{{ post.date | date: '%y' }}{% endcapture %}
+    {% if chunkflag == "0" %}
+      {% assign flag = "true" %}
+    {% endif %}
 
-      {% if forloop.index == 1 %}
-         {% capture chunkvar %}{% increment chunkbodycount %}{% endcapture %}
-      {% elsif thisyear != lastyear  and  flag == "true" %}
-         {% capture chunkvar %}{% increment chunkbodycount %}{% endcapture %}
-         {% assign flag = "false" %}
-      {% endif %}
-      {% capture lastyear %}{{ thisyear }}{% endcapture %}
-   
-      <div class="item col-sm-6 col-md-4 chunk{{chunkvar}}" 
-		     data-category="chunk{{chunkvar}}">
-         <a href="{{ post.url }}" style="color:inherit;">
-            <div class="panel panel-primary">
-               <div class="panel-heading">
-						<h4 class="panel-title">{{ post.title }}</h4>
-					</div>
-               <div class="panel-body hidden-xs">
-						<div hidden> {% for author in post.authors %}
-						             {{ author.name }} 
-						             {% endfor %}
-						</div>
-						{{ post.excerpt | truncate:750 }}
-					</div>
+    {% if forloop.index == 1 %}
+      {% capture chunkvar %}{% increment chunkbodycount %}{% endcapture %}
+    {% elsif thisyear != lastyear  and  flag == "true" %}
+      {% capture chunkvar %}{% increment chunkbodycount %}{% endcapture %}
+      {% assign flag = "false" %}
+    {% endif %}
+    {% capture lastyear %}{{ thisyear }}{% endcapture %}
+  
+    <div class="item col-sm-6 col-md-4 chunk{{chunkvar}}" 
+         data-category="chunk{{chunkvar}}">
+      <a href="{{ post.url }}" style="color:inherit;">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h4 class="panel-title">{{ post.title }}</h4>
+          </div>
+          <div class="panel-body hidden-xs">
+            <div hidden> {% for author in post.authors %}
+                         {{ author.name }} 
+                         {% endfor %}
             </div>
-         </a>
-      </div>
-   {% endfor %}
+            {{ post.excerpt | truncate:750 }}
+          </div>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
 </div></div>

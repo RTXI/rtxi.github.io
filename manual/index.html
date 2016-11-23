@@ -54,27 +54,27 @@ var topblockHeight = $('#topblock').outerHeight(true);
 
 /* activate sidebar */
 $('#sidebar').affix({
-	offset: {
-		top: topblockHeight
-	}
+  offset: {
+    top: topblockHeight
+  }
 });
 
 /* activate scrollspy menu */
 $('body').scrollspy({
-	target: '#leftCol',
-	offset: navHeight
+  target: '#leftCol',
+  offset: navHeight
 });
 
 /* enable smooth scrolling */
 $('#leftCol a').on('click', function(event) {
-	event.preventDefault();
-	var hash = this.hash;
+  event.preventDefault();
+  var hash = this.hash;
 
-	$('html, body').animate({
-		scrollTop: $(hash).offset().top
-	}, 200, function() {
-		window.location.hash = hash;
-	});
+  $('html, body').animate({
+    scrollTop: $(hash).offset().top
+  }, 200, function() {
+    window.location.hash = hash;
+  });
 });
 </script>
 "
@@ -82,23 +82,23 @@ $('#leftCol a').on('click', function(event) {
 extra_css: "
 <style>
 #sidebar.affix-top {
-	position: static;
-	margin-top: 30px;
+  position: static;
+  margin-top: 30px;
 }
   
 #sidebar.affix {
-	position: fixed;
-	top:70px;
+  position: fixed;
+  top:70px;
 }
 
 img {
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	display: block;
-	max-width: 100%;
-	height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 #sidebar.nav .active {
@@ -147,35 +147,37 @@ pre code{
 
 <div class="container">
 
-	<div class="row" id="topblock"><div class="col-xs-12">
-		<h2 class="page-header">{{ page.title }}</h2>
-	</div></div>
-		
+  <div class="row" id="topblock"><div class="col-xs-12">
+    <h2 class="page-header">{{ page.title }}</h2>
+  </div></div>
+    
 
-	<div class="row">
-		<nav class="col-sm-3 col-lg-2 hidden-xs" id="leftCol">
-			<ul class="nav" id="sidebar" data-spy="affix">
-			{% for section in page.sections %}
-				{% if section.subsections == nil %} 
-				<li><a href="#{{ section.tag }}">{{ section.name }}</a></li>
-				{% else %}
-				<li><a href="#{{ section.tag }}">{{ section.name }}</a>
-					<ul class="nav collapse" style="padding-left:20px">
-						{% for subsection in section.subsections %}
-						<li><a href="#{{ subsection.tag }}">{{ subsection.name }}</a></li>
-						{% endfor %}
-					</ul>
-				</li>
-				{% endif %}
-			{% endfor %}
-			</ul>
-		</nav>
+  <div class="row">
+    <nav class="col-sm-3 col-lg-2 hidden-xs" id="leftCol">
+      <ul class="nav" id="sidebar" data-spy="affix">
+      {% for section in page.sections %}
+        {% if section.subsections == nil %} 
+        <li><a href="#{{ section.tag }}">{{ section.name }}</a></li>
+        {% else %}
+        <li><a href="#{{ section.tag }}">{{ section.name }}</a>
+          <ul class="nav collapse" style="padding-left:20px">
+            {% for subsection in section.subsections %}
+            <li><a href="#{{ subsection.tag }}">{{ subsection.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% endif %}
+      {% endfor %}
+      </ul>
+    </nav>
 
-		<div class="col-sm-9 col-lg-10">
-		{% for section in page.sections %}
-			<div id="{{ section.tag }}" style="padding-top:30px; margin-top:-30px">{% include manual/{{ section.tag }}.html %}</div>
-		{% endfor %}
-		</div>
-	</div>
-	
+    <div class="col-sm-9 col-lg-10">
+    {% for section in page.sections %}
+      <div id="{{ section.tag }}" 
+           style="padding-top:30px; margin-top:-30px">{% include manual/{{ section.tag }}.html %}
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+  
 </div>

@@ -1,7 +1,8 @@
 ---
 title: Modules
 layout: default
-tag_content: "To install a module, take its name from the left-hand side of the below table and then enter these commands in the terminal."
+tag_content: "To install a module, take its name from the left-hand side of the
+below table and then enter these commands in the terminal."
 
 extra_css: "
   <link href=\"/assets/css/dataTables.min.css\" rel=\"stylesheet\"> 
@@ -31,8 +32,13 @@ extra_js: "
 ---
 
 <div class="container">
-   <h2 class="page-header">Modules</h2>
-   <p>To install a module, take its name from the left-hand side of the below table and then enter these commands in the terminal.</p>
+
+  <h2 class="page-header">Modules</h2>
+
+  <p>
+    To install a module, take its name from the left-hand side of the below
+    table and then enter these commands in the terminal.
+  </p>
 
 {% highlight bash %}
 $ git clone https://github.com/rtxi/MODULE_NAME.git
@@ -46,45 +52,57 @@ $ sudo make install
 <p>&nbsp;</p>
 
 <div class="container">
-   <div class="visible-xs">
-   <table class="table table-hover dt-responsive" id="modules_small">
-      <thead><tr>
-         <th class="col-xs-2" style="text-align: center">Name</th>
-         <th class="col-xs-10" style="text-align: center; white-space: normal;">Description</th>
-      </tr></thead>
-      <tbody>
-         {% for module in site.pages %}
-            {% if module.url contains "modules" and module.url != "/modules/" %}
-               <tr>
-                  <td><a href="{{ module.url }}">{{ module.title }}</a></td>
-                  <td style="white-space: nowrap;"> {{ module.content | split:"<!--start-->" | last | split:"<!--end-->" | first | strip_html | truncate:500 }} 
-                  </td>
-               </tr>
-            {% endif %}
-         {% endfor %}
-      </tbody>
-   </table>
-   </div>
+  <div class="visible-xs">
+  <table class="table table-hover dt-responsive" 
+         id="modules_small">
+    <thead><tr>
+      <th class="col-xs-2" 
+          style="text-align: center">Name
+      </th>
+      <th class="col-xs-10" 
+          style="text-align: center; white-space: normal;">Description
+      </th>
+    </tr></thead>
+    <tbody>
+      {% for module in site.pages %}
+        {% if module.url contains "modules" and module.url != "/modules/" %}
+          <tr>
+            <td><a href="{{ module.url }}">{{ module.title }}</a></td>
+            <td style="white-space: nowrap;"> {{ module.content | split:"<!--start-->" | last | split:"<!--end-->" | first | strip_html | truncate:500 }} 
+            </td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
 </div>
 
 <div class="container">
-   <div class="hidden-xs">
-   <table class="table table-hover" id="modules_large">
-      <thead><tr>
-         <th class="col-sm-2" style="text-align: center">Name</th>
-         <th class="col-sm-10" style="text-align: center; white-space: normal;">Description</th>
-      </tr></thead>
-      <tbody>
-         {% for module in site.pages %}
-            {% if module.url contains "modules" and module.url != "/modules/" %}
-               <tr>
-                  <td><a href="{{ module.url }}">{{ module.title }}</a></td>
-                  <td> {{ module.content | split:"<!--start-->" | last | split:"<!--end-->" | first | strip_html | truncate:500 }} 
-                  </td>
-               </tr>
-            {% endif %}
-         {% endfor %}
-      </tbody>
-   </table>
-   </div>
+  <div class="hidden-xs">
+  <table class="table table-hover" id="modules_large">
+    <thead><tr>
+      <th class="col-sm-2" 
+          style="text-align: center">Name
+      </th>
+      <th class="col-sm-10" 
+          style="text-align: center; white-space: normal;">Description
+      </th>
+    </tr></thead>
+    <tbody>
+      {% for module in site.pages %}
+        {% if module.url contains "modules" and module.url != "/modules/" %}
+          <tr>
+            <td>
+              <a href="{{ module.url }}">{{ module.title }}</a>
+            </td>
+            <td> {{ module.content | split:"<!--start-->" | last | split:"<!--end-->" | first | strip_html | truncate:500 }} 
+            </td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+
 </div>
