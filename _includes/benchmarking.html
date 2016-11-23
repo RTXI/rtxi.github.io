@@ -1,65 +1,116 @@
 
 <!-- Begin benchmarking section -->
 <div class="row"><div class="col-xs-12">
-	<h3 class="lead media-heading">Xenomai latency test</h3>
-	<p>Go to the base of the RTXI directory you cloned from GitHub and run:</p>
+  <h3 class="lead media-heading">Xenomai latency test</h3>
+  <p>Go to the base of the RTXI directory you cloned from GitHub and run:</p>
+
 {% highlight bash %}
 $ cd scripts/dev/
 $ ./test_rt_kernel.sh
 {% endhighlight %}
-	<p>This script will test kernel latencies at rate of 10 kHz while under stress. The test lasts 30 minutes. If at any point you need to stop the test, you can kill the process by entering <code>CTRL+c</code> in the terminal running the stress test. Then, run <code>pkill stress</code>. If you forget to use <code>pkill</code>, the system will stop measuring latencies, but it will still be under stress. Depending on your system, you may experience lag in your desktop during the test. Keep in mind that the stress test is designed to assess real-time performance under worst-case conditions. If your system performs well under heavy load, you can be reassured that it will perform well during your experiments.
-	</p>
-	<p>Once completed, the script will generate a histogram of latencies. You can view it from the command line with the image viewer, eog (<u>E</u>ye <u>o</u>f <u>G</u>NOME). Run:
-	</p>
+
+  <p>This script will test kernel latencies at rate of 10 kHz while under
+  stress. The test lasts 30 minutes. If at any point you need to stop the test,
+  you can kill the process by entering <code>CTRL+c</code> in the terminal
+  running the stress test. Then, run <code>pkill stress</code>. If you forget
+  to use <code>pkill</code>, the system will stop measuring latencies, but it
+  will still be under stress. Depending on your system, you may experience lag
+  in your desktop during the test. Keep in mind that the stress test is
+  designed to assess real-time performance under worst-case conditions. If your
+  system performs well under heavy load, you can be reassured that it will
+  perform well during your experiments.
+  </p>
+
+  <p>Once completed, the script will generate a histogram of latencies. You can
+  view it from the command line with the image viewer, eog (<u>E</u>ye
+  <u>o</u>f <u>G</u>NOME). Run:
+  </p>
+
 {% highlight bash %}
 $ eog test_rt_plot.svg
 {% endhighlight %}
 
-	<p>For systems with discrete graphics cards and somewhat recent processors, latencies should consistently remain on average below 2-3 μs. Worst case latencies may get as high as 20-30 μs, but keep in mind that these spikes occur often once or twice over the 30 minute duration of the stress test, which at 10 kHz constitutes 18 million cycles. A histogram of latencies will be generated at the end of the test, so you see can how often high latencies occur. Compare your performance to what is available on our <a href="/stats">stats and benchmarks</a> page and let us know if your performance is problematic. 
-	</p>
+  <p>For systems with discrete graphics cards and somewhat recent processors,
+  latencies should consistently remain on average below 2-3 μs. Worst case
+  latencies may get as high as 20-30 μs, but keep in mind that these spikes
+  occur often once or twice over the 30 minute duration of the stress test,
+  which at 10 kHz constitutes 18 million cycles. A histogram of latencies will
+  be generated at the end of the test, so you see can how often high latencies
+  occur. Compare your performance to what is available on our <a
+  href="/stats">stats and benchmarks</a> page and let us know if your 
+  performance is problematic.
+  </p>
 
-	<div>&nbsp;</div>
-	<h3 class="lead media-heading">Record the RT benchmarks module</h3>
-	<p>Record the RT Benchmarks module in RTXI using the Data Recorder module. RT Benchmarks displays runtime statistics for your system, such as the computation time, real-time period, and jitter. For those unfamiliar with the terms, here are brief definitions: 
-	</p>
-	<dl class="dl-horizontal">
-		<dt>Computation Time</dt>
-			<dd>The time it takes to compute all the real-time components running, including all modules, data streams, and timers. It should always be less than the real-time period. Otherwise is an overrun.
-			</dd>
-		<dt>Real-time Period</dt>
-			<dd>The elapsed time for one complete real-time cycle, encompassing the computation time, scheduler, sleep time, etc. This number is set by choosing the frequency in the System Control Panel module. Pay attention to the peak real-time period. A period twice what the period should be constitutes an overrun. 
-			</dd>
-		<dt>Real-time Jitter</dt>
-			<dd>Jitter is the standard deviation of all the real-time periods, starting from when the module was opened or the reset button pressed and ending at the last completed real-time period. 
-			</dd>
-	</dl>
-	<p>To record the RT Benchmarks module:</p>
-	<ol>
-		<li>Open RTXI and open the Data Recorder and RT Benchmarks module from the System drop-down menu. 
-		</li>
-		<li>In the Data Recorder, click "Choose File" and name the file you want data to be written to.
-		</li>
-		<li>In the Data Recorder, for "Block," choose "Performance Measurement." For "Type," choose "State." For "Channel", select "Comp Time" and hit "Add." Repeat for the "Real-time Period" and "RT Jitter" channels. 
-		</li>
-		<li>Hit "Start Recording."
-		</li>
-		<li>When done recording, hit "Stop Recording."
-	</ol>
+  <div>&nbsp;</div>
+  <h3 class="lead media-heading">Record the RT benchmarks module</h3>
+  <p>Record the RT Benchmarks module in RTXI using the Data Recorder module. RT
+  Benchmarks displays runtime statistics for your system, such as the
+  computation time, real-time period, and jitter. For those unfamiliar with the
+  terms, here are brief definitions: 
+  </p>
 
-	<img class="img-responsive center-block" src="{{ site.img }}/record-rt-benchmarks.png"><img>
+  <dl class="dl-horizontal">
+    <dt>Computation Time</dt>
+      <dd>The time it takes to compute all the real-time components running,
+      including all modules, data streams, and timers. It should always be less
+      than the real-time period. Otherwise is an overrun.
+      </dd>
+    <dt>Real-time Period</dt>
+      <dd>The elapsed time for one complete real-time cycle, encompassing the
+      computation time, scheduler, sleep time, etc. This number is set by
+      choosing the frequency in the System Control Panel module. Pay attention
+      to the peak real-time period. A period twice what the period should be
+      constitutes an overrun. 
+      </dd>
+    <dt>Real-time Jitter</dt>
+      <dd>Jitter is the standard deviation of all the real-time periods,
+      starting from when the module was opened or the reset button pressed and
+      ending at the last completed real-time period. 
+      </dd>
+  </dl>
+  <p>To record the RT Benchmarks module:</p>
+  <ol>
+    <li>Open RTXI and open the Data Recorder and RT Benchmarks module from the
+      System drop-down menu. 
+    </li>
+    <li>In the Data Recorder, click "Choose File" and name the file you want
+      data to be written to.
+    </li>
+    <li>In the Data Recorder, for "Block," choose "Performance Measurement."
+      For "Type," choose "State." For "Channel", select "Comp Time" and hit
+      "Add." Repeat for the "Real-time Period" and "RT Jitter" channels. 
+    </li>
+    <li>Hit "Start Recording."
+    </li>
+    <li>When done recording, hit "Stop Recording."
+  </ol>
 
-	<div>&nbsp;</div>
+  <img class="img-responsive center-block" src="{{ site.img }}/record-rt-benchmarks.png"><img>
 
-	<p><b>Note:</b> You can change the frequency for your measurements via the System Control Panel. Just open the module, change the value for "Frequency," and hit "Apply" to save your changes. 
-	</p>
-	<p><b>Note:</b> If you set the frequency high or record for a long time, the size of the generated files can become unwieldy. Make liberal use of the downsampling functionality in the Data Recorder. 
-	</p>
-	<p>Open up a terminal and move to your RTXI directory. In the <code>scripts/dev/</code> folder, you will find a script called <code>plot_rtxi_performance</code>. This script will extract the performance data from an HDF file and plot it using R. To run it, do:
-	</p>
+  <div>&nbsp;</div>
+
+  <p><b>Note:</b> You can change the frequency for your measurements via the
+  System Control Panel. Just open the module, change the value for "Frequency,"
+  and hit "Apply" to save your changes. 
+  </p>
+
+  <p><b>Note:</b> If you set the frequency high or record for a long time, the
+  size of the generated files can become unwieldy. Make liberal use of the
+  downsampling functionality in the Data Recorder. 
+  </p>
+
+  <p>Open up a terminal and move to your RTXI directory. In the
+  <code>scripts/dev/</code> folder, you will find a script called
+  <code>plot_rtxi_performance</code>. This script will extract the performance
+  data from an HDF file and plot it using R. To run it, do:
+  </p>
+
 {% highlight bash %}
 $ ./plot_rtxi_performance.sh FILENAME
 {% endhighlight %}
-	<p><code>FILENAME</code> is the name of the *.h5 file you generated with the Data Recorder. <a href="/stats">Compare your output with ours</a>, and let us know if you are having performance issues. 
-	</p>
-</div></div>
 
+  <p><code>FILENAME</code> is the name of the *.h5 file you generated with the
+  Data Recorder. <a href="/stats">Compare your output with ours</a>, and let us
+  know if you are having performance issues. 
+  </p>
+</div></div>

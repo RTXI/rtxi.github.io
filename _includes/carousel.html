@@ -1,44 +1,54 @@
 <link href="/assets/css/carousel.css" rel="stylesheet">
 
 <!-- Carousel -->
-	<div id="myCarousel" class="carousel slide" data-interval="false" data-ride="" data-pause="hover">
-	
-	<!-- Indicators -->
-	<ol class="carousel-indicators">
-		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		<li data-target="#myCarousel" data-slide-to="1"></li>
-	</ol>
+  <div id="myCarousel" class="carousel slide" data-interval="false" 
+       data-ride="" data-pause="hover">
+  
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+  </ol>
 
-	<!-- Carousel text -->
-	<div class="carousel-inner" role="listbox">
-		<div class="item active">
-			<div class="container">
-				<img src="{{ site.img }}/rtxi-banner-white.svg" class="hidden-xs img-responsive center-block" style="margin-top:75px;">
-				<img src="{{ site.img }}/rtxi-banner-white-vertical.svg" class="visible-xs img-responsive center-block" style="margin-top:75px;">
-				
-				<div class="carousel-caption">
-					<p class="lead"></p>
-				</div>
-			</div>
-		</div>
-		<div class="item"><a href="/conference/">
-			<div class="container" style="margin-bottom:20px">
-				<img src="{{ site.img }}/rtxi-2015-white.svg" class="img-responsive center-block" style="margin-top:10px; max-height:300px"> 
-				<div class="carousel-caption">
-					<p class="lead">Thanks, everyone, for coming out to Atlanta. We're looking forward to working with every one of you.
-					</p>
-				</div>
-			</div>
-		</a></div>
-	</div>
+  <!-- Carousel text -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <div class="container">
+        <img src="{{ site.img }}/rtxi-banner-white.svg" 
+             class="hidden-xs img-responsive center-block" 
+             style="margin-top:75px;">
+        <img src="{{ site.img }}/rtxi-banner-white-vertical.svg" 
+             class="visible-xs img-responsive center-block" 
+             style="margin-top:75px;">
+        <div class="carousel-caption">
+          <p class="lead"></p>
+        </div>
+      </div>
+    </div>
+    <div class="item"><a href="/conference/">
+      <div class="container" style="margin-bottom:20px">
+        <img src="{{ site.img }}/rtxi-2015-white.svg" 
+             class="img-responsive center-block" 
+             style="margin-top:10px; max-height:300px"> 
+        <div class="carousel-caption">
+          <p class="lead">
+          Thanks, everyone, for coming out to Atlanta. We're looking forward to
+          working with every one of you.
+          </p>
+        </div>
+      </div>
+    </a></div>
+  </div>
 
-	<!-- Carousel left/right button -->
-	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-		<span class="glyphicon glyphicon-chevron-left"></span>
-		<span class="sr-only">Previous</span>
-	</a>
-	<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-		<span class="glyphicon glyphicon-chevron-right"></span>
-		<span class="sr-only">Next</span>
-	</a>
+  <!-- Carousel left/right button -->
+  <a class="left carousel-control" href="#myCarousel" role="button"
+     data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button"
+     data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div> <!-- /.carousel -->
