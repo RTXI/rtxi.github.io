@@ -24,6 +24,7 @@ GEM
       rmagick (>= 2.13.1)
     forwardable-extended (2.6.0)
     gemoji (2.1.0)
+    github-markdown (0.6.9)
     github-pages (105)
       activesupport (= 4.2.7)
       github-pages-health-check (= 1.2.0)
@@ -156,6 +157,7 @@ PLATFORMS
 
 DEPENDENCIES
   fileutils
+  github-markdown
   github-pages (= 105)
   html-proofer
   json
