@@ -4,7 +4,11 @@ layout: docpost
 categories: docs tutorials
 ---
 
-You can manually configure RTXI with many options. For example, you can run RTXI 2.0 using the RTAI rather than the default Xenomai, and you can set up RTXI in non-real-time mode using the POSIX interface. You may also direct RTXI to libraries/packages in non-standard locations. The full configure options for are below:
+You can manually configure RTXI with many options. For example, you can run
+RTXI {{ site.rtxi_version }} using the RTAI rather than the default Xenomai,
+and you can set up RTXI in non-real-time mode using the POSIX interface. You
+may also direct RTXI to libraries/packages in non-standard locations. The full
+configure options for are below:
 
 {% highlight bash %}
 configure' configures RTXI trunk to adapt to many kinds of systems.
@@ -128,12 +132,3 @@ Some influential environment variables:
   CXXCPP      C++ preprocessor
   XMKMF       Path to xmkmf, Makefile generator for X Window System
 {% endhighlight %}
-
-If there is a flag you want to set, say, `--enable-ni`, go to the base of the RTXI git directory and run:
-{% highlight bash %}
-$ ./configure --enable-ni
-$ make -j`nproc`
-$ sudo make install -j`nproc`
-{% endhighlight %}
-
-These three lines will apply your desired confguration to the build options and then compile and install RTXI.
