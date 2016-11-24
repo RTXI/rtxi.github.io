@@ -1,28 +1,98 @@
 ---
 title: Using RTXI for Dynamic Clamp
-layout: docpost
+layout: post
 categories: docs tutorials
 ---
-The dynamic clamp is a real-time electrophysiology technique where simulated membrane conductances are artificially injected into a cell via intracellular electrodes. It works by reading membrane potentials, amplifiing, and then feeding them into a dynamic clamp system that contains a model of the desired membrane conductance and generates a current to be injected back into the cell in real time. For digital systems, the membrane conductance is a set of equations that must be computed, whereas for an analog system, the current is the output of a dedicated electrical circuit. The injected dynamic clamp current acts on the cell in parallel with other membrane currents which, depending on the model equations, can represent ion channels, electrical coupling between cells, or synaptic input. This technique has many possible uses. With neurons, it can be used to construct hybrid networks of real and model neurons and even attach virtual dendrites. For an excellent video tutorial, see this video for the following paper in the Journal of Visualized Experiments.  
+
+The dynamic clamp is a real-time electrophysiology technique where simulated
+membrane conductances are artificially injected into a cell via intracellular
+electrodes. It works by reading membrane potentials, amplifiing, and then
+feeding them into a dynamic clamp system that contains a model of the desired
+membrane conductance and generates a current to be injected back into the cell
+in real time. For digital systems, the membrane conductance is a set of
+equations that must be computed, whereas for an analog system, the current is
+the output of a dedicated electrical circuit. The injected dynamic clamp
+current acts on the cell in parallel with other membrane currents which,
+depending on the model equations, can represent ion channels, electrical
+coupling between cells, or synaptic input. This technique has many possible
+uses. With neurons, it can be used to construct hybrid networks of real and
+model neurons and even attach virtual dendrites. For an excellent video
+tutorial, see this video for the following paper in the Journal of Visualized
+Experiments.  
 
 ![Dynamic Clamp Figure](/assets/img/dclamp.png)  
 
 #### Electrode Compensation and Dynamic Clamp Instability  
-When dynamic clamp is performed using two intracellular electrodes, one electrode records the membrane potential while the other is used for current injection. In cases where only one intracellular electrode is feasible, the same electrode is used for voltage measurement and current injection. This poses a problem for measurement accuracy because the injected current induces a voltage drop through the electrode. One method to compensate for this issue is to use your amplifier in "bridge balance" mode, which approximates the electrode as a single resistance and subtracts the voltage drop across the electrode from the total recorded voltage. This method can only be used if the electrode resistance stays constant. An alternative method is to operate your amplifier in "discontinuous current clamp" mode, in which the electrode alternates between recording the voltage and injecting current. This method is valid only if the electrode is at least two orders of magnitude faster than what you are trying to observe in the recordings.  
+When dynamic clamp is performed using two intracellular electrodes, one
+electrode records the membrane potential while the other is used for current
+injection. In cases where only one intracellular electrode is feasible, the
+same electrode is used for voltage measurement and current injection. This
+poses a problem for measurement accuracy because the injected current induces a
+voltage drop through the electrode. One method to compensate for this issue is
+to use your amplifier in "bridge balance" mode, which approximates the
+electrode as a single resistance and subtracts the voltage drop across the
+electrode from the total recorded voltage. This method can only be used if the
+electrode resistance stays constant. An alternative method is to operate your
+amplifier in "discontinuous current clamp" mode, in which the electrode
+alternates between recording the voltage and injecting current. This method is
+valid only if the electrode is at least two orders of magnitude faster than
+what you are trying to observe in the recordings.  
 
-It is important to minimize measurement errors in dynamic clamp because the artifacts propagate through the closed-loop and can lead to oscillatory instability. This instability arises when the artificial conductance is comparable to the resting input conductance of the cell and limits the conductance range that can be applied using dynamic clamp. It is directly related to the sampling delay and is exaggerated by insufficient electrode series resistance and capacitance compensation. Increasing the sampling rate of the dynamic clamp system increases dynamic clamp stability; however, this improvement, is constrained by how well the electrode series resistance and capacitance are compensated. Dynamic clamp sampling rates are usually justified by the temporal dynamics of the simulated models. For action potentials on the order of a few milliseconds wide, 10kHz is a common sampling rate. However, faster sampling rates increase the stable operating range for the dynamic clamp system and increase the maximum conductance that maintains a stable system. RTXI is capable of handling much higher sampling rates due to the low overhead in the Linux OS.  
+It is important to minimize measurement errors in dynamic clamp because the
+artifacts propagate through the closed-loop and can lead to oscillatory
+instability. This instability arises when the artificial conductance is
+comparable to the resting input conductance of the cell and limits the
+conductance range that can be applied using dynamic clamp. It is directly
+related to the sampling delay and is exaggerated by insufficient electrode
+series resistance and capacitance compensation. Increasing the sampling rate of
+the dynamic clamp system increases dynamic clamp stability; however, this
+improvement, is constrained by how well the electrode series resistance and
+capacitance are compensated. Dynamic clamp sampling rates are usually justified
+by the temporal dynamics of the simulated models. For action potentials on the
+order of a few milliseconds wide, 10kHz is a common sampling rate. However,
+faster sampling rates increase the stable operating range for the dynamic clamp
+system and increase the maximum conductance that maintains a stable system.
+RTXI is capable of handling much higher sampling rates due to the low overhead
+in the Linux OS.  
 
 #### Numerical Methods  
-Similar to the effect of experimental measurement error, errors in simulating the virtual conductance also affect dynamic clamp performance. Methodologies for implementing the numerical integration of the gating variables typically employ first-order numerical methods, either Euler or exponential Euler. These approximations are used because of the real-time temporal constraints on how rapidly the calculations for integrating the gating variables must occur. In general, numerical accuracy increases as the time step of integration decreases. Unlike traditional model simulations, however, with real-time systems it is not practical to make the time step smaller and simply wait longer for the simulation result. For small time steps, both integration methods are comparable, but at larger time steps, the exponential Euler method performs worse than the Euler method. The error bounds for both methods can be characterized in terms of two ratios: the time step over the time constant (δt/τ), and the voltage measurement error over the slope factor of the steady-state activation curve of the voltage-dependent gating variable (εV/|d|). When δt/τ is large relative to εV/|d|, no amount of improvement in measurement error can improve the error bound due to the numerical inaccuracies caused by a relatively large time step.  
+Similar to the effect of experimental measurement error, errors in simulating
+the virtual conductance also affect dynamic clamp performance. Methodologies
+for implementing the numerical integration of the gating variables typically
+employ first-order numerical methods, either Euler or exponential Euler. These
+approximations are used because of the real-time temporal constraints on how
+rapidly the calculations for integrating the gating variables must occur. In
+general, numerical accuracy increases as the time step of integration
+decreases. Unlike traditional model simulations, however, with real-time
+systems it is not practical to make the time step smaller and simply wait
+longer for the simulation result. For small time steps, both integration
+methods are comparable, but at larger time steps, the exponential Euler method
+performs worse than the Euler method. The error bounds for both methods can be
+characterized in terms of two ratios: the time step over the time constant
+(δt/τ), and the voltage measurement error over the slope factor of the
+steady-state activation curve of the voltage-dependent gating variable
+(εV/|d|). When δt/τ is large relative to εV/|d|, no amount of improvement in
+measurement error can improve the error bound due to the numerical inaccuracies
+caused by a relatively large time step.  
 
 For more information, see:   
 
-1. [Lobb and Paladini. Application of a NMDA Receptor Conductance in Rat Midbrain Dopaminergic Neurons Using the Dynamic Clamp Technique. J Vis Exp (2010) (46)](http://dx.doi.org/10.3791/2275)   
+1. [Lobb and Paladini. Application of a NMDA Receptor Conductance in Rat
+   Midbrain Dopaminergic Neurons Using the Dynamic Clamp Technique. J Vis Exp
+   (2010) (46)](http://dx.doi.org/10.3791/2275)   
 
-2. [Destexhe A, Bal T, eds. Dynamic clamp: From principles to applications. Springer (2009).](http://www.springer.com/biomed/neuroscience/book/978-0-387-89278-8)  
+2. [Destexhe A, Bal T, eds. Dynamic clamp: From principles to applications.
+   Springer
+   (2009).](http://www.springer.com/biomed/neuroscience/book/978-0-387-89278-8)  
 
-3. [Bettencourt J.C., Lillis K.P., Stupin L.R., White J.A. Effects of imperfect dynamic clamp: Computational and experimental results (2008) Journal of Neuroscience Methods, 169 (2): 282-289.](http://dx.doi.org/10.1016/j.jneumeth.2007.10.009)  
+3. [Bettencourt J.C., Lillis K.P., Stupin L.R., White J.A. Effects of imperfect
+   dynamic clamp: Computational and experimental results (2008) Journal of
+   Neuroscience Methods, 169 (2):
+   282-289.](http://dx.doi.org/10.1016/j.jneumeth.2007.10.009)  
 
-4. [R.J. Butera and M.L. McCarthy. Analysis of real-time numerical integration methods applied to dynamic clamp experiments, J. Neural Eng. 1 (2004), pp. 187–194.](http://dx.doi.org/10.1088/1741-2560%2F1%2F4%2F001)  
+4. [R.J. Butera and M.L. McCarthy. Analysis of real-time numerical integration
+   methods applied to dynamic clamp experiments, J. Neural Eng. 1 (2004), pp.
+   187–194.](http://dx.doi.org/10.1088/1741-2560%2F1%2F4%2F001)  
 
-5. [Prinz AA, Abbott LF, Marder E. The dynamic clamp comes of age. (2004) TINS 27: 218–224.](http://dx.doi.org/10.1016/j.tins.2004.02.004)  
+5. [Prinz AA, Abbott LF, Marder E. The dynamic clamp comes of age. (2004) TINS
+   27: 218–224.](http://dx.doi.org/10.1016/j.tins.2004.02.004)  

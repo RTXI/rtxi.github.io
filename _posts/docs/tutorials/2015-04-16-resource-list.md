@@ -1,10 +1,14 @@
 ---
 title: List of Resources
 categories: docs tutorials
-layout: docpost
+layout: post
 ---
 
-There are a lot of things you need to know to be able to fully use RTXI. Fortunately, these things aren't hard to learn, and there is already plenty of documentation online to help you learn it. This is a non-exhaustive list of some good resources to learn what you need. They aren't listed in any specific order.  
+There are a lot of things you need to know to be able to fully use RTXI.
+Fortunately, these things aren't hard to learn, and there is already plenty of
+documentation online to help you learn it. This is a non-exhaustive list of
+some good resources to learn what you need. They aren't listed in any specific
+order.  
 
 #### Using the Command Line
 1. [http://ryanstutorials.net/linuxtutorial/](http://ryanstutorials.net/linuxtutorial/) (see sections on how to navigate around the filesystem and manipulate files)  
@@ -23,6 +27,15 @@ There are a lot of things you need to know to be able to fully use RTXI. Fortuna
 
 #### Qt and GUI Creation
 1. [http://doc.qt.io/qt-4.8/](http://doc.qt.io/qt-4.8/])  
-**Note:** Be careful with some of the Qt tutorials. You don't need to instatiate things like QApplication objects, create qmake.pro files, etc. because RTXI takes care of that. Pay attention to what the UI classes are and how to use the signal/slot API.  
+**Note:** Be careful with some of the Qt tutorials. You don't need to
+instatiate things like QApplication objects, create qmake.pro files, etc.
+because RTXI takes care of that. Pay attention to what the UI classes are and
+how to use the signal/slot API.  
 
-Again, this is a non-exhaustive list of a tiny subset of all that's available online and in print. It takes some time to learn these things, just as it does with anything else. It also wouldn't hurt to learn these things in general, Qt excepted. Unix-like environments are very common on clusters for computational research; Git and GitHub are widely used for coding projects; and C++ very fast and good to learn, especially given that other languages often use it as a backend to speed up loops and other heavy sections of code.  
+Again, this is a non-exhaustive list of a tiny subset of all that's available
+online and in print. It takes some time to learn these things, just as it does
+with anything else. It also wouldn't hurt to learn these things in general, Qt
+excepted. Unix-like environments are very common on clusters for computational
+research; Git and GitHub are widely used for coding projects; and C++ very fast
+and good to learn, especially given that other languages often use it as a
+backend to speed up loops and other heavy sections of code.  

@@ -1,6 +1,6 @@
 ---
 title: My System Is Frozen or Slow!
-layout: docpost
+layout: post
 categories: docs troubleshoot
 ---
 

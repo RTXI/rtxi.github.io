@@ -1,6 +1,6 @@
 ---
 title: Manually Configuring RTXI
-layout: docpost
+layout: post
 categories: docs tutorials
 ---
 

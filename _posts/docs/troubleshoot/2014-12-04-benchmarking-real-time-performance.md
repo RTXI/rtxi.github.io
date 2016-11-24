@@ -1,6 +1,6 @@
 ---
 title: Benchmarking Real-time Performance
-layout: docpost
+layout: post
 categories: docs troubleshoot
 ---
 
