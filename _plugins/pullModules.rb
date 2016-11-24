@@ -121,7 +121,7 @@ module Jekyll
         yamlheader = 
           "---\n" +
           "title: #{repo}\n" +
-          "layout: module\n" +
+          "layout: post\n" +
           "category: modules\n" + 
           "cap-title: #{repo.gsub(/-/,' ').split.map(&:capitalize).join(' ')}\n" +
           "---\n\n"
