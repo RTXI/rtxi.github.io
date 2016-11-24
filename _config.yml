@@ -66,6 +66,7 @@ exclude:
  - "assets/js/src/"
  - "assets/css/src/"
  - "Gruntfile.js"
+ - "Rakefile"
  - "package.json"
  - "node_modules"
  - "bower.json"
