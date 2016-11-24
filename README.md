@@ -12,23 +12,24 @@ $ sudo apt-get install nodejs ruby imagemagick libmagickwand-dev npm curl
 ````
 
 Ruby is used for all the gems you need to use Jekyll to build the site. You can
-use the default gem for your OS, but I recommend using RVM so that we an keep
-the ruby version consistent. RVM is a ruby management tool that allows you to
-install several ruby versions and pick whichever one you want for specific
+use the default version for your OS, but I recommend using RVM so that we an
+keep the ruby version consistent. RVM is a ruby management tool that allows you
+to install several ruby versions and pick whichever one you want for specific
 projects.  
 
 **Note:** RVM isn't a pariticularly 'light' bit of software. It will override
-your `cd` command. It also is only compatible with bash/sh/zsh login shells.  
+your `cd` command. It also is only compatible with bash/sh/zsh login shells (so
+no using fish).  
 
 If you haven't already, set preferences for your terminal emulator so that it
 is a login shell. Otherwise, the RVM commands above won't work properly.  
 
-I'm currently using v2.2.3. To install RVM (from their website): 
+I'm currently using v2.3.3. To install RVM (from their website): 
 ````
 $ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 $ curl -sSL https://get.rvm.io | bash -s stable --ruby
-$ rvm install 2.2.3
-$ rvm use 2.2.3
+$ rvm install 2.3.3
+$ rvm use 2.3.3
 ````
 Now, you'll need to install the bundler gem:  
 ````
@@ -71,15 +72,14 @@ $ git checkout build
 ````
 The reason you need to switch to the `build` branch is because GitHub, the host
 for this website, does not allow people to run custom plugins on their servers.
- (It's a security concern.) The plugin in `_plugins` pulls all the README.md
- files from all our repos and turns them into HTML pages found on the [modules
- page](http://rtxi.org/modules).  
+(It's a security concern.) The plugin in `_plugins` pulls all the README.md
+files from all our repos and turns them into HTML pages found on the [modules
+page](http://rtxi.org/modules).  
 
 Basically, we have to run the plugin, generate the site, and then push the
-generated site to GitHub. The `build` branch is the branch that gets edited,
-and the `master` branch is the one that get the final text that GitHub will
-make available to anyone who navigates to the site. That's why you needed to
-switch to the `build` branch.  
+generated site to GitHub. The `build` branch is the branch where all content is
+edited, and the `master` branch is where the generated content (in the _site
+folder) is pushed to GitHub.
 
 Initialize the site with the files you'll need, update them, and then build the
 site:  
@@ -91,7 +91,7 @@ $ grunt
 
 `npm install` installs all the node dependencies for the project (grunt,
 basically), and once grunt is installed, use it to download all the CSS/JS,
-etc. used to build the site.   
+gems etc. used to build the site.   
 
 The site should now be hosted on port 4000, so enter the url `localhost:4000`
 in your browser. Grunt will watch the directory and reload the site whenever
@@ -104,19 +104,18 @@ text editor, and whenever you save changes to the file, the page in your
 browser will automatically get updated. This behavior is biggest reason to go
 through all the trouble of installing grunt. 
 
-To kill grunt, use `CTRL+C` in the terminal.  
+To kill grunt, use CTRL+C in the terminal.  
 
 ## Editing the Site  
 All the website files are either Markdown files or plain HTML.  
 
 Brief overview of file hierarchy:  
- * **assets/** - used to hold all .js, .css, fonts, images, and .less files  
+ * **assets/** - used to hold all js, css, fonts, images, and less files  
  * **_posts/** - some of the pages are rended using Jekyll's built-in post
-   system. All pages that categorized as news, faqs, tutorials, papers, or
-   troubleshooting are formatted as posts.   
+   system. All pages are categorized as news, faqs, tutorials, papers, or
+   troubleshooting. 
  * **index.html** - the home page  
- * **_includes/** - HTML snippets included in files using Liquid-format {{ tags
-   }}  
+ * **_includes/** - HTML snippets included in files using Liquid-format tags
  * **_layouts/** - layouts for HTML pages  
  * **_site/** - output of Jekyll HTML generation. It's filled out when you run
    `grunt`  
@@ -126,7 +125,7 @@ Brief overview of file hierarchy:
    there, `pullModules.rb` pulls the modules from our repo and turns them into
    site pages.  
  * **bower.json** - list of dependencies bower handles (Bootstrap, jQuery,
-   Isotope, font-awesome, and Octicons)  
+   Isotope, and datatables)
  * **package.json** - list of dependencies installed by npm (Grunt stuff)  
  *  **google...** - an empty file needed to verify the google webmaster
     account.  
@@ -154,7 +153,26 @@ Some tips:
    in content to pages. The documentation online is pretty good for both. Check
    them out.  
 
+
+## Making New Pages
+
+To ease the process of filling out all the YAML metadata, I added a Rakefile that 
+will create and publish pages to the website. To view the available options, run: 
+
+```
+$ rake
+```
+
+Pages make when running `rake news|troubleshoot|tutorial|faq|paper` will be
+found in the `_drafts/` folder. You can manually go to the folder to open files
+and edit, or you can use `rake edit` to do that for you. 
+
+When ready to publish pages, run `rake publish` and enter the file name when
+prompted. The Rakefile will then move the draft to the appropriate folder. 
+
+
 ## Committing Changes and Pushing to GitHub
+
 When you're done editing things, commit your changes and push them to the
 `build` branch. If you're ready for your changes to be pushed to the master
 branch (i.e. the branch that the world-facing website is built on), run:  
