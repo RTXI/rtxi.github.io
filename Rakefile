@@ -30,7 +30,7 @@ task :news do
       open("_drafts/#{@slug}.md", 'w' ) do |file|
         file.puts "---"
         file.puts "title: \"#{@title}\""
-        file.puts "layout: docpost"
+        file.puts "layout: post"
         file.puts "category: news"
         file.puts "---"
       end
@@ -57,7 +57,7 @@ task :troubleshoot do
       open("_drafts/#{@slug}.md", 'w' ) do |file|
         file.puts "---"
         file.puts "title: \"#{@title}\""
-        file.puts "layout: docpost"
+        file.puts "layout: post"
         file.puts "categories: docs troubleshoot "
         file.puts "---"
       end
@@ -84,7 +84,7 @@ task :tutorial do
       open("_drafts/#{@slug}.md", 'w' ) do |file|
         file.puts "---"
         file.puts "title: \"#{@title}\""
-        file.puts "layout: docpost"
+        file.puts "layout: post"
         file.puts "categories: docs tutorials"
         file.puts "---"
       end
@@ -142,7 +142,7 @@ task :paper do
       open("_drafts/#{@slug}.md", 'w' ) do |file|
         file.puts "---"
         file.puts "title: \"#{@title}\""
-        file.puts "layout: paper"
+        file.puts "layout: post"
         file.puts "category: papers"
         file.puts ""
         file.puts "reference: "
