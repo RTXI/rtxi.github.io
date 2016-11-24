@@ -21,8 +21,9 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "^3.3.5",
     "isotope": "^2.2.2",
-    "datatables.net-responsive-bs": "^2.0.0"
+    "datatables.net-responsive-bs": "^2.0.0",
+    "bootstrap": "v4.0.0-alpha.5",
+    "font-awesome": "^4.7.0"
   }
 }

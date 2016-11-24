@@ -7,7 +7,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-concat');
@@ -27,21 +27,20 @@ module.exports = function(grunt) {
         css: 'assets/css',
         js: 'assets/js',
         fonts: 'assets/fonts',
-        less: 'assets/less'
+        scss: 'assets/scss'
       },
       bootstrap: {
         css: 'bower_components/bootstrap/dist/css',
-        fonts: 'bower_components/bootstrap/dist/fonts',
         js: 'bower_components/bootstrap/dist/js',
-        less: 'bower_components/bootstrap/less'
+        scss: 'bower_components/bootstrap/scss'
       },
       jquery: 'bower_components/jquery/dist',
       isotope: 'bower_components/isotope/dist',
-      // font_awesome: {
-      //   less: 'bower_components/font-awesome/less',
-      //   css: 'bower_components/font-awesome/css',
-      //   fonts: 'bower_components/font-awesome/fonts'
-      // },
+      font_awesome: {
+        scss: 'bower_components/font-awesome/scss',
+        css: 'bower_components/font-awesome/css',
+        fonts: 'bower_components/font-awesome/fonts'
+      },
       datatables: {
         js: "bower_components/datatables.net/js"
       },
@@ -58,29 +57,25 @@ module.exports = function(grunt) {
     },
 
     /*
-     * Compiles CSS using less. Uses the customized less files in assets folder
+     * Compiles CSS using sass. Uses the customized scss files in assets folder
      * and searches the bower_components folder for @imports. 
      */
-    less: {
-      bootstrap: {
+    sass: {
+      dist: {
         options: {
-          compress: true,
-          paths: '<%= paths.bootstrap.less %>/'
+          style: 'compressed',
+          sourcemap: 'none',
+          loadPath: [
+            '<%= paths.bootstrap.scss %>/', 
+            '<%= paths.font_awesome.scss %>/'
+          ]
         },
-        files: { 
+        files: {
           '<%= paths.assets.css %>/src/bootstrap.min.css' : 
-            '<%= paths.assets.less %>/bootstrap-base.less'
+            '<%= paths.assets.scss %>/bootstrap-base.scss',
+          '<%= paths.assets.css %>/src/font-awesome.min.css' : 
+            '<%= paths.assets.scss %>/font-awesome-base.scss'
         }
-      // },
-      // font_awesome: {
-      //   options: {
-      //     compress: true,
-      //     paths: '<%= paths.font_awesome.less %>/'
-      //   },
-      //   files: { 
-      //     '<%= paths.assets.css %>/src/font-awesome.min.css' : 
-      //       '<%= paths.assets.less %>/font-awesome-base.less'
-      //   }
       }
     },
 
@@ -147,18 +142,18 @@ module.exports = function(grunt) {
             dest: '<%= paths.assets.js %>/src/',
             expand: true
           },
-          {
-            cwd: '<%= paths.bootstrap.fonts %>/',
-            src: '*',
-            dest: '<%= paths.assets.fonts %>/',
-            expand: true
-          },
           // {
-          //   cwd: '<%= paths.font_awesome.fonts %>/',
+          //   cwd: '<%= paths.bootstrap.fonts %>/',
           //   src: '*',
           //   dest: '<%= paths.assets.fonts %>/',
           //   expand: true
           // },
+          {
+            cwd: '<%= paths.font_awesome.fonts %>/',
+            src: '*',
+            dest: '<%= paths.assets.fonts %>/',
+            expand: true
+          },
           // {
           //   cwd: '<%= paths.font_awesome.less %>/',
           //   src: ['font-awesome.less', 'variables.less'], 
@@ -243,7 +238,7 @@ module.exports = function(grunt) {
       default_css: {
         src: [
           '<%= paths.assets.css %>/src/bootstrap.min.css',
-          // '<%= paths.assets.css %>/src/font-awesome.min.css',
+          '<%= paths.assets.css %>/src/font-awesome.min.css',
           '<%= paths.assets.css %>/src/syntax.css'
         ],
         dest: '<%= paths.assets.css %>/src/default.css'
@@ -368,9 +363,9 @@ module.exports = function(grunt) {
           livereload: true
         }
       },
-      less: {
-        files: [ '<%= paths.assets.less %>/*.less' ],
-        tasks: ['less', 'shell:build'],
+      sass: {
+        files: [ '<%= paths.assets.scss %>/*.scss' ],
+        tasks: ['sass', 'shell:build'],
         options: {
           livereload: true
         }
@@ -399,9 +394,9 @@ module.exports = function(grunt) {
   grunt.registerTask('default', 
     ['shell:build', 'connect', 'watch']);
   grunt.registerTask('init', 
-    ['shell:init','copy','less', 'concat', 'cssmin', 'uglify']);
+    ['shell:init','copy','scss', 'concat', 'cssmin', 'uglify']);
   grunt.registerTask('rebuild', 
-    ['copy', 'less', 'concat', 'cssmin', 'uglify'])
+    ['copy', 'sass', 'concat', 'cssmin', 'uglify'])
   grunt.registerTask('update', 
     ['shell:update','copy','rebuild']);
   grunt.registerTask('deploy', 
