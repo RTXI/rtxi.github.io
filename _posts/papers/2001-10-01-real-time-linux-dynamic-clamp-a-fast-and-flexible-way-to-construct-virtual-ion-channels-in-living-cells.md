@@ -1,7 +1,7 @@
 ---
 title: "Real-Time Linux Dynamic Clamp: a Fast and Flexible Way to Construct
 Virtual Ion Channels in Living Cells"
-layout: paper
+layout: post
 categories: papers
 
 reference: "A.D. Dorval, D.J. Christini and J.A. White. Real-time LINUX dynamic

@@ -1,9 +1,12 @@
 ---
-title: Cell Type-Specific Control of Neuronal Responsiveness by Gamma-Band Oscillatory Inhibition
-layout: paper
+title: "Cell Type-Specific Control of Neuronal Responsiveness by Gamma-Band
+Oscillatory Inhibition"
+layout: post
 categories: papers
 
-reference: "Otte S, Hasenstaub A, Callaway EM. Cell Type-Specific Control of Neuronal Responsiveness by Gamma-Band Oscillatory Inhibition (2010) J Neurosci, 30 (6): 2150-2159."
+reference: "Otte S, Hasenstaub A, Callaway EM. Cell Type-Specific Control of
+Neuronal Responsiveness by Gamma-Band Oscillatory Inhibition (2010) J Neurosci,
+30 (6): 2150-2159."
 authors: 
  - name: Otte
  - name: Hasenstaub
@@ -11,4 +14,26 @@ authors:
 link: http://dx.doi.org/10.1523/JNEUROSCI.4818-09.2010
 ---
 
-Neocortical networks are composed of diverse populations of cells that differ in their chemical content, electrophysiological characteristics, and connectivity. Gamma-frequency oscillatory activity of inhibitory subnetworks has been hypothesized to regulate information processing in the cortex as a whole. Inhibitory neurons in these subnetworks synchronize their firing and selectively innervate the perisomatic compartments of their target neurons, generating both tonic and rapidly fluctuating inhibition. How do different types of cortical neurons respond to changes in the level and structure of perisomatic inhibition? What accounts for response heterogeneity between cell types, and are these response properties fixed or flexible? To answer these questions, we use in vitro whole-cell recording and dynamic-clamp somatic current injection to study six distinct types of cortical neurons. We demonstrate that different types of neurons systematically vary in their receptiveness to fast changes in the structure of inhibition and the range over which changes in inhibitory tone affect their output. Using simple neuron models and model neuron hybrids (dynamic clamp), we determine which intrinsic differences between cell types lead to these variations in receptiveness. These results suggest important differences in the way cell types are affected by gamma-frequency inhibition, which may have important circuit level implications. Although intrinsic differences observed in vitro are useful for the elucidation of basic cellular properties and differences between cell types, we also investigate how the integrative properties of neurons are likely to be rapidly modulated in the context of active networks in vivo.
+Neocortical networks are composed of diverse populations of cells that differ
+in their chemical content, electrophysiological characteristics, and
+connectivity. Gamma-frequency oscillatory activity of inhibitory subnetworks
+has been hypothesized to regulate information processing in the cortex as a
+whole. Inhibitory neurons in these subnetworks synchronize their firing and
+selectively innervate the perisomatic compartments of their target neurons,
+generating both tonic and rapidly fluctuating inhibition. How do different
+types of cortical neurons respond to changes in the level and structure of
+perisomatic inhibition? What accounts for response heterogeneity between cell
+types, and are these response properties fixed or flexible? To answer these
+questions, we use in vitro whole-cell recording and dynamic-clamp somatic
+current injection to study six distinct types of cortical neurons. We
+demonstrate that different types of neurons systematically vary in their
+receptiveness to fast changes in the structure of inhibition and the range over
+which changes in inhibitory tone affect their output. Using simple neuron
+models and model neuron hybrids (dynamic clamp), we determine which intrinsic
+differences between cell types lead to these variations in receptiveness. These
+results suggest important differences in the way cell types are affected by
+gamma-frequency inhibition, which may have important circuit level
+implications. Although intrinsic differences observed in vitro are useful for
+the elucidation of basic cellular properties and differences between cell
+types, we also investigate how the integrative properties of neurons are likely
+to be rapidly modulated in the context of active networks in vivo.
