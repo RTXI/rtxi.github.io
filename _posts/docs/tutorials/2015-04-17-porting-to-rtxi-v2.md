@@ -4,10 +4,9 @@ categories: docs tutorials
 layout: post
 ---
 
-RTXI {{ site.rtxi_version }} has been in development for a while, and its
-release will introduce many changes in the current v1.4 release. Most of these
-changes should have a limited impact on your modules, but even in that case,
-you will need to make some edits to your code to port it to 
+RTXI v{{ site.rtxi_version }} introduced many changes over the v1.4 release.
+Most of these changes should have a limited impact on your modules, but even in
+that case, you will need to make some edits to your code to port it to 
 {{ site.rtxi_version }}. This tutorial will focus on some common changes that
 should cover most use-cases. The changes mostly have to do with:    
  
@@ -17,11 +16,16 @@ should cover most use-cases. The changes mostly have to do with:
 
 #### Upgrading from Qt3 to Qt5
 Qt3 is an old version of the Qt library. It was released in 2001 and superceded
-by Qt4 in 2005. It introduced many breaking changes to its API and classes, so
-it's taken a while to upgrade RTXI's codebase to properly use Qt4. We recommend
-that you look through the documentation Nokia provides on its website for
-porting from Qt3 to Qt4:
-[http://doc.qt.io/qt-4.8/porting4.html](http://doc.qt.io/qt-4.8/porting4.html).  
+by Qt4 in 2005 and Qt5 in 2012. The transition to Qt4 introduced many breaking
+changes to its API and classes, and it took a while to upgrade RTXI's codebase
+to properly use it. We recommend that you look through the documentation Nokia
+provides on its website for porting from Qt3 to Qt4:
+[http://doc.qt.io/qt-4.8/porting4.html](http://doc.qt.io/qt-4.8/porting4.html).
+
+RTXI 2.1 upgraded the UI framework from Qt4 to Qt5. This introduces some
+changes, though not nearly as many as introduced by the Qt4 transition. A
+changelog and upgrade info is provided on the Qt website:
+[https://wiki.qt.io/Transition_from_Qt_4.x_to_Qt5](https://wiki.qt.io/Transition_from_Qt_4.x_to_Qt5)
 
 #### Porting Modules that Abstract from `DefaultGUIModel`
 For v{{ site.rtxi_version }}, the code exposed to users has been simplified and the
@@ -30,13 +34,13 @@ function and how the UI is generated. There are also some simple changes that
 correspond to syntax and class name changes in Qt4. They are as follows:  
 
 **1. Change `#includes`**  
-Libraries for Qt4 are included differently. To include them directly, change
-the names as indicated in the Qt4 documentation. For example, `<qpushbutton.h>`
-becomes `<QPushButton>`. Look through the Qt4 documentation to see what the
+Libraries for Qt5 are included differently. To include them directly, change
+the names as indicated in the Qt5 documentation. For example, `<qpushbutton.h>`
+becomes `<QPushButton>`. Look through the Qt5 documentation to see what the
 name changes are. Another, simpler option is to just remove all the q\*
-includes and replace them with `<QtGui>`. `QtGui` will make Qt pull in all the
-libraries needed to compile whatever Qt classes are present in the code without
-the need to specify them directly.  
+includes and replace them with `<QtWidgets>`. `QtWidgets` will make Qt pull in
+all the libraries needed to compile whatever Qt classes are present in the code
+without the need to specify them directly.  
 
 Essentially, something like:
 {% highlight cpp %}
@@ -77,8 +81,8 @@ setWhatsThis("text");
 
 
 **3. Add a resize timer**  
-At the end of the contructor, after the module has been built and the `refresh`
-function has been called, add the line:  
+At the end of the constructor, after the module has been built and the
+`refresh` function has been called, add the line:  
 
 {% highlight cpp %}
 QTimer::singleShot(0, this, SLOT(resizeMe()));
