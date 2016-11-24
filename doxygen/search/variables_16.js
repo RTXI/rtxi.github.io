@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['widthslist',['widthsList',['../class_oscilloscope_1_1_panel.html#af438b9a5def8814077b05ddbef70fdbb',1,'Oscilloscope::Panel']]],
-  ['windowsmenu',['windowsMenu',['../class_main_window.html#aae614229a091787a3e4c5aa5e80514e8',1,'MainWindow']]],
-  ['workspace_5fparameter_5fchange_5fevent',['WORKSPACE_PARAMETER_CHANGE_EVENT',['../namespace_event.html#a89ca78aa4511b5c2cbc26d729348c651',1,'Event']]],
-  ['wptr',['wptr',['../class_fifo.html#abba3488595a049f2b0b63a2022e35691',1,'Fifo']]],
-  ['writing',['writing',['../class_r_t_file.html#afa21680e6baa8013c93ab532436e64c7',1,'RTFile']]]
+  ['v1',['v1',['../class_generator_w_noise.html#a7ce300b2759950c45da1f6d9e2da85cf',1,'GeneratorWNoise']]],
+  ['v2',['v2',['../class_generator_w_noise.html#a51812de0b2e5c50a394597f38cb402ac',1,'GeneratorWNoise']]],
+  ['value',['value',['../structparam__hdf__t.html#a32e08ef5fef7d81d73cfc0d1c2e70c1b',1,'param_hdf_t::value()'],['../struct_data_recorder_1_1param__change__t.html#a6e2e1467d43de8e09d7f1244e3f06a5b',1,'DataRecorder::param_change_t::value()'],['../class_event_1_1_object.html#a0264cf217e7feea745f07e979246357e',1,'Event::Object::value()'],['../struct_i_o_1_1_block_1_1output__t.html#a664381d428c65f869a8c25ca6610a027',1,'IO::Block::output_t::value()']]],
+  ['variance',['variance',['../class_generator_w_noise.html#a806b6d4f585e739b6b68f8cb164fb275',1,'GeneratorWNoise']]]
 ];

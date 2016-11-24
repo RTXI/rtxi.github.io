@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['manager',['Manager',['../class_plugin_1_1_object.html#adddd5c43ff870a047aa66db4edf82a7e',1,'Plugin::Object::Manager()'],['../class_settings_1_1_object.html#adddd5c43ff870a047aa66db4edf82a7e',1,'Settings::Object::Manager()'],['../class_settings_1_1_object_1_1_state.html#adddd5c43ff870a047aa66db4edf82a7e',1,'Settings::Object::State::Manager()'],['../class_workspace_1_1_instance.html#adddd5c43ff870a047aa66db4edf82a7e',1,'Workspace::Instance::Manager()']]]
+  ['imag',['imag',['../classcomplex.html#a28e13e8e05afa33372693a0a5d348382',1,'complex']]],
+  ['instance',['Instance',['../class_workspace_1_1_manager.html#aea90763cbe6c91bbcd6e9bf0d66dc500',1,'Workspace::Manager']]]
 ];

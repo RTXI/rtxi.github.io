@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['prefetch_5fread',['prefetch_read',['../compiler_8h.html#aa6a6900a2fdda020faf7580442ed736a',1,'compiler.h']]],
-  ['prefetch_5fwrite',['prefetch_write',['../compiler_8h.html#ae441b981b43cdfc770c43b6756c4481c',1,'compiler.h']]]
+  ['false',['FALSE',['../misdefs_8h.html#aa93f0eb578d23995850d61f7d61c55c1',1,'misdefs.h']]],
+  ['fs',['fs',['../scope_8cpp.html#a2f72408aea32e6d1285f8af599914849',1,'scope.cpp']]]
 ];

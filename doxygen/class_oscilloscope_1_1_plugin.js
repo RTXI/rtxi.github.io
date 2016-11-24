@@ -10,6 +10,5 @@ var class_oscilloscope_1_1_plugin =
     [ "operator=", "class_oscilloscope_1_1_plugin.html#ab09a250f5804a9ca2c05399e8ed59c4b", null ],
     [ "removeOscilloscopePanel", "class_oscilloscope_1_1_plugin.html#afb6bd50d5ae0693111567d8fcef37597", null ],
     [ "Panel", "class_oscilloscope_1_1_plugin.html#ac4e63dfd61166ef47eb1ae509c490784", null ],
-    [ "menuID", "class_oscilloscope_1_1_plugin.html#a1c9c5808c810a76e0ebd8c3bc0bbdd05", null ],
     [ "panelList", "class_oscilloscope_1_1_plugin.html#af7e620c2c98b35dec1a5bfa431b8fac8", null ]
 ];

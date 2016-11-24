@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['open',['OPEN',['../namespace_data_recorder.html#a41e62d9b808e110875ed9a80d4ccb161a0ab9067ca8fd14fa09fb19fcadf98c0c',1,'DataRecorder']]],
-  ['output',['OUTPUT',['../namespace_d_a_q.html#adc53b00b5134155bb132b67f6995c624ac1ddef8d4065b50b479c258c23488de2',1,'DAQ']]]
+  ['neg',['NEG',['../class_scope.html#a81ec41648ec61c46eda90e98b96626cbad43e0610f9dac53dee9c627fe81f6a35',1,'Scope']]],
+  ['none',['NONE',['../class_scope.html#a81ec41648ec61c46eda90e98b96626cba4043aecef7eef0abe18992d19b787b85',1,'Scope']]]
 ];

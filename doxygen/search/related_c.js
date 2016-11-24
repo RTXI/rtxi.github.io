@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['thread',['Thread',['../class_r_t_1_1_system.html#adbc148eaddd341d7ae4d07c9e9e33bfd',1,'RT::System']]]
+  ['qapplication',['QApplication',['../class_main_window.html#a8da0851f3642ab58835a6914112b9f05',1,'MainWindow']]]
 ];

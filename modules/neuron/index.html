@@ -1,16 +1,52 @@
-<!DOCTYPE html><html lang="en" itemscope itemtype="http://schema.org/Article"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content=""><meta itemprop="name" content="neuron"><meta itemprop="description" content=""><meta itemprop="image" content="http://rtxi.org/assets/img/rtxi-logo-square.png"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="neuron"><meta name="twitter:description" content=""><meta name="twitter:image:src" content="http://rtxi.org/assets/img/rtxi-logo-square.png"><meta property="og:title" content="neuron"><meta property="og:type" content="article"><meta property="og:url" content="http://rtxi.org/modules/neuron/"><meta property="og:image" content="http://rtxi.org/assets/img/rtxi-logo-square.png"><meta property="og:description" content=""><meta property="og:site_name" content="RTXI | The Real-time eXperiment Interface"><meta property="article:section" content=""><meta property="article:tag" content=""><title>Neuron | The Real-time eXperiment Interface</title><link href="/assets/css/default.min.css" rel="stylesheet"><link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png"><link rel="icon" href="/assets/img/favicon.ico"></head><style>h1, h2, h3, h4, h5, h6 {
-			padding-bottom: 9px;
-			margin: 40px 0 20px;
-			border-bottom: 1px solid #eee;
-			font-weight: normal;
-		}
-		img {
-			margin-left: auto;
-			margin-right: auto;
-			display: block;
-			max-width: 100%;
-			height: auto;
-		}</style><body><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" rel="home" href="/"><b>RTXI</b></a></div><div class="row"><div id="navbar" class="navbar-collapse collapse navbar-right" style="text-align:center"><ul class="nav navbar-nav"><li><a href="/install/">Install</a></li><li class="active"><a href="/modules/">Modules</a></li><li><a href="/papers/">Papers</a></li><li><a href="/docs/">Docs</a></li><li><a href="/stats/">Stats</a></li><li><a href="/community/">Community</a></li><li><a href="/contact/">Contact</a></li><li><a href="/feed.xml"><i class="fa fa-rss fa-inverse"></i></a></li></ul></div></div></div></nav><div class="container" style="padding-top:30px"><style>#forkongithub a{background:#222;color:#fff;text-decoration:none;font-family:arial,sans-serif;text-align:center;font-weight:bold;padding:5px 10px;font-size:1rem;line-height:2rem;position:fixed;top:0;right:0;top:70px;right:20px;transition:0.25s;} #forkongithub a:hover{background:#b64138;color:#fff;} @media screen and (min-width:768px) {#forkongithub{position:fixed;display:block;top:0;right:0;width:250px;overflow:hidden;height:200px;} #forkongithub a{width:200px;position:absolute;top:70px;right:20px;}}</style><span id="forkongithub"><div class="hidden-xs"><a href="https://github.com/rtxi/neuron">Fork Neuron <span style="padding-left:5px" class="fa fa-lg fa-github"></span></a></div><div class="visible-xs"><a href="https://github.com/rtxi/neuron"><span class="fa fa-lg fa-github"></span></a></div></span><h3>Neuron (Hodgkin-Huxley)</h3><p><strong>Requirements:</strong> None<br><strong>Limitations:</strong> None</p><p><img src="https://raw.githubusercontent.com/RTXI/neuron/master/neuron.png" alt="HH Model Neuron GUI"></p><p>This is the classic <a href="https://en.wikipedia.org/wiki/Hodgkin-Huxley_model">Hodgkin-Huxley model neuron</a>. For best results, make sure your rate of integration is a multiple of your real-time period (or vice versa).</p><h4>Input Channels</h4><ol><li>input(0) - Iapp : applied current (A)</li></ol><h4>Output Channels</h4><ol><li>output(0) - Vm : membrane voltage (V)</li></ol><h4>Parameters</h4><ol><li>V0 - voltage (mV)</li><li>Cm - membrane capacitance (uF/cm^2)</li><li>G_Na_max - max. Na+ conductance density (mS/cm^2)</li><li>E_Na - Na+ reversal potential (mV)</li><li>G_K_max - max. K+ conductance density (mS/cm^2)</li><li>E_K - K+ reversal potential (mV)</li><li>G_L - leak channel conductance density (mS/cm^2)</li><li>E_L - leak channel reversal potential (mV)</li><li>Iapp_offset - offset current added to input (uA/cm^2)</li><li>rate - rate of integration (Hz)</li></ol><h4>States</h4><ol><li>m - sodium activation</li><li>h - sodium inactivation</li><li>n - potassium inactivation</li></ol></div></body><style>html {
+<!DOCTYPE html><html lang="en" itemscope itemtype="http://schema.org/Article"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Fork Neuron Neuron (Hodgkin-Huxley)
+
+Requirements: None
+Limitations: None  
+
+
+
+
+
+This is the classic Hodgkin-Huxley model neuron. For best results, make sure your rate of integration is a multiple ..."><meta itemprop="name" content="neuron"><meta itemprop="description" content="Fork Neuron Neuron (Hodgkin-Huxley)
+
+Requirements: None
+Limitations: None  
+
+
+
+
+
+This is the classic Hodgkin-Huxley model neuron. For best results, make sure your rate of integration is a multiple ..."><meta itemprop="image" content="http://rtxi.org/assets/img/rtxi-logo-square.png"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="neuron"><meta name="twitter:description" content="Fork Neuron Neuron (Hodgkin-Huxley)
+
+Requirements: None
+Limitations: None  
+
+
+
+
+
+This is the classic Hodgkin-Huxley model neuron. For best results, make sure your rate of integration is a multiple ..."><meta name="twitter:image:src" content="http://rtxi.org/assets/img/rtxi-logo-square.png"><meta property="og:title" content="neuron"><meta property="og:type" content="article"><meta property="og:url" content="http://rtxi.org/modules/neuron/"><meta property="og:image" content="http://rtxi.org/assets/img/rtxi-logo-square.png"><meta property="og:description" content="Fork Neuron Neuron (Hodgkin-Huxley)
+
+Requirements: None
+Limitations: None  
+
+
+
+
+
+This is the classic Hodgkin-Huxley model neuron. For best results, make sure your rate of integration is a multiple ..."><meta property="og:site_name" content="RTXI | The Real-time eXperiment Interface"><meta property="article:section" content="modules"><meta property="article:tag" content=""><title>neuron | The Real-time eXperiment Interface</title><link href="/assets/css/default.min.css" rel="stylesheet"><link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png"><link rel="icon" href="/assets/img/favicon.ico"></head><style>h1, h2, h3, h4, h5, h6 {
+      padding-bottom: 9px;
+      margin: 40px 0 20px;
+      border-bottom: 1px solid #eee;
+      font-weight: normal;
+    }
+    img {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }</style><body><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" rel="home" href="/"><b>RTXI</b></a></div><div class="row"><div id="navbar" class="navbar-collapse collapse navbar-right" style="text-align:center"><ul class="nav navbar-nav"><li><a href="/install/">Install</a></li><li class="active"><a href="/modules/">Modules</a></li><li><a href="/papers/">Papers</a></li><li><a href="/docs/">Docs</a></li><li><a href="/stats/">Stats</a></li><li><a href="/community/">Community</a></li><li><a href="/contact/">Contact</a></li><li><a href="/feed.xml"><i class="glyphicons glyphicon-rss"></i></a></li></ul></div></div></div></nav><div class="container" style="padding-top:30px"><style>#forkongithub a{background:#222;color:#fff;text-decoration:none;font-family:arial,sans-serif;text-align:center;font-weight:bold;padding:5px 10px;font-size:1rem;line-height:2rem;position:fixed;top:0;right:0;top:70px;right:20px;transition:0.25s;} #forkongithub a:hover{background:#b64138;color:#fff;} @media screen and (min-width:768px) {#forkongithub{position:fixed;display:block;top:0;right:0;width:250px;overflow:hidden;height:200px;} #forkongithub a{width:200px;position:absolute;top:70px;right:20px;}}</style><span id="forkongithub"><div class="hidden-xs"><a href="https://github.com/rtxi/neuron">Fork Neuron <span style="padding-left:5px" class="fa fa-lg fa-github"></span></a></div><div class="visible-xs"><a href="https://github.com/rtxi/neuron"><span class="fa fa-lg fa-github"></span></a></div></span><h3>Neuron (Hodgkin-Huxley)</h3><p><strong>Requirements:</strong> None<br><strong>Limitations:</strong> None</p><p><img src="https://raw.githubusercontent.com/RTXI/neuron/master/neuron.png" alt="HH Model Neuron GUI"></p><p>This is the classic <a href="https://en.wikipedia.org/wiki/Hodgkin-Huxley_model">Hodgkin-Huxley model neuron</a>. For best results, make sure your rate of integration is a multiple of your real-time period (or vice versa).</p><h4>Input Channels</h4><ol><li>input(0) - Iapp : applied current (A)</li></ol><h4>Output Channels</h4><ol><li>output(0) - Vm : membrane voltage (V)</li></ol><h4>Parameters</h4><ol><li>V0 - voltage (mV)</li><li>Cm - membrane capacitance (uF/cm^2)</li><li>G_Na_max - max. Na+ conductance density (mS/cm^2)</li><li>E_Na - Na+ reversal potential (mV)</li><li>G_K_max - max. K+ conductance density (mS/cm^2)</li><li>E_K - K+ reversal potential (mV)</li><li>G_L - leak channel conductance density (mS/cm^2)</li><li>E_L - leak channel reversal potential (mV)</li><li>Iapp_offset - offset current added to input (uA/cm^2)</li><li>rate - rate of integration (Hz)</li></ol><h4>States</h4><ol><li>m - sodium activation</li><li>h - sodium inactivation</li><li>n - potassium inactivation</li></ol></div></body><style>html {
   position: relative;
   min-height: 100%;
 }
@@ -26,9 +62,9 @@ body {
   height: -60px;
   background-color: #c1c1c1;
 }</style><div class="footer"><div class="container"><div class="row"><div class="col-sm-6 text-center" style="margin-top:50px; margin-bottom:10px"><a href="http://www.nih.gov/"><img class="img-responsive" alt="NIH grant 2R01EB016407-09" src="/assets/img/nih-logo-trans.svg"></a></div><div class="col-sm-6 text-center" style="margin-top:55px"><a href="https://github.com/rtxi"><img class="img-responsive" alt="RTXI on GitHub" src="/assets/img/github-logo.svg"></a></div></div><div style="margin-bottom:40px"></div></div></div><script src="/assets/js/default.min.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-		ga('create', 'UA-5550734-5', 'auto');
-		ga('send', 'pageview');</script></html>
+    ga('create', 'UA-5550734-5', 'auto');
+    ga('send', 'pageview');</script></html>

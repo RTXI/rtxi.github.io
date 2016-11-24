@@ -8,10 +8,12 @@
     
       <item>
         <title>Getting Started</title>
-        <description>&lt;p&gt;To get started with RTXI for your experiments, there are some hardware requirements you need to satisfy. 
-They’re pretty easy to meet, and they’ll get you set up with a properly performing RTXI installation.&lt;/p&gt;
+        <description>&lt;p&gt;To get started with RTXI for your experiments, there are some hardware
+requirements you need to satisfy.  They’re pretty easy to meet, and they’ll get
+you set up with a properly performing RTXI installation.&lt;/p&gt;
 
-&lt;p&gt;If you are not familiar with RTXI or what it can do, we recommend looking through the &lt;a href=&quot;/manual&quot;&gt;manual&lt;/a&gt; first.&lt;/p&gt;
+&lt;p&gt;If you are not familiar with RTXI or what it can do, we recommend looking
+through the &lt;a href=&quot;/manual&quot;&gt;manual&lt;/a&gt; first.&lt;/p&gt;
 
 &lt;p&gt;You will need:&lt;/p&gt;
 
@@ -22,36 +24,60 @@ They’re pretty easy to meet, and they’ll get you set up with a properly perf
 &lt;/ol&gt;
 
 &lt;h4 id=&quot;computer&quot;&gt;Computer&lt;/h4&gt;
-&lt;p&gt;Most computers built in the last few years will run Linux, but some will perform better for real-time applications. Here are some points to consider when buying new hardware:&lt;/p&gt;
+&lt;p&gt;Most computers built in the last few years will run Linux, but some will
+perform better for real-time applications. Here are some points to consider
+when buying new hardware:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;What is the CPU type?&lt;/strong&gt; We recommend using Intel processors, though AMD ones work, too.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;How many PCI/PCIe slots are there?&lt;/strong&gt; You will need one PCI or PCIe slot for a graphics card and another PCI slot for a DAQ.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;What is the CPU type?&lt;/strong&gt; We recommend using Intel processors, though AMD
+ones work, too.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;How many PCI/PCIe slots are there?&lt;/strong&gt; You will need one PCI or PCIe slot
+for a graphics card and another PCI slot for a DAQ.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Also, you should have a machine with at least &lt;strong&gt;4 GB of RAM&lt;/strong&gt;. While Linux can run with less, you will see degraded performance. Over the past few years, operating systems have been built under the assumption of increasingly capable hardware, and Linux has been no exception.&lt;/p&gt;
+&lt;p&gt;Also, you should have a machine with at least &lt;strong&gt;4 GB of RAM&lt;/strong&gt;. While Linux can
+run with less, you will see degraded performance. Over the past few years,
+operating systems have been built under the assumption of increasingly capable
+hardware, and Linux has been no exception.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The current generation of Intel processors (Skylake) requires firmware that is bundled into new Linux kernels, starting around kernel 4.1. 
-The kernel in RTXI 2.0 is based on kernel 3.8.13 and will not run on new machines. 
-When purchasing a computer, make sure it has an older processor. (Haswell/Broadwell will work.)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The current generation of Intel processors (Skylake) requires
+firmware that is bundled into new Linux kernels, starting around kernel 4.1.
+The kernel in RTXI 2.0 is based on kernel 3.8.13 and will
+not run on new machines.  When purchasing a computer, make sure it has an older
+processor.  (Haswell/Broadwell will work.)&lt;/p&gt;
 
-&lt;p&gt;We are testing a newer real-time kernel. Source code is available on the &lt;a href=&quot;https://github.com/rtxi/rtxi/tree/rttweak&quot;&gt;rttweak branch&lt;/a&gt; of our GitHub repository.&lt;/p&gt;
+&lt;p&gt;We are testing a newer real-time kernel. Source code is available on the
+&lt;a href=&quot;https://github.com/rtxi/rtxi/tree/rttweak&quot;&gt;rttweak branch&lt;/a&gt; of our GitHub
+repository.&lt;/p&gt;
 
 &lt;h4 id=&quot;daq&quot;&gt;DAQ&lt;/h4&gt;
-&lt;p&gt;RTXI is tested and developed on systems using National Instruments (NI) cards. While the Xenomai project creates drivers for cards made by other vendors, we do not test them and cannot give you a recommendation to use them.&lt;/p&gt;
+&lt;p&gt;RTXI is tested and developed on systems using National Instruments (NI) cards.
+While the Xenomai project creates drivers for cards made by other vendors, we
+do not test them and cannot give you a recommendation to use them.&lt;/p&gt;
 
-&lt;p&gt;If buying a new NI DAQ, get an &lt;strong&gt;M-series&lt;/strong&gt; card. &lt;strong&gt;Do not get an X-series card&lt;/strong&gt;. Open-source drivers do not currently exist for them, so they cannot be used for data acquisition. For a complete list of what drivers are available for what hardware, look here:&lt;/p&gt;
+&lt;p&gt;If buying a new NI DAQ, get an &lt;strong&gt;M-series&lt;/strong&gt; card. &lt;strong&gt;Do not get an X-series
+card&lt;/strong&gt;. Open-source drivers do not currently exist for them, so they cannot be
+used for data acquisition. For a complete list of what drivers are available
+for what hardware, look here:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://xenomai.org/analogy-practical-presentation/#ni_pcimio&quot;&gt;&lt;strong&gt;List of DAQs supported by the analogy driver&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;graphics-card&quot;&gt;Graphics Card&lt;/h4&gt;
-&lt;p&gt;You should get a discrete graphics card. Using integrated graphics will cause UI computation to be offloaded to the CPU, which at the same time has to handle real-time processes. Based on the systems we’ve benchmarked so far, you’re better off using an AMD card than an Nvidia one. You are also recommended to use open-source drivers instead of their proprietary counterparts.&lt;/p&gt;
+&lt;p&gt;You should get a discrete graphics card. Using integrated graphics will cause
+UI computation to be offloaded to the CPU, which at the same time has to handle
+real-time processes. Based on the systems we’ve benchmarked so far, you’re
+better off using an AMD card than an Nvidia one. You are also recommended to
+use open-source drivers instead of their proprietary counterparts.&lt;/p&gt;
 
-&lt;p&gt;What this means for you is that when buying/acquiring a computer, you need to check the type of graphics card it has. You also need to check whether it is supported by open-source drivers. (Often, newer hardware needs some time for the people who code the drivers to extend support for them.)&lt;/p&gt;
+&lt;p&gt;What this means for you is that when buying/acquiring a computer, you need to
+check the type of graphics card it has. You also need to check whether it is
+supported by open-source drivers. (Often, newer hardware needs some time for
+the people who code the drivers to extend support for them.)&lt;/p&gt;
 
-&lt;p&gt;Here is a list of graphics card supported by the Nvidia open-source driver (nouveau) and the AMD one (radeon):&lt;/p&gt;
+&lt;p&gt;Here is a list of graphics card supported by the Nvidia open-source driver
+(nouveau) and the AMD one (radeon):&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://help.ubuntu.com/community/RadeonDriver#Fully_Supported&quot;&gt;&lt;strong&gt;AMD driver (radeon)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -60,15 +86,22 @@ When purchasing a computer, make sure it has an older processor. (Haswell/Broadw
 
 &lt;h3 id=&quot;installing-rtxi&quot;&gt;Installing RTXI&lt;/h3&gt;
 
-&lt;p&gt;Look through our &lt;a href=&quot;/install&quot;&gt;installation instructions&lt;/a&gt; to see how to install RTXI 2.0. You can install RTXI with our live CD, or you can install a generic version of Linux and then manually compile and install RTXI and its real-time dependencies. It’s up to you.&lt;/p&gt;
+&lt;p&gt;Look through our &lt;a href=&quot;/install&quot;&gt;installation instructions&lt;/a&gt; to see how to install
+RTXI 2.0. You can install RTXI with our live CD, or you can
+install a generic version of Linux and then manually compile and install RTXI
+and its real-time dependencies. It’s up to you.&lt;/p&gt;
 
-&lt;p&gt;If you run into issues, look through our available &lt;a href=&quot;/docs&quot;&gt;documentation&lt;/a&gt;, and if it doesn’t help, email us or &lt;a href=&quot;https://github.com/rtxi/rtxi/issues&quot;&gt;submit an issue on GitHub&lt;/a&gt;. We recommend you do the latter.&lt;/p&gt;
+&lt;p&gt;If you run into issues, look through our available &lt;a href=&quot;/docs&quot;&gt;documentation&lt;/a&gt;, and
+if it doesn’t help, email us or 
+&lt;a href=&quot;https://github.com/rtxi/rtxi/issues&quot;&gt;submit an issue on GitHub&lt;/a&gt;. We recommend 
+you do the latter.&lt;/p&gt;
 
 &lt;h4 id=&quot;note&quot;&gt;Note&lt;/h4&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/rtxi/rtxi.github.io/issues/&quot;&gt;Let us know&lt;/a&gt; if any links are broken. 
-They are all supposed to point directly to lists of hardware compatible with drivers. 
-If they don’t, something went terribly wrong, and we need to fix the links.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rtxi/rtxi.github.io/issues/&quot;&gt;Let us know&lt;/a&gt; if any links are
+broken.  They are all supposed to point directly to lists of hardware
+compatible with drivers.  If they don’t, something went terribly wrong, and we
+need to fix the links.&lt;/p&gt;
 </description>
         <pubDate>Wed, 01 Jan 2020 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/tutorials/2020/01/01/getting-started/</link>
@@ -77,39 +110,53 @@ If they don’t, something went terribly wrong, and we need to fix the links.&lt
     
       <item>
         <title>RTXI Fall Newsletter</title>
-        <description>&lt;p&gt;There have been lots of new developments in RTXI over the past few months. Look forward to the upcoming release of RTXI 2.1, and we encourage those of you attending SfN 2015 to check out our poster!&lt;/p&gt;
+        <description>&lt;p&gt;There have been lots of new developments in RTXI over the past few months. Look
+forward to the upcoming release of RTXI 2.1, and we encourage those of you
+attending SfN 2015 to check out our poster!&lt;/p&gt;
 
 &lt;h4 id=&quot;upcoming-features-in-rtxi-21&quot;&gt;Upcoming Features in RTXI 2.1&lt;/h4&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;New Plotting Tools&lt;/strong&gt; - We’ve created a new analysis-tools module that will directly plot HDF data saved by the data recorder.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;New Plotting Tools&lt;/strong&gt; - We’ve created a new analysis-tools module that will
+directly plot HDF data saved by the data recorder.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;UI Upgrades&lt;/strong&gt; - We’ve upgraded RTXI’s UI framework from Qt4 to Qt5, the most up-to-date version available.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;UI Upgrades&lt;/strong&gt; - We’ve upgraded RTXI’s UI framework from Qt4 to Qt5, the
+most up-to-date version available.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Bugfixes and Tweaks&lt;/strong&gt; - RTXI is continually improving under the hood, and for 2.1, we bundled in lots of bugfixes, UI tweaks, and performance enhancements.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Bugfixes and Tweaks&lt;/strong&gt; - RTXI is continually improving under the hood, and
+for 2.1, we bundled in lots of bugfixes, UI tweaks, and performance
+  enhancements.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Improved User-friendliness&lt;/strong&gt; - RTXI now checks for updates, and the new module-installer makes finding and installing the modules you need easier than ever.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Improved User-friendliness&lt;/strong&gt; - RTXI now checks for updates, and the new
+module-installer makes finding and installing the modules you need easier
+than ever.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Arduino Support&lt;/strong&gt; - The new Arduino module provides an interface between RTXI and Arduino computers. Note that this is non-RT.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Arduino Support&lt;/strong&gt; - The new Arduino module provides an interface between
+RTXI and Arduino computers. Note that this is non-RT.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;New Module Installer&lt;/strong&gt; - A new Module Installer allows you to find and install modules within RTXI itself.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;New Module Installer&lt;/strong&gt; - A new Module Installer allows you to find and
+install modules within RTXI itself.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;check-us-out-at-sfn&quot;&gt;Check us out at SfN:&lt;/h4&gt;
 
-&lt;p&gt;We’ll be presenting a poster at this year’s Society for Neuroscience Conference. If you’re also attending, feel free to stop by. Look out for poster 267.23 / BB66 during the 1:00 -5 :00 PM session on October 18. We’ll be in Hall A.&lt;/p&gt;
+&lt;p&gt;We’ll be presenting a poster at this year’s Society for Neuroscience
+Conference. If you’re also attending, feel free to stop by. Look out for poster
+267.23 / BB66 during the 1:00 -5 :00 PM session on October 18. We’ll be in Hall
+A.&lt;/p&gt;
 
 &lt;h4 id=&quot;contact-us&quot;&gt;Contact Us:&lt;/h4&gt;
 
-&lt;p&gt;You can reach out to us via email and through GitHub. Let us know if you have any questions or issues. We’re around 24/7, and we’ll do whatever we can to get RTXI working for you. We’ll even come to you in person.&lt;/p&gt;
-
+&lt;p&gt;You can reach out to us via email and through GitHub. Let us know if you have
+any questions or issues. We’re around 24/7, and we’ll do whatever we can to get
+RTXI working for you. We’ll even come to you in person.&lt;/p&gt;
 </description>
         <pubDate>Fri, 09 Oct 2015 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//news/2015/10/09/fall-newsletter/</link>
@@ -118,33 +165,65 @@ If they don’t, something went terribly wrong, and we need to fix the links.&lt
     
       <item>
         <title>RTXI 2.0 Released</title>
-        <description>&lt;p&gt;We’ve been working hard over the past year to put together the new and improved Real-Time eXperiment Interface.&lt;/p&gt;
+        <description>&lt;p&gt;We’ve been working hard over the past year to put together the new and improved
+Real-Time eXperiment Interface.&lt;/p&gt;
 
 &lt;p&gt;New features:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Improved UI:&lt;/strong&gt; We’ve upgraded the UI framework from Qt3 to Qt4, which provides RTXI with many built-in performance improvements.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;New Linux Base:&lt;/strong&gt; RTXI 2.0 runs on Ubuntu GNOME 14.04 LTS - with it, you’ll get a stable desktop.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Enhanced Performance:&lt;/strong&gt; For 2.0, we’ve switched from RTAI to Xenomai, a more versatile real-time kernel, providing a more robust and stable hard real-time system.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Open Development:&lt;/strong&gt; We’ve migrated the project to GitHub, an excellent forum for development and all our documentation. Submit an issue; make a feature request; or watch our repository to stay up-to-date.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Improved UI:&lt;/strong&gt; We’ve upgraded the UI framework from Qt3 to Qt4, which
+provides RTXI with many built-in performance improvements.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;New Linux Base:&lt;/strong&gt; RTXI 2.0 runs on Ubuntu GNOME 14.04 LTS - with it,
+you’ll get a stable desktop.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Enhanced Performance:&lt;/strong&gt; For 2.0, we’ve switched from RTAI to Xenomai, a
+more versatile real-time kernel, providing a more robust and stable hard
+real-time system.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Open Development:&lt;/strong&gt; We’ve migrated the project to GitHub, an excellent
+forum for development and all our documentation. Submit an issue; make a
+feature request; or watch our repository to stay up-to-date.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Try out v2.0. You can use the &lt;a href=&quot;/install&quot;&gt;live CD&lt;/a&gt; to demo RTXI and later install it, or you can install a generic Linux distribution of your choice and use our installation scripts.&lt;/p&gt;
+&lt;p&gt;Try out v2.0. You can use the &lt;a href=&quot;/install&quot;&gt;live CD&lt;/a&gt; to demo RTXI and later
+install it, or you can install a generic Linux distribution of your choice and
+use our installation scripts.&lt;/p&gt;
 
-&lt;p&gt;Look through all the documentation on the website to find installation instructions, notes on hardware configurations, RTXI modules, documentation, and more. Let us know if you have issues or questions.&lt;/p&gt;
+&lt;p&gt;Look through all the documentation on the website to find installation
+instructions, notes on hardware configurations, RTXI modules, documentation,
+and more. Let us know if you have issues or questions.&lt;/p&gt;
 </description>
         <pubDate>Tue, 12 May 2015 00:00:00 -0400</pubDate>
-        <link>http://rtxi.org//docs/news/2015/05/12/rtxi-v2-released/</link>
-        <guid isPermaLink="true">http://rtxi.org//docs/news/2015/05/12/rtxi-v2-released/</guid>
+        <link>http://rtxi.org//news/2015/05/12/rtxi-v2-released/</link>
+        <guid isPermaLink="true">http://rtxi.org//news/2015/05/12/rtxi-v2-released/</guid>
       </item>
     
       <item>
         <title>Repolarization Reserve Evolves Dynamically During the Cardiac Action Potential: Effects of Transient Outward Currents on Early Afterdepolarizations</title>
-        <description>&lt;p&gt;&lt;strong&gt;Background&lt;/strong&gt; — Transient outward K currents (Ito) have been reported both to suppress and facilitate early afterdepolarizations (EADs) when repolarization reserve is reduced. Here we used the dynamic clamp technique to analyze how Ito accounts for these paradoxical effects on EADs by influencing the dynamic evolution of repolarization reserve during the action potential.&lt;/p&gt;
+        <description>&lt;p&gt;&lt;strong&gt;Background&lt;/strong&gt; — Transient outward K currents (Ito) have been reported both to
+suppress and facilitate early afterdepolarizations (EADs) when repolarization
+reserve is reduced. Here we used the dynamic clamp technique to analyze how Ito
+accounts for these paradoxical effects on EADs by influencing the dynamic
+evolution of repolarization reserve during the action potential.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Methods and Results&lt;/strong&gt; — Isolated patch-clamped rabbit ventricular myocytes were exposed to either oxidative stress (H2O2) or hypokalemia to induce bradycardia-dependent EADs at a long pacing cycle length (PCL) of 6 s, when native rabbit Ito is substantial. EADs disappeared when the PCL was shortened to 1 s, when Ito becomes negligible due to incomplete recovery from inactivation. During 6-s PCL, EADs were blocked by the Ito blocker 4-aminopyridine, but reappeared when a virtual current with appropriate Ito-like properties was reintroduced using the dynamic clamp (n=141 trials). During 1-s PCL in the absence of 4-aminopyridine, adding a virtual Ito-like current (n=1,113 trials) caused EADs to reappear over a wide range of Ito conductance (0.005-0.15 nS/pF), particularly when inactivation kinetics were slow (τinact≥20 ms) and the pedestal (non-inactivating component) was small (&amp;lt;25% of peak Ito). Faster inactivation or larger pedestals tended to suppress EADs.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Methods and Results&lt;/strong&gt; — Isolated patch-clamped rabbit ventricular myocytes
+were exposed to either oxidative stress (H2O2) or hypokalemia to induce
+bradycardia-dependent EADs at a long pacing cycle length (PCL) of 6 s, when
+native rabbit Ito is substantial. EADs disappeared when the PCL was shortened
+to 1 s, when Ito becomes negligible due to incomplete recovery from
+inactivation. During 6-s PCL, EADs were blocked by the Ito blocker
+4-aminopyridine, but reappeared when a virtual current with appropriate
+Ito-like properties was reintroduced using the dynamic clamp (n=141 trials).
+During 1-s PCL in the absence of 4-aminopyridine, adding a virtual Ito-like
+current (n=1,113 trials) caused EADs to reappear over a wide range of Ito
+conductance (0.005-0.15 nS/pF), particularly when inactivation kinetics were
+slow (τinact≥20 ms) and the pedestal (non-inactivating component) was small
+(&amp;lt;25% of peak Ito). Faster inactivation or larger pedestals tended to suppress
+EADs.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Conclusions&lt;/strong&gt; — Repolarization reserve evolves dynamically during the cardiac action potential. Whereas sufficiently large Ito can suppress EADs, a wide range of intermediate Ito properties can promote EADs by influencing the temporal evolution of other currents affecting late repolarization reserve. These findings raise caution in targeting Ito as an antiarrhythmic strategy.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Conclusions&lt;/strong&gt; — Repolarization reserve evolves dynamically during the cardiac
+action potential. Whereas sufficiently large Ito can suppress EADs, a wide
+range of intermediate Ito properties can promote EADs by influencing the
+temporal evolution of other currents affecting late repolarization reserve.
+These findings raise caution in targeting Ito as an antiarrhythmic strategy.&lt;/p&gt;
 </description>
         <pubDate>Mon, 20 Apr 2015 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//papers/2015/04/20/repolarization-reserve-evolves-dynamically-during-cardiac-action-potential/</link>
@@ -152,23 +231,46 @@ If they don’t, something went terribly wrong, and we need to fix the links.&lt
       </item>
     
       <item>
-        <title>Porting to RTXI v2.0</title>
-        <description>&lt;p&gt;RTXI v2.0 has been in development for a while, and its release will introduce many changes in the current v1.4 release. Most of these changes should have a limited impact on your modules, but even in that case, you will need to make some edits to your code to port it to v2.0. This tutorial will focus on some common changes that should cover most use-cases. The changes mostly have to do with:&lt;/p&gt;
+        <title>Porting to RTXI v2.1</title>
+        <description>&lt;p&gt;RTXI v2.0 introduced many changes over the v1.4 release.
+Most of these changes should have a limited impact on your modules, but even in
+that case, you will need to make some edits to your code to port it to 
+2.0. This tutorial will focus on some common changes that
+should cover most use-cases. The changes mostly have to do with:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Upgrading from Qt3 to Qt4&lt;/li&gt;
+  &lt;li&gt;Upgrading from Qt3 to Qt5&lt;/li&gt;
   &lt;li&gt;Upgrading Qwt5 to Qwt6&lt;/li&gt;
   &lt;li&gt;Changes to the DefaultGUIModel class&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h4 id=&quot;upgrading-from-qt3-to-qt4&quot;&gt;Upgrading from Qt3 to Qt4&lt;/h4&gt;
-&lt;p&gt;Qt3 is an old version of the Qt library. It was released in 2001 and superceded by Qt4 in 2005. It introduced many breaking changes to its API and classes, so it’s taken a while to upgrade RTXI’s codebase to properly use Qt4. We recommend that you look through the documentation Nokia provides on its website for porting from Qt3 to Qt4: &lt;a href=&quot;http://doc.qt.io/qt-4.8/porting4.html&quot;&gt;http://doc.qt.io/qt-4.8/porting4.html&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&quot;upgrading-from-qt3-to-qt5&quot;&gt;Upgrading from Qt3 to Qt5&lt;/h4&gt;
+&lt;p&gt;Qt3 is an old version of the Qt library. It was released in 2001 and superceded
+by Qt4 in 2005 and Qt5 in 2012. The transition to Qt4 introduced many breaking
+changes to its API and classes, and it took a while to upgrade RTXI’s codebase
+to properly use it. We recommend that you look through the documentation Nokia
+provides on its website for porting from Qt3 to Qt4:
+&lt;a href=&quot;http://doc.qt.io/qt-4.8/porting4.html&quot;&gt;http://doc.qt.io/qt-4.8/porting4.html&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;RTXI 2.1 upgraded the UI framework from Qt4 to Qt5. This introduces some
+changes, though not nearly as many as introduced by the Qt4 transition. A
+changelog and upgrade info is provided on the Qt website:
+&lt;a href=&quot;https://wiki.qt.io/Transition_from_Qt_4.x_to_Qt5&quot;&gt;https://wiki.qt.io/Transition_from_Qt_4.x_to_Qt5&lt;/a&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;porting-modules-that-abstract-from-defaultguimodel&quot;&gt;Porting Modules that Abstract from &lt;code class=&quot;highlighter-rouge&quot;&gt;DefaultGUIModel&lt;/code&gt;&lt;/h4&gt;
-&lt;p&gt;For v2.0, the code exposed to users has been simplified and the customizability enhanced. The most significant change is in the &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function and how the UI is generated. There are also some simple changes that correspond to syntax and class name changes in Qt4. They are as follows:&lt;/p&gt;
+&lt;p&gt;For v2.0, the code exposed to users has been simplified and the
+customizability enhanced. The most significant change is in the &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt;
+function and how the UI is generated. There are also some simple changes that
+correspond to syntax and class name changes in Qt4. They are as follows:&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;1. Change &lt;code class=&quot;highlighter-rouge&quot;&gt;#includes&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
-Libraries for Qt4 are included differently. To include them directly, change the names as indicated in the Qt4 documentation. For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;qpushbutton.h&amp;gt;&lt;/code&gt; becomes &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;QPushButton&amp;gt;&lt;/code&gt;. Look through the Qt4 documentation to see what the name changes are. Another, simpler option is to just remove all the q* includes and replace them with &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;QtGui&amp;gt;&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;QtGui&lt;/code&gt; will make Qt pull in all the libraries needed to compile whatever Qt classes are present in the code without the need to specify them directly.&lt;/p&gt;
+Libraries for Qt5 are included differently. To include them directly, change
+the names as indicated in the Qt5 documentation. For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;qpushbutton.h&amp;gt;&lt;/code&gt;
+becomes &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;QPushButton&amp;gt;&lt;/code&gt;. Look through the Qt5 documentation to see what the
+name changes are. Another, simpler option is to just remove all the q*
+includes and replace them with &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;QtWidgets&amp;gt;&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;QtWidgets&lt;/code&gt; will make Qt pull in
+all the libraries needed to compile whatever Qt classes are present in the code
+without the need to specify them directly.&lt;/p&gt;
 
 &lt;p&gt;Essentially, something like:&lt;/p&gt;
 
@@ -188,11 +290,13 @@ Libraries for Qt4 are included differently. To include them directly, change the
 &lt;div style=&quot;text-align:center;&quot;&gt;becomes&lt;br /&gt;&amp;nbsp;&lt;/div&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;main_window.h&amp;gt;
-#include &amp;lt;QtGui&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+#include &amp;lt;QtWidgets&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+
 &lt;p&gt;&lt;strong&gt;2. Change &lt;code class=&quot;highlighter-rouge&quot;&gt;QWhatsThis&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
-This call is made by default in the constructors of module classes that abstract from DefaultGUIModel. Change:&lt;/p&gt;
+This call is made by default in the constructors of module classes that
+abstract from DefaultGUIModel. Change:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;QWhatsThis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -201,40 +305,59 @@ This call is made by default in the constructors of module classes that abstract
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;setWhatsThis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+
 &lt;p&gt;&lt;strong&gt;3. Add a resize timer&lt;/strong&gt;&lt;br /&gt;
-At the end of the contructor, after the module has been built and the &lt;code class=&quot;highlighter-rouge&quot;&gt;refresh&lt;/code&gt; function has been called, add the line:&lt;/p&gt;
+At the end of the constructor, after the module has been built and the
+&lt;code class=&quot;highlighter-rouge&quot;&gt;refresh&lt;/code&gt; function has been called, add the line:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;QTimer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;singleShot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SLOT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resizeMe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+
 &lt;p&gt;&lt;strong&gt;4. Switch to &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI + customizeGUI&lt;/code&gt; API&lt;/strong&gt;&lt;br /&gt;
-In v1.4, the GUI is created using DefaultGUIModel’s &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function. If you wanted to add any custom elements, you had to overload the function and copy/paste the code in the &lt;code class=&quot;highlighter-rouge&quot;&gt;default_gui_model.cpp&lt;/code&gt; and then add your own stuff. That’s changed now.&lt;/p&gt;
+In v1.4, the GUI is created using DefaultGUIModel’s &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function. If
+you wanted to add any custom elements, you had to overload the function and
+copy/paste the code in the &lt;code class=&quot;highlighter-rouge&quot;&gt;default_gui_model.cpp&lt;/code&gt; and then add your own stuff.
+That’s changed now.&lt;/p&gt;
 
-&lt;p&gt;You no longer should overload the &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function. Now, just call DefaultGUIModel’s &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function and then call a new function, &lt;code class=&quot;highlighter-rouge&quot;&gt;customizeGUI&lt;/code&gt;, to, well, customize it.&lt;/p&gt;
+&lt;p&gt;You no longer should overload the &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function. Now, just call
+DefaultGUIModel’s &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function and then call a new function,
+&lt;code class=&quot;highlighter-rouge&quot;&gt;customizeGUI&lt;/code&gt;, to, well, customize it.&lt;/p&gt;
 
-&lt;p&gt;Define &lt;code class=&quot;highlighter-rouge&quot;&gt;customizeGUI&lt;/code&gt; within the modules you are building. Call it &lt;strong&gt;after&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; returns. To use &lt;code class=&quot;highlighter-rouge&quot;&gt;customizeGUI&lt;/code&gt; properly, you need to do:&lt;/p&gt;
+&lt;p&gt;Define &lt;code class=&quot;highlighter-rouge&quot;&gt;customizeGUI&lt;/code&gt; within the modules you are building. Call it &lt;strong&gt;after&lt;/strong&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; returns. To use &lt;code class=&quot;highlighter-rouge&quot;&gt;customizeGUI&lt;/code&gt; properly, you need to do:&lt;/p&gt;
 
 &lt;ol&gt;
-	&lt;li&gt;&lt;p&gt;Grab the module layout object created by &lt;code&gt;createGUI&lt;/code&gt;:  &lt;/p&gt;
+  &lt;li&gt;&lt;p&gt;Grab the module layout object created by &lt;code&gt;createGUI&lt;/code&gt;:  &lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;QGridLayout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customLayout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DefaultGUIModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-	&lt;/li&gt;
-	&lt;li&gt;&lt;p&gt;Add custom elements to the layout. For more explanation about this, see the example &lt;code&gt;customizeGUI&lt;/code&gt; function defined in the plugin template. &lt;br /&gt;  
-	&lt;a href=&quot;/docs/tutorials/2015/04/15/understanding-plugin-template/&quot;&gt;http://rtxi.org/docs/tutorials/2015/04/15/understanding-plugin-template/&lt;/a&gt;&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;&lt;p&gt;Set the edited layout.  &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;Add custom elements to the layout. For more explanation about this,
+  see the example &lt;code&gt;customizeGUI&lt;/code&gt; function defined in the plugin
+  template. &lt;br /&gt;  
+  &lt;a href=&quot;/docs/tutorials/2015/04/15/understanding-plugin-template/&quot;&gt;http://rtxi.org/docs/tutorials/2015/04/15/understanding-plugin-template/&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;Set the edited layout.  &lt;/p&gt;
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;setLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-	&lt;/li&gt;
+
+  &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;div&gt;&amp;nbsp;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;5. Enforce types for get/set methods on RTXI workspace variables&lt;/strong&gt;&lt;br /&gt;
-RTXI workspace variables are displayed in the UI as &lt;code class=&quot;highlighter-rouge&quot;&gt;QStrings&lt;/code&gt;, and within the code they are regularly converted to the native types they are supposed to represent in memory, such as &lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;double&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt;. v2.0 should take the calls in v1.4 without issue, but if you run into problems, check the types of the variables you are using.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; v2.0 &lt;strong&gt;does not&lt;/strong&gt; support strings for &lt;code class=&quot;highlighter-rouge&quot;&gt;PARAMETER&lt;/code&gt; variables. Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;COMMENT&lt;/code&gt; type instead.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5. Enforce types for get/set methods on RTXI workspace variables&lt;/strong&gt;&lt;br /&gt;
+RTXI workspace variables are displayed in the UI as &lt;code class=&quot;highlighter-rouge&quot;&gt;QStrings&lt;/code&gt;, and within the
+code they are regularly converted to the native types they are supposed to
+represent in memory, such as &lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;double&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt;. 
+2.0 should take the calls in v1.4 without issue, but if you
+run into problems, check the types of the variables you are using.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; v2.0 &lt;strong&gt;does not&lt;/strong&gt; support strings for &lt;code class=&quot;highlighter-rouge&quot;&gt;PARAMETER&lt;/code&gt;
+variables. Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;COMMENT&lt;/code&gt; type instead.&lt;/p&gt;
 </description>
         <pubDate>Fri, 17 Apr 2015 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//docs/tutorials/2015/04/17/porting-to-rtxi-v2/</link>
@@ -243,7 +366,11 @@ RTXI workspace variables are displayed in the UI as &lt;code class=&quot;highlig
     
       <item>
         <title>List of Resources</title>
-        <description>&lt;p&gt;There are a lot of things you need to know to be able to fully use RTXI. Fortunately, these things aren’t hard to learn, and there is already plenty of documentation online to help you learn it. This is a non-exhaustive list of some good resources to learn what you need. They aren’t listed in any specific order.&lt;/p&gt;
+        <description>&lt;p&gt;There are a lot of things you need to know to be able to fully use RTXI.
+Fortunately, these things aren’t hard to learn, and there is already plenty of
+documentation online to help you learn it. This is a non-exhaustive list of
+some good resources to learn what you need. They aren’t listed in any specific
+order.&lt;/p&gt;
 
 &lt;h4 id=&quot;using-the-command-line&quot;&gt;Using the Command Line&lt;/h4&gt;
 &lt;ol&gt;
@@ -271,10 +398,19 @@ RTXI workspace variables are displayed in the UI as &lt;code class=&quot;highlig
 &lt;h4 id=&quot;qt-and-gui-creation&quot;&gt;Qt and GUI Creation&lt;/h4&gt;
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;http://doc.qt.io/qt-4.8/]&quot;&gt;http://doc.qt.io/qt-4.8/&lt;/a&gt;&lt;br /&gt;
-&lt;strong&gt;Note:&lt;/strong&gt; Be careful with some of the Qt tutorials. You don’t need to instatiate things like QApplication objects, create qmake.pro files, etc. because RTXI takes care of that. Pay attention to what the UI classes are and how to use the signal/slot API.&lt;/li&gt;
+&lt;strong&gt;Note:&lt;/strong&gt; Be careful with some of the Qt tutorials. You don’t need to
+instatiate things like QApplication objects, create qmake.pro files, etc.
+because RTXI takes care of that. Pay attention to what the UI classes are and
+how to use the signal/slot API.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Again, this is a non-exhaustive list of a tiny subset of all that’s available online and in print. It takes some time to learn these things, just as it does with anything else. It also wouldn’t hurt to learn these things in general, Qt excepted. Unix-like environments are very common on clusters for computational research; Git and GitHub are widely used for coding projects; and C++ very fast and good to learn, especially given that other languages often use it as a backend to speed up loops and other heavy sections of code.&lt;/p&gt;
+&lt;p&gt;Again, this is a non-exhaustive list of a tiny subset of all that’s available
+online and in print. It takes some time to learn these things, just as it does
+with anything else. It also wouldn’t hurt to learn these things in general, Qt
+excepted. Unix-like environments are very common on clusters for computational
+research; Git and GitHub are widely used for coding projects; and C++ very fast
+and good to learn, especially given that other languages often use it as a
+backend to speed up loops and other heavy sections of code.&lt;/p&gt;
 </description>
         <pubDate>Thu, 16 Apr 2015 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//docs/tutorials/2015/04/16/resource-list/</link>
@@ -283,39 +419,61 @@ RTXI workspace variables are displayed in the UI as &lt;code class=&quot;highlig
     
       <item>
         <title>Making New Modules in RTXI</title>
-        <description>&lt;p&gt;Outlined here is the development process for making new RTXI modules. For simplicity, we provide a template module, called Plugin Template, for users to customize without needing to writing everything from scratch. Plugin Template defines a basic GUI with customizable widgets and is found &lt;a href=&quot;https://github.com/rtxi/plugin-template&quot;&gt;on our GitHub repository&lt;/a&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;Outlined here is the development process for making new RTXI modules. For
+simplicity, we provide a template module, called Plugin Template, for users to
+customize without needing to writing everything from scratch. Plugin Template
+defines a basic GUI with customizable widgets and is found &lt;a href=&quot;https://github.com/rtxi/plugin-template&quot;&gt;on our GitHub
+repository&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;to-fork-rtxi-modules&quot;&gt;To fork RTXI modules:&lt;/h3&gt;
 
 &lt;h4 id=&quot;clone-the-repository-from-github&quot;&gt;1. Clone the repository from GitHub.&lt;/h4&gt;
-&lt;p&gt;From our site, go to the &lt;a href=&quot;https://github.com/rtxi/plugin-template&quot;&gt;Plugin-Template repository&lt;/a&gt;. Download the source files:&lt;/p&gt;
+&lt;p&gt;From our site, go to the &lt;a href=&quot;https://github.com/rtxi/plugin-template&quot;&gt;Plugin-Template
+repository&lt;/a&gt;. Download the source
+files:&lt;/p&gt;
 
-&lt;p&gt;Now, clone the repository. Developers for new modules are expected to base it on MyPluginGUI. Type:&lt;/p&gt;
+&lt;p&gt;Now, clone the repository. Developers for new modules are expected to base it
+on MyPluginGUI. Type:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git clone https://github.com/rtxi/plugin-template.git custom_module&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;custom_module&lt;/code&gt; is the name of the directory git will create when downloading the source code. You can change it to whatever you want. If you don’t specify a name, it will default to &lt;code class=&quot;highlighter-rouge&quot;&gt;plugin-template&lt;/code&gt;, the name of the repository on GitHub.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;custom_module&lt;/code&gt; is the name of the directory git will create when downloading
+the source code. You can change it to whatever you want. If you don’t specify a
+name, it will default to &lt;code class=&quot;highlighter-rouge&quot;&gt;plugin-template&lt;/code&gt;, the name of the repository on
+GitHub.&lt;/p&gt;
 
-&lt;p&gt;Once the module is downloaded, look inside the new directory for Plugin Template’s source code. An explanation of the header and source files is available in the our &lt;a href=&quot;http://rtxi.org/docs/manual/#customizing_gui&quot;&gt;user manual&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Once the module is downloaded, look inside the new directory for Plugin
+Template’s source code. An explanation of the header and source files is
+available in the our &lt;a href=&quot;http://rtxi.org/docs/manual/#customizing_gui&quot;&gt;user
+manual&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h4 id=&quot;modify-files&quot;&gt;2. Modify files.&lt;/h4&gt;
-&lt;p&gt;Modify the RTXI files to run the code you want. When you compile and install your module, be sure to rename the source files and classes to something other than &lt;code class=&quot;highlighter-rouge&quot;&gt;plugin-template&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;PluginTemplate&lt;/code&gt;, respectively. It’s preferable to name it  something that reflects what it does. A quick and easy way to change the names of the files, classes, and binary is to use the &lt;code class=&quot;highlighter-rouge&quot;&gt;sed&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;mv&lt;/code&gt; commands:&lt;/p&gt;
+&lt;p&gt;Modify the RTXI files to run the code you want. When you compile and install
+your module, be sure to rename the source files and classes to something other
+than &lt;code class=&quot;highlighter-rouge&quot;&gt;plugin-template&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;PluginTemplate&lt;/code&gt;, respectively. It’s preferable to
+name it  something that reflects what it does. A quick and easy way to change
+the names of the files, classes, and binary is to use the &lt;code class=&quot;highlighter-rouge&quot;&gt;sed&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;mv&lt;/code&gt;
+commands. A wrapper script called &lt;code class=&quot;highlighter-rouge&quot;&gt;rename_module.sh&lt;/code&gt; is provided in the
+plugin-template repository.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sed -i &lt;span class=&quot;s1&quot;&gt;'s/plugin-template/&amp;lt;new_name_here&amp;gt;/g'&lt;/span&gt; plugin-template.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Makefile 
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sed -i &lt;span class=&quot;s1&quot;&gt;'s/plugin_template/&amp;lt;new_name_here&amp;gt;/g'&lt;/span&gt; plugin-template.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Makefile
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sed -i &lt;span class=&quot;s1&quot;&gt;'s/PluginTemplate/&amp;lt;NewNameHere&amp;gt;/g'&lt;/span&gt; plugin-template.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Makefile
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mv plugin-template.cpp &amp;lt;new_name_here&amp;gt;.cpp
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mv plugin-template.h &amp;lt;new_name_here&amp;gt;.h&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;./rename_module.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;The first &lt;code class=&quot;highlighter-rouge&quot;&gt;sed&lt;/code&gt; command will search out any instance of the string &lt;code class=&quot;highlighter-rouge&quot;&gt;plugin-template&lt;/code&gt; in your source files and replace them with a string you enter in place of the placeholder &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;new_name_here&amp;gt;&lt;/code&gt;. The next two &lt;code class=&quot;highlighter-rouge&quot;&gt;sed&lt;/code&gt; commands will do the same. The &lt;code class=&quot;highlighter-rouge&quot;&gt;mv&lt;/code&gt; commands will rename the files.&lt;/p&gt;
+&lt;p&gt;Additionally, it’s good practice to document your code. As a general rule,
+document it so that you’re confident that anyone with programming experience
+will be able to understand what your code and overall module do. Within the
+plugin-template repository, there is another script called &lt;code class=&quot;highlighter-rouge&quot;&gt;build_readme.sh&lt;/code&gt;.
+It parses your source file and generates a readme from it.&lt;/p&gt;
 
-&lt;p&gt;Note that all commands that use the placeholder &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;new_name_here&amp;gt;&lt;/code&gt; assume that you provide the same string for each instance of the placeholder. Not following this convention &lt;em&gt;could&lt;/em&gt; cause bugs that prevent your module from compiling if, for example, your sources file names and the &lt;code class=&quot;highlighter-rouge&quot;&gt;#includes&lt;/code&gt; within them come out differently.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;./build_readme.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Additionally, it’s good practice to document your code. As a general rule, document it so that you’re confident that anyone with programming experience will be able to understand what your code and overall module do.&lt;/p&gt;
+&lt;p&gt;The script assumes that the name of your source file matches the directory
+name, so it will look for and parse &lt;custom_module.cpp&gt; if the directory is
+called &lt;custom_module&gt;.&lt;/custom_module&gt;&lt;/custom_module.cpp&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;compile-and-install&quot;&gt;3. Compile and install.&lt;/h4&gt;
 
-&lt;p&gt;Once you’re ready to compile and install your module, go to the base of your module directory and execute:&lt;/p&gt;
+&lt;p&gt;Once you’re ready to compile and install your module, go to the base of your
+module directory and execute:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;make 
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo make install &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -328,55 +486,88 @@ RTXI workspace variables are displayed in the UI as &lt;code class=&quot;highlig
     
       <item>
         <title>Posting Bugs and Issues on GitHub</title>
-        <description>&lt;p&gt;RTXI is in active development, and our work depends heavily on user feedback. This tutorial provides instructions for creating bug reports, posting questions about issues, making feature requests, etc. through GitHub. Though email will also work, we strongly encourage using GitHub so that users can see existing issues and contribute to overall discussion. To use GitHub, you will need to create a &lt;a href=&quot;https://github.com/join&quot;&gt;GitHub account&lt;/a&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;RTXI is in active development, and our work depends heavily on user feedback.
+This tutorial provides instructions for creating bug reports, posting questions
+about issues, making feature requests, etc. through GitHub. Though email will
+also work, we strongly encourage using GitHub so that users can see existing
+issues and contribute to overall discussion. To use GitHub, you will need to
+create a &lt;a href=&quot;https://github.com/join&quot;&gt;GitHub account&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; For the sake of absolute clarity, please do not actually create an issue in the process of going though this tutorial.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; For the sake of absolute clarity, please do not actually create an
+issue in the process of going though this tutorial.&lt;/p&gt;
 
 &lt;h4 id=&quot;navigate-to-the-repository&quot;&gt;1. Navigate to the repository.&lt;/h4&gt;
 &lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-8 col-xs-12&quot;&gt; 
-Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https://github.com/rtxi&lt;/a&gt;). On the page, use the search bar or scroll down until you find the software you want to report. If you experience a bug within RTXI and its built-in modules, look for the &lt;code&gt;rtxi&lt;/code&gt; repository. If it's a module you have problems with, find the repository that correponds to the module name. Also, if you have questions about anything on this website, go to the &lt;code&gt;rtxi.github.io&lt;/code&gt; repository.  
-		&lt;div&gt;&amp;nbsp;&lt;/div&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-4 col-xs-12&quot;&gt;
-		&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-xs-10 col-xs-offset-1 col-md-12 col-md-offset-0&quot;&gt;
-			&lt;a href=&quot;/assets/img/tutorials/rtxi-github-main-page.png&quot;&gt;
-				&lt;img src=&quot;/assets/img/tutorials/rtxi-github-main-page.png&quot; class=&quot;img-responsive&quot; /&gt;
-			&lt;/a&gt;
-		&lt;/div&gt;&lt;/div&gt;
-	&lt;/div&gt;
+  &lt;div class=&quot;col-md-8 col-xs-12&quot;&gt; 
+    Go to our GitHub page (
+    &lt;a href=&quot;https://github.com/rtxi&quot;&gt;https://github.com/rtxi&lt;/a&gt;). On the page,
+    use the search bar or scroll down until you find the software you want to
+    report.  If you experience a bug within RTXI and its built-in modules, look
+    for the &lt;code&gt;rtxi&lt;/code&gt; repository. If it's a module you have problems
+    with, find the repository that correponds to the module name. Also, if
+    you have questions about anything on this website, go to the
+    &lt;code&gt;rtxi.github.io&lt;/code&gt; repository.  
+    &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;col-md-4 col-xs-12&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-xs-10 col-xs-offset-1 col-md-12 col-md-offset-0&quot;&gt;
+        &lt;a href=&quot;/assets/img/tutorials/rtxi-github-main-page.png&quot;&gt;
+          &lt;img src=&quot;/assets/img/tutorials/rtxi-github-main-page.png&quot; class=&quot;img-responsive&quot; /&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;h4 id=&quot;open-an-issue-on-the-repository-page&quot;&gt;2. Open an issue on the repository page.&lt;/h4&gt;
-&lt;p&gt;Each module has an issue page where you can view, submit, and comment on current development issues. Pictured is the repository page for &lt;code class=&quot;highlighter-rouge&quot;&gt;rtxi&lt;/code&gt;. To navigate to its issues page, click on &lt;code class=&quot;highlighter-rouge&quot;&gt;Issues&lt;/code&gt; on the right sidebar.&lt;/p&gt;
+&lt;p&gt;Each module has an issue page where you can view, submit, and comment on
+current development issues. Pictured is the repository page for &lt;code class=&quot;highlighter-rouge&quot;&gt;rtxi&lt;/code&gt;. To
+navigate to its issues page, click on &lt;code class=&quot;highlighter-rouge&quot;&gt;Issues&lt;/code&gt; on the right sidebar.&lt;/p&gt;
 
-&lt;p&gt;Click on &lt;code class=&quot;highlighter-rouge&quot;&gt;Issues&lt;/code&gt;. It’s on the sidebar to the right. If you haven’t logged in to GitHub already, you will be prompted to now. This will open up a new page that shows all the issues posted to the repository. Look through them to see if the issue you are having is related to something someone else posted. If it is, you can add to the existing discussion. If not, then open up a new issue.&lt;/p&gt;
+&lt;p&gt;Click on &lt;code class=&quot;highlighter-rouge&quot;&gt;Issues&lt;/code&gt;. It’s on the sidebar to the right. If you haven’t logged in
+to GitHub already, you will be prompted to now. This will open up a new page
+that shows all the issues posted to the repository. Look through them to see if
+the issue you are having is related to something someone else posted. If it is,
+you can add to the existing discussion. If not, then open up a new issue.&lt;/p&gt;
 
 &lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-xs-12 col-sm-6 col-md-5 col-md-offset-1&quot;&gt;
-		&lt;a href=&quot;/assets/img/tutorials/rtxi-github-rtxi-page.png&quot;&gt;
-			&lt;img src=&quot;/assets/img/tutorials/rtxi-github-rtxi-page.png&quot; class=&quot;img-responsive&quot; /&gt;
-		&lt;/a&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;col-sm-6 col-xs-12 col-md-5&quot;&gt;
-		&lt;a href=&quot;/assets/img/tutorials/rtxi-github-rtxi-issues.png&quot;&gt;&lt;figure&gt;
-			&lt;img src=&quot;/assets/img/tutorials/rtxi-github-rtxi-issues.png&quot; class=&quot;img-responsive&quot; /&gt;
-		&lt;/figure&gt;&lt;/a&gt;
-	&lt;/div&gt;
+  &lt;div class=&quot;col-xs-12 col-sm-6 col-md-5 col-md-offset-1&quot;&gt;
+    &lt;a href=&quot;/assets/img/tutorials/rtxi-github-rtxi-page.png&quot;&gt;
+      &lt;img src=&quot;/assets/img/tutorials/rtxi-github-rtxi-page.png&quot; class=&quot;img-responsive&quot; /&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;col-sm-6 col-xs-12 col-md-5&quot;&gt;
+    &lt;a href=&quot;/assets/img/tutorials/rtxi-github-rtxi-issues.png&quot;&gt;&lt;figure&gt;
+      &lt;img src=&quot;/assets/img/tutorials/rtxi-github-rtxi-issues.png&quot; class=&quot;img-responsive&quot; /&gt;
+    &lt;/figure&gt;&lt;/a&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;h4 id=&quot;write-up-your-issue&quot;&gt;3. Write up your issue.&lt;/h4&gt;
-&lt;p&gt;Click the appropriate button for whether you’re opening a new issue or joining an existing thread. Please be as clear and detailed as possible in your comments, as only posting things like “RTXI is crashing” or “X isn’t working” doesn’t help us figure out what the issue is.&lt;/p&gt;
+&lt;p&gt;Click the appropriate button for whether you’re opening a new issue or joining
+an existing thread. Please be as clear and detailed as possible in your
+comments, as only posting things like “RTXI is crashing” or “X isn’t working”
+doesn’t help us figure out what the issue is.&lt;/p&gt;
 
-&lt;p&gt;For your posts, we ask (but don’t require) you do provide the following information when appropriate:&lt;/p&gt;
+&lt;p&gt;For your posts, we ask (but don’t require) you do provide the following
+information when appropriate:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;The version of RTXI you are using.&lt;/strong&gt;  If you used a live CD to install RTXI, just say that. If you compiled from source, go to your clone of the RTXI repository and run &lt;code class=&quot;highlighter-rouge&quot;&gt;git log&lt;/code&gt;. The most recent commit will have a string associated with it that looks like a random list of letters. Give us the string.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Error messages from RTXI in the terminal.&lt;/strong&gt; If there are no error messages, no problem. If RTXI is crashing, it would be incredibly helpful if you used &lt;code class=&quot;highlighter-rouge&quot;&gt;gdb&lt;/code&gt; to provide a backtrace.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;A clear description of the bug.&lt;/strong&gt; Describe the behavior you expect, the behavior that is happening, and the set of steps that trigger the error.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The version of RTXI you are using.&lt;/strong&gt;  If you used a live CD to install
+RTXI, just say that. If you compiled from source, go to your clone of the
+RTXI repository and run &lt;code class=&quot;highlighter-rouge&quot;&gt;git log&lt;/code&gt;. The most recent commit will have a string
+associated with it that looks like a random list of letters. Give us the
+string.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Error messages from RTXI in the terminal.&lt;/strong&gt; If there are no error
+messages, no problem. If RTXI is crashing, it would be incredibly helpful if
+you used &lt;code class=&quot;highlighter-rouge&quot;&gt;gdb&lt;/code&gt; to provide a backtrace.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;A clear description of the bug.&lt;/strong&gt; Describe the behavior you expect, the
+behavior that is happening, and the set of steps that trigger the error.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Clear issue postings are incredibly helpful for us to start debugging your issues, and it also helps anyone else fully understand the issues you have.&lt;/p&gt;
+&lt;p&gt;Clear issue postings are incredibly helpful for us to start debugging your
+issues, and it also helps anyone else fully understand the issues you have.&lt;/p&gt;
 </description>
         <pubDate>Thu, 09 Apr 2015 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//docs/troubleshoot/2015/04/09/posting-bugs-and-issues/</link>
@@ -385,42 +576,84 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
     
       <item>
         <title>How to Use Git</title>
-        <description>&lt;p&gt;Below are instructions for installing and using Git. Git is a version control tool that enables users to track revisions and changes in files and coordinate with collaborators. It is often used for software development.&lt;/p&gt;
+        <description>&lt;p&gt;Below are instructions for installing and using Git. Git is a version control
+tool that enables users to track revisions and changes in files and coordinate
+with collaborators. It is often used for software development.&lt;/p&gt;
 
-&lt;p&gt;Unlike many applications, such as Microsoft Word, editing and saving files overwrites data. This makes it difficult to track changes without creating different file names, a process that can get messy very quickly.&lt;/p&gt;
+&lt;p&gt;Unlike many applications, such as Microsoft Word, editing and saving files
+overwrites data. This makes it difficult to track changes without creating
+different file names, a process that can get messy very quickly.&lt;/p&gt;
 
-&lt;p&gt;Git takes snapshots of files a user wants to track and maintains a history of changes that have occurred. This makes backtracking and checking revisions a simple process, which is especially helpful for large projects with many developers. It also functions as a collaborative tool by enabling users to make local copies of a common project and modify them as needed. Users track their own changes and those of others, and Git incorporates tools that enable branching and merging of whatever changes people make.&lt;/p&gt;
+&lt;p&gt;Git takes snapshots of files a user wants to track and maintains a history of
+changes that have occurred. This makes backtracking and checking revisions a
+simple process, which is especially helpful for large projects with many
+developers. It also functions as a collaborative tool by enabling users to make
+local copies of a common project and modify them as needed. Users track their
+own changes and those of others, and Git incorporates tools that enable
+branching and merging of whatever changes people make.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.phdcomics.com/comics/archive/phd101212s.gif&quot;&gt;
-	&lt;img src=&quot;http://www.phdcomics.com/comics/archive/phd101212s.gif&quot; class=&quot;img-responsive&quot; style=&quot;max-height:400px; float:right; margin:10px;&quot; /&gt;
+  &lt;img src=&quot;http://www.phdcomics.com/comics/archive/phd101212s.gif&quot; class=&quot;img-responsive&quot; style=&quot;max-height:400px;float:right;margin:10px;&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Installing git is not the same as using GitHub. GitHub uses git, but it is a remote server that users can use as a central location for storing data. See the instructions for &lt;a href=&quot;https://github.com/join&quot;&gt;opening a GitHub account&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Installing git is not the same as using GitHub. GitHub uses git, but
+it is a remote server that users can use as a central location for storing
+data. See the instructions for &lt;a href=&quot;https://github.com/join&quot;&gt;opening a GitHub
+account&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h4 id=&quot;installing-git-on-linux&quot;&gt;Installing Git on Linux&lt;/h4&gt;
 
-&lt;p&gt;Open the terminal. You can do this from within the Applications menu in GNOME or by using the &lt;code class=&quot;highlighter-rouge&quot;&gt;CTRL+Alt+t&lt;/code&gt; shortcut. Enter:&lt;/p&gt;
+&lt;p&gt;Open the terminal. You can do this from within the Applications menu in GNOME
+or by using the &lt;code class=&quot;highlighter-rouge&quot;&gt;CTRL+Alt+t&lt;/code&gt; shortcut. Enter:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo apt-get install git&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; When telling people to enter commands, it is common practice to use &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; at the start of each line to signify that it is to be entered in the terminal. Also, &lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt; is used to signify root permissions rather than having people enter &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt;. In either case, you DO NOT have to enter &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt; in the terminal. For example, in the above command. just enter the text &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install git&lt;/code&gt; and hit &lt;code class=&quot;highlighter-rouge&quot;&gt;ENTER&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; When telling people to enter commands, it is common practice to use
+&lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; at the start of each line to signify that it is to be entered in the
+terminal. Also, &lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt; is used to signify root permissions rather than having
+people enter &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt;. In either case, you DO NOT have to enter &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt; in the
+terminal. For example, in the above command. just enter the text &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get
+install git&lt;/code&gt; and hit &lt;code class=&quot;highlighter-rouge&quot;&gt;ENTER&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Once Git is installed, configure it with your username and/or email address. This is preferred in development scenarios so that everyone can identify what modifications were made by which user. GitHub also maps Git user email addresses to GitHub accounts. Note that you do not have to give your real name. Any name will do, as all that is needed is a way to identify who has done what. Technically, Git does not check email address validity, either, but for collaborate work, it is best to provide some address so that people can ask each other questions about changes.&lt;/p&gt;
+&lt;p&gt;Once Git is installed, configure it with your username and/or email address.
+This is preferred in development scenarios so that everyone can identify what
+modifications were made by which user. GitHub also maps Git user email
+addresses to GitHub accounts. Note that you do not have to give your real name.
+Any name will do, as all that is needed is a way to identify who has done what.
+Technically, Git does not check email address validity, either, but for
+collaborate work, it is best to provide some address so that people can ask
+each other questions about changes.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git config --global user.name &lt;span class=&quot;s1&quot;&gt;'Your name here'&lt;/span&gt;
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git config --global user.email your@address.here&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; part of each command specifies that the script that follows contains Git commands. Git provides a library of functions for executing version control. Rather than have them directly incorporated into system libraries, they are made accessible by preceding the command with &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;. Therefore, these commands and all other git commands we will use start with &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; part of each command specifies that the script that follows contains
+Git commands. Git provides a library of functions for executing version
+control. Rather than have them directly incorporated into system libraries,
+they are made accessible by preceding the command with &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;. Therefore, these
+commands and all other git commands we will use start with &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;The second part, &lt;code class=&quot;highlighter-rouge&quot;&gt;config&lt;/code&gt;, is used to configure information, which is stored in a hidden file. The tag &lt;code class=&quot;highlighter-rouge&quot;&gt;--global&lt;/code&gt; means that the changes to the user configuration are to affect all user repositories. The details are saved in a hidden file called .gitconfig stored at the base of the user’s home directory (&lt;code class=&quot;highlighter-rouge&quot;&gt;~/.gitconfig&lt;/code&gt;). Other options allow for different scopes of the effects of configuration changes. &lt;code class=&quot;highlighter-rouge&quot;&gt;--local&lt;/code&gt; is the default behavior and specifies that changes be written to hidden file in the working directory called &lt;code class=&quot;highlighter-rouge&quot;&gt;.git/config&lt;/code&gt;. You can see what has been set in the config files by running &lt;code class=&quot;highlighter-rouge&quot;&gt;git config --list&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The second part, &lt;code class=&quot;highlighter-rouge&quot;&gt;config&lt;/code&gt;, is used to configure information, which is stored in
+a hidden file. The tag &lt;code class=&quot;highlighter-rouge&quot;&gt;--global&lt;/code&gt; means that the changes to the user
+configuration are to affect all user repositories. The details are saved in a
+hidden file called .gitconfig stored at the base of the user’s home directory
+(&lt;code class=&quot;highlighter-rouge&quot;&gt;~/.gitconfig&lt;/code&gt;). Other options allow for different scopes of the effects of
+configuration changes. &lt;code class=&quot;highlighter-rouge&quot;&gt;--local&lt;/code&gt; is the default behavior and specifies that
+changes be written to hidden file in the working directory called
+&lt;code class=&quot;highlighter-rouge&quot;&gt;.git/config&lt;/code&gt;. You can see what has been set in the config files by running
+&lt;code class=&quot;highlighter-rouge&quot;&gt;git config --list&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Should you ever need help with a Git command, you can use &lt;code class=&quot;highlighter-rouge&quot;&gt;git help &amp;lt;commandname&amp;gt;&lt;/code&gt; to check the Git documentation in the terminal. For example, if unsure about &lt;code class=&quot;highlighter-rouge&quot;&gt;config&lt;/code&gt;, run &lt;code class=&quot;highlighter-rouge&quot;&gt;git help config&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Should you ever need help with a Git command, you can use `git help&lt;/p&gt;
+&lt;commandname&gt;` to check the Git documentation in the terminal. For example, if
+unsure about `config`, run `git help config`.  
 
-&lt;h3 id=&quot;using-local-repositories&quot;&gt;Using Local Repositories&lt;/h3&gt;
+### Using Local Repositories
 
-&lt;h4 id=&quot;initialization&quot;&gt;Initialization&lt;/h4&gt;
+#### Initialization 
 
-&lt;p&gt;Git enables users to track local changes and development paths. First, go the base of your home directory and create some new directories:&lt;/p&gt;
+Git enables users to track local changes and development paths. First, go the
+base of your home directory and create some new directories: 
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mkdir plugins
@@ -429,254 +662,402 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;practice
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ..&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Now, from within the plugins directory, run:&lt;/p&gt;
+
+Now, from within the plugins directory, run:
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git init&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
+
 &lt;!--
 &lt;a href=&quot;/assets/img/tutorials/git-tutorial-1.png&quot;&gt;
-	&lt;img src=&quot;/assets/img/tutorials/git-tutorial-1.png&quot; class=&quot;img-responsive&quot;&gt;
+  &lt;img src=&quot;/assets/img/tutorials/git-tutorial-1.png&quot; class=&quot;img-responsive&quot;&gt;
 &lt;/a&gt;
 --&gt;
 
-&lt;p&gt;This command specifies that the directory is to be treated as a Git repository. By default, Git does not track &lt;em&gt;any&lt;/em&gt; files. User must enable it in a directory of their choosing. Once executed, this function creates a hidden directory called &lt;code class=&quot;highlighter-rouge&quot;&gt;.git/&lt;/code&gt; that stores information regarding the repository contained in the directory.&lt;/p&gt;
+This command specifies that the directory is to be treated as a Git repository.
+By default, Git does not track *any* files. User must enable it in a directory
+of their choosing. Once executed, this function creates a hidden directory
+called `.git/` that stores information regarding the repository contained in
+the directory. 
 
 &lt;!--
 &lt;a href=&quot;/assets/img/tutorials/git-tutorial-2.png&quot;&gt;
-	&lt;img src=&quot;/assets/img/tutorials/git-tutorial-2.png&quot; class=&quot;img-responsive&quot;&gt;
+  &lt;img src=&quot;/assets/img/tutorials/git-tutorial-2.png&quot; class=&quot;img-responsive&quot;&gt;
 &lt;/a&gt;
 --&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Git exists as a version control system. It is not advisable to use it for backing up big files, such as videos, binaries, etc. The entire process gets encumbered quickly.&lt;/p&gt;
+**Note:** Git exists as a version control system. It is not advisable to use it for backing up big files, such as videos, binaries, etc. The entire process gets encumbered quickly. 
 
-&lt;h4 id=&quot;a-nameaddaadding-files-to-the-staging-area&quot;&gt;&lt;a name=&quot;add&quot;&gt;&lt;/a&gt;Adding Files to the Staging Area&lt;/h4&gt;
+#### &lt;a name=&quot;add&quot;&gt;&lt;/a&gt;Adding Files to the Staging Area 
 
-&lt;p&gt;The directory is currently empty, so create some files:&lt;/p&gt;
+The directory is currently empty, so create some files:
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;touch file1.txt
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;touch file2.txt
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;touch file3.txt&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;These files have been added to the repository, or in Git terminology, the &lt;strong&gt;working tree&lt;/strong&gt;. The working tree refers to all of the files that originate from the base of the directory, which in this case is &lt;code class=&quot;highlighter-rouge&quot;&gt;~/plugins&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;By default, Git does not track files that are added to the directory. Users have to specify that they be tracked. This is done by the &lt;code class=&quot;highlighter-rouge&quot;&gt;add&lt;/code&gt; command. Git does, though tell what files are and are not being tracked. Simply use &lt;code class=&quot;highlighter-rouge&quot;&gt;git status&lt;/code&gt;&lt;/p&gt;
+These files have been added to the repository, or in Git terminology, the
+**working tree**. The working tree refers to all of the files that originate
+from the base of the directory, which in this case is `~/plugins`. 
+
+By default, Git does not track files that are added to the directory. Users
+have to specify that they be tracked. This is done by the `add` command. Git
+does, though tell what files are and are not being tracked. Simply use `git
+status`
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git add file1.txt file2.txt file3.txt&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git add&lt;/code&gt; adds the files to what is called the &lt;strong&gt;staging area&lt;/strong&gt;. Basically, this command generates a snapshot of the files and stores them without adding them to the permanent version history. In other words, Git is aware of the files, but it has not added them to the permanent version history. Basically, git has a 2-stage revision process. The first is to send modified or new files to the staging area, and the second is to commit them to the permanent version history. This has its advantages in that it enables users to add files to a repository as a group that together functions properly. Reverting from one set of changes to another is simply a process of switching to another snapshot in the permanent history. This process is explained later.&lt;/p&gt;
 
-&lt;p&gt;To show what files are in the stating area, use:&lt;/p&gt;
+`git add` adds the files to what is called the **staging area**. Basically,
+this command generates a snapshot of the files and stores them without adding
+them to the permanent version history. In other words, Git is aware of the
+files, but it has not added them to the permanent version history. Basically,
+git has a 2-stage revision process. The first is to send modified or new files
+to the staging area, and the second is to commit them to the permanent version
+history. This has its advantages in that it enables users to add files to a
+repository as a group that together functions properly. Reverting from one set
+of changes to another is simply a process of switching to another snapshot in
+the permanent history. This process is explained later. 
+
+To show what files are in the stating area, use:
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git status&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
+
 &lt;!--
 &lt;a href=&quot;/assets/img/tutorials/git-tutorial-3.png&quot;&gt;
-	&lt;img src=&quot;/assets/img/tutorials/git-tutorial-3.png&quot; class=&quot;img-responsive&quot;&gt;
+  &lt;img src=&quot;/assets/img/tutorials/git-tutorial-3.png&quot; class=&quot;img-responsive&quot;&gt;
 &lt;/a&gt;
 --&gt;
 
-&lt;p&gt;If needed, it is possible to unstage files that were added with &lt;code class=&quot;highlighter-rouge&quot;&gt;git add&lt;/code&gt;. Git gives the user the command 
-&lt;code class=&quot;highlighter-rouge&quot;&gt;git rm --cached &amp;lt;filename&amp;gt;&lt;/code&gt;. Try it on one of the files and see the changes made to the staging area.&lt;/p&gt;
+If needed, it is possible to unstage files that were added with `git add`. Git
+gives the user the command `git rm --cached &lt;filename&gt;`. Try it on one of the
+files and see the changes made to the staging area. 
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git rm --cached file1.txt
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git status&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
+
 &lt;!--
 &lt;a href=&quot;/assets/img/tutorials/git-tutorial-4.png&quot;&gt;
-	&lt;img src=&quot;/assets/img/tutorials/git-tutorial-4.png&quot; class=&quot;img-responsive&quot;&gt;
+  &lt;img src=&quot;/assets/img/tutorials/git-tutorial-4.png&quot; class=&quot;img-responsive&quot;&gt;
 &lt;/a&gt;
 --&gt;
 
-&lt;p&gt;The following assumes that all three files are added to the staging area. You can add all files to the staging area by running &lt;code class=&quot;highlighter-rouge&quot;&gt;git add -A&lt;/code&gt;.&lt;/p&gt;
+The following assumes that all three files are added to the staging area. You
+can add all files to the staging area by running `git add -A`. 
 
-&lt;h4 id=&quot;a-namecommitacommiting-files&quot;&gt;&lt;a name=&quot;commit&quot;&gt;&lt;/a&gt;Commiting Files&lt;/h4&gt;
+#### &lt;a name=&quot;commit&quot;&gt;&lt;/a&gt;Commiting Files 
 
-&lt;p&gt;With the files added to the staging area, the next step is to add them to the permanent version history. In Git, this process is called a &lt;strong&gt;commit&lt;/strong&gt;. Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;commit&lt;/code&gt; command.&lt;/p&gt;
+With the files added to the staging area, the next step is to add them to the
+permanent version history. In Git, this process is called a **commit**. Use the
+`commit` command. 
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git commit file1.txt file2.txt file3.txt -m &lt;span class=&quot;s2&quot;&gt;&quot;First commit&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;commit&lt;/code&gt; command adds files in the staging area to the repository. Each commit requires a message that is intended to describe the changes that took place. This can be done in the command line by using &lt;code class=&quot;highlighter-rouge&quot;&gt;-m&lt;/code&gt; followed by the message in quotation marks. If this is omitted, Git defaults to a text editor where users can type the message. The &lt;code class=&quot;highlighter-rouge&quot;&gt;commit&lt;/code&gt; command is completed when the user saves the message and exits the editor.&lt;/p&gt;
 
-&lt;p&gt;If you opt to not specify the filenames for the commit, git will commit all the files in the staging area.&lt;/p&gt;
+The `commit` command adds files in the staging area to the repository. Each
+commit requires a message that is intended to describe the changes that took
+place. This can be done in the command line by using `-m` followed by the
+message in quotation marks. If this is omitted, Git defaults to a text editor
+where users can type the message. The `commit` command is completed when the
+user saves the message and exits the editor.  
 
-&lt;p&gt;Because all the files in the staging area were committed in the last command, there are all removed from the staging area. You can check with &lt;code class=&quot;highlighter-rouge&quot;&gt;git status&lt;/code&gt;.&lt;/p&gt;
+If you opt to not specify the filenames for the commit, git will commit all the
+files in the staging area.  
 
-&lt;p&gt;The version history is in essence a list of commits. To view the complete history of the project, use:&lt;/p&gt;
+Because all the files in the staging area were committed in the last command,
+there are all removed from the staging area. You can check with `git status`.  
+
+The version history is in essence a list of commits. To view the complete
+history of the project, use:
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git log&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;This outputs a list of all the commits, when they were made, the author, the commit messages, and other information. The string at the top of seemingly random letters is an encrypted hash of the changes that were made. A hash is a string that encodes data and is produced by a hash function. Ideally, a hash function is implemented such that a small change in the data it encodes results in a large, unpredictable change in the hash. This enables users to check the file’s integrity and makes it exceedingly difficult to alter the commit history.&lt;/p&gt;
+
+This outputs a list of all the commits, when they were made, the author, the
+commit messages, and other information. The string at the top of seemingly
+random letters is an encrypted hash of the changes that were made. A hash is a
+string that encodes data and is produced by a hash function. Ideally, a hash
+function is implemented such that a small change in the data it encodes results
+in a large, unpredictable change in the hash. This enables users to check the
+file's integrity and makes it exceedingly difficult to alter the commit
+history.  
 
 &lt;!--
 &lt;a href=&quot;/assets/img/tutorials/git-tutorial-5.png&quot;&gt;
-	&lt;img src=&quot;/assets/img/tutorials/git-tutorial-5.png&quot; class=&quot;img-responsive&quot;&gt;
+  &lt;img src=&quot;/assets/img/tutorials/git-tutorial-5.png&quot; class=&quot;img-responsive&quot;&gt;
 &lt;/a&gt;
 --&gt;
 
-&lt;h4 id=&quot;a-nameundoaoptional-undo-a-commit&quot;&gt;&lt;a name=&quot;undo&quot;&gt;&lt;/a&gt;(Optional) Undo a Commit&lt;/h4&gt;
+#### &lt;a name=&quot;undo&quot;&gt;&lt;/a&gt;(Optional) Undo a Commit 
 
-&lt;p&gt;If you ever commit something and wish to revert your changes, use the &lt;code class=&quot;highlighter-rouge&quot;&gt;reset&lt;/code&gt; command. There are several options. The first is:&lt;/p&gt;
+If you ever commit something and wish to revert your changes, use the `reset`
+command. There are several options. The first is:
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git reset --hard HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;This command erases &lt;strong&gt;everything&lt;/strong&gt; that was altered after the previous commit and sets the working tree to the previous commit. The &lt;code class=&quot;highlighter-rouge&quot;&gt;--hard&lt;/code&gt; induces the erasure, and &lt;code class=&quot;highlighter-rouge&quot;&gt;HEAD~1&lt;/code&gt; moves to the previous commit. &lt;code class=&quot;highlighter-rouge&quot;&gt;HEAD&lt;/code&gt; is a pointer that Git uses to point to a specific commit in a branch. &lt;code class=&quot;highlighter-rouge&quot;&gt;HEAD&lt;/code&gt; by default points to the latest commit, so to access previous ones, use &lt;code class=&quot;highlighter-rouge&quot;&gt;~X&lt;/code&gt; where X is the number of commits ago you want to go.&lt;/p&gt;
 
-&lt;p&gt;Be very careful when using &lt;code class=&quot;highlighter-rouge&quot;&gt;--hard&lt;/code&gt;.&lt;/p&gt;
+This command erases **everything** that was altered after the previous commit
+and sets the working tree to the previous commit. The `--hard` induces the
+erasure, and `HEAD~1` moves to the previous commit. `HEAD` is a pointer that
+Git uses to point to a specific commit in a branch. `HEAD` by default points to
+the latest commit, so to access previous ones, use `~X` where X is the number
+of commits ago you want to go. 
 
-&lt;p&gt;The second option:&lt;/p&gt;
+Be very careful when using `--hard`. 
+
+The second option:
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git reset --mixed HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;-OR-&lt;/p&gt;
+
+-OR-
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git reset HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;This file preserves the changes made but reverts the HEAD pointer back one commit. The changes are unstaged, so the working directory matches the previous commit.&lt;/p&gt;
 
-&lt;p&gt;The last option:&lt;/p&gt;
+This file preserves the changes made but reverts the HEAD pointer back one
+commit. The changes are unstaged, so the working directory matches the previous
+commit. 
+
+The last option:
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git reset --soft HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;The only change is that the most recent commit is reversed. The staging area is the same; it reflects the changes that have been made between the commit to be erased and its predecessor. This option exactly reverses the effects of a &lt;code class=&quot;highlighter-rouge&quot;&gt;git commit&lt;/code&gt; command.&lt;/p&gt;
 
-&lt;p&gt;The following assumes that the commit has not been reversed. All three files are committed in the repository.&lt;/p&gt;
+The only change is that the most recent commit is reversed. The staging area is
+the same; it reflects the changes that have been made between the commit to be
+erased and its predecessor. This option exactly reverses the effects of a `git
+commit` command. 
 
-&lt;h4 id=&quot;a-namebranchabranching-repositories&quot;&gt;&lt;a name=&quot;branch&quot;&gt;&lt;/a&gt;Branching Repositories&lt;/h4&gt;
+The following assumes that the commit has not been reversed. All three files
+are committed in the repository. 
 
-&lt;p&gt;Now that a commit has been made, branch off and create a new working tree. Currently, HEAD points to the last commit of the original branch, called &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;. This is the default name for a new git repository. It is generally best practice to branch off of master to make changes and then merge changes back to master once they have been thoroughly audited. That way, whatever code is in the master branch is guaranteed to work.&lt;/p&gt;
+#### &lt;a name=&quot;branch&quot;&gt;&lt;/a&gt;Branching Repositories 
 
-&lt;p&gt;Create a branch called &lt;code class=&quot;highlighter-rouge&quot;&gt;testing&lt;/code&gt;:&lt;/p&gt;
+Now that a commit has been made, branch off and create a new working tree.
+Currently, HEAD points to the last commit of the original branch, called
+`master`. This is the default name for a new git repository. It is generally
+best practice to branch off of master to make changes and then merge changes
+back to master once they have been thoroughly audited. That way, whatever code
+is in the master branch is guaranteed to work.  
+
+Create a branch called `testing`:
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git branch testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;This creates a new branch called &lt;code class=&quot;highlighter-rouge&quot;&gt;testing&lt;/code&gt;. By default, it copies the state pointed to by HEAD, but it is possible to branch off of previous commits. To list the available branches, use &lt;code class=&quot;highlighter-rouge&quot;&gt;git branch&lt;/code&gt;. To switch to the newly created branch, use:&lt;/p&gt;
+
+This creates a new branch called `testing`. By default, it copies the state
+pointed to by HEAD, but it is possible to branch off of previous commits. To
+list the available branches, use `git branch`. To switch to the newly created
+branch, use:  
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git checkout testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Now, HEAD is pointing to &lt;code class=&quot;highlighter-rouge&quot;&gt;testing&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;. Any commits made will be applied to &lt;code class=&quot;highlighter-rouge&quot;&gt;testing&lt;/code&gt; as long as it is checked out.&lt;/p&gt;
+
+Now, HEAD is pointing to `testing` instead of `master`. Any commits made will
+be applied to `testing` as long as it is checked out. 
 
 &lt;!--
 &lt;a href=&quot;/assets/img/tutorials/git-tutorial-6.png&quot;&gt;
-	&lt;img src=&quot;/assets/img/tutorials/git-tutorial-6.png&quot; class=&quot;img-responsive&quot;&gt;
+  &lt;img src=&quot;/assets/img/tutorials/git-tutorial-6.png&quot; class=&quot;img-responsive&quot;&gt;
 &lt;/a&gt;
 --&gt;
 
-&lt;h4 id=&quot;a-namecommitbranchacommiting-branches&quot;&gt;&lt;a name=&quot;commitbranch&quot;&gt;&lt;/a&gt;Commiting Branches&lt;/h4&gt;
+#### &lt;a name=&quot;commitbranch&quot;&gt;&lt;/a&gt;Commiting Branches 
 
-&lt;p&gt;Change the current files. This command will add text to the files saying, “This is &lt;filename&gt;&quot;. You can use `more &lt;filename&gt;` or `cat &lt;filename&gt;` to output the contents of a file into the terminal.&lt;/filename&gt;&lt;/filename&gt;&lt;/filename&gt;&lt;/p&gt;
+Change the current files. This command will add text to the files saying, &quot;This
+is &lt;filename&gt;&quot;. You can use `more &lt;filename&gt;` or `cat &lt;filename&gt;` to output the
+contents of a file into the terminal. 
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;find . -maxdepth 1 -type f | xargs -I &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; bash -c &lt;span class=&quot;s2&quot;&gt;&quot;echo 'This is '{} &amp;gt; {}&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Now that the files have been altered, run &lt;code class=&quot;highlighter-rouge&quot;&gt;git status&lt;/code&gt; to see what Git has noticed. Stage the changes and commit them:&lt;/p&gt;
+
+Now that the files have been altered, run `git status` to see what Git has
+noticed. Stage the changes and commit them:
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git add .
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git commit . -m &lt;span class=&quot;s2&quot;&gt;&quot;First Branch Commit&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; operator causes commands to affect all files in a directory. Using it is easier than typing individual file names.&lt;/p&gt;
+
+The `.` operator causes commands to affect all files in a directory. Using it
+is easier than typing individual file names. 
 
 &lt;!--
 &lt;a href=&quot;/assets/img/tutorials/git-tutorial-7.png&quot;&gt;
-	&lt;img src=&quot;/assets/img/tutorials/git-tutorial-7.png&quot; class=&quot;img-responsive&quot;&gt;
+  &lt;img src=&quot;/assets/img/tutorials/git-tutorial-7.png&quot; class=&quot;img-responsive&quot;&gt;
 &lt;/a&gt;
 --&gt;
 
-&lt;h4 id=&quot;a-namecompareacomparing-branches&quot;&gt;&lt;a name=&quot;compare&quot;&gt;&lt;/a&gt;Comparing Branches&lt;/h4&gt;
+#### &lt;a name=&quot;compare&quot;&gt;&lt;/a&gt;Comparing Branches 
 
-&lt;p&gt;Now that &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;testing&lt;/code&gt; differ with one another, switch between them to see the differences.&lt;/p&gt;
+Now that `master` and `testing` differ with one another, switch between them to
+see the differences.
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ls | xargs cat
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git checkout master
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ls | xargs cat&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Individually looking through files in different branches can be cumbersome. To output the differences directly, use the &lt;code class=&quot;highlighter-rouge&quot;&gt;diff&lt;/code&gt; command.&lt;/p&gt;
+
+Individually looking through files in different branches can be cumbersome. To
+output the differences directly, use the `diff` command. 
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git diff master testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;The output should look like:&lt;/p&gt;
+
+The output should look like:
 
 &lt;!--
 &lt;a href=&quot;/assets/img/tutorials/git-tutorial-8.png&quot;&gt;
-	&lt;img src=&quot;/assets/img/tutorials/git-tutorial-8.png&quot; class=&quot;img-responsive&quot;&gt;
+  &lt;img src=&quot;/assets/img/tutorials/git-tutorial-8.png&quot; class=&quot;img-responsive&quot;&gt;
 &lt;/a&gt;
 --&gt;
 
-&lt;h4 id=&quot;a-namemergeamerging-branches&quot;&gt;&lt;a name=&quot;merge&quot;&gt;&lt;/a&gt;Merging Branches&lt;/h4&gt;
+#### &lt;a name=&quot;merge&quot;&gt;&lt;/a&gt;Merging Branches 
 
-&lt;p&gt;Now, merge the changes in &lt;code class=&quot;highlighter-rouge&quot;&gt;testing&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;. Check out the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch and use the &lt;code class=&quot;highlighter-rouge&quot;&gt;merge&lt;/code&gt; command.&lt;/p&gt;
+Now, merge the changes in `testing` to `master`. Check out the `master` branch
+and use the `merge` command.
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git checkout master
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git merge testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;You will see an output that summarizes the changes. The &lt;code class=&quot;highlighter-rouge&quot;&gt;merge&lt;/code&gt; command creates a new commit that follows the previous version of &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;.&lt;/p&gt;
+
+You will see an output that summarizes the changes. The `merge` command creates
+a new commit that follows the previous version of `master`. 
 
 &lt;!--
 &lt;a href=&quot;/assets/img/tutorials/git-tutorial-9.png&quot;&gt;
-	&lt;img src=&quot;/assets/img/tutorials/git-tutorial-9.png&quot; class=&quot;img-responsive&quot;&gt;
+  &lt;img src=&quot;/assets/img/tutorials/git-tutorial-9.png&quot; class=&quot;img-responsive&quot;&gt;
 &lt;/a&gt;
 --&gt;
 
-&lt;p&gt;If the merge is successful, there is no need for the &lt;code class=&quot;highlighter-rouge&quot;&gt;testing&lt;/code&gt; branch. Delete it. Make sure that the &lt;code class=&quot;highlighter-rouge&quot;&gt;testing&lt;/code&gt; branch isn’t currently checked out.&lt;/p&gt;
+If the merge is successful, there is no need for the `testing` branch. Delete
+it. Make sure that the `testing` branch isn't currently checked out.  
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git branch -d testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;a-namerreposausing-remote-repositories&quot;&gt;&lt;a name=&quot;rrepos&quot;&gt;&lt;/a&gt;Using Remote Repositories&lt;/h3&gt;
 
-&lt;p&gt;Remote repositories refer to storage locations outside a user’s local repository. The remote in this example is GitHub, and the repository we’ll be using is for the &lt;a href=&quot;https://github.com/rtxi/plugin-template&quot;&gt;plugin template&lt;/a&gt;. If you want to have your own remote repository on GitHub, you will need to create an account with them and using their website to initialize the repository.&lt;/p&gt;
+### &lt;a name=&quot;rrepos&quot;&gt;&lt;/a&gt;Using Remote Repositories 
 
-&lt;h4 id=&quot;a-namecloneacloning-a-github-repository&quot;&gt;&lt;a name=&quot;clone&quot;&gt;&lt;/a&gt;Cloning a GitHub Repository&lt;/h4&gt;
+Remote repositories refer to storage locations outside a user's local
+repository. The remote in this example is GitHub, and the repository we'll be
+using is for the &lt;a href=&quot;https://github.com/rtxi/plugin-template&quot;&gt;plugin
+template&lt;/a&gt;. If you want to have your own remote repository on GitHub, you
+will need to create an account with them and using their website to initialize
+the repository. 
 
-&lt;p&gt;The format for cloning repositories from GitHub is:&lt;/p&gt;
+#### &lt;a name=&quot;clone&quot;&gt;&lt;/a&gt;Cloning a GitHub Repository  
+
+The format for cloning repositories from GitHub is: 
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git clone https://github.com/&amp;lt;username&amp;gt;/&amp;lt;repository-name&amp;gt;.git&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;To clone from our repositories, the username is &lt;code class=&quot;highlighter-rouge&quot;&gt;rtxi&lt;/code&gt; and the repositories are all listed on https://github.com/rtxi. To install the plugin template:&lt;/p&gt;
+
+To clone from our repositories, the username is `rtxi` and the repositories are
+all listed on https://github.com/rtxi. To install the plugin template:  
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/ &lt;span class=&quot;c&quot;&gt;# this line isn't really needed&lt;/span&gt;
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git clone https://github.com/rtxi/plugin-template.git
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;plugin-template&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;In addition to the files copied from GitHub, Git stores the address of the remote repository. By default, the name is &lt;code class=&quot;highlighter-rouge&quot;&gt;origin&lt;/code&gt;. See details on remote repositories with &lt;code class=&quot;highlighter-rouge&quot;&gt;git remote -v&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h4 id=&quot;a-namepushapushing-to-a-remote&quot;&gt;&lt;a name=&quot;push&quot;&gt;&lt;/a&gt;Pushing to a Remote&lt;/h4&gt;
+In addition to the files copied from GitHub, Git stores the address of the
+remote repository. By default, the name is `origin`. See details on remote
+repositories with `git remote -v`. 
 
-&lt;p&gt;Make some changes to the directory. Add some files, edit them, etc. Then, stage and commit them.&lt;/p&gt;
+#### &lt;a name=&quot;push&quot;&gt;&lt;/a&gt;Pushing to a Remote 
+
+Make some changes to the directory. Add some files, edit them, etc. Then, stage
+and commit them. 
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;touch file1 file2 file3
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git add .
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git commit . &lt;span class=&quot;s2&quot;&gt;&quot;Local commit to push to remote repository&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You will not actually be able to execute the command below successfully. We don’t allow everyone to push to our repositories. This is what you’d do, though, if you could.&lt;/p&gt;
 
-&lt;p&gt;Now, send these changes to the remote. The command Git uses for this is &lt;code class=&quot;highlighter-rouge&quot;&gt;push&lt;/code&gt;.&lt;/p&gt;
+**Note:** You will not actually be able to execute the command below
+successfully. We don't allow everyone to push to our repositories. This is what
+you'd do, though, if you could. 
+
+Now, send these changes to the remote. The command Git uses for this is `push`. 
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git push https://github.com/&amp;lt;username&amp;gt;/plugin-template.git master &lt;span class=&quot;c&quot;&gt;# will fail&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Git pushes the changes to the master branch of the remote repository referenced by the URL. Git also supports aliases for remote URLs. By default, the URL from which you clone a repository is saved as &lt;code class=&quot;highlighter-rouge&quot;&gt;origin&lt;/code&gt;. You can view the remotes tracked by a repository by running &lt;code class=&quot;highlighter-rouge&quot;&gt;git remote -v&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h4 id=&quot;a-namepullapulling-changes-from-a-remote&quot;&gt;&lt;a name=&quot;pull&quot;&gt;&lt;/a&gt;Pulling Changes from a Remote&lt;/h4&gt;
+Git pushes the changes to the master branch of the remote repository referenced
+by the URL. Git also supports aliases for remote URLs. By default, the URL from
+which you clone a repository is saved as `origin`. You can view the remotes
+tracked by a repository by running `git remote -v`.  
 
-&lt;p&gt;Just as one can push changes from a local machine to a remote, it is possible to ‘pull’ changes back from the remote to the local machine. This comes into play when modifying the same project on several machines or by several people. To pull the code and automatically merge the differences, use:&lt;/p&gt;
+#### &lt;a name=&quot;pull&quot;&gt;&lt;/a&gt;Pulling Changes from a Remote 
+
+Just as one can push changes from a local machine to a remote, it is possible
+to 'pull' changes back from the remote to the local machine. This comes into
+play when modifying the same project on several machines or by several people.
+To pull the code and automatically merge the differences, use:
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git pull origin&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;If you want to observe the changes but not merge them, use:&lt;/p&gt;
+
+If you want to observe the changes but not merge them, use:
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git fetch origin&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;This command fetches the changes from the remote repository for the user to compare with files on the local machine. Once they are determined to be safe for merging, enter the following from within the directory to which changes are to be merged:&lt;/p&gt;
+
+This command fetches the changes from the remote repository for the user to
+compare with files on the local machine. Once they are determined to be safe
+for merging, enter the following from within the directory to which changes are
+  to be merged:
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git merge &amp;lt;fetchedremote&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;You can use this method to keep your modules and RTXI up to date.&lt;/p&gt;
 
-&lt;h3 id=&quot;a-namesummaryasummary&quot;&gt;&lt;a name=&quot;summary&quot;&gt;&lt;/a&gt;Summary&lt;/h3&gt;
+You can use this method to keep your modules and RTXI up to date.  
 
-&lt;p&gt;The above tutorial is a very basic introduction to Git. Git has many functions, and many of them overlap in their functionality. As such, there are often many ways to implement what was described above.&lt;/p&gt;
+### &lt;a name=&quot;summary&quot;&gt;&lt;/a&gt;Summary 
 
-&lt;p&gt;Should you need more detail, the &lt;a href=&quot;http://git-scm.com/documentation&quot;&gt;Git documentation&lt;/a&gt; is an excellent place to start. Additional help can be found throughout the web:&lt;br /&gt;
- - An &lt;a href=&quot;http://try.github.io/levels/1/challenges/1&quot;&gt;interactive tutorial&lt;/a&gt; for Git syntax.&lt;br /&gt;
- - A &lt;a href=&quot;http://www.vogella.com/tutorials/Git/article.html&quot;&gt;user-made tutorial&lt;/a&gt;&lt;br /&gt;
- - A detailed site by Atlassian with &lt;a href=&quot;https://www.atlassian.com/git/&quot;&gt;tutorials on Git and workflow&lt;/a&gt;&lt;/p&gt;
+The above tutorial is a very basic introduction to Git. Git has many functions,
+and many of them overlap in their functionality. As such, there are often many
+ways to implement what was described above.  
+
+Should you need more detail, the [Git
+documentation](http://git-scm.com/documentation) is an excellent place to
+start. Additional help can be found throughout the web:  
+
+ - An [interactive tutorial](http://try.github.io/levels/1/challenges/1) for
+   Git syntax.  
+ - A [user-made tutorial](http://www.vogella.com/tutorials/Git/article.html)  
+ - A detailed site by Atlassian with [tutorials on Git and
+   workflow](https://www.atlassian.com/git/)  
+&lt;/filename&gt;&lt;/filename&gt;&lt;/filename&gt;&lt;/filename&gt;&lt;/commandname&gt;
 </description>
         <pubDate>Tue, 07 Apr 2015 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//docs/tutorials/2015/04/07/how-to-use-git/</link>
@@ -685,13 +1066,21 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
     
       <item>
         <title>Setting a Default Boot Kernel</title>
-        <description>&lt;p&gt;It can get annoying choosing the real-time kernel from the submenu every time you boot your computer, especially if you miss the timing and it boots generic Linux.&lt;/p&gt;
+        <description>&lt;p&gt;It can get annoying choosing the real-time kernel from the submenu every time
+you boot your computer, especially if you miss the timing and it boots generic
+Linux.&lt;/p&gt;
 
-&lt;p&gt;By default, the GRUB bootloader sorts your installed kernels in descending version based on the kernel version number, and boots from the first one. You can save yourself some frustration by changing GRUB to boot from the real-time kernel by default.&lt;/p&gt;
+&lt;p&gt;By default, the GRUB bootloader sorts your installed kernels in descending
+version based on the kernel version number, and boots from the first one. You
+can save yourself some frustration by changing GRUB to boot from the real-time
+kernel by default.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This is only for convenience. It has no effect on real-time performance or the functioning of RTXI.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This is only for convenience. It has no effect on real-time
+performance or the functioning of RTXI.&lt;/p&gt;
 
-&lt;p&gt;While it is possible to specify a &lt;em&gt;specific&lt;/em&gt; kernel, it is much easier to tell GRUB to use the kernel used last time. To make GRUB do this, open &lt;code&gt;/etc/default/grub&lt;/code&gt; as root and make the following edits:&lt;/p&gt;
+&lt;p&gt;While it is possible to specify a &lt;em&gt;specific&lt;/em&gt; kernel, it is much easier to tell
+GRUB to use the kernel used last time. To make GRUB do this, open
+&lt;code&gt;/etc/default/grub&lt;/code&gt; as root and make the following edits:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Change &lt;code&gt;GRUB_DEFAULT=0&lt;/code&gt; to &lt;code&gt;GRUB_DEFAULT=saved&lt;/code&gt;.&lt;/li&gt;
@@ -702,9 +1091,14 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo update-grub&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;From now on, GRUB will boot the last-used kernel by default. If you want to choose a different one, select it manually.&lt;/p&gt;
+&lt;p&gt;From now on, GRUB will boot the last-used kernel by default. If you want to
+choose a different one, select it manually.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you have a LUKS-encrypted volume or otherwise encrypt your boot partition, this will fail. You will have to manually change the &lt;code class=&quot;highlighter-rouge&quot;&gt;GRUB_DEFAULT&lt;/code&gt; options to something like &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;1&amp;gt;2&quot;&lt;/code&gt;, for example, which will make GRUB boot the kernel listed as the third option in the submenu opened on the second line of the main menu.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you have a LUKS-encrypted volume or otherwise encrypt your boot
+partition, this will fail. You will have to manually change the &lt;code class=&quot;highlighter-rouge&quot;&gt;GRUB_DEFAULT&lt;/code&gt;
+options to something like &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;1&amp;gt;2&quot;&lt;/code&gt;, for example, which will make GRUB boot the
+kernel listed as the third option in the submenu opened on the second line of
+the main menu.&lt;/p&gt;
 </description>
         <pubDate>Wed, 01 Apr 2015 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//docs/tutorials/2015/04/01/setting-a-default-boot-kernel/</link>
@@ -716,35 +1110,66 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
         <description>&lt;p&gt;There are several reasons for RTXI to not open.&lt;/p&gt;
 
 &lt;ol&gt;
-	&lt;li&gt;&lt;strong&gt;RTXI is already running.&lt;/strong&gt;
-		&lt;p&gt;If you run &lt;code&gt;rtxi&lt;/code&gt; in the terminal and get this output, RTXI is already running:&lt;/p&gt;
+  &lt;li&gt;&lt;strong&gt;RTXI is already running.&lt;/strong&gt;
+    &lt;p&gt;
+      If you run &lt;code&gt;rtxi&lt;/code&gt; in the terminal and get this output, RTXI is
+      already running:
+    &lt;/p&gt;
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo rtxi
 ../src/rt_os-xenomai.cpp:123:RT::OS::createTask : failed to create task
 ../src/rt.cpp:157:RT::System::System : failed to create realtime thread&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-		&lt;p&gt;The error happens because only one instance of RTXI can be running on the system. Check who is running it by entering:&lt;/p&gt; 
+
+    &lt;p&gt;
+      The error happens because only one instance of RTXI can be running on the
+      system. Check who is running it by entering:
+    &lt;/p&gt; 
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ps ax -o euser,comm | grep rtxi&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-		&lt;p&gt;If the command shows someone else's username, that means they have RTXI open. Bug them about closing it or close it yourself by running &lt;code&gt;$ sudo pkill rtxi&lt;/code&gt;. Note that workspaces, open files, etc. will &lt;strong&gt;not&lt;/strong&gt; be saved when force-closing RTXI. 
-		&lt;/p&gt;
-		&lt;p&gt;If it's your username, RTXI may not have exited cleanly from sometime earlier. You can run &lt;code&gt;$ sudo pkill rtxi&lt;/code&gt; for this case, too.
-		&lt;/p&gt;
-		&lt;p&gt;Now, you should be able to run RTXI.&lt;/p&gt;
-	&lt;/li&gt;
-	&lt;li&gt;&lt;strong&gt;You aren't using a real-time kernel.&lt;/strong&gt;&lt;/li&gt;
-		&lt;p&gt;Check the kernel you are using. Run this in the terminal:&lt;/p&gt;
+
+    &lt;p&gt;
+      If the command shows someone else's username, that means they have RTXI
+      open. Bug them about closing it or close it yourself by running &lt;code&gt;$
+      sudo pkill rtxi&lt;/code&gt;. Note that workspaces, open files, etc. will
+      &lt;strong&gt;not&lt;/strong&gt; be saved when force-closing RTXI. 
+    &lt;/p&gt;
+    &lt;p&gt;
+      If it's your username, RTXI may not have exited cleanly from sometime
+      earlier. You can run &lt;code&gt;$ sudo pkill rtxi&lt;/code&gt; for this case, too.
+    &lt;/p&gt;
+    &lt;p&gt;
+      Now, you should be able to run RTXI.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;You aren't using a real-time kernel.&lt;/strong&gt;
+
+    &lt;p&gt;Check the kernel you are using. Run this in the terminal:&lt;/p&gt;
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;uname -r&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-		&lt;p&gt;You will get one line of output that tells you what kernel you are using. If it has the word &quot;xenomai&quot; in it, then it's a real-time kernel. If not, then it isn't.
-		&lt;/p&gt; 
-		&lt;p&gt;If it's not a real-time kernel, you'll have to reboot your computer and pick a real-time kernel in the GRUB boot menu that pops up. If you don't see it, enter the &quot;Advanced options...&quot; submenu and look there.
-		&lt;/p&gt;
-		&lt;p&gt;Also, see &lt;a href=&quot;/docs/tutorials/2015/04/01/setting-a-default-boot-kernel/&quot;&gt;this page about setting a default kernel.&amp;lt;/p&amp;gt;
-&amp;lt;/ol&amp;gt;
-&lt;/a&gt;&lt;/p&gt;&lt;/ol&gt;
+
+    &lt;p&gt;
+      You will get one line of output that tells you what kernel you are using.
+      If it has the word &quot;xenomai&quot; in it, then it's a real-time kernel. If not,
+      then it isn't.
+    &lt;/p&gt; 
+    &lt;p&gt;
+      If it's not a real-time kernel, you'll have to reboot your computer and
+      pick a real-time kernel in the GRUB boot menu that pops up. If you don't
+      see it, enter the &quot;Advanced options...&quot; submenu and look there.
+    &lt;/p&gt;
+    &lt;p&gt;
+      Also, see 
+      &lt;a href=&quot;/docs/tutorials/2015/04/01/setting-a-default-boot-kernel/&quot;&gt;this
+      page &lt;/a&gt; about setting a default kernel.
+    &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 </description>
         <pubDate>Wed, 01 Apr 2015 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//docs/faqs/2015/04/01/rtxi-doesn't-open/</link>
@@ -753,12 +1178,15 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
     
       <item>
         <title>RTXI 2015 Deadline Approaching</title>
-        <description>&lt;p&gt;The deadline for registering for the RTXI 2015 conference is fast approacing. Register now to book your position here. Noteworthy dates:&lt;/p&gt;
+        <description>&lt;p&gt;The deadline for registering for the RTXI 2015 conference is fast approacing.
+Register now to book your position here. Noteworthy dates:&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Registration:&lt;/strong&gt; April 30&lt;br /&gt;
 &lt;strong&gt;Hotel:&lt;/strong&gt; April 15&lt;/p&gt;
 
-&lt;p&gt;The conference is May 7-8 at the Georgia Academy of Medicine. Registration is $75 for students and $125 for everyone else. Fee waivers are liberally available upon request.&lt;/p&gt;
+&lt;p&gt;The conference is May 7-8 at the Georgia Academy of Medicine. Registration is
+$75 for students and $125 for everyone else. Fee waivers are liberally
+available upon request.&lt;/p&gt;
 </description>
         <pubDate>Fri, 27 Mar 2015 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//news/2015/03/27/rtxi-2015-registration-deadline-approaching/</link>
@@ -767,16 +1195,21 @@ Go to our GitHub page (&lt;a href=&quot;https://github.com/rtxi&quot;&gt;https:/
     
       <item>
         <title>Linux Freezes after Reboot</title>
-        <description>&lt;p&gt;If you do an OS-based reboot of your the computer and your log-in screen is laggy or displays errors, it’s probably because &lt;code class=&quot;highlighter-rouge&quot;&gt;kexec-tools&lt;/code&gt; are handling reboots. 
-When compiling an RT kernel, you were prompted whether or not to let &lt;code class=&quot;highlighter-rouge&quot;&gt;kexec-tools&lt;/code&gt; handle reboots. 
+        <description>&lt;p&gt;If you do an OS-based reboot of your the computer and your log-in screen is
+laggy or displays errors, it’s probably because &lt;code class=&quot;highlighter-rouge&quot;&gt;kexec-tools&lt;/code&gt; are handling
+reboots.  When compiling an RT kernel, you were prompted whether or not to let
+&lt;code class=&quot;highlighter-rouge&quot;&gt;kexec-tools&lt;/code&gt; handle reboots. 
 You are advised in the installation instructions (and here) to not allow that.&lt;/p&gt;
 
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;kexec-tools&lt;/code&gt; utility normally is used to perform ‘warm reboots,’ which is when the computer reloads a kernel without fully shutting the system down. 
-(In contrast, a cold reboot is when you fully shut down the computer, meaning that the machine fully stops and it begins to cool down.) 
-The lag you experience is probably because kexec-tools is rebooting to a non-RT kernel. 
-Your system is at that point should not be relied on for running real-time applications.&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;kexec-tools&lt;/code&gt; utility normally is used to perform ‘warm reboots,’ which is
+when the computer reloads a kernel without fully shutting the system down.  (In
+contrast, a cold reboot is when you fully shut down the computer, meaning that
+the machine fully stops and it begins to cool down.) The lag you experience is
+probably because kexec-tools is rebooting to a non-RT kernel.  Your system is
+at that point should not be relied on for running real-time applications.&lt;/p&gt;
 
-&lt;p&gt;To temporarily fix this, fully shutdown the computer to do a cold reboot. To permanently fix it, disable kexec-tools from handling reboots:&lt;/p&gt;
+&lt;p&gt;To temporarily fix this, fully shutdown the computer to do a cold reboot. To
+permanently fix it, disable kexec-tools from handling reboots:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Open /etc/default/kexec (as root).&lt;/li&gt;
@@ -784,7 +1217,8 @@ Your system is at that point should not be relied on for running real-time appli
   &lt;li&gt;Save and exit.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Now, kexec-tools will no longer handle reboots, and your system reboot as one would expect.&lt;/p&gt;
+&lt;p&gt;Now, kexec-tools will no longer handle reboots, and your system reboot as one
+would expect.&lt;/p&gt;
 </description>
         <pubDate>Mon, 02 Mar 2015 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/troubleshoot/2015/03/02/linux-frozen-after-reboot/</link>
@@ -793,24 +1227,43 @@ Your system is at that point should not be relied on for running real-time appli
     
       <item>
         <title>Using Graphics Cards</title>
-        <description>&lt;p&gt;Choosing graphics cards can be a thorny issue in standard Linux alone, let alone real-time Linux. Often, open-source drivers lag behind proprietary ones in terms of compatibility with newer hardware and displays. The two main types, AMD and Nvidia, are supported for the most part within Linux.&lt;/p&gt;
+        <description>&lt;p&gt;Choosing graphics cards can be a thorny issue in standard Linux alone, let
+alone real-time Linux. Often, open-source drivers lag behind proprietary ones
+in terms of compatibility with newer hardware and displays. The two main types,
+AMD and Nvidia, are supported for the most part within Linux.&lt;/p&gt;
 
-&lt;p&gt;For RTXI, we strongly encourage you to use the open-source drivers. Nouveau is the open-source one for Nvidia cards, and radeon is for AMD ones. No configuration or input on your part is needed to use them. When you install Linux and boot, your kernel will detect the graphics hardware and load the corresponding driver. You can check to see if your driver is loaded by running:&lt;/p&gt;
+&lt;p&gt;For RTXI, we strongly encourage you to use the open-source drivers. Nouveau is
+the open-source one for Nvidia cards, and radeon is for AMD ones. No
+configuration or input on your part is needed to use them. When you install
+Linux and boot, your kernel will detect the graphics hardware and load the
+corresponding driver. You can check to see if your driver is loaded by running:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;lsmod | grep &lt;span class=&quot;s2&quot;&gt;&quot;radeon&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\|&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;nouveau&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;The reason we use open-source drivers is that they use the kernel to directly leverage the graphics card to compute things like the UI and desktop. Proprietary drivers, while technically doing the same thing, function differently and can degrade real-time performance by causing latencies to spike to as high as 100us on some machines. Skipping the drivers altogether forces the CPU to compute the UI, which when coupled with the RT kernel, will make the UI slow and laggy and the real-time performance poorer.&lt;/p&gt;
+&lt;p&gt;The reason we use open-source drivers is that they use the kernel to directly
+leverage the graphics card to compute things like the UI and desktop.
+Proprietary drivers, while technically doing the same thing, function
+differently and can degrade real-time performance by causing latencies to spike
+to as high as 100us on some machines. Skipping the drivers altogether forces
+the CPU to compute the UI, which when coupled with the RT kernel, will make the
+UI slow and laggy and the real-time performance poorer.&lt;/p&gt;
 
 &lt;p&gt;Here are some guidelines for using graphics cards:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Newer cards are less likely to be supported by open-source drivers.&lt;/li&gt;
-  &lt;li&gt;AMD provides better support for its &lt;strong&gt;open-source&lt;/strong&gt; radeon driver than Nvidia does for nouveau.&lt;/li&gt;
-  &lt;li&gt;Nvidia’s &lt;strong&gt;proprietary driver&lt;/strong&gt; performs better than AMD’s proprietary driver (fglrx) and generally provides better support for newer hardware.&lt;/li&gt;
-  &lt;li&gt;If you have an AMD card, use it. If you have an Nvidia one, try it. Tell us if you have issues. We want to keep track of what works and what doesn’t.&lt;/li&gt;
+  &lt;li&gt;AMD provides better support for its &lt;strong&gt;open-source&lt;/strong&gt; radeon driver than
+Nvidia does for nouveau.&lt;/li&gt;
+  &lt;li&gt;Nvidia’s &lt;strong&gt;proprietary driver&lt;/strong&gt; performs better than AMD’s proprietary
+driver (fglrx) and generally provides better support for newer hardware.&lt;/li&gt;
+  &lt;li&gt;If you have an AMD card, use it. If you have an Nvidia one, try it. Tell us
+if you have issues. We want to keep track of what works and what doesn’t.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Lastly, if you have issues with your display looking weird or distorted, it’s probably your graphics card. Check our graphics troubleshooting page for suggestions on what to do or browse though forums online. Someone’s probably had the same issue as you at some point.&lt;/p&gt;
+&lt;p&gt;Lastly, if you have issues with your display looking weird or distorted, it’s
+probably your graphics card. Check our graphics troubleshooting page for
+suggestions on what to do or browse though forums online. Someone’s probably
+had the same issue as you at some point.&lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Feb 2015 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/tutorials/2015/02/23/using-graphics-cards/</link>
@@ -819,7 +1272,8 @@ Your system is at that point should not be relied on for running real-time appli
     
       <item>
         <title>My System Is Frozen or Slow!</title>
-        <description>&lt;p&gt;This issue can be caused by many tings, and getting to its specific cause will require patience. Here are some things to look for:&lt;/p&gt;
+        <description>&lt;p&gt;This issue can be caused by many tings, and getting to its specific cause will
+require patience. Here are some things to look for:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;When does the system freeze or slow down?
@@ -836,46 +1290,103 @@ Your system is at that point should not be relied on for running real-time appli
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;If running an RT kernel, are the DAQ drivers loaded? Open the Control Panel module in RTXI and see if the “analogy0” channel is open. If not, the drivers aren’t detecting your DAQ.&lt;/p&gt;
+    &lt;p&gt;If running an RT kernel, are the DAQ drivers loaded? Open the Control Panel
+module in RTXI and see if the “analogy0” channel is open. If not, the
+drivers aren’t detecting your DAQ.&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;How is your BIOS configured? Some settings, such as multithreading, frequency scaling, and spread-spectrum clocking, degrade real-time performance and should be disabled.&lt;/li&gt;
+  &lt;li&gt;How is your BIOS configured? Some settings, such as multithreading,
+frequency scaling, and spread-spectrum clocking, degrade real-time
+performance and should be disabled.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;These types of issues can have several causes. It can be your graphics card not being fully supported by the driver, the DAQ driver interfering with framebuffers, interrupt line collisions, etc. If you have issues, you are encouraged to contact us for help. Here are some tips and fixes for common problems:&lt;/p&gt;
+&lt;p&gt;These types of issues can have several causes. It can be your graphics card not
+being fully supported by the driver, the DAQ driver interfering with
+framebuffers, interrupt line collisions, etc. If you have issues, you are
+encouraged to contact us for help. Here are some tips and fixes for common
+problems:&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;dl class=&quot;dl-horizontal&quot;&gt;
-	&lt;dt&gt;Freezing at Boot&lt;/dt&gt;
-		&lt;dd&gt;If your system freezes when it boots, it couls be caused by interrupt collisions between the graphics driver and the analogy driver. We've noticied this happening most frequently on machines with Nvidia cards. You can fix this by opening up the computer and moving the graphics card to a different PCI slot.&lt;br /&gt;&lt;br /&gt;
-		If that doesn't fix your system, you can delve deeper to find out whether there are still interrupt collisions. When Linux freezes, you can drop to another tty by entering &lt;code&gt;Ctrl+Alt+F2&lt;/code&gt;. You can then enter you login information. From the new shell, enter:  
+  &lt;dt&gt;Freezing at Boot&lt;/dt&gt;
+    &lt;dd&gt;
+      &lt;p&gt;
+        If your system freezes when it boots, it couls be caused by interrupt
+        collisions between the graphics driver and the analogy driver. We've
+        noticied this happening most frequently on machines with Nvidia cards.
+        You can fix this by opening up the computer and moving the graphics
+        card to a different PCI slot.  
+      &lt;/p&gt;
+      &lt;p&gt;
+        If that doesn't fix your system, you can delve deeper to find out
+        whether there are still interrupt collisions. When Linux freezes, you
+        can drop to another tty by entering &lt;code&gt;Ctrl+Alt+F2&lt;/code&gt;. You can
+        then enter you login information. From the new shell, enter:  
+      &lt;/p&gt;
 
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;lspci -v | less&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-		Scroll through the output and check if anything has the same IRQ number as the DAQ (the National Instuments card) or the graphics card. Occasionally, things like the Ethernet card or a USB port can interfere.  
-		If you don't have a spare port, you'll need to get a new graphics card. We recommend AMD cards that have been released long enough for Ubuntu to fully support them. A list of compatible cards is available &lt;a href=&quot;https://help.ubuntu.com/community/RadeonDriver&quot;&gt; on Ubuntu's site.&lt;/a&gt; 
-		&lt;/dd&gt;
-	&lt;br /&gt;
-	&lt;dt&gt;Poor Performance&lt;/dt&gt;
-		&lt;dd&gt;If your system has consistently poor performance, visible within the Performance Measurement Module, that worsens when the DAQ channels are opened, it is likely because the graphics drivers are not using kernel modesetting properly. What that means is that the CPU is handling things the graphics card should, causing it to interfere with the real-time processes it needs to devote time to doing.  &lt;br /&gt;&lt;br /&gt;
-		This is likely caused by the graphics card being not fully supported by open-source drivers. You may need to replace your driver. To see if your system is using the graphics driver, run:  
+
+      &lt;p&gt;
+        Scroll through the output and check if anything has the same IRQ number
+        as the DAQ (the National Instuments card) or the graphics card.
+        Occasionally, things like the Ethernet card or a USB port can
+        interfere.  If you don't have a spare port, you'll need to get a new
+        graphics card.  We recommend AMD cards that have been released long
+        enough for Ubuntu to fully support them.  A list of compatible cards is
+        available 
+        &lt;a href=&quot;https://help.ubuntu.com/community/RadeonDriver&quot;&gt; on Ubuntu's
+        site.&lt;/a&gt; 
+      &lt;/p&gt;
+    &lt;/dd&gt;
+  &lt;br /&gt;
+  &lt;dt&gt;Poor Performance&lt;/dt&gt;
+    &lt;dd&gt;
+      &lt;p&gt;
+        If your system has consistently poor performance, visible within the
+        Performance Measurement Module, that worsens when the DAQ channels are
+        opened, it is likely because the graphics drivers are not using kernel
+        modesetting properly. What that means is that the CPU is handling
+        things the graphics card should, causing it to interfere with the
+        real-time processes it needs to devote time to doing.  
+      &lt;/p&gt;
+      &lt;p&gt;
+        This is likely caused by the graphics card being not fully supported by
+        open-source drivers. You may need to replace your driver. To see if
+        your system is using the graphics driver, run:  
+      &lt;/p&gt;
 
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo lshw -C display | grep configuration&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-		If you don't see your graphics driver (radeon or nouveau) listed, then it's not being properly used. You can also check this by looking at the &lt;code&gt;dmesg&lt;/code&gt; output:
+
+      &lt;p&gt;
+        If you don't see your graphics driver (radeon or nouveau) listed, then
+        it's not being properly used. You can also check this by looking at the
+        &lt;code&gt;dmesg&lt;/code&gt; output:
+      &lt;/p&gt;
+
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;dmesg | grep &lt;span class=&quot;s2&quot;&gt;&quot;radeon&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\|&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;nouveau&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-		If the driver is working properly, you'll see a lot of output. If not, you probably won't see anything. &lt;br /&gt;&lt;br /&gt;
-		Let us know if you need help with this issue. Sending us the output from the above commands will help immensely in figuring out your problem.  
-		&lt;/dd&gt;
+
+      &lt;p&gt;
+        If the driver is working properly, you'll see a lot of output. If not,
+        you probably won't see anything. 
+      &lt;/p&gt;
+      &lt;p&gt;
+        Let us know if you need help with this issue. Sending us the output
+        from the above commands will help immensely in figuring out your
+        problem.  
+      &lt;/p&gt;
+    &lt;/dd&gt;
 &lt;/dl&gt;
 
-&lt;p&gt;Hardware can be idiosyncratic and interfere with real-time, but lucky for you, we’re here to help.&lt;/p&gt;
+&lt;p&gt;Hardware can be idiosyncratic and interfere with real-time, but lucky for you,
+we’re here to help.&lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Feb 2015 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/troubleshoot/2015/02/23/system-frozen-or-slow/</link>
@@ -884,7 +1395,9 @@ Your system is at that point should not be relied on for running real-time appli
     
       <item>
         <title>RTXI 2015 Registration Open!</title>
-        <description>&lt;p&gt;Just reminding everyone that registration for RTXI 2015 is now open! Check out our &lt;a href=&quot;/conference/&quot;&gt;conference page&lt;/a&gt; to learn about our upcoming conference. Registration is open until April 1st at 5:00 PM Eastern Time.&lt;/p&gt;
+        <description>&lt;p&gt;Just reminding everyone that registration for RTXI 2015 is now open! Check out
+our &lt;a href=&quot;/conference/&quot;&gt;conference page&lt;/a&gt; to learn about our upcoming conference.
+Registration is open until April 1st at 5:00 PM Eastern Time.&lt;/p&gt;
 </description>
         <pubDate>Wed, 21 Jan 2015 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//news/2015/01/21/rtxi-2015-registration-is-open/</link>
@@ -893,13 +1406,20 @@ Your system is at that point should not be relied on for running real-time appli
     
       <item>
         <title>Why are there negative latencies?</title>
-        <description>&lt;p&gt;Negative latencies mean that the latency test has not been properly calibrated. The test calculates latencies based on when tasks are expected to be completed, with some overhead going toward computing the timer. To avoid including the time it takes to compute the timer, xenomai offsets the measured latency with a static value, written in nanoseconds and stored in &lt;code&gt;/proc/xenomai/latency&lt;/code&gt;. If the value is negative, then xenomai is overcompensating.&lt;/p&gt;
+        <description>&lt;p&gt;Negative latencies mean that the latency test has not been properly calibrated.
+The test calculates latencies based on when tasks are expected to be completed,
+with some overhead going toward computing the timer. To avoid including the
+time it takes to compute the timer, xenomai offsets the measured latency with a
+static value, written in nanoseconds and stored in
+&lt;code&gt;/proc/xenomai/latency&lt;/code&gt;. If the value is negative, then xenomai is
+overcompensating.&lt;/p&gt;
 
 &lt;p&gt;You can correct this behavior by running (as root):&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# echo 0 &amp;gt; /proc/xenomai/latency&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;What this means is that the latency test will not try to factor out the time to compute the timer.&lt;/p&gt;
+&lt;p&gt;What this means is that the latency test will not try to factor out the time to
+compute the timer.&lt;/p&gt;
 </description>
         <pubDate>Tue, 20 Jan 2015 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/faqs/2015/01/20/why-are-there-negative-latencies/</link>
@@ -908,7 +1428,9 @@ Your system is at that point should not be relied on for running real-time appli
     
       <item>
         <title>Register for RTXI 2015</title>
-        <description>&lt;p&gt;If you haven’t done so already, check out our &lt;a href=&quot;/conference/&quot;&gt;conference page&lt;/a&gt; to learn about our upcoming conference. Registration is almost open. We just need to get the payment page running.&lt;/p&gt;
+        <description>&lt;p&gt;If you haven’t done so already, check out our &lt;a href=&quot;/conference/&quot;&gt;conference page&lt;/a&gt;
+to learn about our upcoming conference. Registration is almost open. We just
+need to get the payment page running.&lt;/p&gt;
 </description>
         <pubDate>Mon, 22 Dec 2014 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//news/2014/12/22/register-for-RTXI-2015/</link>
@@ -917,7 +1439,22 @@ Your system is at that point should not be relied on for running real-time appli
     
       <item>
         <title>Neural ensemble communities: open-source approaches to hardware for large-scale electrophysiology</title>
-        <description>&lt;p&gt;One often-overlooked factor when selecting a platform for large-scale electrophysiology is whether or not a particular data acquisition system is ‘open’ or ‘closed’: that is, whether or not the system’s schematics and source code are available to end users. Open systems have a reputation for being difficult to acquire, poorly documented, and hard to maintain. With the arrival of more powerful and compact integrated circuits, rapid prototyping services, and web-based tools for collaborative development, these stereotypes must be reconsidered. We discuss some of the reasons why multichannel extracellular electrophysiology could benefit from open-source approaches and describe examples of successful community-driven tool development within this field. In order to promote the adoption of open-source hardware and to reduce the need for redundant development efforts, we advocate a move toward standardized interfaces that connect each element of the data processing pipeline. This will give researchers the flexibility to modify their tools when necessary, while allowing them to continue to benefit from the high-quality products and expertise provided by commercial vendors.&lt;/p&gt;
+        <description>&lt;p&gt;One often-overlooked factor when selecting a platform for large-scale
+electrophysiology is whether or not a particular data acquisition system is
+‘open’ or ‘closed’: that is, whether or not the system’s schematics and source
+code are available to end users. Open systems have a reputation for being
+difficult to acquire, poorly documented, and hard to maintain. With the arrival
+of more powerful and compact integrated circuits, rapid prototyping services,
+and web-based tools for collaborative development, these stereotypes must be
+reconsidered. We discuss some of the reasons why multichannel extracellular
+electrophysiology could benefit from open-source approaches and describe
+examples of successful community-driven tool development within this field. In
+order to promote the adoption of open-source hardware and to reduce the need
+for redundant development efforts, we advocate a move toward standardized
+interfaces that connect each element of the data processing pipeline. This will
+give researchers the flexibility to modify their tools when necessary, while
+allowing them to continue to benefit from the high-quality products and
+expertise provided by commercial vendors.&lt;/p&gt;
 </description>
         <pubDate>Wed, 17 Dec 2014 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//papers/2014/12/17/neural-ensemble-communities/</link>
@@ -925,45 +1462,87 @@ Your system is at that point should not be relied on for running real-time appli
       </item>
     
       <item>
-        <title>New Website</title>
-        <description>&lt;p&gt;We now have a new website. It’s not quite feature-rich yet, but it’s a nice, fresh site to coincide with the long-planned release of RTXI 2.0. Look here in the future for all documentation, tutorials, videos, etc. related to using RTXI and closed-loop, real-time electrophysiology in general. 
-While not complete, the new site got a few things ready that we think you’ll like:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;/modules/&quot;&gt;&lt;strong&gt;The Modules Page:&lt;/strong&gt;&lt;/a&gt; the old site contained a modules page that was perpetually out-of-date relative to current RTXI development. The new page is autogenerated by pulling directly from our GitHub repos, so they’ll stay up-to-date. It also has a search feature absent from GitHub’s own site.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/papers/&quot;&gt;&lt;strong&gt;The Papers Page:&lt;/strong&gt;&lt;/a&gt; built with the restraint of a 5-year-old kid with a free pass to an all-you-use Javascript plugin candy store, the papers page will give you picture of just how many people have used RTXI over the years and what they did with it.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/docs/&quot;&gt;&lt;strong&gt;Documentation:&lt;/strong&gt;&lt;/a&gt; all our documentation is easier to find and all accessible from a single page. At any rate, it’ll be easier to find what you need this way than it would be to search through pages of Wordpress blog posts.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;It’s Lighter and Faster:&lt;/strong&gt; this is mostly for my gratification, but the new site is leaner and faster than the old one.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;If there’s something on the old site that you used that’s gone now, just let us know. We’ll get it back for you. There are &lt;a href=&quot;/contact/&quot;&gt;lots of ways to contact us&lt;/a&gt;. Thanks.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 10 Dec 2014 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//news/2014/12/10/new-website/</link>
-        <guid isPermaLink="true">http://rtxi.org//news/2014/12/10/new-website/</guid>
-      </item>
-    
-      <item>
         <title>What Is Real-time Computing?</title>
-        <description>&lt;p&gt;In general, an operating system is responsible for managing the hardware resources of a computer. A real-time operating system is a refinement in that it perfoms tasks with extreme precision and reliability. This is important in automated process control systems where a delay can cause a critical failure of the overall system.&lt;/p&gt;
+        <description>&lt;p&gt;In general, an operating system is responsible for managing the hardware
+resources of a computer. A real-time operating system is a refinement in that
+it perfoms tasks with extreme precision and reliability. This is important in
+automated process control systems where a delay can cause a critical failure of
+the overall system.&lt;/p&gt;
 
 &lt;h4 id=&quot;hard-vs-soft-real-time&quot;&gt;Hard vs. Soft Real-time&lt;/h4&gt;
 
-&lt;p&gt;To be considered real-time, an operating system must have a known maximum time for each of the operations that it performs. Operating systems that can absolutely guarantee a maximum time for these operations are called hard real-time, while operating systems that can only guarantee a maximum most of the time are considered soft real-time. The idea is that in a hard real-time system, the completion of an operation after its deadline is considered useless, and in the most non-permissive of systems, for instance car brakes, missed deadlines constitute system failure. In contrast, a soft real-time system can handle lateness, usually by pausing processes based on some execution priority scheme.&lt;/p&gt;
+&lt;p&gt;To be considered real-time, an operating system must have a known maximum time
+for each of the operations that it performs. Operating systems that can
+absolutely guarantee a maximum time for these operations are called hard
+real-time, while operating systems that can only guarantee a maximum most of
+the time are considered soft real-time. The idea is that in a hard real-time
+system, the completion of an operation after its deadline is considered
+useless, and in the most non-permissive of systems, for instance car brakes,
+missed deadlines constitute system failure. In contrast, a soft real-time
+system can handle lateness, usually by pausing processes based on some
+execution priority scheme.&lt;/p&gt;
 
-&lt;p&gt;Most operating systems allow programmers to specify a priority for the overall application and even for different tasks within the application, called threads. These priorities are handled by the operating system’s scheduler, which decides how to allocate system resources when many tasks need to be executed more or less simultaneously and whether or not to interrupt a task when those with higher priority are waiting.&lt;/p&gt;
+&lt;p&gt;Most operating systems allow programmers to specify a priority for the overall
+application and even for different tasks within the application, called
+threads. These priorities are handled by the operating system’s scheduler,
+which decides how to allocate system resources when many tasks need to be
+executed more or less simultaneously and whether or not to interrupt a task
+when those with higher priority are waiting.&lt;/p&gt;
 
-&lt;p&gt;In practice, general-purpose operating systems, such as Microsoft Windows, are optimized to run a variety of applications and processes simultaneously. Windows uses system interrupts to distribute processor time between different tasks that must access the same shared resources. Standard Linux does the same. It can be made to run in real-time, though, by inserting a small high-priority, real-time microkernel between the hardware and standard Linux kernel. The microkernel’s scheduler traps any software-related system interrupts that would otherwise preempt system resources from any real-time tasks it executes, thereby guaranteeing that real-time tasks are not interrupted and execute with higher priority than normal Linux processes. RTXI uses a real-time thread for actual process control and a non-realtime thread handled by standard Linux for the graphical user interface.&lt;/p&gt;
+&lt;p&gt;In practice, general-purpose operating systems, such as Microsoft Windows, are
+optimized to run a variety of applications and processes simultaneously.
+Windows uses system interrupts to distribute processor time between different
+tasks that must access the same shared resources. Standard Linux does the same.
+It can be made to run in real-time, though, by inserting a small high-priority,
+real-time microkernel between the hardware and standard Linux kernel. The
+microkernel’s scheduler traps any software-related system interrupts that would
+otherwise preempt system resources from any real-time tasks it executes,
+thereby guaranteeing that real-time tasks are not interrupted and execute with
+higher priority than normal Linux processes. RTXI uses a real-time thread for
+actual process control and a non-realtime thread handled by standard Linux for
+the graphical user interface.&lt;/p&gt;
 
 &lt;h4 id=&quot;what-real-time-can-do&quot;&gt;What Real-time Can Do&lt;/h4&gt;
 
-&lt;p&gt;A real-time process control system must constantly process a set of inputs and produce a set of outputs. Real-time applications must be carefully programmed to ensure that the total amount of time spent accessing the hardware, sampling the inputs, computing the outputs, and interacting with any user interface is no longer than the specified cycle time.&lt;/p&gt;
+&lt;p&gt;A real-time process control system must constantly process a set of inputs and
+produce a set of outputs. Real-time applications must be carefully programmed
+to ensure that the total amount of time spent accessing the hardware, sampling
+the inputs, computing the outputs, and interacting with any user interface is
+no longer than the specified cycle time.&lt;/p&gt;
 
-&lt;p&gt;Xenomai provides several benchmark tests for system latencies. RTXI also has a Performance Measurement module that determines average and worst case real-time performance within RTXI. Maximal performance depends mostly on the motherboard and supporting chipset, not as much on processor speed. Instead, the processor determines the complexity of the models the system can solve within the constraints of some underlying real-time computation rate. Faster processors allow more instructions to be executed per computational cycle. For example, a complex model may require too much computation to work on a 200MHz machine, but will run at 20kHz on a 2GHz machine, even though a much simpler model runs at 50kHz on both. A slower processor simply cannot execute instructions in complex models quickly enough.&lt;/p&gt;
+&lt;p&gt;Xenomai provides several benchmark tests for system latencies. RTXI also has a
+Performance Measurement module that determines average and worst case real-time
+performance within RTXI. Maximal performance depends mostly on the motherboard
+and supporting chipset, not as much on processor speed. Instead, the processor
+determines the complexity of the models the system can solve within the
+constraints of some underlying real-time computation rate. Faster processors
+allow more instructions to be executed per computational cycle. For example, a
+complex model may require too much computation to work on a 200MHz machine, but
+will run at 20kHz on a 2GHz machine, even though a much simpler model runs at
+50kHz on both. A slower processor simply cannot execute instructions in complex
+models quickly enough.&lt;/p&gt;
 
 &lt;h4 id=&quot;measuring-performance&quot;&gt;Measuring Performance&lt;/h4&gt;
 
-&lt;p&gt;The ‘speed’ of a platform usually refers to three attributes: time step, jitter, and latency. The time step is the target period of the system. Ideally, this value would be infinitesimal so that we would be able to acquire and output all possible frequencies; however, that cannot be realized in practice because a set amount of processing time is needed for input-output calculations. This set time provides a lower bound for overall computation time, but systems get pulled away from it due to the costs mentioned earlier. Essentially, the actual observable time step is a random variable centered about a mean target time step. The second term, jitter, describes the variation around the mean, and is a direct result of the non-deterministic nature of modern computer architectures (e.g. cache misses, bus contention, and super-scalar execution). Typically, solutions based on general purpose operating systems will always suffer from high levels of jitter because the underlying system is designed to distribute clock cycles fairly among many competing processes. Latency, the time between receiving an input and updating the corresponding physical output channel roughly determines the lower bound on time step. Latency exists because it takes a finite amount of time to perform analog to digital conversion, do some computation, and convert back from digital to analog.&lt;/p&gt;
+&lt;p&gt;The ‘speed’ of a platform usually refers to three attributes: time step,
+jitter, and latency. The time step is the target period of the system. Ideally,
+this value would be infinitesimal so that we would be able to acquire and
+output all possible frequencies; however, that cannot be realized in practice
+because a set amount of processing time is needed for input-output
+calculations. This set time provides a lower bound for overall computation
+time, but systems get pulled away from it due to the costs mentioned earlier.
+Essentially, the actual observable time step is a random variable centered
+about a mean target time step. The second term, jitter, describes the variation
+around the mean, and is a direct result of the non-deterministic nature of
+modern computer architectures (e.g. cache misses, bus contention, and
+super-scalar execution). Typically, solutions based on general purpose
+operating systems will always suffer from high levels of jitter because the
+underlying system is designed to distribute clock cycles fairly among many
+competing processes. Latency, the time between receiving an input and updating
+the corresponding physical output channel roughly determines the lower bound on
+time step. Latency exists because it takes a finite amount of time to perform
+analog to digital conversion, do some computation, and convert back from
+digital to analog.&lt;/p&gt;
 </description>
         <pubDate>Sat, 06 Dec 2014 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/tutorials/2014/12/06/what-is-real-time-computing/</link>
@@ -972,20 +1551,47 @@ While not complete, the new site got a few things ready that we think you’ll l
     
       <item>
         <title>RTXI Architecture</title>
-        <description>&lt;p&gt;RTXI uses a two-thread architecture consisting of a real-time (RT) thread and a non-real-time user interface (UI) thread. RTXI can run on single or multiprocessor computers. RTXI consists of both system and custom user modules, each of which spans both threads. RTXI modules communicate and share data in real-time using a system of signals and slots that supports synchronous scheduling, as well as asynchronous event handling. On every clock cycle, the RT thread wakes and signals each active DAQ driver to acquire all active inputs from external experiment hardware. These data are made available to other components while the RT thread executes any real-time instructions contained in loaded modules. When each module has finished executing, the RT thread signals each DAQ driver to write any output signals to the experiment hardware. The UI thread manages the graphical components of the system as well as user events triggered through the interface. Each module features its own encapsulated interface through which users can control module execution and modify its various parameters.&lt;/p&gt;
+        <description>&lt;p&gt;RTXI uses a two-thread architecture consisting of a real-time (RT) thread and a
+non-real-time user interface (UI) thread. RTXI can run on single or
+multiprocessor computers. RTXI consists of both system and custom user modules,
+each of which spans both threads. RTXI modules communicate and share data in
+real-time using a system of signals and slots that supports synchronous
+scheduling, as well as asynchronous event handling. On every clock cycle, the
+RT thread wakes and signals each active DAQ driver to acquire all active inputs
+from external experiment hardware. These data are made available to other
+components while the RT thread executes any real-time instructions contained in
+loaded modules. When each module has finished executing, the RT thread signals
+each DAQ driver to write any output signals to the experiment hardware. The UI
+thread manages the graphical components of the system as well as user events
+triggered through the interface. Each module features its own encapsulated
+interface through which users can control module execution and modify its
+various parameters.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;/assets/img/rtxi-diagram-scaled.png&quot;&gt;
-   &lt;img src=&quot;/assets/img/rtxi-diagram-scaled.png&quot; class=&quot;img-responsive center-block&quot; /&gt;
+  &lt;img src=&quot;/assets/img/rtxi-diagram-scaled.png&quot; class=&quot;img-responsive center-block&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;RTXI uses the open source &lt;a href=&quot;https://xenomai.org&quot;&gt;Xenomai&lt;/a&gt; framework to implement communication with a variety of commercially available multifunction DAQ cards with both analog and digital input and output channels. This makes RTXI essentially hardware-agnostic and able to communicate with multiple actuators and sensors that may span different modalities. Modules contain function-specific code that can be used in combinations to build custom workflows and experiment protocols. They are compiled outside the core RTXI source tree as shared object libraries that are linked at runtime. This architecture gives RTXI several important features:&lt;/p&gt;
+&lt;p&gt;RTXI uses the open source &lt;a href=&quot;https://xenomai.org&quot;&gt;Xenomai&lt;/a&gt; framework to implement
+communication with a variety of commercially available multifunction DAQ cards
+with both analog and digital input and output channels. This makes RTXI
+essentially hardware-agnostic and able to communicate with multiple actuators
+and sensors that may span different modalities. Modules contain
+function-specific code that can be used in combinations to build custom
+workflows and experiment protocols. They are compiled outside the core RTXI
+source tree as shared object libraries that are linked at runtime. This
+architecture gives RTXI several important features:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Reduced overhead that maximizes real-time performance by loading a minimal set of modules at startup&lt;/li&gt;
-  &lt;li&gt;Code reusability which eliminates the need to program new experiments entirely from scratch&lt;/li&gt;
-  &lt;li&gt;Ease by which users can share modules by distributing source code or compiled versions of their modules&lt;/li&gt;
-  &lt;li&gt;The ability to create and save the entire RTXI workspace and experimental setup for use at a later date&lt;/li&gt;
-  &lt;li&gt;A simple process by which multiple developers can contribute new features with minimal changes to core RTXI source code.&lt;/li&gt;
+  &lt;li&gt;Reduced overhead that maximizes real-time performance by loading a minimal
+set of modules at startup&lt;/li&gt;
+  &lt;li&gt;Code reusability which eliminates the need to program new experiments
+entirely from scratch&lt;/li&gt;
+  &lt;li&gt;Ease by which users can share modules by distributing source code or
+compiled versions of their modules&lt;/li&gt;
+  &lt;li&gt;The ability to create and save the entire RTXI workspace and experimental
+setup for use at a later date&lt;/li&gt;
+  &lt;li&gt;A simple process by which multiple developers can contribute new features
+with minimal changes to core RTXI source code.&lt;/li&gt;
 &lt;/ol&gt;
 
 </description>
@@ -996,35 +1602,104 @@ While not complete, the new site got a few things ready that we think you’ll l
     
       <item>
         <title>Using RTXI for Dynamic Clamp</title>
-        <description>&lt;p&gt;The dynamic clamp is a real-time electrophysiology technique where simulated membrane conductances are artificially injected into a cell via intracellular electrodes. It works by reading membrane potentials, amplifiing, and then feeding them into a dynamic clamp system that contains a model of the desired membrane conductance and generates a current to be injected back into the cell in real time. For digital systems, the membrane conductance is a set of equations that must be computed, whereas for an analog system, the current is the output of a dedicated electrical circuit. The injected dynamic clamp current acts on the cell in parallel with other membrane currents which, depending on the model equations, can represent ion channels, electrical coupling between cells, or synaptic input. This technique has many possible uses. With neurons, it can be used to construct hybrid networks of real and model neurons and even attach virtual dendrites. For an excellent video tutorial, see this video for the following paper in the Journal of Visualized Experiments.&lt;/p&gt;
+        <description>&lt;p&gt;The dynamic clamp is a real-time electrophysiology technique where simulated
+membrane conductances are artificially injected into a cell via intracellular
+electrodes. It works by reading membrane potentials, amplifiing, and then
+feeding them into a dynamic clamp system that contains a model of the desired
+membrane conductance and generates a current to be injected back into the cell
+in real time. For digital systems, the membrane conductance is a set of
+equations that must be computed, whereas for an analog system, the current is
+the output of a dedicated electrical circuit. The injected dynamic clamp
+current acts on the cell in parallel with other membrane currents which,
+depending on the model equations, can represent ion channels, electrical
+coupling between cells, or synaptic input. This technique has many possible
+uses. With neurons, it can be used to construct hybrid networks of real and
+model neurons and even attach virtual dendrites. For an excellent video
+tutorial, see this video for the following paper in the Journal of Visualized
+Experiments.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/dclamp.png&quot; alt=&quot;Dynamic Clamp Figure&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;electrode-compensation-and-dynamic-clamp-instability&quot;&gt;Electrode Compensation and Dynamic Clamp Instability&lt;/h4&gt;
-&lt;p&gt;When dynamic clamp is performed using two intracellular electrodes, one electrode records the membrane potential while the other is used for current injection. In cases where only one intracellular electrode is feasible, the same electrode is used for voltage measurement and current injection. This poses a problem for measurement accuracy because the injected current induces a voltage drop through the electrode. One method to compensate for this issue is to use your amplifier in “bridge balance” mode, which approximates the electrode as a single resistance and subtracts the voltage drop across the electrode from the total recorded voltage. This method can only be used if the electrode resistance stays constant. An alternative method is to operate your amplifier in “discontinuous current clamp” mode, in which the electrode alternates between recording the voltage and injecting current. This method is valid only if the electrode is at least two orders of magnitude faster than what you are trying to observe in the recordings.&lt;/p&gt;
+&lt;p&gt;When dynamic clamp is performed using two intracellular electrodes, one
+electrode records the membrane potential while the other is used for current
+injection. In cases where only one intracellular electrode is feasible, the
+same electrode is used for voltage measurement and current injection. This
+poses a problem for measurement accuracy because the injected current induces a
+voltage drop through the electrode. One method to compensate for this issue is
+to use your amplifier in “bridge balance” mode, which approximates the
+electrode as a single resistance and subtracts the voltage drop across the
+electrode from the total recorded voltage. This method can only be used if the
+electrode resistance stays constant. An alternative method is to operate your
+amplifier in “discontinuous current clamp” mode, in which the electrode
+alternates between recording the voltage and injecting current. This method is
+valid only if the electrode is at least two orders of magnitude faster than
+what you are trying to observe in the recordings.&lt;/p&gt;
 
-&lt;p&gt;It is important to minimize measurement errors in dynamic clamp because the artifacts propagate through the closed-loop and can lead to oscillatory instability. This instability arises when the artificial conductance is comparable to the resting input conductance of the cell and limits the conductance range that can be applied using dynamic clamp. It is directly related to the sampling delay and is exaggerated by insufficient electrode series resistance and capacitance compensation. Increasing the sampling rate of the dynamic clamp system increases dynamic clamp stability; however, this improvement, is constrained by how well the electrode series resistance and capacitance are compensated. Dynamic clamp sampling rates are usually justified by the temporal dynamics of the simulated models. For action potentials on the order of a few milliseconds wide, 10kHz is a common sampling rate. However, faster sampling rates increase the stable operating range for the dynamic clamp system and increase the maximum conductance that maintains a stable system. RTXI is capable of handling much higher sampling rates due to the low overhead in the Linux OS.&lt;/p&gt;
+&lt;p&gt;It is important to minimize measurement errors in dynamic clamp because the
+artifacts propagate through the closed-loop and can lead to oscillatory
+instability. This instability arises when the artificial conductance is
+comparable to the resting input conductance of the cell and limits the
+conductance range that can be applied using dynamic clamp. It is directly
+related to the sampling delay and is exaggerated by insufficient electrode
+series resistance and capacitance compensation. Increasing the sampling rate of
+the dynamic clamp system increases dynamic clamp stability; however, this
+improvement, is constrained by how well the electrode series resistance and
+capacitance are compensated. Dynamic clamp sampling rates are usually justified
+by the temporal dynamics of the simulated models. For action potentials on the
+order of a few milliseconds wide, 10kHz is a common sampling rate. However,
+faster sampling rates increase the stable operating range for the dynamic clamp
+system and increase the maximum conductance that maintains a stable system.
+RTXI is capable of handling much higher sampling rates due to the low overhead
+in the Linux OS.&lt;/p&gt;
 
 &lt;h4 id=&quot;numerical-methods&quot;&gt;Numerical Methods&lt;/h4&gt;
-&lt;p&gt;Similar to the effect of experimental measurement error, errors in simulating the virtual conductance also affect dynamic clamp performance. Methodologies for implementing the numerical integration of the gating variables typically employ first-order numerical methods, either Euler or exponential Euler. These approximations are used because of the real-time temporal constraints on how rapidly the calculations for integrating the gating variables must occur. In general, numerical accuracy increases as the time step of integration decreases. Unlike traditional model simulations, however, with real-time systems it is not practical to make the time step smaller and simply wait longer for the simulation result. For small time steps, both integration methods are comparable, but at larger time steps, the exponential Euler method performs worse than the Euler method. The error bounds for both methods can be characterized in terms of two ratios: the time step over the time constant (δt/τ), and the voltage measurement error over the slope factor of the steady-state activation curve of the voltage-dependent gating variable (εV/|d|). When δt/τ is large relative to εV/|d|, no amount of improvement in measurement error can improve the error bound due to the numerical inaccuracies caused by a relatively large time step.&lt;/p&gt;
+&lt;p&gt;Similar to the effect of experimental measurement error, errors in simulating
+the virtual conductance also affect dynamic clamp performance. Methodologies
+for implementing the numerical integration of the gating variables typically
+employ first-order numerical methods, either Euler or exponential Euler. These
+approximations are used because of the real-time temporal constraints on how
+rapidly the calculations for integrating the gating variables must occur. In
+general, numerical accuracy increases as the time step of integration
+decreases. Unlike traditional model simulations, however, with real-time
+systems it is not practical to make the time step smaller and simply wait
+longer for the simulation result. For small time steps, both integration
+methods are comparable, but at larger time steps, the exponential Euler method
+performs worse than the Euler method. The error bounds for both methods can be
+characterized in terms of two ratios: the time step over the time constant
+(δt/τ), and the voltage measurement error over the slope factor of the
+steady-state activation curve of the voltage-dependent gating variable
+(εV/|d|). When δt/τ is large relative to εV/|d|, no amount of improvement in
+measurement error can improve the error bound due to the numerical inaccuracies
+caused by a relatively large time step.&lt;/p&gt;
 
 &lt;p&gt;For more information, see:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://dx.doi.org/10.3791/2275&quot;&gt;Lobb and Paladini. Application of a NMDA Receptor Conductance in Rat Midbrain Dopaminergic Neurons Using the Dynamic Clamp Technique. J Vis Exp (2010) (46)&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://dx.doi.org/10.3791/2275&quot;&gt;Lobb and Paladini. Application of a NMDA Receptor Conductance in Rat
+Midbrain Dopaminergic Neurons Using the Dynamic Clamp Technique. J Vis Exp
+(2010) (46)&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://www.springer.com/biomed/neuroscience/book/978-0-387-89278-8&quot;&gt;Destexhe A, Bal T, eds. Dynamic clamp: From principles to applications. Springer (2009).&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.springer.com/biomed/neuroscience/book/978-0-387-89278-8&quot;&gt;Destexhe A, Bal T, eds. Dynamic clamp: From principles to applications.
+Springer
+(2009).&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://dx.doi.org/10.1016/j.jneumeth.2007.10.009&quot;&gt;Bettencourt J.C., Lillis K.P., Stupin L.R., White J.A. Effects of imperfect dynamic clamp: Computational and experimental results (2008) Journal of Neuroscience Methods, 169 (2): 282-289.&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://dx.doi.org/10.1016/j.jneumeth.2007.10.009&quot;&gt;Bettencourt J.C., Lillis K.P., Stupin L.R., White J.A. Effects of imperfect
+dynamic clamp: Computational and experimental results (2008) Journal of
+Neuroscience Methods, 169 (2):
+282-289.&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://dx.doi.org/10.1088/1741-2560%2F1%2F4%2F001&quot;&gt;R.J. Butera and M.L. McCarthy. Analysis of real-time numerical integration methods applied to dynamic clamp experiments, J. Neural Eng. 1 (2004), pp. 187–194.&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://dx.doi.org/10.1088/1741-2560%2F1%2F4%2F001&quot;&gt;R.J. Butera and M.L. McCarthy. Analysis of real-time numerical integration
+methods applied to dynamic clamp experiments, J. Neural Eng. 1 (2004), pp.
+187–194.&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://dx.doi.org/10.1016/j.tins.2004.02.004&quot;&gt;Prinz AA, Abbott LF, Marder E. The dynamic clamp comes of age. (2004) TINS 27: 218–224.&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://dx.doi.org/10.1016/j.tins.2004.02.004&quot;&gt;Prinz AA, Abbott LF, Marder E. The dynamic clamp comes of age. (2004) TINS
+27: 218–224.&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 </description>
@@ -1035,26 +1710,60 @@ While not complete, the new site got a few things ready that we think you’ll l
     
       <item>
         <title>RTXI HDF5 Data Files</title>
-        <description>&lt;p&gt;The HDF5 file format is a portable and extensible binary data format designed for complex data. It features support for an unlimited variety of datatypes, and has flexible and efficient I/O. HDF5 features a hierarchical structure that allows you to access chunks of data without loading the entire file into memory. An HDF5 file produced by RTXI’s Data Recorder is organized as shown on the right:&lt;/p&gt;
+        <description>&lt;p&gt;The HDF5 file format is a portable and extensible binary data format designed
+for complex data. It features support for an unlimited variety of datatypes,
+and has flexible and efficient I/O. HDF5 features a hierarchical structure that
+allows you to access chunks of data without loading the entire file into
+memory. An HDF5 file produced by RTXI’s Data Recorder is organized as shown on
+the right:&lt;/p&gt;
 
 &lt;div class=&quot;container&quot;&gt;
-   &lt;div class=&quot;col-sm-4&quot;&gt;
-      &lt;a href=&quot;/assets/img/hdf5-rtxi.png&quot;&gt;&lt;img src=&quot;/assets/img/hdf5-rtxi.png&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-   &lt;/div&gt;
-   &lt;div class=&quot;col-sm-8&quot;&gt;
-      &lt;a href=&quot;/assets/img/hdf5-rtxi-2.png&quot;&gt;&lt;img src=&quot;/assets/img/hdf5-rtxi-2.png&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-   &lt;/div&gt;
+  &lt;div class=&quot;col-sm-4&quot;&gt;
+    &lt;a href=&quot;/assets/img/hdf5-rtxi.png&quot;&gt;
+      &lt;img src=&quot;/assets/img/hdf5-rtxi.png&quot; class=&quot;img-responsive&quot; /&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;col-sm-8&quot;&gt;
+    &lt;a href=&quot;/assets/img/hdf5-rtxi-2.png&quot;&gt;
+      &lt;img src=&quot;/assets/img/hdf5-rtxi-2.png&quot; class=&quot;img-responsive&quot; /&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;At the topmost level, an RTXI HDF5 file is divided into separate &lt;strong&gt;Trial&lt;/strong&gt; groups, each of which contains the complete set of system options, module settings, and model parameter values that existed at the time that data was recorded. Every time you stop and restart a module from which data is sent to the Data Recorder, a new Trial is created. Each Trial is timestamped with a start and end time. The Data Recorder also has the option to append trials to an existing HDF5 file. For this reason, each Trial has its own data and system attributes.&lt;/p&gt;
+&lt;p&gt;At the topmost level, an RTXI HDF5 file is divided into separate &lt;strong&gt;Trial&lt;/strong&gt;
+groups, each of which contains the complete set of system options, module
+settings, and model parameter values that existed at the time that data was
+recorded. Every time you stop and restart a module from which data is sent to
+the Data Recorder, a new Trial is created. Each Trial is timestamped with a
+start and end time. The Data Recorder also has the option to append trials to
+an existing HDF5 file. For this reason, each Trial has its own data and system
+attributes.&lt;/p&gt;
 
-&lt;p&gt;The parameters for modules and all system settings are saved in the &lt;strong&gt;Parameters&lt;/strong&gt; group within each Trial group. The name of each parameter includes the module ID number within RTXI, the name of the module, and the name of the parameter itself. If the value of the parameter changes during recording, all the values are saved with a corresponding index value that is the timestamp in nanoseconds from the start of the recording.&lt;/p&gt;
+&lt;p&gt;The parameters for modules and all system settings are saved in the
+&lt;strong&gt;Parameters&lt;/strong&gt; group within each Trial group. The name of each parameter
+includes the module ID number within RTXI, the name of the module, and the name
+of the parameter itself. If the value of the parameter changes during
+recording, all the values are saved with a corresponding index value that is
+the timestamp in nanoseconds from the start of the recording.&lt;/p&gt;
 
-&lt;p&gt;The real-time data is saved in the &lt;strong&gt;Synchronous&lt;/strong&gt; group within each Trial group. This group contains separate datasets with the name of each channel and a single dataset that contains all the synchronous data.&lt;/p&gt;
+&lt;p&gt;The real-time data is saved in the &lt;strong&gt;Synchronous&lt;/strong&gt; group within each Trial
+group. This group contains separate datasets with the name of each channel and
+a single dataset that contains all the synchronous data.&lt;/p&gt;
 
-&lt;p&gt;There are various software available for working with HDF5 files. To simply browse the file structure, you can use the free HDFView application. HDFView provides some limited editing capabilities. For trials where only a single channel is saved, you can also preview a plot of the data. To extract the data for analysis and for complete editing capabilities, APIs are available for MATLAB, GNU Octave, Igor Pro, Mathematica, Python, Scilab, and other software. See this list maintained by the HDF Group.&lt;/p&gt;
+&lt;p&gt;There are various software available for working with HDF5 files. To simply
+browse the file structure, you can use the free HDFView application. HDFView
+provides some limited editing capabilities. For trials where only a single
+channel is saved, you can also preview a plot of the data. To extract the data
+for analysis and for complete editing capabilities, APIs are available for
+MATLAB, GNU Octave, Igor Pro, Mathematica, Python, Scilab, and other software.
+See this list maintained by the HDF Group.&lt;/p&gt;
 
-&lt;p&gt;We provide here a collection of MATLAB functions and a simple GUI for browsing through the trials of an RTXI HDF5 file with addtional examples of how to extract data and add new datasets to your file. &lt;strong&gt;To load RTXI HDF5 files into MATLAB, you no longer need to “matlabize” your HDF5 files, provided you use the MATLAB functions from our &lt;a href=&quot;https://github.com/rtxi/analysis-tools&quot;&gt;analysis-tools repository&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We provide here a collection of MATLAB functions and a simple GUI for browsing
+through the trials of an RTXI HDF5 file with addtional examples of how to
+extract data and add new datasets to your file. &lt;strong&gt;To load RTXI HDF5 files into
+MATLAB, you no longer need to “matlabize” your HDF5 files, provided you use the
+MATLAB functions from our 
+&lt;a href=&quot;https://github.com/rtxi/matlab-tools&quot;&gt;matlab-tools repository&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/tutorials/2014/12/04/rtxi-hdf5-data-files/</link>
@@ -1063,7 +1772,11 @@ While not complete, the new site got a few things ready that we think you’ll l
     
       <item>
         <title>Manually Configuring RTXI</title>
-        <description>&lt;p&gt;You can manually configure RTXI with many options. For example, you can run RTXI 2.0 using the RTAI rather than the default Xenomai, and you can set up RTXI in non-real-time mode using the POSIX interface. You may also direct RTXI to libraries/packages in non-standard locations. The full configure options for are below:&lt;/p&gt;
+        <description>&lt;p&gt;You can manually configure RTXI with many options. For example, you can run
+RTXI 2.0 using the RTAI rather than the default Xenomai,
+and you can set up RTXI in non-real-time mode using the POSIX interface. You
+may also direct RTXI to libraries/packages in non-standard locations. The full
+configure options for are below:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;configure&lt;span class=&quot;s1&quot;&gt;' configures RTXI trunk to adapt to many kinds of systems.
 
@@ -1186,17 +1899,91 @@ Some influential environment variables:
   CXXCPP      C++ preprocessor
   XMKMF       Path to xmkmf, Makefile generator &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;X Window System&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;If there is a flag you want to set, say, &lt;code class=&quot;highlighter-rouge&quot;&gt;--enable-ni&lt;/code&gt;, go to the base of the RTXI git directory and run:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;./configure --enable-ni
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;make -j&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;nproc&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo make install -j&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;nproc&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;These three lines will apply your desired confguration to the build options and then compile and install RTXI.&lt;/p&gt;
 </description>
         <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/tutorials/2014/12/04/manually-configuring-rtxi/</link>
         <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2014/12/04/manually-configuring-rtxi/</guid>
+      </item>
+    
+      <item>
+        <title>32 or 64 Bit? Your Processor Explained</title>
+        <description>&lt;p&gt;64-bit and 32-bit refer to how addresses and memory are handled in different
+instruction set architectures. For clarity, the terms ‘32-bit’ and ‘64-bit’
+have dual meanings. The first refers to the size of addressable chunks of
+memory. Memory is organized in chunks, called words, that a processor can
+handle at once. 32 and 64-bit systems respectively handle chunks of memory that
+are 32 and 64 bits in size. The second meaning refers to the size of the
+addresses used to catalog all of the addressable points in memory. In other
+words, each word in memory has an address that the processor uses to find it.
+32-bit systems use 32-bit-long addresses, and the same follows for 64-bit ones.
+Note that it just so happens that these systems have the same address size and
+word size. It’s not necessarily the case. For instance, early PCs often had
+8-bit words and 16-bit addresses.&lt;/p&gt;
+
+&lt;p&gt;Most commercially available systems today come with 64-bit capable processors
+and pre-installed 64-bit operating systems. 32-bit applications are compatible
+with them because the 64-bit format is backwards-compatible. The space
+addressable by 32 bits is a subset of what is addressed with 64, and the
+processors are built to handle 32-bit chunks of memory. Simply put, if you have
+a 64-bit compatible processor, run 64-bit software.&lt;/p&gt;
+
+&lt;p&gt;One extra consideration is the operating system. Applications other than
+drivers and similar software interface with the hardware through the operating
+system. Therefore, it is important to consider the type of operating system
+installed. 32-bit OSes can only handle 32-bit operations, but 64-bit ones can
+properly use both.&lt;/p&gt;
+
+&lt;p&gt;Altogether, none of this is likely to be an issue with machines from the past
+few years. Lately, AMD and Intel have introduced different brand names and code
+names for their processors, which can get confusing quite easily. In case
+you’re running older hardware, here’s a list of a few 64-bit capable
+processors.&lt;/p&gt;
+
+&lt;div class=&quot;col-md-6&quot;&gt; 
+&lt;table class=&quot;table&quot;&gt; 
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;AMD&lt;/strong&gt; (aka &quot;x86-64&quot;, &quot;AMD64&quot;, or &quot;x64&quot;)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt; Athlon 64 &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt; AMD Athlon 64 X2 &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt; AMD Athlon 64 FX &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt; AMD Athlon II (X2/X3/X4) &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt; AMD Opteron &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt; AMD Turion 64 &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt; AMD Turion 64 X2 &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt; AMD Sempron (&quot;Palermo&quot; E6 stepping and all &quot;Manila&quot; models) &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt; AMD Phenom (X2/X3/X4) &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt; AMD Phenom II (X2/X3/X4) &lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;col-md-6&quot;&gt;  
+&lt;table class=&quot;table&quot;&gt; 
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;Intel&lt;/strong&gt; (aka &quot;IA-32e&quot;, &quot;EM64T&quot;, or &quot;Intel 64&quot;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt; Netburst family &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt; some Celeron D's: LGA 775 &quot;Prescott&quot; models &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt; some Pentium 4's: &quot;Prescott 2M,&quot; &quot;Irwindale&quot; &quot;Cedar Mill&quot; &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt; Pentium D &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt; Pentium Extreme Edition &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt; Intel Core &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt; Xeon: Core 2, Dual Core, Celeron &lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt; Nehalem: Core i3, i5, i7, Intel Atom &lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
+        <link>http://rtxi.org//docs/tutorials/2014/12/04/32-or-64-bit-processors/</link>
+        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2014/12/04/32-or-64-bit-processors/</guid>
       </item>
     
   </channel>
