@@ -1,13 +1,13 @@
 ubuntu:
  - arch: amd64
    name: Ubuntu GNOME
-   version: 14.04.4
-   url:  "http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04.4/release/ubuntu-gnome-14.04.4-desktop-amd64.iso"
+   version: 14.04.5
+   url:  "http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04.5/release/ubuntu-gnome-14.04.5-desktop-amd64.iso"
 
  - arch: i386
    name: Ubuntu GNOME
-   version: 14.04.4
-   url:  "http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04.4/release/ubuntu-gnome-14.04.4-desktop-i386.iso"
+   version: 14.04.5
+   url:  "http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04.5/release/ubuntu-gnome-14.04.5-desktop-i386.iso"
 
 
 rtxi:
