@@ -21,9 +21,10 @@ module Jekyll
       repo_urls = {}
       repos.each do |repo|
         next if excludelist.include? repo
-        repo_urls.store(repo, { "base"=>repoprefix+repo, 
-                        "readme"=>rawprefix.join(repo)+"README.md" })#, 
-                        #"screenshot"=>rawprefix.join(repo)+repo+".png" })
+        repo_urls.store(repo, { 
+          "base"=>repoprefix+repo, 
+          "readme"=>rawprefix.join(repo)+"README.md" 
+        })#,"screenshot"=>rawprefix.join(repo)+repo+".png" })
       end
       return repo_urls
     end
@@ -44,8 +45,7 @@ module Jekyll
         imageurl = "#{rawprefix.join(repo)}"+images[idx][0]
         html = html.gsub(/<img src=\"#{images[idx][0]}\"/, "<img src=\"#{imageurl}\"")
       end
-      outputhtml = html;
-      return outputhtml
+      return html
     end
 
     def generate(site)
@@ -138,7 +138,6 @@ module Jekyll
 
       end
     end
-
   end
 
   class ModulePage < Page
