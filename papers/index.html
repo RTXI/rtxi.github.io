@@ -91,18 +91,18 @@ extra_js: "
 <div>&nbsp;</div>
 <div class="container">
   <p><input type="text" id="quicksearch" placeholder=" Search all papers" 
-     style="width:100%" />
+            style="width:100%" />
   </p>
 </div>
 
-{% capture chunkvar %}{% increment chunkcount %}{% endcapture %}
+{% assign chunkcount = 1 %}
 {% assign flag="false" %}
 <div class="container" style="text-align:center">
   <div id="paperfilters" role="toolbar" data-toggle="buttons"
-      class="btn-toolbar" style="display:inline-block">
+       class="btn-toolbar" style="display:inline-block">
     <button type="button" class="btn btn-danger btn active all-papers" 
-          data-filter="*" role="button" data-toggle="button" 
-          aria-pressed="true" style="margin-top:5px">All
+            data-filter="*" role="button" data-toggle="button" 
+            aria-pressed="true" style="margin-top:5px">All
     </button>
     {% for post in site.categories.papers %} 
       {% capture chunkflag %}{{ forloop.index | modulo:page.modulus }}{% endcapture %}
@@ -112,25 +112,24 @@ extra_js: "
 
       {% capture thisyear %}{{ post.date | date: '%y' }}{% endcapture %}
       {% if forloop.index == 1 %}
-        {% capture chunkvar %}{% increment chunkcount %}{% endcapture %}
         {% capture startyear %}{{ thisyear }}{% endcapture %}
       {% elsif thisyear != lastyear  and  flag == "true" %}
-      <button type="button" class="btn btn-danger btn" data-toggle="button"
-            data-filter=".chunk{{ chunkvar }}" role="button" 
+    <button type="button" class="btn btn-danger btn" data-toggle="button"
+            data-filter=".chunk{{ chunkcount }}" role="button" 
             style="margin-top:5px">
         {% if lastyear == startyear %}'{{ lastyear }}
         {% else %}'{{ lastyear }}-{{startyear}}
         {% endif %}
-      </button>
+    </button>
         {% assign flag == "false" %}
         {% capture startyear %}{{ thisyear }}{% endcapture %}
-        {% capture chunkvar %}{% increment chunkcount %}{% endcapture %}
+        {% assign chunkcount = chunkcount | plus: 1 %}
       {% endif %}
       {% capture lastyear %}{{ thisyear }}{% endcapture %}
     {% endfor %}
     <button type="button" class="btn btn-danger btn" role="button" 
-          data-toggle="button" data-filter=".chunk{{ chunkvar}}" 
-          style="margin-top:5px">
+            data-toggle="button" data-filter=".chunk{{ chunkcount }}" 
+            style="margin-top:5px">
       {% if lastyear == startyear %}'{{ lastyear }}
       {% else %}'{{ lastyear }}-{{startyear}}
       {% endif %}
@@ -141,7 +140,7 @@ extra_js: "
 <div style="border-bottom: 2px solid #eee; margin-bottom: 10px;" 
      class="container">&nbsp;</div>
 
-{% capture chunkvar %}{% increment chunkbodycount %}{% endcapture %}
+{% assign chunkcount = 1 %}
 {% assign flag = "false" %}
 <div class="container"><div class="row isotope" id="papergrid">
   {% for post in site.categories.papers %}
@@ -151,17 +150,15 @@ extra_js: "
       {% assign flag = "true" %}
     {% endif %}
 
-    {% if forloop.index == 1 %}
-      {% capture chunkvar %}{% increment chunkbodycount %}{% endcapture %}
-    {% elsif thisyear != lastyear  and  flag == "true" %}
-      {% capture chunkvar %}{% increment chunkbodycount %}{% endcapture %}
+    {% if thisyear != lastyear  and  flag == "true" %}
+      {% assign chunkcount = chunkcount | plus: 1 %}
       {% assign flag = "false" %}
     {% endif %}
     {% capture lastyear %}{{ thisyear }}{% endcapture %}
   
-    <div class="item col-sm-6 col-md-4 chunk{{chunkvar}}" 
-         data-category="chunk{{chunkvar}}">
-      <a href="{{ post.url }}" style="color:inherit;">
+    <div class="item col-sm-12 col-md-6 chunk{{chunkcount}}" 
+         data-category="chunk{{chunkcount}}">
+      <a href="{{ post.link }}" style="color:inherit;">
         <div class="panel panel-primary">
           <div class="panel-heading">
             <h4 class="panel-title">{{ post.title }}</h4>
@@ -171,7 +168,7 @@ extra_js: "
                          {{ author.name }} 
                          {% endfor %}
             </div>
-            {{ post.excerpt | truncate:750 }}
+            {{ post.excerpt }}
           </div>
         </div>
       </a>
