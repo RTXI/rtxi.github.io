@@ -2,19 +2,23 @@
 title: Can I use RTAI instead of Xenomai?
 layout: default
 categories: docs faqs
-published: false
 ---
 
-Yes, you can use RTAI. Before v2.0, RTXI ran on an RTAI-patched kernel. Xenomai
-is actually a fork of RTAI and is designed to be much easier to customize and
-patch. To use RTXI, you will not be able to run our install\_rtxi.sh script.
-Instead, you will need to download RTAI and patch then install a kernel
-manually.  
+We currently do not support RTAI. Earlier versions (1.x) did, but limited time
+and other development priorities mean we no longer focus any effort on
+maintaining our RTAI/COMEDI interface. 
+
+If you need to use RTXI with RTAI, the old source code is still available for
+you to use. Just remember that you will need to compile and install an
+RTAI-patched kernel and the COMEDI drivers for you data acquisition card on
+your own. You can find the old code in our git history: 
 
 Once you have the kernel running, go to your RTXI git directory and run:
 {% highlight bash %}
-$ sh autogen.sh
-$ ./configure --enable-rtai
-$ make
-$ sudo make install
+$ git clone https://github.com/rtxi/rtxi
+$ cd rtxi
+$ git checkout 8178f288310377284c1058ca2d188a1a8ae309fc
 {% endhighlight %}
+
+Look for `src/rt_os-rtai.cpp`, `plugins/comedi_device`, and
+`plugins/comedilib_device`.
