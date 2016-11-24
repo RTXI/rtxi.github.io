@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-gem 'github-pages', '105', :group => :jekyll_plugins
+gem 'github-pages', '105'
+gem 'github-markdown'
 gem 'json'
 gem 'fileutils'
 gem 'rake'
