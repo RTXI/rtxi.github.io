@@ -41,30 +41,26 @@ your module, be sure to rename the source files and classes to something other
 than `plugin-template` or `PluginTemplate`, respectively. It's preferable to
 name it  something that reflects what it does. A quick and easy way to change
 the names of the files, classes, and binary is to use the `sed` and `mv`
-commands:  
+commands. A wrapper script called `rename_module.sh` is provided in the
+plugin-template repository. 
 
 {% highlight bash %}
-$ sed -i 's/plugin-template/<new_name_here>/g' plugin-template.* Makefile 
-$ sed -i 's/plugin_template/<new_name_here>/g' plugin-template.* Makefile
-$ sed -i 's/PluginTemplate/<NewNameHere>/g' plugin-template.* Makefile
-$ mv plugin-template.cpp <new_name_here>.cpp
-$ mv plugin-template.h <new_name_here>.h
+$ ./rename_module.sh
 {% endhighlight %}
-
-The first `sed` command will search out any instance of the string
-`plugin-template` in your source files and replace them with a string you enter
-in place of the placeholder `<new_name_here>`. The next two `sed` commands will
-do the same. The `mv` commands will rename the files.  
-
-Note that all commands that use the placeholder `<new_name_here>` assume that
-you provide the same string for each instance of the placeholder. Not following
-this convention *could* cause bugs that prevent your module from compiling if,
-for example, your sources file names and the `#includes` within them come out
-  differently.  
 
 Additionally, it's good practice to document your code. As a general rule,
 document it so that you're confident that anyone with programming experience
-will be able to understand what your code and overall module do.  
+will be able to understand what your code and overall module do. Within the
+plugin-template repository, there is another script called `build_readme.sh`.
+It parses your source file and generates a readme from it.  
+
+{% highlight bash %}
+$ ./build_readme.sh
+{% endhighlight %}
+
+The script assumes that the name of your source file matches the directory
+name, so it will look for and parse <custom_module.cpp> if the directory is
+called <custom_module>. 
 
 #### 3. Compile and install. 
 
