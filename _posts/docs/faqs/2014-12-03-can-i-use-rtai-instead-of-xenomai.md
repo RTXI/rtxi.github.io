@@ -13,7 +13,6 @@ you to use. Just remember that you will need to compile and install an
 RTAI-patched kernel and the COMEDI drivers for you data acquisition card on
 your own. You can find the old code in our git history: 
 
-Once you have the kernel running, go to your RTXI git directory and run:
 {% highlight bash %}
 $ git clone https://github.com/rtxi/rtxi
 $ cd rtxi
