@@ -23,7 +23,6 @@
   "dependencies": {
     "bootstrap": "^3.3.5",
     "isotope": "^2.2.2",
-    "font-awesome": "^4.4.0",
     "datatables.net-responsive-bs": "^2.0.0"
   }
 }
