@@ -15,164 +15,146 @@ deep-brain stimulation patterns. "
 
 <div class="container">
 
-  <div class="col-lg-9"><div class="row">
+  <div class="row">
+    <div class="col-lg-9">
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h2 class="" style="text-align:center">Introducing RTXI</h2>
-      </div>
+      <div class="row"><div class="card">
+        <div class="card-header">
+          <h2 class="card-title text-xs-center">
+            Introducing RTXI
+          </h2>
+        </div>
 
-      <div class="panel-body">
         <div class="row">
-          <div class="col-xs-12"><p>
-            <strong>RTXI</strong>, the <strong>Real-Time eXperiment
+          <div class="col-xs-12"><div class="card-block">
+            <p class="card-text">
+              <strong>RTXI</strong>, the <strong>Real-Time eXperiment
               Interface</strong>, is a <strong>hard real-time</strong> data
-            acquisition and control application for biological research. At its
-            core is a Real-Time Operating System (RTOS), which uses a modified
-            Linux kernel to provide <strong>deterministic</strong> control in a
-            variety of experimental settings. RTXI is a <strong>fast</strong>,
-            <strong>free</strong>, and <strong>open-source</strong> system
-            currently used in labs all over the world to probe diverse,
-            technologically challenging problems, such as dynamic probing of
-            ion-channel function, control of cardiac arrhythmia dynamics, and
-            control of deep-brain stimulation patterns.  
-          </p></div>
+              acquisition and control application for biological research. At
+              its core is a Real-Time Operating System (RTOS), which uses a
+              modified Linux kernel to provide <strong>deterministic</strong>
+              control in a variety of experimental settings. RTXI is a
+              <strong>fast</strong>, <strong>free</strong>, and
+              <strong>open-source</strong> system currently used in labs all
+              over the world to probe diverse, technologically challenging
+              problems, such as dynamic probing of ion-channel function,
+              control of cardiac arrhythmia dynamics, and control of deep-brain
+              stimulation patterns.  
+            </p>
+          </div></div>
         </div>
-      
+
         <div class="row">
-          <div class="col-sm-6">
-            <h3 class="page-header" style="text-align:center">Why
-              real-time?</h3>
-            <p>Experimentalists' ability to perturb biological systems has
-            traditionally been limited to rigid pre-programmed protocols or
-            more flexible, albeit reflex-constrained, operator-controlled
-            protocols. In contrast, real-time control allows dynamic probing of
-            biological systems by parameter perturbations calculated from
-            instantaneous system measurements. With it, researchers can address
-            diverse unanswered questions that are not amenable to traditional
-            approaches.  
+          <div class="col-sm-6"><div class="card-block">
+            <h3 class="card-title text-xs-center">
+              Why real-time?
+            </h3>
+            <p class="card-text">
+              Experimentalists' ability to perturb biological systems has
+              traditionally been limited to rigid pre-programmed protocols or
+              more flexible, albeit reflex-constrained, operator-controlled
+              protocols. In contrast, real-time control allows dynamic probing
+              of biological systems by parameter perturbations calculated from
+              instantaneous system measurements. With it, researchers can
+              address diverse unanswered questions that are not amenable to
+              traditional approaches.  
             </p>
-          </div>
-          <div class="col-sm-6">
-            <h3 class="page-header" style="text-align:center">Why RTXI?</h3>
-            <p>Unfortunately, real-time control is not possible with standard
-            operating systems and software. Furthermore, commercial real-time
-            systems are costly and often designed for industrial applications,
-            and the proprietary software licenses and drivers that come with
-            them constrain their flexibility in experimental settings. To get
-            away from that, we developed RTXI. It's fast, free, and flexible,
-            and it's compatible with a wide range of experimentation hardware.  
+          </div></div>
+          <div class="col-sm-6"><div class="card-block">
+            <h3 class="card-title text-xs-center">
+              Why RTXI?
+            </h3>
+            <p class="card-text">
+              Unfortunately, real-time control is not possible with standard
+              operating systems and software. Furthermore, commercial real-time
+              systems are costly and often designed for industrial
+              applications, and the proprietary software licenses and drivers
+              that come with them constrain their flexibility in experimental
+              settings. To get away from that, we developed RTXI. It's fast,
+              free, and flexible, and it's compatible with a wide range of
+              experimentation hardware.  
             </p>
-          </div>
+          </div></div>
         </div>
 
-        <img class="img-responsive" 
-             style="margin: 0 auto; padding-top:20px" 
+        <img class="rounded mx-auto d-block img-fluid"
+             style="padding-bottom:20px;"
              src="{{ site.img }}/dclamp.png">
-        </img> 
+        </img>
 
-      </div>
-
-      <div class="panel-footer">
-        <a href="/docs">
-          <button type="button" class="pull-right btn btn-primary btn-lg">
-            Read the Docs
-          </button>
-        </a>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-    
-  <div class="panel panel-info">
-
-    <div class="panel-heading">
-      <h3 class="" style="text-align:center">Latest Publications</h3>
-    </div>
-
-    <div class="panel-body"><div class="row">
-
-      <!-- looks messy, but this is how to get a masony-like layout without
-        javascript -->
-      <div class="col-sm-12 col-md-6">
-        {% for post in site.categories.papers | limit:2 %}
-        <div class="row"><div class="col-xs-12">
-          <a href="{{ post.url }}" style="color:inherit;">
-            <div class="panel">
-              <div class="panel-heading">
-                <h4 class="panel-title">{{ post.title }}</h4>
-              </div>
-              <div class="panel-body hidden-xs">
-                {{ post.excerpt | truncate:500 }}
-              </div>
-            </div>
+        <div class="card-footer">
+          <a href="/docs">
+            <button type="button" class="float-xs-right btn btn-primary btn-lg">
+              Read the Docs
+            </button>
           </a>
-        </div></div>
-        {% endfor %}
-      </div>
+        </div>
 
-      <div class="col-sm-12 col-md-6">
-        {% for post in site.categories.papers | offset:2 | limit:2 %}
-        <div class="row"><div class="col-xs-12">
-          <a href="{{ post.link }}" style="color:inherit;">
-            <div class="panel">
-              <div class="panel-heading">
-                <h4 class="panel-title">{{ post.title }}</h4>
-              </div>
-              <div class="panel-body hidden-xs">
-                {{ post.excerpt | truncate:500 }}
-              </div>
-            </div>
-          </a>
-        </div></div>
-        {% endfor %}
-      </div>
-
-    </div></div>
-    
-    <div class="panel-footer">
-      <a href="/papers/">
-        <button type="button" 
-                class="pull-right btn btn-primary btn-lg">
-          All Publications
-        </button>
-      </a>
-      <div class="clearfix"></div>
+      </div></div>
     </div>
-  
-  </div>
-
-  </div></div>
 
   <!--
     News - all news posts go here, and there's also an RSS feed.
   --> 
 
-  <div class="row"><div class="col-lg-3">
-    <div class="panel panel-success">
-      <div class="panel-heading" style="text-align:center">
-        <h3>News 
-          <a href="/feed.xml" style="color:inherit">
-            <i class="pull-right glyphicons glyphicon-rss"></i>
-          </a>
-        </h3>
-      </div>
-
-      <div class="panel-body">
-        {% for post in site.categories.news | limit:5 %}
-        <div class="media"><div class="media-body">
-          <h4 class="media-heading">
-            <a href="{{ post.url }}">{{ post.title }}
+    <div class="col-lg-3"><div class="row">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title text-xs-center">
+            News <a href="/feed.xml" style="color:inherit">
+              <i class="float-xs-right fa fa-rss fa-inverse"></i>
             </a>
-          </h4>
-          <div class="text-muted">
-            &nbsp;&nbsp;{{ post.date | date_to_string }}
-          </div>
-          <div>{{ post.excerpt | truncate: 300 }}</div>
-        </div></div>
-        {% endfor %}
-      </div>
+          </h3>
+        </div>
 
+          {% for post in site.categories.news | limit:4 %}
+          <div class="card-block">
+            <h4 class="card-title">
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </h4>
+            <div class="card-body">
+              <div class="text-muted">
+                &nbsp;&nbsp;{{ post.date | date_to_string }}
+              </div>
+              <div>{{ post.excerpt | truncate: 300 }}</div>
+            </div>
+          </div>
+          {% endfor %}
       </div>
+    </div></div>
+
+  </div>
+
+  <!--
+    Adds the most recent publications to the page. 
+  --> 
+    
+  <div class="row"><div class="card">
+    <div class="card-header">
+      <h3 class="text-xs-center">Latest Publications</h3>
+    </div>
+
+    <div class="row">
+      {% for post in site.categories.papers | limit:4 %}
+      <div class="col-lg-6"><div class="card-block">
+        <a href="{{ post.url }}">
+          <h4 class="card-title">{{ post.title }}</h4>
+        </a>
+        <p class="card-text hidden-xs">
+          {{ post.excerpt | truncate:500 }}
+        </p>
+      </div></div>
+      {% endfor %}
+    </div>
+    
+    <div class="card-footer">
+      <a href="/papers/">
+        <button type="button" 
+                class="float-xs-right btn btn-primary btn-lg">
+          All Publications
+        </button>
+      </a>
+      <div class="clearfix"></div>
     </div>
   </div></div>
 
