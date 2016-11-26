@@ -216,14 +216,14 @@ module.exports = function(grunt) {
       datatables_js: {
         src: [
           '<%= paths.assets.js %>/src/jquery.dataTables.min.js',
-          '<%= paths.assets.js %>/src/dataTables.bootstrap.min.js',
+          '<%= paths.assets.js %>/src/dataTables.bootstrap4.min.js',
           '<%= paths.assets.js %>/src/dataTables.responsive.min.js'
         ],
         dest: '<%= paths.assets.js %>/src/dataTables.js'
       },
       datatables_css: {
         src: [
-          '<%= paths.assets.css %>/src/dataTables.bootstrap.min.css',
+          '<%= paths.assets.css %>/src/dataTables.bootstrap4.min.css',
           '<%= paths.assets.css %>/src/responsive.bootstrap.min.css'
         ],
         dest: '<%= paths.assets.css %>/src/dataTables.css'
