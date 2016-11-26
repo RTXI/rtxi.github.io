@@ -145,15 +145,14 @@ pre code{
 "
 ---
 
-<div class="container">
+<div class="container" style="padding-top:1rem;">
 
   <div class="row" id="topblock"><div class="col-xs-12">
-    <h2 class="page-header">{{ page.title }}</h2>
+    <h1>{{ page.title }}</h1>
   </div></div>
     
-
   <div class="row">
-    <nav class="col-sm-3 col-lg-2 hidden-xs" id="leftCol">
+    <nav class="col-sm-3 col-lg-2 hidden-xs-down" id="leftCol">
       <ul class="nav" id="sidebar" data-spy="affix">
       {% for section in page.sections %}
         {% if section.subsections == nil %} 
