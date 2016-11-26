@@ -1,4 +1,4 @@
-<h3 class="page-header">DefaultGUI and the Plugin Template</h3>
+<h3>DefaultGUI and the Plugin Template</h3>
 
 <p>
 This is an explanation for the code found in the 
@@ -20,7 +20,7 @@ run-down of C++ for people already familiar with programming,
 start. 
 </p>
 
-<h4 class="page-header">plugin-template.h</h4>
+<h4>plugin-template.h</h4>
 <div><a data-toggle="collapse" data-target="#header1">
 {% highlight cpp %}
 /*
@@ -147,7 +147,7 @@ class PluginTemplate : public DefaultGUIModel {
   </p>
 </div>
 
-<h4 class="page-header">plugin-template.cpp</h4>
+<h4>plugin-template.cpp</h4>
 <div><a data-toggle="collapse" data-target="#source1">
 {% highlight cpp %}
 /*
@@ -218,7 +218,7 @@ static size_t num_vars = sizeof(vars) / sizeof(DefaultGUIModel::variable_t);
   <p>Each element added to <code>vars[]</code> must have at least three
   components:
   </p>
-  <dl class="dl-horizontal">
+  <dl>
     <dt>string name</dt>
       <dd>the label for the variable made visible in the GUI</dd>
     <dt>string description</dt>
@@ -393,7 +393,7 @@ void PluginTemplate::update(DefaultGUIModel::update_flags_t flag) {
   <code>update</code> function and pass to it flags relating to the case in
   which the function is being called. The cases are:
   </p>
-  <dl class="dl-horizontal">
+  <dl>
     <dt><code>INIT</code></dt>
       <dd><p>Called whenever the module is being initialized, particularly in
       the constructor. Things to initialize, for instance, are the value for
@@ -474,7 +474,7 @@ void PluginTemplate::customizeGUI(void) {
   to be aligned according to a grid layout. The layout of
   <code>DefaultGUIModel</code> is as follows:  
   </p>
-  <img class="img-responsive" src="/assets/img/tutorials/default_gui_layout.svg" style="max-height:450px;"></img>
+  <img class="img-fluid" src="/assets/img/tutorials/default_gui_layout.svg" style="max-height:450px;"></img>
   <br>
   <p>By default, the main UI is displayed within the grid at coordinates (1,0)
   and the utility box with the pause, modify, and exit buttons at coordinates

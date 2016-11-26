@@ -1,4 +1,4 @@
-<h3 class="page-header">Writing Custom User Modules</h3>
+<h3>Writing Custom User Modules</h3>
 
 <p>
 The easiest method of developing modules is to adapt existing ones for your own
@@ -6,7 +6,7 @@ purposes. Users can fork modules on our GitHub repository
 (https://github.com/RTXI) within GitHub or only on their own machines.  
 </p>
 
-<h4 class="page-header">Using the <code>DefaultGUIModel</code> Class</h4>
+<h4>Using the <code>DefaultGUIModel</code> Class</h4>
 
 <p>
 User modules are implemented within RTXI as custom <code>C++</code> classes.
@@ -42,7 +42,7 @@ important when connecting input and output from one module to another.
   </figcaption>
 </figure>
 
-<h4 class="page-header">Creating your own module class</h4>
+<h4>Creating your own module class</h4>
 
 <p>
 The quickest way to create a new user module is to duplicate an existing module
@@ -61,7 +61,7 @@ desired. All our code is open-source, so you are free to fork our existing code
 and reconfigure it to meet your needs. 
 </p>
 
-<h4 class="page-header">Edit the Makefile</h4>
+<h4>Edit the Makefile</h4>
 <p>
 The Makefile instructs the compiler how to build your module and link it to
 RTXI. In RTXI v1.2 and later, the Makefile allows modules to be compiled
@@ -96,7 +96,7 @@ additional custom classes whose sources must then be included here as well. The
 <code>-lgsl</code> links this module against the GNU Scientific Library.
 </p>
 
-<h4 class="page-header">Define model parameters, inputs, and outputs</h4>
+<h4>Define model parameters, inputs, and outputs</h4>
 
 <p>
 <code>DefaultGUIModel</code> uses a special workspace variable
@@ -174,7 +174,7 @@ automatically saved by the Data Recorder. This is a limitation of the HDF5 file
 format, which uses a directory-like syntax for specifying the data structure.
 </p>
 
-<h4 class="page-header">Initialize the model</h4>
+<h4>Initialize the model</h4>
 
 <p>
 The next section is the model constructor. If you changed the class name, this
@@ -253,7 +253,7 @@ void Neuron::execute(void) {
 {% endhighlight %}
 
 
-<h4 class="page-header">The update() function</h4>
+<h4>The update() function</h4>
 
 <p>
 The <code>update()</code> function implemented in <code>DefaultGUIModel</code>
@@ -261,7 +261,7 @@ that is designed to handle function calls depending on the state of the GUI. It
 provides several flags to help organize code and handle events in modules. 
 </p>
 
-<dl class="dl-horizontal">
+<dl>
   <dt><code>INIT</code></dt> 
     <dd>non-event related but useful for placing code to initialize the model</dd>
   <dt><code>MODIFY</code></dt> 

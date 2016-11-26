@@ -1,4 +1,4 @@
-<h3 class="page-header">Core System Modules</h3>
+<h3>Core System Modules</h3>
 <p>
 The following modules are included in RTXI by default and are available through
 the <b>System</b> menu. All settings edited in each of these modules can be
@@ -8,7 +8,7 @@ you can load in the future to recreate this environment or use as a foundation
 for additional *.set files.  
 </p>
 
-<h4 id="control_panel" class="page-header">System Control Panel</h4>
+<h4 id="control_panel">System Control Panel</h4>
 
 <p>
 The System Control Panel allows you to set important parameters on all the
@@ -17,9 +17,9 @@ of your system. To keep the number of RT events to a minimum, all changes made
 in the Control Panel are not set until the <b>Apply</b> button is pressed. 
 </p>
 
-<img src="{{ site.img }}/manual/systemcontrol0.png">
+<img class="img-fluid" src="{{ site.img }}/manual/systemcontrol0.png">
 
-<dl class="dl-horizontal">
+<dl>
   <dt>DAQ Setup</dt>
   <dd>
     <p>RTXI automatically detects the manufacturer and board names of available
@@ -68,7 +68,7 @@ in the Control Panel are not set until the <b>Apply</b> button is pressed.
   </dd>
 </dl>
 
-<h4 id="oscilloscope" class="page-header">Oscilloscope</h4>
+<h4 id="oscilloscope">Oscilloscope</h4>
 
 <p>
 The Oscilloscope allows you to plot any system signal, such as signals from/to
@@ -77,9 +77,9 @@ vertical scale and line style and a legend is automatically generated in the
 Oscilloscope window. 
 </p>
 
-<img src="{{ site.img }}/manual/oscilloscope0.png">
+<img class="img-fluid" src="{{ site.img }}/manual/oscilloscope0.png">
 
-<dl class="dl-horizontal">
+<dl>
   <dt>Channel<dt>
   <dd>
     <p>Select signals to plot from the dropdown menu. You can plot any input or
@@ -106,9 +106,9 @@ Oscilloscope window.
   </dd>
 </dl>
 
-<img src="{{ site.img }}/manual/oscilloscope1.png">
+<img class="img-fluid" src="{{ site.img }}/manual/oscilloscope1.png">
 
-<dl class="dl-horizontal">
+<dl>
   <dt>Time/Div<dt>
   <dd>
     <p>Use the dropdown menu to set the time scale for the x-axis. Each "div"
@@ -138,16 +138,16 @@ Oscilloscope window.
   </dd>
 </dl>
 
-<h4 id="data_recorder" class="page-header">Data Recorder</h4>
+<h4 id="data_recorder">Data Recorder</h4>
 <p>
 The Data Recorder module allows users to stream synchronous data to a HDF5
 file. Open the module by selecting <b>System</b> --> <b>Data Recorder</b> from
 the RTXI menu bar. 
 </p>
 
-<img src="{{ site.img }}/manual/datarecorder1.png">
+<img class="img-fluid" src="{{ site.img }}/manual/datarecorder1.png">
 
-<dl class="dl-horizontal">
+<dl>
   <dt>Channel<br>Selection</dt>
   <dd>
     <p>
@@ -199,14 +199,14 @@ the RTXI menu bar.
   </dd>
 </dl>
 
-<h4 id="connector" class="page-header">Connector</h4>
+<h4 id="connector">Connector</h4>
 <p>The Connector module allows you to create data streams between modules or
 between modules and the DAQ card. 
 </p>
 
-<img src="{{ site.img }}/manual/connector.png">
+<img class="img-fluid" src="{{ site.img }}/manual/connector.png">
 
-<dl class="dl-horizontal">
+<dl>
   <dt>Source</dt>
   <dd>
     <p>
@@ -245,7 +245,7 @@ between modules and the DAQ card.
   </dd>
 </dl>
 
-<h4 id="rt_benchmarks" class="page-header">Real-time Benchmarks</h4>
+<h4 id="rt_benchmarks">Real-time Benchmarks</h4>
 <p>
 The RT Benchmarks module gives you timing statistics for RTXI. For hard
 real-time performance, all operations must complete within the nominal system
@@ -255,9 +255,9 @@ reports the worst case total computation time and the worst case time step for
 however long the module was openor the statistics were last reset.
 </p>
 
-<img src="{{ site.img }}/manual/performancebenchmark0.png">
+<img class="img-fluid" src="{{ site.img }}/manual/performancebenchmark0.png">
 
-<dl class="dl-horizontal">
+<dl>
   <dt>Comp Time</dt>
   <dd>
     <p>The time it takes for all RT components (system modules +

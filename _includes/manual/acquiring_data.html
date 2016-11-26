@@ -1,4 +1,4 @@
-<h3 class="page-header">Model Cell Tutorial</h3>
+<h3>Model Cell Tutorial</h3>
 
 <p>
 This section presents a tutorial similar to those described by Molecular
@@ -11,7 +11,7 @@ amplifier.
 
 {% assign stepcount = 1 %}
 
-<h4 class="page-header">{{ stepcount }}. Connect your equipment to the DAQ.
+<h4>{{ stepcount }}. Connect your equipment to the DAQ.
 </h4>
 {% assign stepcount = stepcount | plus: 1 %}
 
@@ -25,7 +25,7 @@ Make the following connections between the amplifier and the DAQ card.
   <li> DAQ Analog Output 0  -->  Axoclamp EXT. ME1 COMMAND </li>
 </ol>
 
-<h4 class="page-header">{{ stepcount }}. Start RTXI.</h4>
+<h4>{{ stepcount }}. Start RTXI.</h4>
 {% assign stepcount = stepcount | plus: 1 %}
 
 <p>
@@ -38,7 +38,7 @@ error messages that a module may output. Open a terminal and run:
 $ sudo rtxi
 {% endhighlight %}
 
-<h4 class="page-header">{{ stepcount }}. Configure DAQ channels.</h4>
+<h4>{{ stepcount }}. Configure DAQ channels.</h4>
 {% assign stepcount = stepcount | plus: 1 %}
 
 <p>
@@ -101,7 +101,7 @@ period or sampling rate of the system. The default sampling rate is 1 kHz,
 which is sufficient for this exercise.
 </p>
 
-<h4 class="page-header">{{ stepcount }}. Configure stimulus module.</h4>
+<h4>{{ stepcount }}. Configure stimulus module.</h4>
 {% assign stepcount = stepcount | plus: 1 %}
 
 <p>
@@ -121,7 +121,7 @@ the Cycles option.
   </figcaption>
 </figure>
 
-<h4 class="page-header">{{ stepcount }}. Configure the oscilloscope.</h4>
+<h4>{{ stepcount }}. Configure the oscilloscope.</h4>
 {% assign stepcount = stepcount | plus: 1 %}
 
 <p>
@@ -192,7 +192,7 @@ toggle button. Now, the Oscilloscope should show matching data for both Istep:
 Iout and Analog Input 1.
 </p>
 
-<h4 class="page-header">{{ stepcount }}. Balance the bridge in the bath.</h4>
+<h4>{{ stepcount }}. Balance the bridge in the bath.</h4>
 {% assign stepcount = stepcount | plus: 1 %}
 
 <p>
@@ -227,7 +227,7 @@ you should see a response to each current pulse.
   </figcaption>
 </figure>
 
-<h4 class="page-header">{{ stepcount }}. Saving data.</h4>
+<h4>{{ stepcount }}. Saving data.</h4>
 {% assign stepcount = stepcount | plus: 1 %}
 
 <p>To record data, select <b>System</b> --> <b>Data Recorder</b> from the RTXI
@@ -241,7 +241,7 @@ Click <b>Start Recording</b> to begin recording and <b>Stop Recording</b> to
 stop recording.
 </p>
 
-<h4 class="page-header">{{ stepcount }}. Saving your workspace.</h4>
+<h4>{{ stepcount }}. Saving your workspace.</h4>
 {% assign stepcount = stepcount | plus: 1 %}
 
 <p>
