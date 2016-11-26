@@ -76,7 +76,7 @@ extra_js: "
     We get our funding from the NIH, and citations will help when our grant
     renewal comes around. Cite: 
   </p>
-  <div class="well">
+  <div class="blockquote">
     Lin et al. Real-time Experiment Interface for biological control
     applications. Conf Proc IEEE Eng Med Biol Soc (2010) vol. 1 pp. 4160-3
   </div>
@@ -156,19 +156,21 @@ extra_js: "
     {% endif %}
     {% capture lastyear %}{{ thisyear }}{% endcapture %}
   
-    <div class="item col-sm-12 col-md-6 chunk{{chunkcount}}" 
+    <div class="item col-sm-12 col-lg-6 chunk{{chunkcount}}" 
          data-category="chunk{{chunkcount}}">
       <a href="{{ post.link }}" style="color:inherit;">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h4 class="panel-title">{{ post.title }}</h4>
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">{{ post.title }}</h4>
           </div>
-          <div class="panel-body hidden-xs">
-            <div hidden> {% for author in post.authors %}
-                         {{ author.name }} 
-                         {% endfor %}
+          <div class="card-block">
+            <div class="card-text">
+              <div hidden> {% for author in post.authors %}
+                           {{ author.name }} 
+                           {% endfor %}
+              </div>
+              {{ post.excerpt }}
             </div>
-            {{ post.excerpt }}
           </div>
         </div>
       </a>
