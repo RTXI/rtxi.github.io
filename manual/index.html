@@ -47,102 +47,6 @@ unused_sections:
  - name: Model Cell Tutorial
    tag: acquiring_data
 
-extra_js: "
-<script>
-var navHeight = $('.navbar').outerHeight(true) + 10;
-var topblockHeight = $('#topblock').outerHeight(true);
-
-/* activate sidebar */
-$('#sidebar').affix({
-  offset: {
-    top: topblockHeight
-  }
-});
-
-/* activate scrollspy menu */
-$('body').scrollspy({
-  target: '#leftCol',
-  offset: navHeight
-});
-
-/* enable smooth scrolling */
-$('#leftCol a').on('click', function(event) {
-  event.preventDefault();
-  var hash = this.hash;
-
-  $('html, body').animate({
-    scrollTop: $(hash).offset().top
-  }, 200, function() {
-    window.location.hash = hash;
-  });
-});
-</script>
-"
-
-extra_css: "
-<style>
-#sidebar.affix-top {
-  position: static;
-  margin-top: 30px;
-}
-  
-#sidebar.affix {
-  position: fixed;
-  top:70px;
-}
-
-img {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-#sidebar.nav .active {
-  font-weight: bold;
-}
-
-#sidebar.nav .nav {
-  display: none;
-}
-
-#sidebar.nav .active .nav {
-  display: block;
-}
-
-#sidebar.nav .nav a {
-  font-weight: normal;
-  font-size: .85em;
-}
-
-#sidebar.nav .nav span {
-  margin: 0 5px 0 2px;
-}
-
-#sidebar.nav .nav .active a,
-#sidebar.nav .nav .active:hover a,
-#sidebar.nav .nav .active:focus a {
-  font-weight: bold;
-}
-
-#sidebar.nav .nav .active span,
-#sidebar.nav .nav .active:hover span,
-#sidebar.nav .nav .active:focus span {
-  display: none;
-}
-
-pre code{
-  overflow: auto;
-  -ms-word-wrap: normal;
-  word-wrap: normal;
-  overflow-wrap: normal;
-  white-space: pre;
-}
-</style>
-"
 ---
 
 <div class="container" style="padding-top:1rem;">
@@ -153,12 +57,12 @@ pre code{
     
   <div class="row">
     <nav class="col-sm-3 col-lg-2 hidden-xs-down" id="leftCol">
-      <ul class="nav" id="sidebar" data-spy="affix">
+      <ul class="nav nav-pills nav-stacked" id="sidebar">
       {% for section in page.sections %}
         {% if section.subsections == nil %} 
-        <li><a href="#{{ section.tag }}">{{ section.name }}</a></li>
+        <li class="nav-item"><a class="nav-link" href="#{{ section.tag }}">{{ section.name }}</a></li>
         {% else %}
-        <li><a href="#{{ section.tag }}">{{ section.name }}</a>
+        <li class="nav-item"><a class="nav-link" href="#{{ section.tag }}">{{ section.name }}</a>
           <ul class="nav collapse" style="padding-left:20px">
             {% for subsection in section.subsections %}
             <li><a href="#{{ subsection.tag }}">{{ subsection.name }}</a></li>
