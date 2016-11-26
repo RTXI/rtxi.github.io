@@ -45,33 +45,33 @@ faq_modulus: 20
 <div class="hidden-sm">&nbsp;</div>
 
 <div class="container">
-  <ul class="nav nav-tabs nav-justified lead" role="tablist">
-    <li role="presentation" class="active">
-      <a data-toggle="tab" href="#tutor" role="tab">Tutorials</a>
+  <ul class="nav nav-tabs lead" role="tablist">
+    <li role="presentation" class="nav-item">
+      <a data-toggle="tab" href="#tutor" role="tab" class="nav-link active">Tutorials</a>
     </li>
-    <li role="presentation">
-      <a data-toggle="tab" href="#trouble" role="tab">Troubleshooting</a>
+    <li role="presentation" class="nav-item">
+      <a data-toggle="tab" href="#trouble" role="tab" class="nav-link">Troubleshooting</a>
     </li>
-    <li role="presentation">
-      <a data-toggle="tab" href="#faq" role="tab">FAQs</a>
+    <li role="presentation" class="nav-item">
+      <a data-toggle="tab" href="#faq" role="tab" class="nav-link">FAQs</a>
     </li>
   </ul>
 </div>
 
 <div class="container tab-content">
   <div id="tutor" role="tabpanel" class="tab-pane fade in active">
-    {% capture tutorvar %}{% increment tutorbodycount %}{% endcapture %}
+    {% assign tutorbodycount = 0 %}
     <div class="tab-content">
       {% for post in site.categories.tutorials %}
         {% capture tutorflag %}{{ forloop.index | modulo:page.tutorial_modulus }}{% endcapture %}
         {% if tutorflag == "1" %}
-        {% capture tutorvar %}{% increment tutorbodycount %}{% endcapture %}
+        {% assign tutorbodycount = tutorbodycount | plus:1 %}
           {% if forloop.index == 1 %}
           <div class="tab-pane fade in active" role="tabpanel" 
-               id="tutor{{ tutorvar }}">
+               id="tutor{{ tutorbodycount }}">
           {% else %}
           </div><div class="tab-pane fade" role="tabpanel" 
-                     id="tutor{{ tutorvar }}">
+                     id="tutor{{ tutorbodycount }}">
           {% endif %}
         {% endif %}
        <div>&nbsp;</div>
@@ -84,22 +84,22 @@ faq_modulus: 20
     </div>
     
     <!-- Paginator --> 
-    <div class="text-center"><ul class="pagination">
-      {% capture tutorvar %}{% increment tutorpagecount %}{% endcapture %}
+    <div class="text-xs-center"><ul class="pagination">
+    {% assign tutorpagecount = 0 %}
       {% for post in site.categories.tutorials %}
         {% capture tutorflag %}{{ forloop.index | modulo:page.tutorial_modulus }}{% endcapture %}
         {% if tutorflag == "1" %}
-          {% capture tutorvar %}{% increment tutorpagecount %}{% endcapture %}
+          {% assign tutorpagecount = tutorpagecount | plus:1 %}
           {% if forloop.index == 1 %}
-            <li class="active" role="presentation">
-              <a data-toggle="tab" href="#tutor{{tutorvar}}">
-               {{tutorvar}}
+            <li class="active page-item" role="presentation">
+              <a data-toggle="tab" href="#tutor{{ tutorpagecount }}" class="page-link">
+               {{ tutorpagecount }}
               </a>
             </li>
           {% else %}
-            <li>
-              <a data-toggle="tab" href="#tutor{{ tutorvar }}">
-               {{ tutorvar }}
+            <li class="page-item">
+              <a data-toggle="tab" href="#tutor{{ tutorpagecount }}" class="page-link">
+               {{ tutorpagecount }}
               </a>
             </li>
           {% endif %}
@@ -141,21 +141,21 @@ faq_modulus: 20
     </div>
     
     <!-- Paginator --> 
-    <div class="text-center"><ul class="pagination">
+    <div class="text-xs-center"><ul class="pagination">
       {% capture troublevar %}{% increment troublepagecount %}{% endcapture %}
       {% for post in site.categories.troubleshoot %}
         {% capture troubleflag %}{{ forloop.index | modulo:page.troubleshoot_modulus }}{% endcapture %}
         {% if troubleflag == "1" %}
           {% capture troublevar %}{% increment troublepagecount %}{% endcapture %}
           {% if forloop.index == 1 %}
-            <li class="active" role="presentation">
-              <a data-toggle="tab" href="#trouble{{troublevar}}">
+            <li class="page-item active" role="presentation">
+              <a data-toggle="tab" class="page-link" href="#trouble{{troublevar}}">
                {{troublevar}}
               </a>
             </li>
           {% else %}
-            <li>
-              <a data-toggle="tab" href="#trouble{{ troublevar }}">
+            <li class="page-item">
+              <a data-toggle="tab" class="page-link" href="#trouble{{ troublevar }}">
                {{ troublevar }}
               </a>
             </li>
@@ -196,19 +196,19 @@ faq_modulus: 20
     </div>
     
     <!-- Paginator --> 
-    <div class="text-center"><ul class="pagination">
+    <div class="text-xs-center"><ul class="pagination">
       {% capture faqvar %}{% increment faqpagecount %}{% endcapture %}
       {% for post in site.categories.faqs %}
         {% capture faqflag %}{{ forloop.index | modulo:page.faq_modulus }}{% endcapture %}
         {% if faqflag == "1" %}
           {% capture faqvar %}{% increment faqpagecount %}{% endcapture %}
           {% if forloop.index == 1 %}
-            <li class="active" role="presentation">
-              <a data-toggle="tab" href="#faq{{faqvar}}">{{faqvar}}</a>
+            <li class="active page-item" role="presentation">
+              <a class="page-link" data-toggle="tab" href="#faq{{faqvar}}">{{faqvar}}</a>
             </li>
           {% else %}
-            <li>
-              <a data-toggle="tab" href="#faq{{ faqvar }}">{{ faqvar }}</a>
+            <li class="page-item">
+              <a class="page-link" data-toggle="tab" href="#faq{{ faqvar }}">{{ faqvar }}</a>
             </li>
           {% endif %}
         {% endif %}
