@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="{{ page.content | strip_html | truncate:200 }}">
 
     <!-- Schema.org markup. (Google+ uses it.) -->
@@ -43,7 +43,6 @@
   <style>
     h1, h2, h3, h4, h5, h6 {
       padding-bottom: 9px;
-      margin: 40px 0 20px;
       border-bottom: 1px solid #eee;
       font-weight: normal;
     }
@@ -60,9 +59,9 @@
   <body>
     {% include navbar.html %}
 
-    <div class="container" style="padding-top:30px">
+    <div class="container" style="padding-top:1rem">
 {% unless page.url contains "/modules/" %}
-      <h3 class="page-header">{{ page.title }}</h3>
+      <h1>{{ page.title }}</h1>
 {% endunless %}
 
 {% if page.url contains "/papers/" %}
@@ -71,7 +70,7 @@
         {{ page.reference }}
       </div>
 
-      <div class="col-xs-12 col-sm-2" style="text-align: center">
+      <div class="col-xs-12 col-sm-2 text-xs-center">
         <a href="{{ page.link }}">
           <button type="button" class="btn btn-primary btn-lg">Full Text</button>
         </a>
