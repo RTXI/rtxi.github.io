@@ -76,13 +76,11 @@ module Jekyll
         #  filename = build_dir+"/"+repo+"/index.html"
         forkmebanner = "<style>" +
           "#forkongithub a{" +
-            "background:#222;" +
+            "background:#373A3C;" +
             "color:#fff;" +
             "text-decoration:none;" +
             "font-family:arial,sans-serif;"+
             "text-align:center;"+
-            "font-weight:bold;"+
-            "padding:5px 10px;"+
             "font-size:1rem;"+
             "line-height:2rem;"+
             "position:fixed;"+
@@ -111,10 +109,10 @@ module Jekyll
             "}"+
           "}</style>"+
           "<span id=\"forkongithub\">"+
-            "<div class=\"hidden-xs\">"+
+            "<div class=\"hidden-xs-down\">"+
               "<a href=\"https://github.com/rtxi/#{repo}\">Fork #{repo.gsub(/-/,' ').split.map(&:capitalize).join(' ')} <span style=\"padding-left:5px\" class=\"fa fa-lg fa-github\"></span></a>"+
             "</div>"+
-            "<div class=\"visible-xs\">"+
+            "<div class=\"hidden-sm-up\">"+
               "<a href=\"https://github.com/rtxi/#{repo}\"><span class=\"fa fa-lg fa-github\"></span></a>"+
             "</div>"+
           "</span>"
