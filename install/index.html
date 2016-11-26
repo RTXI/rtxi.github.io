@@ -7,13 +7,15 @@ install RTXI from source; or if you already use a previous version of RTXI, you
 can install the RTXI GUI without recompiling a kernel. "
 ---
 
-<div class="container">
-  <h2 class="page-header">Installing RTXI</h2>
+<div class="container" style="padding-top:1rem;">
+  <div class="row">
+    <h1>Installing RTXI</h1>
+  </div>
 </div>
 
-<div class="container">
+<div class="container"><div class="row">
   <p>There are three ways to install RTXI:</p>
-  <dl class="dl-horizontal">
+  <dl>
     <dt>Standard</dt>
       <dd>Use our Ubuntu-based live CDs. It's easier than manually installing
       RTXI, but differences between your system and the one used to make the
@@ -29,37 +31,38 @@ can install the RTXI GUI without recompiling a kernel. "
       system without recompiling a kernel or reintstalling any of your OS.
       </dd>
   </dl>
-</div>
+</div></div>
 
 <br>
 
-<div class="container">
-  <ul class="nav nav-pills nav-justified lead" role="tablist">
-    <li role="presentation" class="active">
-      <a data-toggle="tab" href="#standard" role="tab">Standard</a>
+<div class="container"><div class="row">
+  <ul class="nav nav-tabs nav-justified lead" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" href="#standard" data-toggle="tab" role="tab">Standard</a>
     </li>
-    <li role="presentation">
-      <a data-toggle="tab" href="#custom" role="tab">Custom</a>
+    <li class="nav-item">
+      <a class="nav-link" href="#custom" data-toggle="tab" role="tab">Custom</a>
     </li>
-    <li role="presentation">
-      <a data-toggle="tab" href="#upgrade" role="tab">Upgrade</a>
+    <li class="nav-item">
+      <a class="nav-link" href="#upgrade" data-toggle="tab" role="tab">Upgrade</a>
     </li>
   </ul>
 
   <!-- Counters created by increment start at 0. Initialize them here and catch
     the output -->
-  {% capture dummyvar %}{% increment standardcount %}{% endcapture %}
-  {% capture dummyvar %}{% increment customcount %}{% endcapture %}
-  {% capture dummyvar %}{% increment upgradecount %}{% endcapture %}
 
-  <div class="tab-content">
+  {% assign standardcount = 1 %}
+  {% assign customcount = 1 %}
+  {% assign upgradecount = 1%}
+
+  <div class="tab-content" style="padding-top:1rem;">
     <div id="standard" role="tabpanel" 
          class="tab-pane fade in active">
-      <div class="panel-body row">
       
       <!-- 1. Download the live image -->
       <h4 class="lead media-heading">
-        {% increment standardcount %}. Download the live RTXI {{ site.rtxi_version }} image.
+        {{ standardcount }}. Download the live RTXI {{ site.rtxi_version }} image.
+        {% assign standardcount = standardcount | plus:1 %}
       </h4>
 
       <p>We currently have Ubuntu live CDs. You can use them to test RTXI
@@ -90,7 +93,8 @@ can install the RTXI GUI without recompiling a kernel. "
       <!-- 2. Burn the image to DVD or USB -->
       <div>&nbsp;</div>
       <h4 class="lead media-heading">
-        {% increment standardcount %}. Burn the image to a DVD or a USB drive.
+        {{ standardcount }}. Burn the image to a DVD or a USB drive.
+        {% assign standardcount = standardcount | plus:1 %}
       </h4>
       
       <p>
@@ -133,7 +137,8 @@ can install the RTXI GUI without recompiling a kernel. "
       <!-- 3. Boot into RTXI system -->
       <div>&nbsp;</div>
       <h4 class="lead media-heading">
-        {% increment standardcount %}. Boot from the live image.
+        {{ standardcount }}. Boot from the live image.
+        {% assign standardcount = standardcount | plus:1 %}
       </h4>
       <p>
         If your computer isn't already set to boot from USB or DVD, you'll need
@@ -159,7 +164,8 @@ can install the RTXI GUI without recompiling a kernel. "
       <!-- 4. Install RTXI -->
       <div>&nbsp;</div>
       <h4 class="lead media-heading">
-        {% increment standardcount %}. Install RTXI via the installer. 
+        {{ standardcount }}. Install RTXI via the installer. 
+        {% assign standardcount = standardcount | plus:1 %}
       </h4>
       <p>
         When booting, you can choose to go directly to the installer or boot
@@ -205,7 +211,8 @@ can install the RTXI GUI without recompiling a kernel. "
       <!-- 5. Boot into RTXI -->
       <div>&nbsp;</div>
       <h4 class="lead media-heading">
-        {% increment standardcount %}. Reboot into RTXI. 
+        {{ standardcount }}. Reboot into RTXI. 
+        {% assign standardcount = standardcount | plus:1 %}
       </h4>
       <p>
         When the installer is done, you will be prompted to reboot your system.
@@ -236,7 +243,8 @@ can install the RTXI GUI without recompiling a kernel. "
       <!-- 7. (Re)install modules -->
       <div>&nbsp;</div>
       <h4 class="lead media-heading">
-        {% increment standardcount %}. Install modules.
+        {{ standardcount }}. Install modules.
+        {% assign standardcount = standardcount | plus:1 %}
       </h4>
       <p>
         By default, a clean installation of RTXI only contains system modules.
@@ -247,14 +255,14 @@ can install the RTXI GUI without recompiling a kernel. "
         <a href="/modules">modules page</a>.
       </p>
 
-    </div></div> <!-- end standard information -->
+    </div> <!-- end standard information -->
 
     <div id="custom" role="tabpanel" class="tab-pane fade">
-      <div class="panel-body row">
 
       <!-- 1. Download generic Debian image -->
       <h4 class="lead media-heading">
-        {% increment customcount %}. Download a generic Linux installation image.
+        {{ customcount }}. Download a generic Linux installation image.
+        {% assign customcount = customcount | plus:1 %}
       </h4>
       <p>
         You can install RTXI on any Linux distribution you like. Keep in mind
@@ -278,7 +286,8 @@ can install the RTXI GUI without recompiling a kernel. "
       <!-- 2. Burn the image to DVD or USB -->
       <div>&nbsp;</div>
       <h4 class="lead media-heading">
-        {% increment customcount %}. Burn the image to a DVD or a USB drive.
+        {{ customcount }}. Burn the image to a DVD or a USB drive.
+        {% assign customcount = customcount | plus:1 %}
       </h4>
       
       <p>
@@ -309,7 +318,8 @@ can install the RTXI GUI without recompiling a kernel. "
       <!-- 3. Install and boot into RTXI system -->
       <div>&nbsp;</div>
       <h4 class="lead media-heading">
-        {% increment customcount %}. Follow the built-in installer and install the operating system.
+        {{ customcount }}. Follow the built-in installer and install the operating system.
+        {% assign customcount = customcount | plus:1 %}
       </h4>
       <p>
         Boot into the live CD. When prompted, start the installation process.
@@ -340,7 +350,8 @@ can install the RTXI GUI without recompiling a kernel. "
       <!-- 4. Look at our github documentaiton for now... -->
       <div>&nbsp;</div>
       <h4 class="lead media-heading">
-        {% increment customcount %}. Clone the RTXI repository using git. 
+        {{ customcount }}. Clone the RTXI repository using git. 
+        {% assign customcount = customcount | plus:1 %}
       </h4>
 
       <p>
@@ -388,7 +399,8 @@ $ cd /home/rtxi/
       <!-- 5. Install dependencies -->
       <div>&nbsp;</div>
       <h4 class="lead media-heading">
-        {% increment customcount %}. Install RTXI and real-time kernel dependencies. 
+        {{ customcount }}. Install RTXI and real-time kernel dependencies. 
+        {% assign customcount = customcount | plus:1 %}
       </h4>
       <p>
         Install the dependencies for RTXI and for installing the real-time (RT)
@@ -408,7 +420,8 @@ $ ./install_dependencies.sh
       <!-- 6. Install RT kernel -->
       <div>&nbsp;</div>
       <h4 class="lead media-heading">
-        {% increment customcount %}. Compile and install the real-time kernel. 
+        {{ customcount }}. Compile and install the real-time kernel. 
+        {% assign customcount = customcount | plus:1 %}
       </h4>
       <p>From the same directory, run:
       </p>
@@ -525,7 +538,8 @@ $ cat /proc/cpuinfo
       <!-- 7. Install RTXI -->
       <div>&nbsp;</div>
       <h4 class="lead media-heading">
-        {% increment customcount %}. Install RTXI. 
+        {{ customcount }}. Install RTXI. 
+        {% assign customcount = customcount | plus:1 %}
       </h4>
       <p>
         Install RTXI with the <code>install_rtxi.sh</code> script. Navigate
@@ -563,7 +577,8 @@ $ sudo rtxi
       <!-- 8. (Re)install modules -->
       <div>&nbsp;</div>
       <h4 class="lead media-heading">
-        {% increment customcount %}. Install modules.
+        {{ customcount }}. Install modules.
+        {% assign customcount = customcount | plus:1 %}
       </h4>
 
       <p>
@@ -575,10 +590,9 @@ $ sudo rtxi
         <a href="/modules">modules page</a>. 
       </p>
 
-    </div></div> <!-- end custom information -->
+    </div> <!-- end custom information -->
 
     <div id="upgrade" role="tabpanel" class="tab-pane fade">
-      <div class="panel-body row">
 
       <p>
         <b>Note:</b> If you are currently using older distributions, like
@@ -593,7 +607,8 @@ $ sudo rtxi
       <!-- 1. Clone the repo -->
       <div>&nbsp;</div>
       <h4 class="lead media-heading">
-        {% increment upgradecount %}. Clone the RTXI GitHub repository.
+        {{ upgradecount }}. Clone the RTXI GitHub repository.
+        {% assign upgradecount = upgradecount | plus:1 %}
       </h4>
       <p>
         If you haven't already cloned our GitHub repo, run the following in the
@@ -615,7 +630,8 @@ $ git pull origin master
       <!-- 2. Install dependencies -->
       <div>&nbsp;</div>
       <h4 class="lead media-heading">
-        {% increment upgradecount %}. Install and/or update dependencies.
+        {{ upgradecount }}. Install and/or update dependencies.
+        {% assign upgradecount = upgradecount | plus:1 %}
       </h4>
       <p>
         Run the <code>install_dependencies.sh</code> script to download
@@ -635,7 +651,8 @@ $ ./install_dependencies.sh
       <!-- 3. Install RTXI -->
       <div>&nbsp;</div>
       <h4 class="lead media-heading">
-        {% increment upgradecount %}. Install RTXI {{ site.rtxi_version }}.
+        {{ upgradecount }}. Install RTXI {{ site.rtxi_version }}.
+        {% assign upgradecount = upgradecount | plus:1 %}
       </h4>
       <p>Run the installation script, also in the <code>scripts/</code> directory.
       </p>
@@ -667,7 +684,8 @@ $ sudo rtxi
       <!-- 4. (Re)install modules -->
       <div>&nbsp;</div>
       <h4 class="lead media-heading">
-        {% increment upgradecount %}. Install modules.
+        {{ upgradecount }}. Install modules.
+        {% assign upgradecount = upgradecount | plus:1 %}
       </h4>
       <p>
         All available modules in v1.4 came packaged with RTXI. For 
@@ -704,7 +722,7 @@ $ sudo rtxi
         </a></li>
       </ul>
 
-    </div></div>
+    </div>
 
   </div> <!-- end tab-content -->
   
@@ -719,11 +737,10 @@ $ sudo rtxi
         An explanation of what exactly the tests measure</a> is available in 
       our documentation.  
     </p>
-  </div>
-  </div>
+  </div></div>
 
   <div>&nbsp;</div>
 
   {% include benchmarking.html %}
 
-</div>
+</div></div>
