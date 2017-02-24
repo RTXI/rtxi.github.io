@@ -109,6 +109,37 @@ need to fix the links.&lt;/p&gt;
       </item>
     
       <item>
+        <title>Kilohertz frequency nerve block enhances anti-inflammatory effects of vagus nerve stimulation</title>
+        <description>&lt;p&gt;Efferent activation of the cervical vagus nerve (cVN) dampens systemic inflammatory processes, potentially modulating a wide-range of inflammatory pathological conditions. In contrast, afferent cVN activation amplifies systemic inflammatory processes, leading to activation of the hypothalamic-pituitary-adrenal (HPA) axis, the sympathetic nervous system through the greater splanchnic nerve (GSN), and elevation of pro-inflammatory cytokines. Ideally, to clinically implement anti-inflammatory therapy via cervical vagus nerve stimulation (cVNS) one should selectively activate the efferent pathway. Unfortunately, current implementations, in animal and clinical investigations, activate both afferent and efferent pathways. We paired cVNS with kilohertz electrical stimulation (KES) nerve block to preferentially activate efferent pathways while blocking afferent pathways. Selective efferent cVNS enhanced the anti-inflammatory effects of cVNS. Our results demonstrate that: (i) afferent, but not efferent, cVNS synchronously activates the GSN in a dose-dependent manner; (ii) efferent cVNS enabled by complete afferent KES nerve block enhances the anti-inflammatory benefits of cVNS; and (iii) incomplete afferent KES nerve block exacerbates systemic inflammation. Overall, these data demonstrate the utility of paired efferent cVNS and afferent KES nerve block for achieving selective efferent cVNS, specifically as it relates to neuromodulation of systemic inflammation.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 05 Jan 2017 00:00:00 -0500</pubDate>
+        <link>http://rtxi.org//papers/2017/01/05/kilohertz-frequency-nerve-block-enhances-anti-inflammatory-effects-of-vagus-nerve-stimulation/</link>
+        <guid isPermaLink="true">http://rtxi.org//papers/2017/01/05/kilohertz-frequency-nerve-block-enhances-anti-inflammatory-effects-of-vagus-nerve-stimulation/</guid>
+      </item>
+    
+      <item>
+        <title>Illuminating Myocyte-Fibroblast Homotypic and Heterotypic Gap Junction Dynamics Using Dynamic Clamp</title>
+        <description>&lt;p&gt;Fibroblasts play a significant role in the development of electrical and mechanical dysfunction of the heart; however, the underlying mechanisms are only partially understood. One widely studied mechanism suggests that fibroblasts produce excess extracellular matrix, resulting in collagenous septa that slow propagation, cause zig-zag conduction paths, and decouple cardiomyocytes, resulting in a substrate for cardiac arrhythmia. An emerging mechanism suggests that fibroblasts promote arrhythmogenesis through direct electrical interactions with cardiomyocytes via gap junction (GJ) channels. In the heart, three major connexin (Cx) isoforms, Cx40, Cx43, and Cx45, form GJ channels in cell-type-specific combinations. Because each Cx is characterized by a unique time- and transjunctional voltage-dependent profile, we investigated whether the electrophysiological contributions of fibroblasts would vary with the specific composition of the myocyte-fibroblast (M-F) GJ channel. Due to the challenges of systematically modifying Cxs in vitro, we coupled native cardiomyocytes with in silico fibroblast and GJ channel electrophysiology models using the dynamic-clamp technique. We found that there is a reduction in the early peak of the junctional current during the upstroke of the action potential (AP) due to GJ channel gating. However, effects on the cardiomyocyte AP morphology were similar regardless of the specific type of GJ channel (homotypic Cx43 and Cx45, and heterotypic Cx43/Cx45 and Cx45/Cx43). To illuminate effects at the tissue level, we performed multiscale simulations of M-F coupling. First, we developed a cell-specific model of our dynamic-clamp experiments and investigated changes in the underlying membrane currents during M-F coupling. Second, we performed two-dimensional tissue sheet simulations of cardiac fibrosis and incorporated GJ channels in a cell type-specific manner. We determined that although GJ channel gating reduces junctional current, it does not significantly alter conduction velocity during cardiac fibrosis relative to static GJ coupling. These findings shed more light on the complex electrophysiological interplay between cardiac fibroblasts and myocytes.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 23 Aug 2016 00:00:00 -0400</pubDate>
+        <link>http://rtxi.org//papers/2016/08/23/illuminating-myocyte-fibroblast-homotypic-and-heterotypic-gap-junction-dynamics-using-dynamic-clamp/</link>
+        <guid isPermaLink="true">http://rtxi.org//papers/2016/08/23/illuminating-myocyte-fibroblast-homotypic-and-heterotypic-gap-junction-dynamics-using-dynamic-clamp/</guid>
+      </item>
+    
+      <item>
+        <title>Cell-specific Dynamic Clamp analysis of the role of funny I f current in cardiac pacemaking</title>
+        <description>&lt;p&gt;We used the Dynamic Clamp technique for i) comparative validation of conflicting computational models of the hyperpolarization-activated funny current, If, and ii) quantification of the role of If in mediating autonomic modulation of heart rate. Experimental protocols based on the injection of a real-time recalculated synthetic If current in sinoatrial rabbit cells were developed.&lt;/p&gt;
+
+&lt;p&gt;Preliminary results of experiments mimicking the autonomic modulation of If demonstrated the need for a customization procedure to compensate for cellular heterogeneity. For this reason, we used a cell-specific approach, scaling the maximal conductance of the injected current based on the cell’s spontaneous firing rate. The pacemaking rate, which was significantly reduced after application of Ivabradine, was restored by the injection of synthetic current based on the Severi-DiFrancesco formulation, while the injection of synthetic current based on the Maltsev-Lakatta formulation did not produce any significant variation. A positive virtual shift of the If activation curve, mimicking the Isoprenaline effects, led to a significant increase in pacemaking rate (+17.3 ± 6.7%, p &amp;lt; 0.01), although of lower magnitude than that induced by real Isoprenaline (+45.0 ± 26.1%). Similarly, a negative virtual shift of the activation curve significantly lowered the pacemaking rate (−11.8 ± 1.9%, p &amp;lt; 0.001), as did the application of real Acetylcholine (−20.5 ± 5.1%).&lt;/p&gt;
+
+&lt;p&gt;The Dynamic Clamp approach, applied to the If study in cardiomyocytes for the first time and rate-adapted to manage intercellular variability, indicated that: i) the quantitative description of the If current in the Severi-DiFrancesco model accurately reproduces the effects of the real current on rabbit sinoatrial cell pacemaking rate and ii) a significant portion (50–60%) of the physiological autonomic rate modulation is due to the shift of the If activation curve.fferent activation of the cervical vagus nerve (cVN) dampens systemic inflammatory processes, potentially modulating a wide-range of inflammatory pathological conditions. In contrast, afferent cVN activation amplifies systemic inflammatory processes, leading to activation of the hypothalamic-pituitary-adrenal (HPA) axis, the sympathetic nervous system through the greater splanchnic nerve (GSN), and elevation of pro-inflammatory cytokines. Ideally, to clinically implement anti-inflammatory therapy via cervical vagus nerve stimulation (cVNS) one should selectively activate the efferent pathway. Unfortunately, current implementations, in animal and clinical investigations, activate both afferent and efferent pathways. We paired cVNS with kilohertz electrical stimulation (KES) nerve block to preferentially activate efferent pathways while blocking afferent pathways. Selective efferent cVNS enhanced the anti-inflammatory effects of cVNS. Our results demonstrate that: (i) afferent, but not efferent, cVNS synchronously activates the GSN in a dose-dependent manner; (ii) efferent cVNS enabled by complete afferent KES nerve block enhances the anti-inflammatory benefits of cVNS; and (iii) incomplete afferent KES nerve block exacerbates systemic inflammation. Overall, these data demonstrate the utility of paired efferent cVNS and afferent KES nerve block for achieving selective efferent cVNS, specifically as it relates to neuromodulation of systemic inflammation.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 21 Dec 2015 00:00:00 -0500</pubDate>
+        <link>http://rtxi.org//papers/2015/12/21/cell-specific-dynamic-clamp-analysis-of-the-role-of-funny-if-current-in-cardiac-pacemaking/</link>
+        <guid isPermaLink="true">http://rtxi.org//papers/2015/12/21/cell-specific-dynamic-clamp-analysis-of-the-role-of-funny-if-current-in-cardiac-pacemaking/</guid>
+      </item>
+    
+      <item>
         <title>RTXI Fall Newsletter</title>
         <description>&lt;p&gt;There have been lots of new developments in RTXI over the past few months. Look
 forward to the upcoming release of RTXI 2.1, and we encourage those of you
@@ -164,6 +195,19 @@ RTXI working for you. We’ll even come to you in person.&lt;/p&gt;
       </item>
     
       <item>
+        <title>IKr Impact on Repolarization and Its Variability Assessed by Dynamic-Clamp</title>
+        <description>&lt;p&gt;Repolarization and its stability are exquisitely sensitive to IKr features. Information on the relative importance of specific IKr abnormalities is missing and would assist in the evaluation of arrhythmogenic risk.&lt;/p&gt;
+
+&lt;p&gt;In single guinea-pig myocytes, endogenous IKr was replaced by modelled IKr (mIKr) by Dynamic-Clamp (DC) at a cycle length of 1 s. mIKr parameters were systematically modified and the resulting changes in action potential duration (APD) and its short term variability (SD1) were measured. We observed that: 1) IKr blockade increased SD1 more than expected by its dependency on APD; 2) mIKr completely reversed APD and SD1 changes caused by IKr blockade; 3) repolarization was most sensitive to inactivation shifts, which affected APD and SD1 concordantly; 4) activation shifts of the same magnitude had marginal impact on APD but, only when reducing mIKr, they significantly increased SD1; 5) changes in maximal conductance resulted in a pattern similar to that of activation shifts.&lt;/p&gt;
+
+&lt;p&gt;The largest effect on repolarization and its stability are expected from changes in IKr inactivation. APD is less sensitive to changes in other IKr gating parameters, which are better revealed by SD1 changes. SD1 may be more sensitive than APD in detecting IKr-dependent repolarization abnormalities.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 23 Jun 2015 00:00:00 -0400</pubDate>
+        <link>http://rtxi.org//papers/2015/06/23/ikr-impact-on-repolarization-and-its-variability-assessed-by-dynamic-clamp/</link>
+        <guid isPermaLink="true">http://rtxi.org//papers/2015/06/23/ikr-impact-on-repolarization-and-its-variability-assessed-by-dynamic-clamp/</guid>
+      </item>
+    
+      <item>
         <title>RTXI 2.0 Released</title>
         <description>&lt;p&gt;We’ve been working hard over the past year to put together the new and improved
 Real-Time eXperiment Interface.&lt;/p&gt;
@@ -194,6 +238,15 @@ and more. Let us know if you have issues or questions.&lt;/p&gt;
         <pubDate>Tue, 12 May 2015 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//news/2015/05/12/rtxi-v2-released/</link>
         <guid isPermaLink="true">http://rtxi.org//news/2015/05/12/rtxi-v2-released/</guid>
+      </item>
+    
+      <item>
+        <title>Cell-Specific Cardiac Electrophysiology Models</title>
+        <description>&lt;p&gt;The traditional cardiac model-building paradigm involves constructing a composite model using data collected from many cells. Equations are derived for each relevant cellular component (e.g., ion channel, exchanger) independently. After the equations for all components are combined to form the composite model, a subset of parameters is tuned, often arbitrarily and by hand, until the model output matches a target objective, such as an action potential. Unfortunately, such models often fail to accurately simulate behavior that is dynamically dissimilar (e.g., arrhythmia) to the simple target objective to which the model was fit. In this study, we develop a new approach in which data are collected via a series of complex electrophysiology protocols from single cardiac myocytes and then used to tune model parameters via a parallel fitting method known as a genetic algorithm (GA). The dynamical complexity of the electrophysiological data, which can only be fit by an automated method such as a GA, leads to more accurately parameterized models that can simulate rich cardiac dynamics. The feasibility of the method is first validated computationally, after which it is used to develop models of isolated guinea pig ventricular myocytes that simulate the electrophysiological dynamics significantly better than does a standard guinea pig model. In addition to improving model fidelity generally, this approach can be used to generate a cell-specific model. By so doing, the approach may be useful in applications ranging from studying the implications of cell-to-cell variability to the prediction of intersubject differences in response to pharmacological treatment.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 30 Apr 2015 00:00:00 -0400</pubDate>
+        <link>http://rtxi.org//papers/2015/04/30/cell-specific-cardiac-electrophysiology-models/</link>
+        <guid isPermaLink="true">http://rtxi.org//papers/2015/04/30/cell-specific-cardiac-electrophysiology-models/</guid>
       </item>
     
       <item>
@@ -1547,443 +1600,6 @@ digital to analog.&lt;/p&gt;
         <pubDate>Sat, 06 Dec 2014 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/tutorials/2014/12/06/what-is-real-time-computing/</link>
         <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2014/12/06/what-is-real-time-computing/</guid>
-      </item>
-    
-      <item>
-        <title>RTXI Architecture</title>
-        <description>&lt;p&gt;RTXI uses a two-thread architecture consisting of a real-time (RT) thread and a
-non-real-time user interface (UI) thread. RTXI can run on single or
-multiprocessor computers. RTXI consists of both system and custom user modules,
-each of which spans both threads. RTXI modules communicate and share data in
-real-time using a system of signals and slots that supports synchronous
-scheduling, as well as asynchronous event handling. On every clock cycle, the
-RT thread wakes and signals each active DAQ driver to acquire all active inputs
-from external experiment hardware. These data are made available to other
-components while the RT thread executes any real-time instructions contained in
-loaded modules. When each module has finished executing, the RT thread signals
-each DAQ driver to write any output signals to the experiment hardware. The UI
-thread manages the graphical components of the system as well as user events
-triggered through the interface. Each module features its own encapsulated
-interface through which users can control module execution and modify its
-various parameters.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/assets/img/rtxi-diagram-scaled.png&quot;&gt;
-  &lt;img src=&quot;/assets/img/rtxi-diagram-scaled.png&quot; class=&quot;img-responsive center-block&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;RTXI uses the open source &lt;a href=&quot;https://xenomai.org&quot;&gt;Xenomai&lt;/a&gt; framework to implement
-communication with a variety of commercially available multifunction DAQ cards
-with both analog and digital input and output channels. This makes RTXI
-essentially hardware-agnostic and able to communicate with multiple actuators
-and sensors that may span different modalities. Modules contain
-function-specific code that can be used in combinations to build custom
-workflows and experiment protocols. They are compiled outside the core RTXI
-source tree as shared object libraries that are linked at runtime. This
-architecture gives RTXI several important features:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Reduced overhead that maximizes real-time performance by loading a minimal
-set of modules at startup&lt;/li&gt;
-  &lt;li&gt;Code reusability which eliminates the need to program new experiments
-entirely from scratch&lt;/li&gt;
-  &lt;li&gt;Ease by which users can share modules by distributing source code or
-compiled versions of their modules&lt;/li&gt;
-  &lt;li&gt;The ability to create and save the entire RTXI workspace and experimental
-setup for use at a later date&lt;/li&gt;
-  &lt;li&gt;A simple process by which multiple developers can contribute new features
-with minimal changes to core RTXI source code.&lt;/li&gt;
-&lt;/ol&gt;
-
-</description>
-        <pubDate>Sat, 06 Dec 2014 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//docs/tutorials/2014/12/06/rtxi-architecture/</link>
-        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2014/12/06/rtxi-architecture/</guid>
-      </item>
-    
-      <item>
-        <title>Using RTXI for Dynamic Clamp</title>
-        <description>&lt;p&gt;The dynamic clamp is a real-time electrophysiology technique where simulated
-membrane conductances are artificially injected into a cell via intracellular
-electrodes. It works by reading membrane potentials, amplifiing, and then
-feeding them into a dynamic clamp system that contains a model of the desired
-membrane conductance and generates a current to be injected back into the cell
-in real time. For digital systems, the membrane conductance is a set of
-equations that must be computed, whereas for an analog system, the current is
-the output of a dedicated electrical circuit. The injected dynamic clamp
-current acts on the cell in parallel with other membrane currents which,
-depending on the model equations, can represent ion channels, electrical
-coupling between cells, or synaptic input. This technique has many possible
-uses. With neurons, it can be used to construct hybrid networks of real and
-model neurons and even attach virtual dendrites. For an excellent video
-tutorial, see this video for the following paper in the Journal of Visualized
-Experiments.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/dclamp.png&quot; alt=&quot;Dynamic Clamp Figure&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;electrode-compensation-and-dynamic-clamp-instability&quot;&gt;Electrode Compensation and Dynamic Clamp Instability&lt;/h4&gt;
-&lt;p&gt;When dynamic clamp is performed using two intracellular electrodes, one
-electrode records the membrane potential while the other is used for current
-injection. In cases where only one intracellular electrode is feasible, the
-same electrode is used for voltage measurement and current injection. This
-poses a problem for measurement accuracy because the injected current induces a
-voltage drop through the electrode. One method to compensate for this issue is
-to use your amplifier in “bridge balance” mode, which approximates the
-electrode as a single resistance and subtracts the voltage drop across the
-electrode from the total recorded voltage. This method can only be used if the
-electrode resistance stays constant. An alternative method is to operate your
-amplifier in “discontinuous current clamp” mode, in which the electrode
-alternates between recording the voltage and injecting current. This method is
-valid only if the electrode is at least two orders of magnitude faster than
-what you are trying to observe in the recordings.&lt;/p&gt;
-
-&lt;p&gt;It is important to minimize measurement errors in dynamic clamp because the
-artifacts propagate through the closed-loop and can lead to oscillatory
-instability. This instability arises when the artificial conductance is
-comparable to the resting input conductance of the cell and limits the
-conductance range that can be applied using dynamic clamp. It is directly
-related to the sampling delay and is exaggerated by insufficient electrode
-series resistance and capacitance compensation. Increasing the sampling rate of
-the dynamic clamp system increases dynamic clamp stability; however, this
-improvement, is constrained by how well the electrode series resistance and
-capacitance are compensated. Dynamic clamp sampling rates are usually justified
-by the temporal dynamics of the simulated models. For action potentials on the
-order of a few milliseconds wide, 10kHz is a common sampling rate. However,
-faster sampling rates increase the stable operating range for the dynamic clamp
-system and increase the maximum conductance that maintains a stable system.
-RTXI is capable of handling much higher sampling rates due to the low overhead
-in the Linux OS.&lt;/p&gt;
-
-&lt;h4 id=&quot;numerical-methods&quot;&gt;Numerical Methods&lt;/h4&gt;
-&lt;p&gt;Similar to the effect of experimental measurement error, errors in simulating
-the virtual conductance also affect dynamic clamp performance. Methodologies
-for implementing the numerical integration of the gating variables typically
-employ first-order numerical methods, either Euler or exponential Euler. These
-approximations are used because of the real-time temporal constraints on how
-rapidly the calculations for integrating the gating variables must occur. In
-general, numerical accuracy increases as the time step of integration
-decreases. Unlike traditional model simulations, however, with real-time
-systems it is not practical to make the time step smaller and simply wait
-longer for the simulation result. For small time steps, both integration
-methods are comparable, but at larger time steps, the exponential Euler method
-performs worse than the Euler method. The error bounds for both methods can be
-characterized in terms of two ratios: the time step over the time constant
-(δt/τ), and the voltage measurement error over the slope factor of the
-steady-state activation curve of the voltage-dependent gating variable
-(εV/|d|). When δt/τ is large relative to εV/|d|, no amount of improvement in
-measurement error can improve the error bound due to the numerical inaccuracies
-caused by a relatively large time step.&lt;/p&gt;
-
-&lt;p&gt;For more information, see:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://dx.doi.org/10.3791/2275&quot;&gt;Lobb and Paladini. Application of a NMDA Receptor Conductance in Rat
-Midbrain Dopaminergic Neurons Using the Dynamic Clamp Technique. J Vis Exp
-(2010) (46)&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://www.springer.com/biomed/neuroscience/book/978-0-387-89278-8&quot;&gt;Destexhe A, Bal T, eds. Dynamic clamp: From principles to applications.
-Springer
-(2009).&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://dx.doi.org/10.1016/j.jneumeth.2007.10.009&quot;&gt;Bettencourt J.C., Lillis K.P., Stupin L.R., White J.A. Effects of imperfect
-dynamic clamp: Computational and experimental results (2008) Journal of
-Neuroscience Methods, 169 (2):
-282-289.&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://dx.doi.org/10.1088/1741-2560%2F1%2F4%2F001&quot;&gt;R.J. Butera and M.L. McCarthy. Analysis of real-time numerical integration
-methods applied to dynamic clamp experiments, J. Neural Eng. 1 (2004), pp.
-187–194.&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://dx.doi.org/10.1016/j.tins.2004.02.004&quot;&gt;Prinz AA, Abbott LF, Marder E. The dynamic clamp comes of age. (2004) TINS
-27: 218–224.&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Fri, 05 Dec 2014 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//docs/tutorials/2014/12/05/dynamic-clamp/</link>
-        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2014/12/05/dynamic-clamp/</guid>
-      </item>
-    
-      <item>
-        <title>RTXI HDF5 Data Files</title>
-        <description>&lt;p&gt;The HDF5 file format is a portable and extensible binary data format designed
-for complex data. It features support for an unlimited variety of datatypes,
-and has flexible and efficient I/O. HDF5 features a hierarchical structure that
-allows you to access chunks of data without loading the entire file into
-memory. An HDF5 file produced by RTXI’s Data Recorder is organized as shown on
-the right:&lt;/p&gt;
-
-&lt;div class=&quot;container&quot;&gt;
-  &lt;div class=&quot;col-sm-4&quot;&gt;
-    &lt;a href=&quot;/assets/img/hdf5-rtxi.png&quot;&gt;
-      &lt;img src=&quot;/assets/img/hdf5-rtxi.png&quot; class=&quot;img-responsive&quot; /&gt;
-    &lt;/a&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;col-sm-8&quot;&gt;
-    &lt;a href=&quot;/assets/img/hdf5-rtxi-2.png&quot;&gt;
-      &lt;img src=&quot;/assets/img/hdf5-rtxi-2.png&quot; class=&quot;img-responsive&quot; /&gt;
-    &lt;/a&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;At the topmost level, an RTXI HDF5 file is divided into separate &lt;strong&gt;Trial&lt;/strong&gt;
-groups, each of which contains the complete set of system options, module
-settings, and model parameter values that existed at the time that data was
-recorded. Every time you stop and restart a module from which data is sent to
-the Data Recorder, a new Trial is created. Each Trial is timestamped with a
-start and end time. The Data Recorder also has the option to append trials to
-an existing HDF5 file. For this reason, each Trial has its own data and system
-attributes.&lt;/p&gt;
-
-&lt;p&gt;The parameters for modules and all system settings are saved in the
-&lt;strong&gt;Parameters&lt;/strong&gt; group within each Trial group. The name of each parameter
-includes the module ID number within RTXI, the name of the module, and the name
-of the parameter itself. If the value of the parameter changes during
-recording, all the values are saved with a corresponding index value that is
-the timestamp in nanoseconds from the start of the recording.&lt;/p&gt;
-
-&lt;p&gt;The real-time data is saved in the &lt;strong&gt;Synchronous&lt;/strong&gt; group within each Trial
-group. This group contains separate datasets with the name of each channel and
-a single dataset that contains all the synchronous data.&lt;/p&gt;
-
-&lt;p&gt;There are various software available for working with HDF5 files. To simply
-browse the file structure, you can use the free HDFView application. HDFView
-provides some limited editing capabilities. For trials where only a single
-channel is saved, you can also preview a plot of the data. To extract the data
-for analysis and for complete editing capabilities, APIs are available for
-MATLAB, GNU Octave, Igor Pro, Mathematica, Python, Scilab, and other software.
-See this list maintained by the HDF Group.&lt;/p&gt;
-
-&lt;p&gt;We provide here a collection of MATLAB functions and a simple GUI for browsing
-through the trials of an RTXI HDF5 file with addtional examples of how to
-extract data and add new datasets to your file. &lt;strong&gt;To load RTXI HDF5 files into
-MATLAB, you no longer need to “matlabize” your HDF5 files, provided you use the
-MATLAB functions from our 
-&lt;a href=&quot;https://github.com/rtxi/matlab-tools&quot;&gt;matlab-tools repository&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//docs/tutorials/2014/12/04/rtxi-hdf5-data-files/</link>
-        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2014/12/04/rtxi-hdf5-data-files/</guid>
-      </item>
-    
-      <item>
-        <title>Manually Configuring RTXI</title>
-        <description>&lt;p&gt;You can manually configure RTXI with many options. For example, you can run
-RTXI 2.0 using the RTAI rather than the default Xenomai,
-and you can set up RTXI in non-real-time mode using the POSIX interface. You
-may also direct RTXI to libraries/packages in non-standard locations. The full
-configure options for are below:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;configure&lt;span class=&quot;s1&quot;&gt;' configures RTXI trunk to adapt to many kinds of systems.
-
-Usage: ./configure [OPTION]... [VAR=VALUE]...
-
-To assign environment variables (e.g., CC, CFLAGS...), specify them as
-VAR=VALUE.  See below for descriptions of some of the useful variables.
-
-Defaults for the options are specified in brackets.
-
-Configuration:
-  -h, --help              display this help and exit
-      --help=short        display options specific to this package
-      --help=recursive    display the short help of all the included packages
-  -V, --version           display version information and exit
-  -q, --quiet, --silent   do not print `checking...'&lt;/span&gt; messages
-      --cache-file&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;FILE   cache &lt;span class=&quot;nb&quot;&gt;test &lt;/span&gt;results &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;FILE &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;disabled]
-  -C, --config-cache      &lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;--cache-file&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;config.cache&lt;span class=&quot;s1&quot;&gt;'
-  -n, --no-create         do not create output files
-      --srcdir=DIR        find the sources in DIR [configure dir or `..'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-
-Installation directories:
-  --prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PREFIX         install architecture-independent files &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;PREFIX
-                          &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/usr/local]
-  --exec-prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;EPREFIX   install architecture-dependent files &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;EPREFIX
-                          &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PREFIX]
-
-By default, &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;make install&lt;span class=&quot;s1&quot;&gt;' will install all the files in
-`/usr/local/bin'&lt;/span&gt;, &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;/usr/local/lib&lt;span class=&quot;s1&quot;&gt;' etc.  You can specify
-an installation prefix other than `/usr/local'&lt;/span&gt; using &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;--prefix&lt;span class=&quot;s1&quot;&gt;',
-for instance `--prefix=$HOME'&lt;/span&gt;.
-
-For better control, use the options below.
-
-Fine tuning of the installation directories:
-  --bindir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR            user executables &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;EPREFIX/bin]
-  --sbindir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR           system admin executables &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;EPREFIX/sbin]
-  --libexecdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR        program executables &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;EPREFIX/libexec]
-  --sysconfdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR        &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt;-only single-machine data &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PREFIX/etc]
-  --sharedstatedir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR    modifiable architecture-independent data &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PREFIX/com]
-  --localstatedir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR     modifiable single-machine data &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PREFIX/var]
-  --libdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR            object code libraries &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;EPREFIX/lib]
-  --includedir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR        C header files &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PREFIX/include]
-  --oldincludedir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR     C header files &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;non-gcc &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/usr/include]
-  --datarootdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR       &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt;-only arch.-independent data root &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PREFIX/share]
-  --datadir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR           &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt;-only architecture-independent data &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DATAROOTDIR]
-  --infodir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR           info documentation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DATAROOTDIR/info]
-  --localedir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR         locale-dependent data &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DATAROOTDIR/locale]
-  --mandir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR            man documentation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DATAROOTDIR/man]
-  --docdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR            documentation root &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DATAROOTDIR/doc/rtxi]
-  --htmldir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR           html documentation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DOCDIR]
-  --dvidir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR            dvi documentation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DOCDIR]
-  --pdfdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR            pdf documentation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DOCDIR]
-  --psdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR             ps documentation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DOCDIR]
-
-Program names:
-  --program-prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PREFIX            prepend PREFIX to installed program names
-  --program-suffix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;SUFFIX            append SUFFIX to installed program names
-  --program-transform-name&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PROGRAM   run sed PROGRAM on installed program names
-
-X features:
-  --x-includes&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR    X include files are &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;DIR
-  --x-libraries&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR   X library files are &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;DIR
-
-System types:
-  --build&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;BUILD     configure &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;building on BUILD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;guessed]
-  --host&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;HOST       cross-compile to build programs to run on HOST &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;BUILD]
-
-Optional Features:
-  --disable-option-checking  ignore unrecognized --enable/--with options
-  --disable-FEATURE       &lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;not include FEATURE &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;same as --enable-FEATURE&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;no&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-  --enable-FEATURE[&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ARG]  include FEATURE &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ARG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes]
-  --enable-shared[&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PKGS]  build shared libraries &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes]
-  --enable-static[&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PKGS]  build static libraries &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes]
-  --enable-fast-install[&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PKGS]
-                          optimize &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;fast installation &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes]
-  --disable-dependency-tracking  speeds up one-time build
-  --enable-dependency-tracking   &lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;not reject slow dependency extractors
-  --disable-libtool-lock  avoid locking &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;might &lt;span class=&quot;nb&quot;&gt;break &lt;/span&gt;parallel builds&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-  --enable-xenomai        build the Xenomai interface
-  --enable-posix          build the POSIX non-RT interface
-  --enable-debug          turn on debugging
-  --enable-comedi         build the comedi driver
-  --enable-analogy        build the analogy driver
-  --enable-ni             build the ni driver
-  --enable-clampprotocol     build the clamp protocol module &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;enabled&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-Optional Packages:
-  --with-PACKAGE[&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ARG]    use PACKAGE &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ARG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes]
-  --without-PACKAGE       &lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;not use PACKAGE &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;same as --with-PACKAGE&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;no&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-  --with-cppunit-prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PFX   Prefix where CppUnit is installed &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;optional&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-  --with-cppunit-exec-prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PFX  Exec prefix where CppUnit is installed &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;optional&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-  --with-pic              try to use only PIC/non-PIC objects &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;use
-                          both]
-  --with-gnu-ld           assume the C compiler uses GNU ld &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;no]
-  --with-x                use the X Window System
-  --with-Qt-dir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR       DIR is equal to &lt;span class=&quot;nv&quot;&gt;$QTDIR&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;you have followed the
-                          installation instructions of Trolltech. Header files
-                          are &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;DIR/include, binary utilities are &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;DIR/bin.
-                          The library is &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;DIR/lib, unless --with-Qt-lib-dir
-                          is also set.
-  --with-Qt-include-dir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR
-                          Qt header files are &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;DIR
-  --with-Qt-bin-dir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR   Qt utilities such as moc and uic are &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;DIR
-  --with-Qt-lib-dir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;DIR   The Qt library is &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;DIR
-  --with-Qt-lib&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;LIB       Use -lLIB to link with the Qt library
-  --with-rtai-config&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;FILE location of the rtai-config program
-
-Some influential environment variables:
-  CC          C compiler &lt;span class=&quot;nb&quot;&gt;command
-  &lt;/span&gt;CFLAGS      C compiler flags
-  LDFLAGS     linker flags, e.g. -L &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;you have libraries &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;a
-              nonstandard directory 
-  LIBS        libraries to pass to the linker, e.g. -l
-  CPPFLAGS    C/C++/Objective C preprocessor flags, e.g. -I &lt;span class=&quot;k&quot;&gt;if
-              &lt;/span&gt;you have headers &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;a nonstandard directory 
-  CPP         C preprocessor
-  CXX         C++ compiler &lt;span class=&quot;nb&quot;&gt;command
-  &lt;/span&gt;CXXFLAGS    C++ compiler flags
-  CXXCPP      C++ preprocessor
-  XMKMF       Path to xmkmf, Makefile generator &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;X Window System&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-</description>
-        <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//docs/tutorials/2014/12/04/manually-configuring-rtxi/</link>
-        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2014/12/04/manually-configuring-rtxi/</guid>
-      </item>
-    
-      <item>
-        <title>32 or 64 Bit? Your Processor Explained</title>
-        <description>&lt;p&gt;64-bit and 32-bit refer to how addresses and memory are handled in different
-instruction set architectures. For clarity, the terms ‘32-bit’ and ‘64-bit’
-have dual meanings. The first refers to the size of addressable chunks of
-memory. Memory is organized in chunks, called words, that a processor can
-handle at once. 32 and 64-bit systems respectively handle chunks of memory that
-are 32 and 64 bits in size. The second meaning refers to the size of the
-addresses used to catalog all of the addressable points in memory. In other
-words, each word in memory has an address that the processor uses to find it.
-32-bit systems use 32-bit-long addresses, and the same follows for 64-bit ones.
-Note that it just so happens that these systems have the same address size and
-word size. It’s not necessarily the case. For instance, early PCs often had
-8-bit words and 16-bit addresses.&lt;/p&gt;
-
-&lt;p&gt;Most commercially available systems today come with 64-bit capable processors
-and pre-installed 64-bit operating systems. 32-bit applications are compatible
-with them because the 64-bit format is backwards-compatible. The space
-addressable by 32 bits is a subset of what is addressed with 64, and the
-processors are built to handle 32-bit chunks of memory. Simply put, if you have
-a 64-bit compatible processor, run 64-bit software.&lt;/p&gt;
-
-&lt;p&gt;One extra consideration is the operating system. Applications other than
-drivers and similar software interface with the hardware through the operating
-system. Therefore, it is important to consider the type of operating system
-installed. 32-bit OSes can only handle 32-bit operations, but 64-bit ones can
-properly use both.&lt;/p&gt;
-
-&lt;p&gt;Altogether, none of this is likely to be an issue with machines from the past
-few years. Lately, AMD and Intel have introduced different brand names and code
-names for their processors, which can get confusing quite easily. In case
-you’re running older hardware, here’s a list of a few 64-bit capable
-processors.&lt;/p&gt;
-
-&lt;div class=&quot;col-md-6&quot;&gt; 
-&lt;table class=&quot;table&quot;&gt; 
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;strong&gt;AMD&lt;/strong&gt; (aka &quot;x86-64&quot;, &quot;AMD64&quot;, or &quot;x64&quot;)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;&lt;td&gt; Athlon 64 &lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt; AMD Athlon 64 X2 &lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt; AMD Athlon 64 FX &lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt; AMD Athlon II (X2/X3/X4) &lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt; AMD Opteron &lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt; AMD Turion 64 &lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt; AMD Turion 64 X2 &lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt; AMD Sempron (&quot;Palermo&quot; E6 stepping and all &quot;Manila&quot; models) &lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt; AMD Phenom (X2/X3/X4) &lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt; AMD Phenom II (X2/X3/X4) &lt;/td&gt;&lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;col-md-6&quot;&gt;  
-&lt;table class=&quot;table&quot;&gt; 
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;strong&gt;Intel&lt;/strong&gt; (aka &quot;IA-32e&quot;, &quot;EM64T&quot;, or &quot;Intel 64&quot;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;&lt;td&gt; Netburst family &lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt; some Celeron D's: LGA 775 &quot;Prescott&quot; models &lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt; some Pentium 4's: &quot;Prescott 2M,&quot; &quot;Irwindale&quot; &quot;Cedar Mill&quot; &lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt; Pentium D &lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt; Pentium Extreme Edition &lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt; Intel Core &lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt; Xeon: Core 2, Dual Core, Celeron &lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt; Nehalem: Core i3, i5, i7, Intel Atom &lt;/td&gt;&lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Thu, 04 Dec 2014 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//docs/tutorials/2014/12/04/32-or-64-bit-processors/</link>
-        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2014/12/04/32-or-64-bit-processors/</guid>
       </item>
     
   </channel>
