@@ -35,10 +35,6 @@ pis:
    url: https://sites.google.com/site/johnwhitelab/
 
 developers:
- - name: Ansel George
-   face: ansel_george.jpg
-   where: Weill Cornell Medical College
-   url: https://github.com/anselg
  - name: Francis Ortega 
    face: francis_ortega.jpg
    where: Weill Cornell Medical College
