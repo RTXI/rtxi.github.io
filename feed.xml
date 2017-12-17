@@ -42,7 +42,7 @@ hardware, and Linux has been no exception.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The current generation of Intel processors (Skylake) requires
 firmware that is bundled into new Linux kernels, starting around kernel 4.1.
-The kernel in RTXI 2.0 is based on kernel 3.8.13 and will
+The kernel in RTXI 2.2 is based on kernel 3.8.13 and will
 not run on new machines.  When purchasing a computer, make sure it has an older
 processor.  (Haswell/Broadwell will work.)&lt;/p&gt;
 
@@ -87,7 +87,7 @@ the people who code the drivers to extend support for them.)&lt;/p&gt;
 &lt;h3 id=&quot;installing-rtxi&quot;&gt;Installing RTXI&lt;/h3&gt;
 
 &lt;p&gt;Look through our &lt;a href=&quot;/install&quot;&gt;installation instructions&lt;/a&gt; to see how to install
-RTXI 2.0. You can install RTXI with our live CD, or you can
+RTXI 2.2. You can install RTXI with our live CD, or you can
 install a generic version of Linux and then manually compile and install RTXI
 and its real-time dependencies. It’s up to you.&lt;/p&gt;
 
@@ -285,10 +285,10 @@ These findings raise caution in targeting Ito as an antiarrhythmic strategy.&lt;
     
       <item>
         <title>Porting to RTXI v2.1</title>
-        <description>&lt;p&gt;RTXI v2.0 introduced many changes over the v1.4 release.
+        <description>&lt;p&gt;RTXI v2.2 introduced many changes over the v1.4 release.
 Most of these changes should have a limited impact on your modules, but even in
 that case, you will need to make some edits to your code to port it to 
-2.0. This tutorial will focus on some common changes that
+2.2. This tutorial will focus on some common changes that
 should cover most use-cases. The changes mostly have to do with:&lt;/p&gt;
 
 &lt;ol&gt;
@@ -311,7 +311,7 @@ changelog and upgrade info is provided on the Qt website:
 &lt;a href=&quot;https://wiki.qt.io/Transition_from_Qt_4.x_to_Qt5&quot;&gt;https://wiki.qt.io/Transition_from_Qt_4.x_to_Qt5&lt;/a&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;porting-modules-that-abstract-from-defaultguimodel&quot;&gt;Porting Modules that Abstract from &lt;code class=&quot;highlighter-rouge&quot;&gt;DefaultGUIModel&lt;/code&gt;&lt;/h4&gt;
-&lt;p&gt;For v2.0, the code exposed to users has been simplified and the
+&lt;p&gt;For v2.2, the code exposed to users has been simplified and the
 customizability enhanced. The most significant change is in the &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt;
 function and how the UI is generated. There are also some simple changes that
 correspond to syntax and class name changes in Qt4. They are as follows:&lt;/p&gt;
@@ -406,10 +406,10 @@ DefaultGUIModel’s &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt
 RTXI workspace variables are displayed in the UI as &lt;code class=&quot;highlighter-rouge&quot;&gt;QStrings&lt;/code&gt;, and within the
 code they are regularly converted to the native types they are supposed to
 represent in memory, such as &lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;double&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt;. 
-2.0 should take the calls in v1.4 without issue, but if you
+2.2 should take the calls in v1.4 without issue, but if you
 run into problems, check the types of the variables you are using.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; v2.0 &lt;strong&gt;does not&lt;/strong&gt; support strings for &lt;code class=&quot;highlighter-rouge&quot;&gt;PARAMETER&lt;/code&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; v2.2 &lt;strong&gt;does not&lt;/strong&gt; support strings for &lt;code class=&quot;highlighter-rouge&quot;&gt;PARAMETER&lt;/code&gt;
 variables. Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;COMMENT&lt;/code&gt; type instead.&lt;/p&gt;
 </description>
         <pubDate>Fri, 17 Apr 2015 00:00:00 -0400</pubDate>
