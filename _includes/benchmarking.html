@@ -2,15 +2,23 @@
 <!-- Begin benchmarking section -->
 <div class="row"><div class="col-xs-12">
   <h3 class="lead media-heading">Xenomai latency test</h3>
-  <p>Go to the base of the RTXI directory you cloned from GitHub and run:</p>
+  
+  <p>If you used the live CDs, run:</p>
 
 {% highlight bash %}
-$ cd scripts/dev/
+$ cd /opt/rtxi/scripts/
+$ sudo ./test_rt_kernel.sh
+{% endhighlight %}
+
+  <p>If you did a custom installation, go to the base of the RTXI directory you cloned from GitHub and run:</p>
+
+{% highlight bash %}
+$ cd scripts/
 $ ./test_rt_kernel.sh
 {% endhighlight %}
 
-  <p>This script will test kernel latencies at rate of 10 kHz while under
-  stress. The test lasts 30 minutes. If at any point you need to stop the test,
+  <p>This script will test kernel latencies at rate of 20 kHz while under
+  stress. The test lasts 10 minutes. If at any point you need to stop the test,
   you can kill the process by entering <code>CTRL+c</code> in the terminal
   running the stress test. Then, run <code>pkill stress</code>. If you forget
   to use <code>pkill</code>, the system will stop measuring latencies, but it
@@ -21,30 +29,30 @@ $ ./test_rt_kernel.sh
   perform well during your experiments.
   </p>
 
-  <p>Once completed, the script will generate a histogram of latencies. You can
-  view it from the command line with the image viewer, eog (<u>E</u>ye
-  <u>o</u>f <u>G</u>NOME). Run:
+  <p>Once completed, the script will provide the data necessary for you to
+  generate a latencies histogram for your system. 
   </p>
 
+<!--
 {% highlight bash %}
 $ eog test_rt_plot.svg
 {% endhighlight %}
-
+-->
   <p>For systems with discrete graphics cards and somewhat recent processors,
   latencies should consistently remain on average below 2-3 μs. Worst case
-  latencies may get as high as 20-30 μs, but keep in mind that these spikes
-  occur often once or twice over the 30 minute duration of the stress test,
-  which at 10 kHz constitutes 18 million cycles. A histogram of latencies will
-  be generated at the end of the test, so you see can how often high latencies
-  occur. Compare your performance to what is available on our <a
+  latencies may get as high as 10-15 μs, but keep in mind that these spikes
+  occur often once or twice over the 10 minute duration of the stress test,
+  which at 20 kHz constitutes 12 million cycles. Compare your performance to
+  what is available on our <a
   href="/stats">stats and benchmarks</a> page and let us know if your 
   performance is problematic.
   </p>
 
   <div>&nbsp;</div>
   <h3 class="lead media-heading">Record the RT benchmarks module</h3>
-  <p>Record the RT Benchmarks module in RTXI using the Data Recorder module. RT
-  Benchmarks displays runtime statistics for your system, such as the
+  <p>RT performance during experiments can be monitored and recorded through the
+  RT Benchmarks module. Record the RT Benchmarks module in RTXI using the Data
+  Recorder module. RT Benchmarks displays runtime statistics for your system, such as the
   computation time, real-time period, and jitter. For those unfamiliar with the
   terms, here are brief definitions: 
   </p>
@@ -98,7 +106,7 @@ $ eog test_rt_plot.svg
   size of the generated files can become unwieldy. Make liberal use of the
   downsampling functionality in the Data Recorder. 
   </p>
-
+<!--
   <p>Open up a terminal and move to your RTXI directory. In the
   <code>scripts/dev/</code> folder, you will find a script called
   <code>plot_rtxi_performance</code>. This script will extract the performance
@@ -113,4 +121,5 @@ $ ./plot_rtxi_performance.sh FILENAME
   Data Recorder. <a href="/stats">Compare your output with ours</a>, and let us
   know if you are having performance issues. 
   </p>
+-->
 </div></div>

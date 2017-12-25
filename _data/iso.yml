@@ -1,22 +1,22 @@
 ubuntu:
  - arch: amd64
-   name: Ubuntu GNOME
-   version: 14.04.5
-   url:  "http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04.5/release/ubuntu-gnome-14.04.5-desktop-amd64.iso"
+   name: Ubuntu
+   version: 16.04.3
+   url: "http://cdimage.ubuntu.com/ubuntu-gnome/releases/16.04.3/release/ubuntu-gnome-16.04.3-desktop-amd64.iso"
 
  - arch: i386
-   name: Ubuntu GNOME
-   version: 14.04.5
-   url:  "http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04.5/release/ubuntu-gnome-14.04.5-desktop-i386.iso"
+   name: Ubuntu
+   version: 16.04.3
+   url:  "http://cdimage.ubuntu.com/ubuntu-gnome/releases/16.04.3/release/ubuntu-gnome-16.04.3-desktop-i386.iso"
 
 
 rtxi:
- - arch: amd64
+ - arch: amd64-generic
    name: RTXI
-   version: 2.0
-   url:  "http://relic.rtxi.org/iso/rtxi-2.0-ubuntu-v7-amd64.iso"
+   version: 2.2
+   url:  "https://drive.google.com/open?id=1NJ6smwSmCBF-QLMoEXQeX717HMbv00mI"
 
- - arch: i386
+ - arch: amd64-core-2
    name: RTXI
-   version: 2.0
-   url:  "http://relic.rtxi.org/iso/rtxi-2.0-ubuntu-v7-i386.iso"
+   version: 2.2
+   url:  "https://drive.google.com/open?id=1yXvNqLC_R-Qf2PrN62sE4n2DbQKsjvQ2"

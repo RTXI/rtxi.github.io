@@ -70,9 +70,11 @@ can install the RTXI GUI without recompiling a kernel. "
         {% assign standardcount = standardcount | plus:1 %}
       </h4>
 
-      <p>We currently have Ubuntu live CDs. You can use them to test RTXI
-      without touching your hard drive, format your hard drive, and install
-      RTXI alongside existing operating systems.  
+      <p>We currently have 64-bit Ubuntu live CDs for two different processor architectures. You can use them to test RTXI without touching your hard drive, format your hard drive, and install
+      RTXI alongside existing operating systems.
+</p>
+
+<p> Use the "-core-2" live CD for Core 2/newer Xeon processors, and the "-generic" for all others.
       </p>
 
       <div class="container" style="text-align:center">
@@ -90,9 +92,7 @@ can install the RTXI GUI without recompiling a kernel. "
       <div>&nbsp;</div>
 
       <!-- legacy bit for RTXI 1.4 -->
-      <p>Our legacy version, RTXI 1.4, <a href="/install/legacy/">is available
-        for now</a>. Keep in mind that v1.4 runs on the no-longer-maintained
-      Ubuntu 10.04, and it requires now-deprecated libraries.
+      <p>If you are installing on a 32-bit machine or need a previous version of RTXI, you can download the source code from <a href="https://github.com/rtxi/rtxi">github</a>. Keep in mind that previous versions may require significant amout of custom-fitting due to deprecated depedencies and changes to the real-time kernel.
       </p>
 
       <!-- 2. Burn the image to DVD or USB -->
@@ -111,9 +111,7 @@ can install the RTXI GUI without recompiling a kernel. "
       <dl class="dl-horizontal">
         <dt>Linux</dt>
           <dd>
-          Use <code>dd</code> or <a
-          href="https://apps.ubuntu.com/cat/applications/usb-creator-gtk/"> USB
-          Creator</a>.
+          Use <a href="https://apps.ubuntu.com/cat/applications/precise/usb-creator-gtk/">Startup Disk Creator</a>
           </dd>
         <dt>Windows</dt>
           <dd>Use <a href="http://www.linuxliveusb.com/">LinuxLive USB
@@ -221,11 +219,12 @@ can install the RTXI GUI without recompiling a kernel. "
 
       <p>
         See how your system is performing. You may have graphics issues, but at
-        this point, what do you is specific to your system. Look through our <a
+        this point, what you do is specific to your system. Look through our <a
         href="/docs">documentation page</a> to see pointers for dealing with
       graphics issues. 
       </p>
 
+<!--
       <p>
         Below is an installation demo. Note that when you install RTXI on your
         own machine, you may get prompted to configure your network settings.
@@ -238,7 +237,7 @@ can install the RTXI GUI without recompiling a kernel. "
           </iframe>
         </div>
       </div></div>
-
+-->
       <!-- 7. (Re)install modules -->
       <div>&nbsp;</div>
       <h4 class="lead media-heading">
@@ -299,18 +298,14 @@ can install the RTXI GUI without recompiling a kernel. "
       <dl class="dl-horizontal">
         <dt>Linux</dt>
           <dd>
-            Clone the ISO image from the command line with <code>dd</code> or
-            use applications like 
-            <a href="https://apps.ubuntu.com/cat/applications/usb-creator-gtk/"> 
-            USB Creator</a>. Check your distro's package repository to see if 
-            they're available.
+          Use <a href="https://apps.ubuntu.com/cat/applications/precise/usb-creator-gtk/">Startup Disk Creator</a>
           </dd>
         <dt>Windows</dt>
-          <dd>Try <a href="http://www.linuxliveusb.com/">LinuxLive USB
+          <dd>Use <a href="http://www.linuxliveusb.com/">LinuxLive USB
             Creator</a>.</dd>
         <dt>MacOS</dt>
-          <dd>Try 
-            <a href="http://www.linuxliveusb.com/">LinuxLive USB Creator</a>
+          <dd>Use 
+          <a href="https://unetbootin.github.io/">UNetbootin</a>.
           </dd>
       </dl>
       
