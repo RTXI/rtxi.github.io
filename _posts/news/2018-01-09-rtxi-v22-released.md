@@ -6,10 +6,10 @@ category: news
 
 New version with long-term support and a new real-time kernel!
 
-#### New features:
+New features:
 
-    * **New Linux Base**: RTXI 2.2 runs on Ubuntu GNOME 16.04 LTS - with it, you’ll get a stable desktop.
-    * **Enhanced Performance**: We've upgraded to the latest version of Xenomai - which includes a number of under-the-hood updates to the real-time system, but still the same robust performance.
+1. **New Linux Base**: RTXI 2.2 runs on Ubuntu GNOME 16.04 LTS - with it, you’ll get a stable desktop with hardware and software support for the next few years through Ubuntu and the RTXI team.
+2. **Enhanced Performance**: We've upgraded to the latest version of Xenomai - which includes a number of under-the-hood updates to the real-time system, but still the same robust performance.
 
 Try out v2.2. You can use the live CD to demo RTXI and later install it, or you can install a generic Linux distribution of your choice and use our installation scripts. We've included two different live CDs - one for Core 2/Newer Xeon processors and one for generic x64 processors.
 
