@@ -9,7 +9,8 @@ module Jekyll
   class ModuleGenerator < Generator
 
     def getRepoList(apiurl)
-      data = JSON.parse(open(apiurl) {|file| file.read })
+      urldata = URI.open(apiurl)
+      data = JSON.parse(urldata.read)
       repos = []
       for repo in 0...data.count
         repos.push(data[repo]["name"])
@@ -61,7 +62,7 @@ module Jekyll
       #  repo_data = {}
       repo_urls.each_pair do |repo, index|
         begin
-          text = open(index["readme"]) {|text| text.read }
+          text = URI.open(index["readme"]) {|text| text.read }
           #image = open(index["screenshot"]) {|image| image.read }
 
         rescue StandardError=>e

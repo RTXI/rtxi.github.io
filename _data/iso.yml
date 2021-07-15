@@ -1,13 +1,13 @@
 ubuntu:
  - arch: amd64
    name: Ubuntu
-   version: 16.04.3
-   url: "http://cdimage.ubuntu.com/ubuntu-gnome/releases/16.04.3/release/ubuntu-gnome-16.04.3-desktop-amd64.iso"
+   version: 20.04.2
+   url: "https://releases.ubuntu.com/20.04/ubuntu-20.04.2.0-desktop-amd64.iso"
 
- - arch: i386
+ - arch: amd64
    name: Ubuntu
-   version: 16.04.3
-   url:  "http://cdimage.ubuntu.com/ubuntu-gnome/releases/16.04.3/release/ubuntu-gnome-16.04.3-desktop-i386.iso"
+   version: 18.04.5
+   url:  "https://releases.ubuntu.com/18.04.5/ubuntu-18.04.5-desktop-amd64.iso"
 
 
 rtxi:
