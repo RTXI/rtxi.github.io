@@ -1,8 +1,7 @@
 ---
 title: Install
 layout: default
-tag_content: "There are three ways to install RTXI: Use our Ubuntu-based live
-CDs; install a generic Linux image, compile a Xenomai-patched kernel, and then
+tag_content: "Install a generic Linux image, compile a Xenomai-patched kernel, and then
 install RTXI from source; or if you already use a previous version of RTXI, you
 can install the RTXI GUI without recompiling a kernel. "
 ---
@@ -12,14 +11,9 @@ can install the RTXI GUI without recompiling a kernel. "
 </div>
 
 <div class="container">
-  <p>There are three ways to install RTXI:</p>
+  <p>Getting RTXI:</p>
   <dl class="dl-horizontal">
-    <dt>Standard</dt>
-      <dd>Use our Ubuntu-based live CDs. It's easier than manually installing
-      RTXI, but differences between your system and the one used to make the
-      live CD could affect real-time performance.</dd>
-    <br>
-    <dt>Custom</dt>
+    <dt>Installation</dt>
       <dd>Install a generic Linux image, compile a Xenomai-patched kernel, and
       then install RTXI from source. It's more difficult, but the end result is
       better optimized. We recommend this option.</dd>
@@ -45,12 +39,11 @@ can install the RTXI GUI without recompiling a kernel. "
 
   <!-- Counters created by increment start at 0. Initialize them here and catch
     the output -->
-  {% assign standardcount = 1 %}
   {% assign customcount = 1 %}
-  {% assign upgradecount = 1%}
+  {% assign upgradecount = 1 %}
 
   <div class="tab-content">
-      <div id="install" role="tabpanel" class="tab-pane fade">
+      <div id="install" role="tabpanel" class="tab-pane fade in active">
       <div class="panel-body row">
 
       <!-- 1. Download generic Debian image -->
