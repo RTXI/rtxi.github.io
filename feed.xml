@@ -7,6 +7,26 @@
     <atom:link href="http://rtxi.org/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>RTXI 2.3 Release</title>
+        <description>&lt;p&gt;A new version of RTXI is now available!&lt;/p&gt;
+
+&lt;p&gt;New features include:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Support for New Linux LTS Base&lt;/strong&gt;: Now RTXI 2.3 runs on Ubuntu 20.04 LTS.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Support for Xenomai 3.1&lt;/strong&gt;: RTXI can now be installed with Xenomai 3.1; A newer version of the real-time framework.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Minor Bug fixes&lt;/strong&gt;: for improved stability and long term maintenance&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Along with the newer version of rtxi there are also updated installation steps and website contact
+information. Let us know if you have any issues installing RTXI by emailing us at &lt;a href=&quot;mailto:help@rtxi.org&quot;&gt;help@rtxi.org&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 22 Jul 2021 00:00:00 -0400</pubDate>
+        <link>http://rtxi.org//news/2021/07/22/rtxi-v23-release/</link>
+        <guid isPermaLink="true">http://rtxi.org//news/2021/07/22/rtxi-v23-release/</guid>
+      </item>
+    
+      <item>
         <title>Getting Started</title>
         <description>&lt;p&gt;To get started with RTXI for your experiments, there are some hardware
 requirements you need to satisfy.  They’re pretty easy to meet, and they’ll get
@@ -42,7 +62,7 @@ hardware, and Linux has been no exception.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The current generation of Intel processors (Skylake) requires
 firmware that is bundled into new Linux kernels, starting around kernel 4.1.
-The kernel in RTXI 2.2 is based on kernel 3.8.13 and will
+The kernel in RTXI 2.3 is based on kernel 3.8.13 and will
 not run on new machines.  When purchasing a computer, make sure it has an older
 processor.  (Haswell/Broadwell will work.)&lt;/p&gt;
 
@@ -87,7 +107,7 @@ the people who code the drivers to extend support for them.)&lt;/p&gt;
 &lt;h3 id=&quot;installing-rtxi&quot;&gt;Installing RTXI&lt;/h3&gt;
 
 &lt;p&gt;Look through our &lt;a href=&quot;/install&quot;&gt;installation instructions&lt;/a&gt; to see how to install
-RTXI 2.2. You can install RTXI with our live CD, or you can
+RTXI 2.3. You can install RTXI with our live CD, or you can
 install a generic version of Linux and then manually compile and install RTXI
 and its real-time dependencies. It’s up to you.&lt;/p&gt;
 
@@ -316,10 +336,10 @@ These findings raise caution in targeting Ito as an antiarrhythmic strategy.&lt;
     
       <item>
         <title>Porting to RTXI v2.1</title>
-        <description>&lt;p&gt;RTXI v2.2 introduced many changes over the v1.4 release.
+        <description>&lt;p&gt;RTXI v2.3 introduced many changes over the v1.4 release.
 Most of these changes should have a limited impact on your modules, but even in
 that case, you will need to make some edits to your code to port it to 
-2.2. This tutorial will focus on some common changes that
+2.3. This tutorial will focus on some common changes that
 should cover most use-cases. The changes mostly have to do with:&lt;/p&gt;
 
 &lt;ol&gt;
@@ -341,18 +361,18 @@ changes, though not nearly as many as introduced by the Qt4 transition. A
 changelog and upgrade info is provided on the Qt website:
 &lt;a href=&quot;https://wiki.qt.io/Transition_from_Qt_4.x_to_Qt5&quot;&gt;https://wiki.qt.io/Transition_from_Qt_4.x_to_Qt5&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;porting-modules-that-abstract-from-defaultguimodel&quot;&gt;Porting Modules that Abstract from &lt;code class=&quot;highlighter-rouge&quot;&gt;DefaultGUIModel&lt;/code&gt;&lt;/h4&gt;
-&lt;p&gt;For v2.2, the code exposed to users has been simplified and the
-customizability enhanced. The most significant change is in the &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt;
+&lt;h4 id=&quot;porting-modules-that-abstract-from-defaultguimodel&quot;&gt;Porting Modules that Abstract from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DefaultGUIModel&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;For v2.3, the code exposed to users has been simplified and the
+customizability enhanced. The most significant change is in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;createGUI&lt;/code&gt;
 function and how the UI is generated. There are also some simple changes that
 correspond to syntax and class name changes in Qt4. They are as follows:&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;1. Change &lt;code class=&quot;highlighter-rouge&quot;&gt;#includes&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;1. Change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;#includes&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
 Libraries for Qt5 are included differently. To include them directly, change
-the names as indicated in the Qt5 documentation. For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;qpushbutton.h&amp;gt;&lt;/code&gt;
-becomes &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;QPushButton&amp;gt;&lt;/code&gt;. Look through the Qt5 documentation to see what the
+the names as indicated in the Qt5 documentation. For example, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;qpushbutton.h&amp;gt;&lt;/code&gt;
+becomes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;QPushButton&amp;gt;&lt;/code&gt;. Look through the Qt5 documentation to see what the
 name changes are. Another, simpler option is to just remove all the q*
-includes and replace them with &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;QtWidgets&amp;gt;&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;QtWidgets&lt;/code&gt; will make Qt pull in
+includes and replace them with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;QtWidgets&amp;gt;&lt;/code&gt;. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;QtWidgets&lt;/code&gt; will make Qt pull in
 all the libraries needed to compile whatever Qt classes are present in the code
 without the need to specify them directly.&lt;/p&gt;
 
@@ -378,7 +398,7 @@ without the need to specify them directly.&lt;/p&gt;
 
 &lt;div&gt;&amp;nbsp;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;2. Change &lt;code class=&quot;highlighter-rouge&quot;&gt;QWhatsThis&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;2. Change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;QWhatsThis&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
 This call is made by default in the constructors of module classes that
 abstract from DefaultGUIModel. Change:&lt;/p&gt;
 
@@ -392,24 +412,24 @@ abstract from DefaultGUIModel. Change:&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;3. Add a resize timer&lt;/strong&gt;&lt;br /&gt;
 At the end of the constructor, after the module has been built and the
-&lt;code class=&quot;highlighter-rouge&quot;&gt;refresh&lt;/code&gt; function has been called, add the line:&lt;/p&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;refresh&lt;/code&gt; function has been called, add the line:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;QTimer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;singleShot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SLOT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resizeMe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;div&gt;&amp;nbsp;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;4. Switch to &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI + customizeGUI&lt;/code&gt; API&lt;/strong&gt;&lt;br /&gt;
-In v1.4, the GUI is created using DefaultGUIModel’s &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function. If
+&lt;p&gt;&lt;strong&gt;4. Switch to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;createGUI + customizeGUI&lt;/code&gt; API&lt;/strong&gt;&lt;br /&gt;
+In v1.4, the GUI is created using DefaultGUIModel’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function. If
 you wanted to add any custom elements, you had to overload the function and
-copy/paste the code in the &lt;code class=&quot;highlighter-rouge&quot;&gt;default_gui_model.cpp&lt;/code&gt; and then add your own stuff.
+copy/paste the code in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;default_gui_model.cpp&lt;/code&gt; and then add your own stuff.
 That’s changed now.&lt;/p&gt;
 
-&lt;p&gt;You no longer should overload the &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function. Now, just call
-DefaultGUIModel’s &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function and then call a new function,
-&lt;code class=&quot;highlighter-rouge&quot;&gt;customizeGUI&lt;/code&gt;, to, well, customize it.&lt;/p&gt;
+&lt;p&gt;You no longer should overload the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function. Now, just call
+DefaultGUIModel’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function and then call a new function,
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;customizeGUI&lt;/code&gt;, to, well, customize it.&lt;/p&gt;
 
-&lt;p&gt;Define &lt;code class=&quot;highlighter-rouge&quot;&gt;customizeGUI&lt;/code&gt; within the modules you are building. Call it &lt;strong&gt;after&lt;/strong&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; returns. To use &lt;code class=&quot;highlighter-rouge&quot;&gt;customizeGUI&lt;/code&gt; properly, you need to do:&lt;/p&gt;
+&lt;p&gt;Define &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;customizeGUI&lt;/code&gt; within the modules you are building. Call it &lt;strong&gt;after&lt;/strong&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; returns. To use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;customizeGUI&lt;/code&gt; properly, you need to do:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;p&gt;Grab the module layout object created by &lt;code&gt;createGUI&lt;/code&gt;:  &lt;/p&gt;
@@ -434,14 +454,14 @@ DefaultGUIModel’s &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI&lt
 &lt;div&gt;&amp;nbsp;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;5. Enforce types for get/set methods on RTXI workspace variables&lt;/strong&gt;&lt;br /&gt;
-RTXI workspace variables are displayed in the UI as &lt;code class=&quot;highlighter-rouge&quot;&gt;QStrings&lt;/code&gt;, and within the
+RTXI workspace variables are displayed in the UI as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;QStrings&lt;/code&gt;, and within the
 code they are regularly converted to the native types they are supposed to
-represent in memory, such as &lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;double&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt;. 
-2.2 should take the calls in v1.4 without issue, but if you
+represent in memory, such as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;int&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;double&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;string&lt;/code&gt;. 
+2.3 should take the calls in v1.4 without issue, but if you
 run into problems, check the types of the variables you are using.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; v2.2 &lt;strong&gt;does not&lt;/strong&gt; support strings for &lt;code class=&quot;highlighter-rouge&quot;&gt;PARAMETER&lt;/code&gt;
-variables. Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;COMMENT&lt;/code&gt; type instead.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; v2.3 &lt;strong&gt;does not&lt;/strong&gt; support strings for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PARAMETER&lt;/code&gt;
+variables. Use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;COMMENT&lt;/code&gt; type instead.&lt;/p&gt;
 </description>
         <pubDate>Fri, 17 Apr 2015 00:00:00 -0400</pubDate>
         <link>http://rtxi.org//docs/tutorials/2015/04/17/porting-to-rtxi-v2/</link>
@@ -511,7 +531,7 @@ repository&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;to-fork-rtxi-modules&quot;&gt;To fork RTXI modules:&lt;/h3&gt;
 
-&lt;h4 id=&quot;clone-the-repository-from-github&quot;&gt;1. Clone the repository from GitHub.&lt;/h4&gt;
+&lt;h4 id=&quot;1-clone-the-repository-from-github&quot;&gt;1. Clone the repository from GitHub.&lt;/h4&gt;
 &lt;p&gt;From our site, go to the &lt;a href=&quot;https://github.com/rtxi/plugin-template&quot;&gt;Plugin-Template
 repository&lt;/a&gt;. Download the source
 files:&lt;/p&gt;
@@ -519,11 +539,11 @@ files:&lt;/p&gt;
 &lt;p&gt;Now, clone the repository. Developers for new modules are expected to base it
 on MyPluginGUI. Type:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git clone https://github.com/rtxi/plugin-template.git custom_module&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/rtxi/plugin-template.git custom_module&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;custom_module&lt;/code&gt; is the name of the directory git will create when downloading
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;custom_module&lt;/code&gt; is the name of the directory git will create when downloading
 the source code. You can change it to whatever you want. If you don’t specify a
-name, it will default to &lt;code class=&quot;highlighter-rouge&quot;&gt;plugin-template&lt;/code&gt;, the name of the repository on
+name, it will default to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugin-template&lt;/code&gt;, the name of the repository on
 GitHub.&lt;/p&gt;
 
 &lt;p&gt;Once the module is downloaded, look inside the new directory for Plugin
@@ -531,36 +551,36 @@ Template’s source code. An explanation of the header and source files is
 available in the our &lt;a href=&quot;http://rtxi.org/docs/manual/#customizing_gui&quot;&gt;user
 manual&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h4 id=&quot;modify-files&quot;&gt;2. Modify files.&lt;/h4&gt;
+&lt;h4 id=&quot;2-modify-files&quot;&gt;2. Modify files.&lt;/h4&gt;
 &lt;p&gt;Modify the RTXI files to run the code you want. When you compile and install
 your module, be sure to rename the source files and classes to something other
-than &lt;code class=&quot;highlighter-rouge&quot;&gt;plugin-template&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;PluginTemplate&lt;/code&gt;, respectively. It’s preferable to
+than &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugin-template&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PluginTemplate&lt;/code&gt;, respectively. It’s preferable to
 name it  something that reflects what it does. A quick and easy way to change
-the names of the files, classes, and binary is to use the &lt;code class=&quot;highlighter-rouge&quot;&gt;sed&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;mv&lt;/code&gt;
-commands. A wrapper script called &lt;code class=&quot;highlighter-rouge&quot;&gt;rename_module.sh&lt;/code&gt; is provided in the
+the names of the files, classes, and binary is to use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sed&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mv&lt;/code&gt;
+commands. A wrapper script called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rename_module.sh&lt;/code&gt; is provided in the
 plugin-template repository.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;./rename_module.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./rename_module.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Additionally, it’s good practice to document your code. As a general rule,
 document it so that you’re confident that anyone with programming experience
 will be able to understand what your code and overall module do. Within the
-plugin-template repository, there is another script called &lt;code class=&quot;highlighter-rouge&quot;&gt;build_readme.sh&lt;/code&gt;.
+plugin-template repository, there is another script called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build_readme.sh&lt;/code&gt;.
 It parses your source file and generates a readme from it.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;./build_readme.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./build_readme.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The script assumes that the name of your source file matches the directory
 name, so it will look for and parse &lt;custom_module.cpp&gt; if the directory is
 called &lt;custom_module&gt;.&lt;/custom_module&gt;&lt;/custom_module.cpp&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;compile-and-install&quot;&gt;3. Compile and install.&lt;/h4&gt;
+&lt;h4 id=&quot;3-compile-and-install&quot;&gt;3. Compile and install.&lt;/h4&gt;
 
 &lt;p&gt;Once you’re ready to compile and install your module, go to the base of your
 module directory and execute:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;make 
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo make install &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;make 
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
         <pubDate>Fri, 10 Apr 2015 00:00:00 -0400</pubDate>
@@ -580,14 +600,14 @@ create a &lt;a href=&quot;https://github.com/join&quot;&gt;GitHub account&lt;/a&
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; For the sake of absolute clarity, please do not actually create an
 issue in the process of going though this tutorial.&lt;/p&gt;
 
-&lt;h4 id=&quot;navigate-to-the-repository&quot;&gt;1. Navigate to the repository.&lt;/h4&gt;
+&lt;h4 id=&quot;1-navigate-to-the-repository&quot;&gt;1. Navigate to the repository.&lt;/h4&gt;
 &lt;div class=&quot;row&quot;&gt;
   &lt;div class=&quot;col-md-8 col-xs-12&quot;&gt; 
     Go to our GitHub page (
     &lt;a href=&quot;https://github.com/rtxi&quot;&gt;https://github.com/rtxi&lt;/a&gt;). On the page,
     use the search bar or scroll down until you find the software you want to
     report.  If you experience a bug within RTXI and its built-in modules, look
-    for the &lt;code&gt;rtxi&lt;/code&gt; repository. If it's a module you have problems
+    for the &lt;code&gt;rtxi&lt;/code&gt; repository. If it&apos;s a module you have problems
     with, find the repository that correponds to the module name. Also, if
     you have questions about anything on this website, go to the
     &lt;code&gt;rtxi.github.io&lt;/code&gt; repository.  
@@ -604,12 +624,12 @@ issue in the process of going though this tutorial.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h4 id=&quot;open-an-issue-on-the-repository-page&quot;&gt;2. Open an issue on the repository page.&lt;/h4&gt;
+&lt;h4 id=&quot;2-open-an-issue-on-the-repository-page&quot;&gt;2. Open an issue on the repository page.&lt;/h4&gt;
 &lt;p&gt;Each module has an issue page where you can view, submit, and comment on
-current development issues. Pictured is the repository page for &lt;code class=&quot;highlighter-rouge&quot;&gt;rtxi&lt;/code&gt;. To
-navigate to its issues page, click on &lt;code class=&quot;highlighter-rouge&quot;&gt;Issues&lt;/code&gt; on the right sidebar.&lt;/p&gt;
+current development issues. Pictured is the repository page for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rtxi&lt;/code&gt;. To
+navigate to its issues page, click on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Issues&lt;/code&gt; on the right sidebar.&lt;/p&gt;
 
-&lt;p&gt;Click on &lt;code class=&quot;highlighter-rouge&quot;&gt;Issues&lt;/code&gt;. It’s on the sidebar to the right. If you haven’t logged in
+&lt;p&gt;Click on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Issues&lt;/code&gt;. It’s on the sidebar to the right. If you haven’t logged in
 to GitHub already, you will be prompted to now. This will open up a new page
 that shows all the issues posted to the repository. Look through them to see if
 the issue you are having is related to something someone else posted. If it is,
@@ -628,7 +648,7 @@ you can add to the existing discussion. If not, then open up a new issue.&lt;/p&
   &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h4 id=&quot;write-up-your-issue&quot;&gt;3. Write up your issue.&lt;/h4&gt;
+&lt;h4 id=&quot;3-write-up-your-issue&quot;&gt;3. Write up your issue.&lt;/h4&gt;
 &lt;p&gt;Click the appropriate button for whether you’re opening a new issue or joining
 an existing thread. Please be as clear and detailed as possible in your
 comments, as only posting things like “RTXI is crashing” or “X isn’t working”
@@ -640,12 +660,12 @@ information when appropriate:&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;The version of RTXI you are using.&lt;/strong&gt;  If you used a live CD to install
 RTXI, just say that. If you compiled from source, go to your clone of the
-RTXI repository and run &lt;code class=&quot;highlighter-rouge&quot;&gt;git log&lt;/code&gt;. The most recent commit will have a string
+RTXI repository and run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git log&lt;/code&gt;. The most recent commit will have a string
 associated with it that looks like a random list of letters. Give us the
 string.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Error messages from RTXI in the terminal.&lt;/strong&gt; If there are no error
 messages, no problem. If RTXI is crashing, it would be incredibly helpful if
-you used &lt;code class=&quot;highlighter-rouge&quot;&gt;gdb&lt;/code&gt; to provide a backtrace.&lt;/li&gt;
+you used &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gdb&lt;/code&gt; to provide a backtrace.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;A clear description of the bug.&lt;/strong&gt; Describe the behavior you expect, the
 behavior that is happening, and the set of steps that trigger the error.&lt;/li&gt;
 &lt;/ol&gt;
@@ -688,16 +708,16 @@ account&lt;/a&gt;.&lt;/p&gt;
 &lt;h4 id=&quot;installing-git-on-linux&quot;&gt;Installing Git on Linux&lt;/h4&gt;
 
 &lt;p&gt;Open the terminal. You can do this from within the Applications menu in GNOME
-or by using the &lt;code class=&quot;highlighter-rouge&quot;&gt;CTRL+Alt+t&lt;/code&gt; shortcut. Enter:&lt;/p&gt;
+or by using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CTRL+Alt+t&lt;/code&gt; shortcut. Enter:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo apt-get install git&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;git&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; When telling people to enter commands, it is common practice to use
-&lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; at the start of each line to signify that it is to be entered in the
-terminal. Also, &lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt; is used to signify root permissions rather than having
-people enter &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt;. In either case, you DO NOT have to enter &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt; in the
-terminal. For example, in the above command. just enter the text &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get
-install git&lt;/code&gt; and hit &lt;code class=&quot;highlighter-rouge&quot;&gt;ENTER&lt;/code&gt;.&lt;/p&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$&lt;/code&gt; at the start of each line to signify that it is to be entered in the
+terminal. Also, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;#&lt;/code&gt; is used to signify root permissions rather than having
+people enter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo&lt;/code&gt;. In either case, you DO NOT have to enter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;#&lt;/code&gt; in the
+terminal. For example, in the above command. just enter the text &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo apt-get
+install git&lt;/code&gt; and hit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ENTER&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Once Git is installed, configure it with your username and/or email address.
 This is preferred in development scenarios so that everyone can identify what
@@ -708,24 +728,24 @@ Technically, Git does not check email address validity, either, but for
 collaborate work, it is best to provide some address so that people can ask
 each other questions about changes.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git config --global user.name &lt;span class=&quot;s1&quot;&gt;'Your name here'&lt;/span&gt;
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git config --global user.email your@address.here&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git config &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; user.name &lt;span class=&quot;s1&quot;&gt;&apos;Your name here&apos;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git config &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; user.email your@address.here&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; part of each command specifies that the script that follows contains
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git&lt;/code&gt; part of each command specifies that the script that follows contains
 Git commands. Git provides a library of functions for executing version
 control. Rather than have them directly incorporated into system libraries,
-they are made accessible by preceding the command with &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;. Therefore, these
-commands and all other git commands we will use start with &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;.&lt;/p&gt;
+they are made accessible by preceding the command with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git&lt;/code&gt;. Therefore, these
+commands and all other git commands we will use start with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;The second part, &lt;code class=&quot;highlighter-rouge&quot;&gt;config&lt;/code&gt;, is used to configure information, which is stored in
-a hidden file. The tag &lt;code class=&quot;highlighter-rouge&quot;&gt;--global&lt;/code&gt; means that the changes to the user
+&lt;p&gt;The second part, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;config&lt;/code&gt;, is used to configure information, which is stored in
+a hidden file. The tag &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--global&lt;/code&gt; means that the changes to the user
 configuration are to affect all user repositories. The details are saved in a
 hidden file called .gitconfig stored at the base of the user’s home directory
-(&lt;code class=&quot;highlighter-rouge&quot;&gt;~/.gitconfig&lt;/code&gt;). Other options allow for different scopes of the effects of
-configuration changes. &lt;code class=&quot;highlighter-rouge&quot;&gt;--local&lt;/code&gt; is the default behavior and specifies that
+(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.gitconfig&lt;/code&gt;). Other options allow for different scopes of the effects of
+configuration changes. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--local&lt;/code&gt; is the default behavior and specifies that
 changes be written to hidden file in the working directory called
-&lt;code class=&quot;highlighter-rouge&quot;&gt;.git/config&lt;/code&gt;. You can see what has been set in the config files by running
-&lt;code class=&quot;highlighter-rouge&quot;&gt;git config --list&lt;/code&gt;.&lt;/p&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.git/config&lt;/code&gt;. You can see what has been set in the config files by running
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git config --list&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Should you ever need help with a Git command, you can use `git help&lt;/p&gt;
 &lt;commandname&gt;` to check the Git documentation in the terminal. For example, if
@@ -739,18 +759,18 @@ Git enables users to track local changes and development paths. First, go the
 base of your home directory and create some new directories: 
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mkdir plugins
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;plugins
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mkdir practice
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;practice
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ..&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir &lt;/span&gt;plugins
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;plugins
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir &lt;/span&gt;practice
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;practice
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ..&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 Now, from within the plugins directory, run:
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git init&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git init&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 &lt;!--
@@ -778,9 +798,9 @@ the directory.
 The directory is currently empty, so create some files:
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;touch file1.txt
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;touch file2.txt
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;touch file3.txt&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;touch &lt;/span&gt;file1.txt
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;touch &lt;/span&gt;file2.txt
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;touch &lt;/span&gt;file3.txt&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 These files have been added to the repository, or in Git terminology, the
@@ -793,7 +813,7 @@ does, though tell what files are and are not being tracked. Simply use `git
 status`
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git add file1.txt file2.txt file3.txt&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add file1.txt file2.txt file3.txt&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 `git add` adds the files to what is called the **staging area**. Basically,
@@ -810,7 +830,7 @@ the permanent history. This process is explained later.
 To show what files are in the stating area, use:
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git status&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git status&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 &lt;!--
@@ -824,8 +844,8 @@ gives the user the command `git rm --cached &lt;filename&gt;`. Try it on one of 
 files and see the changes made to the staging area. 
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git rm --cached file1.txt
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git status&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--cached&lt;/span&gt; file1.txt
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git status&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 &lt;!--
@@ -844,7 +864,7 @@ permanent version history. In Git, this process is called a **commit**. Use the
 `commit` command. 
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git commit file1.txt file2.txt file3.txt -m &lt;span class=&quot;s2&quot;&gt;&quot;First commit&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit file1.txt file2.txt file3.txt &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;First commit&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 The `commit` command adds files in the staging area to the repository. Each
@@ -864,7 +884,7 @@ The version history is in essence a list of commits. To view the complete
 history of the project, use:
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git log&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git log&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 This outputs a list of all the commits, when they were made, the author, the
@@ -873,7 +893,7 @@ random letters is an encrypted hash of the changes that were made. A hash is a
 string that encodes data and is produced by a hash function. Ideally, a hash
 function is implemented such that a small change in the data it encodes results
 in a large, unpredictable change in the hash. This enables users to check the
-file's integrity and makes it exceedingly difficult to alter the commit
+file&apos;s integrity and makes it exceedingly difficult to alter the commit
 history.  
 
 &lt;!--
@@ -888,7 +908,7 @@ If you ever commit something and wish to revert your changes, use the `reset`
 command. There are several options. The first is:
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git reset --hard HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git reset &lt;span class=&quot;nt&quot;&gt;--hard&lt;/span&gt; HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 This command erases **everything** that was altered after the previous commit
@@ -903,13 +923,13 @@ Be very careful when using `--hard`.
 The second option:
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git reset --mixed HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git reset &lt;span class=&quot;nt&quot;&gt;--mixed&lt;/span&gt; HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 -OR-
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git reset HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git reset HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 This file preserves the changes made but reverts the HEAD pointer back one
@@ -919,7 +939,7 @@ commit.
 The last option:
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git reset --soft HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git reset &lt;span class=&quot;nt&quot;&gt;--soft&lt;/span&gt; HEAD~1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 The only change is that the most recent commit is reversed. The staging area is
@@ -942,7 +962,7 @@ is in the master branch is guaranteed to work.
 Create a branch called `testing`:
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git branch testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 This creates a new branch called `testing`. By default, it copies the state
@@ -951,7 +971,7 @@ list the available branches, use `git branch`. To switch to the newly created
 branch, use:  
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git checkout testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 Now, HEAD is pointing to `testing` instead of `master`. Any commits made will
@@ -970,15 +990,15 @@ is &lt;filename&gt;&quot;. You can use `more &lt;filename&gt;` or `cat &lt;filen
 contents of a file into the terminal. 
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;find . -maxdepth 1 -type f | xargs -I &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; bash -c &lt;span class=&quot;s2&quot;&gt;&quot;echo 'This is '{} &amp;gt; {}&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-maxdepth&lt;/span&gt; 1 &lt;span class=&quot;nt&quot;&gt;-type&lt;/span&gt; f | xargs &lt;span class=&quot;nt&quot;&gt;-I&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; bash &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;echo &apos;This is &apos;{} &amp;gt; {}&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 Now that the files have been altered, run `git status` to see what Git has
 noticed. Stage the changes and commit them:
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git add .
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git commit . -m &lt;span class=&quot;s2&quot;&gt;&quot;First Branch Commit&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;First Branch Commit&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 The `.` operator causes commands to affect all files in a directory. Using it
@@ -996,16 +1016,16 @@ Now that `master` and `testing` differ with one another, switch between them to
 see the differences.
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ls | xargs cat
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git checkout master
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ls | xargs cat&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; | xargs &lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout master
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; | xargs &lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 Individually looking through files in different branches can be cumbersome. To
 output the differences directly, use the `diff` command. 
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git diff master testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git diff master testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 The output should look like:
@@ -1022,8 +1042,8 @@ Now, merge the changes in `testing` to `master`. Check out the `master` branch
 and use the `merge` command.
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git checkout master
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git merge testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout master
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git merge testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 You will see an output that summarizes the changes. The `merge` command creates
@@ -1036,16 +1056,16 @@ a new commit that follows the previous version of `master`.
 --&gt;
 
 If the merge is successful, there is no need for the `testing` branch. Delete
-it. Make sure that the `testing` branch isn't currently checked out.  
+it. Make sure that the `testing` branch isn&apos;t currently checked out.  
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git branch -d testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 ### &lt;a name=&quot;rrepos&quot;&gt;&lt;/a&gt;Using Remote Repositories 
 
-Remote repositories refer to storage locations outside a user's local
-repository. The remote in this example is GitHub, and the repository we'll be
+Remote repositories refer to storage locations outside a user&apos;s local
+repository. The remote in this example is GitHub, and the repository we&apos;ll be
 using is for the &lt;a href=&quot;https://github.com/rtxi/plugin-template&quot;&gt;plugin
 template&lt;/a&gt;. If you want to have your own remote repository on GitHub, you
 will need to create an account with them and using their website to initialize
@@ -1056,16 +1076,16 @@ the repository.
 The format for cloning repositories from GitHub is: 
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git clone https://github.com/&amp;lt;username&amp;gt;/&amp;lt;repository-name&amp;gt;.git&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/&amp;lt;username&amp;gt;/&amp;lt;repository-name&amp;gt;.git&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 To clone from our repositories, the username is `rtxi` and the repositories are
 all listed on https://github.com/rtxi. To install the plugin template:  
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/ &lt;span class=&quot;c&quot;&gt;# this line isn't really needed&lt;/span&gt;
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git clone https://github.com/rtxi/plugin-template.git
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;plugin-template&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/ &lt;span class=&quot;c&quot;&gt;# this line isn&apos;t really needed&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/rtxi/plugin-template.git
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;plugin-template&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 In addition to the files copied from GitHub, Git stores the address of the
@@ -1078,19 +1098,19 @@ Make some changes to the directory. Add some files, edit them, etc. Then, stage
 and commit them. 
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;touch file1 file2 file3
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git add .
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git commit . &lt;span class=&quot;s2&quot;&gt;&quot;Local commit to push to remote repository&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;touch &lt;/span&gt;file1 file2 file3
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Local commit to push to remote repository&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 **Note:** You will not actually be able to execute the command below
-successfully. We don't allow everyone to push to our repositories. This is what
-you'd do, though, if you could. 
+successfully. We don&apos;t allow everyone to push to our repositories. This is what
+you&apos;d do, though, if you could. 
 
 Now, send these changes to the remote. The command Git uses for this is `push`. 
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git push https://github.com/&amp;lt;username&amp;gt;/plugin-template.git master &lt;span class=&quot;c&quot;&gt;# will fail&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git push https://github.com/&amp;lt;username&amp;gt;/plugin-template.git master &lt;span class=&quot;c&quot;&gt;# will fail&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 Git pushes the changes to the master branch of the remote repository referenced
@@ -1101,18 +1121,18 @@ tracked by a repository by running `git remote -v`.
 #### &lt;a name=&quot;pull&quot;&gt;&lt;/a&gt;Pulling Changes from a Remote 
 
 Just as one can push changes from a local machine to a remote, it is possible
-to 'pull' changes back from the remote to the local machine. This comes into
+to &apos;pull&apos; changes back from the remote to the local machine. This comes into
 play when modifying the same project on several machines or by several people.
 To pull the code and automatically merge the differences, use:
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git pull origin&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git pull origin&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 If you want to observe the changes but not merge them, use:
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git fetch origin&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git fetch origin&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 This command fetches the changes from the remote repository for the user to
@@ -1121,7 +1141,7 @@ for merging, enter the following from within the directory to which changes are
   to be merged:
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git merge &amp;lt;fetchedremote&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git merge &amp;lt;fetchedremote&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 You can use this method to keep your modules and RTXI up to date.  
@@ -1173,14 +1193,14 @@ GRUB to use the kernel used last time. To make GRUB do this, open
 
 &lt;p&gt;Save your edits (again, you need to be root), and update GRUB by running:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo update-grub&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;update-grub&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;From now on, GRUB will boot the last-used kernel by default. If you want to
 choose a different one, select it manually.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you have a LUKS-encrypted volume or otherwise encrypt your boot
-partition, this will fail. You will have to manually change the &lt;code class=&quot;highlighter-rouge&quot;&gt;GRUB_DEFAULT&lt;/code&gt;
-options to something like &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;1&amp;gt;2&quot;&lt;/code&gt;, for example, which will make GRUB boot the
+partition, this will fail. You will have to manually change the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GRUB_DEFAULT&lt;/code&gt;
+options to something like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;1&amp;gt;2&quot;&lt;/code&gt;, for example, which will make GRUB boot the
 kernel listed as the third option in the submenu opened on the second line of
 the main menu.&lt;/p&gt;
 </description>
@@ -1190,7 +1210,7 @@ the main menu.&lt;/p&gt;
       </item>
     
       <item>
-        <title>Why won't RTXI open?</title>
+        <title>Why won&apos;t RTXI open?</title>
         <description>&lt;p&gt;There are several reasons for RTXI to not open.&lt;/p&gt;
 
 &lt;ol&gt;
@@ -1201,7 +1221,7 @@ the main menu.&lt;/p&gt;
     &lt;/p&gt;
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo rtxi
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;rtxi
 ../src/rt_os-xenomai.cpp:123:RT::OS::createTask : failed to create task
 ../src/rt.cpp:157:RT::System::System : failed to create realtime thread&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -1212,39 +1232,39 @@ the main menu.&lt;/p&gt;
     &lt;/p&gt; 
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ps ax -o euser,comm | grep rtxi&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps ax &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; euser,comm | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;rtxi&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
     &lt;p&gt;
-      If the command shows someone else's username, that means they have RTXI
+      If the command shows someone else&apos;s username, that means they have RTXI
       open. Bug them about closing it or close it yourself by running &lt;code&gt;$
       sudo pkill rtxi&lt;/code&gt;. Note that workspaces, open files, etc. will
       &lt;strong&gt;not&lt;/strong&gt; be saved when force-closing RTXI. 
     &lt;/p&gt;
     &lt;p&gt;
-      If it's your username, RTXI may not have exited cleanly from sometime
+      If it&apos;s your username, RTXI may not have exited cleanly from sometime
       earlier. You can run &lt;code&gt;$ sudo pkill rtxi&lt;/code&gt; for this case, too.
     &lt;/p&gt;
     &lt;p&gt;
       Now, you should be able to run RTXI.
     &lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;You aren't using a real-time kernel.&lt;/strong&gt;
+  &lt;li&gt;&lt;strong&gt;You aren&apos;t using a real-time kernel.&lt;/strong&gt;
 
     &lt;p&gt;Check the kernel you are using. Run this in the terminal:&lt;/p&gt;
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;uname -r&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;uname&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
     &lt;p&gt;
       You will get one line of output that tells you what kernel you are using.
-      If it has the word &quot;xenomai&quot; in it, then it's a real-time kernel. If not,
-      then it isn't.
+      If it has the word &quot;xenomai&quot; in it, then it&apos;s a real-time kernel. If not,
+      then it isn&apos;t.
     &lt;/p&gt; 
     &lt;p&gt;
-      If it's not a real-time kernel, you'll have to reboot your computer and
-      pick a real-time kernel in the GRUB boot menu that pops up. If you don't
+      If it&apos;s not a real-time kernel, you&apos;ll have to reboot your computer and
+      pick a real-time kernel in the GRUB boot menu that pops up. If you don&apos;t
       see it, enter the &quot;Advanced options...&quot; submenu and look there.
     &lt;/p&gt;
     &lt;p&gt;
@@ -1280,12 +1300,12 @@ available upon request.&lt;/p&gt;
       <item>
         <title>Linux Freezes after Reboot</title>
         <description>&lt;p&gt;If you do an OS-based reboot of your the computer and your log-in screen is
-laggy or displays errors, it’s probably because &lt;code class=&quot;highlighter-rouge&quot;&gt;kexec-tools&lt;/code&gt; are handling
+laggy or displays errors, it’s probably because &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;kexec-tools&lt;/code&gt; are handling
 reboots.  When compiling an RT kernel, you were prompted whether or not to let
-&lt;code class=&quot;highlighter-rouge&quot;&gt;kexec-tools&lt;/code&gt; handle reboots. 
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;kexec-tools&lt;/code&gt; handle reboots. 
 You are advised in the installation instructions (and here) to not allow that.&lt;/p&gt;
 
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;kexec-tools&lt;/code&gt; utility normally is used to perform ‘warm reboots,’ which is
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;kexec-tools&lt;/code&gt; utility normally is used to perform ‘warm reboots,’ which is
 when the computer reloads a kernel without fully shutting the system down.  (In
 contrast, a cold reboot is when you fully shut down the computer, meaning that
 the machine fully stops and it begins to cool down.) The lag you experience is
@@ -1297,7 +1317,7 @@ permanently fix it, disable kexec-tools from handling reboots:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Open /etc/default/kexec (as root).&lt;/li&gt;
-  &lt;li&gt;Change &lt;code class=&quot;highlighter-rouge&quot;&gt;LOAD_KEXEC&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LOAD_KEXEC&lt;/code&gt; from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;Save and exit.&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -1322,7 +1342,7 @@ configuration or input on your part is needed to use them. When you install
 Linux and boot, your kernel will detect the graphics hardware and load the
 corresponding driver. You can check to see if your driver is loaded by running:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;lsmod | grep &lt;span class=&quot;s2&quot;&gt;&quot;radeon&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\|&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;nouveau&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;lsmod | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;radeon&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\|&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;nouveau&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The reason we use open-source drivers is that they use the kernel to directly
 leverage the graphics card to compute things like the UI and desktop.
@@ -1398,31 +1418,31 @@ problems:&lt;/p&gt;
     &lt;dd&gt;
       &lt;p&gt;
         If your system freezes when it boots, it couls be caused by interrupt
-        collisions between the graphics driver and the analogy driver. We've
+        collisions between the graphics driver and the analogy driver. We&apos;ve
         noticied this happening most frequently on machines with Nvidia cards.
         You can fix this by opening up the computer and moving the graphics
         card to a different PCI slot.  
       &lt;/p&gt;
       &lt;p&gt;
-        If that doesn't fix your system, you can delve deeper to find out
+        If that doesn&apos;t fix your system, you can delve deeper to find out
         whether there are still interrupt collisions. When Linux freezes, you
         can drop to another tty by entering &lt;code&gt;Ctrl+Alt+F2&lt;/code&gt;. You can
         then enter you login information. From the new shell, enter:  
       &lt;/p&gt;
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;lspci -v | less&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;lspci &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; | less&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
       &lt;p&gt;
         Scroll through the output and check if anything has the same IRQ number
         as the DAQ (the National Instuments card) or the graphics card.
         Occasionally, things like the Ethernet card or a USB port can
-        interfere.  If you don't have a spare port, you'll need to get a new
+        interfere.  If you don&apos;t have a spare port, you&apos;ll need to get a new
         graphics card.  We recommend AMD cards that have been released long
         enough for Ubuntu to fully support them.  A list of compatible cards is
         available 
-        &lt;a href=&quot;https://help.ubuntu.com/community/RadeonDriver&quot;&gt; on Ubuntu's
+        &lt;a href=&quot;https://help.ubuntu.com/community/RadeonDriver&quot;&gt; on Ubuntu&apos;s
         site.&lt;/a&gt; 
       &lt;/p&gt;
     &lt;/dd&gt;
@@ -1444,22 +1464,22 @@ problems:&lt;/p&gt;
       &lt;/p&gt;
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo lshw -C display | grep configuration&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;lshw &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; display | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;configuration&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
       &lt;p&gt;
-        If you don't see your graphics driver (radeon or nouveau) listed, then
-        it's not being properly used. You can also check this by looking at the
+        If you don&apos;t see your graphics driver (radeon or nouveau) listed, then
+        it&apos;s not being properly used. You can also check this by looking at the
         &lt;code&gt;dmesg&lt;/code&gt; output:
       &lt;/p&gt;
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;dmesg | grep &lt;span class=&quot;s2&quot;&gt;&quot;radeon&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\|&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;nouveau&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;dmesg | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;radeon&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\|&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;nouveau&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
       &lt;p&gt;
-        If the driver is working properly, you'll see a lot of output. If not,
-        you probably won't see anything. 
+        If the driver is working properly, you&apos;ll see a lot of output. If not,
+        you probably won&apos;t see anything. 
       &lt;/p&gt;
       &lt;p&gt;
         Let us know if you need help with this issue. Sending us the output
@@ -1508,17 +1528,6 @@ compute the timer.&lt;/p&gt;
         <pubDate>Tue, 20 Jan 2015 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//docs/faqs/2015/01/20/why-are-there-negative-latencies/</link>
         <guid isPermaLink="true">http://rtxi.org//docs/faqs/2015/01/20/why-are-there-negative-latencies/</guid>
-      </item>
-    
-      <item>
-        <title>Register for RTXI 2015</title>
-        <description>&lt;p&gt;If you haven’t done so already, check out our &lt;a href=&quot;/conference/&quot;&gt;conference page&lt;/a&gt;
-to learn about our upcoming conference. Registration is almost open. We just
-need to get the payment page running.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 22 Dec 2014 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//news/2014/12/22/register-for-RTXI-2015/</link>
-        <guid isPermaLink="true">http://rtxi.org//news/2014/12/22/register-for-RTXI-2015/</guid>
       </item>
     
   </channel>
