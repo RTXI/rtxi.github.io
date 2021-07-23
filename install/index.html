@@ -15,8 +15,7 @@ can install the RTXI GUI without recompiling a kernel. "
   <dl class="dl-horizontal">
     <dt>Installation</dt>
       <dd>Install a generic Linux image, compile a Xenomai-patched kernel, and
-      then install RTXI from source. It's more difficult, but the end result is
-      better optimized. We recommend this option.</dd>
+      then install RTXI from source.</dd>
     <br>
     <dt>Upgrade</dt>
       <dd>If you already use a previous version of RTXI, you can update your
@@ -245,10 +244,11 @@ $ ./install_rt_kernel.sh
             started. Be careful to not exit the configuration menu.
           </p>
         </li>
-        <li><p><b>Select your processor type.</b></p>
+        <li><p><b>Select your processor type and disable multicore features.</b></p>
           <div>From the top menu, follow the path: </div> 
           <div style="padding-left:1em;">--> Processor type and features</div>
-          <div style="padding-left:2em;">--> Processor family</div><br>
+          <div style="padding-left:2em;">--> Processor family</div>
+          <div style="padding-left:2em;">--> Multi-core scheduler support (disable) </div><br>
           <p>
             Select the option that corresponds to your processor type. If
             unsure of what processor you have, open another terminal run:
@@ -279,21 +279,38 @@ $ cat /proc/cpuinfo
             menu, follow the path and disable: 
           </div>
           <div style="padding-left:1em;">--> Power Management and ACPI options</div>
-          <div style="padding-left:2em;">--> Suspend to RAM (disable)</div>
+          <div style="padding-left:2em;">--> Suspend to RAM and standby (disable)</div>
           <div style="padding-left:2em;">--> Hibernation (disable)</div>
-          <div style="padding-left:2em;">--> CPU Idle driver for Intel (disable)</div>
+          <div style="padding-left:2em;">--> CPU frequency scaling</div>
+          <div style="padding-left:3em;">--> CPU frequency scaling (disable)</div>
+          <div style="padding-left:2em;">--> ACPI support</div>
+          <div style="padding-left:3em;">--> processor (disable)</div>
+          <div style="padding-left:2em;">--> CPU idle</div>
+          <div style="padding-left:3em;">--> CPU idle PM support (disable)</div><br>
           <p>
             To disable drivers, move the cursor to the item and hit
             <code>SPACE</code> until the field the left is blank.
           </p>
         </li>
-        <li><p><b>Disable COMEDI drivers.</b></p>
+        <li><p><b>Disable memory management options.</b></p>
+          <div>
+            There are some memory management options that could increase latency
+            of the system. Follow these steps to disable them:
+          </div>
+          <div style="padding-left:1em;">--> Memory management options</div>
+          <div style="padding-left:2em;">--> Transparent hugepage support (disable)</div>
+          <div style="padding-left:2em;">--> Allow memory compaction (disable)</div>
+          <div style="padding-left:2em;">--> Page migration (disable)</div><br>
+        </li>
+        <li><p><b>Disable COMEDI drivers and enable USB support.</b></p>
           <div>
             The COMEDI drivers should be disabled, otherwise they will conflict
             with the ANALOGY drivers. From the top menu, follow the path and
             disable: 
           </div>
           <div style="padding-left:1em;">--> Device Drivers</div>
+          <div style="padding-left:2em;">--> USB support</div>
+          <div style="padding-left:3em;">--> USB mass storage support (enable)</div>
           <div style="padding-left:2em;">--> Staging Drivers</div>
           <div style="padding-left:3em;">--> Data Acquisition (comedi) (disable)</div>
         </li>
@@ -405,6 +422,8 @@ $ cd rtxi
 
 {% highlight bash %}
 $ git pull origin master
+$ git fetch --all --tags
+$ git checkout tags/v{{ site.rtxi_version }}
 {% endhighlight %}
 
       <!-- 2. Install dependencies -->
