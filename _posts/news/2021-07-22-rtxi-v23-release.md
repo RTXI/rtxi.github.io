@@ -1,5 +1,5 @@
 ---
-title: "RTXI v2.3 Release"
+title: "RTXI 2.3 Release"
 layout: post
 category: news
 ---
