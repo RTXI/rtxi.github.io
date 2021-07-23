@@ -12,5 +12,5 @@ New features include:
 2. **Support for Xenomai 3.1**: RTXI can now be installed with Xenomai 3.1; A newer version of the real-time framework.
 3. **Minor Bug fixes**: for improved stability and long term maintenance
 
-Along with the newer version of rtxi there are also updated installation steps as well. Let us know if you have any
-issues at <help@rtxi.org>
+Along with the newer version of rtxi there are also updated installation steps and website contact
+information. Let us know if you have any issues installing RTXI by emailing us at <help@rtxi.org>
