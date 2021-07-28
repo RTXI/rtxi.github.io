@@ -36,5 +36,7 @@
     "grunt-shell": "^3.0.1",
     "hoek": "^5.0.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
