@@ -20,18 +20,21 @@
   },
   "homepage": "http://rtxi.org",
   "devDependencies": {
+    "@hapi/hoek": "github:hapijs/hoek",
     "grunt": "^1.4.1",
     "grunt-bower-task": "^0.5.0",
-    "grunt-build-control": "^0.2.2",
-    "grunt-contrib-concat": "^0.5.0",
+    "grunt-build-control": "^0.7.1",
+    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-connect": "^3.0.0",
-    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^4.0.0",
     "grunt-contrib-htmlmin": "^3.1.0",
-    "grunt-contrib-less": "^1.0.0",
+    "grunt-contrib-less": "^3.0.0",
     "grunt-contrib-uglify": "^5.0.1",
     "grunt-contrib-watch": "^1.1.0",
-    "grunt-exec": "^0.4.6",
-    "grunt-shell": "^1.1.1"
-  }
+    "grunt-exec": "^3.0.0",
+    "grunt-shell": "^3.0.1",
+    "hoek": "^5.0.4"
+  },
+  "dependencies": {}
 }
