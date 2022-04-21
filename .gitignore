@@ -10,3 +10,4 @@ assets/css/src/*
 !assets/css/src/pygments.css
 !assets/css/src/syntax.css
 assets/js/src/*
+vendor/*
