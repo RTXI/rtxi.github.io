@@ -1,0 +1,21 @@
+<map id="Settings::Manager::load" name="Settings::Manager::load">
+<area shape="rect" id="node1" title=" " alt="" coords="5,335,181,361"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a186cfc85655bb817d42ead4744c31805" title=" " alt="" coords="243,5,447,32"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a6952fa31d2b9f0615ddb386e228d48b4" title=" " alt="" coords="229,56,460,83"/>
+<area shape="rect" id="node4" href="$debug_8cpp.html#aaa514d57d1c58f5ecd1910dd5635f69c" title=" " alt="" coords="293,107,397,133"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a3e075a7e13be0cd37c49c333eda969a5" title=" " alt="" coords="249,157,440,184"/>
+<area shape="rect" id="node6" href="$class_plugin_1_1_manager.html#a49a5d00f5601475bcaabbb05001558d1" title=" " alt="" coords="239,208,450,235"/>
+<area shape="rect" id="node7" href="$class_i_o_1_1_connector.html#a375b0351d4b27fe502a9e795ad22525f" title=" " alt="" coords="247,259,442,285"/>
+<area shape="rect" id="node8" href="$class_r_t_1_1_system.html#a9fa87379635bcd3ffce452670f65c653" title=" " alt="" coords="255,309,434,336"/>
+<area shape="rect" id="node9" href="$class_r_t_1_1_system.html#a7c6a75ccb216506557cdab9148b61666" title=" " alt="" coords="262,360,427,387"/>
+<area shape="rect" id="node10" href="$class_settings_1_1_object.html#a240ce8427963c12d1bdc364035d34711" title=" " alt="" coords="264,411,425,437"/>
+<area shape="rect" id="node12" href="$class_settings_1_1_object_1_1_state.html#addd9dde9cc68a1fb47579c29c31bf6c7" title=" " alt="" coords="261,462,428,503"/>
+<area shape="rect" id="node13" href="$class_settings_1_1_object_1_1_state.html#a68352516fba86c14f8f0ccc6b6346f4b" title=" " alt="" coords="261,527,428,569"/>
+<area shape="rect" id="node14" href="$class_r_t_1_1_system.html#a6472633da74059451421b49faf22774a" title=" " alt="" coords="263,644,427,671"/>
+<area shape="rect" id="node18" href="$class_plugin_1_1_manager.html#a625ec017a703df88373ed2dc6f08d9dc" title=" " alt="" coords="247,593,443,620"/>
+<area shape="rect" id="node19" href="$class_settings_1_1_object_1_1_state.html#a427d7271e7c4f9945f4c5f4ea2882a64" title=" " alt="" coords="245,695,445,721"/>
+<area shape="rect" id="node11" href="$class_settings_1_1_manager.html#a452fc345308a4e4175872a34c0fdba72" title=" " alt="" coords="538,403,686,445"/>
+<area shape="rect" id="node15" href="$class_event_1_1_manager.html#a54ba88d06347943301a5fc96d8714c68" title=" " alt="" coords="508,593,716,620"/>
+<area shape="rect" id="node16" href="$class_event_1_1_manager.html#a19d77eb99fc9b33b1e46e0ee6b5bb209" title=" " alt="" coords="513,644,711,671"/>
+<area shape="rect" id="node17" href="$class_event_1_1_object.html#a0c4f0fd904bada75afd6b52789792af4" title=" " alt="" coords="523,695,701,721"/>
+</map>

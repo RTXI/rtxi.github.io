@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['jitter',['jitter',['../class_performance_measurement_1_1_panel.html#aa51709fd96a5aff832099cfba749b93b',1,'PerformanceMeasurement::Panel']]],
-  ['junk',['junk',['../class_default_g_u_i_model.html#a69b7d93f36361eec2f22cae934c2ec9f',1,'DefaultGUIModel']]]
+  ['name_1206',['name',['../struct_i_o_1_1channel__t.html#a442ec6e7c58cfcb1069fa98e840da932',1,'IO::channel_t']]],
+  ['next_5ft_1207',['next_t',['../structposix__task__t.html#aa45139c7297728c2a04049f9ea52a8fc',1,'posix_task_t::next_t()'],['../structxenomai__task__t.html#a08675244bc9767e4f4accb1e32b6a3fe',1,'xenomai_task_t::next_t()']]]
 ];

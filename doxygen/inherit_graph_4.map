@@ -1,0 +1,46 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_d_a_q_1_1_driver.html" title=" " alt="" coords="415,731,514,757"/>
+<area shape="rect" id="node2" href="$class_analogy_driver.html" title=" " alt="" coords="639,781,753,808"/>
+<area shape="rect" id="node3" href="$class_mock_d_a_q_driver.html" title=" " alt="" coords="633,731,759,757"/>
+<area shape="rect" id="node4" href="$class_event_1_1_handler.html" title=" " alt="" coords="405,132,524,159"/>
+<area shape="rect" id="node5" href="$class_connector_1_1_panel.html" title=" " alt="" coords="630,56,762,83"/>
+<area shape="rect" id="node6" href="$class_data_recorder_1_1_panel.html" title=" " alt="" coords="619,309,773,336"/>
+<area shape="rect" id="node7" href="$class_default_g_u_i_model.html" title=" " alt="" coords="629,461,763,488"/>
+<area shape="rect" id="node8" href="$class_mock_event_handler.html" title=" " alt="" coords="623,5,769,32"/>
+<area shape="rect" id="node9" href="$class_oscilloscope_1_1_panel.html" title=" " alt="" coords="622,259,770,285"/>
+<area shape="rect" id="node10" href="$class_system_control_panel.html" title=" " alt="" coords="619,107,773,133"/>
+<area shape="rect" id="node11" href="$class_r_t_1_1_list_1_1_node.html" title=" " alt="" coords="180,436,329,463"/>
+<area shape="rect" id="node12" href="$class_data_recorder_1_1_channel.html" title=" " alt="" coords="379,360,551,387"/>
+<area shape="rect" id="node13" href="$class_event_1_1_r_t_handler.html" title=" " alt="" coords="397,411,532,437"/>
+<area shape="rect" id="node15" href="$class_r_t_1_1_device.html" title=" " alt="" coords="419,585,510,612"/>
+<area shape="rect" id="node21" href="$class_r_t_1_1_thread.html" title=" " alt="" coords="419,461,510,488"/>
+<area shape="rect" id="node14" href="$class_mock_event_r_t_handler.html" title=" " alt="" coords="615,360,777,387"/>
+<area shape="rect" id="node16" href="$class_d_a_q_1_1_device.html" title=" " alt="" coords="644,680,748,707"/>
+<area shape="rect" id="node19" href="$class_mock_r_t_device.html" title=" " alt="" coords="637,629,755,656"/>
+<area shape="rect" id="node20" href="$class_performance_measurement_1_1_panel.html" title=" " alt="" coords="599,563,793,605"/>
+<area shape="rect" id="node17" href="$class_analogy_device.html" title=" " alt="" coords="847,655,967,681"/>
+<area shape="rect" id="node18" href="$class_mock_d_a_q_device.html" title=" " alt="" coords="841,705,972,732"/>
+<area shape="rect" id="node22" href="$class_mock_r_t_thread.html" title=" " alt="" coords="637,411,755,437"/>
+<area shape="rect" id="node23" href="$class_oscilloscope_1_1_plugin.html" title=" " alt="" coords="620,832,772,859"/>
+<area shape="rect" id="node24" href="$class_settings_1_1_object.html" title=" " alt="" coords="5,284,131,311"/>
+<area shape="rect" id="node25" href="$class_i_o_1_1_block.html" title=" " alt="" coords="215,592,295,619"/>
+<area shape="rect" id="node29" href="$class_i_o_1_1_connector.html" title=" " alt="" coords="199,157,310,184"/>
+<area shape="rect" id="node30" href="$class_mock_settings_object.html" title=" " alt="" coords="179,208,331,235"/>
+<area shape="rect" id="node31" href="$class_plugin_1_1_object.html" title=" " alt="" coords="409,959,521,985"/>
+<area shape="rect" id="node26" href="$class_mock_i_o_block.html" title=" " alt="" coords="411,781,518,808"/>
+<area shape="rect" id="node27" href="$class_workspace_1_1_instance.html" title=" " alt="" coords="386,523,543,549"/>
+<area shape="rect" id="node28" href="$class_mock_workspace_instance.html" title=" " alt="" coords="604,512,788,539"/>
+<area shape="rect" id="node32" href="$class_connector_1_1_plugin.html" title=" " alt="" coords="628,1253,764,1280"/>
+<area shape="rect" id="node33" href="$class_data_recorder_1_1_plugin.html" title=" " alt="" coords="617,933,775,960"/>
+<area shape="rect" id="node34" href="$classfake_plugin.html" title=" " alt="" coords="651,883,741,909"/>
+<area shape="rect" id="node35" href="$class_model_loader.html" title=" " alt="" coords="643,984,749,1011"/>
+<area shape="rect" id="node36" href="$class_performance_measurement_1_1_plugin.html" title=" " alt="" coords="599,1035,793,1077"/>
+<area shape="rect" id="node37" href="$class_r_t_x_i_wizard_1_1_plugin.html" title=" " alt="" coords="623,1101,769,1128"/>
+<area shape="rect" id="node38" href="$class_system_control.html" title=" " alt="" coords="637,1152,755,1179"/>
+<area shape="rect" id="node39" href="$class_user_prefs_1_1_prefs.html" title=" " alt="" coords="633,1203,759,1229"/>
+<area shape="rect" id="node40" title=" " alt="" coords="427,1101,502,1128"/>
+<area shape="rect" id="node41" href="$class_plugin_1_1_manager.html" title=" " alt="" coords="633,1304,759,1331"/>
+<area shape="rect" id="node42" title=" " alt="" coords="425,208,504,235"/>
+<area shape="rect" id="node43" href="$class_r_t_x_i_wizard_1_1_panel.html" title=" " alt="" coords="625,157,767,184"/>
+<area shape="rect" id="node44" href="$class_user_prefs_1_1_panel.html" title=" " alt="" coords="631,208,761,235"/>
+</map>

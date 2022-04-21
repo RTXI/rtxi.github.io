@@ -5,7 +5,6 @@ var data__recorder_8h =
     [ "CustomEvent", "class_data_recorder_1_1_custom_event.html", "class_data_recorder_1_1_custom_event" ],
     [ "Channel", "class_data_recorder_1_1_channel.html", "class_data_recorder_1_1_channel" ],
     [ "Panel", "class_data_recorder_1_1_panel.html", "class_data_recorder_1_1_panel" ],
-    [ "file_t", "struct_data_recorder_1_1_panel_1_1file__t.html", "struct_data_recorder_1_1_panel_1_1file__t" ],
     [ "Plugin", "class_data_recorder_1_1_plugin.html", "class_data_recorder_1_1_plugin" ],
     [ "data_type_t", "data__recorder_8h.html#a41e62d9b808e110875ed9a80d4ccb161", [
       [ "OPEN", "data__recorder_8h.html#a41e62d9b808e110875ed9a80d4ccb161a0ab9067ca8fd14fa09fb19fcadf98c0c", null ],

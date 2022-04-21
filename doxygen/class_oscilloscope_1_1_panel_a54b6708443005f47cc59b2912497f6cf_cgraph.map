@@ -1,0 +1,6 @@
+<map id="Oscilloscope::Panel::receiveEvent" name="Oscilloscope::Panel::receiveEvent">
+<area shape="rect" id="node1" title=" " alt="" coords="5,49,153,90"/>
+<area shape="rect" id="node2" href="$class_settings_1_1_object.html#afc960645d6c3441d50e26f51faa9ea47" title=" " alt="" coords="207,5,375,32"/>
+<area shape="rect" id="node3" href="$class_r_t_1_1_system.html#a9fa87379635bcd3ffce452670f65c653" title=" " alt="" coords="201,56,380,83"/>
+<area shape="rect" id="node4" href="$class_i_o_1_1_block.html#ab4c9091597c41095b46bec471e2bb27d" title=" " alt="" coords="217,107,365,133"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="AtomicFifoTest" name="AtomicFifoTest">
+<area shape="rect" id="node1" title=" " alt="" coords="9,204,162,296"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,35,53,112"/>
+<area shape="rect" id="node3" href="$class_atomic_fifo.html" title="Lockfree SINGLE producer / SINGLE consumer FIFO." alt="" coords="78,5,205,141"/>
+</map>

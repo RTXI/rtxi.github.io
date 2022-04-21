@@ -607,7 +607,7 @@ issue in the process of going though this tutorial.&lt;/p&gt;
     &lt;a href=&quot;https://github.com/rtxi&quot;&gt;https://github.com/rtxi&lt;/a&gt;). On the page,
     use the search bar or scroll down until you find the software you want to
     report.  If you experience a bug within RTXI and its built-in modules, look
-    for the &lt;code&gt;rtxi&lt;/code&gt; repository. If it&apos;s a module you have problems
+    for the &lt;code&gt;rtxi&lt;/code&gt; repository. If it's a module you have problems
     with, find the repository that correponds to the module name. Also, if
     you have questions about anything on this website, go to the
     &lt;code&gt;rtxi.github.io&lt;/code&gt; repository.  
@@ -728,7 +728,7 @@ Technically, Git does not check email address validity, either, but for
 collaborate work, it is best to provide some address so that people can ask
 each other questions about changes.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git config &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; user.name &lt;span class=&quot;s1&quot;&gt;&apos;Your name here&apos;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git config &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; user.name &lt;span class=&quot;s1&quot;&gt;'Your name here'&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git config &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; user.email your@address.here&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git&lt;/code&gt; part of each command specifies that the script that follows contains
@@ -893,7 +893,7 @@ random letters is an encrypted hash of the changes that were made. A hash is a
 string that encodes data and is produced by a hash function. Ideally, a hash
 function is implemented such that a small change in the data it encodes results
 in a large, unpredictable change in the hash. This enables users to check the
-file&apos;s integrity and makes it exceedingly difficult to alter the commit
+file's integrity and makes it exceedingly difficult to alter the commit
 history.  
 
 &lt;!--
@@ -990,7 +990,7 @@ is &lt;filename&gt;&quot;. You can use `more &lt;filename&gt;` or `cat &lt;filen
 contents of a file into the terminal. 
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-maxdepth&lt;/span&gt; 1 &lt;span class=&quot;nt&quot;&gt;-type&lt;/span&gt; f | xargs &lt;span class=&quot;nt&quot;&gt;-I&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; bash &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;echo &apos;This is &apos;{} &amp;gt; {}&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-maxdepth&lt;/span&gt; 1 &lt;span class=&quot;nt&quot;&gt;-type&lt;/span&gt; f | xargs &lt;span class=&quot;nt&quot;&gt;-I&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; bash &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;echo 'This is '{} &amp;gt; {}&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 Now that the files have been altered, run `git status` to see what Git has
@@ -1056,7 +1056,7 @@ a new commit that follows the previous version of `master`.
 --&gt;
 
 If the merge is successful, there is no need for the `testing` branch. Delete
-it. Make sure that the `testing` branch isn&apos;t currently checked out.  
+it. Make sure that the `testing` branch isn't currently checked out.  
 
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; testing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -1064,8 +1064,8 @@ it. Make sure that the `testing` branch isn&apos;t currently checked out.
 
 ### &lt;a name=&quot;rrepos&quot;&gt;&lt;/a&gt;Using Remote Repositories 
 
-Remote repositories refer to storage locations outside a user&apos;s local
-repository. The remote in this example is GitHub, and the repository we&apos;ll be
+Remote repositories refer to storage locations outside a user's local
+repository. The remote in this example is GitHub, and the repository we'll be
 using is for the &lt;a href=&quot;https://github.com/rtxi/plugin-template&quot;&gt;plugin
 template&lt;/a&gt;. If you want to have your own remote repository on GitHub, you
 will need to create an account with them and using their website to initialize
@@ -1083,7 +1083,7 @@ To clone from our repositories, the username is `rtxi` and the repositories are
 all listed on https://github.com/rtxi. To install the plugin template:  
 
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/ &lt;span class=&quot;c&quot;&gt;# this line isn&apos;t really needed&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/ &lt;span class=&quot;c&quot;&gt;# this line isn't really needed&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/rtxi/plugin-template.git
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;plugin-template&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -1104,8 +1104,8 @@ and commit them.
 
 
 **Note:** You will not actually be able to execute the command below
-successfully. We don&apos;t allow everyone to push to our repositories. This is what
-you&apos;d do, though, if you could. 
+successfully. We don't allow everyone to push to our repositories. This is what
+you'd do, though, if you could. 
 
 Now, send these changes to the remote. The command Git uses for this is `push`. 
 
@@ -1121,7 +1121,7 @@ tracked by a repository by running `git remote -v`.
 #### &lt;a name=&quot;pull&quot;&gt;&lt;/a&gt;Pulling Changes from a Remote 
 
 Just as one can push changes from a local machine to a remote, it is possible
-to &apos;pull&apos; changes back from the remote to the local machine. This comes into
+to 'pull' changes back from the remote to the local machine. This comes into
 play when modifying the same project on several machines or by several people.
 To pull the code and automatically merge the differences, use:
 
@@ -1210,7 +1210,7 @@ the main menu.&lt;/p&gt;
       </item>
     
       <item>
-        <title>Why won&apos;t RTXI open?</title>
+        <title>Why won't RTXI open?</title>
         <description>&lt;p&gt;There are several reasons for RTXI to not open.&lt;/p&gt;
 
 &lt;ol&gt;
@@ -1236,20 +1236,20 @@ the main menu.&lt;/p&gt;
 
 
     &lt;p&gt;
-      If the command shows someone else&apos;s username, that means they have RTXI
+      If the command shows someone else's username, that means they have RTXI
       open. Bug them about closing it or close it yourself by running &lt;code&gt;$
       sudo pkill rtxi&lt;/code&gt;. Note that workspaces, open files, etc. will
       &lt;strong&gt;not&lt;/strong&gt; be saved when force-closing RTXI. 
     &lt;/p&gt;
     &lt;p&gt;
-      If it&apos;s your username, RTXI may not have exited cleanly from sometime
+      If it's your username, RTXI may not have exited cleanly from sometime
       earlier. You can run &lt;code&gt;$ sudo pkill rtxi&lt;/code&gt; for this case, too.
     &lt;/p&gt;
     &lt;p&gt;
       Now, you should be able to run RTXI.
     &lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;You aren&apos;t using a real-time kernel.&lt;/strong&gt;
+  &lt;li&gt;&lt;strong&gt;You aren't using a real-time kernel.&lt;/strong&gt;
 
     &lt;p&gt;Check the kernel you are using. Run this in the terminal:&lt;/p&gt;
 
@@ -1259,12 +1259,12 @@ the main menu.&lt;/p&gt;
 
     &lt;p&gt;
       You will get one line of output that tells you what kernel you are using.
-      If it has the word &quot;xenomai&quot; in it, then it&apos;s a real-time kernel. If not,
-      then it isn&apos;t.
+      If it has the word &quot;xenomai&quot; in it, then it's a real-time kernel. If not,
+      then it isn't.
     &lt;/p&gt; 
     &lt;p&gt;
-      If it&apos;s not a real-time kernel, you&apos;ll have to reboot your computer and
-      pick a real-time kernel in the GRUB boot menu that pops up. If you don&apos;t
+      If it's not a real-time kernel, you'll have to reboot your computer and
+      pick a real-time kernel in the GRUB boot menu that pops up. If you don't
       see it, enter the &quot;Advanced options...&quot; submenu and look there.
     &lt;/p&gt;
     &lt;p&gt;
@@ -1418,13 +1418,13 @@ problems:&lt;/p&gt;
     &lt;dd&gt;
       &lt;p&gt;
         If your system freezes when it boots, it couls be caused by interrupt
-        collisions between the graphics driver and the analogy driver. We&apos;ve
+        collisions between the graphics driver and the analogy driver. We've
         noticied this happening most frequently on machines with Nvidia cards.
         You can fix this by opening up the computer and moving the graphics
         card to a different PCI slot.  
       &lt;/p&gt;
       &lt;p&gt;
-        If that doesn&apos;t fix your system, you can delve deeper to find out
+        If that doesn't fix your system, you can delve deeper to find out
         whether there are still interrupt collisions. When Linux freezes, you
         can drop to another tty by entering &lt;code&gt;Ctrl+Alt+F2&lt;/code&gt;. You can
         then enter you login information. From the new shell, enter:  
@@ -1438,11 +1438,11 @@ problems:&lt;/p&gt;
         Scroll through the output and check if anything has the same IRQ number
         as the DAQ (the National Instuments card) or the graphics card.
         Occasionally, things like the Ethernet card or a USB port can
-        interfere.  If you don&apos;t have a spare port, you&apos;ll need to get a new
+        interfere.  If you don't have a spare port, you'll need to get a new
         graphics card.  We recommend AMD cards that have been released long
         enough for Ubuntu to fully support them.  A list of compatible cards is
         available 
-        &lt;a href=&quot;https://help.ubuntu.com/community/RadeonDriver&quot;&gt; on Ubuntu&apos;s
+        &lt;a href=&quot;https://help.ubuntu.com/community/RadeonDriver&quot;&gt; on Ubuntu's
         site.&lt;/a&gt; 
       &lt;/p&gt;
     &lt;/dd&gt;
@@ -1468,8 +1468,8 @@ problems:&lt;/p&gt;
 
 
       &lt;p&gt;
-        If you don&apos;t see your graphics driver (radeon or nouveau) listed, then
-        it&apos;s not being properly used. You can also check this by looking at the
+        If you don't see your graphics driver (radeon or nouveau) listed, then
+        it's not being properly used. You can also check this by looking at the
         &lt;code&gt;dmesg&lt;/code&gt; output:
       &lt;/p&gt;
 
@@ -1478,8 +1478,8 @@ problems:&lt;/p&gt;
 
 
       &lt;p&gt;
-        If the driver is working properly, you&apos;ll see a lot of output. If not,
-        you probably won&apos;t see anything. 
+        If the driver is working properly, you'll see a lot of output. If not,
+        you probably won't see anything. 
       &lt;/p&gt;
       &lt;p&gt;
         Let us know if you need help with this issue. Sending us the output

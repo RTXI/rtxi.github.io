@@ -7,51 +7,31 @@ Linux distro
 ## Downloading and Building the Site
 If you want to build and edit the site on your own, you'll need to install some
 dependencies:  
-````
-$ sudo apt-get install nodejs ruby imagemagick libmagickwand-dev npm curl
-````
+```term
+sudo apt-get install nodejs ruby ruby-dev imagemagick libmagickwand-dev npm curl
+```
 
 Ruby is used for all the gems you need to use Jekyll to build the site. You can
-use the default version for your OS, but I recommend using RVM so that we an
-keep the ruby version consistent. RVM is a ruby management tool that allows you
-to install several ruby versions and pick whichever one you want for specific
-projects.  
+use the default version for your OS.
 
-**Note:** RVM isn't a pariticularly 'light' bit of software. It will override
-your `cd` command. It also is only compatible with bash/sh/zsh login shells (so
-no using fish).  
-
-If you haven't already, set preferences for your terminal emulator so that it
-is a login shell. Otherwise, the RVM commands above won't work properly.  
-
-I'm currently using v2.3.3. To install RVM (from their website): 
-````
-$ gpg --keyserver keyserver.ubuntu.com --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-$ curl -sSL https://get.rvm.io | bash -s stable --ruby
-$ rvm install 2.3.3
-$ rvm use 2.3.3
-````
 Now, you'll need to install the bundler gem:  
-````
-$ gem install bundler
-````
+```term
+gem install bundler --user-install
+```
 
 Bundler is a gem that allows you to install, manage, and update ruby gems for
 individual projects. You'll use it to install all the gems used to build the
-site (see the Gemfile and Gemfile.lock files in this repository.)  
+site (see the Gemfile and Gemfile.lock files in this repository.)
+
+The above command also makes sure that the bundler installs gems in the local
+user folder as it can be a pain to use Grunt along with system wide OS gems.
 
 Now, the node packages. The node packages are used for installing `bower` and
-`grunt`. What they are will be explained later. On Ubuntu, for some reason, the
-default binary has an unrecognized name. npm looks for a binary called `node`,
-but the installed binary is called `nodejs`. Fix this by running:  
-````
-$ sudo ln -s /usr/bin/nodejs /usr/bin/node
-````
-
-Now, install the node packages (bower and grunt-cli):  
-````
-$ sudo npm -g install bower grunt-cli
-````
+`grunt`. What they are will be explained later. Install the node packages 
+(bower and grunt-cli):  
+```term
+npm install bower grunt-cli
+```
 
 Bower is a package manager used to install bootstrap and other CSS/JS used to
 build the website. It differs from NPM is that it does not manage dependencies
@@ -65,11 +45,11 @@ CSS/JS/Less, etc. fromt the command line. More detail will come later.
 
 Now, you need to install the website's dependencies. This is done in the
 website directory. Clone the website and switch to the 'build' branch:  
-````
-$ git clone https://github.com/rtxi/rtxi.github.io website
-$ cd website
-$ git checkout build
-````
+```term
+git clone https://github.com/rtxi/rtxi.github.io website
+cd website
+git checkout build
+```
 The reason you need to switch to the `build` branch is because GitHub, the host
 for this website, does not allow people to run custom plugins on their servers.
 (It's a security concern.) The plugin in `_plugins` pulls all the README.md
@@ -83,11 +63,11 @@ folder) is pushed to GitHub.
 
 Initialize the site with the files you'll need, update them, and then build the
 site:  
-````
-$ npm install
-$ grunt init
-$ grunt
-````
+```term
+npm install
+grunt init
+grunt
+```
 
 `npm install` installs all the node dependencies for the project (grunt,
 basically), and once grunt is installed, use it to download all the CSS/JS,
@@ -159,8 +139,8 @@ Some tips:
 To ease the process of filling out all the YAML metadata, I added a Rakefile that 
 will create and publish pages to the website. To view the available options, run: 
 
-```
-$ rake
+```term
+rake
 ```
 
 Pages make when running `rake news|troubleshoot|tutorial|faq|paper` will be
@@ -176,9 +156,9 @@ prompted. The Rakefile will then move the draft to the appropriate folder.
 When you're done editing things, commit your changes and push them to the
 `build` branch. If you're ready for your changes to be pushed to the master
 branch (i.e. the branch that the world-facing website is built on), run:  
-````
-$ grunt deploy
-````
+```term
+grunt deploy
+```
 
 The first time you ever run it, it could fail if you don't have any git
 user.name or user.email specified globally. Just go to the `_site` directory

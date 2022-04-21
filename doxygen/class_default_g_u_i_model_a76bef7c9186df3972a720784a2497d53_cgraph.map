@@ -1,0 +1,18 @@
+<map id="DefaultGUIModel::createGUI" name="DefaultGUIModel::createGUI">
+<area shape="rect" id="node1" title=" " alt="" coords="5,227,212,253"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a0ba4f516f0aff976ed9618df09ef5fe2" title=" " alt="" coords="266,113,445,140"/>
+<area shape="rect" id="node3" href="$class_default_g_u_i_model.html#a962dab76139fe3fe2336b8ecc0e1c651" title=" " alt="" coords="272,164,439,191"/>
+<area shape="rect" id="node12" href="$class_main_window.html#a3e075a7e13be0cd37c49c333eda969a5" title=" " alt="" coords="260,353,451,380"/>
+<area shape="rect" id="node13" href="$class_default_g_u_i_model.html#acc58c7427f07e7c3958cb2fa1bce97b5" title=" " alt="" coords="261,303,449,329"/>
+<area shape="rect" id="node16" href="$class_default_g_u_i_model.html#a2c74dcfa2231a09794376d1a40f0cf2b" title=" " alt="" coords="265,227,446,253"/>
+<area shape="rect" id="node4" href="$class_plugin_1_1_manager.html#a49a5d00f5601475bcaabbb05001558d1" title=" " alt="" coords="499,56,709,83"/>
+<area shape="rect" id="node5" href="$class_r_t_1_1_system.html#a9fa87379635bcd3ffce452670f65c653" title=" " alt="" coords="757,259,936,285"/>
+<area shape="rect" id="node6" href="$class_r_t_1_1_system.html#a18b61d1b74afeeb6af80bb745424e1af" title=" " alt="" coords="763,309,931,336"/>
+<area shape="rect" id="node7" href="$class_r_t_1_1_thread.html#aa39a66feaeefdcc84d5dcb76a3c35ff5" title=" " alt="" coords="524,309,684,336"/>
+<area shape="rect" id="node9" href="$class_plugin_1_1_manager.html#a84fcd89f3e8ad74aa635eafe8812a2e8" title=" " alt="" coords="515,5,693,32"/>
+<area shape="rect" id="node11" href="$class_default_g_u_i_model.html#ad8caf5032e29e8b7da6c942ce06cb8e2" title=" " alt="" coords="511,208,697,235"/>
+<area shape="rect" id="node8" href="$namespace_r_t_1_1_o_s.html#a882d797a94db74aa85fe6ae769198e44" title=" " alt="" coords="775,360,918,387"/>
+<area shape="rect" id="node10" href="$debug_8cpp.html#aaa514d57d1c58f5ecd1910dd5635f69c" title=" " alt="" coords="795,5,899,32"/>
+<area shape="rect" id="node14" href="$class_r_t_1_1_thread.html#ac691648146239394eaee2bee9b17716a" title=" " alt="" coords="523,477,685,504"/>
+<area shape="rect" id="node15" href="$class_workspace_1_1_instance.html#a0eb3fbacca05346c2314feaa65c9ddfb" title=" " alt="" coords="525,411,683,453"/>
+</map>
