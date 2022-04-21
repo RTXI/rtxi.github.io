@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['false',['FALSE',['../misdefs_8h.html#aa93f0eb578d23995850d61f7d61c55c1',1,'misdefs.h']]],
-  ['fs',['fs',['../scope_8cpp.html#a2f72408aea32e6d1285f8af599914849',1,'scope.cpp']]]
+  ['qdisablegroupsevent_1343',['QDisableGroupsEvent',['../data__recorder_8cpp.html#a439c562781d7789ebb3b68966e30d530',1,'data_recorder.cpp']]],
+  ['qenablegroupsevent_1344',['QEnableGroupsEvent',['../data__recorder_8cpp.html#a2ec6a5b3334cd2e619791baa2c49ed3a',1,'data_recorder.cpp']]],
+  ['qfileexistsevent_1345',['QFileExistsEvent',['../data__recorder_8cpp.html#a5c8df0c472004498e09a9061b1aad277',1,'data_recorder.cpp']]],
+  ['qsetfilenameeditevent_1346',['QSetFileNameEditEvent',['../data__recorder_8cpp.html#a8a886575da44affd2d096771f375d7cb',1,'data_recorder.cpp']]]
 ];

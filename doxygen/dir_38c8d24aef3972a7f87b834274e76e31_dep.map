@@ -1,0 +1,22 @@
+<map id="plugins" name="plugins">
+<area shape="rect" id="node2" href="dir_b81bac75b2e4daa4c5935e0e86979d89.html" title="analogy_device" alt="" coords="1173,27,1297,75"/>
+<area shape="rect" id="node11" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html" title="src" alt="" coords="664,123,736,171"/>
+<area shape="rect" id="edge7-headlabel" href="dir_000001_000010.html" title="6" alt="" coords="750,145,759,159"/>
+<area shape="rect" id="node3" href="dir_ed7f3fc7b874e3e52b3a0b3d1e0b2084.html" title="connector" alt="" coords="1062,27,1149,75"/>
+<area shape="rect" id="edge8-headlabel" href="dir_000002_000010.html" title="6" alt="" coords="750,143,760,158"/>
+<area shape="rect" id="node4" href="dir_a3573c3ea19cc88b366196678c12fc40.html" title="data_recorder" alt="" coords="925,27,1037,75"/>
+<area shape="rect" id="edge9-headlabel" href="dir_000003_000010.html" title="12" alt="" coords="747,134,764,149"/>
+<area shape="rect" id="node5" href="dir_8d97a20ef9145ef885451e3ab3a8b98a.html" title="model_loader" alt="" coords="790,27,901,75"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000004_000010.html" title="3" alt="" coords="751,112,760,127"/>
+<area shape="rect" id="node6" href="dir_05357569cd7c13800d1229ab1b1fe5d3.html" title="module_installer" alt="" coords="635,27,765,75"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000005_000010.html" title="2" alt="" coords="704,97,713,112"/>
+<area shape="rect" id="node7" href="dir_a8c1ad62a857da1cc2eca373515ec812.html" title="oscilloscope" alt="" coords="507,27,610,75"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000006_000010.html" title="14" alt="" coords="646,98,663,113"/>
+<area shape="rect" id="node8" href="dir_d5d2d3db5efb2c5a2049ddb68d287043.html" title="performance_measurement" alt="" coords="280,27,483,75"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000007_000010.html" title="6" alt="" coords="644,114,654,129"/>
+<area shape="rect" id="node9" href="dir_804a021f6dc8810f61c20859c31ee26b.html" title="system_control" alt="" coords="133,27,256,75"/>
+<area shape="rect" id="edge5-headlabel" href="dir_000008_000010.html" title="9" alt="" coords="642,127,651,142"/>
+<area shape="rect" id="node10" href="dir_b9384ce969aea4f14751b6ee9a607aa6.html" title="userprefs" alt="" coords="27,27,109,75"/>
+<area shape="rect" id="edge6-headlabel" href="dir_000009_000010.html" title="4" alt="" coords="642,127,651,142"/>
+<area shape="rect" id="clust1" href="dir_38c8d24aef3972a7f87b834274e76e31.html" alt="" coords="16,16,1404,85"/>
+</map>

@@ -108,7 +108,7 @@ module.exports = function(grunt) {
      */
     shell: {
       build: {
-        command: 'bundle exec jekyll build --future --quiet' 
+        command: 'bundle exec jekyll build' 
       },
       serve: {
         command: 'bundle exec jekyll --future serve'

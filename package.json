@@ -37,6 +37,8 @@
     "hoek": "^5.0.4"
   },
   "dependencies": {
+    "bower": "^1.8.14",
+    "grunt-cli": "^1.4.3",
     "lodash": "^4.17.21"
   }
 }

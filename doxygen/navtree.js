@@ -1,68 +1,28 @@
-var NAVTREE =
-[
-  [ "RTXI", "index.html", [
-    [ "Namespaces", null, [
-      [ "Namespace List", "namespaces.html", "namespaces" ],
-      [ "Namespace Members", "namespacemembers.html", [
-        [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ],
-        [ "Variables", "namespacemembers_vars.html", null ],
-        [ "Typedefs", "namespacemembers_type.html", null ],
-        [ "Enumerations", "namespacemembers_enum.html", null ],
-        [ "Enumerator", "namespacemembers_eval.html", null ]
-      ] ]
-    ] ],
-    [ "Classes", null, [
-      [ "Class List", "annotated.html", "annotated" ],
-      [ "Class Index", "classes.html", null ],
-      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
-      [ "Class Members", "functions.html", [
-        [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", "functions_vars" ],
-        [ "Typedefs", "functions_type.html", null ],
-        [ "Enumerations", "functions_enum.html", null ],
-        [ "Enumerator", "functions_eval.html", null ],
-        [ "Related Functions", "functions_rela.html", null ]
-      ] ]
-    ] ],
-    [ "Files", null, [
-      [ "File List", "files.html", "files" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", "globals_dup" ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
-        [ "Typedefs", "globals_type.html", null ],
-        [ "Enumerations", "globals_enum.html", null ],
-        [ "Enumerator", "globals_eval.html", null ],
-        [ "Macros", "globals_defs.html", null ]
-      ] ]
-    ] ]
-  ] ]
-];
+/*
+ @licstart  The following is the entire license notice for the
+ JavaScript code in this file.
 
-var NAVTREEINDEX =
-[
-"abstmath_8cpp.html",
-"class_analogy_device.html#af1fcebd96d8e330ad250b36e255b16be",
-"class_d_a_q_1_1_device.html#a453f92373b20d8eb029a9a90e0c2abd6",
-"class_event_1_1_object.html#a5dfebc07c47c4bb49aa0ce8751fa7997",
-"class_generator_zap.html#a4585bdb5a489c942b92317a087e7551c",
-"class_main_window.html#ad9882772b8a1f84f5d0ec95a1c573062",
-"class_r_t_1_1_device.html",
-"class_scope.html#a16e2f13d53fe3c49889b16fe07259f30",
-"class_system_control_panel.html",
-"dan__pdgm_8h.html",
-"functions_func_r.html",
-"main__window_8cpp_source.html",
-"namespace_r_t.html",
-"singletonvector.html#a5656f651d8ac65af8e2c96587f65753d",
-"structqt__meta__stringdata___qwt_designer_plugin_____thermo_interface__t.html#a8d60483329456437947b774846573b8c"
-];
+ Copyright (C) 1997-2019 by Dimitri van Heesch
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of version 2 of the GNU General Public License as 
+ published by the Free Software Foundation.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License along
+ with this program; if not, write to the Free Software Foundation, Inc.,
+ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+ @licend  The above is the entire license notice
+ for the JavaScript code in this file
+ */
 var navTreeSubIndices = new Array();
+var arrowDown = '&#9660;';
+var arrowRight = '&#9658;';
 
 function getData(varName)
 {
@@ -109,7 +69,6 @@ function localStorageSupported()
   }
 }
 
-
 function storeLink(link)
 {
   if (!$("#nav-sync").hasClass('sync') && localStorageSupported()) {
@@ -135,21 +94,13 @@ function cachedLink()
 
 function getScript(scriptName,func,show)
 {
-  var head = document.getElementsByTagName("head")[0]; 
+  var head = document.getElementsByTagName("head")[0];
   var script = document.createElement('script');
   script.id = scriptName;
   script.type = 'text/javascript';
-  script.onload = func; 
-  script.src = scriptName+'.js'; 
-  if ($.browser.msie && $.browser.version<=8) { 
-    // script.onload does not work with older versions of IE
-    script.onreadystatechange = function() {
-      if (script.readyState=='complete' || script.readyState=='loaded') { 
-        func(); if (show) showRoot(); 
-      }
-    }
-  }
-  head.appendChild(script); 
+  script.onload = func;
+  script.src = scriptName+'.js';
+  head.appendChild(script);
 }
 
 function createIndent(o,domNode,node,level)
@@ -158,18 +109,17 @@ function createIndent(o,domNode,node,level)
   var n = node;
   while (n.parentNode) { level++; n=n.parentNode; }
   if (node.childrenData) {
-    var imgNode = document.createElement("img");
+    var imgNode = document.createElement("span");
+    imgNode.className = 'arrow';
     imgNode.style.paddingLeft=(16*level).toString()+'px';
-    imgNode.width  = 16;
-    imgNode.height = 22;
-    imgNode.border = 0;
+    imgNode.innerHTML=arrowRight;
     node.plus_img = imgNode;
     node.expandToggle = document.createElement("a");
     node.expandToggle.href = "javascript:void(0)";
     node.expandToggle.onclick = function() {
       if (node.expanded) {
         $(node.getChildrenUL()).slideUp("fast");
-        node.plus_img.src = node.relpath+"ftv2pnode.png";
+        node.plus_img.innerHTML=arrowRight;
         node.expanded = false;
       } else {
         expandNode(o, node, false, false);
@@ -177,15 +127,13 @@ function createIndent(o,domNode,node,level)
     }
     node.expandToggle.appendChild(imgNode);
     domNode.appendChild(node.expandToggle);
-    imgNode.src = node.relpath+"ftv2pnode.png";
   } else {
     var span = document.createElement("span");
-    span.style.display = 'inline-block';
+    span.className = 'arrow';
     span.style.width   = 16*(level+1)+'px';
-    span.style.height  = '22px';
     span.innerHTML = '&#160;';
     domNode.appendChild(span);
-  } 
+  }
 }
 
 var animationInProgress = false;
@@ -195,6 +143,7 @@ function gotoAnchor(anchor,aname,updateLocation)
   var pos, docContent = $('#doc-content');
   var ancParent = $(anchor.parent());
   if (ancParent.hasClass('memItemLeft') ||
+      ancParent.hasClass('memtitle') ||
       ancParent.hasClass('fieldname') ||
       ancParent.hasClass('fieldtype') ||
       ancParent.is(':header'))
@@ -259,7 +208,7 @@ function newNode(o, po, text, link, childrenData, lastNode)
       var aname = '#'+link.split('#')[1];
       var srcPage = stripPath(pathName());
       var targetPage = stripPath(link.split('#')[0]);
-      a.href = srcPage!=targetPage ? url : "javascript:void(0)"; 
+      a.href = srcPage!=targetPage ? url : "javascript:void(0)";
       a.onclick = function(){
         storeLink(link);
         if (!$(a).parent().parent().hasClass('selected'))
@@ -277,7 +226,7 @@ function newNode(o, po, text, link, childrenData, lastNode)
       a.onclick = function() { storeLink(link); }
     }
   } else {
-    if (childrenData != null) 
+    if (childrenData != null)
     {
       a.className = "nolink";
       a.href = "javascript:void(0)";
@@ -307,7 +256,7 @@ function showRoot()
   (function (){ // retry until we can scroll to the selected item
     try {
       var navtree=$('#nav-tree');
-      navtree.scrollTo('#selected',0,{offset:-windowHeight/2});
+      navtree.scrollTo('#selected',100,{offset:-windowHeight/2});
     } catch (err) {
       setTimeout(arguments.callee, 0);
     }
@@ -326,17 +275,9 @@ function expandNode(o, node, imm, showRoot)
     } else {
       if (!node.childrenVisited) {
         getNode(o, node);
-      } if (imm || ($.browser.msie && $.browser.version>8)) { 
-        // somehow slideDown jumps to the start of tree for IE9 :-(
-        $(node.getChildrenUL()).show();
-      } else {
-        $(node.getChildrenUL()).slideDown("fast");
       }
-      if (node.isLast) {
-        node.plus_img.src = node.relpath+"ftv2mlastnode.png";
-      } else {
-        node.plus_img.src = node.relpath+"ftv2mnode.png";
-      }
+      $(node.getChildrenUL()).slideDown("fast");
+      node.plus_img.innerHTML = arrowDown;
       node.expanded = true;
     }
   }
@@ -365,7 +306,6 @@ function highlightAnchor()
   } else {
     glowEffect(anchor.next(),1000); // normal member
   }
-  gotoAnchor(anchor,aname,false);
 }
 
 function selectAndHighlight(hash,n)
@@ -405,11 +345,7 @@ function showNode(o, node, index, hash)
         getNode(o, node);
       }
       $(node.getChildrenUL()).css({'display':'block'});
-      if (node.isLast) {
-        node.plus_img.src = node.relpath+"ftv2mlastnode.png";
-      } else {
-        node.plus_img.src = node.relpath+"ftv2mnode.png";
-      }
+      node.plus_img.innerHTML = arrowDown;
       node.expanded = true;
       var n = node.children[o.breadcrumbs[index]];
       if (index+1<o.breadcrumbs.length) {
@@ -531,6 +467,18 @@ function toggleSyncButton(relpath)
   }
 }
 
+var loadTriggered = false;
+var readyTriggered = false;
+var loadObject,loadToRoot,loadUrl,loadRelPath;
+
+$(window).on('load',function(){
+  if (readyTriggered) { // ready first
+    navTo(loadObject,loadToRoot,loadUrl,loadRelPath);
+    showRoot();
+  }
+  loadTriggered=true;
+});
+
 function initNavTree(toroot,relpath)
 {
   var o = new Object();
@@ -546,10 +494,9 @@ function initNavTree(toroot,relpath)
   o.node.relpath = relpath;
   o.node.expanded = false;
   o.node.isLast = true;
-  o.node.plus_img = document.createElement("img");
-  o.node.plus_img.src = relpath+"ftv2pnode.png";
-  o.node.plus_img.width = 16;
-  o.node.plus_img.height = 22;
+  o.node.plus_img = document.createElement("span");
+  o.node.plus_img.className = 'arrow';
+  o.node.plus_img.innerHTML = arrowRight;
 
   if (localStorageSupported()) {
     var navSync = $('#nav-sync');
@@ -562,10 +509,16 @@ function initNavTree(toroot,relpath)
     navSync.click(function(){ toggleSyncButton(relpath); });
   }
 
-  $(window).load(function(){
+  if (loadTriggered) { // load before ready
     navTo(o,toroot,hashUrl(),relpath);
     showRoot();
-  });
+  } else { // ready before load
+    loadObject  = o;
+    loadToRoot  = toroot;
+    loadUrl     = hashUrl();
+    loadRelPath = relpath;
+    readyTriggered=true;
+  }
 
   $(window).bind('hashchange', function(){
      if (window.location.hash && window.location.hash.length>1){
@@ -588,4 +541,4 @@ function initNavTree(toroot,relpath)
      }
   })
 }
-
+/* @license-end */

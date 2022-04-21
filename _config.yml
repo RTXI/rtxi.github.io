@@ -22,7 +22,7 @@ developers:
    where: SUNY Downstate 
    url: https://github.com/fusge
 
-gems:
+plugins:
  - jekyll-sitemap
  - jekyll-redirect-from
  - jekyll-paginate
@@ -45,6 +45,7 @@ exclude:
  - "bower.json"
  - "bower_components"
  - ".gitignore"
+ - "vendor/"
 
 include: 
  - '.nojekyll'

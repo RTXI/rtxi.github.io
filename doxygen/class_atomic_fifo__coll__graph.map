@@ -1,0 +1,3 @@
+<map id="AtomicFifo" name="AtomicFifo">
+<area shape="rect" id="node1" title="Lockfree SINGLE producer / SINGLE consumer FIFO." alt="" coords="5,5,132,141"/>
+</map>

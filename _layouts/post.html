@@ -28,7 +28,7 @@
     <meta property="article:section" content="{{ page.category }}">
     <meta property="article:tag" content="{{ page.tags }}" >
 
-    <title>{{ page.title || truncate:50 }} | {{ site.tagline }}</title>
+    <title>{{ page.title | truncate:50 }} | {{ site.tagline }}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/assets/css/default.min.css" rel="stylesheet">

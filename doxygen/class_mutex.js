@@ -9,6 +9,5 @@ var class_mutex =
     [ "~Mutex", "class_mutex.html#a115e8bae072b7d0767f75bc3369d521d", null ],
     [ "lock", "class_mutex.html#a9ffca34cfbee2268698fcc50600ebca2", null ],
     [ "tryLock", "class_mutex.html#a69702e86e24cbb72cb144a626bae07bb", null ],
-    [ "unlock", "class_mutex.html#a4cbd5ed3927a721480a2ec4fd8cbc24d", null ],
-    [ "mutex", "class_mutex.html#a8feb0b01916c1feedd1f0c0dcd74081b", null ]
+    [ "unlock", "class_mutex.html#a4cbd5ed3927a721480a2ec4fd8cbc24d", null ]
 ];

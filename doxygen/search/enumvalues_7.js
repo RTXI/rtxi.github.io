@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['modify',['MODIFY',['../class_default_g_u_i_model.html#aa0405d1dceb86b5b4e328fe3cfc62e22a1b8701f272e8ab668b0f16bce66b7d87',1,'DefaultGUIModel']]]
+  ['neg_1280',['NEG',['../class_scope.html#a81ec41648ec61c46eda90e98b96626cbad43e0610f9dac53dee9c627fe81f6a35',1,'Scope']]],
+  ['none_1281',['NONE',['../class_scope.html#a81ec41648ec61c46eda90e98b96626cba4043aecef7eef0abe18992d19b787b85',1,'Scope']]]
 ];

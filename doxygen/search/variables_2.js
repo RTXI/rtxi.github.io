@@ -1,22 +1,9 @@
 var searchData=
 [
-  ['b_5fbiquad_5fcoef',['B_Biquad_Coef',['../class_filter_trans_func.html#a93119894c7e47f950b8d0cc67d39a51d',1,'FilterTransFunc']]],
-  ['b_5fcoef',['B_Coef',['../class_analog_all_pole_filt.html#a792acd398c92b722c9fca629ccd22952',1,'AnalogAllPoleFilt::B_Coef()'],['../class_analog_pole_zero_filter.html#abf3ade312ae4f20743c6ca938aaf95c6',1,'AnalogPoleZeroFilter::B_Coef()']]],
-  ['b_5fcoeffs',['B_Coeffs',['../class_arma_process.html#a224abb605507eb7007189cd882f2cea7',1,'ArmaProcess::B_Coeffs()'],['../class_ma_process.html#af5e2265c1c242e73e105f1a36f9ef1e3',1,'MaProcess::B_Coeffs()']]],
-  ['band_5fconfig',['Band_Config',['../class_freq_samp_filter_design.html#a7926fb5f780b331923f1677a0ab9ba4b',1,'FreqSampFilterDesign::Band_Config()'],['../class_freq_samp_filter_response.html#ac1a63d758197f2f1f3f57ecf03f1293d',1,'FreqSampFilterResponse::Band_Config()'],['../class_freq_samp_filter_spec.html#a96bfd2a1899be833e46bb7fee572befd',1,'FreqSampFilterSpec::Band_Config()'],['../class_linear_phase_fir_design.html#a2676facf7f381320160a9549380ff748',1,'LinearPhaseFirDesign::Band_Config()']]],
-  ['beta_5f',['Beta_',['../class_remez_algorithm.html#a8dbc7e888e7a3e82ef1f4f9f91895528',1,'RemezAlgorithm']]],
-  ['big_5fm',['Big_M',['../class_cpfsk_spectrum.html#ac5ae41acf6d7cb2ba611a97f64ad76f6',1,'CpfskSpectrum']]],
-  ['big_5ft',['Big_T',['../class_cpfsk_spectrum.html#a4f6d9c623fc69511596a0f5609595391',1,'CpfskSpectrum']]],
-  ['block',['block',['../class_data_recorder_1_1_channel.html#a7c15cd835e77ed1196ef8cf8b03264ec',1,'DataRecorder::Channel::block()'],['../struct_i_o_1_1_block_1_1link__t.html#a5070ee16693a8fef79d29baf42aa51b3',1,'IO::Block::link_t::block()']]],
-  ['blocklist',['blockList',['../class_data_recorder_1_1_panel.html#ab80fd04f878a6f3ca6810cbb3a4b89e6',1,'DataRecorder::Panel::blockList()'],['../structblock__list__info__t.html#a29165bc9ae0384193d92f64f7a2eb309',1,'block_list_info_t::blockList()'],['../class_i_o_1_1_connector.html#a59d8dffa42d846761ba67e20c7bea7f5',1,'IO::Connector::blockList()']]],
-  ['blocklist0',['blockList0',['../structblock__list__info__t.html#add66e567d3bbc1cf9b66c507035c735b',1,'block_list_info_t']]],
-  ['blocklist1',['blockList1',['../structblock__list__info__t.html#ac57a3b21fbd83e5e42aa9f114a2ef5a2',1,'block_list_info_t']]],
-  ['blockptrlist',['blockPtrList',['../class_data_recorder_1_1_panel.html#a5393274a86500f81a494c628c6008d73',1,'DataRecorder::Panel']]],
-  ['blocks',['blocks',['../structblock__list__info__t.html#a73f93b02d12374b746c85acb237b676d',1,'block_list_info_t::blocks()'],['../class_connector_1_1_panel.html#a95dabe24df1f65210505d1d9b2509cec',1,'Connector::Panel::blocks()'],['../class_oscilloscope_1_1_panel.html#af7f74f57a0c8f4ad6a0fbc6889d9fe7b',1,'Oscilloscope::Panel::blocks()']]],
-  ['blockslist',['blocksList',['../class_oscilloscope_1_1_panel.html#a749a199227fe14e87943c8a3554200dc',1,'Oscilloscope::Panel']]],
-  ['buffer',['Buffer',['../class_learning_curve.html#a58e9bc045a9766d68da23b95b89af8c4',1,'LearningCurve']]],
-  ['buffersize',['buffersize',['../class_data_recorder_1_1_plugin.html#ae74e5874b98eb21e493aadc8cf63badd',1,'DataRecorder::Plugin']]],
-  ['button_5fmode',['button_mode',['../class_r_t_x_i_wizard_1_1_panel.html#ad6244852b69e3f649844560b776a5eae',1,'RTXIWizard::Panel']]],
-  ['buttongroup',['buttonGroup',['../class_connector_1_1_panel.html#aff6d7802e584a3ff930d50dddad60e3b',1,'Connector::Panel::buttonGroup()'],['../class_data_recorder_1_1_panel.html#a93adebc5e5eff0c42ae79ab3249ff647',1,'DataRecorder::Panel::buttonGroup()'],['../class_system_control_panel.html#a45cb9616f53d1e7f6fdee101a27a3ba0',1,'SystemControlPanel::buttonGroup()'],['../class_default_g_u_i_model.html#aac41904f026998371550a974a909c5ba',1,'DefaultGUIModel::buttonGroup()']]],
-  ['buttons',['buttons',['../class_user_prefs_1_1_panel.html#a3dcafcb9327a0bea4c6255834814dad5',1,'UserPrefs::Panel']]]
+  ['cerr_5fbuffer_1147',['cerr_buffer',['../class_d_a_q_manager_test.html#a7881acd8f55c1dde4c412be0534b8334',1,'DAQManagerTest']]],
+  ['cerr_5foriginal_5fbuffer_1148',['cerr_original_buffer',['../class_d_a_q_manager_test.html#a38d87a6c6c0cad2467fde69cc5bf67e8',1,'DAQManagerTest']]],
+  ['clone_5furl_1149',['clone_url',['../struct_r_t_x_i_wizard_1_1_panel_1_1module__t.html#a2721d8e48c7d81325afe01777142a23f',1,'RTXIWizard::Panel::module_t']]],
+  ['comment_1150',['COMMENT',['../class_default_g_u_i_model.html#af532497b87b51004314833e79b6f5294',1,'DefaultGUIModel']]],
+  ['config_5ffile_1151',['config_file',['../structcli__options__t.html#a096029a37f5faaaabece848343495169',1,'cli_options_t']]],
+  ['connector_1152',['connector',['../class_i_o_connector_test.html#acd9c0f0863008cf4c81801045f8cd322',1,'IOConnectorTest']]]
 ];

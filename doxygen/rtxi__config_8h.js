@@ -1,6 +1,6 @@
 var rtxi__config_8h =
 [
-    [ "HAVE_BOOST", "rtxi__config_8h.html#a1644f282a4f84575a270f96b98d4f3c6", null ],
+    [ "HAVE_CXX17", "rtxi__config_8h.html#a88edf98b6b270a8e6fbc057c86ca4ba2", null ],
     [ "HAVE_DLFCN_H", "rtxi__config_8h.html#a0ee1617ff2f6885ef384a3dd46f9b9d7", null ],
     [ "HAVE_INTTYPES_H", "rtxi__config_8h.html#ab90a030ff2790ebdc176660a6dd2a478", null ],
     [ "HAVE_LIBDL", "rtxi__config_8h.html#a2a94a915864f604ddd00fb9272c8c0f4", null ],

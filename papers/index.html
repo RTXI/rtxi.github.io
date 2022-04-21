@@ -44,10 +44,10 @@ extra_js: "
     });
 
     $('.btn-toolbar').each( function( i, buttonGroup ) {
-      var $buttonGroup = $( buttonGroup );
-      $buttonGroup.on( 'click', 'button', function() {
+      var $buttonGroup = $(buttonGroup);
+      $buttonGroup.on('click', 'button', function() {
         $buttonGroup.find('.active').removeClass('active');
-        $( this ).addClass('active');
+        $(this).addClass('active');
       });
     });
   });
