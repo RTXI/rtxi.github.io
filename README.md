@@ -10,6 +10,18 @@ dependencies:
 ```term
 sudo apt-get install nodejs ruby ruby-dev imagemagick libmagickwand-dev npm curl
 ```
+Next, you need to install the website's dependencies. This is done in the
+website directory. Clone the website and switch to the 'build' branch:  
+```term
+git clone https://github.com/rtxi/rtxi.github.io website
+cd website
+git checkout build
+```
+The reason you need to switch to the `build` branch is because GitHub, the host
+for this website, does not allow people to run custom plugins on their servers.
+(It's a security concern.) The plugin in `_plugins` pulls all the README.md
+files from all our repos and turns them into HTML pages found on the [modules
+page](http://rtxi.org/modules).  
 
 Ruby is used for all the gems you need to use Jekyll to build the site. You can
 use the default version for your OS.
@@ -18,7 +30,6 @@ Now, you'll need to install the bundler gem:
 ```term
 gem install bundler --user-install
 ```
-
 Bundler is a gem that allows you to install, manage, and update ruby gems for
 individual projects. You'll use it to install all the gems used to build the
 site (see the Gemfile and Gemfile.lock files in this repository.)
@@ -43,23 +54,22 @@ Grunt is a command-line tool that runs commands set in Gruntfile.js. It's the
 tool that allows you to build the site, install depencencies, update
 CSS/JS/Less, etc. fromt the command line. More detail will come later.  
 
-Now, you need to install the website's dependencies. This is done in the
-website directory. Clone the website and switch to the 'build' branch:  
-```term
-git clone https://github.com/rtxi/rtxi.github.io website
-cd website
-git checkout build
-```
-The reason you need to switch to the `build` branch is because GitHub, the host
-for this website, does not allow people to run custom plugins on their servers.
-(It's a security concern.) The plugin in `_plugins` pulls all the README.md
-files from all our repos and turns them into HTML pages found on the [modules
-page](http://rtxi.org/modules).  
-
 Basically, we have to run the plugin, generate the site, and then push the
 generated site to GitHub. The `build` branch is the branch where all content is
-edited, and the `master` branch is where the generated content (in the _site
+edited, and the `master` branch is where the generated content (in the \_site
 folder) is pushed to GitHub.
+
+Before we run our commands however, we need to tell our shell to use the local
+version of the commands we installed with npm. add the following to your .bashrc
+located in your home directory
+```term
+if which ruby >/dev/null && which gem >/dev/null; then
+    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+```
+After you edit the file, make sure to close your shell and reopen it for the changes
+to take effect. You only ever have to do this once. for consecutive builds the
+previous steps can be skipped.
 
 Initialize the site with the files you'll need, update them, and then build the
 site:  
