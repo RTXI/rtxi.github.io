@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['begin_24',['begin',['../class_r_t_1_1_list.html#a65244c404843926445971cac844506e0',1,'RT::List::begin(void)'],['../class_r_t_1_1_list.html#a412559a4c040291d40a88ef3b6a31e88',1,'RT::List::begin(void) const']]],
-  ['blacken_25',['blacken',['../class_default_g_u_i_line_edit.html#a35e8ef9d78916c8efc0208431d8c1d3b',1,'DefaultGUILineEdit']]],
-  ['block_26',['Block',['../class_i_o_1_1_block.html',1,'IO::Block'],['../class_i_o_block_test.html#a93e96132ee88ed5974d1043c6cf729a7',1,'IOBlockTest::block()'],['../class_i_o_1_1_connector.html#ac2af81cbc457d21a00f09f5e7e5c4ddf',1,'IO::Connector::Block()'],['../class_i_o_1_1_block.html#a5da4534c5f64eedba3b3ee41cce32796',1,'IO::Block::Block()']]],
-  ['block_5flist_5finfo_5ft_27',['block_list_info_t',['../structblock__list__info__t.html',1,'']]],
-  ['blocklist_28',['blockList',['../structblock__list__info__t.html#a29165bc9ae0384193d92f64f7a2eb309',1,'block_list_info_t']]],
-  ['blocklist0_29',['blockList0',['../structblock__list__info__t.html#add66e567d3bbc1cf9b66c507035c735b',1,'block_list_info_t']]],
-  ['blocklist1_30',['blockList1',['../structblock__list__info__t.html#ac57a3b21fbd83e5e42aa9f114a2ef5a2',1,'block_list_info_t']]],
-  ['blocks_31',['blocks',['../structblock__list__info__t.html#a73f93b02d12374b746c85acb237b676d',1,'block_list_info_t']]]
+  ['black_22',['Black',['../namespace_oscilloscope_1_1_color_i_d.html#accb93222dff7b4316a1a0761043bb432aba0a75675c4f706ca469df526729e21c',1,'Oscilloscope::ColorID']]],
+  ['blacken_23',['blacken',['../class_widgets_1_1_default_g_u_i_line_edit.html#abd32c5d94474916db1053141c6e62e31',1,'Widgets::DefaultGUILineEdit']]],
+  ['block_24',['block',['../struct_i_o_1_1endpoint.html#a3ca354f3706c27a8af3fc28631f3a1cd',1,'IO::endpoint']]],
+  ['block_25',['Block',['../class_i_o_1_1_block.html#a52c8e51738a1a908f0a87ecf36c92029',1,'IO::Block::Block(std::string blockname, const std::vector&lt; channel_t &gt; &amp;channels, bool isdependent)'],['../class_i_o_1_1_block.html#a47755ed0c8cca24cab86b93ad19aefa0',1,'IO::Block::Block(const Block &amp;block)=default'],['../class_i_o_1_1_block.html#aba8cfd1b7e0fd9ce86ed093c22e03369',1,'IO::Block::Block(Block &amp;&amp;)=delete'],['../class_i_o_1_1_block.html',1,'IO::Block']]],
+  ['block_5fconnection_5ft_26',['block_connection_t',['../namespace_r_t.html#a05bb1f0c79eebacb62fbfb4365bdfd93',1,'RT::block_connection_t()'],['../struct_r_t_1_1block__connection__t.html',1,'RT::block_connection_t']]],
+  ['blue_27',['Blue',['../namespace_oscilloscope_1_1_color_i_d.html#accb93222dff7b4316a1a0761043bb432a46aa7d3a4cb8ece85a8b258655ffbd97',1,'Oscilloscope::ColorID']]],
+  ['buffer_5ffd_28',['buffer_fd',['../class_r_t_1_1_o_s_1_1evl_fifo.html#a252f83526bc7125c1a4b8c2396d49986',1,'RT::OS::evlFifo::buffer_fd()'],['../class_r_t_1_1_o_s_1_1xenomai_fifo.html#a9fca3f516e390275e5434667f6406bc2',1,'RT::OS::xenomaiFifo::buffer_fd()']]]
 ];

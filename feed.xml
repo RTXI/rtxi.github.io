@@ -7,23 +7,37 @@
     <atom:link href="http://rtxi.org/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>RTXI 2.4 Release</title>
-        <description>&lt;p&gt;A new version of RTXI is now available!&lt;/p&gt;
+        <title>RTXI 3.0.0 Released!</title>
+        <description>&lt;p&gt;RTXI v3.0.0 is now available&lt;/p&gt;
 
-&lt;p&gt;New features include:&lt;/p&gt;
+&lt;p&gt;This release modernizes RTXI architecture and leverages newer techniques on performance and maintainability patterns.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Support for New Linux LTS Base&lt;/strong&gt;: Now RTXI 2.4 can be isntalled on Ubuntu 22.04 LTS.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Genicam Camera Support&lt;/strong&gt;: RTXI now has a module interface genicam-camera module that can interact with network cameras. These cameras must conform to the Genicam standard in order for them to be discoverable by the module.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Improvements Module Wizard&lt;/strong&gt;: Stability and reliability improvements to the module installer&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Minor Bug fixes&lt;/strong&gt;: for improved stability and accuracy of workspace operation&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;The need for these updates originates primarily from the difficulty of updating RTXI 2.4 to the new Xenomai API, as well as the unfortunate news that the Analogy drivers used for hardware access would not be supported any longer under Xenomai. These and other architectural issues made it necessary to apply the lessons learned from years of use to improve software architecture and flexibility. This update relies on proven methods, and uses existing code to create a modern RTXI application. Some of the changes introduced:
+New Functionality&lt;/p&gt;
 
-&lt;p&gt;You can download the newest version &lt;a href=&quot;https://github.com/RTXI/rtxi&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- New abstractions that reduces user and developer cognitive load
+- Introduces a new scheduler and connector classes for faster and more accurate plugin real-time scheduling
+- A redesign of the event system to have stronger typing and safer abstractions
+- Support for the newest Xenomai framework now called EVL
+- Introduction of new DAQ driver model to support non Analogy devices
+- Support for National Instruments DAQ PCIe devices
+- Introduction of the Real-Time Platform Abstraction Layer (RTPAL) for non Xenomai real-time support
+- Automatic driver and real-time platform detection scheme for ease of use
+- Central logging system to capture events fired by RTXI components and plugins
+- Retire the DefaultGuiModel classes and introduction of the widget classes (plugin, component, and panel)
+- Migration from autotools build system to cmake
+- Update to installation instructions for both main RTXI components and DSO plugins
+- Major updates to the builtin plugins such as data recorder and oscilloscope
+- and many more
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can download the new version at the repository and run the install_rtxi.sh script. Test it out and let us know what you think.&lt;/p&gt;
+
+&lt;p&gt;Happy sciencing!&lt;/p&gt;
 </description>
-        <pubDate>Thu, 15 Dec 2022 00:00:00 -0500</pubDate>
-        <link>http://rtxi.org//news/2022/12/15/rtxi-24-release/</link>
-        <guid isPermaLink="true">http://rtxi.org//news/2022/12/15/rtxi-24-release/</guid>
+        <pubDate>Thu, 30 Nov 2023 00:00:00 -0500</pubDate>
+        <link>http://rtxi.org//news/2023/11/30/rtxi-300-released/</link>
+        <guid isPermaLink="true">http://rtxi.org//news/2023/11/30/rtxi-300-released/</guid>
       </item>
     
       <item>

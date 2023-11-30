@@ -1,10 +1,4 @@
 <map id="ModelLoader::ModelLoader" name="ModelLoader::ModelLoader">
-<area shape="rect" id="node1" title=" " alt="" coords="5,123,204,149"/>
-<area shape="rect" id="node2" href="$class_main_window.html#a4a0dc1f1a4436865cdcb480a56145424" title=" " alt="" coords="252,5,495,32"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a29fc86ab36371760847d75bcf4002b9e" title=" " alt="" coords="272,57,475,98"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a3e075a7e13be0cd37c49c333eda969a5" title=" " alt="" coords="278,123,469,149"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a7933544c4d0d6b2c14d24a5cb5927e9e" title=" " alt="" coords="274,174,473,215"/>
-<area shape="rect" id="node6" href="$class_model_loader.html#a8c960d4ca41126d5c70979dc0de6db0a" title=" " alt="" coords="302,240,445,267"/>
-<area shape="rect" id="node7" href="$class_plugin_1_1_manager.html#a49a5d00f5601475bcaabbb05001558d1" title=" " alt="" coords="543,215,753,241"/>
-<area shape="rect" id="node8" href="$class_plugin_1_1_manager.html#a5c59097bb8df86a4720128518149e7c5" title=" " alt="" coords="567,265,729,292"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,184,32"/>
+<area shape="rect" id="node2" href="$class_model_loader.html#a8c960d4ca41126d5c70979dc0de6db0a" title=" " alt="" coords="232,5,360,32"/>
 </map>

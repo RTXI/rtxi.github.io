@@ -1,0 +1,31 @@
+<map id="Workspace::get_core_plugin_factory" name="Workspace::get_core_plugin_factory">
+<area shape="rect" id="node1" title=" " alt="" coords="5,505,151,546"/>
+<area shape="rect" id="node2" href="$namespace_connector.html#aed90c3f7c9467ba56e5015a3eb6a1d4a" title=" " alt="" coords="212,81,375,108"/>
+<area shape="rect" id="node6" href="$namespace_data_recorder.html#a4d905ca576d684eeb03da47c8805d802" title=" " alt="" coords="202,233,385,260"/>
+<area shape="rect" id="node10" href="$namespace_r_t_x_i_wizard.html#a3276e4d0bb07ca95a4ba9f117a323bce" title=" " alt="" coords="206,385,381,412"/>
+<area shape="rect" id="node14" href="$namespace_oscilloscope.html#a98028c4b64330edbc68b8c4f073a41fc" title=" " alt="" coords="205,512,382,539"/>
+<area shape="rect" id="node18" href="$namespace_performance_measurement.html#a3dc22db251d66215cfd1046f258551b8" title=" " alt="" coords="206,647,381,689"/>
+<area shape="rect" id="node22" href="$namespace_system_control.html#aa7b1d346f57cc1e8de3353aeb4fdbf11" title=" " alt="" coords="199,836,388,863"/>
+<area shape="rect" id="node26" href="$namespace_user_prefs.html#a9b42344944bb7a5f0df84586ba32a04d" title=" " alt="" coords="213,988,374,1015"/>
+<area shape="rect" id="node3" href="$namespace_connector.html#a964ae2288841662108583cf0de8861b5" title=" " alt="" coords="449,5,673,32"/>
+<area shape="rect" id="node4" href="$namespace_connector.html#ad0ea0371509b16c6f7d1756d477f15d1" title=" " alt="" coords="466,56,657,83"/>
+<area shape="rect" id="node5" href="$namespace_connector.html#aae8f0c6a5cf3e09e440d86a956e0b4aa" title=" " alt="" coords="465,107,658,133"/>
+<area shape="rect" id="node7" href="$namespace_data_recorder.html#ab71c8299e33efe147cc50910db7641d2" title=" " alt="" coords="439,157,684,184"/>
+<area shape="rect" id="node8" href="$namespace_data_recorder.html#ad061a5efdd4633900cbd19dfcadc9d63" title=" " alt="" coords="456,208,667,235"/>
+<area shape="rect" id="node9" href="$namespace_data_recorder.html#a9efb80d45f02a15eb6ad15fa916c569c" title=" " alt="" coords="454,259,669,285"/>
+<area shape="rect" id="node11" href="$namespace_r_t_x_i_wizard.html#a9df4cb8aee2584c998827e687f5535a9" title=" " alt="" coords="443,309,679,336"/>
+<area shape="rect" id="node12" href="$namespace_r_t_x_i_wizard.html#a73318b30a6d4fbcf84debd67ddf634a5" title=" " alt="" coords="460,360,663,387"/>
+<area shape="rect" id="node13" href="$namespace_r_t_x_i_wizard.html#a5b022b1e05bbd75af3d415a3e62738a9" title=" " alt="" coords="459,411,664,437"/>
+<area shape="rect" id="node15" href="$namespace_oscilloscope.html#acc9739ca78019f1d29924c0a4a80a3a0" title=" " alt="" coords="442,461,681,488"/>
+<area shape="rect" id="node16" href="$namespace_oscilloscope.html#ae91f1ba12d1a52d23c8a208f8465bd2f" title=" " alt="" coords="459,512,664,539"/>
+<area shape="rect" id="node17" href="$namespace_oscilloscope.html#a5bd70d70ae1175fcca3ef56936f32b02" title=" " alt="" coords="457,563,665,589"/>
+<area shape="rect" id="node19" href="$namespace_performance_measurement.html#af839df65019d01cefe6373dadba241fd" title=" " alt="" coords="474,614,649,655"/>
+<area shape="rect" id="node20" href="$namespace_performance_measurement.html#ab246763a1b33c2171aa995b7b8d5b782" title=" " alt="" coords="474,679,649,721"/>
+<area shape="rect" id="node21" href="$namespace_performance_measurement.html#a447aa0a22e28d607bfdc184ad69b4c96" title=" " alt="" coords="474,745,649,786"/>
+<area shape="rect" id="node23" href="$namespace_system_control.html#ab30be1774028dc212d88e847a9697bf6" title=" " alt="" coords="436,811,687,837"/>
+<area shape="rect" id="node24" href="$namespace_system_control.html#acd5ed4d7f835fbefd6b1cf03afe3998d" title=" " alt="" coords="453,861,670,888"/>
+<area shape="rect" id="node25" href="$namespace_system_control.html#a162a28e3a5434cda3c69a73177bbe642" title=" " alt="" coords="451,912,671,939"/>
+<area shape="rect" id="node27" href="$namespace_user_prefs.html#a484c8da07f6b9823778012568e67568c" title=" " alt="" coords="450,963,673,989"/>
+<area shape="rect" id="node28" href="$namespace_user_prefs.html#a65903ecaea36e8ecf5b74b822205e1f4" title=" " alt="" coords="467,1013,656,1040"/>
+<area shape="rect" id="node29" href="$namespace_user_prefs.html#acf2d72a04db8dca5475663e87f6071cb" title=" " alt="" coords="465,1064,657,1091"/>
+</map>

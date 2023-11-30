@@ -1,29 +1,4 @@
 var searchData=
 [
-  ['const_5fiterator_267',['const_iterator',['../class_r_t_1_1_list_1_1_node.html#ac0641fb908f4e5a9e85280a5eed41faf',1,'RT::List::Node']]],
-  ['iterator_268',['iterator',['../class_r_t_1_1_list_1_1_node.html#a4e614fb972b65df3096ffa44b8a47635',1,'RT::List::Node']]],
-  ['label_269',['label',['../struct_default_g_u_i_model_1_1param__t.html#a46e5882bacd5127033ab167694ff35db',1,'DefaultGUIModel::param_t']]],
-  ['last_5fclock_5fread_270',['last_clock_read',['../rt__os-posix_8cpp.html#a32559191fc876d6f0ece1a4bf1acb0ef',1,'last_clock_read():&#160;rt_os-posix.cpp'],['../rt__os-xenomai_8cpp.html#a32559191fc876d6f0ece1a4bf1acb0ef',1,'last_clock_read():&#160;rt_os-xenomai.cpp']]],
-  ['last_5fproc_5ftime_271',['last_proc_time',['../rt__os-posix_8cpp.html#a61f329c41edea2ca072074e8fc6be3f6',1,'last_proc_time():&#160;rt_os-posix.cpp'],['../rt__os-xenomai_8cpp.html#a61f329c41edea2ca072074e8fc6be3f6',1,'last_proc_time():&#160;rt_os-xenomai.cpp']]],
-  ['last_5frt_5fclock_272',['last_rt_clock',['../rt__os-xenomai_8cpp.html#a24971961aff54474695786061b10b455',1,'rt_os-xenomai.cpp']]],
-  ['layout_273',['layout',['../class_default_g_u_i_model.html#a2e0305f99215ead50899338c53d7d8ac',1,'DefaultGUIModel']]],
-  ['legenditem_274',['LegendItem',['../class_scope_1_1_legend_item.html',1,'Scope::LegendItem'],['../class_scope_1_1_legend_item.html#a98df70b0143c15ad56093e336fc35f76',1,'Scope::LegendItem::LegendItem()']]],
-  ['likely_275',['likely',['../compiler_8h.html#a217a0bd562b98ae8c2ffce44935351e1',1,'compiler.h']]],
-  ['list_276',['List',['../class_r_t_1_1_list.html',1,'RT::List&lt; T &gt;'],['../class_r_t_1_1_list.html#a4001c23ecfd21f52137b9ffdb3f43482',1,'RT::List::List()']]],
-  ['list_3c_20datarecorder_3a_3achannel_20_3e_277',['List&lt; DataRecorder::Channel &gt;',['../class_r_t_1_1_list.html',1,'RT']]],
-  ['list_3c_20event_3a_3arthandler_20_3e_278',['List&lt; Event::RTHandler &gt;',['../class_r_t_1_1_list.html',1,'RT']]],
-  ['list_3c_20rt_3a_3adevice_20_3e_279',['List&lt; RT::Device &gt;',['../class_r_t_1_1_list.html',1,'RT']]],
-  ['list_3c_20rt_3a_3athread_20_3e_280',['List&lt; RT::Thread &gt;',['../class_r_t_1_1_list.html',1,'RT']]],
-  ['list_3c_20t_20_3e_281',['List&lt; T &gt;',['../class_r_t_1_1_list_1_1_node.html#adfa51a0eca1eba953f68ca3f65cdaa05',1,'RT::List::Node']]],
-  ['load_282',['load',['../class_plugin_1_1_manager.html#a5c59097bb8df86a4720128518149e7c5',1,'Plugin::Manager::load()'],['../class_settings_1_1_object.html#a240ce8427963c12d1bdc364035d34711',1,'Settings::Object::load()'],['../class_settings_1_1_manager.html#a5dc82735adcc579790fb461eb3c6e22f',1,'Settings::Manager::load()'],['../class_model_loader.html#a8c960d4ca41126d5c70979dc0de6db0a',1,'ModelLoader::load()']]],
-  ['loaddevice_283',['loadDevice',['../class_d_a_q_1_1_manager.html#a82e8b3a23077bc834c82642e8eaf5c8e',1,'DAQ::Manager']]],
-  ['loaddouble_284',['loadDouble',['../class_settings_1_1_object_1_1_state.html#addd9dde9cc68a1fb47579c29c31bf6c7',1,'Settings::Object::State']]],
-  ['loadinteger_285',['loadInteger',['../class_settings_1_1_object_1_1_state.html#aa387873151d98be00c06b4ca6df7fa73',1,'Settings::Object::State']]],
-  ['loadstate_286',['loadState',['../class_settings_1_1_object_1_1_state.html#a4d775ff5a6453247321cdf87d512bbab',1,'Settings::Object::State']]],
-  ['loadstring_287',['loadString',['../class_settings_1_1_object_1_1_state.html#a68352516fba86c14f8f0ccc6b6346f4b',1,'Settings::Object::State']]],
-  ['loadwindow_288',['loadWindow',['../class_main_window.html#aa0412a3f029a299e4b45c3a35bfc9e87',1,'MainWindow']]],
-  ['location_289',['location',['../struct_r_t_x_i_wizard_1_1_panel_1_1module__t.html#ac91d5989c0bcc1bdcad203af53c2caeb',1,'RTXIWizard::Panel::module_t']]],
-  ['lock_290',['lock',['../class_mutex.html#a9ffca34cfbee2268698fcc50600ebca2',1,'Mutex']]],
-  ['locker_291',['Locker',['../class_mutex_1_1_locker.html',1,'Mutex::Locker'],['../class_mutex_1_1_locker.html#ab06f52c728209d563eed0079c0bae60e',1,'Mutex::Locker::Locker()']]],
-  ['lt_5fobjdir_292',['LT_OBJDIR',['../rtxi__config_8h.html#ac2d5925d76379847dd9fc4747b061659',1,'rtxi_config.h']]]
+  ['jitter_285',['jitter',['../struct_performance_measurement_1_1performance__stats__t.html#a120d30e9e1814a21060d90e6dd035d86',1,'PerformanceMeasurement::performance_stats_t']]]
 ];

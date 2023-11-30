@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['priority_1259',['Priority',['../class_r_t_1_1_thread.html#ab988f7710073c78fcb6fd955e8e0a65f',1,'RT::Thread']]]
+  ['channel_5ft_1147',['channel_t',['../namespace_i_o.html#a6a835c8ff1672f401382ca8ceff518b9',1,'IO']]],
+  ['command_5fparam_5ft_1148',['command_param_t',['../namespace_r_t.html#a7dd60fcfc4bcb44e4f05c68e2a3e664c',1,'RT']]]
 ];

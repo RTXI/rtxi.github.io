@@ -1,14 +1,12 @@
 <map id="AnalogyDevice::doSave" name="AnalogyDevice::doSave">
-<area shape="rect" id="node1" title=" " alt="" coords="5,294,181,321"/>
-<area shape="rect" id="node2" href="$class_analogy_device.html#a438e5154b5dc19fd16ff792a31ad80ea" title=" " alt="" coords="244,5,439,47"/>
-<area shape="rect" id="node3" href="$class_analogy_device.html#ab1970ad96a72ce9551052d2e453c14b0" title=" " alt="" coords="244,71,439,112"/>
-<area shape="rect" id="node4" href="$class_analogy_device.html#a61835fe39d8e76fabe49e28ea07115fa" title=" " alt="" coords="229,137,453,163"/>
-<area shape="rect" id="node5" href="$class_analogy_device.html#a99a2d705157253c7b332c34c212c2268" title=" " alt="" coords="244,188,439,229"/>
-<area shape="rect" id="node6" href="$class_analogy_device.html#af324e16f206c65d72f9a920d094146f8" title=" " alt="" coords="244,253,439,295"/>
-<area shape="rect" id="node7" href="$class_analogy_device.html#afeda5e567f5d9cc1f9cd2f4e53effcd6" title=" " alt="" coords="244,319,439,360"/>
-<area shape="rect" id="node8" href="$class_analogy_device.html#a52c7585a23d1aa09b0a3d9cadb68181b" title=" " alt="" coords="244,384,439,425"/>
-<area shape="rect" id="node9" href="$class_analogy_device.html#aa61f8110d3a157d9c89b923439ae6d9d" title=" " alt="" coords="240,449,443,491"/>
-<area shape="rect" id="node11" href="$class_settings_1_1_object_1_1_state.html#a5940fe4c4160dd432afd177c79166493" title=" " alt="" coords="258,515,425,556"/>
-<area shape="rect" id="node12" href="$class_settings_1_1_object_1_1_state.html#a6fadc0c4c3c78e9b75109cf670cd3000" title=" " alt="" coords="258,580,425,621"/>
-<area shape="rect" id="node10" href="$class_analogy_device.html#aa0394f2996ed123562f397374f6eaa65" title=" " alt="" coords="501,449,704,491"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,229,168,255"/>
+<area shape="rect" id="node2" href="$class_analogy_device.html#a438e5154b5dc19fd16ff792a31ad80ea" title=" " alt="" coords="229,5,405,47"/>
+<area shape="rect" id="node3" href="$class_analogy_device.html#ab1970ad96a72ce9551052d2e453c14b0" title=" " alt="" coords="229,71,405,112"/>
+<area shape="rect" id="node4" href="$class_analogy_device.html#a61835fe39d8e76fabe49e28ea07115fa" title=" " alt="" coords="216,137,419,163"/>
+<area shape="rect" id="node5" href="$class_analogy_device.html#a99a2d705157253c7b332c34c212c2268" title=" " alt="" coords="229,188,405,229"/>
+<area shape="rect" id="node6" href="$class_analogy_device.html#af324e16f206c65d72f9a920d094146f8" title=" " alt="" coords="229,253,405,295"/>
+<area shape="rect" id="node7" href="$class_analogy_device.html#afeda5e567f5d9cc1f9cd2f4e53effcd6" title=" " alt="" coords="229,319,405,360"/>
+<area shape="rect" id="node8" href="$class_analogy_device.html#a52c7585a23d1aa09b0a3d9cadb68181b" title=" " alt="" coords="229,384,405,425"/>
+<area shape="rect" id="node9" href="$class_analogy_device.html#aa61f8110d3a157d9c89b923439ae6d9d" title=" " alt="" coords="225,449,409,491"/>
+<area shape="rect" id="node10" href="$class_analogy_device.html#aa0394f2996ed123562f397374f6eaa65" title=" " alt="" coords="467,449,651,491"/>
 </map>

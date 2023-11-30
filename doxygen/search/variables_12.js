@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['wakeup_5ft_1254',['wakeup_t',['../structxenomai__task__t.html#a3202b750a88ae973d8822f068afde8cb',1,'xenomai_task_t']]],
-  ['workspace_5fparameter_5fchange_5fevent_1255',['WORKSPACE_PARAMETER_CHANGE_EVENT',['../namespace_event.html#a89ca78aa4511b5c2cbc26d729348c651',1,'Event']]]
+  ['units_5findex_1137',['units_index',['../structphysical__channel__t.html#ad3e950d5b6485219a485858241a0549b',1,'physical_channel_t']]]
 ];

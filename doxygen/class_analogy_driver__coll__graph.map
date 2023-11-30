@@ -1,6 +1,5 @@
 <map id="AnalogyDriver" name="AnalogyDriver">
-<area shape="rect" id="node1" title=" " alt="" coords="66,417,217,553"/>
-<area shape="rect" id="node2" href="$class_plugin_1_1_object.html" title=" " alt="" coords="11,248,125,369"/>
-<area shape="rect" id="node3" href="$class_settings_1_1_object.html" title=" " alt="" coords="5,5,131,200"/>
-<area shape="rect" id="node4" href="$class_d_a_q_1_1_driver.html" title=" " alt="" coords="149,255,283,362"/>
+<area shape="rect" id="node1" title=" " alt="" coords="62,263,194,399"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,71,109,149"/>
+<area shape="rect" id="node3" href="$class_d_a_q_1_1_driver.html" title=" " alt="" coords="133,5,264,215"/>
 </map>

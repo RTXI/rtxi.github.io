@@ -1,6 +1,5 @@
 <map id="DataRecorder::Plugin" name="DataRecorder::Plugin">
-<area shape="rect" id="node1" title=" " alt="" coords="5,417,219,553"/>
-<area shape="rect" id="node2" title=" " alt="" coords="16,270,91,347"/>
-<area shape="rect" id="node3" href="$class_plugin_1_1_object.html" title=" " alt="" coords="115,248,229,369"/>
-<area shape="rect" id="node4" href="$class_settings_1_1_object.html" title=" " alt="" coords="109,5,235,200"/>
+<area shape="rect" id="node1" title=" " alt="" coords="33,549,180,773"/>
+<area shape="rect" id="node2" href="$class_widgets_1_1_plugin.html" title=" " alt="" coords="5,219,208,501"/>
+<area shape="rect" id="node3" href="$class_event_1_1_handler.html" title=" " alt="" coords="47,5,166,171"/>
 </map>

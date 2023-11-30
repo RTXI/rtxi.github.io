@@ -1,19 +1,8 @@
 var searchData=
 [
-  ['handler_221',['Handler',['../class_event_1_1_handler.html',1,'Event::Handler'],['../class_event_1_1_manager.html#a814a99fe9f92ee19167a82c9113c8c48',1,'Event::Manager::Handler()'],['../class_event_1_1_handler.html#a3fe377092f103b12115a03a1af424d5c',1,'Event::Handler::Handler()']]],
-  ['have_5fcxx17_222',['HAVE_CXX17',['../rtxi__config_8h.html#a88edf98b6b270a8e6fbc057c86ca4ba2',1,'rtxi_config.h']]],
-  ['have_5fdlfcn_5fh_223',['HAVE_DLFCN_H',['../rtxi__config_8h.html#a0ee1617ff2f6885ef384a3dd46f9b9d7',1,'rtxi_config.h']]],
-  ['have_5finttypes_5fh_224',['HAVE_INTTYPES_H',['../rtxi__config_8h.html#ab90a030ff2790ebdc176660a6dd2a478',1,'rtxi_config.h']]],
-  ['have_5flibdl_225',['HAVE_LIBDL',['../rtxi__config_8h.html#a2a94a915864f604ddd00fb9272c8c0f4',1,'rtxi_config.h']]],
-  ['have_5flibgsl_226',['HAVE_LIBGSL',['../rtxi__config_8h.html#ac7d03b1506df0bab49fb2f5809699f48',1,'rtxi_config.h']]],
-  ['have_5flibgslcblas_227',['HAVE_LIBGSLCBLAS',['../rtxi__config_8h.html#ae2026d3d34bed5590ba160df27c54a88',1,'rtxi_config.h']]],
-  ['have_5flibm_228',['HAVE_LIBM',['../rtxi__config_8h.html#a822fccccd955b712f62f5ade934e86fc',1,'rtxi_config.h']]],
-  ['have_5fmemory_5fh_229',['HAVE_MEMORY_H',['../rtxi__config_8h.html#ae93a78f9d076138897af441c9f86f285',1,'rtxi_config.h']]],
-  ['have_5fstdint_5fh_230',['HAVE_STDINT_H',['../rtxi__config_8h.html#ab6cd6d1c63c1e26ea2d4537b77148354',1,'rtxi_config.h']]],
-  ['have_5fstdlib_5fh_231',['HAVE_STDLIB_H',['../rtxi__config_8h.html#a9e0e434ec1a6ddbd97db12b5a32905e0',1,'rtxi_config.h']]],
-  ['have_5fstring_5fh_232',['HAVE_STRING_H',['../rtxi__config_8h.html#ad4c234dd1625255dc626a15886306e7d',1,'rtxi_config.h']]],
-  ['have_5fstrings_5fh_233',['HAVE_STRINGS_H',['../rtxi__config_8h.html#a405d10d46190bcb0320524c54eafc850',1,'rtxi_config.h']]],
-  ['have_5fsys_5fstat_5fh_234',['HAVE_SYS_STAT_H',['../rtxi__config_8h.html#ace156430ba007d19b4348a950d0c692b',1,'rtxi_config.h']]],
-  ['have_5fsys_5ftypes_5fh_235',['HAVE_SYS_TYPES_H',['../rtxi__config_8h.html#a69dc70bea5d1f8bd2be9740e974fa666',1,'rtxi_config.h']]],
-  ['have_5funistd_5fh_236',['HAVE_UNISTD_H',['../rtxi__config_8h.html#a219b06937831d0da94d801ab13987639',1,'rtxi_config.h']]]
+  ['handle_252',['handle',['../struct_d_l_l_1_1dll__info.html#ab283c12ae020be4ec9057ec566085d4f',1,'DLL::dll_info']]],
+  ['handler_253',['Handler',['../class_event_1_1_handler.html',1,'Event::Handler'],['../class_event_1_1_handler.html#abd6443d7376cb303c12b4c6f85f76493',1,'Event::Handler::Handler()=default'],['../class_event_1_1_handler.html#aec9b3fa732ae0f0067af74b7de82dc05',1,'Event::Handler::Handler(const Handler &amp;)=default'],['../class_event_1_1_handler.html#a717e6d6030127b85fe931103a9fbd478',1,'Event::Handler::Handler(Handler &amp;&amp;)=delete']]],
+  ['hz120_254',['HZ120',['../namespace_oscilloscope_1_1_frame_rates.html#aa2e719d86a07bf990670ca71b35a4970',1,'Oscilloscope::FrameRates']]],
+  ['hz240_255',['HZ240',['../namespace_oscilloscope_1_1_frame_rates.html#a4c18d2e2ed5dab6d8b260cc29b1bef88',1,'Oscilloscope::FrameRates']]],
+  ['hz60_256',['HZ60',['../namespace_oscilloscope_1_1_frame_rates.html#abc9ceba362fa01f4e41c6c982b347bea',1,'Oscilloscope::FrameRates']]]
 ];

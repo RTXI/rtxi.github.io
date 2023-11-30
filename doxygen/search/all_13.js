@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['value_556',['value',['../class_event_1_1_object.html#a0264cf217e7feea745f07e979246357e',1,'Event::Object::value()'],['../structparam__hdf__t.html#a32e08ef5fef7d81d73cfc0d1c2e70c1b',1,'param_hdf_t::value()'],['../struct_data_recorder_1_1param__change__t.html#a6e2e1467d43de8e09d7f1244e3f06a5b',1,'DataRecorder::param_change_t::value()']]],
-  ['variable_5ft_557',['variable_t',['../class_default_g_u_i_model.html#aabf3d824bcc0a8dd8f38376d6ed2d3ff',1,'DefaultGUIModel::variable_t()'],['../namespace_workspace.html#af7dd43f13369c2a592af138bedeb04d8',1,'Workspace::variable_t()']]],
-  ['version_558',['VERSION',['../rtxi__config_8h.html#a1c6d5de492ac61ad29aec7aa9a436bbf',1,'rtxi_config.h']]]
+  ['value_561',['value',['../struct_widgets_1_1_variable_1_1_info.html#aa2fcd87df2dd1a9472f020e4e21ff979',1,'Widgets::Variable::Info::value()'],['../struct_data_recorder_1_1data__token__t.html#a213c2eb527287b2f207255a9be0365ea',1,'DataRecorder::data_token_t::value()'],['../struct_oscilloscope_1_1sample.html#a31d02c1c0d801b2343c119c3be1f8041',1,'Oscilloscope::sample::value()']]],
+  ['variable_5ft_562',['variable_t',['../namespace_widgets_1_1_variable.html#a1e24cd37408a5f0d2830eee15abcc6e4',1,'Widgets::Variable']]],
+  ['vartype_563',['vartype',['../struct_widgets_1_1_variable_1_1_info.html#af4e22972a60281f99aa5660a3cce946f',1,'Widgets::Variable::Info']]],
+  ['vartype2string_564',['vartype2string',['../namespace_widgets_1_1_variable.html#a56d9875dc6d493199f2f9867ca931fe8',1,'Widgets::Variable']]]
 ];

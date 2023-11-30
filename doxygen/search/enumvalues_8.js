@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['open_1282',['OPEN',['../namespace_data_recorder.html#a41e62d9b808e110875ed9a80d4ccb161a0ab9067ca8fd14fa09fb19fcadf98c0c',1,'DataRecorder']]],
-  ['output_1283',['OUTPUT',['../namespace_d_a_q.html#adc53b00b5134155bb132b67f6995c624ac1ddef8d4065b50b479c258c23488de2',1,'DAQ']]]
+  ['neg_1203',['NEG',['../namespace_oscilloscope_1_1_trigger.html#a15cdc3cf4de4686f165c6d537761bb82a4a46d0630843b2847fbb7560b07e124f',1,'Oscilloscope::Trigger']]],
+  ['none_1204',['NONE',['../namespace_oscilloscope_1_1_trigger.html#a15cdc3cf4de4686f165c6d537761bb82a235cea688550ce71ca1e64884f5c72ba',1,'Oscilloscope::Trigger']]],
+  ['noop_1205',['NOOP',['../namespace_event.html#a2abf13b5be49315e9e362af02029f058a9852e9ab90e7c175c82ea5ddcfefd799',1,'Event']]]
 ];

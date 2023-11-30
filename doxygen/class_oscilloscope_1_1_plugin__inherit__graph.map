@@ -1,8 +1,5 @@
 <map id="Oscilloscope::Plugin" name="Oscilloscope::Plugin">
-<area shape="rect" id="node1" title=" " alt="" coords="58,476,265,612"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,299,80,377"/>
-<area shape="rect" id="node3" href="$class_plugin_1_1_object.html" title=" " alt="" coords="105,277,218,399"/>
-<area shape="rect" id="node4" href="$class_settings_1_1_object.html" title=" " alt="" coords="97,5,223,200"/>
-<area shape="rect" id="node5" href="$class_r_t_1_1_thread.html" title=" " alt="" coords="245,248,395,428"/>
-<area shape="rect" id="node6" href="$class_r_t_1_1_list_1_1_node.html" title=" " alt="" coords="247,49,396,156"/>
+<area shape="rect" id="node1" title=" " alt="" coords="17,549,196,832"/>
+<area shape="rect" id="node2" href="$class_widgets_1_1_plugin.html" title=" " alt="" coords="5,219,208,501"/>
+<area shape="rect" id="node3" href="$class_event_1_1_handler.html" title=" " alt="" coords="47,5,166,171"/>
 </map>
