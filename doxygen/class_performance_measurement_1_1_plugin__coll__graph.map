@@ -1,6 +1,5 @@
 <map id="PerformanceMeasurement::Plugin" name="PerformanceMeasurement::Plugin">
-<area shape="rect" id="node1" title=" " alt="" coords="5,417,256,539"/>
-<area shape="rect" id="node2" title=" " alt="" coords="35,270,109,347"/>
-<area shape="rect" id="node3" href="$class_plugin_1_1_object.html" title=" " alt="" coords="134,248,247,369"/>
-<area shape="rect" id="node4" href="$class_settings_1_1_object.html" title=" " alt="" coords="128,5,253,200"/>
+<area shape="rect" id="node1" title=" " alt="" coords="19,549,194,656"/>
+<area shape="rect" id="node2" href="$class_widgets_1_1_plugin.html" title=" " alt="" coords="5,219,208,501"/>
+<area shape="rect" id="node3" href="$class_event_1_1_handler.html" title=" " alt="" coords="47,5,166,171"/>
 </map>

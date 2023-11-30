@@ -1,0 +1,11 @@
+<map id="Widgets::Panel" name="Widgets::Panel">
+<area shape="rect" id="node1" title=" " alt="" coords="526,131,701,501"/>
+<area shape="rect" id="node3" href="$class_connector_1_1_panel.html" title=" " alt="" coords="5,615,128,693"/>
+<area shape="rect" id="node4" href="$class_data_recorder_1_1_panel.html" title=" " alt="" coords="153,549,338,759"/>
+<area shape="rect" id="node5" href="$class_oscilloscope_1_1_panel.html" title=" " alt="" coords="363,586,501,722"/>
+<area shape="rect" id="node6" href="$class_performance_measurement_1_1_panel.html" title=" " alt="" coords="526,593,701,715"/>
+<area shape="rect" id="node7" href="$class_r_t_x_i_wizard_1_1_panel.html" title=" " alt="" coords="725,601,875,707"/>
+<area shape="rect" id="node8" href="$class_system_control_1_1_panel.html" title=" " alt="" coords="899,557,1058,751"/>
+<area shape="rect" id="node9" href="$class_user_prefs_1_1_panel.html" title=" " alt="" coords="1083,586,1232,722"/>
+<area shape="rect" id="node2" title=" " alt="" coords="577,5,650,83"/>
+</map>

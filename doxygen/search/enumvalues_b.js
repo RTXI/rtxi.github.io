@@ -1,6 +1,19 @@
 var searchData=
 [
-  ['start_1289',['START',['../namespace_data_recorder.html#a41e62d9b808e110875ed9a80d4ccb161a5ee0827cda72d3561a26a23dc75acaca',1,'DataRecorder']]],
-  ['stop_1290',['STOP',['../namespace_data_recorder.html#a41e62d9b808e110875ed9a80d4ccb161a449e1a4ffe2511581c9bb77ea9cac587',1,'DataRecorder']]],
-  ['sync_1291',['SYNC',['../namespace_data_recorder.html#a41e62d9b808e110875ed9a80d4ccb161a4cc9d4e0f6412e3f4612864e7e28b4db',1,'DataRecorder']]]
+  ['red_1217',['Red',['../namespace_oscilloscope_1_1_color_i_d.html#accb93222dff7b4316a1a0761043bb432af346d6b73870f9e48066aa1712ab7867',1,'Oscilloscope::ColorID']]],
+  ['rt_5fdevice_5finsert_5fevent_1218',['RT_DEVICE_INSERT_EVENT',['../namespace_event.html#a2abf13b5be49315e9e362af02029f058aae2a64ccff7300e7ce30fadcf7b8f7b5',1,'Event']]],
+  ['rt_5fdevice_5fpause_5fevent_1219',['RT_DEVICE_PAUSE_EVENT',['../namespace_event.html#a2abf13b5be49315e9e362af02029f058a9b704520a796fd56584356e951ae6d6f',1,'Event']]],
+  ['rt_5fdevice_5fremove_5fevent_1220',['RT_DEVICE_REMOVE_EVENT',['../namespace_event.html#a2abf13b5be49315e9e362af02029f058ae5a9238aa26847054673995f246a4e7c',1,'Event']]],
+  ['rt_5fdevice_5funpause_5fevent_1221',['RT_DEVICE_UNPAUSE_EVENT',['../namespace_event.html#a2abf13b5be49315e9e362af02029f058a3964c80b61f9b034b73da423327fd68e',1,'Event']]],
+  ['rt_5fget_5fperiod_5fevent_1222',['RT_GET_PERIOD_EVENT',['../namespace_event.html#a2abf13b5be49315e9e362af02029f058a104f0c6835093f6c2ceff59fa4f06214',1,'Event']]],
+  ['rt_5fperiod_5fevent_1223',['RT_PERIOD_EVENT',['../namespace_event.html#a2abf13b5be49315e9e362af02029f058a2c1649acde37a2dae514e956aef9e493',1,'Event']]],
+  ['rt_5fpostperiod_5fevent_1224',['RT_POSTPERIOD_EVENT',['../namespace_event.html#a2abf13b5be49315e9e362af02029f058ae57d0e963714ed4a2012a41b4ac03e76',1,'Event']]],
+  ['rt_5fpreperiod_5fevent_1225',['RT_PREPERIOD_EVENT',['../namespace_event.html#a2abf13b5be49315e9e362af02029f058a4379aa1ee89ffe6223e472a3ae43aa6d',1,'Event']]],
+  ['rt_5fshutdown_5fevent_1226',['RT_SHUTDOWN_EVENT',['../namespace_event.html#a2abf13b5be49315e9e362af02029f058aceb0a57ac58370eb18e50a5190fa0e31',1,'Event']]],
+  ['rt_5fthread_5finsert_5fevent_1227',['RT_THREAD_INSERT_EVENT',['../namespace_event.html#a2abf13b5be49315e9e362af02029f058a95682a70d27121ff372aebb051c2c6fe',1,'Event']]],
+  ['rt_5fthread_5fpause_5fevent_1228',['RT_THREAD_PAUSE_EVENT',['../namespace_event.html#a2abf13b5be49315e9e362af02029f058a0bd1ddbd8988f26a7ef3aa85db2adbca',1,'Event']]],
+  ['rt_5fthread_5fremove_5fevent_1229',['RT_THREAD_REMOVE_EVENT',['../namespace_event.html#a2abf13b5be49315e9e362af02029f058aaf07920c7194e2efad3fee591bc06e75',1,'Event']]],
+  ['rt_5fthread_5funpause_5fevent_1230',['RT_THREAD_UNPAUSE_EVENT',['../namespace_event.html#a2abf13b5be49315e9e362af02029f058a4f84814b359a1c641cc4e5d0fe2b35ea',1,'Event']]],
+  ['rt_5fwidget_5fparameter_5fchange_5fevent_1231',['RT_WIDGET_PARAMETER_CHANGE_EVENT',['../namespace_event.html#a2abf13b5be49315e9e362af02029f058a0984a0a894884f491740e65c22f511e2',1,'Event']]],
+  ['rt_5fwidget_5fstate_5fchange_5fevent_1232',['RT_WIDGET_STATE_CHANGE_EVENT',['../namespace_event.html#a2abf13b5be49315e9e362af02029f058a64676b0759aa53e0aa50e393bb0e622b',1,'Event']]]
 ];

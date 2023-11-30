@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['rthandler_699',['RTHandler',['../class_event_1_1_r_t_handler.html',1,'Event']]],
-  ['rtxievent_700',['RTXIEvent',['../class_plugin_1_1_r_t_x_i_event.html',1,'Plugin']]],
-  ['runningstattests_701',['RunningStatTests',['../class_running_stat_tests.html',1,'']]]
+  ['sample_641',['sample',['../struct_oscilloscope_1_1sample.html',1,'Oscilloscope']]],
+  ['savesettingsdialog_642',['SaveSettingsDialog',['../class_save_settings_dialog.html',1,'']]],
+  ['scope_643',['Scope',['../class_oscilloscope_1_1_scope.html',1,'Oscilloscope']]],
+  ['scope_5fchannel_644',['scope_channel',['../struct_oscilloscope_1_1scope__channel.html',1,'Oscilloscope']]],
+  ['system_645',['System',['../class_r_t_1_1_system.html',1,'RT']]]
 ];

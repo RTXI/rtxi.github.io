@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_r_t_1_1_list.html" title=" " alt="" coords="5,5,217,32"/>
+<area shape="rect" id="node1" href="$class_r_t_1_1_o_s_1_1_fifo.html" title=" " alt="" coords="5,81,100,108"/>
+<area shape="rect" id="node2" href="$class_r_t_1_1_o_s_1_1evl_fifo.html" title=" " alt="" coords="164,5,276,32"/>
+<area shape="rect" id="node3" href="$class_r_t_1_1_o_s_1_1posix_fifo.html" title=" " alt="" coords="157,56,283,83"/>
+<area shape="rect" id="node4" href="$class_r_t_1_1_o_s_1_1xbuff_fifo.html" title=" " alt="" coords="158,107,282,133"/>
+<area shape="rect" id="node5" href="$class_r_t_1_1_o_s_1_1xenomai_fifo.html" title=" " alt="" coords="148,157,292,184"/>
 </map>

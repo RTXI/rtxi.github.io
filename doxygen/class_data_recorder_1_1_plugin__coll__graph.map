@@ -1,15 +1,5 @@
 <map id="DataRecorder::Plugin" name="DataRecorder::Plugin">
-<area shape="rect" id="node1" title=" " alt="" coords="52,981,265,1117"/>
-<area shape="rect" id="node2" title=" " alt="" coords="47,834,121,911"/>
-<area shape="rect" id="node3" href="$class_plugin_1_1_object.html" title=" " alt="" coords="62,681,175,803"/>
-<area shape="rect" id="node4" href="$class_settings_1_1_object.html" title=" " alt="" coords="5,161,131,356"/>
-<area shape="rect" id="node6" href="$class_data_recorder_1_1_panel.html" title=" " alt="" coords="221,419,427,657"/>
-<area shape="rect" id="node5" title=" " alt="" coords="237,827,411,919"/>
-<area shape="rect" id="node7" title=" " alt="" coords="155,220,234,297"/>
-<area shape="rect" id="node8" href="$class_event_1_1_handler.html" title=" " alt="" coords="258,205,390,312"/>
-<area shape="rect" id="node9" href="$class_event_1_1_r_t_handler.html" title=" " alt="" coords="415,205,564,312"/>
-<area shape="rect" id="node10" href="$class_r_t_1_1_list_1_1_node.html" title=" " alt="" coords="501,5,651,112"/>
-<area shape="rect" id="node11" href="$class_r_t_1_1_thread.html" title=" " alt="" coords="589,169,739,349"/>
-<area shape="rect" id="node12" title="STL class." alt="" coords="641,499,749,577"/>
-<area shape="rect" id="node13" title=" " alt="" coords="763,220,802,297"/>
+<area shape="rect" id="node1" title=" " alt="" coords="33,549,180,773"/>
+<area shape="rect" id="node2" href="$class_widgets_1_1_plugin.html" title=" " alt="" coords="5,219,208,501"/>
+<area shape="rect" id="node3" href="$class_event_1_1_handler.html" title=" " alt="" coords="47,5,166,171"/>
 </map>

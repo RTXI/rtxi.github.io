@@ -1,18 +1,14 @@
 var searchData=
 [
-  ['edit_127',['edit',['../struct_default_g_u_i_model_1_1param__t.html#a33ae94b6d5fe2b0aae4b55d2879ea7e5',1,'DefaultGUIModel::param_t']]],
-  ['empty_128',['empty',['../class_r_t_1_1_list.html#a871f6f1c9b75e80f0c3d0eb7c69c79ae',1,'RT::List']]],
-  ['end_129',['end',['../class_r_t_1_1_list.html#a80f3276955cf12119d71a24bdc5c9559',1,'RT::List::end(void)'],['../class_r_t_1_1_list.html#afc9f4488130d363e33b33ecf17550ff8',1,'RT::List::end(void) const']]],
-  ['entry_130',['entry',['../structposix__bounce__info__t.html#a1e6c22bf88e5c8eb87d541f489a4b317',1,'posix_bounce_info_t']]],
-  ['error_5fmsg_131',['ERROR_MSG',['../debug_8cpp.html#aaa514d57d1c58f5ecd1910dd5635f69c',1,'ERROR_MSG(const std::string &amp;errmsg,...):&#160;debug.cpp'],['../debug_8h.html#aaa514d57d1c58f5ecd1910dd5635f69c',1,'ERROR_MSG(const std::string &amp;errmsg,...):&#160;debug.cpp']]],
-  ['event_132',['Event',['../class_r_t_1_1_event.html',1,'RT::Event'],['../namespace_event.html',1,'Event'],['../class_r_t_1_1_event.html#a31b5e8f3ff30b5874f40ac85e3bd2ddc',1,'RT::Event::Event()'],['../class_event_object_test.html#aff362a6044c55b73e1bada7622635d2f',1,'EventObjectTest::event()'],['../class_default_g_u_i_model.html#afc45abaf03c3e99d9102fcbd16ddc5d4',1,'DefaultGUIModel::EVENT()']]],
-  ['event_2ecpp_133',['event.cpp',['../event_8cpp.html',1,'']]],
-  ['event_2eh_134',['event.h',['../event_8h.html',1,'']]],
-  ['event_5fmanager_135',['event_manager',['../class_event_manager_test.html#a7c958c2255781f016b6ae4ef9b90e451',1,'EventManagerTest']]],
-  ['event_5ftests_2ecpp_136',['event_tests.cpp',['../event__tests_8cpp.html',1,'']]],
-  ['event_5ftests_2eh_137',['event_tests.h',['../event__tests_8h.html',1,'']]],
-  ['eventmanagertest_138',['EventManagerTest',['../class_event_manager_test.html',1,'EventManagerTest'],['../class_event_manager_test.html#a40e766aabdf6fe0198a7803c25eaadf3',1,'EventManagerTest::EventManagerTest()']]],
-  ['eventobjecttest_139',['EventObjectTest',['../class_event_object_test.html',1,'EventObjectTest'],['../class_event_object_test.html#a5938f0d3d4fb07f2de854c47ef775816',1,'EventObjectTest::EventObjectTest()']]],
-  ['execute_140',['execute',['../class_r_t_1_1_thread.html#aa55861dbd2133e3b36d1956c4aeb8b86',1,'RT::Thread::execute()'],['../class_data_recorder_1_1_panel.html#ac0cc107bf1ec652f9df01499e23fe19d',1,'DataRecorder::Panel::execute()'],['../class_oscilloscope_1_1_panel.html#a989aa77a454c3b617926efb5457eebda',1,'Oscilloscope::Panel::execute()']]],
-  ['exit_141',['EXIT',['../class_default_g_u_i_model.html#aa0405d1dceb86b5b4e328fe3cfc62e22a833cf154a906bcb189e244ecc7e384f5',1,'DefaultGUIModel::EXIT()'],['../class_default_g_u_i_model.html#a962dab76139fe3fe2336b8ecc0e1c651',1,'DefaultGUIModel::exit(void)']]]
+  ['endpoint_128',['endpoint',['../struct_data_recorder_1_1record__channel.html#a5068c906e43f7fec75f9cedb9320bb14',1,'DataRecorder::record_channel::endpoint()'],['../struct_oscilloscope_1_1_trigger_1_1_info.html#ac7119d8aa30bd9651de6593817aad2b7',1,'Oscilloscope::Trigger::Info::endpoint()'],['../struct_oscilloscope_1_1scope__channel.html#ac8c1fa54b68b52372e30201b06c2d8e4',1,'Oscilloscope::scope_channel::endpoint()'],['../namespace_i_o.html#a960f7a2a7ad756a63017d5feaff112c6',1,'IO::endpoint()'],['../struct_i_o_1_1endpoint.html',1,'IO::endpoint']]],
+  ['error_5fmsg_129',['ERROR_MSG',['../debug_8hpp.html#add398267f12dca8907f8e49abeac7e5d',1,'debug.hpp']]],
+  ['event_130',['Event',['../namespace_event.html',1,'']]],
+  ['event_2ecpp_131',['event.cpp',['../event_8cpp.html',1,'']]],
+  ['event_2ehpp_132',['event.hpp',['../event_8hpp.html',1,'']]],
+  ['eventlogger_133',['eventLogger',['../classevent_logger.html',1,'']]],
+  ['evlfifo_134',['evlFifo',['../class_r_t_1_1_o_s_1_1evl_fifo.html#ac5e67df45a918c710d5096ee64a9c8f7',1,'RT::OS::evlFifo::evlFifo(const evlFifo &amp;fifo)=delete'],['../class_r_t_1_1_o_s_1_1evl_fifo.html#aff762518ef51294f86ab9bbb1fc26823',1,'RT::OS::evlFifo::evlFifo(evlFifo &amp;&amp;)=default'],['../class_r_t_1_1_o_s_1_1evl_fifo.html#ae621e0132dbb573bba94b8933379a8c1',1,'RT::OS::evlFifo::evlFifo(size_t size)'],['../class_r_t_1_1_o_s_1_1evl_fifo.html',1,'RT::OS::evlFifo']]],
+  ['exec_135',['EXEC',['../namespace_r_t_1_1_state.html#a797ad43d79626b6c65f6eeb96faef5f4a0c6a42d2333a5c925c324e89404152f0',1,'RT::State']]],
+  ['execute_136',['execute',['../class_r_t_1_1_thread.html#ab924a7c5b75d756a6c596e74cad2836f',1,'RT::Thread::execute()'],['../class_data_recorder_1_1_component.html#ac135b9178a8557d238f3a1bc520bc152',1,'DataRecorder::Component::execute()'],['../class_oscilloscope_1_1_component.html#a4d4cc5a19ef76b1a5c4a8edaf43c024e',1,'Oscilloscope::Component::execute()'],['../class_performance_measurement_1_1_component.html#a19e6836d8b12716a497ae844fa8ea9b1',1,'PerformanceMeasurement::Component::execute()']]],
+  ['exit_137',['exit',['../class_widgets_1_1_panel.html#ac33d3f0529337606eca20ab9a0be1d0b',1,'Widgets::Panel']]],
+  ['exit_138',['EXIT',['../namespace_r_t_1_1_state.html#a797ad43d79626b6c65f6eeb96faef5f4a0a5f5aef7f0bc86e1fcd7b45adfe8f04',1,'RT::State']]]
 ];

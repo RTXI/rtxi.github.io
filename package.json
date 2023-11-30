@@ -1,6 +1,6 @@
 {
   "name": "RTXI",
-  "version": "2.1.0",
+  "version": "3.0.1",
   "description": "The Real-Time eXperiment Interface",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,7 +21,7 @@
   "homepage": "http://rtxi.org",
   "devDependencies": {
     "@hapi/hoek": "github:hapijs/hoek",
-    "grunt": "^1.5.3",
+    "grunt": "^1.6.1",
     "grunt-bower-task": "^0.6.2",
     "grunt-build-control": "^0.7.1",
     "grunt-contrib-concat": "^1.0.1",

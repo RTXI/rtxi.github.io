@@ -1,12 +1,12 @@
 <map id="IO::Block" name="IO::Block">
-<area shape="rect" id="node1" title=" " alt="" coords="471,248,613,457"/>
-<area shape="rect" id="node3" href="$class_d_a_q_1_1_device.html" title=" " alt="" coords="221,505,439,729"/>
-<area shape="rect" id="node6" href="$class_mock_i_o_block.html" title=" " alt="" coords="466,513,618,722"/>
-<area shape="rect" id="node7" href="$class_workspace_1_1_instance.html" title=" " alt="" coords="643,505,801,729"/>
-<area shape="rect" id="node2" href="$class_settings_1_1_object.html" title=" " alt="" coords="479,5,605,200"/>
-<area shape="rect" id="node4" href="$class_analogy_device.html" title=" " alt="" coords="5,909,223,1163"/>
-<area shape="rect" id="node5" href="$class_mock_d_a_q_device.html" title=" " alt="" coords="247,924,413,1148"/>
-<area shape="rect" id="node8" href="$class_default_g_u_i_model.html" title=" " alt="" coords="438,777,609,1295"/>
-<area shape="rect" id="node9" href="$class_mock_workspace_instance.html" title=" " alt="" coords="633,953,817,1119"/>
-<area shape="rect" id="node10" href="$class_performance_measurement_1_1_panel.html" title=" " alt="" coords="841,946,1035,1126"/>
+<area shape="rect" id="node1" title=" " alt="" coords="322,5,497,259"/>
+<area shape="rect" id="node2" href="$class_r_t_1_1_device.html" title=" " alt="" coords="301,307,398,487"/>
+<area shape="rect" id="node6" href="$class_r_t_1_1_thread.html" title=" " alt="" coords="442,314,539,479"/>
+<area shape="rect" id="node3" href="$class_d_a_q_1_1_device.html" title=" " alt="" coords="213,535,408,759"/>
+<area shape="rect" id="node4" href="$class_analogy_device.html" title=" " alt="" coords="5,807,200,1060"/>
+<area shape="rect" id="node5" href="$class_device.html" title=" " alt="" coords="224,821,397,1045"/>
+<area shape="rect" id="node7" href="$class_widgets_1_1_component.html" title=" " alt="" coords="536,549,685,744"/>
+<area shape="rect" id="node8" href="$class_data_recorder_1_1_component.html" title=" " alt="" coords="421,880,600,987"/>
+<area shape="rect" id="node9" href="$class_oscilloscope_1_1_component.html" title=" " alt="" coords="625,873,797,994"/>
+<area shape="rect" id="node10" href="$class_performance_measurement_1_1_component.html" title=" " alt="" coords="821,865,995,1001"/>
 </map>

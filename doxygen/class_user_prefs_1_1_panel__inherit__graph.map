@@ -1,4 +1,5 @@
 <map id="UserPrefs::Panel" name="UserPrefs::Panel">
-<area shape="rect" id="node1" title=" " alt="" coords="5,131,171,281"/>
-<area shape="rect" id="node2" title=" " alt="" coords="49,5,127,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="18,549,167,685"/>
+<area shape="rect" id="node2" href="$class_widgets_1_1_panel.html" title=" " alt="" coords="5,131,180,501"/>
+<area shape="rect" id="node3" title=" " alt="" coords="56,5,129,83"/>
 </map>

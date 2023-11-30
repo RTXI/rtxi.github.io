@@ -1,14 +1,13 @@
 ubuntu:
  - arch: amd64
    name: Ubuntu
-   version: 20.04.2
-   url: "https://releases.ubuntu.com/20.04/ubuntu-20.04.2.0-desktop-amd64.iso"
+   version: 22.04.3
+   url: "https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-desktop-amd64.iso"
 
  - arch: amd64
    name: Ubuntu
-   version: 18.04.5
-   url:  "https://releases.ubuntu.com/18.04.5/ubuntu-18.04.5-desktop-amd64.iso"
-
+   version: 20.04.2
+   url: "https://releases.ubuntu.com/20.04/ubuntu-20.04.2.0-desktop-amd64.iso"
 
 rtxi:
  - arch: amd64-generic

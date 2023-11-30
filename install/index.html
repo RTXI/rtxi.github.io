@@ -190,8 +190,7 @@ $ cd /home/rtxi/
       </p>
 
 {% highlight bash %}
-$ cd scripts
-$ ./install_dependencies.sh
+$ ./scripts/install_dependencies.sh
 {% endhighlight %}
 
       <p>
@@ -209,12 +208,12 @@ $ ./install_dependencies.sh
       </p>
 
 {% highlight bash %}
-$ ./install_rt_kernel.sh
+$ ./scripts/install_rt_kernel_evl.sh
 {% endhighlight %}
 
       <p>
         The script will download the sources for the Linux kernel and the
-        Xenomai patch. Before the kernel starts compiling, you will be prompted
+        Xenomai EVL library. Before the kernel starts compiling, you will be prompted
         to edit the kernel config flags. A UI will pop up that looks as
         follows: 
       </p>
@@ -227,11 +226,10 @@ $ ./install_rt_kernel.sh
         into the kernel. For optimal performance, edit the following options: 
       </p>
       <ol>
-        <li><p><b>Enable ANALOGY drivers.</b></p> 
+        <li><p><b>Enable EVL</b></p> 
           <div>From the top menu, follow the path:</div>
-          <div style="padding-left:1em;">--> Xenomai/Cobalt</div>
-          <div style="padding-left:2em;">--> Drivers</div>
-          <div style="padding-left:3em;">--> Analogy Drivers</div><br>
+          <div style="padding-left:1em;">--> Processor type and features </div>
+          <div style="padding-left:2em;">--> EVL real-time core (enable) </div>
           <p>
             Hit <code>SPACE</code> on all the drivers to have them built into
             the kernel. A "*" beside the field means that the drivers are set
@@ -292,43 +290,22 @@ $ cat /proc/cpuinfo
             <code>SPACE</code> until the field the left is blank.
           </p>
         </li>
-        <li><p><b>Disable memory management options.</b></p>
-          <div>
-            There are some memory management options that could increase latency
-            of the system. Follow these steps to disable them:
-          </div>
-          <div style="padding-left:1em;">--> Memory management options</div>
-          <div style="padding-left:2em;">--> Transparent hugepage support (disable)</div>
-          <div style="padding-left:2em;">--> Allow memory compaction (disable)</div>
-          <div style="padding-left:2em;">--> Page migration (disable)</div><br>
-        </li>
-        <li><p><b>Disable COMEDI drivers and enable USB support.</b></p>
-          <div>
-            The COMEDI drivers should be disabled, otherwise they will conflict
-            with the ANALOGY drivers. From the top menu, follow the path and
-            disable: 
-          </div>
-          <div style="padding-left:1em;">--> Device Drivers</div>
-          <div style="padding-left:2em;">--> USB support</div>
-          <div style="padding-left:3em;">--> USB mass storage support (enable)</div>
-          <div style="padding-left:2em;">--> Staging Drivers</div>
-          <div style="padding-left:3em;">--> Data Acquisition (comedi) (disable)</div>
-        </li>
       </ol>
       <p>
         Once all the flags have been set properly, exit to the top menu. Hit
         <code>ESC</code> again and choose <code><Yes></code> to save the
         configuration and compile the kernel. Compilation, depending on your
         system, can take 10 minutes to a few hours. You are free to leave the
-        system. The <code>install_rt_kernel.sh</code> script will compile the
+        system. The <code>install_rt_kernel_evl.sh</code> script will compile the
         kernel and install it automatically. When the script terminates
         successfully, reboot the system. 
       </p>
       <p>
         From the boot menu, select the "Advanced" option from the GRUB
         bootloader to open up a submenu that lists all the available kernels.
-        The real-time kernel will be named <code>3.8.13-xenomai-2.6.3</code>.
-        Select it and boot the system. 
+        The real-time kernel will be named <code>x.y.z-xenomai-4</code>, where
+        x.y.z is an automatically selected kernel version closes to the one already
+        on the system. Select it and boot the system. 
       </p>
       
       <!-- 7. Install RTXI -->
@@ -338,12 +315,12 @@ $ cat /proc/cpuinfo
         {% assign customcount = customcount | plus:1 %}
       </h4>
       <p>
-        Install RTXI with the <code>install_rtxi.sh</code> script. Navigate
-        back to your <code>rtxi/scripts/</code> directory and rum:
+        Install RTXI with the <code>install_rtxi.sh</code> script. Again from the
+        root directory run:
       </p>
 
 {% highlight bash %}
-$ ./install_rtxi.sh
+$ ./script/install_rtxi.sh
 {% endhighlight %}
 
       <p>
@@ -351,17 +328,18 @@ $ ./install_rtxi.sh
         an installation mode.
       </p>
       <dl class="dl-horizontal">
-        <dt>Xenomai</dt>
+        <dt>evl</dt>
           <dd>Install RTXI so that it uses the real-time kernel.</dd>
-        <dt>Posix (non-rt)</dt>
+        <dt>posix</dt>
           <dd>
             RTXI will not perform in real-time, but with this option, it can
-            be installed this way on systems without a real-time kernel. 
+            be installed this way on systems without a real-time kernel. This
+            is used for trying out RTXI and testing purposes.
           </dd>
       </dl>
 
       <p>
-        If you want real-time performance, enter "1" to use Xenomai and wait
+        If you want real-time performance, enter "evl" to use Xenomai and wait
         for RTXI to be installed. When the installation script terminates, RTXI
         is ready for you to use. To start RTXI, run:
       </p>
@@ -386,6 +364,11 @@ $ sudo rtxi
         <a href="/modules">modules page</a>. 
       </p>
 
+      <p>
+        <b> NOTE: </b> Under the newest version of RTXI 3.0.0 some plugins may still
+          be unavailable. Email rtxi support if there is a plugin you wish to use 
+          that is not available yet for RTXI 3.
+      </p>
     </div></div> <!-- end custom information -->
 
     <div id="upgrade" role="tabpanel" class="tab-pane fade">

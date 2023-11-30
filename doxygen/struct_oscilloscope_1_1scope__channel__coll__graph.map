@@ -1,0 +1,10 @@
+<map id="Oscilloscope::scope_channel" name="Oscilloscope::scope_channel">
+<area shape="rect" id="node1" title=" " alt="" coords="208,821,348,972"/>
+<area shape="rect" id="node2" href="$struct_i_o_1_1endpoint.html" title=" " alt="" coords="40,535,145,641"/>
+<area shape="rect" id="node3" href="$class_i_o_1_1_block.html" title=" " alt="" coords="5,145,180,399"/>
+<area shape="rect" id="node4" href="$class_r_t_1_1_o_s_1_1_fifo.html" title=" " alt="" coords="169,461,281,715"/>
+<area shape="rect" id="node5" title=" " alt="" coords="305,549,451,627"/>
+<area shape="rect" id="node6" title=" " alt="" coords="405,233,521,311"/>
+<area shape="rect" id="node8" title=" " alt="" coords="475,549,622,627"/>
+<area shape="rect" id="node7" title=" " alt="" coords="444,5,483,83"/>
+</map>

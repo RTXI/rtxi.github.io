@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['cerr_5fbuffer_1147',['cerr_buffer',['../class_d_a_q_manager_test.html#a7881acd8f55c1dde4c412be0534b8334',1,'DAQManagerTest']]],
-  ['cerr_5foriginal_5fbuffer_1148',['cerr_original_buffer',['../class_d_a_q_manager_test.html#a38d87a6c6c0cad2467fde69cc5bf67e8',1,'DAQManagerTest']]],
-  ['clone_5furl_1149',['clone_url',['../struct_r_t_x_i_wizard_1_1_panel_1_1module__t.html#a2721d8e48c7d81325afe01777142a23f',1,'RTXIWizard::Panel::module_t']]],
-  ['comment_1150',['COMMENT',['../class_default_g_u_i_model.html#af532497b87b51004314833e79b6f5294',1,'DefaultGUIModel']]],
-  ['config_5ffile_1151',['config_file',['../structcli__options__t.html#a096029a37f5faaaabece848343495169',1,'cli_options_t']]],
-  ['connector_1152',['connector',['../class_i_o_connector_test.html#acd9c0f0863008cf4c81801045f8cd322',1,'IOConnectorTest']]]
+  ['cmd_1056',['cmd',['../struct_r_t_1_1_telemitry_1_1_response.html#a563998aae0a6c9a7848351f4464779d0',1,'RT::Telemitry::Response']]],
+  ['color2string_1057',['color2string',['../namespace_oscilloscope.html#a023b8ed392afa7f9f4794c6d4e67c40e',1,'Oscilloscope']]],
+  ['createcomponent_1058',['createComponent',['../struct_widgets_1_1_factory_methods.html#a807d65c9618a59ef4c3fbff0eeebe5a3',1,'Widgets::FactoryMethods']]],
+  ['createpanel_1059',['createPanel',['../struct_widgets_1_1_factory_methods.html#a61518df5fb5fe8fdfa5186e426ea7c89',1,'Widgets::FactoryMethods']]],
+  ['createplugin_1060',['createPlugin',['../struct_widgets_1_1_factory_methods.html#a06d857e8412b031263a8004057a6c211',1,'Widgets::FactoryMethods']]],
+  ['curve_1061',['curve',['../struct_oscilloscope_1_1scope__channel.html#a422d41a545701110effbf77753ac0165',1,'Oscilloscope::scope_channel']]]
 ];

@@ -1,0 +1,8 @@
+<map id="Widgets::Component" name="Widgets::Component">
+<area shape="rect" id="node1" title=" " alt="" coords="220,520,369,715"/>
+<area shape="rect" id="node4" href="$class_data_recorder_1_1_component.html" title=" " alt="" coords="5,777,184,884"/>
+<area shape="rect" id="node5" href="$class_oscilloscope_1_1_component.html" title=" " alt="" coords="209,770,381,891"/>
+<area shape="rect" id="node6" href="$class_performance_measurement_1_1_component.html" title=" " alt="" coords="405,763,579,899"/>
+<area shape="rect" id="node2" href="$class_r_t_1_1_thread.html" title=" " alt="" coords="246,307,343,472"/>
+<area shape="rect" id="node3" href="$class_i_o_1_1_block.html" title=" " alt="" coords="207,5,382,259"/>
+</map>

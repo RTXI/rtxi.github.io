@@ -1,0 +1,7 @@
+<map id="Oscilloscope::Plugin::createProbe" name="Oscilloscope::Plugin::createProbe">
+<area shape="rect" id="node1" title=" " alt="" coords="5,89,147,131"/>
+<area shape="rect" id="node2" href="$class_oscilloscope_1_1_component.html#a89d7ed35c271c7febcd94c520c3de509" title=" " alt="" coords="195,5,367,47"/>
+<area shape="rect" id="node3" href="$class_i_o_1_1_block.html#a9410b4334b4923c9451d2ac468c625f3" title=" " alt="" coords="222,71,339,98"/>
+<area shape="rect" id="node4" href="$class_i_o_1_1_block.html#affa696b1a7ed345b0da2a21a0238c59a" title=" " alt="" coords="211,122,350,149"/>
+<area shape="rect" id="node5" href="$class_i_o_1_1_block.html#aa5bbd0db31d6a9682e679488bc24014b" title=" " alt="" coords="211,173,351,199"/>
+</map>

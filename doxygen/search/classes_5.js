@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['fakeplugin_651',['fakePlugin',['../classfake_plugin.html',1,'']]],
-  ['fifo_652',['Fifo',['../class_fifo.html',1,'']]],
-  ['fifotest_653',['FifoTest',['../class_fifo_test.html',1,'']]],
-  ['find_5fdaq_5ft_654',['find_daq_t',['../structfind__daq__t.html',1,'']]]
+  ['factorymethods_623',['FactoryMethods',['../struct_widgets_1_1_factory_methods.html',1,'Widgets']]],
+  ['fifo_624',['Fifo',['../class_r_t_1_1_o_s_1_1_fifo.html',1,'RT::OS']]]
 ];

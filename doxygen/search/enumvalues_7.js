@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['neg_1280',['NEG',['../class_scope.html#a81ec41648ec61c46eda90e98b96626cbad43e0610f9dac53dee9c627fe81f6a35',1,'Scope']]],
-  ['none_1281',['NONE',['../class_scope.html#a81ec41648ec61c46eda90e98b96626cba4043aecef7eef0abe18992d19b787b85',1,'Scope']]]
+  ['manager_5fshutdown_5fevent_1201',['MANAGER_SHUTDOWN_EVENT',['../namespace_event.html#a2abf13b5be49315e9e362af02029f058afd2e4b357a32f92776ef27e7faa25d80',1,'Event']]],
+  ['modify_1202',['MODIFY',['../namespace_r_t_1_1_state.html#a797ad43d79626b6c65f6eeb96faef5f4a9107c0bd9fb0e04039c9461a67075bb7',1,'RT::State']]]
 ];

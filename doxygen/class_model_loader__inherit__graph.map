@@ -1,6 +1,5 @@
 <map id="ModelLoader" name="ModelLoader">
-<area shape="rect" id="node1" title=" " alt="" coords="30,417,173,524"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,270,80,347"/>
-<area shape="rect" id="node3" href="$class_plugin_1_1_object.html" title=" " alt="" coords="105,248,218,369"/>
-<area shape="rect" id="node4" href="$class_settings_1_1_object.html" title=" " alt="" coords="99,5,224,200"/>
+<area shape="rect" id="node1" title=" " alt="" coords="35,131,159,237"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,76,83"/>
+<area shape="rect" id="node3" title=" " alt="" coords="101,5,205,83"/>
 </map>

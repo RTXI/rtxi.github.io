@@ -1,4 +1,5 @@
 <map id="RTXIWizard::Panel" name="RTXIWizard::Panel">
-<area shape="rect" id="node1" title=" " alt="" coords="5,131,173,252"/>
-<area shape="rect" id="node2" title=" " alt="" coords="50,5,129,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="18,549,167,656"/>
+<area shape="rect" id="node2" href="$class_widgets_1_1_panel.html" title=" " alt="" coords="5,131,180,501"/>
+<area shape="rect" id="node3" title=" " alt="" coords="56,5,129,83"/>
 </map>

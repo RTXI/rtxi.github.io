@@ -1,9 +1,5 @@
 <map id="RTXIWizard::Panel" name="RTXIWizard::Panel">
-<area shape="rect" id="node1" title=" " alt="" coords="5,543,173,664"/>
-<area shape="rect" id="node2" title=" " alt="" coords="29,388,107,465"/>
-<area shape="rect" id="node3" title=" " alt="" coords="131,373,285,480"/>
-<area shape="rect" id="node4" href="$struct_r_t_x_i_wizard_1_1_panel_1_1module__t.html" title=" " alt="" coords="65,145,215,296"/>
-<area shape="rect" id="node5" title="STL class." alt="" coords="239,182,374,259"/>
-<area shape="rect" id="node6" title=" " alt="" coords="249,5,287,83"/>
-<area shape="rect" id="node7" title=" " alt="" coords="325,5,363,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="18,549,167,656"/>
+<area shape="rect" id="node2" href="$class_widgets_1_1_panel.html" title=" " alt="" coords="5,131,180,501"/>
+<area shape="rect" id="node3" title=" " alt="" coords="56,5,129,83"/>
 </map>
