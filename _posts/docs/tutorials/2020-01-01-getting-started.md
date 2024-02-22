@@ -24,37 +24,32 @@ when buying new hardware:
 
 1. **What is the CPU type?** We recommend using Intel processors, though AMD
    ones work, too.
-2. **How many PCI/PCIe slots are there?** You will need one PCI or PCIe slot
-   for a graphics card and another PCI slot for a DAQ.
+2. **How many PCI/PCIe slots are there?** Most computers now come with only PCIe
+   slots, so make sure to get a PCIe compatible DAQ card. Currently RTXI only
+   supports National Instrument DAQ cards.
 
 Also, you should have a machine with at least **4 GB of RAM**. While Linux can
 run with less, you will see degraded performance. Over the past few years,
 operating systems have been built under the assumption of increasingly capable
 hardware, and Linux has been no exception.  
 
-**Note:** The current generation of Intel processors (Skylake) requires
-firmware that is bundled into new Linux kernels, starting around kernel 4.1.
-The kernel in RTXI {{ site.rtxi_version }} is based on kernel 3.8.13 and will
-not run on new machines.  When purchasing a computer, make sure it has an older
-processor.  (Haswell/Broadwell will work.)
-
-We are testing a newer real-time kernel. Source code is available on the
-[rttweak branch](https://github.com/rtxi/rtxi/tree/rttweak) of our GitHub
-repository. 
-
 #### DAQ
 RTXI is tested and developed on systems using National Instruments (NI) cards.
-While the Xenomai project creates drivers for cards made by other vendors, we
-do not test them and cannot give you a recommendation to use them. 
+The Xenomai project may still support PCI cards, but not PCIe, and we
+do not test them so we cannot give you a recommendation to use them. Instead we 
+advice downloading and installing the NIDAQmx library, which supports a wide 
+range of National Instruments DAQ cards and is the interface used by RTXI. Here are
+a list of resources for downloading and installing NIDAQmx:
 
-If buying a new NI DAQ, get an **M-series** card. **Do not get an X-series
-card**. Open-source drivers do not currently exist for them, so they cannot be
-used for data acquisition. For a complete list of what drivers are available
-for what hardware, look here:  
-
- - [**List of DAQs supported by the analogy driver**](https://xenomai.org/analogy-practical-presentation/#ni_pcimio)
+ - [**Download NIDAQmx**](https://www.ni.com/en/support/downloads/drivers/download.ni-daq-mx.html)
+ - [**Installation Instructions for NIDAQmx in Linux**](https://www.ni.com/docs/en-US/bundle/ni-platform-on-linux-desktop/page/installing-ni-drivers-and-software-on-linux-desktop.html)
+ - [**DAQ driver and operating system compatibility**](https://www.ni.com/en/support/documentation/compatibility/21/ni-hardware-and-operating-system-compatibility.html)
 
 #### Graphics Card
+**NOTE:** The information in this section was compiled over a decade ago, and a
+lot has changed since then. Nvidia now provides better support for linux drivers.
+Research whether your graphics card has driver support for linux.
+
 You should get a discrete graphics card. Using integrated graphics will cause
 UI computation to be offloaded to the CPU, which at the same time has to handle
 real-time processes. Based on the systems we've benchmarked so far, you're
@@ -76,12 +71,8 @@ Here is a list of graphics card supported by the Nvidia open-source driver
 ### Installing RTXI
 
 Look through our [installation instructions](/install) to see how to install
-RTXI {{ site.rtxi_version }}. You can install RTXI with our live CD, or you can
-install a generic version of Linux and then manually compile and install RTXI
-and its real-time dependencies. It's up to you.  
-
-If you run into issues, look through our available [documentation](/docs), and
-if it doesn't help, email us or 
+RTXI {{ site.rtxi_version }}. If you run into issues, look through our 
+available [documentation](/docs), and if it doesn't help, email us or 
 [submit an issue on GitHub](https://github.com/rtxi/rtxi/issues). We recommend 
 you do the latter. 
 

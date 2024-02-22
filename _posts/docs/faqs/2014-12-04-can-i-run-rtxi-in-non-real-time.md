@@ -9,10 +9,10 @@ manually configure and recompile RTXI. In the RTXI directory, go to the scripts
 directory and run:
 
 {% highlight bash %}
-$ sudo ./install-rtxi.sh
+$ sudo ./install_rtxi.sh
 {% endhighlight %}
 
-You will be prompted to enter your system configuration. Select "2" to run in
+You will be prompted to enter your system configuration. type "posix" to run in
 non-real-time (POSIX). 
 
 Running RTXI in non-real-time is useful for debugging purposes mainly, and it

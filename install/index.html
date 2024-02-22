@@ -242,11 +242,10 @@ $ ./scripts/install_rt_kernel_evl.sh
             started. Be careful to not exit the configuration menu.
           </p>
         </li>
-        <li><p><b>Select your processor type and disable multicore features.</b></p>
+        <li><p><b>Select your processor type.</b></p>
           <div>From the top menu, follow the path: </div> 
           <div style="padding-left:1em;">--> Processor type and features</div>
           <div style="padding-left:2em;">--> Processor family</div>
-          <div style="padding-left:2em;">--> Multi-core scheduler support (disable) </div><br>
           <p>
             Select the option that corresponds to your processor type. If
             unsure of what processor you have, open another terminal run:
@@ -270,10 +269,11 @@ $ cat /proc/cpuinfo
           </p>
         </li>
 
-        <li><p><b>Disable power management options.</b></p>
+        <li><p><b>Disable power management options (Xenomai 3).</b></p>
           <div>
             You need to disable some CPU scaling capabilities of the kernel
-            that can otherwise interrupt the real-time framework. From the top
+            that can otherwise interrupt the real-time framework. Note that this
+            is not needed for evl version of xenomai. From the top
             menu, follow the path and disable: 
           </div>
           <div style="padding-left:1em;">--> Power Management and ACPI options</div>
@@ -329,7 +329,12 @@ $ ./script/install_rtxi.sh
       </p>
       <dl class="dl-horizontal">
         <dt>evl</dt>
-          <dd>Install RTXI so that it uses the real-time kernel.</dd>
+          <dd>Install RTXI so that it uses the real-time EVL kernel.</dd>
+        <dt>xenomai</dt>
+          <dd>Install RTXI so that it uses the real-time xenomai alchemy skin kernel.
+              This is used for installing rtxi on existing xenomai installation that
+              was used for rtxi 2.4 and older
+          </dd>
         <dt>posix</dt>
           <dd>
             RTXI will not perform in real-time, but with this option, it can
@@ -339,9 +344,11 @@ $ ./script/install_rtxi.sh
       </dl>
 
       <p>
-        If you want real-time performance, enter "evl" to use Xenomai and wait
-        for RTXI to be installed. When the installation script terminates, RTXI
-        is ready for you to use. To start RTXI, run:
+        If you want real-time performance, enter "evl" to use Xenomai EVL and wait
+        for RTXI to be installed. If upgrading from a previous version of rtxi and
+        you wish to keep xenomai 3 installation, then enter xenomai.
+        When the installation script terminates, RTXI is ready for you to use. 
+        To start RTXI, run:
       </p>
 
 {% highlight bash %}
@@ -375,13 +382,11 @@ $ sudo rtxi
       <div class="panel-body row">
 
       <p>
-        <b>Note:</b> If you are currently using older distributions, like
-        Ubuntu 10.04 and Debian 7, the following instructions will fail because
-        RTXI depends on newer versions of the boost libraries and gcc, which
-        aren't available. Though you can compile these dependencies from
-        source, we recommend you use a newer LTS distro, like Ubuntu 14.04.
-        Incompatibilities with older distros will only increase with time,
-        especially as they exceed their support lifespan.
+        <b>Note:</b> Current tested platforms are Ubuntu 20.04 and Ubuntu 22.04. RTXI 
+          is built with cross-platform support in mind so it should be possible to install
+          in other linux distributions such as debian and fedora, but the available scripts
+          for dependency and kernel isntallation do not work under non debian platforms. Check
+          your distribution's package manager to install dependencies.
       </p>
 
       <!-- 1. Clone the repo -->
@@ -405,8 +410,6 @@ $ cd rtxi
 
 {% highlight bash %}
 $ git pull origin master
-$ git fetch --all --tags
-$ git checkout tags/v{{ site.rtxi_version }}
 {% endhighlight %}
 
       <!-- 2. Install dependencies -->
@@ -417,10 +420,9 @@ $ git checkout tags/v{{ site.rtxi_version }}
       </h4>
       <p>
         Run the <code>install_dependencies.sh</code> script to download
-        dependencies. The script is maintained for Ubuntu 14.04. If you are
-        using a different or outdated distribution, like Ubuntu 10.04, you will
-        have to look for differently-named packages. For old operating systems,
-        some of these packages may no longer exist, and if that's the case, we
+        dependencies. The script is maintained for Ubuntu 22.04. but it should
+        work for Ubuntu 20.04. If you are For old operating systems,
+        some of these packages may not exist, and if that's the case, we
         strongly encourage you to upgrade.
       </p>
 
@@ -444,9 +446,8 @@ $ ./install_rtxi.sh
 {% endhighlight %}
 
       <p>
-        You will be prompted to select a configuration: 1 for Xenomai
-        (real-time) or 2 for POSIX (non-real-time). Soon, RTXI will be compiled
-        and installed. When finished, you can run v{{ site.rtxi_version }}
+        You will be prompted to select a configuration: evl, xenomai, or posix.
+        Soon, RTXI will be compiled and installed. When finished, you can run v{{ site.rtxi_version }}
         with:
       </p>
 
@@ -470,20 +471,18 @@ $ sudo rtxi
         {% assign upgradecount = upgradecount | plus:1 %}
       </h4>
       <p>
-        All available modules in v1.4 came packaged with RTXI. For 
-        v{{ site.rtxi_version }} onwards, modules are split into separate GitHub
-        repositories.  Customization also is on a per-module basis. Also, for
-        v1.x, RTXI used the Qt3 framework to build the UI. For 
-        v{{ site.rtxi_version }}, we moved to Qt4, and with v2.1, we moved to
-        Qt5. 
+        All available core modules in v2.4 came packaged with RTXI. However, 
+        v3.0.0 introduced new plugin api, which requires migrating older custom plugins
+        to the new architecture. If there is a plugin you wish to see migrated sooner, send
+        an email to our help contact. for RTXI we moved to Qt5 and eliminated dependencies for
+        a leaner development cycle and maintenance.
       </p>
 
       <p>
         What this means for you is that at this point, you've installed RTXI
         v{{ site.rtxi_version }}, but you need to recompile your modules to use
-        updated dependencies. If you are using the DefaultGUI framework, this
-        may be as simple as recompiling your code, but if you added custom Qt
-        elements, you may need to port your code to reflect changes in Qt. 
+        updated dependencies. If you are using the DefaultGUI framework, this will require
+        a redisign of your plugin to use the new RTXI widgets framework.
       </p>
 
       <p>
