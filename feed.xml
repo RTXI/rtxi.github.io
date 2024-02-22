@@ -85,8 +85,9 @@ when buying new hardware:&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;What is the CPU type?&lt;/strong&gt; We recommend using Intel processors, though AMD
 ones work, too.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;How many PCI/PCIe slots are there?&lt;/strong&gt; You will need one PCI or PCIe slot
-for a graphics card and another PCI slot for a DAQ.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;How many PCI/PCIe slots are there?&lt;/strong&gt; Most computers now come with only PCIe
+slots, so make sure to get a PCIe compatible DAQ card. Currently RTXI only
+supports National Instrument DAQ cards.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Also, you should have a machine with at least &lt;strong&gt;4 GB of RAM&lt;/strong&gt;. While Linux can
@@ -94,31 +95,25 @@ run with less, you will see degraded performance. Over the past few years,
 operating systems have been built under the assumption of increasingly capable
 hardware, and Linux has been no exception.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The current generation of Intel processors (Skylake) requires
-firmware that is bundled into new Linux kernels, starting around kernel 4.1.
-The kernel in RTXI 2.3 is based on kernel 3.8.13 and will
-not run on new machines.  When purchasing a computer, make sure it has an older
-processor.  (Haswell/Broadwell will work.)&lt;/p&gt;
-
-&lt;p&gt;We are testing a newer real-time kernel. Source code is available on the
-&lt;a href=&quot;https://github.com/rtxi/rtxi/tree/rttweak&quot;&gt;rttweak branch&lt;/a&gt; of our GitHub
-repository.&lt;/p&gt;
-
 &lt;h4 id=&quot;daq&quot;&gt;DAQ&lt;/h4&gt;
 &lt;p&gt;RTXI is tested and developed on systems using National Instruments (NI) cards.
-While the Xenomai project creates drivers for cards made by other vendors, we
-do not test them and cannot give you a recommendation to use them.&lt;/p&gt;
-
-&lt;p&gt;If buying a new NI DAQ, get an &lt;strong&gt;M-series&lt;/strong&gt; card. &lt;strong&gt;Do not get an X-series
-card&lt;/strong&gt;. Open-source drivers do not currently exist for them, so they cannot be
-used for data acquisition. For a complete list of what drivers are available
-for what hardware, look here:&lt;/p&gt;
+The Xenomai project may still support PCI cards, but not PCIe, and we
+do not test them so we cannot give you a recommendation to use them. Instead we 
+advice downloading and installing the NIDAQmx library, which supports a wide 
+range of National Instruments DAQ cards and is the interface used by RTXI. Here are
+a list of resources for downloading and installing NIDAQmx:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://xenomai.org/analogy-practical-presentation/#ni_pcimio&quot;&gt;&lt;strong&gt;List of DAQs supported by the analogy driver&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.ni.com/en/support/downloads/drivers/download.ni-daq-mx.html&quot;&gt;&lt;strong&gt;Download NIDAQmx&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.ni.com/docs/en-US/bundle/ni-platform-on-linux-desktop/page/installing-ni-drivers-and-software-on-linux-desktop.html&quot;&gt;&lt;strong&gt;Installation Instructions for NIDAQmx in Linux&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.ni.com/en/support/documentation/compatibility/21/ni-hardware-and-operating-system-compatibility.html&quot;&gt;&lt;strong&gt;DAQ driver and operating system compatibility&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;graphics-card&quot;&gt;Graphics Card&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; The information in this section was compiled over a decade ago, and a
+lot has changed since then. Nvidia now provides better support for linux drivers.
+Research whether your graphics card has driver support for linux.&lt;/p&gt;
+
 &lt;p&gt;You should get a discrete graphics card. Using integrated graphics will cause
 UI computation to be offloaded to the CPU, which at the same time has to handle
 real-time processes. Based on the systems we’ve benchmarked so far, you’re
@@ -141,12 +136,8 @@ the people who code the drivers to extend support for them.)&lt;/p&gt;
 &lt;h3 id=&quot;installing-rtxi&quot;&gt;Installing RTXI&lt;/h3&gt;
 
 &lt;p&gt;Look through our &lt;a href=&quot;/install&quot;&gt;installation instructions&lt;/a&gt; to see how to install
-RTXI 2.3. You can install RTXI with our live CD, or you can
-install a generic version of Linux and then manually compile and install RTXI
-and its real-time dependencies. It’s up to you.&lt;/p&gt;
-
-&lt;p&gt;If you run into issues, look through our available &lt;a href=&quot;/docs&quot;&gt;documentation&lt;/a&gt;, and
-if it doesn’t help, email us or 
+RTXI 3.0.0. If you run into issues, look through our 
+available &lt;a href=&quot;/docs&quot;&gt;documentation&lt;/a&gt;, and if it doesn’t help, email us or 
 &lt;a href=&quot;https://github.com/rtxi/rtxi/issues&quot;&gt;submit an issue on GitHub&lt;/a&gt;. We recommend 
 you do the latter.&lt;/p&gt;
 
@@ -369,140 +360,6 @@ These findings raise caution in targeting Ito as an antiarrhythmic strategy.&lt;
       </item>
     
       <item>
-        <title>Porting to RTXI v2.1</title>
-        <description>&lt;p&gt;RTXI v2.3 introduced many changes over the v1.4 release.
-Most of these changes should have a limited impact on your modules, but even in
-that case, you will need to make some edits to your code to port it to 
-2.3. This tutorial will focus on some common changes that
-should cover most use-cases. The changes mostly have to do with:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Upgrading from Qt3 to Qt5&lt;/li&gt;
-  &lt;li&gt;Upgrading Qwt5 to Qwt6&lt;/li&gt;
-  &lt;li&gt;Changes to the DefaultGUIModel class&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;upgrading-from-qt3-to-qt5&quot;&gt;Upgrading from Qt3 to Qt5&lt;/h4&gt;
-&lt;p&gt;Qt3 is an old version of the Qt library. It was released in 2001 and superceded
-by Qt4 in 2005 and Qt5 in 2012. The transition to Qt4 introduced many breaking
-changes to its API and classes, and it took a while to upgrade RTXI’s codebase
-to properly use it. We recommend that you look through the documentation Nokia
-provides on its website for porting from Qt3 to Qt4:
-&lt;a href=&quot;http://doc.qt.io/qt-4.8/porting4.html&quot;&gt;http://doc.qt.io/qt-4.8/porting4.html&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;RTXI 2.1 upgraded the UI framework from Qt4 to Qt5. This introduces some
-changes, though not nearly as many as introduced by the Qt4 transition. A
-changelog and upgrade info is provided on the Qt website:
-&lt;a href=&quot;https://wiki.qt.io/Transition_from_Qt_4.x_to_Qt5&quot;&gt;https://wiki.qt.io/Transition_from_Qt_4.x_to_Qt5&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;porting-modules-that-abstract-from-defaultguimodel&quot;&gt;Porting Modules that Abstract from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DefaultGUIModel&lt;/code&gt;&lt;/h4&gt;
-&lt;p&gt;For v2.3, the code exposed to users has been simplified and the
-customizability enhanced. The most significant change is in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;createGUI&lt;/code&gt;
-function and how the UI is generated. There are also some simple changes that
-correspond to syntax and class name changes in Qt4. They are as follows:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;1. Change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;#includes&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
-Libraries for Qt5 are included differently. To include them directly, change
-the names as indicated in the Qt5 documentation. For example, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;qpushbutton.h&amp;gt;&lt;/code&gt;
-becomes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;QPushButton&amp;gt;&lt;/code&gt;. Look through the Qt5 documentation to see what the
-name changes are. Another, simpler option is to just remove all the q*
-includes and replace them with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;QtWidgets&amp;gt;&lt;/code&gt;. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;QtWidgets&lt;/code&gt; will make Qt pull in
-all the libraries needed to compile whatever Qt classes are present in the code
-without the need to specify them directly.&lt;/p&gt;
-
-&lt;p&gt;Essentially, something like:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;main_window.h&amp;gt;
-#include &amp;lt;qgridview.h&amp;gt;
-#include &amp;lt;qhbox.h&amp;gt;
-#include &amp;lt;qhbuttongroup.h&amp;gt;
-#include &amp;lt;qlabel.h&amp;gt;
-#include &amp;lt;qlayout.h&amp;gt;
-#include &amp;lt;qpushbutton.h&amp;gt;
-#include &amp;lt;qtimer.h&amp;gt;
-#include &amp;lt;qtooltip.h&amp;gt;
-#include &amp;lt;qvalidator.h&amp;gt;
-#include &amp;lt;qvbox.h&amp;gt;
-#include &amp;lt;qwhatsthis.h&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;div style=&quot;text-align:center;&quot;&gt;becomes&lt;br /&gt;&amp;nbsp;&lt;/div&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;main_window.h&amp;gt;
-#include &amp;lt;QtWidgets&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;div&gt;&amp;nbsp;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;2. Change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;QWhatsThis&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
-This call is made by default in the constructors of module classes that
-abstract from DefaultGUIModel. Change:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;QWhatsThis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;div style=&quot;text-align:center;&quot;&gt;to&lt;br /&gt;&amp;nbsp;&lt;/div&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;setWhatsThis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;div&gt;&amp;nbsp;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;3. Add a resize timer&lt;/strong&gt;&lt;br /&gt;
-At the end of the constructor, after the module has been built and the
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;refresh&lt;/code&gt; function has been called, add the line:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;QTimer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;singleShot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SLOT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resizeMe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;div&gt;&amp;nbsp;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;4. Switch to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;createGUI + customizeGUI&lt;/code&gt; API&lt;/strong&gt;&lt;br /&gt;
-In v1.4, the GUI is created using DefaultGUIModel’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function. If
-you wanted to add any custom elements, you had to overload the function and
-copy/paste the code in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;default_gui_model.cpp&lt;/code&gt; and then add your own stuff.
-That’s changed now.&lt;/p&gt;
-
-&lt;p&gt;You no longer should overload the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function. Now, just call
-DefaultGUIModel’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; function and then call a new function,
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;customizeGUI&lt;/code&gt;, to, well, customize it.&lt;/p&gt;
-
-&lt;p&gt;Define &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;customizeGUI&lt;/code&gt; within the modules you are building. Call it &lt;strong&gt;after&lt;/strong&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;createGUI&lt;/code&gt; returns. To use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;customizeGUI&lt;/code&gt; properly, you need to do:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;p&gt;Grab the module layout object created by &lt;code&gt;createGUI&lt;/code&gt;:  &lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;QGridLayout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customLayout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DefaultGUIModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-  &lt;/li&gt;
-  &lt;li&gt;&lt;p&gt;Add custom elements to the layout. For more explanation about this,
-  see the example &lt;code&gt;customizeGUI&lt;/code&gt; function defined in the plugin
-  template. &lt;br /&gt;  
-  &lt;a href=&quot;/docs/tutorials/2015/04/15/understanding-plugin-template/&quot;&gt;http://rtxi.org/docs/tutorials/2015/04/15/understanding-plugin-template/&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;p&gt;Set the edited layout.  &lt;/p&gt;
-
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;setLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div&gt;&amp;nbsp;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;5. Enforce types for get/set methods on RTXI workspace variables&lt;/strong&gt;&lt;br /&gt;
-RTXI workspace variables are displayed in the UI as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;QStrings&lt;/code&gt;, and within the
-code they are regularly converted to the native types they are supposed to
-represent in memory, such as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;int&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;double&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;string&lt;/code&gt;. 
-2.3 should take the calls in v1.4 without issue, but if you
-run into problems, check the types of the variables you are using.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; v2.3 &lt;strong&gt;does not&lt;/strong&gt; support strings for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PARAMETER&lt;/code&gt;
-variables. Use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;COMMENT&lt;/code&gt; type instead.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 17 Apr 2015 00:00:00 -0400</pubDate>
-        <link>http://rtxi.org//docs/tutorials/2015/04/17/porting-to-rtxi-v2/</link>
-        <guid isPermaLink="true">http://rtxi.org//docs/tutorials/2015/04/17/porting-to-rtxi-v2/</guid>
-      </item>
-    
-      <item>
         <title>List of Resources</title>
         <description>&lt;p&gt;There are a lot of things you need to know to be able to fully use RTXI.
 Fortunately, these things aren’t hard to learn, and there is already plenty of
@@ -558,63 +415,45 @@ backend to speed up loops and other heavy sections of code.&lt;/p&gt;
       <item>
         <title>Making New Modules in RTXI</title>
         <description>&lt;p&gt;Outlined here is the development process for making new RTXI modules. For
-simplicity, we provide a template module, called Plugin Template, for users to
-customize without needing to writing everything from scratch. Plugin Template
-defines a basic GUI with customizable widgets and is found &lt;a href=&quot;https://github.com/rtxi/plugin-template&quot;&gt;on our GitHub
-repository&lt;/a&gt;.&lt;/p&gt;
+simplicity, we provide a shell script, called create_template_plugin.sh, for users to
+customize without needing to writing everything from scratch. You can access
+this script under the scripts folder in RTXI’s root directory. When run, it will create
+a source directory with source files and cmake build file in the current directory.&lt;/p&gt;
 
-&lt;h3 id=&quot;to-fork-rtxi-modules&quot;&gt;To fork RTXI modules:&lt;/h3&gt;
+&lt;h3 id=&quot;to-create-rtxi-modules&quot;&gt;To create RTXI modules:&lt;/h3&gt;
 
-&lt;h4 id=&quot;1-clone-the-repository-from-github&quot;&gt;1. Clone the repository from GitHub.&lt;/h4&gt;
-&lt;p&gt;From our site, go to the &lt;a href=&quot;https://github.com/rtxi/plugin-template&quot;&gt;Plugin-Template
-repository&lt;/a&gt;. Download the source
-files:&lt;/p&gt;
+&lt;h4 id=&quot;1-generate-the-rtxi-plugin-project&quot;&gt;1. Generate the RTXI plugin project.&lt;/h4&gt;
+&lt;p&gt;Enter or create the directory where you wish to create the plugin, then run the following
+command:&lt;/p&gt;
 
-&lt;p&gt;Now, clone the repository. Developers for new modules are expected to base it
-on MyPluginGUI. Type:&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;RTXI_SOURCE_LOCATION/scripts/create_template_plugin.sh &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/rtxi/plugin-template.git custom_module&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;where RTXI_SOURCE_LOCATION is the full directory path to RTXI’s source code. Once you
+run the script, the program will ask for a name and a description of your plugin. Afterwards
+it will use this information to generate a widgets.hpp, widgets.cpp, and CMakeLists.txt.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;custom_module&lt;/code&gt; is the name of the directory git will create when downloading
-the source code. You can change it to whatever you want. If you don’t specify a
-name, it will default to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugin-template&lt;/code&gt;, the name of the repository on
-GitHub.&lt;/p&gt;
-
-&lt;p&gt;Once the module is downloaded, look inside the new directory for Plugin
-Template’s source code. An explanation of the header and source files is
-available in the our &lt;a href=&quot;http://rtxi.org/docs/manual/#customizing_gui&quot;&gt;user
-manual&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The name of the directory created is the same as the name of the plugin.
+An explanation of the header and source files is available in our 
+&lt;a href=&quot;http://rtxi.org/docs/manual/#customizing_gui&quot;&gt;user manual&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h4 id=&quot;2-modify-files&quot;&gt;2. Modify files.&lt;/h4&gt;
-&lt;p&gt;Modify the RTXI files to run the code you want. When you compile and install
-your module, be sure to rename the source files and classes to something other
-than &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugin-template&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PluginTemplate&lt;/code&gt;, respectively. It’s preferable to
-name it  something that reflects what it does. A quick and easy way to change
-the names of the files, classes, and binary is to use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sed&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mv&lt;/code&gt;
-commands. A wrapper script called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rename_module.sh&lt;/code&gt; is provided in the
-plugin-template repository.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./rename_module.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;Modify the RTXI files to run the code you want. The CMakeLists.txt file generated
+will automatically search for the RTXI library, but you should modify it if there
+are additional dependencies to your plugins. Check CMake and your library’s documentation
+on how to find and link the depenency.&lt;/p&gt;
 
 &lt;p&gt;Additionally, it’s good practice to document your code. As a general rule,
 document it so that you’re confident that anyone with programming experience
-will be able to understand what your code and overall module do. Within the
-plugin-template repository, there is another script called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build_readme.sh&lt;/code&gt;.
-It parses your source file and generates a readme from it.&lt;/p&gt;
+will be able to understand what your code and overall module do.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./build_readme.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The script assumes that the name of your source file matches the directory
-name, so it will look for and parse &lt;custom_module.cpp&gt; if the directory is
-called &lt;custom_module&gt;.&lt;/custom_module&gt;&lt;/custom_module.cpp&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;3-compile-and-install&quot;&gt;3. Compile and install.&lt;/h4&gt;
+&lt;h4 id=&quot;3-configure-compile-and-install&quot;&gt;3. Configure, Compile, and install.&lt;/h4&gt;
 
 &lt;p&gt;Once you’re ready to compile and install your module, go to the base of your
 module directory and execute:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;make 
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cmake &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-B&lt;/span&gt; build
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cmake &lt;span class=&quot;nt&quot;&gt;--build&lt;/span&gt; ./build
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;cmake &lt;span class=&quot;nt&quot;&gt;--install&lt;/span&gt; ./build&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
         <pubDate>Fri, 10 Apr 2015 00:00:00 -0400</pubDate>
@@ -1540,6 +1379,28 @@ Registration is open until April 1st at 5:00 PM Eastern Time.&lt;/p&gt;
         <pubDate>Wed, 21 Jan 2015 00:00:00 -0500</pubDate>
         <link>http://rtxi.org//news/2015/01/21/rtxi-2015-registration-is-open/</link>
         <guid isPermaLink="true">http://rtxi.org//news/2015/01/21/rtxi-2015-registration-is-open/</guid>
+      </item>
+    
+      <item>
+        <title>Why are there negative latencies?</title>
+        <description>&lt;p&gt;Negative latencies mean that the latency test has not been properly calibrated.
+The test calculates latencies based on when tasks are expected to be completed,
+with some overhead going toward computing the timer. To avoid including the
+time it takes to compute the timer, xenomai offsets the measured latency with a
+static value, written in nanoseconds and stored in
+&lt;code&gt;/proc/xenomai/latency&lt;/code&gt;. If the value is negative, then xenomai is
+overcompensating.&lt;/p&gt;
+
+&lt;p&gt;You can correct this behavior by running (as root):&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# echo 0 &amp;gt; /proc/xenomai/latency&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;What this means is that the latency test will not try to factor out the time to
+compute the timer.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 20 Jan 2015 00:00:00 -0500</pubDate>
+        <link>http://rtxi.org//docs/faqs/2015/01/20/why-are-there-negative-latencies/</link>
+        <guid isPermaLink="true">http://rtxi.org//docs/faqs/2015/01/20/why-are-there-negative-latencies/</guid>
       </item>
     
   </channel>
